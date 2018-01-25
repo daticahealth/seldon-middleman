@@ -1,0 +1,49 @@
+<%
+if post.has_key?("share_image")
+    image_url = data.site.blog[post.id].share_image.url
+elsif post.has_key?("featured_image")
+    image_url = data.site.blog[post.id].featured_image.url
+else
+    image_url = nil
+end
+%>
+<%# Renders a card inside a post loop. Post var must be injected - AW %>
+<div class="row full-width collapse">
+    <% unless image_url == nil %>
+    <div class="columns small-12 medium-8 large-8">
+        <a class="" href="/blog/<%= post["slug"] %>" title="Read '<%= post["title"] %>'">
+            <img data-interchange="[<%= image_url %>?fit=thumb&w=800&h=400, small]" alt="Image: <%= post["title"] %>" />
+        </a>
+    </div>
+    <% end %>
+    
+    <div class="columns small-12 medium-4 large-4 show-for-medium pad">
+        <% unless post.has_key?("share_image") %>
+            <a class="" href="/blog/<%= post["slug"] %>" title="Read '<%= post["title"] %>'"><h3 class="headline-5"><%= post["title"] %></h3></a>
+        <% end %>
+        <% if post["author"].has_key?("fullname") %>
+            <div class="media-object card-person">
+                <% if post["author"].has_key?("profile_pic") %>
+                    <div class="media-object-section">
+                        <img src="<%= data.site.person[post.author.id].profile_pic.url %>?fit=thumb&w=148&h=148&f=face&q=45" class="avatar avatar--medium circle"></div>
+                <% end %>
+                <div class="text-small media-object-section main-section align-self-middle">
+                    <h4 class="person-name"><%= post["author"]["fullname"] %></h4>
+                    <% if post["author"].has_key?("role") %>
+                        <p class="person-title"><%= post["author"]["role"] %></p>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+        <% if post.has_key?("pub_date") %>
+            <div class="faded text-small"><i class="fa fa-calendar" aria-hidden="true"></i> <%= post['pub_date'].strftime('%B %-d, %Y') %> &nbsp;</div>
+        <% end %>
+        <div class="text-small">
+        <% if post.has_key?("summary") || post["summary"] == "" %>
+            <%= Kramdown::Document.new(post["summary"]).to_html %>
+        <% elsif post.has_key?("lead") || post["lead"] == "" %>
+            <%= Kramdown::Document.new(post["lead"]).to_html %>
+        <% end %>
+        </div>
+    </div>
+</div>

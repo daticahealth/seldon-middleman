@@ -1,0 +1,61 @@
+---
+title: "Datica Press Releases"
+summary: "Datica press releases and mentions in publications."
+author: "Datica, Inc."
+tags: "media, press releases, press, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "January 1, 2017"
+share_image: "/public/img/share-posters/datica-social-twitter-thumb.png"
+header: "Media Resources"
+subheader: "Press Releases"
+layout: basic
+---
+<div class="container-color--dark-alt">
+    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+</div>
+<section class="custom-sticky custom-sticky--dark show-for-large">
+    <div class="row">
+        <div class="columns small-12 medium-12">
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/leadership">Leadership</a></li>
+                <li><a href="/blog">Company Blog</a></li>
+                <li><a href="https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog">Engineering Blog</a></li>
+                <li><a href="/careers">Careers</a></li>
+                <li><a href="/press" class="active">Press</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/open-source">Open Source</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="section-article container-color--dark press-masthead">
+    <div class="row align-center">
+        <div class="columns small-12 medium-6">
+            <div class="text-center section--header-dark-group">
+                <h4>Press</h4>
+                <h1>Press Releases Archive</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-article">
+    <div class="row">
+        <div class="columns small-12">
+            <a class="button hollow" href="/press" title="View all"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Media Resources</a>
+        </div>
+    </div>
+    <div class="row">
+        <% sorted_pressReleases = data.site.pressReleases.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
+        <% sorted_pressReleases.each do | id, post | %>
+            <div class="columns small-12 medium-4">
+                <div class="callout callout-card--featured callout--stretch drop">
+                    <a class="hover--fancy-shift" href="/press-release/<%= post["slug"] %>">
+                        <p><strong><%= post["title"] %></strong></p>
+                        <p><span class="date"><%= post['pub_date'].strftime('%B %-d, %Y') %></span></p>
+                        <%= Kramdown::Document.new(post["summary"]).to_html %>
+                    </a>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</section>

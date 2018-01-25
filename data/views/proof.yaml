@@ -1,0 +1,171 @@
+---
+# Size element is for as-needed logo size changes.
+# Logos should link to their respective customer view page.
+sectionNav:
+    -
+        title: "Outcomes Achieved Through Partnership"
+        label: "Case Studies"
+        slug: CaseStudies
+    -
+        title: "Collectively Impacting Healthcare"
+        label: "Spotlights"
+        slug: Spotlights
+    -
+        title: "The Cloud Trusts Catalyze"
+        label: "Partners"
+        slug: Partners
+    -
+        title: "The Preferred Partner with Health Systems"
+        label: "Health Systems"
+        slug: HealthSystems
+    -
+        title: "Integrations with All Major EHRs"
+        label: "EHRs"
+        slug: EHRs
+customersCore:
+    -
+        name: "BSC"
+        slug: bsc
+        logoSize: medium
+    -
+        name: "HealthFinch"
+        slug: healthfinch
+        logoSize: small-mid
+    -
+        name: "BCGDV"
+        slug: bcgdv
+        logoSize: small-mid
+    -
+        name: "Zipnosis"
+        slug: zipnosis
+        logoSize: small-mid
+    -
+        name: "Reach"
+        slug: reach
+        logoSize: small
+    -
+        name: "Propeller Health"
+        slug: propeller
+        logoSize: small
+    -
+        name: "PINT"
+        slug: pint
+        logoSize: small
+    -
+        name: "Ayogo"
+        slug: ayogo
+        logoSize: small-mid
+    -
+        name: "Cordata"
+        slug: cordata
+        logoSize: small
+    -
+        name: "HealthLoop"
+        slug: healthloop
+        logoSize: small
+    -
+        name: "CareMessage"
+        slug: caremessage
+        logoSize: small
+    -
+        name: "Hennepin County Medical Center"
+        slug: hcmc
+        logoSize: small
+    -
+        name: "NavHealth"
+        slug: navhealth
+        logoSize: small
+    -
+        name: "MetaBahn"
+        slug: metabahn
+        logoSize: small
+    -
+        name: "Welkin"
+        slug: welkin
+        logoSize: small
+    -
+        name: "InsightRX"
+        slug: insightrx
+        logoSize: small
+    -
+        name: "CirrusMD"
+        slug: cirrusmd
+        logoSize: small
+    -
+        name: "COTA"
+        slug: cota
+        logoSize: small
+    -
+        name: "Hale Health"
+        slug: hale-health
+        logoSize: small
+    -
+        name: "MolecularMatch"
+        slug: molecularmatch
+        logoSize: medium
+    -
+        name: "Dispatch Health"
+        slug: dispatchhealth
+        logoSize: small
+    -
+        name: "CareKinesis"
+        slug: carekinesis
+        logoSize: small
+
+customersHT:
+    -
+        name: Cleveland Clinic
+        slug: clevelandclinic
+        logoSize: small-mid
+    -
+        name: Cedars-Sinai
+        slug: cedars
+        logoSize: small-mid
+    -
+        name: MultiCare
+        slug: multicare
+        logoSize: small-mid
+    -
+        name: Texas Health Resources
+        slug: texashr
+        logoSize: small-mid
+    -
+        name: Children's Healthcare of Atlanta
+        slug: choa
+        logoSize: small-mid
+    -
+        name: Fairview
+        slug: fairview
+        logoSize: small-mid
+    -
+        name: Meridian
+        slug: meridian
+        logoSize: medium
+    -
+        name: Froedtert
+        slug: froedtert
+        logoSize: small-mid
+    -
+        name: Baylor Scott & White Health
+        slug: baylor
+        logoSize: small-mid
+    -
+        name: John Muir
+        slug: johnmuir
+        logoSize: small-mid
+    -
+        name: Children's Hospital of Wisconsin
+        slug: chow
+        logoSize: small-mid
+    -
+        name: Hackensack UMC
+        slug: humc
+        logoSize: medium
+    -
+        name: Aurora
+        slug: aurora
+        logoSize: medium
+    -
+        name: Florida Hospital
+        slug: floridahospital
+        logoSize: small-mid

@@ -1,0 +1,56 @@
+@import '../settings';
+// @import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+@import '../modules/colors';
+@import '../modules/functions';
+
+.timeline--vertical {
+    $offset: 100px; // distance of content from left edge
+    padding: 1.2rem 1.5rem;
+    // Line is absolute, so we set relative here
+    position: relative;
+    .line{
+        width: 1px;
+        background-color: $color_prime-alt;
+        position: absolute;
+        left: $offset + 45px;
+        top:  26px;
+        height: calc(100%);
+    }
+    .block{
+        // Date is absolute, so we set relative here
+        position: relative;
+        padding: 0 0 0 $offset - 50px;
+    }
+    .date{
+        position: absolute;
+        left: -22px;
+        top: 0;
+        font-size: rem-calc(14px);
+        color: $gray-2;
+        font-weight: $font-weight-bold;
+        width:     $offset + 17px;
+        text-align: right;
+    }
+    .dot{
+        position: absolute;
+        left:   $offset + 17px;
+        top:    6px;
+        height: 9px;
+        width:  9px;
+        background-color: $color_prime-alt;
+        @include border-radius(50%);
+    }
+    .content{
+        margin: 0 0 3rem $offset;
+    }
+    .inline-image{
+        display: inline;
+        margin: 0 3px;
+        max-width: 5.5rem;
+    }
+    .inlineblock-image{
+        display: inline-block;
+        margin: 0 15px 0 0;
+        max-width: 5.5rem;
+    }
+}

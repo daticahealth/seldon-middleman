@@ -1,0 +1,47 @@
+<%# Listing Layout Template - Datica, 2016 - 2017 %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%# Meta tags %>
+        <%= partial "partials/head/tags" %>
+        <%# Icons %>
+        <%= partial "partials/head/icons" %>
+        <%# Assets %>
+        <%= stylesheet_link_tag "seldon" %>
+        <% if current_page.data.has_key?("customCSS") %>
+            <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
+        <% end %>
+    </head>
+    <body class="<%= page_classes %>">
+        <a name="top"></a>
+        <%# Main dark header %>
+        <div class="container-color--purple-grad-noise">
+            <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+            <section class="section-article">
+                <div class="row">
+                    <div class="columns small-12 medium-8">
+                        <h1 class="headline-2"><%= current_page.data.header %></h1>
+                        <% if current_page.data.has_key?("subheader") %>
+                            <p class="lead faded"><%= current_page.data.subheader %></p>
+                        <% end %>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <%#= partial "partials/snippets/alert-ribbon" %>
+        <%= yield %>
+        <% if build? %>
+            <%# GA %>
+            <%= partial "partials/head/hubspot" %>
+            <%= partial "partials/head/ga" %>
+        <% end %>
+        <%= partial "partials/snippets/footer" %>
+        <%= partial "partials/head/scripts-footer" %>
+        <%# Custom JS files %>
+        <% if current_page.data.has_key?("customJS") %>
+            <% current_page.data.customJS.split(",").each do |filename| %>
+                <script src="<%= filename.strip %>"></script>
+            <% end %>
+        <% end %>
+    </body>
+</html>

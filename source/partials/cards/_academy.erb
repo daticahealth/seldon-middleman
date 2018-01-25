@@ -1,0 +1,24 @@
+<div class="card
+    <% entry["tags"].each do |tag| %>
+        <% if tag.has_key?("tag_full") %>
+            <%= "js-tag-" + tag["slug"] %>
+        <% end %>
+    <% end %>
+    ">
+    <div class="card-section">
+        <p class="blog-date blog-date--small color-talk-alt"><%= entry['pub_date'].strftime('%B %-d, %Y') %></p>
+        <h4 class="card-body--title"><a class="card-body--link" title="Learn about this topic" href="/academy/<%= entry["slug"] %>"><%= entry["title"] %></a></h4>
+    </div>
+    <div class="card-section card-section--flush">
+        <!-- Academy articles lacked summaries; these need creation and then display here with entry["summary"]. - AW -->
+        <% if entry.has_key?("summary") %>
+            <%= entry["summary"] %>
+        <% else %>
+            <p><%= truncate_words(entry["post"], :length => 20) %></p>
+        <% end %>
+    </div>
+    <div class="card-section card-section--flush">
+        <!-- <hr class="short"> -->
+        <%= partial("partials/snippets/person-small", :locals => { :p => entry["author"] }) %>
+    </div>
+</div>

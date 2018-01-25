@@ -1,0 +1,31 @@
+pages:
+  -
+    title: "Content Blocks & Structures"
+    navTitle: "Blocks"
+    url: "/guide/blocks"
+    desc: "These larger-level structures work well from mobile to desktop extra-wide, and have many options like padding, image backgrounds, and color classes."
+  -
+    title: "Typography"
+    navTitle: "Type"
+    url: "/guide/typography"
+    desc: "Basic typography styles and formatting."
+  -
+    title: "Components"
+    navTitle: "Components"
+    url: "/guide/components"
+    desc: "Cards and other elements."
+  -
+    title: "Content Lists"
+    navTitle: "Lists"
+    url: "/guide/lists"
+    desc: "Sample content lists for collections of content"
+  -
+    title: "User Interface Elements"
+    navTitle: "UI elements"
+    url: "/guide/ui"
+    desc: "Various UI patterns"
+  -
+    title: "Forms & Inputs"
+    navTitle: "Forms"
+    url: "/guide/forms"
+    desc: "Form styling, based on Foundation's form page"

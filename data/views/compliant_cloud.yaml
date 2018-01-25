@@ -1,0 +1,127 @@
+customers:
+    -
+        name: 'BSC'
+        file: 'bsc-logo-wide'
+        url: 'http://blueshieldca.com'
+    -
+        name: 'The VA'
+        file: 'veterans-affairs-logo'
+        url: 'https://www.va.gov/'
+    -
+        name: 'J&J'
+        file: 'jnj-logo'
+        url: 'https://www.jnj.com/'
+    -
+        name: 'Amgen'
+        file: 'amgen-logo'
+        url: 'http://www.amgen.com/'
+    -
+        name: 'TigerText'
+        file: 'tigertext-logo'
+        url: 'https://www.tigertext.com/'
+    -
+        name: 'University of Kansas Hospital'
+        file: 'university-of-kansas-hospital-logo'
+        url: 'http://www.kumed.com/'
+    -
+        name: 'Voalte'
+        file: 'voalte-logo'
+        url:  'https://www.voalte.com/'
+    -
+        name: 'Hennepin County Medical Center'
+        file: 'hcmc-logo'
+        url: 'https://www.hcmc.org/'
+    -
+        name: 'Hurley Medical Center'
+        file: 'hurley-medical-center-logo'
+        url: 'http://www.hurleymc.com/'
+    -
+        name: 'Wisconsin Primary Health Care Association'
+        file: 'wphca-logo'
+        url: 'http://www.wphca.org/'
+    -
+        name: 'Zipnosis'
+        file: 'zipnosis-logo'
+        url: 'http://zipnosis.com'
+    -
+        name: 'Healthloop'
+        file: 'healthloop-logo'
+        url: 'http://healthloop.com'
+    -
+        name: 'Ginger.io'
+        file: 'ginger-logo'
+        url: 'http://ginger.io'
+    -
+        name: 'NavHealth'
+        file: 'navhealth-logo'
+        url: 'http://navhealth.com'
+
+block_hitrust:
+    -
+        title: "HITRUST is how healthcare does business"
+        body: "The HITRUST Common Security Framework (CSF) has become the preferred way to prove compliance in healthcare. HITRUST certification helps establish and accelerate partnerships. If you plan to do business in healthcare at the speed of change, you need to be HITRUST CSF Certified."
+        bg: https://place-hold.it/480x240/f2f2f2/ffffff.png&text=background-image-1&fontsize=32
+    -
+        title: "Datica’s HITRUST CSF Certification gives you industry credibility overnight"
+        body: "Datica leads the industry with the first, most complete HIPAA compliant cloud infrastructure. Datica Managed Cloud is HITRUST CSF Certified on AWS, Microsoft Azure, IBM SoftLayer, and Rackspace, achieving the highest industry privacy and security standards across infrastructure providers."
+        bg: https://place-hold.it/480x240/f2f2f2/ffffff.png&text=background-image-2&fontsize=32
+    -
+        title: "You inherit Datica’s certification"
+        body: "HITRUST allows for inheritance, which means if you are planning to obtain your own CSF certification, you can inherit Datica’s certificate to shortcut 40% of the time and costs of the process."
+        bg: https://place-hold.it/480x240/f2f2f2/ffffff.png&text=background-image-3&fontsize=32
+
+block_innovation_a:
+    # icons - FPO for now
+    -
+        title: "Speed time-to-market"
+        body: "Prototyping in healthcare is hard. Datica Managed Cloud dramatically decreases a team’s time-to-market by removing compliance as a blocker during development and deployment."
+        icon: /public/icons/datica-icons/icons-compliance/icon-speed.svg
+    -
+        title: "Make life easier with a single BAA"
+        body: "Aligning Business Associate Agreements amongst all technology partners is a full-time job. You sign one BAA with Datica to cover the entirety of compliance in the cloud."
+        icon: /public/icons/datica-icons/icons-compliance/icon-baa.svg
+    -
+        title: "Empower technology teams"
+        body: "Engineers are liberated to focus on problems and features more closely related to products, and not on reinventing the wheel on compliance, resulting in happier, more productive teams."
+        icon: /public/icons/datica-icons/icons-compliance/icon-tools.svg
+
+block_innovation_b:
+    # Healthcare’s bleeding edge of compliant innovations
+    -
+        title: "Hot database swaps"
+        body: "Already a hard problem to solve, you can now achieve this in a compliant environment."
+        url: /more
+        icon: /public/icons/brand/icon-large-redpoint-growth.svg
+    -
+        title: "Bring your own Docker container"
+        body: "With our compliant configuration, we give you room to deploy custom containers."
+        url: /more
+        icon: /public/icons/brand/icon-large-redpoint-lightswitch.svg
+    -
+        title: "VM support"
+        body: "If you prefer greater control, ask us about customized VM support."
+        url: /more
+        icon: /public/icons/brand/icon-large-resource-compass.svg
+
+block_tech:
+    # Making important technology compliant
+    -
+        title: "The latest open source languages"
+        body: "Use the language which best fits your application. Compliant Cloud doesn’t limit you to proprietary languages or a single option."
+        # Go, Java, PHP, Ruby, Python, Node.js, Scala, etc
+        image: /public/img/technology-langs.png
+    -
+        title: "The most popular databases in the world"
+        body: "Pick your preference. Compliant Cloud handles the latest leading database technologies, and automatically configures them to be compliant."
+        # Postgres, MySQL, Mongo
+        image: /public/img/technology-dbs.png
+    -
+        title: "Mature utilities"
+        body: "From workers to caching, Compliant Cloud gives you the flexibility to configure your environments your way with useful add-ons."
+        # Redis, RabbitMQ
+        image: /public/img/technology-utilities.png
+    -
+        title: "File storage and distribution"
+        body: "From workers to caching, Compliant Cloud gives you the flexibility to configure your environments your way with useful add-ons."
+        # S3, FTP
+        image: /public/img/technology-deployments.png

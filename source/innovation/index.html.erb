@@ -1,0 +1,132 @@
+---
+title: "Datica Innovation"
+summary: "How does healthcare innovate? Datica explores this topic through new series of interviews with several of the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
+author: "Datica, Inc."
+tags: "HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "January 1, 2017"
+share_image: "/public/img/share-posters/podcast-art-share-h.jpg"
+header: "Datica Innovation"
+subheader: "How does healthcare innovate? Datica explores this topic in a new series of interviews with the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
+layout: basic
+customCSS: "innovation"
+---
+<div class="container-gray-5 container-image--fixed" data-interchange="[//images.contentful.com/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg?fit=thumb&w=800&h=800&q=40, small], [//images.contentful.com/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg?w=1200&q=50, large]">
+    <div class="container-color--tint-70">
+        <!-- <div class="container-color--dark-alt container-image--bottom" data-interchange="[/public/img/art/art-sound-bars-bg.svg, small]"> -->
+        <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+        <section id="top" class="section-article">
+            <div class="row">
+                <div class="columns small-12 medium-8 featured-post">
+                    <h1 class="headline-1 headline--inverted"><%= current_page.data.header %></h1>
+                    <p class="lead"><%= current_page.data.subheader %></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<%= partial "partials/section-promos/aws-mlh-video", 
+    :locals => {
+        :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS",
+        :container_color => "container-gray-10"
+        #:background => "https://images.contentful.com/189dvqdsjh46/55EpUazd5CQSqC66CaWYqI/fd3aa1534d8d641ee8bd60d3592e98a3/aws-mlh-diagram-k-alpha.png"
+    }
+%>
+<%= partial "/partials/section-promos/leadership-gallery" %>
+<%#= partial "/partials/section-promos/report-heart-of-medicine", :locals => { :style => "light", :align => "left" } %>
+<%#= partial "partials/section-promos/report-q317", :locals => { :style => "light", :align => "right" } %>
+
+    <% sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse! %>
+    <% sorted_reports.take(1).each do | id, report | %>
+        <%= partial "partials/section-promos/report-promo", :locals => { :p => report } %>
+    <% end %>
+
+<section class="container-gray-10 card-featured-section">
+    <div class="row">
+        <div class="columns group text-center">
+            <h3 class="subhead--spaced faded headline-5">Datica Innovation Reports</h3>
+        </div>
+    </div>
+    <div class="row row--card-grid full-width align-center small-up-1 medium-up-2 large-up-3">
+    <% sorted_reports[1...4].each do | id, report | %>
+        <div class="column">
+            <div class="card drop">
+                <% if report.has_key?("bg_image") %>
+                    <a class="container-image-fill card-header-image container-gray-3" href="/innovation/<%= report.slug %>" title="Get your free report" data-interchange="[<%= report.bg_image.url %>?fit=thumb&w=600&h=300&q=45, small], [<%= report.bg_image.url %>?fit=thumb&w=800&h=400, medium]">
+                <% else %>
+                    <a class="card-header-image card-header-image--compact container-gray-3" href="/innovation/<%= report.slug %>" title="Get your free report">
+                <% end %>
+                        <% if report.has_key?("subhead") %><span class="card-header-subhead"><%= report.subhead %></span><% end %>
+                        <h2 class="headline-5 card-header-title ribbon--gray-1"><%= report.title %></h2>
+                        <%= inline_svg("icon-arrow-right-circle-large", class: "icon-size--xlarge card-header-icon svg-color--white") %>
+                    </a>
+                <div class="card-section">
+                    <% if report.has_key?("lead") %>
+                        <%= Kramdown::Document.new(report["lead"]).to_html %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    </div>
+</section>
+    <% sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse! %>
+    <section data-magellan-target="discoverInnovation" id="discoverInnovation" class="discover--podcast section-article container-color--dark-alt container-image--middle" data-interchange="[/public/img/art/art-sound-bars-purple.svg, small]">
+        <div class="row align-center collapse">
+            <div class="columns small-12 large-10">
+                <h3 class="innovation--section-header">Healthcare Innovators <span class="innovation--category">Podcast</span></h3>
+                <% sorted_podcasts[0...3].each do | id, podcast | %>
+                    <div class="row innovation--podcast-entry">
+                        <div class="columns small-12 medium-3">
+                            <% if podcast.has_key?("guest") %>
+                                <% if podcast["guest"].has_key?("fullname") %>
+                                    <div class="person-vertical show-for-medium">
+                                        <a class="" href="/innovation/<%= podcast["slug"] %>" title="Listen to this episode now">
+                                            <img data-interchange="[<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45, medium]" class="avatar circle group--sm" alt="<%= podcast["guest"]["fullname"] %>">
+                                        </a>
+                                        <div class="text-center">
+                                            <div class="person-name"><%= podcast["guest"]["fullname"] %></div>
+                                            <div class="person-title"><%= podcast["guest"]["role"] %></div>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        </div>
+                        <div class="columns small-12 medium-9">
+                            <h3 class="headline-5">
+                                <a class="link--yellow" href="/innovation/<%= podcast["slug"] %>" title="Listen to this episode now"><%= podcast["title"] %></a>
+                            </h3>
+                            <div class="person hide-for-medium">
+                                <%= partial("partials/snippets/person", :locals => { :p => podcast["guest"] }) %>
+                            </div>
+                            <p>
+                                <% if podcast.has_key?("pub_date") %>
+                                    <span class="pub-date"><%= podcast['pub_date'].strftime('%B %-d, %Y') %></span>
+                                <% end %>
+                                <% if podcast.has_key?("tags") %>
+                                    <% podcast["tags"].each do |tag| %>
+                                        <% if tag.has_key?("tag_full") %>
+                                            <span class="label info round faded"><%= tag["tag_full"] %></span>
+                                        <% end %>
+                                    <% end %>
+                                <% end %>
+                            </p>
+                            <% if podcast.has_key?("soundcloud_embed") %>
+                                <div class="media-object">
+                                    <%= podcast['soundcloud_embed'] %>
+                                </div>
+                            <% end %>
+                            <% if podcast.has_key?("summary") %>
+                                <div class="innovation--podcast-entry__summary">
+                                    <%= Kramdown::Document.new(podcast["summary"]).to_html %>
+                                    <a class="button hollow hollow-inverted" href="/innovation/<%= podcast["slug"] %>" title="Listen now">Listen now <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                <% end %>
+                <p class="text-center"><a class="link--yellow" href="/podcast/">See More Podcasts <i class="fa fa-angle-right" aria-hidden="true"></i></a></p>
+            </div>
+        </div>
+    </section>
+</div>
+<%= partial "/partials/section-promos/dhsf-video", :locals => { :align => "left" } %>

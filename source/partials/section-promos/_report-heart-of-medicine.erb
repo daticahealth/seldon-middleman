@@ -1,0 +1,18 @@
+<%
+if defined?(:style) && style == "dark"
+    bgImage = "https://images.contentful.com/189dvqdsjh46/1jodnmVv0M6mq884U2k66O/2038cf304612e1b9de5a5663801a0569/report-infographic-bg-gradient-large.jpg"
+else
+    bgImage = "https://images.contentful.com/189dvqdsjh46/281h3pkZSouk8060u4YKCi/4b55a1ebf96024b34ebe0be6c562c3c3/report-infographic-banner-bg.jpg"
+end
+%>
+<section class="section-article container-image--center container-color--gray-light" data-interchange="[[<%= bgImage %><%= image_featured_small %>, small], [<%= bgImage %><%= image_featured_medium %>, medium], [<%= bgImage %><%= image_featured_large %>, large]]">
+    <div class="row<% if defined?(align) && align == "right" %> align-right<% end %>">
+        <div class="columns small-12 medium-8 large-6">
+            <div class="callout callout--large drop text-center-for-small">
+                <h2 class="headline-3">The Heart of Medicine: Transformation Through Technology</h2>
+                <p>Follow along as Datica examines how Digital Health can help transform healthcare. Our ongoing series facilitates timely, relevant conversations with healthcare innovators through our podcast, quarterly industry reports, and more.</p>
+                <p class=""><a href="/innovation/heart-of-medicine-report-spring-2017/" title="Get your free industry report" class="button button--primary">Download our latest industry report <i class="fa fa-angle-right"></i></a></p>
+            </div>
+        </div>
+    </div>
+</section>

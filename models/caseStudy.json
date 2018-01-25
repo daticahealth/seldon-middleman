@@ -1,0 +1,189 @@
+{
+  "name": "Case Studies",
+  "description": "Customer case studies. Simple landing page that drives a form/download.",
+  "displayField": "caseStudyTitle",
+  "fields": [
+    {
+      "id": "caseStudyTitle",
+      "name": "Case Study Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "slug",
+      "name": "slug",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "featured",
+      "name": "Featured?",
+      "type": "Boolean",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "tags",
+      "name": "Tags",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkContentType": [
+              "products",
+              "tags"
+            ]
+          }
+        ],
+        "linkType": "Entry"
+      }
+    },
+    {
+      "id": "customer",
+      "name": "Customer",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "customers"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "formId",
+      "name": "Form ID",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "mediaObject",
+      "name": "Media Object",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "customerQuote",
+      "name": "Customer Quote",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "quotes"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "relatedProduct",
+      "name": "Associated Product or Service",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "products"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "valueProp",
+      "name": "Value Proposition",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "body",
+      "name": "Case Study Body",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    }
+  ],
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "189dvqdsjh46"
+      }
+    },
+    "id": "caseStudy",
+    "type": "ContentType",
+    "createdAt": "2016-08-19T18:55:42.294Z",
+    "updatedAt": "2017-01-13T19:51:50.735Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedCounter": 10,
+    "version": 20,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedVersion": 19,
+    "firstPublishedAt": "2016-08-19T18:55:42.575Z",
+    "publishedAt": "2017-01-13T19:51:50.717Z"
+  }
+}

@@ -1,0 +1,5 @@
+<% sitemap.resources.each do |page| %>
+<% if page.url =~ /^(\/guide\/)/ && page.data.is_index != true %>
+    <li><%= link_to page.data.navTitle, page.url, :class => "link-light", :title => page.data.summary %></li>
+  <% end %>
+<% end %>

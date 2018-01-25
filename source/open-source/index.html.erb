@@ -1,0 +1,57 @@
+---
+title: "Datica Open Source Contributions"
+summary: "Building the future of healthcare together"
+author: "Datica, Inc. Engineering Team"
+tags: "open source, OSS, policies, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "January 1, 2017"
+share_image: "https://images.contentful.com/189dvqdsjh46/29pEL9FKGwmQ6GMKaeKmKc/f882650ba0219b6f9e35b8da68c95dab/open-source-2-share.jpg?w=1200"
+customCSS: "about-us"
+layout: "company"
+---
+
+<section class="section-article">
+    <div class="row align-center">
+        <div class="columns small-12 large-8 text-center">
+            <div class="group">
+                <%= inline_svg("icon-git", class: "icon-size--medium icon-with-margin--bottom svg-color--black") %>
+                <h1 class="headline-6 subheader--spaced-out text--black">Open Source</h4>
+                <h2 class="headline-3 text--black">Building the future of healthcare.</h2>
+                <p class="lead">Datica's mission is to help you focus on fixing healthcare without spending all of your time on HIPAA compliance. By open-sourcing our own company policies and other resources, we hope other healthcare companies will benefit.</p>
+            </div>
+            <%= 
+                partial "partials/snippets/button", 
+                    :locals => {
+                        :label => "Join us on Github", 
+                        :title => "Explore Datica git repos", 
+                        :url => "https://github.com/daticahealth", 
+                        :rel => "external", 
+                        :button_classes => "button button--primary button--large", 
+                        :icon => "icon-github-octocat", 
+                        :icon_color => "white", 
+                        :icon_align => "right"
+                    }
+            %>
+        </div>
+    </div>
+</section>
+<section class="section-article container-color--gray-dark-grad-top-bottom-noise">
+     <div class="row align-center">
+        <div class="columns small-12 large-8 text-center group">
+            <h4 class="headline-6 subheader--spaced-out">Datica Open Source Resources</h4>
+        </div>
+    </div>
+    <div class="row align-center small-up-1 medium-up-2 large-up-3">
+        <% data.views.opensource.projects.each do |project| %>
+            <div class="columns">
+                <div class="callout callout--dark-alpha">
+                    <%= inline_svg(project.icon, class: "icon-size--medium icon-with-margin--bottom #{project['cssClass']}") %>
+                    
+                    <h4 class="headline-5 color-white"><%= project["title"]%></h4>
+                    <p class="faded"><%= project["description"]%></p>
+                    <p><a class="block-yellow-link" href="<%= project['url']%>"><%= project["cta"]%> <i class="fa fa-angle-right"></i></a></p>
+                    <%#= inline_svg("small/icon-chevron-right", class: "icon-inline svg-color--yellow-glow") %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</section>

@@ -1,0 +1,307 @@
+{
+  "name": "People",
+  "description": "Humans. Can be a team member, customer, or interviewee.",
+  "displayField": "fullname",
+  "fields": [
+    {
+      "id": "fullname",
+      "name": "Name, Full",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "slug",
+      "name": "slug",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "unique": true
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "name",
+      "name": "Name, Short",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": true,
+      "omitted": true
+    },
+    {
+      "id": "personType",
+      "name": "Person Type",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "in": [
+            "Featured Team Leader",
+            "Team Leader",
+            "Team Member",
+            "Guest",
+            "Customer",
+            "Datica Alumni"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "sortWeight",
+      "name": "Sort Weight",
+      "type": "Integer",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "unique": true
+        },
+        {
+          "range": {
+            "min": 1,
+            "max": 100
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "role",
+      "name": "Role",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 128
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "profilePic",
+      "name": "Profile Pic",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ],
+          "message": "That's not an image format. Please use JPG files for photos, PNG for line art."
+        },
+        {
+          "assetImageDimensions": {
+            "width": {
+              "min": null,
+              "max": 2200
+            },
+            "height": {
+              "min": null,
+              "max": 2200
+            }
+          },
+          "message": "No less than 400px wide (that's too small) and no more than 2000px wide (too big)."
+        },
+        {
+          "assetFileSize": {
+            "max": 2097152
+          },
+          "message": "Photo needs to be under 2mb"
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "featuredImage",
+      "name": "Featured Image",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ]
+        },
+        {
+          "assetImageDimensions": {
+            "width": {
+              "min": null,
+              "max": 3200
+            },
+            "height": {
+              "min": null,
+              "max": null
+            }
+          }
+        },
+        {
+          "assetFileSize": {
+            "max": 1228800
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "email",
+      "name": "Email",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "^\\w[\\w.-]*@([\\w-]+\\.)+[\\w-]+$"
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "profileTwitter",
+      "name": "Twitter",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "[a-zA-Z0-9_]{1,}",
+            "flags": "g"
+          },
+          "message": "Those characters aren't in twitter handles."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "profileLinkedin",
+      "name": "LinkedIn",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "[a-zA-Z0-9_]{1,}",
+            "flags": "g"
+          },
+          "message": "Must be a valid linkedin profile."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "bioShort",
+      "name": "Bio, Short",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "bio",
+      "name": "Bio, Longer",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "profileURL",
+      "name": "Profile link",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
+          },
+          "message": "This must be a full URL"
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "location",
+      "name": "Location, Based in",
+      "type": "Location",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    }
+  ],
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "189dvqdsjh46"
+      }
+    },
+    "id": "person",
+    "type": "ContentType",
+    "createdAt": "2016-08-13T00:41:40.090Z",
+    "updatedAt": "2017-08-30T16:40:05.327Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedCounter": 37,
+    "version": 74,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedVersion": 73,
+    "firstPublishedAt": "2016-08-13T00:41:40.547Z",
+    "publishedAt": "2017-08-30T16:40:05.327Z"
+  }
+}

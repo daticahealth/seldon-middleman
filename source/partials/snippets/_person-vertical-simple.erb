@@ -1,0 +1,59 @@
+<% 
+if defined?(use_headers) && use_headers == true
+    tag_1 = "h3"
+    tag_2 = "h4"
+else
+    tag_1 = "div"
+    tag_2 = "div"
+end
+case p.person_type
+    when "Datica Executives", "Datica VP", "Datica Directors"
+        datican = true
+end
+if p.has_key?("bio_short")
+    person_summary = p.bio_short
+else
+    person_summary = "Learn more about " + p.fullname
+end
+
+if p.has_key?('bio')
+    has_bio = 
+        %(
+            <em> Read full bio </em><svg class='icon-inline svg-color--white' xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36' preserveAspectRatio='xMidYMid meet'><path fill-rule='evenodd' d='M29.608 18.781a1.325 1.325 0 0 0 0-1.88L14.1 1.39a1.325 1.325 0 0 0-1.881 0l-3.47 3.47a1.325 1.325 0 0 0 0 1.881l11.099 11.099L8.749 28.939a1.325 1.325 0 0 0 0 1.88l3.47 3.47a1.325 1.325 0 0 0 1.88 0l15.51-15.508z'/></svg>
+        )
+else
+    has_bio = nil
+end
+# if p.has_key?('bio')
+#     has_bio = %(<em> Read full bio </em>)
+#     inline_svg('small/icon-angle-left', class: 'icon-inline svg-color--white')
+# end
+%>
+
+<div class="person-simple<% if defined?(classes) %> <%= classes %><% end %>">
+    <% if p.has_key?("profile_pic") %>
+        <% if datican == true %>
+            <a href="/about/<%= p["slug"] %>" title="<%= person_summary %>">
+        <% end %>
+        <span data-tooltip aria-haspopup="true" class="" data-alignment="center" data-tooltip-width="400" data-fade-in-duration="0" data-fade-out-duration="400" data-allow-html="true" data-disable-hover="false" data-v-offset="5" data-click-open="false"  title="<span class='text-small'><%= person_summary %><%= has_bio %></span>">
+            <img class="avatar avatar--large-mid circle" src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=250&h=250&fm=jpg&q=60" alt="<%= person_summary %>">
+        </span>
+        <% if datican == true %>
+            </a>
+        <% end %>
+    <% end %>
+    <div class="">
+        <<%= tag_1 %> class="person-name">
+            <% if datican == true %>
+                <a href="/about/<%= p["slug"] %>" title="<%= p["fullname"] %>">
+                    <%= p["fullname"] %>
+                </a>
+            <% else %>
+                <%= p["fullname"] %>
+            <% end %>
+        </<%= tag_1 %>>
+         <% if p.has_key?("role") %>
+            <<%= tag_2 %> class="person-title"><%= p["role"] %></<%= tag_2 %>>
+        <% end %>
+    </div>
+</div>

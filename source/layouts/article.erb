@@ -1,0 +1,34 @@
+<%# Article Layout Template - Datica 2017 %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%# Meta tags %>
+        <%= partial "partials/head/tags" %>
+        <%# Icons %>
+        <%= partial "partials/head/icons" %>
+        <%# Assets %>
+        <%= stylesheet_link_tag "seldon" %>
+        <% if current_page.data.has_key?("customCSS") %>
+            <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
+        <% end %>
+    </head>
+    <body class="<%= page_classes %>">
+        <%#= partial "partials/snippets/alert-ribbon" %>
+        <a name="top"></a>
+        <%= partial "partials/snippets/header", :locals => { :style => "dark" } %>
+        <%= yield %>
+        <% if build? %>
+            <%# GA %>
+            <%= partial "partials/head/hubspot" %>
+            <%= partial "partials/head/ga" %>
+        <% end %>
+        <%= partial "partials/snippets/footer" %>
+        <%= partial "partials/head/scripts-footer" %>
+        <%# Custom JS files %>
+        <% if current_page.data.has_key?("customJS") %>
+            <% current_page.data.customJS.split(",").each do |filename| %>
+                <script src="<%= filename.strip %>"></script>
+            <% end %>
+        <% end %>
+    </body>
+</html>

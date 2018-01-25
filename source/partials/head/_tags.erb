@@ -1,0 +1,57 @@
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title><%= current_page.data.title %></title>
+<meta name="description" content="<%= current_page.data.summary %>">
+<% if current_page.data.has_key?("hide_from_sitemap") %>
+    <meta name="robots" content="noindex,nofollow,noodp">
+    <meta name="googlebot" content="noindex,nofollow">
+<% end %>
+<meta name="topic" content="<%= current_page.data.title %>">
+<meta name="classification" content="website">
+<meta name="url" content="<%= site_url %>">
+<meta name="keywords" content="heathcare, <%= current_page.data.tags %>">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="author" content="<%= current_page.data.author %>">
+<meta property="article:published_time" content="<%= current_page.data.date %>">
+<meta property="og:description" content="<%= current_page.data.summary %>">
+<meta property="og:title" content="<%= current_page.data.title %>">
+<meta itemprop="og:headline" content="<%= current_page.data.title %>" />
+<% if current_page.data.has_key?("ogType")%>
+    <meta property="og:type" content="<%= current_page.data.ogType %>">
+<% else %>
+    <meta property="og:type" content="website">
+<% end %>
+<meta property="og:url" content="<%= site_url + current_page.url %>">
+<meta property="og:locale" content="en_US">
+<meta property="twitter:site" content="<%= twitter_handle %>">
+<meta property="twitter:creator" content="<%= twitter_handle %>">
+<meta property="twitter:title" content="<%= current_page.data.title %>">
+<meta property="twitter:description" content="<%= current_page.data.summary %>">
+
+<meta class="swiftype" name="title" data-type="string" content="<%= current_page.data.title %>" />
+<meta class="swiftype" name="body" data-type="text" content="<%= current_page.data.summary %>" />
+<meta class="swiftype" name="url" data-type="enum" content="<%= site_url + current_page.url %>" />
+<meta class="swiftype" name="tags" data-type="string" content="<%= current_page.data.tags %>" />
+
+<link rel="canonical" href="<%= site_url + current_page.url %>">
+<% if current_page.data.has_key?("share_image") %>
+    <meta property="og:image" content="<%= current_page.data.share_image %>">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="<%= current_page.data.share_image %>">
+<% elsif current_page.data.has_key?("featured_image") %>
+    <meta property="og:image" content="<%= current_page.data.post_featured_image %>">
+	<meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="<%= current_page.data.post_featured_image %>">
+<% else %>
+    <meta property="og:image" content="<%= image_share_default %>">
+	<meta property="twitter:card" content="summary">
+    <meta property="twitter:image" content="<%= image_share_default %>">
+<% end %>
+<link rel="canonical" href="<%= site_url + current_page.url %>">
+<%# VWO AB testing snippet
+<script type='text/javascript'>
+var _vwo_code=function(){var a=290561,b=2e3,c=2500,d=!1,e=!1,f=document;return{use_existing_jquery:function(){return d},library_tolerance:function(){return c},finish:function(){if(!e){e=!0;var a=f.getElementById("_vis_opt_path_hides");a&&a.parentNode.removeChild(a)}},finished:function(){return e},load:function(a){var b=f.createElement("script");b.src=a,b.type="text/javascript",b.innerText,b.onerror=function(){_vwo_code.finish()},f.getElementsByTagName("head")[0].appendChild(b)},init:function(){settings_timer=setTimeout("_vwo_code.finish()",b);var c=f.createElement("style"),d="body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}",e=f.getElementsByTagName("head")[0];return c.setAttribute("id","_vis_opt_path_hides"),c.setAttribute("type","text/css"),c.styleSheet?c.styleSheet.cssText=d:c.appendChild(f.createTextNode(d)),e.appendChild(c),this.load("//dev.visualwebsiteoptimizer.com/j.php?a="+a+"&u="+encodeURIComponent(f.URL)+"&r="+Math.random()),settings_timer}}}();_vwo_settings_timer=_vwo_code.init();
+</script>
+%>

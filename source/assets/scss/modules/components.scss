@@ -1,0 +1,236 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+@import '../../../../node_modules/foundation-sites/scss/components/_badge.scss';
+@import '../modules/colors';
+@import '../modules/functions';
+
+// Breadcrumb nav: http://foundation.zurb.com/sites/docs/breadcrumbs.html
+.breadcrumb {
+    li {
+        &:not(:last-child)::after {
+            content: "\203A"; // a '›' http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/
+        }
+    }
+}
+blockquote + .media-object, .blockquote-info { // line person/info up with quote indent
+    margin-left: 1.5rem;
+}
+
+// .person & .avatars moved to modules/people.scss - AW
+
+// Labels are a basic inline wrapper for things like badges. http://foundation.zurb.com/sites/docs/label.html
+.label {
+    font-weight: $font-weight-mid;
+    opacity: 0.7;
+    // font-weight: $font-weight-mid;
+    &.round { // this is normally in Foundation, seems to be missing
+        border-radius: 1000px;
+    }
+    &-light {
+        // background-color: $gray-6;
+        opacity: 0.5;
+    }
+    &-hollow {
+        background-color: transparent;
+        border: 1px solid darken($label-background, 60%);
+        color: darken($label-background, 60%);
+        &--inverted {
+            background-color: transparent;
+            border: 1px solid white(0.7);
+            color: white(0.7);
+        }
+    }
+    &.info { // very low contrast
+        color: white;
+        background-color: transparentize($gray-7, 0.2);
+    }
+    &.success { // coloring this manually, as other ZF defaults are blue
+        color: white;
+        background-color: $color_green;
+    }
+}
+// Pills are functionally identical to "labels". We should unify these two someday. - AW
+.pill {
+    display: inline-block;
+    padding: rem-calc(3px) rem-calc(6px);
+    @include border-radius(5px);
+    text-transform: uppercase;
+    font-size: rem-calc(12px);
+    font-weight: $font-weight-mid;
+    &--yellow{
+        color: darken(#CEBA65, 30%);
+        background-image: -webkit-linear-gradient(#FFFDAA 0%, #FFF871 100%);
+        background-image: -o-linear-gradient(#FFFDAA 0%, #FFF871 100%);
+        background-image: linear-gradient(#FFFDAA 0%, #FFF871 100%);
+        @include shadow-anarchy(inset 0 -1px 1px 0 #CEBA65);
+    }
+    &--green{
+        color: darken($color_aqua-glow, 45%);
+        background-image: -webkit-linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
+        background-image: -o-linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
+        background-image: linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
+        @include shadow-anarchy(inset 0 -1px 1px 0 darken($color_aqua-glow, 30%));
+    }
+}
+
+.alert {
+    &-ribbon {
+        &--content {
+            padding: 0.5rem 1.8rem; // approx. with site nav
+            // height: 2rem;
+            // @include breakpoint (medium) {
+            //     height: 3vw;                
+            // }
+            // text-align: center;
+            &.menu { // when using zf .menu elements as children. Useful for aligning across breakpoints.
+                li {
+                    line-height: 1.2em;
+                    margin: 0 0.5em 0 0.5em; // trims default space below items, spaces them out horiz. a bit. Relative units track with text sizing
+                }
+            }
+        }
+        .close-button {
+            line-height: 0.5em;
+        }
+    }
+}
+
+// CTA containers
+.cta {
+    text-align: center;
+    @include breakpoint(medium up){
+        text-align: left;
+        padding: 2rem !important;
+    }
+    &--image{ // only used in full-image CTAs
+        margin-bottom: 2rem;
+        padding: 0 !important;
+        overflow: hidden;
+        border-radius: $global-radius;
+    }
+    &--icon{
+        max-width: $thing-l; // 4 rem/64px
+        max-height: $thing-l;
+        @include breakpoint(medium up){
+            margin-bottom: 1rem;
+            float: left;
+        }
+    }
+    &--medium {
+        max-width: initial;
+        @include breakpoint(medium){
+            max-width: 50%;
+        }
+        @include breakpoint(large){
+            max-width: initial;
+        }
+    }
+    &--body{
+        &-right {
+            // float: right;
+            @include breakpoint(medium up){
+                margin-left: 5.5rem;
+            }
+        }
+    }
+    // &--header{
+    // }
+    &--desc{
+        margin-bottom: 1.5rem;
+    }
+    &--button{
+        @include breakpoint(small only){
+            width: 100%;
+        }
+        margin-bottom: 0;
+    }
+}
+.share {
+    $offset: 5.5rem; // how far we're sticking this thing off the ledge
+    &--item { // li's
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+    }
+    &-icons {
+        // @include breakpoint(xlarge up){
+        // }
+        &.horizontal {
+
+        }
+        &.vertical {
+            display: none;
+            // position: relative;
+            // overflow: hidden;
+            // li {
+            //     float: left;
+            // }
+            // usually breakpoint() works great - we need an offset/earlier trigger point. This pulls from 'master list' in settings.scss:213
+            // PS with any custom breakpoints: always use min-width. Wider (towards desktop) always gets added after 'defaults' for small widths. - AW
+            @media screen and (min-width: rem-calc(map-get($breakpoints, xlarge)) + $offset + 2rem) {
+                display: inline;
+                position: absolute;
+                margin-left: -$offset;
+                li {
+                    float: none;
+                    text-align: center;
+                    // margin: 0; // 0 1rem 0;
+                }
+            }
+        }
+    }
+    &--icon {
+        cursor: pointer;
+        @include fx-hover-nudge;
+        padding-bottom: 0.8rem;
+        &-top { // top item, just needs adjustment
+            max-height: 2.2rem;
+            @include breakpoint(xlarge up){
+                max-height: 3rem;
+                padding-bottom: 0.8rem;
+            }
+        }
+    }
+}
+// .share-icons {
+//     li {
+//         padding: 0.8rem;
+//     }
+//     // @include breakpoint (xlarge) { // hug left side if wide screen
+//     //     position: absolute;
+//     //     top: 2rem;
+//     //     left: 2rem;
+//     //     background-color: white(0.5);
+//     //
+//     // }
+// }
+
+// I have no idea what to name this thing
+.waypoint {
+    section > & {
+        margin-top: 1rem;
+        margin-top: 3vw;
+    }
+    text-align: center;
+    // padding-top: 1rem;
+    color: inherit; //pull from parent container color
+    &-title {
+        @include spaced-out;
+        text-transform: uppercase;
+        opacity: 0.6;
+        font-weight: $font-weight-light;
+    }
+    &-icon {
+
+    }
+}
+.blog-subscription {
+    max-width: 38rem;
+    label {
+        display: none;
+    }
+    .button {
+        margin-bottom: 0;
+    }
+}
+

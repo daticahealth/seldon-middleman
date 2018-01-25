@@ -1,0 +1,144 @@
+---
+header: "The Healthcare Innovators Podcast"
+subheader: "How does healthcare innovate? Datica explores this topic in a new series of interviews with several of the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
+ogType: article
+layout: basic
+customCSS: "innovation"
+customJS: "/public/js/article.js"
+---
+<%
+p = locals[:item]
+pod_summary = Kramdown::Document.new(p.summary).to_html
+
+current_page.data.title = p["title"] + " | Healthcare Innovators Podcast"
+current_page.data.summary = safe_summary(p.summary)
+current_page.data.share_image = "https://images.contentful.com/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/bc7605c8d6702518cedcedf7cf0de3bb/podcast-art-share-2018.png"
+if p.has_key?("tags")
+    current_page.data.tags = get_tag_list(p["tags"])
+else
+    current_page.data.tags = "healthcare, blog, IT"
+end
+if p.has_key?("author")
+    current_page.data.author = p["author"]["fullname"]
+else
+    current_page.data.author = "Datica, Inc."
+end
+if p.has_key?("pub_date")
+    current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
+else
+    current_page.data.date = "January 1, 2017"
+end
+%>
+
+<div class="container-color--dark-alt container-image--bottom" data-interchange="[/public/img/art/art-sound-bars-bg-small.svg, small], [/public/img/art/art-sound-bars-bg.svg, medium]">
+    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+    <section class="section-article">
+        <div class="row align-middle align-center">
+            <% if p.has_key?("guest") %>
+                <div class="columns small-8 medium-3 large-2">
+                    <img src="<%= p["guest"]["profile_pic"]["url"] %>?fit=thumb&w=300&h=300&f=face" class="avatar circle" alt="<%= p["guest"]["fullname"] %>">
+                </div>
+            <% end %>
+            <div class="columns small-12 medium-9 large-10 featured-post">
+                <div class="subhead--spaced headline-6">Podcast</div>
+                <h1 class="headline-3"><%= p["title"] %></h1>
+                <p class="lead">
+                    <%= partial "/partials/snippets/pubdate", :locals => p %>
+                    <% if p.has_key?("tags") %>
+                        &nbsp;
+                        <% p["tags"].each do |tag| %>
+                            <% if tag.has_key?("tag_full") %>
+                                <span class="label label-hollow--inverted round"><%= tag["tag_full"] %></span>
+                            <% end %>
+                        <% end %>
+                    <% end %>
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+<section class="section-article container-color--white">
+    <div class="row align-middle">
+        <div class="columns small-12 large-8">
+            <% if p.has_key?("soundcloud_embed") %>
+                <p><%= p["soundcloud_embed"] %></p>
+            <% end %>
+            <% if p.has_key?("summary") %>
+                <div class="lead group">
+                    <%= Kramdown::Document.new(p["summary"]).to_html %>
+                </div>
+            <% end %>
+        </div>
+        <aside class="columns small-12 large-4 section--sidebar">
+            <div class="group">
+                <%= partial "innovation/partials/subscribe" %>
+            </div>
+        </aside>
+    </div>
+    <div class="row">
+        <div class="columns small-12 large-8">
+            <article class="content-dynamic">
+                <div class="section--body group"><%= Kramdown::Document.new(p["post"]).to_html %></div>
+                <div class="row callout--gray-light">
+                       <% if p.has_key?("guest") %>
+                           <div class="columns small-12 medium-6">
+
+                                   <h3 class="headline-5 text-center">Today's Guest</h3>
+                                   <%= partial("partials/snippets/person", :locals => { :p => p["guest"] }) %>
+                                   <% if p["guest"].has_key?("bio_short") %>
+                                       <%= Kramdown::Document.new(p["guest"]["bio_short"]).to_html %>
+                                   <% end %>
+                                   <% if p["guest"].has_key?("bio") %>
+                                       <%= Kramdown::Document.new(p["guest"]["bio"]).to_html %>
+                                   <% end %>
+                           </div>
+                       <% end %>
+                       <% if p.has_key?("author") %>
+                           <div class="columns small-12 medium-6">
+
+                                   <h3 class="headline-5 text-center">Our Interviewer</h3>
+                                   <%= partial("partials/snippets/person", :locals => { :p => p["author"] }) %>
+                                   <% if p["author"].has_key?("bio_short") %>
+                                       <%= Kramdown::Document.new(p["author"]["bio_short"]).to_html %>
+                                   <% end %>
+                           </div>
+                       <% end %>
+               </div>
+               <% if p.has_key?("cta_ref") %>
+                   <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
+               <% end %>
+                <% previous_item = get_previous_item(data.site.podcast, p, "pub_date") %>
+                <aside class="row">
+                    <% if previous_item != nil %>
+                        <div class="columns small-12 medium-6">
+                            <%= partial("partials/snippets/podcast-summary", :locals => { :podcast => previous_item, :hideSummary => true, :itemLabel => "Previous Episode:" }) %>
+                        </div>
+                    <% end %>
+                    <% next_item = get_next_item(data.site.podcast, p, "pub_date") %>
+                    <% if next_item != nil %>
+                        <div class="columns small-12 medium-6">
+                            <%= partial("partials/snippets/podcast-summary", :locals => { :podcast => next_item, :hideSummary => true, :itemLabel => "Up Next:" }) %>
+                        </div>
+                    <% end %>
+                </aside>
+            </article>
+        </div>
+        <aside class="columns small-12 large-4 section--sidebar">
+            <% if p.has_key?("key_takeaways") %>
+                <div class="group">
+                    <h3 class="headline-4">Key Takeaways</h3>
+                    <%= Kramdown::Document.new(p["key_takeaways"]).to_html %>
+                </div>
+                <% if p.has_key?("discovery_topic") %>
+                    <div class="group">
+                        <%= partial "partials/cards/discover", :locals => { :post => p["discovery_topic"], :classes => "group" } %>
+                        <% if p.discovery_topic.slug == "ehr-integrations" %>
+                          <%= partial "partials/ctas/ad-webinar" %>
+                      <% end %>
+                    </div>
+                <% end %>
+            <% end %>
+            <p><a class="button hollow expanded" href="/podcast/" title="All Podcast Episodes"><i class="fa fa-angle-left" aria-hidden="true"></i> All Podcast Episodes</a></p>
+        </aside>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+<div class="column">
+    <div class="callout--gray-light">
+        <p>
+            <img class="logo--customer" src="<%= post["customer"]["customer_logo_url"] %>" alt="<%= post["customer"]["company_name"] %> Logo" />
+        </p>
+        <h5><%= post["case_study_title"] %></h5>
+        <p class="">
+            <%= post["customer"]["customer_story_short"] %>
+        </p>
+        <hr>
+        <blockquote cite="">
+            <%= post["customer_quote"]["quote_body"] %>
+        </blockquote>
+        <%= partial("partials/snippets/person", :locals => { :p => post["customer"] }) %>
+        
+    </div>
+    <a class="button" href="/customer/<%= post["slug"] %>">Read about <%= post["customer"]["company_name"] %></a>
+</div>

@@ -1,0 +1,12 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+@import '../modules/functions';
+// Section rules
+// Solutions page section -- name the page you're creating files for since this maps to a template, and not a single view - RR
+.solutions-main-section{
+    [class*='icon-']{
+        display: block;
+        margin: 0 0 rem-calc(10px) 0;
+    }
+}

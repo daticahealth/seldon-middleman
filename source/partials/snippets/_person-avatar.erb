@@ -1,0 +1,54 @@
+<% 
+if defined?(use_headers) && use_headers == true
+    tag_1 = "h3"
+    tag_2 = "h4"
+else
+    tag_1 = "div"
+    tag_2 = "div"
+end
+case p.person_type
+    when "Datica Executives", "Datica VP", "Datica Directors"
+        datican = true
+end
+if p.has_key?("bio_short")
+    person_summary = p.bio_short
+else
+    person_summary = "Learn more about " + p.fullname
+end
+unless p.has_key?("role")
+    p.role = nil
+end
+# can be: small, medium, large, large-mid, xlarge via modules/people.scss:32 .avatar {}
+unless defined?(size)
+    size = "medium"
+end
+case size
+    when "small"
+        img_size = 48
+    when "medium"
+        img_size = 88
+    when "large"
+        img_size = 128
+    when "large-mid"
+        img_size = 224
+    when "xlarge"
+        img_size = 350
+    else
+        img_size = 88
+end
+%>
+
+<span class="person-avatar<% if defined?(classes) %> <%= classes %><% end %>">
+    <% if p.has_key?("profile_pic") %>
+        <% if datican == true %>
+            <a href="/about/<%= p["slug"] %>" title="<%= p.fullname %>">
+        <% end %>
+        <span data-tooltip aria-haspopup="true" class="" data-fade-in-duration="20" data-fade-out-duration="100" data-allow-html="true" data-disable-hover="false" data-v-offset="0" data-click-open="false"  title="<%= p.fullname %>, <%= p.role %>">
+            <img class="avatar avatar--<%= size %> circle" src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=<%= img_size %>&h=<%= img_size %>&fm=jpg&q=60" alt="<%= p.fullname %>">
+        </span>
+        <% if datican == true %>
+                
+            </a>
+        <% end %>
+    <% end %>
+</span>

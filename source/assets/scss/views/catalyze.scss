@@ -1,0 +1,25 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../modules/functions';
+
+// Sections
+.catalyze-content-section{
+    color: $color_white;
+    h1{
+        font-size: rem-calc(38px);
+        font-weight: $font-weight-light;
+        line-height: 1.2;
+    }
+    h2{
+        font-size: rem-calc(25px);
+        font-weight: $font-weight-bold;
+        line-height: 1.2;
+    }
+    p{
+        color: $color_light;
+    }
+    .person-name{
+        a{color: $color_white;}
+    }
+}
+// Blocks

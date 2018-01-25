@@ -1,0 +1,11 @@
+@import '../settings';
+@import '../modules/functions';
+
+.spotlight {
+    &--lead {
+        opacity: 1;
+        p {
+            color: $gray-3;
+        }
+    }
+}

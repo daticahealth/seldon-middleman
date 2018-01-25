@@ -1,0 +1,18 @@
+<section class="container-color--dark-alt pad">
+    <div class="row align-justify">
+        <% previous_item = get_previous_item(data.site.discover, p, "title") %>
+        <% if previous_item != nil %>
+            <div class="column">
+                <i class="fa fa-arrow-circle-left"></i> Discover <a class="link--white" href="/discover/<%= previous_item["slug"] %>" title=""><%= previous_item["title"] %></a>
+                <p><%= previous_item["summary"] %></p>
+            </div>
+        <% end %>
+        <% next_item = get_next_item(data.site.discover, p, "title") %>
+        <% if next_item != nil %>
+            <div class="column text-right">
+                Discover <a class="link--white" href="/discover/<%= next_item["slug"] %>" title=""><%= next_item["title"] %></a> <i class="fa fa-arrow-circle-right"></i>
+                <p><%= next_item["summary"] %></p>
+            </div>
+        <% end %>
+    </div>
+</section>

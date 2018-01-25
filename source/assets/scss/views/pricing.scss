@@ -1,0 +1,92 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import '../modules/colors';
+@import '../modules/functions';
+
+$tab-border: 5px;
+.has-tip { // tooltip text styles, this needs to be scoped to this page. Maybe.
+    font-weight: initial;
+    // border-bottom: 1px dashed $gray-5;
+    &:after {
+        content: "\f05a"; // "\f129";
+        font-family: "FontAwesome";
+        opacity: 0.5;
+        font-size: 90%;
+        padding-left: 0.3em;
+    }
+}
+
+.tier {
+    $glow-r: 20px;
+    $glow-o: 0.4;
+    &-standard, &-ent { // bump em down
+        margin-top: 3rem;
+    }
+    &-standard{
+        .card {
+            border-top: $tab-border solid $color_prime-alt;
+        }
+    }
+    &-pro{
+        .card {
+            border-top: $tab-border solid $color_green;
+        }
+    }
+    &-ent{
+        .card {
+            border-top: $tab-border solid $color_deep-alt;
+        }
+    }
+    // &.reveal > .card {
+    //     border-top-width: $tab-border * 2;
+    // }
+}
+
+// mobile styles; modified zf tabs component
+.price {
+    &-panel {
+        background-color: white;
+        padding: 0;
+    }
+    &-info {
+        color: $gray-4;
+        margin-bottom: 1.5em;
+        li {
+            line-height: 1.3em;
+            margin-bottom: 0.5em;
+            i {
+                color: $gray-9;
+            }
+        }
+        &--price {
+            // font-weight: bold;
+            text-align: center;
+            padding: 0.3em;
+        }
+    }
+}
+ul#pricing-tabs {
+    text-align: center;
+    li.tabs-title {
+        margin-bottom: 0;
+        float: none;
+        display: inline-block;
+        border-top: $tab-border solid transparent;
+        // border-color: $color_prime-alt;
+        transition: all 130ms linear;
+        a {
+            padding: 0.8rem; // make tabs a bit more compact for smallest viewports
+            font-weight: bold;
+            color: rgba(0,0,0,0.6);
+        }
+        &.is-active {
+            background-color: white;
+            border-color: $color_prime-alt;
+            a {
+                color: black;
+            }
+        }
+    }
+}

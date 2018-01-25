@@ -1,0 +1,45 @@
+<%
+unless defined?(quote_id)
+    puts "The included partial needs a quote entry ID!"
+    quote_id = nil
+end
+the_quote = data.site.quotes[quote_id]
+unless defined?(container_color)
+    container_color = "container-gray-11"
+end
+if defined?(background)
+    section_attrs = %(class="section-article container-image--center #{container_color}" data-interchange="[#{background}, medium]")
+else
+    section_attrs = %(class="section-article #{container_color}")
+end
+%>
+<section id="section-video" <%= section_attrs %>>
+    <h3 class="headline-3 group text-center">Build <strong>Breakthrough Apps</strong></h3>
+    <div class="row">
+        <div class="columns small-12 medium-6">
+            <div class="responsive-embed widescreen"><iframe width="560" height="315" src="https://www.youtube.com/embed/oju3cVT5YBo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div>
+            <%= 
+            partial "partials/snippets/button", 
+                :locals => {
+                    :label => "Read the blog post", 
+                    :title => "Read more", 
+                    :url => "/blog/how-a-major-health-system-got-onto-aws-recapping-the-featured-session-today", 
+                    # :rel => "external", 
+                    :button_classes => "button hollow small right", 
+                    :icon => "icon-chevron-right", 
+                    :icon_color => "blue", 
+                    :icon_align => "right"
+                }
+            %>
+        </div>
+        <div class="columns small-12 medium-6">
+            <div class="group">
+                <blockquote class="quote--serif">
+                <%= Kramdown::Document.new(the_quote["quote_body"]).to_html %>
+                </blockquote>
+                <%= partial("partials/snippets/person", :locals => { :p => the_quote.customer, :company => the_quote.customer.company_name } ) %>
+                <!-- <h4 class="subhead--small text--spaced">Leadership Gallery</h4> -->
+            </div>
+        </div>
+    </div>
+</section>

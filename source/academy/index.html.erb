@@ -1,0 +1,265 @@
+---
+title: "Learn about HIPAA, HITRUST, HL7, FHIR, and more at the Datica Academy"
+summary: "The industry's leading resource for understanding complex healthcare topics"
+author: "Datica, Inc."
+tags: "training, education, HIPAA, HL7, FHIR, interoperability, EHR, integration, resource"
+date: "January 1, 2017"
+ogType: "article"
+share_image: "https://images.contentful.com/189dvqdsjh46/n9pqHc4Xp62uUSwciEe4C/ead1ba4e14e45c06639c5dea3d47b8ac/datica-academy-notebook-share.jpg?w=1200"
+layout: "basic"
+customCSS: "academy"
+---
+<%= partial "partials/snippets/header", :locals => { :style => "dark" } %>
+<section class="section-article">
+    <div class="row align-center">
+        <div class="columns small-12 medium-10 large-8 text-center group">
+            <h1 class="headline-2">The Datica Academy</h1>
+            <p>HIPAA is complicated, but easily learned. The Datica HIPAA and Interoperability Academy walks you through the intricacies of HIPAA, HL7, and FHIR—from the highest concepts to the deepest details.</p>
+            <p>Start with the basics, like why Protected Health Information (PHI) is central to HIPAA, then work your way towards advanced topics like FHIR and HL7.</p>
+        </div>
+    </div>
+</section>
+<section class="section-article container-gray-3">
+    <div class="row align-center">
+        <div class="columns small-12 large-6 text-center group">
+            <h2 class="headline-3">Datica Guides</h2>
+            <p class="lead">Authoritative Guides Written By Industry Experts</p>
+        </div>
+    </div>
+    <div class="masonry-group">
+        <% sorted_entries = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] } %>
+        <% sorted_entries.each do | id, guide_entry | %>
+            <div class="masonry-group--item">
+                <div class="card">
+                    <div class="card-section container-gray-11">
+                        <h3 class="headline-4"><a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>"><%= guide_entry["title"] %></a></h3>
+                    </div>
+                    <div class="card-section">
+                        <% if guide_entry.has_key?("image_thumb") %>
+                            <a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>">
+                                <img class="float-right" data-interchange="[<%= guide_entry.image_thumb.url %>?fit=thumb&w=600, medium]" width="40%">
+                            </a>
+                        <% end %>
+                        <%= Kramdown::Document.new(guide_entry["summary"]).to_html %>
+                        
+                    </div>
+                    <!-- <div class="card-divider card-divider--flush">
+                        <%#= 
+                        partial "partials/snippets/button", 
+                            :locals => {
+                                :label => "Get the Guide", 
+                                :title => "Get the Guide", 
+                                :url => "/guide/" + guide_entry.slug, 
+                                # :rel => "external", 
+                                :button_classes => "button button--primary card-button-override", 
+                                :icon => "icon-chevron-right", 
+                                :icon_color => "white", 
+                                :icon_align => "right"
+                            }
+                        %>
+                    </div>    --> 
+                </div>
+            </div>
+        <% end %>
+    </div>
+</section>
+<section class="section-article container-gray-12">
+    <div class="row align-center">
+        <div class="columns small-12 large-6 text-center group">
+            <h2 class="headline-3">Datica Academy Articles</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="columns small-12 medium-6">
+            <h3 class="headline-5">Search the Academy</h3>
+            <div id="academySearch" class="group filter-search input-nav input-nav--black">
+                <span class="input-nav--icon"><i class="fa fa-search"></i></span>
+                <input type="text" id="searchInput" onkeyup="filterList()" placeholder="Search in this list (hipaa, ehr, hitrust, etc.)">
+            </div>
+        </div>
+        <div class="columns small-12 medium-6">
+            <% # hiding until a solution for filtering with buttons arises.
+            # <ul id="filterButtonGroup" class="menu">
+            #     <li><button class="button js-tag active" onclick="filterSelection('all')"> Show all</button></li>
+            #     <li><button class="button js-tag" onclick="filterSelection('hipaa')"> HIPAA</button></li>
+            #     <li><button class="button js-tag" onclick="filterSelection('gdpr')"> GDPR</button></li>
+            #     <li><button class="button js-tag" onclick="filterSelection('hl7')"> HL7</button></li>
+            #     <li><button class="button js-tag" onclick="filterSelection('fhir')"> FHIR</button></li>
+            # </ul>
+            %>
+        </div>
+    </div>
+    <div id="articles" class="row">
+        <div id="articleList" class="no-bullet columns small-12 large-8 article-list">
+            <% sorted_entries = data.site.academy.to_a.sort_by{ |id, the_entry| the_entry['title'] } %>
+            <% sorted_entries.each do | id, entry | %>
+                <div id="id-<%= id %>" class="card callout--hover article-list--item group <% if entry.has_key?('tags') %><% entry['tags'].each_with_index do |tag, i| %><%= tag['tag_full'].downcase %> <% end %><% end %>" data-date-created="<%= entry["pub_date"].strftime("%B %-d, %Y") %>" data-title="<%= entry["title"] %>">
+                    <div class="card-section card-section--with-grid">
+                        <div class="row align-middle">
+                            <div class="columns small-12 medium-8">
+                                <h4 class="headline-4">
+                                    <a class="article-title" title="Learn about this topic" href="/academy/<%= entry["slug"] %>"><%= entry["title"] %></a>
+                                </h4>
+                            </div>
+                            <div class="columns small-12 medium-4">
+                                <span class="blog-date">
+                                    <%= inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5") %>
+                                    <%= entry["pub_date"].strftime("%B %-d, %Y") %>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="columns small-12 medium-8">
+                                <% if entry.has_key?("summary") %>
+                                    <p><%= plain_text(entry.summary) %></p>
+                                <% else %>
+                                    <p><%= truncate_words(entry["post"], :length => 20) %></p>
+                                <% end %>
+                            </div>
+                            <div class="columns small-12 medium-4">
+                                <% if entry.has_key?("author") %>
+                                    <%= partial("partials/snippets/person-small", :locals => { :p => entry["author"] }) %>
+                                <% end %>
+                                <% if entry.has_key?("tags") %>
+                                    <div>
+                                        <% entry["tags"].each do |tag| %>
+                                            <% if tag.has_key?("tag_full") %>
+                                                <span class="label info small round">
+                                                    <%= inline_svg("small/icon-tag", class: "icon-inline svg-color--white") %>
+                                                    <span class="article-item--tag"><%= tag["tag_full"] %></span></span>
+                                            <% end %>
+                                        <% end %>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <aside class="column" data-sticky-container>
+            <div class="sticky" data-sticky data-options="anchor: articles; stickyOn: large;">
+                <%= partial "partials/ctas/resources-compact", :locals => { :classes => "group" } %>
+                <%# to embed/pass a unique ID or specific entry, use this notation. %>
+                <%= partial("/partials/content/cta", :locals => { :p => data.site.cta["1CKHNq6V7eG4W20ygCWmei"] }) %>
+                <%# sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse! %>
+                <%# sorted_reports.take(1).each do | id, report | %>
+                    <%#= partial "partials/section-promos/report-promo-compact", :locals => { :p => report } %>
+                <%# end %>
+                <% sorted_discovery = data.site.discover.to_a.sort_by{ |id, post| post['title'] } %>
+                <% sorted_discovery.each do | id, post | %>
+                    <div id="discovery-<%= post.slug %>" class="discovery-link js-hidden">
+                    <%= partial "partials/cards/discover", :locals => { :post => post, :classes => "" } %>
+                   </div>
+                <% end %>
+            </div>
+        </aside>
+    </div>
+</section>
+<script>
+function hideWidgets() {
+    $('.discovery-link').addClass("js-hidden");
+    $('.discovery-link').removeClass("js-visible");
+}
+function showWidget(tag) {
+    hideWidgets();
+    $('#discovery-'+tag).addClass("js-visible");
+    $('#discovery-'+tag).removeClass("js-hidden");
+}
+function filterList() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('searchInput');
+    filter = input.value.toLowerCase();
+    hideWidgets();
+    // map certain keywords to discovery topic slugs
+    switch (filter) {
+        case "hipaa": case "compliance":
+            showWidget("hipaa-compliance");
+            break;
+        case "cloud":
+            showWidget("healthcare-cloud");
+            break;
+        case "integration": case "integrate": case "integrat": case "ehr":
+            showWidget("ehr-integrations");
+            break;
+        case "hitrust":
+            showWidget("hitrust");
+            break;
+        // default:
+        //     hideWidgets();
+    }
+    ul = document.getElementById("articleList");
+    li = ul.getElementsByClassName('article-list--item');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toLowerCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+            // $(li).addClass("js-visible");
+            // $(li).removeClass("js-hidden");
+        } else {
+            li[i].style.display = "none";
+            // $(li).addClass("js-hidden");
+            // $(li).removeClass("js-visible");
+        }
+    }
+}
+
+
+
+
+
+// // $("document").ready(function(){
+    
+// // }
+// filterSelection("all");
+// function filterSelection(c) {
+//     var x, i;
+//     x = document.getElementsByClassName("article-list--item");
+//     if (c == "all") c = "";
+//     for (i = 0; i < x.length; i++) {
+//         listRemoveClass(x[i], "js-visible");
+//         if (x[i].className.indexOf(c) > -1) listAddClass(x[i], "js-visible");
+//     }
+//     // console.log("filterSelection");
+// }
+
+// function listAddClass(element, name) {
+//     var i, arr1, arr2;
+//     arr1 = element.className.split(" ");
+//     arr2 = name.split(" ");
+//     for (i = 0; i < arr2.length; i++) {
+//         if (arr1.indexOf(arr2[i]) == -1) {
+//             element.className += " " + arr2[i];
+//         }
+//     }
+//     // console.log("listAddClass");
+// }
+
+// function listRemoveClass(element, name) {
+//     var i, arr1, arr2;
+//     arr1 = element.className.split(" ");
+//     arr2 = name.split(" ");
+//     for (i = 0; i < arr2.length; i++) {
+//         while (arr1.indexOf(arr2[i]) > -1) {
+//             arr1.splice(arr1.indexOf(arr2[i]), 1);
+//         }
+//     }
+//     element.className = arr1.join(" ");
+//     // console.log("listRemoveClass");
+// }
+
+// // Add active class to the current button (highlight it)
+// var btnContainer = document.getElementById("filterButtonGroup");
+// var btns = btnContainer.getElementsByClassName("js-tag");
+// for (var i = 0; i < btns.length; i++) {
+//     btns[i].addEventListener("click", function() {
+//         var current = document.getElementsByClassName("active");
+//         current[0].className = current[0].className.replace(" active", "");
+//         this.className += " active";
+//         // console.log(this);
+//     });
+// }
+</script>

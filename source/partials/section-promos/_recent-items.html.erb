@@ -1,0 +1,23 @@
+<% sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
+<% sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse! %>
+<% sorted_academy = data.site.academy.to_a.sort_by{ |id, academy| academy['pub_date'] }.reverse! %>
+<section class="container-gray-10 section-article">
+    <h3 class="headline-3 group text-center"><strong>Recently</strong> at Datica</h3>
+    <div class="row full-width align-center small-up-1 medium-up-3 large-up-3">
+    <% sorted_posts.take(1).each do | id, blog_entry | %>
+        <div class="column">
+            <%= partial "partials/cards/featured-blog", :locals => { :post => blog_entry, :style => "light", :size => "small", :show_type => true } %>
+        </div>
+    <% end %>
+    <% sorted_podcasts.take(1).each do | id, podcast_entry | %>
+        <div class="column">
+            <%= partial "partials/cards/featured-blog", :locals => { :post => podcast_entry, :style => "light", :size => "small", :show_type => true } %>
+        </div>
+    <% end %>
+    <% sorted_academy.take(1).each do | id, academy_entry | %>
+        <div class="column">
+            <%= partial "partials/cards/featured-blog", :locals => { :post => academy_entry, :style => "light", :size => "small", :show_type => true } %>
+        </div>
+    <% end %>
+    </div>
+</section>

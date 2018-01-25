@@ -1,0 +1,63 @@
+---
+title: "Datica | 404 - We couldn't find that page."
+summary: "404 Page Not Found"
+author: "Datica, Inc."
+tags: "lost, deserts, wandering, searching, finding, trekking, journeys, exploration, rambling, meandering"
+date: "January 1, 2017"
+share_image: "/public/img/share-posters/datica-social-twitter-thumb.png"
+layout: "basic"
+customCSS: "discover"
+bgImage: "//images.contentful.com/189dvqdsjh46/4YMziFy6JGi6iKwsskImEG/1074c45f366e78ed5666841f9b1ba3dd/walking_on_Sand_Dunes__color__dark__andrew-deslauriers-269459.jpg"
+---
+<div class="container-color--dark-alt">
+    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+</div>
+
+<section class="section-article container-gray-3 container-image--center" data-interchange="[<%= current_page.data.bgImage %>?fit=thumb&w=1200&h=800&f=left&q=70, medium], [<%= current_page.data.bgImage %>?fit=thumb&w=1600&h=1200&f=left&q=80, large], [<%= current_page.data.bgImage %>?fit=thumb&w=2200&h=1600&f=top_left&q=60, xlarge]">
+    <div class="row align-center group">
+        <div class="columns small-12 large-8 text-center">
+            <h1 class="headline-2">We got a little lost.</h1>
+            <p class="lead">Sorry! We couldn't find that page, or it doesn't exist. Visit our <a class="link--yellow" href="/" title="Datica Health home">main page</a>, use the search tool above &#9757;, or read some <a class="link--yellow" href="/blog" title="Datica Blog">blog posts</a>.</p>
+            <a href="/" class="button hollow large hollow-inverted">Go Home</a>
+        </div>
+    </div>
+    <div class="row align-center">
+        <div class="columns small-12 large-9">
+            <h3 class="headline-3 text-spaced text-center group">Recent Blog Posts</h3>
+        </div>
+    </div>
+    <div class="masonry-group">
+        <% sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
+        <% sorted_posts[0...4].each do | id, post | %>
+            <aside class="masonry-group--item">
+                <div class="card card--hover drop container-gray-12">
+                    <% if post.has_key?("featured_image") %>
+                        <a class="" href="/blog/<%= post["slug"] %>" title="Read this blog post">
+                            <img class="card-img" src="<%= post["featured_image"]["url"] %>?fit=thumb&w=400&h=200&q=55" alt="Image: <%= post["title"] %>" />
+                        </a>
+                    <% end %>
+                    <div class="card-section">
+
+                        <h3 class="headline-4">
+                            <a class="" href="/blog/<%= post["slug"] %>" title="Read this blog post"><%= post["title"] %></a>
+                        </h3>
+                        <% if post["author"].has_key?("profile_pic") %>
+                            <%= partial("partials/snippets/person-small", :locals => { :p => post["author"] }) %>
+                        <% end %>
+                        <% if post.has_key?("pub_date") %>
+                            <div class="text-tiny"><i class="fa fa-calendar" aria-hidden="true"></i> <%= post['pub_date'].strftime('%B %-d, %Y') %> &nbsp;</div>
+                        <% end %>
+                        <% if post.has_key?("summary") || post["summary"] == "" %>
+                            <p><%= post["summary"] %></p>
+                            <%#= Kramdown::Document.new(post["summary"]).to_html %>
+                        <% else %>
+                            <% if post.has_key?("blog_lead") %>
+                                <%= Kramdown::Document.new(post["blog_lead"]).to_html %>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+            </aside>
+        <% end %>
+    </div>
+</section>

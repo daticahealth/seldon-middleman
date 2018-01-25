@@ -1,0 +1,33 @@
+ehr_list:
+    -
+        name: Epic
+        slug: epic
+        logoSize: small-mid
+    -
+        name: Cerner
+        slug: cerner
+        logoSize: small-mid
+    -
+        name: McKesson
+        slug: mckesson
+        logoSize: small
+    -
+        name: Allscripts
+        slug: allscripts
+        logoSize: large
+    -
+        name: eCinlicalWorks
+        slug: ecw
+        logoSize: small-mid
+    -
+        name: NextGen
+        slug: nextgen
+        logoSize: small-mid
+    -
+        name: Greenway
+        slug: greenway
+        logoSize: small-mid
+    -
+        name: GE Centricity
+        slug: ge
+        logoSize: medium

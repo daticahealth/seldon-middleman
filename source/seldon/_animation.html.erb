@@ -1,0 +1,21 @@
+---
+title: Animation
+navTitle: Animation
+desc: Examples of animation types.
+customCSS: animation
+customJS: "/public/js/DrawSVGPlugin.js, /public/js/animation.js, https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"
+hide_from_sitemap: true
+---
+
+<section class="section-article">
+    <div class="row">
+        <div class="columns small-12 section--header-group">
+            <h1 class="blah section--header">Homepage Animation POC</h1>
+            <hr class="divider">
+            <p>GreenSock Ease Visualizer: <a href="http://greensock.com/ease-visualizer">http://greensock.com/ease-visualizer</a></p>
+        </div>
+    </div>
+    <div class="row homepage-animation">
+        <%= partial("partials/content/homepage.svg", :locals => { :nodes => data.views.home.masthead_nodes }) %>
+    </div>
+</section>

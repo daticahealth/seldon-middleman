@@ -1,0 +1,146 @@
+-
+    title: "Products & Services"
+    url:
+    desc:
+    children:
+        -
+            title: "Datica Platform"
+            url: "/platform"
+            desc: "The cloud enablement layer for all healthcare applications"
+        -
+            title: "Technology Overview"
+            url: "/platform/technology"
+            desc: "The technology support and capabilities of the Datica platform"
+        -
+            title: "Data Integration"
+            url: "/platform/integration"
+            desc: "The full-stack integration toolset for developers"
+        -
+            title: "Compliance Story"
+            url: "/platform/compliance"
+            desc: "Datica is HITRUST CSF Certified"
+        -
+            title: "Customer Success"
+            url: "/platform/success"
+            desc: "Case studies and customer profiles of success"
+        -
+            title: "Services"
+            url: "/services"
+            desc: "Professional services offered by Datica"
+        -
+            title: "Pricing"
+            url: "/pricing"
+            desc: "Pricing for the Datica platform"
+
+-
+    title: "Company"
+    url:
+    desc:
+    children:
+        -
+            title: "About Us"
+            url: "/about"
+            desc: "Background on the company"
+        -
+            title: "Leadership"
+            url: "/leadership"
+            desc: "The team guiding Datica"
+        -
+            title: "Company Blog"
+            url: "/blog"
+            desc: "News and notes from the Datica team"
+        -
+            title: "Engineering Blog"
+            url: "https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog"
+            desc: "Our engineering team shares bleeding-edge insight on what it takes to build a compliant platform"
+        -
+            title: "Careers"
+            url: "/careers"
+            desc: "Job opportunities at Datica"
+        -
+            title: "Press"
+            url: "/press"
+            desc: "Full press background, and information for media outlets"
+        -
+            title: "Events"
+            url: "/events"
+            desc: "Datica events, past and future."
+        -
+            title: "Open Source"
+            url: "/open-source"
+            desc: "We believe in the importance of open source."
+-
+    title: "Resources"
+    url:
+    desc:
+    children:
+        -
+            title: "Digital Health Success Framework"
+            url: "/dhsf"
+            desc: "The framework for teams building digital health products"
+        -
+            title: "Discover: Healthcare Topics"
+            url: "/discover"
+            desc: "A Curated Collection of Healthcare Technology Topics from Datica"
+        -
+            title: "The Academy"
+            url: "/academy"
+            desc: "The definitive resource for those looking to learn about Compliance and Interoperability"
+        -
+            title: "Healthcare Innovators Podcast"
+            url: "/innovation"
+            desc: "How does healthcare innovate?"
+        -
+            title: "Change Agent"
+            url: "https://medium.com/change-agent"
+            desc: "Our Medium publication on what it takes to evolve healthcare"
+        -
+            title: "White Papers"
+            url: "/whitepapers"
+            desc: "A collection of our formal assessment of healthcare topics"
+        -
+            title: "Mock FHIR API"
+            url: "https://fhir.datica.com"
+            desc: "Experiment with the FHIR API for free"
+        -
+            title: "Mock HL7 API"
+            url: "https://hl7.datica.com"
+            desc: "Experiment with the HL7 API for free"
+-
+    title: "Customers"
+    url:
+    desc:
+    children:
+        -
+            title: "Login"
+            url: "https://product.datica.com"
+            desc: "Log into your dashboard"
+        -
+            title: "Documentation"
+            url: "https://help.datica.com"
+            desc: "Documentation across all Datica products"
+        -
+            title: "Support"
+            url: "https://datica.zendesk.com/hc/en-us"
+            desc: "Support for Datica customers"
+        -
+            title: "System Status"
+            url: "http://status.catalyze.io"
+            desc: "System up time and alerts"
+-
+    title: "Legal"
+    url:
+    desc:
+    children:
+        -
+            title: "Company Policies"
+            url: "https://policy.datica.com"
+            desc: "Our company policies"
+        -
+            title: "Compliance Training"
+            url: "https://training.datica.com"
+            desc: "Our training policies"
+        -
+            title: "HIPAA Mappings"
+            url: "https://hipaa.datica.com"
+            desc: "How we map to HIPAA's rules"

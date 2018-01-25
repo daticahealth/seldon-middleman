@@ -1,0 +1,161 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import '../modules/colors';
+@import '../modules/functions';
+@import '../modules/animation';
+// @import '../vendor/slick';
+// @import '../modules/masonry';
+// @import '../modules/fonts-optional';
+
+$color-hilight:  $gray-3;// $color_prime-alt;
+$color-selected: $gray-2;// $color_prime;
+$color-default:  $gray-5;
+$strip-width: 2vw;
+$fadeDuration: 200ms;
+
+#sidebar-nav {
+    // @include breakpoint (small only) { // overrides for mobile only. backwards oo-ops, but special case here because larger breakpoints are ok
+    //     {
+    //         // font-size: ;
+    //     }
+    // }
+    @include breakpoint (large) {
+        min-height: 80rem; // because sticky nav & tabs content heights interact
+    }
+    // swap source order of avis in sidebar
+    .media-object--avatar {
+        order: 1;
+        padding-left: 0;
+    }
+    .media-object--info {
+        order: 2;
+        padding-left: 0.5em;
+    }
+}
+.mobile-toc { // experimental mobile nav TOC; hidden above small
+    bottom: 0;
+    a {
+        padding: 0.5rem;
+        display: inline-block;
+    }
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 100;
+    &--headline {
+        margin: 0;
+    }
+}
+// reskinning tabs. Could do this from zf mixin in future.
+.tabs {
+    &-panel {
+        padding: 0;
+    }
+    &-title {
+        & > a {
+            color: white;
+            padding: 1rem;
+            border-bottom: 1px solid adjust-color($color-hilight, $lightness: -9%);
+            @include breakpoint (large) {
+                padding: 1.8rem;
+            }
+            @include breakpoint (xxlarge) {
+                padding: 2.4rem;
+            }
+            &:focus, &[aria-selected="true"] { // selected state
+                background-color: white;
+                color: black;
+            }
+            &:hover {
+                background-color: $color_prime-alt;// adjust-color($color-hilight, $saturation: 100%, $lightness: 15%);
+                color: white;
+            }
+        }
+        &.is-active > a:hover {
+            background-color: $gray-12;
+            color: black;
+        }
+    }
+}
+// .breadcrumbs {
+//     margin: 0;
+// }
+.is-first { // attached to first entry we want user to read. uses mixin from animation.scss
+    @include pulse-bg (
+        // $pulse-color-start: initial,
+        $pulse-color-end: adjust-color($color_prime-alt, $lightness: -12%),
+        $pulse-color-speed: 3s
+    );
+}
+.callout--dark {
+    p > a {
+        font-weight: $font-weight-bold;
+        color: $color_yellow-glow;
+        &:hover {
+            color: white;
+        }
+    }
+}
+.banner-group {
+    padding: 1rem;
+    @include breakpoint (medium) {
+        padding: 0; // sidebar is narrow, need container styles!
+    }
+    @include breakpoint (large) {
+        padding: 4rem 1rem 2rem 1rem;
+    }
+}
+.pulse {
+    @include pulse;
+}
+
+.lg {
+    &-nav {
+        &--tabs {}
+        &--item {
+            // padding: 0;
+            margin-bottom: 0;
+            .media-object { // override the people widgets here
+                margin-bottom: 0;
+            }
+        }
+    }
+    &-content {
+        padding: 4vw;
+        // p {
+        //     color: black;
+        // }
+        blockquote {
+            padding: 0;
+            // @include breakpoint (large) {
+            //     margin-right: -13rem;
+            //     padding: 1rem 0 0.1rem 0;
+            // }
+            & p { // usually a nested p from contentful markdown
+                // font: { // style option 1
+                //     style: normal;
+                //     family: $font_serif;
+                //     size: 130%;
+                // }
+                font: { // style option 2
+                    style: normal;
+                    // family: $font_serif;
+                    size: 110%;
+                    weight: $font-weight-bold;
+                }
+                color: $color_prime-alt;
+            }
+        }
+    }
+    &-entries {
+        position: relative;
+    }
+}
+// .is-visible-fade {
+//     position: static;
+//     // display: block;
+//     transition-delay: $fadeDuration;
+//     opacity: 1;
+// }

@@ -1,0 +1,169 @@
+---
+title: Recent Entries and Images
+navTitle: Recent Entries
+summary: "Some recent content for emails and social campaigns. Copy content or take screenshots to create graphics."
+customCSS: styleguide
+hide_from_sitemap: true
+---
+<div class="container-gray-11">
+    <div class="full-width container-color--white drop">
+        <ul class="tabs tabs-centered" data-tabs id="recents-tabs">
+            <li class="tabs-title is-active"><a href="#panel-blog" aria-selected="true">Blog Posts</a></li>
+            <li class="tabs-title"><a data-tabs-target="panel-podcast" href="#panel-podcast">Podcasts</a></li>
+            <li class="tabs-title"><a data-tabs-target="panel-reports" href="#panel-reports">Reports</a></li>
+        </ul>
+    </div>
+    <article class="tabs-content section-article--med" data-tabs-content="recents-tabs">
+        <section class="tabs-panel is-active" id="panel-blog">
+            <h2 class="headline-2 text-center group">Blog Brand Elements</h2>
+            <div class="row align-center">
+                <div class="columns small-12 medium-12 large-12">
+                    <div class="callout group callout--large">
+                        <p class="blog-date">Blog Generic Share Image</p>
+                        <p>
+                            <img src="https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png?w=520" width="310">
+                            <textarea cols="30">https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png?w=520</textarea>
+                        </p>
+                    </div>
+                    <h2 class="headline-2 text-center group">Blog Post Samples</h2>
+                    <% sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
+                    <% sorted_posts[0...5].each do | id, post | %>
+                    <div class="callout group callout--large">
+                        <div class="row">
+                            <div class="columns small-12 medium-6 large-5">
+                                <p class="blog-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></p>
+                                <h2 class="headline-4"><a href="/blog/<%= post["slug"] %>"><%= post["title"] %></a></h1>
+                                <div class="group">
+                                    <% if post.has_key?("summary") %>
+                                        <%= Kramdown::Document.new(post["summary"]).to_html %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="columns small-12 medium-6 large-7">
+                                <div class="group">
+                                    <% if post.has_key?("featured_image") %>
+                                        <p class="blog-date">Featured Image</p>
+                                        <img src="<%= post["featured_image"]["url"] %>?fit=thumb&w=640&h=320" alt="Featured Image">
+                                        <textarea><%= h post["featured_image"]["url"] %>?fit=thumb&w=640&h=320</textarea>
+                                    <% end %>
+                                </div>
+                                <div class="group">
+                                    <% if post.has_key?("share_image") %>
+                                        <p class="blog-date">Share Image</p>
+                                        <img class="" src="<%= post["share_image"]["url"] %>?w=520" width="310" alt="Share Image">
+                                        <textarea cols="30"><%= h post["share_image"]["url"] %>?w=520</textarea>
+                                    <% end %>
+                                </div>
+                                <div class="group">
+                                    <% if post.has_key?("featured_image") %>
+                                        <p class="blog-date">Thumbnail Image</p>
+                                        <img class="" src="<%= post["featured_image"]["url"] %>?fit=thumb&w=140&h=140" alt="Thumbnail Image">
+                                        <textarea cols="30"><%= h post["featured_image"]["url"] %>?fit=thumb&w=140&h=140</textarea>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </section>
+        <section class="tabs-panel" id="panel-podcast">
+            <h2 class="headline-2 text-center group">Podcast Brand elements</h2>
+            <div class="row align-center">
+                <div class="columns small-12 medium-12 large-12">
+                        
+                        <div class="callout group callout--large">
+                            <p class="blog-date">Podcast Generic Share Image</p>
+                            <p>
+                                <img src="https://images.contentful.com/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/4e0140e8f981742be948e84cdd687970/podcast-art-share-h.jpg?w=520" width="310">
+                                <textarea>https://images.contentful.com/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/4e0140e8f981742be948e84cdd687970/podcast-art-share-h.jpg?w=520</textarea>
+                            </p>
+                            <p class="blog-date">Show Image</p>
+                            <p>
+                                <img src="https://images.contentful.com/189dvqdsjh46/3d9wcnPdhm4mQA4a4Y4WMK/51232bdb711f16512d03b250a9bb422e/HI_Podcast_Poster_2017_No.3__new_look_Q3_-512px.jpg?w=240" width="140">
+                                <textarea>https://images.contentful.com/189dvqdsjh46/3d9wcnPdhm4mQA4a4Y4WMK/51232bdb711f16512d03b250a9bb422e/HI_Podcast_Poster_2017_No.3__new_look_Q3_-512px.jpg?w=240</textarea>
+                            </p>
+                        </div>
+                </div>
+            </div>
+            <h2 class="headline-2 text-center group">Podcast Samples</h2>
+            <div class="row align-center">
+                <div class="columns small-12 medium-12 large-12">
+                    <% sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse! %>
+                    <% sorted_podcasts[0...3].each do | id, podcast | %>
+                        <div class="callout group callout--large">
+                            <div class="row">
+                                <div class="columns small-12">
+                                    <h3 class="headline-4 group">
+                                        <%= podcast.title %>
+                                    </h3>
+                                    <div class="group">
+                                        <% if podcast.has_key?("soundcloud_embed") %>
+                                            <%= podcast["soundcloud_embed"] %>
+                                        <% end %>
+                                    </div>
+                                </div>
+                                <div class="columns small-12 large-6">
+                                    <%= partial("partials/snippets/person-vertical-simple", :locals => { :p => podcast["guest"] }) %>
+                                </div>
+                                <div class="columns small-12 large-6">
+                                    <%= partial "partials/cards/featured-blog", :locals => { :post => podcast, :style => "light", :size => "small" } %>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </section>
+        <section class="tabs-panel" id="panel-reports">
+            <h2 class="headline-2 text-center group">Recent Reports</h2>            
+            <div class="row align-center">
+                <div class="columns small-12">
+                    <% sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse! %>
+                    <% sorted_reports[0...3].each do | id, report | %>
+                        <div class="callout callout--large drop">
+                            <div class="row">
+                                <div class="columns small-12 medium-6 large-5">
+                                    <% if report.has_key?("subhead") %>
+                                        <h4 class="headline-5 spaced-out text-small"><%= report.subhead %></h4>
+                                    <% end %>
+                                    <h2 class="headline-4"><%= report.title %></h2>
+                                    <% if report.has_key?("lead") %>
+                                        <%= Kramdown::Document.new(report["lead"]).to_html %>
+                                    <% end %>
+                                </div>
+                                <div class="columns small-12 medium-6 large-7">
+                                    <% if report.has_key?("bg_image") %>
+                                    <p class="blog-date">Featured Image</p>
+                                        <p>
+                                            <img class="" src="<%= report.bg_image.url %>?fit=thumb&w=640&h=320">
+                                            <textarea><%= h report.bg_image.url %>?fit=thumb&w=640&h=320</textarea>
+                                        </p>
+                                    <% end %>
+
+                                    <% if report.has_key?("share_image") %>
+                                        <p class="blog-date">Share Image</p>
+                                        <p>
+                                            <img class="" src="<%= report.share_image.url %>?w=520" width="310">
+                                            <textarea><%= h report.share_image.url %>?w=520</textarea>
+                                        </p>
+                                    <% end %>
+
+                                    
+                                    <% if report.has_key?("image_thumb") %>
+                                    <p class="blog-date">Thumbnail Image</p>
+                                        <p>
+                                            <img class="" src="<%= report.image_thumb.url %>?w=240">
+                                            <textarea><%= h report.image_thumb.url %>?w=240</textarea>
+                                        </p>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </section>
+    </article> <!-- tabs container -->
+</div>   

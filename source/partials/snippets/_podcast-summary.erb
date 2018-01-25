@@ -1,0 +1,43 @@
+<% if locals.key?(:hideSummary) && hideSummary == true %> <!-- compact view -->
+
+    <span class="blog-date color-talk-alt">
+        <% if locals.key?(:itemLabel) %>
+            <%= itemLabel %>
+        <% else %>
+            <%= podcast['pub_date'].strftime('%B %-d, %Y') %>
+        <% end %>
+    </span>
+    <h4 class="headline-5"><a href="/innovation/<%= podcast["slug"] %>"><%= podcast["title"] %></a></h4>
+    <%= partial("partials/snippets/person", :locals => { :p => podcast["guest"] }) %>
+
+<% else %>
+    <div class="row group">
+        <div class="columns small-12 medium-9 large-9 medium-order-2">
+            <span class="blog-date color-talk-alt">
+                <% if locals.key?(:itemLabel) %>
+                    <%= itemLabel %>
+                <% else %>
+                    <%= podcast['pub_date'].strftime('%B %-d, %Y') %>
+                <% end %>
+            </span>
+            <h4 class="headline-5"><a href="/innovation/<%= podcast["slug"] %>"><%= podcast["title"] %></a></h4>
+            <% if podcast.has_key?("guest") %>
+                <% if podcast["guest"].has_key?("fullname") %>
+                    <a class="" href="/innovation/<%= podcast["slug"] %>" title="Listen to this episode now">
+                        <img src="<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="avatar--large-mid circle float-right hide-for-medium" alt="<%= podcast["guest"]["fullname"] %>">
+                    </a>
+                <% end %>
+            <% end %>
+            <%= Kramdown::Document.new(podcast["summary"]).to_html %>
+        </div>
+        <div class="columns small-12 medium-3 large-3 text-center medium-order-1 show-for-medium">
+            <% if podcast.has_key?("guest") %>
+                <% if podcast["guest"].has_key?("fullname") %>
+                    <a class="" href="/innovation/<%= podcast["slug"] %>" title="Listen to this episode now">
+                        <img src="<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="avatar--large-mid circle" alt="<%= podcast["guest"]["fullname"] %>">
+                    </a>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+<% end %>

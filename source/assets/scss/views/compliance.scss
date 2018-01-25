@@ -1,0 +1,116 @@
+@import '../settings';
+@import '../modules/functions';
+@import '../modules/colors';
+
+// Section rules
+.compliance-masthead-section{
+    position: relative;
+    overflow: hidden;
+    .video{
+        img{
+            display: block;
+            @include shadow-anarchy(0 rem-calc(16px) rem-calc(27) 0 rgba(16,16,17,0.23));
+        }
+    }
+    .custom-background-svg{
+        background: url('/public/img/background-compliance-pattern.svg');
+        width: rem-calc(2926px);
+        height: rem-calc(1060px);
+        background-size: rem-calc(2926px) rem-calc(1060px);
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0;
+    }
+    .main-header{
+        position: relative;
+        z-index: 2;
+    }
+    .section-article{
+        position: relative;
+        z-index: 1;
+        padding-top: calc-rem(40px);
+    }
+}
+.compliance-customer-form-section{
+    .card-person{
+        padding: rem-calc(10px);
+        margin: rem-calc(20px) 0 0 0;
+        @include border-radius(5px);
+        background-color: $color_light-alt;
+        @media all and (max-width: 40rem){
+            margin: 1.25rem 0;
+        }
+    }
+    .callout{
+        margin: 0;
+    }
+}
+.compliance-discussion-section{
+    .button{margin: 0;}
+    .callout{min-height: rem-calc(314px);}
+}
+.compliance-hitrust-free-case-study-section{
+    a{color: $color_white;}
+}
+// haven't got the flexbox stretch-h in place yet on logo clouds.
+.logo-cloud {
+    &--item {
+        @include flex-align(spaced, stretch);
+        margin-bottom: 3rem;
+    }
+    // for tighter clusters. If we re-use this anywhere, move to the module.
+    &--tight {
+        padding: 1rem 0 0 0;
+        .logo-cloud--item {
+            margin: 0 0.5rem 1.5rem 0.5rem;
+        }
+    }
+}
+// nested? Why not.
+.callout--dark > .callout--dark {
+    @include color--gray-dark;
+}
+
+.github-bar { // this uses row/cols; could probably make this with less markup. -A
+    margin-bottom: 1rem;
+    .button {
+        margin-bottom: 0;
+    }
+}
+
+// Q & A blocks with offset icons to left. Created slight inset so icons visible at all breakpoints.
+.qa{
+    position: relative;
+    $offset: 2.5rem;
+    margin-left: $offset;
+    &-block {
+        color: $color_white;
+        &--q, &--a {
+            &:before {
+                display: block;
+                position: absolute;
+                left: -$offset;
+            }
+        }
+        &--p{color: $color_talk-alt;font-style: italic;font-weight: $font-weight-mid;}
+        &--q {
+            padding-bottom: 1rem;
+            font-size: 1.5rem;
+            &:before {
+                content: url('/public/icons/brand/icon-faq-q-alt-w.svg');
+            }
+        }
+        &--a {
+            &:before {
+                content: url('/public/icons/brand/icon-faq-a-alt-w.svg');
+            }
+        }
+    }
+}
+
+.image-medium{
+    max-width: rem-calc(150px);
+    display: block;
+    margin: 0 auto 1rem auto;
+}

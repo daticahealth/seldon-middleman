@@ -1,0 +1,33 @@
+nav_items:
+    -
+        title: "About Us"
+        url: "/about"
+        desc: "Background on the company"
+    -
+        title: "Leadership"
+        url: "/leadership"
+        desc: "The team guiding Datica"
+    -
+        title: "Company Blog"
+        url: "/blog"
+        desc: "News and notes from the Datica team"
+    -
+        title: "Engineering Blog"
+        url: "https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog"
+        desc: "Our engineering team shares bleeding-edge insight on what it takes to build a compliant platform"
+    -
+        title: "Careers"
+        url: "/careers"
+        desc: "Job opportunities at Datica"
+    -
+        title: "Press"
+        url: "/press"
+        desc: "Full press background, and information for media outlets"
+    -
+        title: "Events"
+        url: "/events"
+        desc: "Datica events, past and future."
+    -
+        title: "Open Source"
+        url: "/open-source"
+        desc: "We believe in the importance of open source."

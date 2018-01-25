@@ -1,0 +1,125 @@
+// @import '../../../../node_modules/motion-ui/motion-ui.scss';
+// Motion UI by ZURB
+// foundation.zurb.com/motion-ui
+// Licensed under MIT Open Source
+
+// // These were imported globally, whittling it down a bit. A lot of stuff is unused.
+// @import '../../../../node_modules/motion-ui/src/settings.scss';
+// 
+// @import '../../../../node_modules/motion-ui/src/util/animation.scss';
+// @import '../../../../node_modules/motion-ui/src/util/args.scss';
+// @import '../../../../node_modules/motion-ui/src/util/keyframe.scss';
+// @import '../../../../node_modules/motion-ui/src/util/selector.scss';
+// @import '../../../../node_modules/motion-ui/src/util/series.scss';
+// @import '../../../../node_modules/motion-ui/src/util/transition.scss';
+// @import '../../../../node_modules/motion-ui/src/util/unit.scss';
+// 
+// @import '../../../../node_modules/motion-ui/src/effects/fade.scss';
+// // @import '../../../../node_modules/motion-ui/src/effects/hinge.scss';
+// // @import '../../../../node_modules/motion-ui/src/effects/spin.scss';
+// // @import '../../../../node_modules/motion-ui/src/effects/zoom.scss';
+// // @import '../../../../node_modules/motion-ui/src/effects/shake.scss';
+// @import '../../../../node_modules/motion-ui/src/effects/slide.scss';
+// // @import '../../../../node_modules/motion-ui/src/effects/wiggle.scss';
+// 
+// @import '../../../../node_modules/motion-ui/src/transitions/fade.scss';
+// // @import '../../../../node_modules/motion-ui/src/transitions/hinge.scss';
+// // @import '../../../../node_modules/motion-ui/src/transitions/zoom.scss';
+// @import '../../../../node_modules/motion-ui/src/transitions/slide.scss';
+// // @import '../../../../node_modules/motion-ui/src/transitions/spin.scss';
+// 
+// @import '../../../../node_modules/motion-ui/src/classes.scss';
+// 
+// @mixin -motion-ui-defaults {
+//   transition-duration: map-get($motion-ui-speeds, default);
+//   transition-timing-function: map-get($motion-ui-easings, default);
+// }
+// .slide-in-down    { @include mui-slide(in,  down); }
+// .slide-in-up      { @include mui-slide(in,  up); }
+// .slide-out-down   { @include mui-slide(out, down); }
+// .slide-out-up     { @include mui-slide(out, up); }
+// // Fade
+// .fade-in  { @include mui-fade(in,  0, 1); }
+// .fade-out { @include mui-fade(out, 1, 0); }
+// 
+// // Animation Modifiers
+// // - - - - - - - - - - - - - - -
+// .infinite { animation-iteration-count: infinite; }
+
+// ==== end motion-ui stuff ======. Not sure it's even worth it rn - AW
+
+// Bouncy animation
+@mixin animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@mixin bounce {
+    @include keyframes( bounce ) {
+        0%, 100% {
+            @include transform (translateY(0));
+        }
+        50% {
+            @include transform (translateY(0));
+        }
+    }
+    @include animation (bounce 1s infinite);
+    // -webkit-animation-name: bounce;
+    // animation-name: bounce;
+}
+@mixin pulse { //
+    @include keyframes( pulse ) {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+    @include animation (pulse 1.5s infinite);
+}
+
+// pulsing background color
+// example:
+// @include pulse-bg (
+//     $pulse-color-start: initial,
+//     $pulse-color-end: $blue,
+//     $pulse-color-speed: 3s
+// );
+@mixin pulse-bg (
+    $pulse-color-start: initial,
+    $pulse-color-end: initial,
+    $pulse-color-speed: 2s) {
+    @include keyframes( pulse-bg ) {
+        0%, 100% {
+            background-color: $pulse-color-start;
+        }
+        50% {
+            background-color: $pulse-color-end;
+        }
+    }
+    @include animation (pulse-bg $pulse-color-speed infinite);
+}
+
+// .show-fade { // transitioning elements that need to not take up space in DOM. experiemental
+//     display: block;
+//     visibility: visible;
+//     opacity: 1;
+//     animation: fade 1s;
+// }
+
+// @keyframes fade {
+//     0% {
+//         opacity: 0;
+//     }
+
+//     100% {
+//         opacity: 1;
+//     }
+// }

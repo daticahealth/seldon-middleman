@@ -1,0 +1,220 @@
+// ---------
+// 37. Datica Custom Helpers
+// ---------
+
+// These must be imported at the end of the pipeline, because they're used to override other classes' attributes.
+
+// .float-right/left is built-in, these are redundant. Can't find em though, too generic
+.right {float: right;}
+.left  {float: left;}
+
+// .float-left|right are useful for content inside entries at CF.
+.float {
+    // using em here, because it's often applied to images inline in copy. Em will respect the font size of containing text.
+    &-left {
+        margin-right: 1em !important;
+        &-on-medium {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            @include breakpoint (medium) {
+                display: inline;
+                float: left;
+                margin-right: 1em;
+            }
+        }
+        &-on-large {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            @include breakpoint (large) {
+                display: inline;
+                float: left;
+                margin-right: 1em;
+            }
+        }
+
+    }
+    &-right {
+        margin-left: 1em !important;
+        &-on-medium {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            @include breakpoint (medium) {
+                display: inline;
+                float: right;
+                margin-left: 1em;
+            }
+        }
+        &-on-large {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            @include breakpoint (large) {
+                display: inline;
+                float: right;
+                margin-left: 1em;
+            }
+        }
+    }
+}
+
+.nomargin, .no-margin {
+    margin-bottom: 0;
+}
+.nopad, .no-pad {
+    padding: 0;
+}
+// .pad-1 {
+//     padding: 1rem;
+// }
+// .m { // I know.. tachyons-style atomic classes. for some custom situations, just need a 'lil margin
+//     &-top    {margin-top:    $card-padding;}
+//     &-right  {margin-right:  $card-padding;}
+//     &-bottom {margin-bottom: $card-padding;}
+//     &-left   {margin-left:   $card-padding;}
+// }
+// .p {
+//     &-top    {padding-top:    $card-padding;}
+//     &-right  {padding-right:  $card-padding;}
+//     &-bottom {padding-bottom: $card-padding;}
+//     &-left   {padding-left:   $card-padding;}
+// }
+// .m-no { // I know.. tachyons-style atomic classes. for some custom situations, just need a 'lil margin
+//     &-top    {margin-top:     0};
+//     &-right  {margin-right:   0};
+//     &-bottom {margin-bottom:  0};
+//     &-left   {margin-left:    0};
+// }
+.pad-no {
+//     &-top    {padding-top:    0;}
+//     &-right  {padding-right:  0;}
+    &-bottom {padding-bottom: 0;}
+//     &-left   {padding-left:   0;}
+}
+.implode{
+    margin: 0px;
+    padding: 0px;
+}
+
+.text { // generic text style classes
+    &--spaced {
+        @extend .spaced-out;
+    }
+    &--inverted {
+        color: white;
+    }
+    @each $color-name, $color in $fill-color-list {
+        &--#{$color-name}{
+            color: $color;
+            opacity: 1; // default subheaders have half
+        }
+    }
+    &-small, &-tiny, &-micro {
+        font-size: rem-calc(13px);
+        //font-weight: $font-weight-mid;
+        // opacity: 0.7;
+    }
+    &-tiny {
+        font: {
+            size: rem-calc(12px);
+            weight: $font-weight-regular;
+        }
+    }
+    &-larger {
+        font-size: 120%;
+    }
+    &-reg {
+        font-weight: $font-weight-regular !important;
+    }
+    &-light {
+        font-weight: $font-weight-light !important;
+    }
+    &-strong {
+        font-weight: bolder !important;
+    }
+    // &-italic {
+    //     font-style: italic;
+    // }
+    &-sans {
+        font-family: $font_sans;
+    }
+    &-serif {
+        font-family: $font_serif;
+    }
+}
+
+// normally containers set child colors, when possible; when not, use these link color overrides.
+.link {
+    &--white, .link-light {
+        font-weight: $font-weight-bold;
+        color: $white !important;
+        border-bottom: 1px solid transparent;
+        &:hover {
+            color: lighten($color_yellow-glow, 5%) !important;
+            border-bottom: 1px solid lighten($color_yellow-glow, 5%);
+        }
+    }
+    &--yellow {
+        font-weight: $font-weight-bold;
+        color: $color_yellow-glow !important;
+        border-bottom: 1px solid transparent;
+        &:hover {
+            color: $white !important;
+            border-bottom: 1px solid $white;
+        }
+    }
+    &--blue-bright {
+        font-weight: $font-weight-bold;
+        color: $color_aqua-glow !important;
+        // border-bottom: 1px solid transparent;
+        &:hover {
+            color: $white !important;
+            // border-bottom: 1px solid $color_yellow-glow;
+        }
+    }
+    &--mini-cta{
+        color: $color_yellow-glow !important;
+        font-weight: $font-weight-mid;
+        &:hover {
+            color: $white !important;
+        }
+    }
+    &--dark {
+        color: $black !important;
+        &:hover {
+            color: $color_prime !important;
+        }
+    }
+}
+.link--white-parent { // when you need to style a link inside a component/partial
+    a {
+        font-weight: $font-weight-bold;
+        color: $white !important;
+        border-bottom: 1px solid transparent;
+        &:hover {
+            color: lighten($color_yellow-glow, 5%) !important;
+            border-bottom: 1px solid lighten($color_yellow-glow, 5%);
+        }
+    }
+}
+.card {
+    &-section, &-divider {
+        blockquote {
+            padding-top: 0 !important;
+        }
+    }
+}
+.content-dynamic {
+    iframe { // these can be targeted with .wrap() for responsive wrappers
+        padding: $media-pad 0 !important;
+    }
+}
+.no-radius {
+    border-radius: 0;
+}

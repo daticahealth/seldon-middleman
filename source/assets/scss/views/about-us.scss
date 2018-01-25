@@ -1,0 +1,103 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../modules/functions';
+@import '../modules/timeline';
+
+// Sections
+.about-us-masthead{
+    background: url('/public/img/background-about-us.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    h4{
+        color: $color_yellow-glow;
+        @include opacity(1);
+    }
+    h1{
+        margin: 0;
+        padding: 0;
+    }
+}
+.careers-masthead{
+    background: url('/public/img/background-about-us.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    h4{
+        color: $color_yellow-glow;
+        @include opacity(1);
+    }
+    h1{
+        margin: 0;
+        padding: 0;
+    }
+}
+.about-us-person-content-section{
+    img{
+        max-width: 15rem;
+        display: inline-block;
+        padding: 1rem;
+    }
+    ul{
+        li{
+            &:last-of-type{margin: 0;padding: 0;}
+            .fa{font-size: rem-calc(14px);}
+        }
+    }
+}
+// Blocks
+.about-us-hero-left-block{
+    h4{
+        font-size: rem-calc(12px);
+        font-weight: $font-weight-heavy;
+        color: $color_deep;
+        text-transform: uppercase;
+        padding: rem-calc(4px 8px);
+    }
+    h2{
+        font-size: 1.5rem;
+        line-height: 1;
+        color: $color_deep;
+    }
+    // This may be reused, but it's kind of one time use only. Happy to abstract it out though
+    .block{
+        margin: 0 0 1.5rem 0;
+    }
+    .hitrust-logo{
+        float: right;
+        margin: 1.5rem 0 1.5rem 1.5rem;
+        display: block;
+        height: auto;
+        max-width: rem-calc(150px);
+    }
+    img.hlseven-logo{
+        display: block;
+        float: right;
+        margin: 1.5rem 0 1.5rem 1.5rem;
+        max-width: rem-calc(120px);
+        height: auto;
+    }
+}
+
+
+// Leadership page
+.leadership-profile-image{
+    img{
+        display: block;
+        max-width: rem-calc(90px);
+        max-height: rem-calc(90px);
+        border: 2px solid $color_border;
+        @include border-radius(rem-calc(75px));
+    }
+}
+.leadership-profile-section{
+    .inline-list{
+        margin: 0.875rem 0;
+        li{
+            padding: 0;
+            margin: 0 0.875rem 0 0;
+        }
+    }
+}

@@ -1,0 +1,243 @@
+---
+title: "Forms &amp; Inputs"
+navTitle: "Forms"
+summary: "Form styling, based on Foundation's form page"
+customCSS: styleguide
+hide_from_sitemap: true
+---
+<section id="content-top" class="section-article">
+    <div class="row">
+        <div class="columns small-12 section--header-group">
+            <h1 class="section--header">Form Basics</h1>
+            <p class="lead">Creating a form in Foundation is designed to be easy but extremely flexible. Forms are built with a combination of standard form elements, as well as grid rows and columns. This page is based on the
+                <a href="http://foundation.zurb.com/sites/docs/forms.html">forms documentation page.</a>
+            </p>
+            <hr class="divider">
+        </div>
+    </div>
+    <div class="row small-up-1 medium-up-2">
+        <div class="column group">
+            <h4 id="text-inputs">Text Inputs</h4>
+            <p>These input types create a text field:
+                <code>text</code>,
+                <code>date</code>,
+                <code>datetime</code>,
+                <code>datetime-local</code>,
+                <code>email</code>,
+                <code>month</code>,
+                <code>number</code>,
+                <code>password</code>,
+                <code>search</code>,
+                <code>tel</code>,
+                <code>time</code>,
+                <code>url</code>, and
+                <code>week</code>.</p>
+
+            <form>
+                <div class="row">
+                    <div class="medium-6 columns">
+                        <label>Input Label
+                            <input type="text" placeholder=".medium-6.columns">
+                        </label>
+                    </div>
+                    <div class="medium-6 columns">
+                        <label>Input Label
+                            <input type="text" placeholder=".medium-6.columns">
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="column group">
+            <h4>Number Inputs</h4>
+            <p>In most desktop browsers,
+                <code>&lt;input type=“number”&gt;</code>
+                elements will have up/down controls inside them, which increment and decrement the number inside the field. These are called
+                <strong>spin buttons</strong>. You can disable them by setting the
+                <code>$input-number-spinners</code>
+                Sass variable to
+                <code>false</code>.</p>
+            <label>How many puppies?
+                <input type="number" value="100" size="10">
+            </label>
+        </div>
+        <div class="column group">
+            <h4>Text areas</h4>
+            <p>The
+                <code>&lt;textarea&gt;</code>
+                element creates a multi-line text input.</p>
+            <label>What books did you read over summer break?
+                <textarea placeholder="None"></textarea>
+            </label>
+        </div>
+        <div class="column group">
+            <h4>Select Menus</h4>
+            <p>Use select menus to combine many choices into one menu.</p>
+            <label>Select Menu
+                <select>
+                    <option value="husker">Husker</option>
+                    <option value="starbuck">Starbuck</option>
+                    <option value="hotdog">Hot Dog</option>
+                    <option value="apollo">Apollo</option>
+                </select>
+            </label>
+        </div>
+        <div class="column group">
+            <h4>Checkoxes and Radio Buttons</h4>
+            <p>Use groups of checkboxes when the user may select multiple choices from a list, and use radio buttons when the user must select just one choice.</p>
+            <p>Wrap a group of checkboxes or radio buttons in a
+                <code>&lt;fieldset&gt;</code>
+                element, and give them a common label using the
+                <code>&lt;legend&gt;</code>
+                element. Each individual control should also have its own label, created using a typical
+                <code>&lt;label&gt;</code>.</p>
+            <div class="row">
+                <fieldset class="large-6 columns">
+                    <legend>Choose Your Favorite</legend>
+                    <input id="pokemonRed" type="radio" name="pokemon" value="Red" required="">
+                    <label for="pokemonRed">Red</label>
+                    <input id="pokemonBlue" type="radio" name="pokemon" value="Blue">
+                    <label for="pokemonBlue">Blue</label>
+                    <input id="pokemonYellow" type="radio" name="pokemon" value="Yellow">
+                    <label for="pokemonYellow">Yellow</label>
+                </fieldset>
+                <fieldset class="large-6 columns">
+                    <legend>Check these out</legend>
+                    <input id="checkbox1" type="checkbox">
+                    <label for="checkbox1">Checkbox 1</label>
+                    <input id="checkbox2" type="checkbox">
+                    <label for="checkbox2">Checkbox 2</label>
+                    <input id="checkbox3" type="checkbox">
+                    <label for="checkbox3">Checkbox 3</label>
+                </fieldset>
+            </div>
+        </div>
+        <div class="column group">
+            <h4>Fieldset Styles</h4>
+            <p>To encourage their use as an accessibility tool, the
+                <code>&lt;fieldset&gt;</code>
+                element is no longer styled by default. Those styles are now contained in the
+                <code>.fieldset</code>
+                class.</p>
+            <fieldset class="fieldset">
+                <legend>Check these out</legend>
+                <input id="checkbox12" type="checkbox">
+                <label for="checkbox12">Checkbox 1</label>
+                <input id="checkbox22" type="checkbox">
+                <label for="checkbox22">Checkbox 2</label>
+                <input id="checkbox32" type="checkbox">
+                <label for="checkbox32">Checkbox 3</label>
+            </fieldset>
+        </div>
+        <div class="column group">
+            <h4>Help Text</h4>
+            <p>Place help text below a field to clarify it’s purpose. Whenever you use help text, give the text a unique ID, and add the attribute
+                <code>aria-describedby</code>
+                to the input.</p>
+            <label>Password
+                <input type="password" aria-describedby="passwordHelpText">
+                <p id="passwordHelpText" class="help-text">Your password must have at least 10 characters, a number, and an Emoji.</p>
+            </label>
+        </div>
+        <div class="column group">
+            <h4>Label Positioning</h4>
+            <p>Sometimes you want a form with labels to the left of your inputs. Piece of cake! You can put the label inside a different column to the left of the input. Then use the class
+                <code>.text-right</code>
+                or
+                <code>.float-right</code>
+                (or add
+                <code>text-align: right</code>
+                yourself) to realign the label.</p>
+            <div class="warning callout">
+                <p>In a
+                    <a href="rtl.html">right-to-left</a>
+                    environment, use
+                    <code>.float-left</code>
+                    instead.</p>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="small-3 columns">
+                        <label for="right-label" class="text-right">Label</label>
+                    </div>
+                    <div class="small-9 columns">
+                        <input id="right-label" type="text" placeholder="Right-aligned text input">
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="right-label" class="text-right">Label</label>
+                </div>
+                <div class="small-9 columns">
+                    <input id="right-label" type="text" placeholder="Right-aligned text input">
+                </div>
+            </div>
+            <p>Add the
+                <code>.middle</code>
+                class to vertically align the label with its input.</p>
+            <form>
+                <div class="row">
+                    <div class="small-3 columns">
+                        <label for="middle-label" class="text-right middle">Label</label>
+                    </div>
+                    <div class="small-9 columns">
+                        <input id="middle-label" type="text" placeholder="Right- and middle-aligned text input">
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="middle-label" class="text-right middle">Label</label>
+                </div>
+                <div class="small-9 columns">
+                    <input id="middle-label" type="text" placeholder="Right- and middle-aligned text input">
+                </div>
+            </div>
+        </div>
+        <div class="column group">
+            <h4>Inline Labels and Buttons</h4>
+            <p>To attach extra text or controls to the left or right of an input field, wrap the elements in an
+                <code>.input-group</code>
+                container, then add these classes to the elements inside:</p>
+            <div class="primary callout">
+                <p>This component supports flexbox mode.
+                    <a href="flexbox.html">Learn how to enable flexbox mode</a>.</p>
+            </div>
+            <div class="input-group">
+                <span class="input-group-label">$</span>
+                <input type="number" class="input-group-field">
+                <div class="input-group-button">
+                    <input type="submit" value="Submit" class="button">
+                </div>
+            </div>
+        </div>
+        <div class="column group">
+            <h4>File Upload Button</h4>
+            <p>Use
+                <code>&lt;input type=“file”&gt;</code>
+                to create a file upload button. For security reasons, most browsers don’t let you style file inputs. To work around that, we can style a form label as a button, and point it to the
+                <code>&lt;input&gt;</code>. To properly mask the input, the
+                <code>.show-for-sr</code>
+                class is added.</p>
+            <label for="exampleFileUpload" class="button">Upload File</label>
+            <input id="exampleFileUpload" type="file" class="show-for-sr">
+        </div>
+        <div class="column group">
+            <h4>Custom Controls</h4>
+            <p>Custom form controls, like date pickers, range sliders, or switches need some extra attention to be made accessible. Our custom inputs, such as the range slider and switch, do most of this work for you.</p>
+            <p>Custom inputs with labels or help text need the attributes
+                <code>aria-labelledby</code>
+                and
+                <code>aria-describedby</code>
+                added to them, so screen readers know how to describe the control.</p>
+            <label id="ageLabel">Age</label>
+            <div aria-labelledby="ageLabel" aria-describedby="ageHelpText" data-slider="" data-initial-start="50" data-end="200" class="slider">
+                <span data-slider-handle="" role="slider" tabindex="1" class="slider-handle"></span>
+                <span data-slider-fill="" class="slider-fill"></span>
+                <input type="hidden">
+            </div>
+            <p id="ageHelpText">How old are you?</p>
+        </div>
+    </div>
+</section>

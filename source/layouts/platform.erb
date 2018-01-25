@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<%# datica platform 2017 %>
+<head>
+    <%= partial "partials/head/tags" %>
+    <%= partial "partials/head/icons" %>
+    <%= stylesheet_link_tag "seldon" %>
+    <% if current_page.data.has_key?("customCSS") %>
+      <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
+    <% end %>
+</head>
+    <body class="<%= page_classes %>">
+        <%#= partial "partials/snippets/alert-ribbon" %>
+        <div class="container-gray-2">
+            <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+        </div>
+        <div id="platformTop" class="show-for-large" data-sticky-container>
+            <nav class="sticky sticky-nav container-color--white drop text-center full-width" data-sticky data-options="marginTop:0; topAnchor:platformTop">
+                <ul class="menu horizontal align-center">
+                    <%= partial "platform/nav-platform" %>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="content" class="content">
+            <main>
+            <%= yield %>
+            </main>
+            <% if current_page.data.has_key?("ctaCustom") != true %>
+                <%= partial "partials/ctas/platform-cta" %>
+            <% end %>
+        </div>
+        <%= partial "partials/snippets/footer" %>
+        <%= partial "partials/head/scripts-footer" %>
+        <% if build? %>
+            <%# GA %>
+            <%= partial "partials/head/hubspot" %>
+            <%= partial "partials/head/ga" %>
+        <% end %>
+        <%# Custom JS files %>
+        <% if current_page.data.has_key?("customJS") %>
+            <% current_page.data.customJS.split(",").each do |filename| %>
+                <script src="<%= filename.strip %>"></script>
+            <% end %>
+        <% end %>
+    </body>
+</html>

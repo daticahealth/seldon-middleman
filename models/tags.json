@@ -1,0 +1,158 @@
+{
+  "name": "Tags",
+  "description": "Meta tags for search, SEO, and Themes.",
+  "displayField": "tagFull",
+  "fields": [
+    {
+      "id": "tagFull",
+      "name": "Tag, Full Name",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "slug",
+      "name": "Tag Slug",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "min": 2,
+            "max": 24
+          }
+        },
+        {
+          "regexp": {
+            "pattern": "([-]*[a-z0-9]+([-]*[a-z0-9]+)*)",
+            "flags": "g"
+          },
+          "message": "A proper slug has only lower-case letters, numbers, and a dash."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "description",
+      "name": "Tag Description",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 1200
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "body",
+      "name": "Tag Long Description",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "featuredImage",
+      "name": "Tag Featured Image",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ]
+        },
+        {
+          "assetImageDimensions": {
+            "width": {
+              "min": null,
+              "max": 2400
+            },
+            "height": {
+              "min": null,
+              "max": 1200
+            }
+          },
+          "message": "Choose a landscape-oriented image no more than 2400px wide."
+        },
+        {
+          "assetFileSize": {
+            "max": 3145728
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "url",
+      "name": "More info URL",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "^(http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$",
+            "flags": "g"
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    }
+  ],
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "189dvqdsjh46"
+      }
+    },
+    "id": "tags",
+    "type": "ContentType",
+    "createdAt": "2016-09-29T17:57:25.550Z",
+    "updatedAt": "2017-04-25T22:25:06.200Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedCounter": 7,
+    "version": 14,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedVersion": 13,
+    "firstPublishedAt": "2016-09-29T17:57:25.930Z",
+    "publishedAt": "2017-04-25T22:25:06.174Z"
+  }
+}

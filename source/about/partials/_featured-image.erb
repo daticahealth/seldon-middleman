@@ -1,0 +1,7 @@
+<% if entry.has_key?("featured_image") %>
+    <img src="<%= entry["featured_image"]["url"] %>?fm=jpg&w=1000&q=50" alt="Photo: <%= entry["fullname"] %>">
+    <% elsif entry.has_key?("profile_pic") %>
+    <div class="text-center">
+        <img class="avatar avatar--xlarge circle" src="<%= entry["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" alt="Photo: <%= entry["fullname"] %>">
+    </div>
+<% end %>

@@ -1,0 +1,111 @@
+---
+title: "Thoughts from the team behind Healthcare's trusted cloud | The Datica Blog"
+summary: "A collection of blog articles from Datica team members"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "January 1, 2017"
+share_image: "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+layout: basic
+customCSS: "blog"
+---
+<% sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
+<div class="container-color--dark-alt">
+    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+    <section class="custom-sticky custom-sticky--dark show-for-large">
+        <div class="row">
+            <div class="columns small-12 medium-12">
+                <ul>
+                    <%= partial "partials/snippets/nav-sub-company" %>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <% sorted_posts.take(1).each do | id, post | %>
+        <% if post.has_key?("featured_image") %>
+            <div class="container-image-fill" data-interchange="[<%= post["featured_image"]["url"] + image_featured_small %>, small], [<%= post["featured_image"]["url"] + image_featured_large %>, medium]">
+        <% else %>
+            <div class="container-image-fill" data-interchange="[https://images.contentful.com/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg, medium]">
+        <% end %>
+            <section class="section-article container-color--tint-70">
+                <div class="row">
+                    <div class="columns small-12 large-10 featured-post">
+                        <div class="subhead--spaced headline-6">Datica Blog</div>
+                        <h1 class="headline-2"><a class="link--yellow" href="/blog/<%= post["slug"] %>" title="Read this post"><%= post["title"] %></a></h1>
+                        <% if post.has_key?("summary") %>
+                            <p class="blog-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></p>
+                            <div class="lead"><%= Kramdown::Document.new(plain_text(post.summary)).to_html %></div>
+                            <p><a class="link--yellow read-more" href="/blog/<%= post["slug"] %>" title="Read the post">Read the post <i class="fa fa-angle-right"></i></a></p>
+                        <% end %>
+                    </div>
+                </div>
+            </section>
+        </div>
+    <% end %>
+</div>
+<section class="container-gray-10 card-featured-section">
+    <div class="row row--card-grid full-width align-center small-up-1 medium-up-2 large-up-3">
+    <% sorted_posts[1...4].each do | id, post | %>
+        <div class="column">
+            <%= partial "partials/cards/featured-blog", :locals => { :post => post, :style => "light", :size => "large" } %>
+        </div>
+    <% end %>
+    </div>
+</section>
+<section class="section-article">
+    <div class="row">
+        <div class="columns small-12 large-9 group">
+            <% sorted_posts[4...10].each do | id, post | %>
+                <div class="row group row--gutter-small">
+                    <div class="columns medium-3 large-3 show-for-medium">
+                        <% if post.has_key?("featured_image") %>
+                            <a href="/blog/<%= post["slug"] %>" title="Read this post">
+                                <img class="thumbnail" data-interchange="[<%= post["featured_image"]["url"] + image_thumb %>, medium]"  alt="<%= post["featured_image"]["title"] %>">
+                            </a>
+                        <% end %>
+                    </div>
+                    <div class="columns small-12 medium-9 large-9">
+                        <p class="blog-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></p>
+                        <h3 class="headline-4"><a href="/blog/<%= post["slug"] %>" title="Read this post"><%= post["title"] %></a></h3>
+                        <% if post.has_key?("summary") %>
+                            <%= Kramdown::Document.new(post["summary"]).to_html %>
+                        <% end %>
+                        <p><a class="read-more" href="/blog/<%= post["slug"] %>" title="Read this post">Read on <i class="fa fa-angle-right"></i></a></p>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <aside class="columns small-12 large-3 section--sidebar">
+            <%= partial "blog/partials/blog-subscription" %>
+        </aside>
+    </div>
+</section>
+<section class="section-article container-color--gray-light">
+    <div class="row small-up-1 medium-up-2">
+            <% sorted_posts[10...20].each do | id, post | %>
+            <div class="column group">
+                <h4 class="headline-5"><a href="/blog/<%= post["slug"] %>" title="Read this post"><%= post["title"] %></a></h4>
+                <% if post.has_key?("featured_image") %>
+                    <a href="/blog/<%= post["slug"] %>" title="Read this post">
+                        <img class="thumbnail float-left" width="80" data-interchange="[<%= post["featured_image"]["url"] %>?fit=thumb&w=160&h=160&q=40, medium]"  alt="<%= post["featured_image"]["title"] %>">
+                    </a>
+                <% end %>
+                <div class="pub-date"> <%= post['pub_date'].strftime('%B %-d, %Y') %></div>
+                <% if post.has_key?("summary") %>
+                    <%= Kramdown::Document.new(post["summary"]).to_html %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+    <div class="row">
+        <div class="column small-12 medium-6">
+            <div class="callout drop">
+                <h4 class="headline-4">Search the blog</h4>
+                <input type="text" class="eng-blog-search" placeholder="Search the blog by keyword...">
+                <p>You can also <a class="" href="/blog/archives/" title="View archived blog posts">browse the archives <i class="fa fa-angle-right"></i></a></p>
+            </div>
+        </div>
+        <div class="column small-12 medium-6">
+            <%= partial "blog/partials/blog-subscription", :locals => {:color => "dark"} %>
+        </div>
+    </div>
+</section>

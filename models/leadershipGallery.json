@@ -1,0 +1,407 @@
+{
+  "name": "Leadership Gallery",
+  "description": "Entries profiling leaders for the Leadership Gallery project.",
+  "displayField": "title",
+  "fields": [
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "min": 6,
+            "max": 256
+          },
+          "message": "Keep it short-ish!"
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "^[a-z0-9-]+",
+            "flags": "g"
+          },
+          "message": "An url slug must have lowercase words separated by dashes (-)."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "volume",
+      "name": "Volume (issue)",
+      "type": "Integer",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "in": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "message": "Choose a volume (a quarterly publication). Volume 1 was released in Q3 2017."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "order",
+      "name": "First or Last?",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Symbol",
+        "validations": [
+          {
+            "in": [
+              "first",
+              "last"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "pubDate",
+      "name": "Publish Date",
+      "type": "Date",
+      "localized": false,
+      "required": true,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "personLeader",
+      "name": "Profiled Leader",
+      "type": "Link",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "linkContentType": [
+            "person"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "author",
+      "name": "Author",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "person"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": true,
+      "linkType": "Entry"
+    },
+    {
+      "id": "tags",
+      "name": "Tags",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkContentType": [
+              "products",
+              "tags"
+            ]
+          }
+        ],
+        "linkType": "Entry"
+      }
+    },
+    {
+      "id": "discoveryTopic",
+      "name": "Discovery Topic",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "discover"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "categoriesBlog",
+      "name": "Categories, Blog",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "in": [
+            "company",
+            "engineering",
+            "design",
+            "healthcare"
+          ]
+        }
+      ],
+      "disabled": true,
+      "omitted": true
+    },
+    {
+      "id": "featuredImage",
+      "name": "Featured Image",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ]
+        },
+        {
+          "assetImageDimensions": {
+            "width": {
+              "min": 600,
+              "max": 2500
+            },
+            "height": {
+              "min": null,
+              "max": 2500
+            }
+          },
+          "message": "Images must be at least 600px wide, and no more than 2400px wide."
+        },
+        {
+          "assetFileSize": {
+            "max": 4194304
+          }
+        }
+      ],
+      "disabled": true,
+      "omitted": true,
+      "linkType": "Asset"
+    },
+    {
+      "id": "featuredPerson",
+      "name": "Featured Person",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "person"
+          ]
+        }
+      ],
+      "disabled": true,
+      "omitted": true,
+      "linkType": "Entry"
+    },
+    {
+      "id": "shareImage",
+      "name": "Social Share Image",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ]
+        },
+        {
+          "assetImageDimensions": {
+            "width": {
+              "min": null,
+              "max": 1600
+            },
+            "height": {
+              "min": null,
+              "max": 1600
+            }
+          }
+        },
+        {
+          "assetFileSize": {
+            "max": 3145728
+          }
+        }
+      ],
+      "disabled": true,
+      "omitted": true,
+      "linkType": "Asset"
+    },
+    {
+      "id": "summary",
+      "name": "Summary",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 1600
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "lead",
+      "name": "Lead",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "post",
+      "name": "Main Entry",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "relatedEntries",
+      "name": "Related Entries",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 5
+          },
+          "message": "Let's keep it simple. 5 Max!"
+        }
+      ],
+      "disabled": true,
+      "omitted": true,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkContentType": [
+              "blog",
+              "podcastEntry"
+            ]
+          }
+        ],
+        "linkType": "Entry"
+      }
+    },
+    {
+      "id": "dhsfRef",
+      "name": "DHSF Reference",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "ctaRef",
+      "name": "Call to Action",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "cta"
+          ]
+        }
+      ],
+      "disabled": true,
+      "omitted": true,
+      "linkType": "Entry"
+    }
+  ],
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "189dvqdsjh46"
+      }
+    },
+    "id": "leadershipGallery",
+    "type": "ContentType",
+    "createdAt": "2017-07-20T16:49:13.025Z",
+    "updatedAt": "2017-08-16T17:43:03.257Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedCounter": 19,
+    "version": 38,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedVersion": 37,
+    "firstPublishedAt": "2017-07-20T16:49:13.866Z",
+    "publishedAt": "2017-08-16T17:43:03.207Z"
+  }
+}

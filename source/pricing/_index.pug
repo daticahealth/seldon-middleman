@@ -1,0 +1,264 @@
+//- This pug file creates the markup for the pricing page. Easier than Ruby™. It's not necessary at all, just a reference for how we go here. Pen: https://codepen.io/allanwhite/pen/JJGPQz - AW
+
+//- easy foundation tooltips, just pass the text and body of the tip. ex: +tip("20GB EBS", "Nightly backups are...")
+mixin tip(label, body)
+    span.has-tip.top(data-tooltip='', data-allow-html='true', aria-haspopup='true', data-disable-hover='false', title=body)=label
+
+//- ---- content ----
+mixin tier1
+    h4.headline-5.no-margin Infrastructure
+    p #[em Multi-tenant only]
+    ul.price-info.fa-ul
+        li
+            i.fa-li.fa.fa-check
+            +tip("6GB RAM", "This is customer-allocated RAM for your application. Datica's compliance components, like monitoring and logging, are standard for every customer and do not count against available RAM.")
+        li
+            i.fa-li.fa.fa-check
+            +tip("20GB EBS", "Nightly backups are a standard component of Datica's compliance platform, and do not count against available storage.")
+    h4.headline-5 Standard Support
+    ul.price-info.fa-ul
+        li
+            i.fa-li.fa.fa-check
+            | 9-5 Ticket Support
+    h4.headline-5 Complete Compliance Coverage
+    ul.price-info.fa-ul
+        li
+            i.fa-li.fa.fa-check
+            | BAA
+        li
+            i.fa-li.fa.fa-check
+            | Complete HIPAA Compliance™
+        li
+            i.fa-li.fa.fa-check
+            | SOC2 Compliance
+        li
+            i.fa-li.fa.fa-check
+            +tip("HITRUST CSF Certification & Inheritance", "Datica is HITRUST CSF Certified. Customers can inherit some of our controls while doing their own audits or certification pr0cess. l3arn more: datica.com/platform/compliance")
+
+mixin tier1scaling
+    .callout.callout--gray-light
+        h4.headline-5 Scaling
+        p
+            | #[strong $100] per GB RAM / mo #[br]
+            | #[strong $100] per 100GB File Storage /mo #[br]
+            | #[strong $2.50] per GB EBS / mo
+
+mixin tier2
+    h5.headline-5 Infrastructure
+    .row.collapse
+        .columns.small-6
+            h6.headline-6 Multi-tenant
+            ul.price-info.fa-ul
+                li
+                    i.fa-li.fa.fa-check
+                    +tip("16GB RAM", "This is customer-allocated RAM for your application. Datica's compliance components, like monitoring and logging, are standard for every customer and do not count against available RAM.")
+                li
+                    i.fa-li.fa.fa-check
+                    +tip("60GB EBS", "Nightly backups are a standard component of Datica's compliance platform, and do not count against available storage.")
+                li
+                    i.fa-li.fa.fa-check
+                    | 500GB Storage
+    h4.headline-5 Premium Support
+    ul.price-info.fa-ul
+        li
+            i.fa-li.fa.fa-check
+            | 9-5 Ticket Support
+        li
+            i.fa-li.fa.fa-check
+            | 9-5 Phone Support
+        li
+            i.fa-li.fa.fa-check
+            | 24/7 Severity 1
+        li
+            i.fa-li.fa.fa-check
+            +tip("2 hours of one-time onboarding support", "Migrating from somewhere else? Have special technical needs? Datica's support team is available for initial on-boarding.")
+        li
+            i.fa-li.fa.fa-check
+            | Dedicated account manager
+    h4.headline-5 Premium Compliance Coverage
+    ul.price-info.fa-ul
+        li
+            i.fa-li.fa.fa-check
+            | BAA
+        li
+            i.fa-li.fa.fa-check
+            | SOC2 Compliance
+        li
+            i.fa-li.fa.fa-check
+            +tip("HITRUST CSF Certification & Inheritance", "Datica is HITRUST CSF Certified. Customers can inherit some of our controls while doing their own audits or certification pr0cess. l3arn more: datica.com/platform/compliance")
+        li
+            i.fa-li.fa.fa-check
+            | Security Audit Guarantee
+
+    h4.headline-5 Additional Technology
+    ul.price-info.fa-ul
+        li
+            i.fa-li.fa.fa-check
+            | VPN Availability
+        li
+            i.fa-li.fa.fa-check
+            | Windows Support Availability
+
+mixin tier2scaling
+    .callout.callout--gray-light
+        h4.headline-5 Scaling
+        p
+            | #[strong $100] per GB RAM / mo #[br]
+            | #[strong $100] per 100GB File Storage /mo #[br]
+            | #[strong $2.50] per GB EBS / mo #[br]
+            | #[strong $250] per HA VPN Pair / mo
+
+mixin tier3
+    h4.headline-5 Multiple account type availability
+    ul.price-info.fa-ul
+        li
+            i.fa-li.fa.fa-check
+            | Multi-tenant
+        li
+            i.fa-li.fa.fa-check
+            | Dedicated
+        li
+            i.fa-li.fa.fa-check
+            | On-account
+    h4.headline-5 Multiple cloud availability
+    ul.price-info.fa-ul
+        li
+            i.fa-li.fa.fa-check
+            | AWS, Microsoft Azure, Rackspace, or IBM SoftLayer
+    h4.headline-5 Enterprise Support & Service
+    ul.price-info.fa-ul
+        li
+            i.fa-li.fa.fa-check
+            | 24/7 Ticket & Phone Support
+        li
+            i.fa-li.fa.fa-check
+            | Dedicated account manager
+        li
+            i.fa-li.fa.fa-check
+            +tip("20 hours of one-time on-boarding support", "Migrating from somewhere else? Have special technical needs? Datica's support team is available for initial on-boarding.")
+        li
+            i.fa-li.fa.fa-check
+            +tip("20 hours of yearly audit support", "Datica will provide a team representative to support an annual audit pr0cess should your company choose to be audited.")
+        li
+            i.fa-li.fa.fa-check
+            +tip("Quarterly Product Roundtable", "Customers are invited to a comprehensive quarterly round table on product updates.")
+    h4.headline-5 Premium Compliance Coverage
+    ul.price-info.fa-ul
+        li
+            i.fa-li.fa.fa-check
+            | BAA
+        li
+            i.fa-li.fa.fa-check
+            | SOC2 Compliance
+        li
+            i.fa-li.fa.fa-check
+            +tip("HITRUST CSF Certification & Inheritance", "Datica is HITRUST CSF Certified. Customers can inherit some of our controls while doing their own audits or certification pr0cess. l3arn more: datica.com/platform/compliance")
+        li
+            i.fa-li.fa.fa-check
+            | Security Audit Guarantee
+    h4.headline-5 Additional Technology
+    ul.price-info.fa-ul
+        li
+            i.fa-li.fa.fa-check
+            | VPN Availability
+        li
+            i.fa-li.fa.fa-check
+            | Windows Support Availability
+
+mixin tier3scaling
+    .callout.callout--gray-light
+        h4.headline-5 Scaling
+        p Variable with volume
+
+//- ----- structure --------
+section.section-article.container-gray-12
+    .row
+        .columns.small-12.group
+            h1.headline-1.text-center Pricing
+    .row.hide-for-large.group.align-center
+        .columns.small-12.medium-8
+            ul#pricing-tabs.tabs(data-tabs='')
+                li.tabs-title.is-active
+                    a(href='#tier1', aria-selected='true') Developer
+                li.tabs-title
+                    a(href='#tier2') Growth
+                li.tabs-title
+                    a(href='#tier3') Enterprise
+
+            .tabs-content(data-tabs-content='pricing-tabs')
+                #tier1.tabs-panel.price-panel.drop.is-active
+                    .group.price-card--section
+                        h3.headline-4.price-info--price $1,000 / mo
+                        a.button.button-primary.expanded.group Start your free trial
+                            i.fa.fa-angle-right
+                    .group.price-card--section
+                        +tier1
+                        +tier1scaling
+
+                #tier2.tabs-panel.price-panel.drop
+                    .group.price-card--section
+                        h3.headline-4.price-info--price $3,300 / mo
+                        a.button.button-primary.expanded.group Sign Up Today
+                            i.fa.fa-angle-right
+                        +tier2
+                        +tier2scaling
+
+                #tier3.tabs-panel.price-panel.drop
+                    .group.price-card--section
+                        h3.headline-4.price-info--price Custom
+                        a.button.button-primary.expanded.group Contact us
+                            i.fa.fa-angle-right
+                        +tier3
+                        +tier3scaling
+
+    .row.show-for-large.row--card-grid.price
+        .columns.small-12.medium-4.tier-dev
+            .card.price-card
+                .card-section.price-card--section
+                    h3.headline-4.text-center Developer
+                    hr.divider
+                    +tier1
+                .card-divider
+                    +tier1scaling
+                    h3.headline-4.price-info--price $1,000 / mo
+                    a.button.expanded Start your free trial
+                        i.fa.fa-angle-right
+
+        .columns.small-12.medium-4.tier-grow
+            .card.price-card
+                .card-section
+                    h3.headline-4.text-center Growth
+                    hr.divider
+                    +tier2
+                .card-divider.price-card--section
+                    +tier2scaling
+                    h3.headline-4.price-info--price $3,300 / mo
+                    a.button.expanded Sign Up Today
+                        i.fa.fa-angle-right
+
+        .columns.small-12.medium-4.tier-ent
+            .card.price-card
+                .card-section
+                    h3.headline-4.text-center Enterprise
+                    hr.divider
+                    +tier3
+                .card-divider.price-card--section
+                    +tier3scaling
+                    h3.headline-4.price-info--price Custom
+                    a.button.expanded Contact us
+                        i.fa.fa-angle-right
+    .row.row--card-grid
+        .columns.small-12.medium-8.medium-offset-2.large-8.large-offset-0
+            .card.container-gray-11
+                .card-section
+                    h5.headline-6 Add-on Pricing (FPO)
+                    ul
+                        li 24/7 Ticket & Phone Support
+                        li Dedicated account manager
+                        li 20 hours of one-time on-boarding support
+                        li 20 hours of yearly audit support
+                        li Quarterly Product Roundtable
+        //- .columns.small-12.large-4
+        //-     .card.container-gray-11
+        //-         .card-section
+        //-             h5.headline-6 Contact us

@@ -1,0 +1,86 @@
+---
+layout: basic
+ogType: article
+---
+<% p = locals[:item]
+current_page.data.title = p["title"] + " | Datica Press Release"
+current_page.data.summary = safe_summary(p.summary)
+if p.has_key?("featured_image")
+    current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
+end
+if p.has_key?("tags")
+    current_page.data.tags = get_tag_list(p["tags"])
+else
+    current_page.data.tags = "press, media, IT"
+end
+if p.has_key?("author")
+    current_page.data.author = p["author"]["fullname"]
+else
+    current_page.data.author = "Datica, Inc."
+end
+if p.has_key?("pub_date")
+    current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
+else
+    current_page.data.date = "2017"
+end
+%>
+<div class="container-color--dark-alt">
+    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+</div>
+<section class="custom-sticky custom-sticky--dark show-for-large">
+    <div class="row">
+        <div class="columns small-12 medium-12">
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/leadership">Leadership</a></li>
+                <li><a href="/press" class="active">Press</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/open-source">Open Source</a></li>
+                <li><a href="/careers">Careers</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="section-article--med container-color--gray-light">
+    <div class="row">
+        <div class="columns small-12 large-8">
+            <article class="callout callout--large drop">
+                <h4 class="headline-6 subheader--spaced-out">Press Release</h4>
+                <%= partial "/partials/snippets/pubdate", :locals => p %>
+                <h1 class="headline-3"><%= p["title"] %></h1>
+                <div class="content-dynamic group">
+                    <%= Kramdown::Document.new(p["post"]).to_html %>
+                </div>
+                <div class="article-meta">
+                    <% if p.has_key?("tags") %>
+                        <%#= partial "/partials/content/tags", :locals => p %>
+                        <i class="fa fa-tags"></i> 
+                        <% p["tags"].each do |tag| %>
+                            <% if tag.has_key?("tag_full") %>
+                                <span class="label info round"><%= tag["tag_full"] %></span>
+                            <% end %>
+                        <% end %>
+                    <% end %>
+                </div>
+            </article>
+            <% if p.has_key?("cta_ref") %>
+                <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
+            <% end %>
+        </div>
+        <div class="columns small-12 large-4">
+                <div class="media-object card-person">
+                    <div class="media-object-section">
+                        <img src="//images.contentful.com/189dvqdsjh46/FV6bMibcoS6KucswgSCec/9b32170214c6c1f3b0c967183c6ac9e6/prof-marcia.jpg" class="avatar avatar--medium circle" alt="Marcia Noyes">
+                    </div>
+                    <div class="media-object-section main-section align-self-middle">
+                        <h4 class="person-name">Marcia Noyes</h4>
+                        <p class="person-title"><a href="mailto:press@datica.com">press@datica.com</a></p>
+                    </div>
+                </div>
+                <hr class="content"/>
+                <%= partial "partials/snippets/press-links" %>
+                <hr class="content"/>
+            <a href="/press#pressReleases" class="button button--primary" title="All Press Releases"><i class="fa fa-angle-left" aria-hidden="true"></i> All Press Releases</a>
+        </div>
+    </div>
+</section>

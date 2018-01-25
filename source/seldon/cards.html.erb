@@ -1,0 +1,227 @@
+---
+title: Cards
+navTitle: Cards
+summary: "Card patterns with lots of variations."
+customCSS: styleguide
+hide_from_sitemap: true
+---
+<!-- <article class="context-content"> -->
+
+<section class="section-article container-gray-11">
+    <div class="row align-center">
+        <div class="columns small-12 large-8 text-center group">
+            <h2 class="headline-3">Card variations</h2>
+            <p class="lead">These cards demonstrate a variety of configurations. They leverage and extend the <a href="http://foundation.zurb.com/sites/docs/card.html" target="_blank">Foundation 6.3</a> Card pattern. They have sections, and are set to distribute the sections evenly, allowing equal-height cards to have "sticky" footers.</p>
+            <p class="lead">To ensure the cards stretch to fit a block-grid, be sure to add <code>.row--card-grid</code> in the containing <code>.row</code>.</p>
+        </div>
+    </div>
+    <div class="row small-up-1 medium-up-2 large-up-3 row--card-grid">
+        <div class="column">
+            <div class="card drop">
+                <div class="card-section text-center">
+                    <img class="icon-size--medium svg-color--blue inject-me" src="/public/icons/brand/icon-large-guide.svg">
+                    <h3 class="headline-4">Total Cost of Ownership of Healthcare Integrations Guide</h3>
+                    <p class="text-left">Understanding the costs of integration is a challenge because many initial an ongoing costs are hidden. This guide breaks down the formulas of how to measure the cost of a typical integration.</p>
+                </div>
+                <div class="card-divider">
+                    <a class="button">Get the free guide <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <!-- image has no padding -->
+            <div class="card drop">
+                <img src="https://unsplash.it/420/240?image=1073">
+                <div class="card-section">
+                    <p>This is a simple card with an image.</p>
+                </div>
+                <div class="card-divider">
+                    <a href="#" class="button hollow">Read the Article <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <!-- image has padding -->
+            <div class="card drop">
+                <div class="card-section">
+                    <img src="https://unsplash.it/420/240?image=1011">
+                </div>
+                <div class="card-section">
+                    <p>This is a simple card with an image inside a <code>.card-section</code>.</p>
+                </div>
+                <div class="card-divider">
+                    <a href="#" class="button hollow">Read the Article <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card drop">
+                <div class="card drop">
+                    <div class="card-section text-center">
+                        <img class="logo-size--medium group--sm" src="/public/img/customer-logos/healthloop-logo.png" alt="Healthloop Logo">
+                        <h3 class="headline-4">See how HealthLoop saves operational costs with Datica</h3>
+
+                        <blockquote class="text-left">
+                            Datica surprised us when they proposed a customized solution; with our previous hosting company it was always – ‘take it or leave it.’
+                        </blockquote>
+                        <div class="media-object person-small">
+                                <div class="media-object-section"><img src="//images.contentful.com/189dvqdsjh46/3MFChiuZUcUC8eoYaaOIoK/183b59fba0ac0f05675ef7cf777fa20c/headshot-healthloop.jpg?f=face&amp;fit=crop&amp;w=250&amp;q=35" class="avatar avatar--medium circle"></div>
+                            <div class="media-object-section main-section align-self-middle">
+                                <h4 class="person-name">Mayank Thanawala</h4>
+                                <p class="person-title">Chief Technology Officer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-divider">
+                        <a href="#" class="button button--primary">Read the Case Study <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <!-- image has no padding -->
+            <div class="card drop">
+
+                <img src="https://unsplash.it/420/240?image=1045">
+                <div class="card-section">
+                    <div class="subheader-small faded">Datica Blog</div>
+                    <a href="#">
+                        <h3 class="headline-4">The Accelerating Migration to the Healthcare Cloud</h3>
+                    </a>
+                    <%= person_widget("travis") %>
+                    <p class="">In this article, we explore the migration to cloud computing in healthcare, the benefits of cloud computing in healthcare, and HIPAA cloud compliant hosting.
+                    <!-- <br><a href="#">Read the post <i class="fa fa-angle-right"></i></a> -->
+                    </p>
+                </div>
+                <div class="card-divider">
+                    <ul class="menu simple faded">
+                        <!-- <li><img class="share--icon-top" src="/public/icons/social/icon-share.svg" alt="icon-share"></li> -->
+                        <li><img class="icon-inline inject-me svg-color--gray" src="/public/icons/social/icon-twitter.svg" alt="icon-share" data-sharer="twitter" data-title="<%= current_page.data.title %>" data-hashtags="heathcare" data-url="<%= site_url + current_page.url %>"></li>
+                        <li><img class="icon-inline inject-me svg-color--gray" src="/public/icons/social/icon-linkedin.svg" alt="icon-linkedin" data-sharer="linkedin" data-url="<%= site_url + current_page.url %>"></li>
+                        <li><img class="icon-inline inject-me svg-color--gray" src="/public/icons/social/icon-facebook.svg" alt="icon-facebook" data-sharer="facebook" data-url="<%= site_url + current_page.url %>"></li>
+                        <li><img class="icon-inline inject-me svg-color--gray" src="/public/icons/social/icon-email.svg" alt="icon-email" data-sharer="email" data-title="<%= current_page.data.title %>" data-subject="<%= current_page.data.title %>" data-url="<%= site_url + current_page.url %>"></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <!-- image has padding -->
+            <div class="card drop">
+                <div class="card-section">
+                    <img src="https://unsplash.it/420/240?image=1030">
+                </div>
+                <div class="card-section">
+                    <p>This is a simple card with an image inside a <code>.card-section</code>, causing it to align-stretch with the other sections or dividers.</p>
+                </div>
+                <div class="card-divider container-gray-12">
+                    <p class="text-small">The divider is used here to hug the bottom of the card. It can be a solid color too with color classes.</p>
+                    <a href="#" class="button button--primary">Read the Article <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-article container-gray-10">
+    <div class="row align-center">
+        <div class="columns small-12 large-8 text-center group">
+            <h2 class="headline-3">Spotlight Cards</h2>
+            <p class="lead">A refactor of the "light" cards used in the Proof page Spotlights.</p>
+        </div>
+    </div>
+    <div class="row row--card-grid align-center small-up-1 medium-up-2 large-up-3">
+        <% sorted_entries = data.site.spotlights.to_a.sort_by{ |id, entry| entry['title'] } %>
+        <% sorted_entries[0...6].each do | id, entry | %>
+            <div class="column">
+                <div class="card drop">
+                    <div class="card-section text-center">
+                        <img class="logo-size--medium group--sm" src="/public/img/customer-logos/<%= entry["customer"]["slug"] %>-logo.png" alt="<%= entry["company_name"] %> Logo"/>
+                        <p class="text-left"><%= entry["summary"] %></p>
+                    </div>
+                    <div class="card-divider card-section--flush">
+                        <a class="button button--light expanded" href="/customer/<%= entry["customer"]["slug"] %>#spotlight">Read the <%= entry["company_name"] %> Spotlight</a>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</section>
+
+<section class="section-article container-color--purple-grad-noise">
+    <div class="row align-center">
+        <div class="columns small-12 large-8 text-center group">
+            <h2 class="headline-3">Spotlight Cards</h2>
+            <p class="lead">Just apply a color class like <code>.container-color--blue-alt</code> or <code>.container-gray-n</code> and (assuming text color isn't overridden) it will Just Work.</p>
+        </div>
+    </div>
+    <div class="row row--card-grid align-center small-up-1 medium-up-2 large-up-3">
+        <% sorted_entries = data.site.spotlights.to_a.sort_by{ |id, entry| entry['title'] } %>
+        <% sorted_entries[0...6].each do | id, entry | %>
+            <div class="column">
+                <div class="card container-gray-1">
+                    <div class="card-section text-center">
+                        <img class="logo-size--medium group--sm" src="/public/img/customer-logos/<%= entry["customer"]["slug"] %>-logo-w.png" alt="<%= entry["company_name"] %> Logo"/>
+                        <p class="text-left"><%= entry["summary"] %></p>
+                    </div>
+                    <div class="card-divider card-section--flush">
+                        <a class="button hollow-inverted" href="/customer/<%= entry["customer"]["slug"] %>#spotlight">Read the <%= entry["company_name"] %> Spotlight</a>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</section>
+
+<section class="section-article container-gray-12">
+    <div class="row align-center">
+        <div class="columns small-12 large-8 text-center group">
+            <h2 class="headline-3">Article Cards, Headline</h2>
+            <p class="lead">These responsive cards pull in the (new) featured image and has some nav effects. Uses the flexbox n-up grid, and are responsive. <em>Currently, these are unique structures and don't use the Card pattern.</em></p>
+        </div>
+    </div>
+    <div class="row align-center">
+        <div class="columns small-12 large-8">
+            <div class="row small-up-1 medium-up-2">
+                <% data.guide.components.block_articles.each do |article| %>
+                    <div class="column">
+                        <div class="callout--article callout--stretch row collapse align-middle container-color--<%= article["bgColor"] %>">
+                            <a class="column callout--article-link" href="#" title="<%= article["body"] %> - Read article">
+                                <div class="callout--article-content">
+                                    <div class="subheader-small">Datica Blog</div>
+                                    <h3 class="headline-4"><%= article["title"] %> <i class="callout--article-action fa fa-arrow-circle-right"></i></h3>
+                                </div>
+                                <div class="callout--article-image container-image--center" data-interchange="[<%= article["bg"] %>, small]"></div>
+                            </a>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-article container-gray-2">
+    <div class="row align-center">
+        <div class="columns small-12 large-8 text-center group">
+            <h2 class="headline-3">Article Cards</h2>
+        </div>
+    </div>
+    <div class="row align-center small-up-1 medium-up-2 large-up-3">
+        <% data.guide.components.block_articles.take(3).each do |article| %>
+            <div class="column">
+                <div class="callout--article callout--stretch row collapse align-middle container-color--<%= article["bgColor"] %>">
+                    <a class="column callout--article-link" href="#" title="Read article">
+                        <div class="callout--article-content">
+                            <div class="subheader-small">Datica Blog</div>
+                            <h3 class="headline-4"><%= article["title"] %> <i class="callout--article-action fa fa-arrow-circle-right"></i></h3>
+                            <p class="callout--article-body"><%= article["body"] %></p>
+                        </div>
+                        <div class="callout--article-image container-image--center" data-interchange="[<%= article["bg"] %>, small]"></div>
+                    </a>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</section>
+<!-- </article> -->

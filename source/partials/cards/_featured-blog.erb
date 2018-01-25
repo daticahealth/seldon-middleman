@@ -1,0 +1,127 @@
+<%
+# if post.has_key?("share_image")
+#     image_url = data.site.blog[post.id].share_image.url
+# elsif post.has_key?("featured_image")
+#     image_url = data.site.blog[post.id].featured_image.url
+# else
+#     image_url = nil
+# end
+# :_meta:
+#   :content_type_id: podcastEntry
+# :_meta:
+#   :content_type_id: blog
+# :_meta:
+#   :content_type_id: academy
+if defined?(show_type) && show_type == true
+    content_type = case post._meta.content_type_id
+        when "podcastEntry" then "Podcast"
+        when "blog" then "Datica Blog"
+        when "academy" then "HIPAA Academy"
+        else post._meta.content_type_id
+    end
+else
+    content_type = nil
+end
+
+url_segment = case post._meta.content_type_id
+    when "podcastEntry" then "innovation"
+    when "pressRelease" then "press-release"
+    else post._meta.content_type_id
+end
+related_post_path = "/" + url_segment + "/" + post.slug 
+
+if post.has_key?("featured_image")
+    image_url = data.site.blog[post.id].featured_image.url
+else
+    # puts "The featured-blog partial at #{current_page.url} has no featured_image!"
+    image_url = nil
+end
+if defined?(size) && size == "large"
+    card_size = ""
+else
+    card_size = "text-small"
+end
+if defined?(fit) && fit == "edge"
+    fit_classes = "no-radius"
+else
+    fit_classes = nil
+end
+if defined?(style) && style == "dark"
+    style_classes = "container-gray-1"
+else
+    style_classes = "drop"
+end
+
+if post.has_key?("summary") && post.summary != ""
+    entry_summary = post.summary
+elsif post.has_key?("lead") && post.lead != ""
+    entry_summary = post.lead
+else
+    card_summary = nil
+end
+card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
+%>
+<%# Renders a card inside a post loop. Post var must be injected - AW %>
+<div class="card <%= style_classes %> <%= fit_classes %>">
+    <% if image_url != nil %><a class="container-image-fill card-header-image container-gray-3" href="<%= related_post_path %>" title="Read '<%= post["title"] %>'" data-interchange="[<%= image_url %>?fit=thumb&w=600&h=300&q=45, small], [<%= image_url %>?fit=thumb&w=800&h=400, medium]">
+        <% if content_type != nil %><span class="card-header-subhead"><%= content_type %></span><% end %>
+        <h2 class="headline-5 card-header-title ribbon--gray-1"><%= post["title"] %></h2>
+        <%= inline_svg("icon-arrow-right-circle-large", class: "icon-size--xlarge card-header-icon svg-color--white") %>
+    </a><% end %>
+
+    <% if url_segment == "innovation" %><a class="container-image-fill card-header-image card-header-image--compact container-gray-3" href="<%= related_post_path %>" title="Read '<%= post["title"] %>'" data-interchange="[/public/img/art/art-sound-bars-purple.svg, small]">
+        <span class="card-header-subhead">Healthcare Innovators Podcast</span>
+        <h2 class="card-header-title headline-5 ribbon--gray-1"><%= post["title"] %></h2>
+        <%= inline_svg("icon-video-play-circle", class: "icon-size--xlarge card-header-icon svg-color--white") %>
+    </a><% end %>
+    
+    <% if post._meta.content_type_id == "academy" %>
+        <a class="container-image--center card-header-image card-header-image--compact section--cta-blue" href="<%= related_post_path %>" title="Read '<%= post["title"] %>'" data-interchange="[//images.contentful.com/189dvqdsjh46/24KaYDLfRW40mKMOuKEgsS/04a4779c83f98738cc15c9f37b636192/platform-integration-inverted-bg.png?fit=thumb&w=400&h=100, medium]">
+        <span class="card-header-subhead">Datica HIPAA Academy</span>
+        <h2 class="card-header-title headline-5 ribbon--white link--dark"><%= post["title"] %></h2>
+        <%= inline_svg("icon-hitrust", class: "icon-size--xlarge card-header-icon svg-color--white") %>
+        </a>
+    <% end %>
+
+    <div class="card-section">
+        <% if url_segment != "innovation" && url_segment != "academy" && image_url == nil %>
+            <a class="" href="<%= related_post_path %>" title="Read '<%= post["title"] %>'"><h3 class="headline-5"><%= post["title"] %></h3></a>
+        <% end %>
+        <% if post.has_key?("guest") %>
+            <div class="media-object card-person">
+                <% if post["guest"].has_key?("profile_pic") %>
+                    <div class="media-object-section">
+                        <img src="<%= data.site.person[post.guest.id].profile_pic.url %>?fit=thumb&w=148&h=148&f=face&q=45" class="avatar avatar--medium circle"></div>
+                <% end %>
+                <div class="<%= card_size %> media-object-section main-section align-self-middle">
+                    <h4 class="person-name"><%= post["guest"]["fullname"] %></h4>
+                    <% if post["guest"].has_key?("role") %>
+                        <p class="person-title"><%= post["guest"]["role"] %></p>
+                    <% end %>
+                </div>
+            </div>
+        <% elsif post["author"].has_key?("fullname") %>
+            <div class="media-object card-person">
+                <% if post["author"].has_key?("profile_pic") %>
+                    <div class="media-object-section">
+                        <img src="<%= data.site.person[post.author.id].profile_pic.url %>?fit=thumb&w=148&h=148&f=face&q=45" class="avatar avatar--medium circle"></div>
+                <% end %>
+                <div class="<%= card_size %> media-object-section main-section align-self-middle">
+                    <h4 class="person-name"><%= post["author"]["fullname"] %></h4>
+                    <% if post["author"].has_key?("role") %>
+                        <p class="person-title"><%= post["author"]["role"] %></p>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+        <div class="<%= card_size %>">
+        <p><%= card_summary %></p>
+        <% if post.has_key?("pub_date") %>
+            <div class="float-left text-small faded"><i class="fa fa-calendar" aria-hidden="true"></i> <%= post['pub_date'].strftime('%B %-d, %Y') %></div>
+        <% end %>
+        </div>
+    </div>
+</div>
+        <%# if post.has_key?("discovery_topic") %>
+        <%#    <span class="float-right label small secondary round show-for-xlarge"></span><%#= post["discovery_topic"]["title"] %>
+        <%# end %><%#= data.site.discover[post.discovery_topic.id].topic_tag.tag_full %>

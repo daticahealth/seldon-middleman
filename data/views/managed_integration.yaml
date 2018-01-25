@@ -1,0 +1,162 @@
+listIntegrations:
+    -
+        icon: /public/icons/brand/icon-integration.svg
+        customClass: svg-color--aqua-glow
+        title: "No expertise required"
+        body: "Exchange data in and out of Electronic Health Records without needing to become an expert on the archaic technology obstructing healthcare."
+    -
+        icon: /public/icons/brand/icon-stack.svg
+        customClass: svg-color--green-glow
+        title: "Compliant infrastructure from the start"
+        body: "Integrations requires compliant infrastructure. Lean on Datica to eliminate the costs of HIPAA configuration and painful audits."
+    -
+        icon: /public/icons/brand/icon-moneys.svg
+        customClass: svg-color--magenta-glow
+        title: "Reduce maintenance costs"
+        body: "Setup costs are one thing, but integrations require ongoing maintenance to ensure 24/7 connectivity and up-to-code compliance. Do you have a plan?"
+    -
+        icon: /public/icons/brand/icon-pyramid.svg
+        customClass: svg-color--yellow-glow
+        title: "Scalability is finally possible"
+        body: "Integrations are point-to-point and inherently unscalable, meaning you must re-invent the wheel each integration. Datica eliminates that."
+    -
+        icon: /public/icons/brand/icon-ehr.svg
+        customClass: svg-color--orange-glow
+        title: "Reduce limits of the EHR"
+        body: "Healthcare has to work around the restrictions of the EHR. Datica has tamed the beasts, making possible almost any workflow and use case."
+    -
+        icon: /public/icons/brand/icon-bridge.svg
+        customClass: svg-color--blue-glow
+        title: "Bridge the gap to FHIR"
+        body: "FHIR is the future, but it is also immature. Datica is a leading expert on FHIR and enables integrations to be FHIR-ready for when the future comes."
+reasonCards:
+    -
+        title: "Automated interface setup"
+        body: "An elegant UI guides the configuration of your interface requirements and takes the guesswork out of selecting which interfaces you actually require."
+        bg: wand
+    -
+        title: "Protocol agnostic"
+        body: "Datica worries about the messiness of various standards on your behalf by intelligently selecting the protocols which best fit your technical use case."
+        bg: connection
+    -
+        title: "Every EHR, instantly"
+        body: "Datica Managed Integration works with every major EHR and use case on the market out of the box. Have a specific example? We’re happy to discuss."
+        bg: bolt
+    -
+        title: "Managed projects"
+        body: "Datica Managed Integration comes with a sophisticated project management plan that scales as you scale. It eliminates the communication gaps which can occur."
+        bg: presentation
+customer_healthsystems_list:
+    -
+        name: Cleveland Clinic
+        slug: clevelandclinic
+        logoSize: small-mid
+    -
+        name: Cedars-Sinai
+        slug: cedars
+        logoSize: small-mid
+    -
+        name: MultiCare
+        slug: multicare
+        logoSize: small-mid
+    -
+        name: Texas Health Resources
+        slug: texashr
+        logoSize: small-mid
+    -
+        name: Children's Healthcare of Atlanta
+        slug: choa
+        logoSize: small-mid
+    -
+        name: Fairview
+        slug: fairview
+        logoSize: small-mid
+    -
+        name: Meridian
+        slug: meridian
+        logoSize: small-mid
+    -
+        name: Froedtert
+        slug: froedtert
+        logoSize: small-mid
+    -
+        name: Baylor Scott & White Health
+        slug: baylor
+        logoSize: small-mid
+    -
+        name: John Muir
+        slug: johnmuir
+        logoSize: small-mid
+    -
+        name: Children's Hospital of Wisconsin
+        slug: chow
+        logoSize: small-mid
+    -
+        name: Hackensack UMC
+        slug: humc
+        logoSize: small-mid
+    -
+        name: Aurora
+        slug: aurora
+        logoSize: small-mid
+    -
+        name: Florida Hospital
+        slug: floridahospital
+        logoSize: small-mid
+build_buy_questions:
+    -
+        title: "1. Are you sure you know the best workflow?"
+        body: "With dozens of data standards multiplied by hundreds of EHR options, understanding the best data exchange strategy is not a given. There are likely optimizations to increase data fidelity, reduce complexity, and minimize costs."
+    -
+        title: "2. Does your team have the diversity of expertise needed?"
+        body: "A typical integration requires expertise in VPNs, modern cloud DevOps, encryption, integration engines, HL7 or other data standards like FHIR or DICOM, and Epic or other EHRs like Cerner or Allscripts. Each requires expert level experience."
+    -
+        title: "3. What happens if the VPN goes down at 3am?"
+        body: "Remember that integrations are always point-to-point and established through secure connectivity like VPNs. Those VPNs need to stay alive. Should a VPN go down, it's your responsibility to ensure it's back up again as soon as possible. For mission critical apps, any downtime could threaten lives. Are you staffed and ready to shoulder that responsibility?"
+    -
+        title: "4. Have you factored in all integration engine costs?"
+        body: "If you decide to do integrations on your own, an integration engine is required. The visible cost of an integration engine is the license, which can range from tens-of-thousands of dollars to free if you choose an open source option like Mirth. The true cost of an integration includes several invisible costs, however, like HIPAA compliant infrastructure, logs, data storage, and backup."
+    -
+        title: "5. Is your infrastructure HITRUST certified? Are your logs HIPAA compliant?"
+        body: "You need to put your integration engine, logs, database, and files somewhere. Is that somewhere a HITRUST certified, HIPAA compliant environment? Creating and maintaining HIPAA compliant infrastructure is its own world of expertise beyond the scope of integration. It's so large costs will run hundreds of thousands of dollars."
+    -
+        title: "6. What is your backup plan?"
+        body: "Often the data exchanged in an integration must be backed up for the purposes of audits, reports, external computing, or disaster recovery. Do you have a backup plan established specific to each integration? Don't forget those need to be HIPAA compliant as well."
+    -
+        title: "7. Are you achieving economies of scale?"
+        body: "The cardinal rule of integrations: there is no scale. Each integration is point-to-point, meaning the wheel must be reinvented every time, meaning new VPNs, new infrastructure, and workflow mappings, and more. If you plan to build and maintain all your integrations, are you achieving the scale needed to reduce costs as you grow? Or are you compounding your costs with each new integration?"
+    -
+        title: "8. Do you have a FHIR transition plan?"
+        body: "The future of healthcare integrations will be FHIR-enabled because the industry has bought into the value of having resource-based, RESTful-style connections. But most institutions are still using decades-old technology with slow plans to switch. Do you have a plan in place to handle FHIR in the future while straddling the technologies of the past?"
+    -
+        title: "9. Is your sales team prepped to communicate the value?"
+        body: "Integrations still need to have business value, even though there is no denying their importance to bettering patient care and improving business outcomes. In order for hospitals and vendors to see the value of an integration, they must both be sold. Do you have the training programs ready and collateral prepped for your sales team to accurately communicate the value?"
+    -
+        title: "10. Do you have the legal resources to manage each new Business Associate Agreement that comes with each new integration?"
+        body: "Don't forget you need to have a BAA established in order to complete an integration. Here's the tricky part: Often each new BAA will be slightly different than the last. It's now up to you to juggle each agreement and ensure alignment when bad things happen."
+# this appears on the technology page
+tech_diagram:
+    -
+        id: "cloud"
+        label: "Cloud Infrastructure"
+        content: "Speed, scale, cheaper costs, and better reliability are all required components of modern integrations, and only the cloud can give it to you."
+    -
+        id: "hitrust"
+        label: "HITRUST Compliance"
+        content: "Achieving HIPAA compliance takes a yeoman's effort. Integrations require compliant infrastructure, logging, storage, and more. Plus: Are you HITRUST certified?"
+    -
+        id: "mirth"
+        label: "Mirth"
+        content: "Healthcare integrations need an interface engine. Why pay for a proprietary option, or trust a blackbox API? We use best-of-breed, open source Mirth Connect."
+    -
+        id: "vpn"
+        label: "VPNs"
+        content: "Establishing a network connection into a hospital, and maintaining a keep-alive VPN, is potentially the hardest part of the stack."
+    -
+        id: "security"
+        label: "Security"
+        content: "Security is too often a back-burnered concern. But not to hospitals. We build security into our integration tooling, and give you the backing you need."
+    -
+        id: "ehr"
+        content: "Understanding API documentation is one thing: Knowing which collection of standards and specific HL7 interfaces needed to accomplish a digital health workflow is another. Our expertise is part of the stack."
+        label: "EHR Expertise"

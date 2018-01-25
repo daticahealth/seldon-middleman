@@ -1,0 +1,4 @@
+<% sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse! %>
+<% sorted_reports.take(1).each do | id, report | %>
+    <%= partial "partials/section-promos/report-promo", :locals => { :p => report } %>
+<% end %>

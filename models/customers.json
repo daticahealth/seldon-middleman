@@ -1,0 +1,337 @@
+{
+  "name": "Customers",
+  "description": "Company customers & profiles",
+  "displayField": "companyName",
+  "fields": [
+    {
+      "id": "companyName",
+      "name": "Company Name",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "customerLogoUrl",
+      "name": "Customer Logo URL",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
+          }
+        }
+      ],
+      "disabled": true,
+      "omitted": true
+    },
+    {
+      "id": "slug",
+      "name": "Customer Slug",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "message": "must be a valid URI slug. word-other-word ex."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "customerLogos",
+      "name": "Customer Logos",
+      "type": "Array",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "max": 3
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          },
+          {
+            "assetFileSize": {
+              "max": 153600
+            },
+            "message": "That's too big for a logo. Try resizing it down first. Should be PNG format."
+          }
+        ],
+        "linkType": "Asset"
+      }
+    },
+    {
+      "id": "fullname",
+      "name": "Person - Representative",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "role",
+      "name": "Role, Person",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 64
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "profileURL",
+      "name": "Profile link",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
+          },
+          "message": "This must be a full URL"
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "profilePic",
+      "name": "Profile Pic",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ],
+          "message": "That's not an image format. Please use JPG files for photos, PNG for line art."
+        },
+        {
+          "assetImageDimensions": {
+            "width": {
+              "min": null,
+              "max": 600
+            },
+            "height": {
+              "min": null,
+              "max": 600
+            }
+          },
+          "message": "Too large! Under 600px on either side."
+        },
+        {
+          "assetFileSize": {
+            "max": 512000
+          },
+          "message": "Photo needs to be under 500kb."
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "customerQuote",
+      "name": "Customer Quote",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "quotes"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "profileTwitter",
+      "name": "Company or Leader Twitter",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "[a-zA-Z0-9_]{1,}",
+            "flags": "g"
+          },
+          "message": "Those characters aren't in twitter handles."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "profileLinkedin",
+      "name": "Company or Leader LinkedIn",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "[a-zA-Z0-9_]{1,}",
+            "flags": "g"
+          },
+          "message": "Must be a valid linkedin profile."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "relatedProducts",
+      "name": "Related Products or Services",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkContentType": [
+              "products"
+            ]
+          }
+        ],
+        "linkType": "Entry"
+      }
+    },
+    {
+      "id": "customerStoryShort",
+      "name": "Customer Story, Short",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 612
+          },
+          "message": "Shorter story intro"
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "customerStory",
+      "name": "Customer Story, Long",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "caseStudy",
+      "name": "Customer Case Study",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "caseStudy"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "customerSpotlight",
+      "name": "Customer Spotlight",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "spotlights"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    }
+  ],
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "189dvqdsjh46"
+      }
+    },
+    "id": "customers",
+    "type": "ContentType",
+    "createdAt": "2016-08-19T16:58:23.033Z",
+    "updatedAt": "2017-01-18T19:00:30.599Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedCounter": 14,
+    "version": 28,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedVersion": 27,
+    "firstPublishedAt": "2016-08-19T16:58:23.274Z",
+    "publishedAt": "2017-01-18T19:00:30.567Z"
+  }
+}

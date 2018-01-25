@@ -1,0 +1,60 @@
+<%
+unless p.has_key?("accent_color")
+    accent_color = "container-color--blue-alt"
+end
+unless p.has_key?("container_color")
+    p.container_color = "container-color--dark-alt"
+end
+if p.has_key?("bg_image")
+    # puts "warning: the report section promo at #{current_page.data.url} has no 'bg_image'. "
+    # the_img = p.bg_image.url
+    section_style = %(class="section-article container-color--dark-alt container-image--center #{p.container_color}" data-interchange="[#{p.bg_image.url}#{image_featured_large}, small]")
+else
+    section_style = %(class="section-article #{p.accent_color} #{p.container_color}")
+end
+if p.has_key?("image_thumb")
+    # image_thumb = p.image_thumb.url
+    callout_style = %(class="callout--thumb callout--large #{p.container_color}" data-interchange="[#{p.image_thumb.url}?fit=thumb&w=600, medium]")
+else
+    callout_style = %(class="callout callout--large callout--gray-light drop")
+end
+unless defined?(headline)
+    headline = "Datica Innovation Report"
+end
+%>
+<section id="report-<%= p.slug %>" <%= section_style %>>
+    <div class="row">
+        <div class="columns small-12 large-8">
+            <div class="card container-gray-12 drop">
+                <div class="card-section">
+                    <div class="subhead--spaced faded headline-5"><%= headline %></div>
+                    <h3 class="headline-3"><%= p.title %></h3>
+                </div>
+                <div class="row collapse">
+                    <div class="columns small-12 medium-8 large-8">
+                        <div class="card-divider card-divider--flush">
+                            <%= Kramdown::Document.new(p["lead"]).to_html %>
+                            <%= 
+                            partial "partials/snippets/button", 
+                                :locals => {
+                                    :label => "Download your free report", 
+                                    :title => "Get the report", 
+                                    :url => "/innovation/" + p.slug, 
+                                    # :rel => "external", 
+                                    :button_classes => "button button--primary card-button-override", 
+                                    :icon => "icon-chevron-right", 
+                                    :icon_color => "white", 
+                                    :icon_align => "right"
+                                }
+                            %>
+                        </div>
+                    </div>
+                    <% if p.has_key?("image_thumb") %>
+                        <div class="columns small-12 medium-4 large-4 show-for-medium container-image--right-bottom" data-interchange="[<%= p.image_thumb.url %>?fit=thumb&w=600, medium]">
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

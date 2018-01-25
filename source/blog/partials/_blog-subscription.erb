@@ -1,0 +1,51 @@
+<%
+# :color theme options: blue|white|gray|dark
+
+color_default = 'callout--dark-alt'
+if defined?(color)
+	case color
+	when 'blue', 'blue-alt', 'brand'
+		colorclass = 'callout--blue'
+		buttonstyle = 'button--dark'
+		iconcolor = 'black'
+	when 'white'
+		colorclass = 'callout--white drop'
+		buttonstyle = 'button--primary'
+		iconcolor = 'gray-9'
+	when 'gray', 'light'
+		colorclass = 'callout--gray-light'
+		buttonstyle = 'button--primary'
+		iconcolor = 'gray-9'
+	# when 'dark', 'dark-gray'
+	# 	colorclass = color_default
+	# 	buttonstyle = 'button--primary'
+	# 	iconcolor = 'gray-5'
+	else
+		colorclass = color_default
+		buttonstyle = 'button--primary'
+		iconcolor = 'gray-5'
+	end
+else
+	colorclass = color_default
+	buttonstyle = 'button--primary'
+	iconcolor = 'gray-5'
+end
+%>
+<div class="callout <%= colorclass %> blog-subscription">
+	<%= inline_svg("icon-email-open", class: "float-right group--sm icon-size--large svg-color--#{iconcolor}") %>
+    <h4 class="headline-4">Subscribe to email updates</h4>
+    <p>We'll send you an email each time a new blog article is posted.</p>
+<!--[if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    css: '',
+    portalId: '1695915',
+    formId: '4e392b8b-084e-4f63-bea7-6bc179b9fdfb',
+    submitButtonClass: 'button expanded <%= buttonstyle %>'
+  });
+</script>
+
+</div>

@@ -1,0 +1,142 @@
+.flex-grow {
+    flex: 1 1 auto;
+}
+.spaced-out {
+    @include spaced-out;
+}
+.no-wrap { // don't let the line break words
+    white-space: nowrap;
+}
+
+.faded {
+    @include breakpoint (large) {
+        @include opacity(0.6);
+        @include easing(150ms);
+        &:hover {
+            @include opacity(1);
+        }
+    }
+}
+.drop { // drop shadows. Tried to use mixin & had issues with sass functions.
+    // default - fat bluesish shadow
+    @include shadow-anarchy(0 rem-calc(6px) rem-calc(17px) 0 hsla(220, 90%, 13%, 0.2));
+    &-light{
+        @include shadow-anarchy(0 0.3rem 0.4rem 0 hsla(220, 90%, 12%, 0.2));
+    }
+    &-dark {
+        @include shadow-anarchy(0 0 1.5rem 0 hsla(230, 40, 10, 0.9));
+    }
+    &-blue {
+        @include shadow-anarchy(0 rem-calc(6px) rem-calc(17px) 0 hsla(220, 100%, 46%, 0.3));
+    }
+}
+
+
+.full-height {
+    height: 100%; // for items within a flexbox grid - equal height objects
+}
+.full-viewport {
+    height: 100vh; // make this thing fill vertical viewport
+}
+// These make <section> tags full-width for responsive layouts.
+.full-width {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: none;
+    max-width: initial;
+}
+// .material-icons { // overrides from default google settings
+//     vertical-align: middle;
+//     font-size: 140% !important;
+// }
+
+hr {
+    &.white {
+        border-color: white(.5);
+    }
+    &.short{
+        margin: 0.5rem 0 1rem 0;
+    }
+    &.narrow {
+        max-width: 30rem;
+        max-width: 30vw;
+    }
+    &.content { // just an invisible spacer
+        border: none;
+        margin: 2rem 0;
+    }
+}
+
+ul.list-horiz {
+    margin: 0;
+    list-style-type: none;
+    @include breakpoint(medium up) {
+        // width: 100%;
+        @include flex;
+        @include flex-align(left, middle);
+        flex-wrap: wrap;
+        // justify-content: space-between;
+        & > li {
+            flex: 0 0 auto;
+            flex-wrap: wrap;
+            margin-right: 1rem;
+        }
+    }
+}
+
+// issues with .callout - spacing different inside full row, vs. inside cols. hm
+.small-12-fix { //
+    @include breakpoint(medium up){
+        padding-right: 2.5rem;
+        padding-left:  2.5rem;
+    }
+}
+.regressed-link{text-decoration: none;color: $color_deep;}
+.block-white-link{
+    display: block;
+    background-color: transparent;
+    color: $color_white;
+    display: inline-block;
+    @include easing($timing-default);
+    &:hover{
+        @include easing($timing-default);
+        color: $color_talk;
+    }
+}
+.block-yellow-link{
+    @extend .block-white-link;
+    color: $color_yellow-glow;
+}
+
+// Random site helpers - potential to reorganize in the future - RR
+.margin-auto{margin: 0 auto;}
+// .pad-h {
+//     padding-left:  1rem;
+//     padding-right: 1rem;
+// }
+.hover{
+    &--fancy{
+        &-shift{
+            display: block;
+            @include easing($timing-default);
+            &:hover{
+                @include easing($timing-default);
+                @include transform(translate(rem-calc(0px), rem-calc(2px)));
+            }
+        }
+    }
+}
+
+// Positioning helpers
+.position-relative {position: relative;}
+.position-fixed {position: fixed;}
+.position-absolute {position: absolute;}
+
+.text-center {
+    &-for-small {// below desktop, align center. Good for headlines
+        @include breakpoint (medium down){
+            text-align: center;
+        }
+    }
+}

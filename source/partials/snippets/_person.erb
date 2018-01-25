@@ -1,0 +1,40 @@
+<%
+if defined?(use_headers) && use_headers == true
+    tag_1 = "h3"
+    tag_2 = "h4"
+else
+    tag_1 = "div"
+    tag_2 = "div"
+end
+case p.person_type
+    when "Datica Executives", "Datica VP", "Datica Directors"
+        datican = true
+end
+if p.has_key?("bio_short")
+    person_summary = p.bio_short
+else
+    person_summary = "Learn more about " + p.fullname
+end
+%>
+<div class="media-object card-person<% if defined?(classes) %> <%= classes %><% end %>">
+    <% if p.has_key?("profile_pic") %>
+        <div class="media-object-section media-object--avatar"><img src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=128&h=128&fm=jpg&q=60" class="avatar avatar--large circle" alt="<%= p["fullname"] %>"></div>
+    <% end %>
+    <div class="media-object-section media-object--info main-section align-self-middle">
+        <<%= tag_1 %> class="person-name">
+            <% if datican == true %>
+                <a href="/about/<%= p["slug"] %>" title="Learn more about <%= p["fullname"] %>">
+                    <%= p["fullname"] %>
+                </a>
+            <% else %>
+                <%= p["fullname"] %>
+            <% end %>
+        </<%= tag_1 %>>
+        <% if p.has_key?("role") %>
+            <p class="person-title nomargin"><%= p["role"] %></p>
+        <% end %>
+        <% if defined?(company) %>
+            <p class="person-company"><%= company %></p>
+        <% end %>
+    </div>
+</div>

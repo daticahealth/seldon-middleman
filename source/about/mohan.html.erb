@@ -1,0 +1,75 @@
+---
+title: "Leadership: Travis Good, MD"
+summary: "Travis Good, MD, Co-founder, CEO, and Chief Privacy Officer"
+author: "Travis Good, MD"
+header: "Leadership"
+tags: "leadership, strategy, people"
+date: "January 1, 2017"
+ogType: "profile"
+header: "Leadership"
+subheader: "Travis Good, MD"
+layout: basic
+customCSS: "about-us"
+---
+<div class="container-color--dark-alt">
+    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+</div>
+<section class="custom-sticky custom-sticky--dark show-for-large">
+    <div class="row">
+        <div class="columns small-12 medium-12">
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/leadership">Leadership</a></li>
+                <li><a href="/blog">Company Blog</a></li>
+                <li><a href="https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog">Engineering Blog</a></li>
+                <li><a href="/careers">Careers</a></li>
+                <li><a href="/press">Press</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/open-source">Open Source</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<% data.site.person.each do |id, entry| %>
+    <% if entry["slug"] == "mohan" %>
+        <section class="section-article container-color--gray-light leadership-profile-section">
+            <div class="row align-center">
+                <div class="columns small-12 large-7 callout drop">
+                    <div class="row">
+                        <div class="columns small-12">
+                            <div class="row">
+                                <div class="columns small-12 large-3">
+                                    <div class="leadership-profile-image">
+                                        <img src="<%= entry['profile_pic']['url']%>" alt="<%= entry['fullname'] %>">
+                                    </div>
+                                </div>
+                                <div class="columns small-12 large-9 align-middle">
+                                    <div class="section--header-light-group section--header-light-group-small">
+                                        <h1><%= entry["fullname"] %></h1>
+                                        <p class="lead"><%= entry["role"] %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columns small-12">
+                            <ul class="no-bullet inline-list">
+                                <%= partial "about/partials/social-links", :locals => { :entry => entry } %>
+                            </ul>
+                            <% if entry.has_key?("bio_short") %>
+                                <div class="lead"><%= Kramdown::Document.new(entry["bio_short"]).to_html %></div>
+                            <% end %>
+                            <div class="group">
+                                <%= partial "about/partials/featured-image", :locals => { :entry => entry } %>
+                            </div>
+                            <% if entry.has_key?("bio") %>
+                                <%= Kramdown::Document.new(entry["bio"]).to_html %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <% end %>
+<% end %>

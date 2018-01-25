@@ -1,0 +1,48 @@
+---
+title: Calls To Action
+navTitle: CTAs
+summary: "All the Calls To Action in one place!"
+customCSS: styleguide
+hide_from_sitemap: true
+---
+
+<section class="section-article">
+	<div class="row align-center">
+		<div class="columns small-12 medium-8 text-center group">
+			<p class="">To manage Calls-to-action, edit them in the "CTA" section of Contentful.</p>
+			<p>These are sorted most recently updated first, which is a rough proxy for newer promotions.</p>
+		</div>
+	</div>
+    <div class="row full-width">
+        <% sorted_entries = data.site.cta.to_a.sort_by{ |id, p| p['_meta']['updated_at'].reverse! } %>
+        <% sorted_entries.each do | id, p | %>
+            <div class="columns small-12 medium-6">
+            	<h5 class="headline-5"><%= p["cta_title"] %></h5>
+            	<div class="group">
+                <%= partial("/partials/content/cta", :locals => { :p => p }) %>
+                </div>
+			</div>
+<div class="columns small-12 medium-6">
+<h5 class="headline-5 spaced-out">Code</h5>
+<% if p.has_key?("cta_image") %>
+<textarea rows="3"><a href="<%= h p["cta_url"] %>" title="<%= h p["cta_label"] %>">
+  <img src="<%= h p["cta_image"]["url"] %>" alt="<%= h p["cta_label"] %>">
+</a>
+</textarea>
+<% else %>
+<textarea rows="1">
+<a href="<%= h p["cta_url"] %>"><%= p["cta_title"] %></a>
+</textarea>
+<h5 class="headline-5 spaced-out">Text-only</h5>
+<div class="callout callout--gray-light callout--small">
+<pre class="text-smaller"><%= p["cta_title"] %>
+<%#= p["cta_desc"] %>
+<%= h p["cta_url"] %>
+</pre>
+</div>
+<% end %>
+</div>
+        <% end %>
+        </div>
+    </div>
+</section>

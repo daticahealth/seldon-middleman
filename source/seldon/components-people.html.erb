@@ -1,0 +1,114 @@
+---
+title: "Components: People"
+navTitle: People
+summary: "Consistent ways of displaying people and their information."
+customCSS: styleguide
+hide_from_sitemap: true
+---
+<section id="content-top" class="container-pad--medium container-gray-11">
+
+    <div id="people" class="row align-center container-pad--large">
+        <div class="columns small-12 medium-12 large-10 callout callout--large drop">
+            <div class="group">
+                <h1 class="headline-2">Example of person-card in an article</h1>
+                <div class="person-card--vertical float-right-on-medium">
+                    <img class="avatar circle" src="//images.contentful.com/189dvqdsjh46/4gVcDm2n5SGuS46wUI4eM/eba5483e34263e500f2278f80e82e881/laleh.jpg">
+                    <div class="person-card--caption">
+                        <div class="person-name">Laleh Hassibi</div>
+                        <div class="person-title">Director of Content Marketing</div>
+                    </div>
+                </div>
+                <p>[Sample] One of the major shifts that has come to healthcare is the patient is at the center of the ecosystem. This has come about for a few reasons, namely due to societal and cultural shifts driving changing expectations but also because patients are feeling the burden of the costs of care more and more. Shifts in technology are underlying some of these shifts as well and certainly are enabling models of care where patients have more ownership.</p>
+
+                <p>The reasons for the change are less important than the impact of the change on the industry and patients/consumers. Healthcare, a multi-trillion dollar industry, is experiencing a paradigm shift and the main user, the end user, is now the patient/consumer. This means the consumer is the new target and the <a href="https://datica.com/blog/dimensions-of-big-data-for-healthcare">choke point</a> to massive aspects of the most massive industry in the world. Look no further than the myriad of initiatives from all the major sectors trying to “win” the consumer.</p>
+                <p>The person widget below example code, for use within Contentful:</p>
+<textarea>
+&lt;div class=&quot;person-card--vertical float-right-on-medium&quot;&gt;
+    &lt;img class=&quot;avatar circle&quot; src=&quot;//images.contentful.com/[hash]/laleh.jpg&quot;&gt;
+    &lt;div class=&quot;person-card--caption&quot;&gt;
+        &lt;div class=&quot;person-name&quot;&gt;Laleh Hassibi&lt;/div&gt;
+        &lt;div class=&quot;person-title&quot;&gt;Director of Content Marketing&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+                <!--
+                <ul>
+                  <li><strong>Life sciences companies</strong> are transforming themselves from makers of therapeutics to care management platforms that are complemented by therapeutics. This is an incredible change but one that is being taken because, like direct-to-consumer products, life sciences companies need to have a direct relationship with the end-user to effectively market and retain them as lifetime customers with very targeted marketing and promotion. Life sciences companies are well resourced and motivated to make this change, and will be spending more than any other segment to win the end user and deliver care management platforms.</li>
+                  <li><strong>Retail pharmacies</strong>, most specifically Walgreens and CVS, have been <a href="http://www.forbes.com/sites/greatspeculations/2015/08/28/walgreens-steps-up-retail-clinic-expansion-as-demand-for-convenient-care-grows/#54753a247020">expanding</a> their care delivery services, becoming more than simple drug dispensaries. Retail pharmacies now offer both chronic and acute care, preventative medicine (vaccines most specifically), and even telemedicine. Pharmacies are well placed, having 10s of 1000s of physical locations across the country, to be a larger and larger part of the way consumer access the healthcare system. Walgreens is even rolling out Epic as its EHR; despite being a strange choice for a retail clinic, Epic helps Walgreens integrate data to and from other Epic customers.</li>
+                  <li><strong>Payors</strong>, the largest ones in particular – United, Cambia, Blues, etc. – are expanding the tools they offer members to be more than simple data access and payment tools. Large insurance companies are building and testing apps for specific conditions and cohorts of members, wanting to flip the perception of payors in consumers’ minds to more than payment tools managed by their employers. <a href="https://www.hioscar.com/">Oscar</a> is a good example of a payor that doesn’t act like a traditional payor.</li>
+                  <li><strong>Subscription medicine</strong> is here to stay, whether you call it <a href="http://www.dpcare.org/about1-ccz5">direct primary care (DPC)</a> or concierge. Concierge and DPC, interestingly, are the providers’ response to this trend. Subscription medicine is about a direct relationship between providers and patients, without messy payors and administrative overhead between them. And subscription medicine is going to grow by leaps and bounds over the next 10 years. Consumers will seek to get back the personal side of medicine, something that is increasingly getting lost, and providers will seek the same direct, personal connections without the mess of working with payors. In terms of models of care, subscription medicine is the <a href="http://medicaleconomics.modernmedicine.com/medical-economics/news/direct-primary-care-may-become-norm">best example of aligned incentives</a>.</li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-article container-color--gray-light">
+    <div class="row">
+        <div class="columns small-12 section--header-group">
+            <h1 class="section--header">Person Cards</h1>
+            <hr class="divider">
+            <h3 class="headline-3">Uses the flexbox n-up grid, and are responsive</h3>
+            <div class="row small-up-1 medium-up-2 large-up-4 group">
+                <div class="column media-object card-person">
+                    <div class="media-object-section"><img src="/public/img/people-profiles/prof-madeleine.jpg" class="avatar avatar--large circle"></div>
+                    <div class="media-object-section main-section align-self-middle">
+                        <h4 class="person-name">Lobelia Proudfoot</h4>
+                        <p class="person-title">Dreams feel real while we’re in them.</p>
+                    </div>
+                </div>
+                <div class="column media-object card-person">
+                    <div class="media-object-section"><img src="/public/img/people-profiles/prof-mark.jpg" class="avatar avatar--large circle"></div>
+                    <div class="media-object-section main-section align-self-middle">
+                        <h4 class="person-name">Bran Buckwind III</h4>
+                        <p class="person-title">I Can Stack.</p>
+                    </div>
+                </div>
+                <div class="column media-object card-person">
+                    <div class="media-object-section"><img src="/public/img/people-profiles/prof-kgrieger.jpg" class="avatar avatar--large circle"></div>
+                    <div class="media-object-section main-section align-self-middle">
+                        <h4 class="person-name">Bruce Almighty</h4>
+                        <p class="person-title">Dreams feel real while we’re in them.</p>
+                    </div>
+                </div>
+                <div class="column media-object card-person">
+                    <div class="media-object-section"><img src="/public/img/people-profiles/prof-tyler.jpg" class="avatar avatar--large circle"></div>
+                    <div class="media-object-section main-section align-self-middle">
+                        <h4 class="person-name">Bandobras “Bullroarer” Took</h4>
+                        <p class="person-title">I Can Stack.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns small-12">
+                    <h3 class="section--header-group">Wrap cards in a callout class for variations</h3>
+                </div>
+            </div>
+            <div class="row small-up-1 medium-up-2">
+                <div class="column">
+                    <div class="callout">
+                        <p class="person-quote">I’m going to improvise. Listen, there’s something you should know about me… about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
+                        <div class="column media-object card-person">
+                            <div class="media-object-section"><img src="/public/img/people-profiles/prof-madeleine.jpg" class="avatar avatar--large circle"></div>
+                            <div class="media-object-section main-section align-self-middle">
+                                <h4 class="person-name">Lobelia Proudfoot</h4>
+                                <p class="person-title">Dreams feel real while we’re in them.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="callout callout--hover">
+                        <p class="person-quote">Shrink the browser width to see me stack. I do tricks for dog treats, but I’m not a dog.</p>
+                        <div class="media-object card-person">
+                            <div class="media-object-section"><img src="/public/img/people-profiles/prof-mark.jpg" class="avatar avatar--large circle"></div>
+                            <div class="media-object-section main-section align-self-middle">
+                                <h4 class="person-name">Bran Buckwind III</h4>
+                                <p class="person-title">I Can Stack.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

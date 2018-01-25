@@ -1,0 +1,113 @@
+# to use the `person` partial, data must follow the same Contentful data model convention. See examples in /data/site/people.
+people_2015:
+    -
+        fullname: "Aneesh Chopra"
+        role: "Co-founder &amp; CEO NavHealth; First U.S. CTO &amp; Former Virginia Sec. of Technology"
+        profile_pic:
+            url: /public/img/podcast/portrait-aneesh-chopra.jpg
+    -
+        fullname: "Marc Chasin, MD, MMM, CPE, CHCIO"
+        role: "Vice President &amp; Chief Information Officer of St. Luke’s Health System in Boise, Idaho"
+        profile_pic:
+            url: /public/img/podcast/portrait-marc-chasin.jpg
+    -
+        fullname: "Wayne Guerra, MD, MBA"
+        role: "Co-founder, Former Chief Medical Officer at iTriage"
+        profile_pic:
+            url: /public/img/podcast/portrait-wayne-guerra.jpg
+    -
+        fullname: "Chris Belmont"
+        role: "Vice President and Chief Information Officer at the University of Texas MD Anderson Cancer Center"
+        profile_pic:
+            url: /public/img/podcast/portrait-chris-belmont.jpg
+    -
+        fullname: "Molly Joel Coye, MD, MPH"
+        role: "Social Entrepreneur in Residence, Network for Excellence in Health Innovation"
+        profile_pic:
+            url: /public/img/podcast/portrait-molly-coye.jpg
+    -
+        fullname: "R “Ray” Wang"
+        role: "Founder and Chairman, Constellation Research, author of <em>Disrupting Digital Business</em>"
+        profile_pic:
+            url: /public/img/podcast/portrait-ray-wang.jpg
+    -
+        fullname: "Sue Schade, MBA, FCHIME, FHIMSS"
+        role: "Chief Information Officer, University of Michigan Hospitals and Health Centers"
+        profile_pic:
+            url: /public/img/podcast/portrait-sue-schade.jpg
+    -
+        fullname: "Alan Portela"
+        role: "CEO of AirStrip"
+        profile_pic:
+            url: /public/img/podcast/portrait-alan-portela.jpg
+    -
+        fullname: "Simon Jones"
+        role: "Vice President, HIT Product Strategy at Blue Shield of California</em>"
+        profile_pic:
+            url: /public/img/podcast/portrait-simon-jones.jpg
+    -
+        fullname: "Joel Vengco"
+        role: "Vice President and Chief Information Officer, Information &amp; Technology of Baystate Health"
+        profile_pic:
+            url: /public/img/podcast/portrait-joel-vengco.jpg
+    -
+        fullname: "Dr. Chris Wasden"
+        role: "Executive Director, Sorenson Center for Discovery and Innovation at the University of Utah"
+        profile_pic:
+            url: /public/img/podcast/portrait-chris-wasden.jpg
+    -
+        fullname: "Jordan Schlain, MD"
+        role: "Founder HealthLoop, Creator of Tincture"
+        profile_pic:
+            url: /public/img/podcast/portrait-shlain.jpg
+    -
+        fullname: "Trey Lauderdale"
+        role: "President of Voalte"
+        profile_pic:
+            url: /public/img/podcast/portrait-trey-lauderdale.jpg
+people_2016:
+    -
+        fullname: "Robert Wachter, MD"
+        role: "Professor and Interim Chair of the Department of Medicine at the University of California San Francisco"
+        profile_pic:
+            url: "/public/img/podcast/portrait-robert-wachter.jpg"
+    -
+        fullname: "Grahame Grieve"
+        role: "Director, Healthcare Intersections; Father of FHIR"
+        profile_pic:
+            url: "/public/img/podcast/portrait-grahame-grieve.jpg"
+    -
+        fullname: "Charles Jaffe, MD, PhD"
+        role: "CEO, the HL7 organization"
+        profile_pic:
+            url: "/public/img/podcast/portrait-charles-jaffe.jpg"
+    -
+        fullname: "Thomas Graham, MD"
+        role: "Formerly CIO of the Cleveland Clinic, currently Chief Health Strategy &amp; Innovation Officer Tavistock Group"
+        profile_pic:
+            url: "/public/img/podcast/portrait-thomas-graham.jpg"
+    -
+        fullname: "Micky Tripathi"
+        role: "President and CEO, Massachusetts eHealth Collaborative"
+        profile_pic:
+            url: "/public/img/podcast/portrait-micky-tripathi.jpg"
+    -
+        fullname: "Ida Sim, MD, PhD"
+        role: "Physician, Researcher, and Entrepreneur; Co-founder Open mHealth"
+        profile_pic:
+            url: "/public/img/podcast/portrait-ida-sim.jpg"
+    -
+        fullname: "Mark Smith, MD"
+        role: "Chief Innovation Officer of MedStar Health and the Director of the MedStar Institute for Innovation (MI2)"
+        profile_pic:
+            url: "/public/img/podcast/portrait-mark-smith.jpg"
+    -
+        fullname: "Mark Shapiro, MD"
+        role: "Host of the “Explore the Space” Podcast"
+        profile_pic:
+            url: "/public/img/podcast/portrait-mark-shapiro.jpg"
+    -
+        fullname: "Dr. Mark Braunstein"
+        role: "Health Informatics, Georgia Tech University"
+        profile_pic:
+            url: "/public/img/podcast/portrait-mark-braunstein.jpg"

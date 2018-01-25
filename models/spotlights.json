@@ -1,0 +1,310 @@
+{
+  "name": "Customer Spotlights",
+  "description": "Detailed customer profiles",
+  "displayField": "title",
+  "fields": [
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "min": 6,
+            "max": 160
+          },
+          "message": "Keep it short-ish!"
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "max": 128
+          },
+          "message": "URLs must be short for that tasty SEO juice!"
+        },
+        {
+          "regexp": {
+            "pattern": "^[a-z0-9-]+",
+            "flags": "g"
+          },
+          "message": "An url slug must have lowercase words separated by dashes (-)."
+        }
+      ],
+      "disabled": true,
+      "omitted": true
+    },
+    {
+      "id": "customer",
+      "name": "Customer",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "customers"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "pubDate",
+      "name": "Publish Date",
+      "type": "Date",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": true,
+      "omitted": true
+    },
+    {
+      "id": "tags",
+      "name": "Tags",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkContentType": [
+              "products",
+              "tags"
+            ]
+          }
+        ],
+        "linkType": "Entry"
+      }
+    },
+    {
+      "id": "author",
+      "name": "Author",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "person"
+          ]
+        }
+      ],
+      "disabled": true,
+      "omitted": true,
+      "linkType": "Entry"
+    },
+    {
+      "id": "summary",
+      "name": "Summary",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 1000
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "featuredImage",
+      "name": "Featured Image",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ]
+        },
+        {
+          "assetImageDimensions": {
+            "width": {
+              "min": 600,
+              "max": 2400
+            },
+            "height": {
+              "min": null,
+              "max": 2400
+            }
+          }
+        },
+        {
+          "assetFileSize": {
+            "max": 2097152
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "lead",
+      "name": "Lead",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 1600
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "postTop",
+      "name": "Post \"top half\"",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "quote",
+      "name": "Quote",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "quotes"
+          ]
+        }
+      ],
+      "disabled": true,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "postBottom",
+      "name": "Post \"bottom half\"",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "relatedEntries",
+      "name": "Related Entries",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 5
+          },
+          "message": "Let's keep it simple. 5 Max!"
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkContentType": [
+              "academy",
+              "blog",
+              "caseStudy",
+              "spotlights",
+              "customers",
+              "podcastEntry",
+              "pressReleases",
+              "products",
+              "whitepapers"
+            ]
+          }
+        ],
+        "linkType": "Entry"
+      }
+    },
+    {
+      "id": "ctaRef",
+      "name": "Call to Action",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "cta"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    }
+  ],
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "189dvqdsjh46"
+      }
+    },
+    "id": "spotlights",
+    "type": "ContentType",
+    "createdAt": "2017-01-18T18:27:10.021Z",
+    "updatedAt": "2017-04-10T16:11:39.340Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedCounter": 12,
+    "version": 24,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedVersion": 23,
+    "firstPublishedAt": "2017-01-18T18:27:10.350Z",
+    "publishedAt": "2017-04-10T16:11:39.298Z"
+  }
+}

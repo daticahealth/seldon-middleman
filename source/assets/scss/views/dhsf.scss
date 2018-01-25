@@ -1,0 +1,287 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import '../modules/colors';
+@import '../modules/functions';
+@import '../modules/animation';
+// @import '../vendor/slick';
+// @import '../modules/masonry';
+// @import '../modules/fonts-optional';
+
+// for color functions
+$light-gray-list: (
+    gray-7:  hsl(202, 10%, 66%),
+    gray-8:  hsl(202, 10%, 71%),
+    gray-9:  hsl(202, 10%, 79%),
+    gray-10: hsl(202, 10%, 86%),
+    gray-11: hsl(202, 10%, 92%),
+    gray-12: hsl(202, 10%, 97)
+);
+
+.pulse {
+    @include pulse;
+}
+// need to abstract this out into a pattern/component
+// .show-content {
+//     display: block;
+// }
+// &:hover {
+//     opacity: 1;
+//     color: $color-hilight;
+//     .show-more--arrow {
+//         opacity: 1;
+//     }
+// };
+
+a.df-dot--link { // needed to pull it out because specificity
+    padding: rem-calc(10); // padding to make a larger hit-state
+    &:hover {
+        background: transparent;
+        // color: scale-color($color, $lightness: -14%);
+    }
+    &:focus,
+    &[aria-selected='true'] {
+        background: transparent;
+        outline: none !important;
+        // color: $color-active;
+    }
+    &:active {
+        outline: none !important;
+    }
+}
+$color-hilight:  $color_prime-alt;
+$color-selected: $color_prime;
+$color-default:  $gray-5;
+$strip-width: 2vw;
+
+.df {
+    &-container {
+        padding: 6vw 0;
+        background-color: white; //$gray-12;
+        color: black;
+    }
+    &-phase {
+        &--section { // big phase section
+            transition: all 300ms ease;
+            position: relative;
+
+            // &__current { // little abs div color wedge
+            //     transition: all 0.3s ease;
+            //     transition-delay: 100ms;
+            //     position: absolute;
+            //     height: 100%;
+            //     width: $strip-width;
+            //     background-color: $color-selected;
+            //     left: 0;
+            //     top: 0;
+            //     transform: translateX(-$strip-width); // move offstage the width of thing
+            //     z-index: 20;
+            // }
+        }
+        &--title { // a.href section title, toggles content, has show-more--arrow
+            font: {
+                weight: $font-weight-bold;
+            }
+            color: black;
+            opacity: 0.5; // set to 1 when section is active
+            transition: all 200ms ease;
+
+        }
+        // }
+        &--lead {
+            font: {
+                family: $font_serif;
+                weight: $font-weight-light;
+            }
+            // font-size: 110%; //rem-calc(32);
+            @include breakpoint (medium) {
+                font-size: 110%; //rem-calc(32);
+            }
+            @include breakpoint (large) {
+                font-size: 120%; //rem-calc(32);
+            }
+            // blurb under each phase, multicol if supported
+            // &[data-columns='true'] {
+            //     @include breakpoint (medium) {
+            //         @include multicolumns (2, 15em, 2rem);
+            //     }
+            // }
+        }
+    }
+    // * * * * when this class is added from dhsf.js (when activated by tab actions), do these things
+    &-section--active {
+        // background-color: white !important;
+        // box-shadow: 0 0 15px 0 white;
+
+        // when it gets toggled in js, do these other things
+        // .df-phase--section__current {
+        //     transform: translateX(0);
+        // }
+        .df-series--container {
+            // display: block;
+            height: initial;
+            top: rem-calc(5);
+            opacity: 1;
+        }
+        .df-stage--timeline__line {
+            opacity: 1;
+            @include gradient(left, $color-hilight 0%, $color-hilight 90%, transparentize($color-hilight, 1) 100%);
+        }
+        .df-phase--title {
+            opacity: 1;
+        }
+        .df-dot {
+            &:focus, &.is-active {
+                z-index: 15;
+                .df-badge {
+                    box-shadow: 0 0 0 10px $color-hilight;
+                }
+            }
+        }
+        .df-badge {
+            background-color: $color-hilight;
+        }
+    }
+    &-dot {
+        // needed for inline styles, injected from yaml in markup
+        position: absolute;
+        transition: all 150ms ease;
+        &:hover {
+            z-index: 20;
+            .df-badge {
+                background-color: $color-selected;
+                box-shadow: 0 0 0 5px $color-hilight;
+            }
+        }
+        &:focus, &.is-active {
+            z-index: 15;
+            .df-badge {
+                color: black;
+                background-color: white;
+                box-shadow: 0 0 0 10px $color-default;
+            }
+        }
+    }
+    &-badge {
+        outline: 0 !important;
+        transition: all 200ms ease;
+        background-color: $color-default;
+        box-shadow: 0 0 0 0 $color-default;
+        width:  2.5em;
+        height: 2.5em;
+        padding: 0.5em 0.7em;
+        font-weight: $font-weight-bold;
+
+        &.attention { // the .attention class is injected on load by dhsf.js, in specific ID (first one) $("#compliance-stage-0-label span.df-badge").addClass("attention");
+            background-color: black;
+            z-index: 15;
+            @include keyframes( dotpulse ) {
+                0% {
+                    // background-color: $color-default;
+                    // @include transform( scale(1) );
+                    box-shadow: 0 0 0 0 initial;
+                }
+                50% {
+                    // background-color: $color-selected;
+                    // @include transform( scale(1.2) );
+                    box-shadow: 0 0 0 8px $color-hilight;
+                }
+                100% {
+                    // @include transform( scale(1) );
+                    box-shadow: 0 0 0 0 initial;
+                }
+            }
+            @include animation (dotpulse 1s infinite);
+        }
+    }
+    &-series { // month labels, some optional bits in markup
+        // z-index: 0;
+        &--container {
+            position: relative;
+            top: 0;
+            height: 0;
+            // display: none;
+            transition: all 200ms linear;
+            transition-delay: 300ms;
+            opacity: 0;
+            &.is-first { /// this gets removed by JS dhsf.js after first interaction
+                opacity: 1;
+                top: rem-calc(-80);
+            }
+        }
+        &--label {
+            text-align: center;
+            @include spaced-out;
+            font-weight: $font-weight-light;
+            font-size: rem-calc(12px);
+        }
+    }
+    &-stage {
+        &--timeline {
+            padding: 1rem 0;
+            // margin-left: -2rem; // move container to left edge approx
+            &__line {
+                transition: all 300ms linear;
+                position: relative;
+                // line vertical positioning, per breakpoint
+                top: rem-calc(-16);
+                @include breakpoint (medium) {
+                    top: rem-calc(-20);
+                }
+                left: -2rem; // take it to the edge
+                z-index: 0;
+                height: 2px;
+                width: 100%;
+                opacity: 0.4;
+                @include gradient(left, transparentize($color-default, 1) 0%, $color-default 30%, $color-default 90%, transparentize($color-default, 1) 100%);
+            }
+        }
+        &--dot-group {
+            z-index: 10;
+            position: relative;
+            top: rem-calc(3); // small adjustment
+            margin-bottom: 1rem;
+            @include breakpoint (medium) {
+                top: rem-calc(19);
+                margin-bottom: 0;
+            }
+            .has-tip {
+                cursor: pointer;
+                border: none;
+            }
+            .tabs-title {
+                margin-bottom: 0;
+            }
+        }
+        &--item {
+            transition: all 100ms ease;
+        }
+        &--content {
+            padding-bottom: 1rem;
+            &[data-columns='true'] {
+                @include breakpoint (large) {
+                    @include multicolumns (2, 15em, 2rem);
+                }
+            }
+        }
+    }
+
+    // ===== reskinned components ======
+    .callout--gray-light {
+        background-color: black(0.07);
+    }
+    .callout {
+        margin-bottom: 1em; // use em as it might be in a sea of type
+    }
+    .menu {
+        li > a {
+            padding-left: 0;
+        }
+    }
+    //
+    .tabs-panel {
+        padding: 1.5rem 0 1rem 0; // fallback
+        padding: 2vw 0 2vw 0;
+    }
+}

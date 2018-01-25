@@ -1,0 +1,65 @@
+---
+title: "Healthcare in the Cloud | Datica"
+summary: "Datica removes the barriers to digital health through compliant infrastructure and scalable data exchange"
+author: "Datica, Inc."
+tags: "training, education, HIPAA, HL7, FHIR, interoperability, EHR, integration, resource"
+date: "January 1, 2017"
+share_image: "/public/img/share-posters/datica-social-twitter-thumb.png"
+customCSS: "home"
+layout: "basic"
+# customJS: "/public/js/slick.js, /public/js/slick-config.js, /public/js/DrawSVGPlugin.js, /public/js/animation.js, /public/js/TweenMax.js"
+priority: "1.0"
+---
+<div class="container-color--dark-alt">
+    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+    <section class="section-article--small">
+        <div class="row align-center">
+            <div class="columns small-12 medium-10 large-8 text-center">
+                <h1 class="headline-3">Datica gets healthcare onto AWS and Azure</h1>
+                <p class="lead">The Datica Platform manages all ongoing compliance burdens not covered by public clouds for teams who build applications or integrate with EHRs.</p>
+                <p class="lead">We are HITRUST CSF Certified, and service everyone who handles PHI, from startups to the Fortune 100.</p>
+                <%= 
+                partial "partials/snippets/button", 
+                    :locals => {
+                        :label => "Learn about the Datica Platform", 
+                        :title => "Read more", 
+                        :url => "/platform", 
+                        # :rel => "external", 
+                        :button_classes => "button button--primary", 
+                        :icon => "icon-chevron-right", 
+                        :icon_color => "white", 
+                        :icon_align => "right"
+                    }
+                %>
+            </div>
+        </div>
+        <div id="companies" class="row full-width collapse group">
+            <div class="columns small-12">
+                <img src="https://images.contentful.com/189dvqdsjh46/5ZLw6g8qTCQkOYqEU0CC8m/2612dfac1dfa712f497a3ce6addffb2d/home-logo-bubbles-2x.png" alt="Datica powers digital health at over 500 organizations">
+            </div>
+        </div>
+    </section>
+</div>
+<%= partial "partials/section-promos/aws-mlh-video", 
+    :locals => {
+        :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS",
+        :container_color => "container-gray-11"
+        #:background => "https://images.contentful.com/189dvqdsjh46/55EpUazd5CQSqC66CaWYqI/fd3aa1534d8d641ee8bd60d3592e98a3/aws-mlh-diagram-k-alpha.png"
+    }
+%>
+<section class="section-article container-color--white">
+    <div class="row align-center">
+        <div class="columns small-12 large-12 text-center">
+            <h3 class="headline-3"><strong>World-class companies</strong> trust Datica</h3>
+            <div class="logo-cloud">
+                <% data.views.home.customers.each do |logo| %>
+                    <img src="/public/img/customer-logos/sm/<%= logo["file"] %>.png" alt="<%= logo["name"] %>" class="logo-cloud--item logo-size--<%= logo['logoSize'] %>" />
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+<%= partial "partials/section-promos/leadership-gallery" %>
+<%= partial "partials/section-promos/recent-items" %>
+<%= partial "partials/section-promos/dhsf-video", :locals => { :align => "right" } %>
+<%= partial "partials/section-promos/report-promo-latest" %>

@@ -1,0 +1,311 @@
+.callout {
+    & > :first-child { // override things like bqs that have padding top, should be rare.
+        padding-top: 0;
+    }
+    // &--quote-bubble {
+    //     @include callout($white);
+    //     border-top-left-radius:     4rem;
+    //     border-bottom-right-radius: 4rem;
+    //     margin-bottom: 0.7rem;
+    //     margin-left: 1rem;
+    //     // adjustments for quote inside
+    //     .quote-bubble {
+    //         padding-top: 0;
+    //         margin-left: 1rem;
+    //     }
+    // }
+    // === size variations - good for tight (small) or prominent (large) spaces
+    @include callout($white);
+    &--trans{
+        @include callout-size(1.5rem);
+        background-color: transparent;
+        border-radius: 0; // tighter radius on small ones
+        margin-bottom: 0; // only callout style to do so
+    }
+    &.callout--small {
+        @include callout-size(1rem);
+        border-radius: $global-radius * 0.6; // tighter radius on small ones
+        margin-bottom: 0; // only callout style to do so
+    }
+    &.callout--large {
+        @include callout-size(3rem);
+        // Reduce padding on mobile
+        @media all and (max-width: 53.5rem){
+            @include callout-size(1rem);
+        }
+    }
+    // Clipped background images on callouts
+    &--background-fhir{
+        position: absolute;
+        z-index: 0;
+        top: 0px;
+        right: 0px;
+        background: url('/public/img/background-fhir.svg');
+        width: rem-calc(446px);
+        height: rem-calc(513px);
+        background-size: rem-calc(446px) rem-calc(513px);
+    }
+    &--background-open-source{
+        position: absolute;
+        z-index: 0;
+        top: 0px;
+        right: 0px;
+        background: url('/public/img/background-open-source.svg');
+        width: rem-calc(476px);
+        height: rem-calc(476px);
+        background-size: rem-calc(476px) rem-calc(476px);
+    }
+    &--background-lock{
+        position: absolute;
+        z-index: 0;
+        top: rem-calc(-100px);
+        right: rem-calc(-130px);
+        background: url('/public/img/background-lock.svg');
+        width: rem-calc(476px);
+        height: rem-calc(476px);
+        background-size: rem-calc(476px) rem-calc(476px);
+    }
+    &--content{
+        a.button{margin: 0;}
+    }
+    // Adding this to callout makes them all vertially fill .columns. Cols need .align-stretch applied on the .row for this to work. And yeah, calc() is well-supported now!
+    &--stretch {
+        height: 90%;
+        height: calc(100% - 3rem); // note this offsets the margin value in settings.scss:482. Cards are a better solution for equal height
+    }
+    &--hover { // for callouts that behave like buttons!
+        transition: box-shadow 100ms ease-out;
+        @include shadow-anarchy(0 rem-calc(6px) rem-calc(17px) 0 #CCD5DC);
+        &:hover {
+            @include shadow-anarchy(0 rem-calc(6px) rem-calc(17px) 0 darken(#CCD5DC, 10%));
+        }
+    }
+    &--article {
+        @include callout($black);
+        overflow: hidden;
+        position: relative;
+        &-content {
+            color: white;
+            // &:hover, &:active {
+            //     color: $color_yellow-glow;
+            //     // transform: translate3d(3px, 0, 0);
+            // };
+            text-shadow: 1px 1px 3px black(0.9);
+            position: relative;
+            z-index: 5;
+            .headline-3, .headline-4 {
+                color: white;
+            }
+        }
+        &-body {
+            font-weight: $font-weight-mid;
+        }
+        &-image {
+            transition: all $timing-default ease;
+            opacity: 0.6;
+            position: absolute;
+            width:  100%;
+            height: 100%;
+            top:  0;
+            left: 0;
+            border-radius: $global-radius;
+        }
+        &-action {
+            transition: all $timing-default ease;
+        }
+        transition: all $timing-default ease;
+        box-shadow: 0 1px 1px 0 black(0);
+        &:hover {
+            box-shadow: 0 5px 10px 0 black(0.4);
+            .callout--article-action {
+                transform: translate3d(5px, 0, 0);
+                color: $color_yellow-glow;
+            }
+            .callout--article-image {
+                // @include blur(4); // too much?
+                transition: opacity $timing-default * 2 ease;
+                opacity: 0.4;
+            }
+        }
+    }
+    // Should be able to write a function for this, brute-forcing for now
+    &, &--blue, &--blue-bright, &--gray-light, &--white-to-gray-light, &--dark, &--gray-dark-grad, &--gray-dark-grad-noise, &--purple-grad, &--red {
+        @include callout-base;
+        overflow: hidden;
+    }
+
+    &--white {
+        @include color--white;
+    }
+    &--blue {
+        @include color--blue-alt;
+    }
+    &--blue-alt {
+        @include color--blue-alt;
+    }
+    &--blue-bright {
+        @include color--blue-bright-noise;
+    }
+    &--gray-light {
+        @include color--gray-light;
+    }
+    &--white-to-gray-light {
+        @include color--white-to-gray-light;
+    }
+    &--dark {
+        @include color--tint;
+        label {
+            color: white(0.7);
+        }
+    }
+    &--dark-alt {
+        background-color: $color_deep-alt;
+        color: $color_white;
+        label {
+            color: white(0.7);
+        }
+    }
+    &--dark-alpha{
+        background-color: rgba(0,0,0,0.2);
+        color: $color_white;
+    }
+    &--transparent-alpha{
+        background-color: transparent;
+        color: $color_white;
+    }
+    &--gray-dark-grad {
+        @include color--gray-dark-grad;
+    }
+    &--gray-dark-grad-noise {
+        @include color--gray-dark-grad-noise;
+    }
+    &--purple-grad {
+        @include color--purple-grad;
+    }
+    &--content{
+        z-index: 1;position: relative;
+        h4{
+            font-weight: $font-weight-bold;
+            color: $color_deep;
+            font-size: rem-calc(18px);
+        }
+        p{font-size: rem-calc(18px);line-height: 1.5;}
+    }
+    &-card{
+        &--featured{
+            @include border-radius(0);
+            @include border-radius-bottom(rem-calc(5px));
+            border-top: rem-calc(2px) solid $color_prime-alt;
+        }
+        &--quotes{
+            // Before is absolute
+            position: relative;
+            overflow: hidden;
+            @include border-radius(0);
+            @include border-radius-bottom(rem-calc(5px));
+            border-top: rem-calc(2px) solid $color_prime-alt;
+            span{font-size: rem-calc(14px);font-weight: $font-weight-mid;}
+            p.with-padding{margin-left: rem-calc(60px);position: relative; z-index: 2;}
+            &:before{
+                // font-family: serif;
+                content: '“';
+                font-size: 10rem;
+                color: $color_light;
+                position: absolute;
+                top: rem-calc(-53px);
+                left: rem-calc(7px);
+                z-index: 1;
+                @include opacity(0.5);
+            }
+            &-alpha{
+                background-color: transparent;
+                position: relative;
+                overflow: hidden;
+                @include border-radius(0);
+                @include border-radius-bottom(rem-calc(5px));
+                border-top: rem-calc(2px) solid $color_prime-alt;
+                span{font-size: rem-calc(14px);font-weight: $font-weight-mid;}
+                p.with-padding{margin-left: rem-calc(60px);position: relative; z-index: 2;}
+                &:before{
+                    // font-family: serif;
+                    content: '“';
+                    font-size: 10rem;
+                    color: $color_light;
+                    position: absolute;
+                    top: rem-calc(-53px);
+                    left: rem-calc(7px);
+                    z-index: 1;
+                    @include opacity(0.5);
+                }
+            }
+            &-alpha-no-border{
+                background-color: transparent;
+                position: relative;
+                overflow: hidden;
+                @include border-radius(0);
+                @include border-radius-bottom(rem-calc(5px));
+                span{font-size: rem-calc(14px);font-weight: $font-weight-mid;}
+                p.with-padding{margin-left: rem-calc(60px);position: relative; z-index: 2;}
+                &:before{
+                    // font-family: serif;
+                    content: '“';
+                    font-size: 10rem;
+                    color: $color_light;
+                    position: absolute;
+                    top: rem-calc(-53px);
+                    left: rem-calc(7px);
+                    z-index: 1;
+                    @include opacity(0.5);
+                }
+            }
+        }
+    }
+}
+// .callout--thumb { // a callout with content wrapped around a thumbnail image (via interchg) aligned bottom right
+//     @include callout($gray-12);
+//     background-position: -900px; // default for small, it's hidden
+//     @include breakpoint(medium up) {
+//         background-position: bottom right; // have a mixin for this
+//     }
+//     background:{
+//         repeat: no-repeat;
+//         size: 40%; // sets it to height of container.
+//     }
+//     &-content {
+//         @include breakpoint(medium up) {
+//             max-width: 50%;
+//         }
+//     }
+// }
+
+.callout > .callout { // nesting callouts? tighten radius
+    border-radius: $global-radius * 0.6;
+}
+
+// Four big ideas custom callout
+.single-row-callout-mid-height{
+    overflow: hidden;
+    position: relative;
+    .clip-bg-image{
+        position: absolute;
+        right: rem-calc(-40px);
+        top: rem-calc(-70px);
+        img{
+            display: block;
+            max-width: rem-calc(500px);
+        }
+    }
+    .button{margin: 0;}
+    h3{
+        color: $color_prime-alt;
+        font-weight: $font-weight-light;
+        text-transform: uppercase;
+        letter-spacing: rem-calc(3px);
+    }
+}
+// Mobile callout helper
+@media all and (max-width: $custom_breakpoint-mid){
+    .mobile-callout{
+        @include mobile-callout();
+    }
+}

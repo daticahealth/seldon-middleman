@@ -1,0 +1,16 @@
+
+<%
+bg_image = "https://images.contentful.com/189dvqdsjh46/4KnuEp6gDe2MwOIqIKuKUk/66b11ef15d7a8bcc0dd174a6a5279043/datica_team_-_hall_chat_2_P1040676.jpg"
+unless defined?(tagline)
+	tagline = "We're building a team to transform healthcare. Join us!"
+end
+%>
+<div class="card drop">
+    <a class="container-image-fill card-header-image container-gray-3" href="/careers" title="Work at Datica" data-interchange="[<%= bg_image %>?fit=thumb&w=600&h=300&q=45, small], [<%= bg_image %>?fit=thumb&w=800&h=400, medium]">
+    	<span class="card-header-subhead text-larger">Datica Careers</span>
+    	<div class="card-header-title">
+	        <h3 class="headline-4 ribbon--gray-1"><%= tagline %></h3>
+        </div>
+        <%= inline_svg("icon-datica", class: "icon-size--xlarge card-header-icon svg-color--white") %>
+    </a>
+</div>

@@ -1,0 +1,71 @@
+customers_hitrust:
+    -
+        name: 'HealthFinch'
+        file: 'healthfinch-logo'
+        url: 'http://healthfinch.com'
+    -
+        name: 'BCGDV'
+        file: 'bcgdv-logo'
+        url: 'http://bcgdv.com'
+    -
+        name: 'Reach'
+        file: 'reach-logo'
+        url: 'http://reachhealth.com'
+    -
+        name: 'Propeller Health'
+        file: 'propeller-logo'
+        url:  'propellerhealth.com'
+    -
+        name: 'PINT'
+        file: 'pint-logo'
+        url: 'http://pint.com'
+    -
+        name: 'Healthloop'
+        file: 'healthloop-logo'
+        url: 'http://healthloop.com'
+    -
+        name: 'CareMessage'
+        file: 'caremessage-logo'
+        url: 'http://caremessage.org'
+    -
+        name: 'MetaBahn'
+        file: 'metabahn-logo'
+        url:  'metabahn.com'
+    -
+        name: 'Welkin'
+        file: 'welkin-logo'
+        url: 'http://welkinhealth.com'
+
+speaking_list:
+    -
+        name: HIMSS
+        slug: himss
+        logoSize: small-mid
+    -
+        name: SXSW
+        slug: sxsw
+        logoSize: small-mid
+    -
+        name: AHIMA
+        slug: ahima
+        logoSize: small-mid
+    -
+        name: AHIP
+        slug: ahip
+        logoSize: small-mid
+    -
+        name: Health 2.0
+        slug: health20
+        logoSize: small-mid
+    -
+        name: IBM Cloud Innovation Tour
+        slug: ibmtour
+        logoSize: small-mid
+    -
+        name: Digital Health Summit
+        slug: digitalhealthsummit
+        logoSize: small-mid
+    -
+        name: Stanford MedX
+        slug: medx
+        logoSize: small-mid

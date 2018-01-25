@@ -1,0 +1,104 @@
+---
+title: "Datica Platform Pricing"
+summary: "Choose a package to fit your needs. Scaling is predictable and self-service."
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "January 1, 2017"
+ogType: "product"
+share_image: "/public/img/share-posters/datica-social-twitter-thumb.png"
+customCSS: "pricing"
+layout: "sparse"
+---
+<div class="container-color--dark-alt">
+    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+</div>
+<section class="section-article container-color--gray-light">
+    <div class="row align-center">
+        <div class="columns small-12 medium-12 large-7 text-center group">
+            <h1 class="headline-2"><%= current_page.data.title %></h1>
+            <h2 class="headline-4">Choose a package to fit your needs. <br> Scaling is predictable and self-service.</h2>
+        </div>
+    </div>
+    <div class="row hide-for-large group align-center">
+        <div class="columns small-12 medium-8">
+            <ul class="tabs" id="pricing-tabs" data-tabs="">
+                <li class="tabs-title is-active"><a href="#tier1" aria-selected="true">Standard</a></li>
+                <li class="tabs-title"><a href="#tier2">Professional</a></li>
+                <li class="tabs-title"><a href="#tier3">Enterprise</a></li>
+            </ul>
+            <div class="tabs-content" data-tabs-content="pricing-tabs">
+                <div class="tabs-panel price-panel is-active" id="tier1">
+                    <%= partial "pricing/partials/pricing-standard" %>
+                </div>
+                <div class="tabs-panel price-panel drop" id="tier2">
+                    <%= partial "pricing/partials/pricing-professional" %>
+                </div>
+                <div class="tabs-panel price-panel drop" id="tier3">
+                    <%= partial "pricing/partials/pricing-ent" %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row show-for-large row--card-grid price">
+        <div class="columns small-12 medium-4 tier-standard">
+            <%= partial "pricing/partials/pricing-standard" %>
+        </div>
+        <div class="columns small-12 medium-4 tier-pro">
+            <%= partial "pricing/partials/pricing-professional" %>
+        </div>
+        <div class="columns small-12 medium-4 tier-ent">
+            <%= partial "pricing/partials/pricing-ent" %>
+        </div>
+    </div>
+</section>
+
+<%= partial("/partials/section-promos/tco-guide-ribbon", :locals => { :style => "dark", :align => "right", :bgImage => "https://images.contentful.com/189dvqdsjh46/52vT3DpQCcEQMUoiimSmCu/5de61de8155dd3f598394613939ee4b9/eggs_in_basket__tinted__-_autumn-mott-21276.jpg" }) %>
+<%# Photo by Autumn Mott on Unsplash  https://unsplash.com/photos/fQabXFgYO7A?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText %>
+
+<section id="faq-pricing" class="section-article">
+    <div class="row align-center">
+        <div class="columns small-12 medium-8 large-8">
+            <h3 class="headline-3 text-center group">Frequently asked questions about pricing</h3>
+        </div>
+    </div>
+    <div class="row align-center">
+        <div class="columns small-12 medium-4 large-4">
+            <div class="callout callout--gray-light">
+                <ol class="">
+                    <% data.views.faqs.pricing.each_with_index do |item, index| %>
+                        <li><a href="#platform-tech-question-<%= index %>"><%= item["question"] %></li></a>
+                        <% end %>
+                </ol>
+            </div>
+        </div>
+        <div class="columns small-12 medium-8 large-8">
+            <dl class="">
+            <% data.views.faqs.pricing.each_with_index do |item, index| %>
+                <dt id="platform-tech-question-<%= index %>"><%= item["question"] %></dt>
+                <dd><%= Kramdown::Document.new(item["answer"]).to_html %></dd>
+            <% end %>
+            </dl>
+        </div>
+    </div>
+</section>
+
+<% data.views.pricing.plan_details.each_with_index do |content, id| %>
+    <div class="medium reveal" id="tier<%= content['slug'] %>Modal" data-reveal data-options="closeOnEsc: true; animationSpeed: 150; animationIn: bounce-in">
+        <div class="card">
+            <div class="card-divider container-gray-11 text-center">
+                <img class="inject-me svg-color--black icon-size--xlarge" src="<%= content["icon"] %>">
+                <h3 class="headline-4 text-light">I want to <strong><%= content["title"] %></strong></h3>
+            </div>
+            <div class="card-section content-dynamic">
+                <%= Kramdown::Document.new(content["body"]).to_html %>
+            </div>
+            <div class="card-divider container-gray-3 text-center">
+                <h4 class="headline-4 text-light nomargin"><%= content["primary_label"] %></h4>
+                <!-- <a href="<%= content["primary_url"] %>" class="button button--neat nomargin"><%= content["primary_label"] %> <i class="fa fa-angle-right"></i></a> -->
+            </div>
+        </div>
+        <button class="close-button" data-close aria-label="Close panel" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+<% end %>

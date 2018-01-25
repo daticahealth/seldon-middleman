@@ -1,0 +1,125 @@
+// ---------
+// 0. Font Import
+// ---------
+// font-display: optional; defers loading and avoids FOIT via https://font-display.glitch.me/
+// using this for quotes (that's pretty much it)
+// @import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro:400');
+
+// omitting the lightest (100) and heaviest (900) weights. Uncomment to restore & use. - AW
+
+// GT America Font family
+// @font-face{
+//     src: url('/public/fonts/gt-america-ultralight.woff') format('woff');
+//     font-family: GT-America-ultra-light;
+// font-display: optional;
+//     font-weight: 100;
+// }
+// @font-face{
+//     src: url('/public/fonts/gt-america-ultralightitalic.woff') format('woff');
+//     font-family: GT-America;
+// font-display: optional;
+//     font-weight: 100;
+//     font-style: italic;
+// }
+
+// @font-face{
+//     src: url('/public/fonts/gt-america-thin.woff') format('woff');
+//     font-family: GT-America;
+// font-display: optional;
+//     font-weight: 200;
+// }
+// @font-face{
+//     src: url('/public/fonts/gt-america-thinitalic.woff') format('woff');
+//     font-family: GT-America;
+// font-display: optional;
+//     font-weight: 200;
+//     font-style: italic;
+// }
+
+@font-face{
+    src: url('/public/fonts/gt-america-light.woff') format('woff');
+    font-family: GT-America;
+    font-display: optional;
+    font-weight: 300;
+}
+@font-face{
+    src: url('/public/fonts/gt-america-lightitalic.woff') format('woff');
+    font-family: GT-America;
+    font-display: optional;
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face{
+    src: url('/public/fonts/gt-america-regular.woff') format('woff');
+    font-family: GT-America;
+    font-display: optional;
+    font-weight: 400;
+}
+@font-face{
+    src: url('/public/fonts/gt-america-regularitalic.woff') format('woff');
+    font-family: GT-America;
+    font-display: optional;
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face{
+    src: url('/public/fonts/gt-america-medium.woff') format('woff');
+    font-family: GT-America;
+    font-display: optional;
+    font-weight: 500;
+}
+@font-face{
+    src: url('/public/fonts/gt-america-mediumitalic.woff') format('woff');
+    font-family: GT-America;
+    font-display: optional;
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face{
+    src: url('/public/fonts/gt-america-bold.woff') format('woff');
+    font-family: GT-America;
+    font-display: optional;
+    font-weight: 700;
+}
+@font-face{
+    src: url('/public/fonts/gt-america-bolditalic.woff') format('woff');
+    font-family: GT-America;
+    font-display: optional;
+    font-weight: 700;
+    font-style: italic;
+}
+
+// serif fonts - used in quotes, DSHF copy. Source Serif Pro is still in development, with no italics; Charter is a very close subsitute.
+
+@font-face{
+    src: url('/public/fonts/source-serif-pro-regular-subset.woff') format('woff');
+    font-family: 'Source Serif Pro';
+    font-display: optional;
+    font-weight: 400;
+}
+
+
+@font-face{
+    src: url('/public/fonts/charter-italic-subset.woff') format('woff');
+    font-family: 'Source Serif Pro';
+    font-display: optional;
+    font-weight: 400;
+    font-style: italic;
+}
+
+// @font-face{
+//     src: url('/public/fonts/gt-america-black.woff') format('woff');
+//     font-family: GT-America;
+// font-display: optional;
+//     font-weight: 900;
+// }
+// @font-face{
+//     src: url('/public/fonts/gt-america-blackitalic.woff') format('woff');
+//     font-family: GT-America;
+// font-display: optional;
+//     font-weight: 900;
+//     font-style: italic;
+// }

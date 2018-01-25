@@ -1,0 +1,162 @@
+---
+layout: basic
+ogType: article
+---
+
+<%
+entry = locals[:item]
+current_page.data.title = entry["fullname"] + " | Datica Leadership"
+if entry.has_key?("bio_short")
+    current_page.data.summary = safe_summary(entry.bio_short)
+else
+    current_page.data.summary = "A profile of " + entry["fullname"]
+end
+if entry.has_key?("share_image")
+    current_page.data.share_image = cf_asset_protocol + entry["share_image"]["url"] + image_size_small
+end
+
+if entry.has_key?("tags")
+    current_page.data.tags = get_tag_list(entry["tags"])
+else
+    current_page.data.tags = "healthcare, blog, IT"
+end
+if entry.has_key?("author")
+    current_page.data.author = entry["author"]["fullname"]
+else
+    current_page.data.author = "Datica, Inc."
+end
+# if entry.has_key?("pub_date")
+#     current_page.data.date = entry['pub_date'].strftime('%B %-d, %Y')
+# else
+#     current_page.data.date = "January 1, 2017"
+# end
+case entry.person_type
+    when "Datica Executives", "Datica VP", "Datica Directors"
+        is_datican = true
+end
+today = DateTime.now
+current_page.data.date = today.strftime('%B %-d, %Y')
+%>
+<div class="container-color--dark-alt">
+    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+</div>
+<section class="custom-sticky custom-sticky--dark show-for-large">
+    <div class="row">
+        <div class="columns small-12 medium-12">
+            <ul>
+                <% data.nav_company.nav_items.each do |m| %>
+                    <li>
+                        <a href="<%= m.url %>" title="<%= m.desc %>"<% if m.url == "/leadership" %> aria-current="page"<% end %>><%= m.title %></a>
+                        <%#= link_to m.title, m.url, title: m.desc %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section-article container-gray-12">
+    <div class="row align-center">
+        <div class="columns small-12 medium-10 large-7">
+            <div class="person-simple text-larger">
+                <% if entry.has_key?("profile_pic") %>
+                    <img class="avatar avatar--xlarge circle" src="<%= entry["profile_pic"]["url"] %>?f=face&fit=thumb&w=350&h=350&fm=jpg&q=70" alt="<%= entry["fullname"] %>">
+                <% end %>
+                <% if entry["person_type"] == "Datica Alumni" %>
+                    <h3 class="headline-5 text-light"><%= entry["person_type"] %></h3>
+                <% end %>
+                <h1 class="headline-4"><%= entry["fullname"] %></h1>
+                 <% if entry.has_key?("role") %>
+                    <h2 class="person-title"><%= entry["role"] %></h2>
+                <% end %>
+            </div>
+            <ul class="menu align-center">
+                <%= partial "about/partials/social-links", :locals => { :entry => entry, :datican => is_datican } %>
+            </ul>
+            <% if entry.has_key?("bio_short") %>
+                <div class="lead"><%= Kramdown::Document.new(entry["bio_short"]).to_html %></div>
+            <% end %>
+            <% if entry.has_key?("featured_image") %>
+                <img class="group" src="<%= entry["featured_image"]["url"] %>?fm=jpg&w=1000&q=50" alt="Photo: <%= entry["fullname"] %>">
+            <% end %>
+            <% if entry.has_key?("bio") %>
+                <%= Kramdown::Document.new(entry["bio"]).to_html %>
+            <% end %>
+            <p></p>
+            <p>
+                <a href="/leadership" title="Learn about Datica's Leadership">
+                    <%= inline_svg("small/icon-angle-left", class: "icon-inline svg-color--blue") %> Datica Leadership
+                </a>
+            </p>
+
+        </div>
+    </div>
+</section>
+<% if entry.has_key?("schedule_widget") %>
+<section class="section-article--med container-gray-12">
+    <div class="row align-center">
+        <div class="columns small-12 large-8">
+            <%= entry["schedule_widget"] %>
+        </div>
+    </div>
+</section>
+<% end %>
+
+<% if entry.has_key?("related_events") %>
+<section class="section-article--med container-color--gray-light">
+    <div class="row align-center">
+        <div class="columns small-12 medium-10 large-8">
+            <h2 class="headline-3 text-center group">Upcoming Events</h2>
+            <% entry["related_events"].each do |event| %>
+                <% if today.strftime("%F") < event['date_start'].strftime("%F") %>
+                    <div class="callout callout--large drop group--2x">
+                        <% if event.has_key?("title") %>
+                            <h4 class="headline-4 group">
+                                <a href="/events/<%= event["slug"]%>" title="event details">
+                                    <%= event["title"]%>
+                                </a>
+                            </h4>
+                        <% end %>
+                        <% if event.has_key?("event_related_people") %>
+                            <div class="float-right-on-medium">
+                                <% event["event_related_people"].each do |person| %>
+                                    <%= partial("partials/snippets/person", :locals => { :p => person, :classes => "block-width-medium", :use_headers => false }) %>
+                                <% end %>
+                            </div>
+                        <% end %>
+                        <% if event.has_key?("event_logo") %>
+                            <p><img class="logo-size--medium" src="<%= event["event_logo"]["url"] %>?w=300" alt="Event logo"></p>
+                        <% end %>
+                        <div class="headline-5 spaced-out">
+                        <%= inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5") %>
+                        <%= partial("partials/snippets/date-range", :locals => { :p => event }) %>
+                        </div>
+                        <% if event.has_key?("event_desc") %>
+                            <%= Kramdown::Document.new(event["event_desc"]).to_html %>
+                        <% end %>
+                        <% if event.has_key?("event_photos") %>
+                            <% event["event_photos"].each do |photo| %>
+                                <img class="thumbnail" src="<%= photo.url %>?w=500" title="<%= photo.title %>" width="300"> 
+                            <% end %>
+                        <% end %>
+                        <% if event.has_key?("event_tags") %>
+                            <p class="">
+                                <% event["event_tags"].each do |tag| %>
+                                    <span class="label faded round<% if tag == "Sponsor" %> success<% else %> info<% end %>"><%= tag %></span>
+                                <% end %>
+                            </p>
+                        <% end %>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</section>
+<% end %>
+
+<% 
+# sorted_daticans  = data.site.person.to_a.sort_by{ |id, person| person['slug'] }
+daticans = data.site.person.to_a.sort_by{ |id, person| person['slug'] }.select{ |id, person| (person.person_type == "Datica Executives" || person.person_type == "Datica VP" || person.person_type == "Datica Directors") }
+previous_item = get_previous_item(daticans, entry, "fullname")
+next_item = get_next_item(daticans, entry, "fullname")
+%>

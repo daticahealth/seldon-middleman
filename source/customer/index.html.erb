@@ -1,0 +1,80 @@
+---
+title: "Datica Customer Profiles"
+summary: "Datica Customer Profiles"
+author: "Datica, Inc."
+tags: "HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "January 1, 2017"
+share_image: "/public/img/share-posters/datica-social-twitter-thumb.png"
+header: Customers
+layout: listing
+---
+<!-- Customer spotlights -->
+<section class="section-article container-color--gray-light">
+    <div class="row">
+        <div class="columns small-12">
+            <h3>Customer Spotlights</h3>
+            <hr class="short">
+        </div>
+    </div>
+    <div class="row small-up-1 medium-up-2 large-up-3 align-center align-stretch">
+        <% data.site.spotlights.each do |id, entry| %>
+            <div class="column">
+                <div class="callout callout--stretch drop">
+                    <p class="text-center">
+                        <img class="logo-size--medium" src="/public/img/customer-logos/<%= entry["customer"]["slug"] %>-logo.png" alt="<%= entry["customer"]["company_name"] %> Logo"/>
+                    </p>
+                    <p><%= entry["summary"] %></p>
+                    <p class="text-center">
+                        <a class="button hollow" title="Customer Spotlight" href="/customer/<%= entry["customer"]["slug"] %>">Read the Customer Spotlight  <i class="fa fa-angle-right"></i></a>
+                    </p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</section>
+
+<% data.site.caseStudy.each do |id, entry| %>
+    <% if entry.has_key?("featured") && entry["featured"] == true %>
+        <section class="section-article">
+            <div class="row align-middle">
+                <div class="columns small-12 medium-6">
+                    <% if entry.has_key?("value_prop") %>
+                        <h3><%= entry["value_prop"] %></h3>
+                    <% end %>
+                    <% if entry.has_key?("customer_quote") %>
+                    <!-- <hr> -->
+                        <blockquote class="quote">
+                            <%= entry["customer_quote"]["quote_body"] %>
+                        </blockquote>
+                    <% end %>
+                    <% if entry.has_key?("customer") && entry["customer"].has_key?("profile_pic") %>
+                    <%= partial("partials/snippets/person", :locals => { :p => entry["customer"] }) %>
+                    <% end %>
+
+                </div>
+                <div class="columns small-12 medium-6">
+                    <div class="callout callout--stretch drop-blue">
+                        <p>
+                            <img class="logo-size--medium" src="/public/img/customer-logos/<%= entry["customer"]["slug"] %>-logo.png" alt="<%= entry["customer"]["company_name"] %> Logo"/>
+                        </p>
+                        <% if entry.has_key?("media_object") %>
+                            <div class="group">
+                                <%= entry["media_object"] %>
+                            </div>
+                        <% end %>
+                        <h5><%= entry["case_study_title"] %></h5>
+                        <%# if entry.has_key("customer") && entry["customer"].has_key("customer_story_short") %>
+                            <p class="">
+                                <%= entry["customer"]["customer_story_short"] %>
+                            </p>
+                        <%# end %>
+
+
+                        <a class="button--primary button" href="/customer/<%= entry["slug"] %>">
+                            Read the <%= entry["customer"]["company_name"] %> case Study <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <% end %>
+<% end %>

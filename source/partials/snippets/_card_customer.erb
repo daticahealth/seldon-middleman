@@ -1,0 +1,19 @@
+<p>
+    <img class="logo--customer" src="/public/img/customer-logos/<%= entry["slug"] %>-logo.png" alt="<%= entry["customer"]["company_name"] %> Logo"/>
+</p>
+<% if entry.has_key?("media_object") %>
+        <%= entry["media_object"] %>
+<% end %>
+<h5><%= entry["case_study_title"] %></h5>
+<p class="">
+    <%= entry["customer"]["customer_story_short"] %>
+</p>
+<hr>
+<blockquote class="person-quote">
+    <%= entry["customer_quote"]["quote_body"] %>
+</blockquote>
+<%= partial("partials/snippets/person", :locals => { :p => entry["customer"] }) %>
+
+<a class="button" href="/customer/<%= entry["slug"] %>">
+    Read about <%= entry["customer"]["company_name"] %>
+</a>

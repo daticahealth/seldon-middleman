@@ -1,0 +1,208 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../modules/functions';
+// @import '../modules/utility';
+@import 'node_modules/foundation-sites/scss/components/_off-canvas.scss';
+
+@include foundation-off-canvas;
+
+// @import '/node_modules/foundation-sites/scss/util/breakpoint.scss';
+
+.full-height {
+    min-height: 100vh;
+}
+// extra styleguide styles
+.typo-styles {
+    dt {
+        display: block;
+        float: left;
+        color: #fff;
+        background-color: rgba(0,0,0,.24);
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        line-height: 32px;
+        text-align: center;
+        font-weight: $font-weight-bold;
+        margin-top: 5px;
+    }
+    dd {
+        display: block;
+        margin-left: 50px;
+        margin-bottom: 20px;
+    }
+    // &--demo {
+    //     margin-bottom: 5px;
+    // }
+    &--desc {
+        font-size: 90%;
+        opacity: 0.6;
+    }
+    &--demo {
+        margin-bottom: 0;
+    }
+}
+ul.nav-demo {
+    margin-left: 3.5rem;
+}
+.icon {
+}
+.button {
+    &.has-icon { // padding adjustment when icon included
+        padding: 0.55em 0.7em;
+    }
+    svg {
+        vertical-align: text-top; // ensures alignment with text
+        padding: 0;
+        fill: $white;
+    }
+    &--notification {
+        svg {
+            fill: $color_talk-alt;
+        }
+        &:hover {
+            fill: $gray-2;
+        }
+    }
+    &--light {
+        svg {
+            fill: $color_talk-alt;
+        }
+        &:hover {
+            fill: $gray-2;
+        }
+    }
+}
+
+// We could solidify these styles and use them sitewide, I would hope. - AW
+.link {
+    &--white {
+        font-weight: $font-weight-bold;
+        text-decoration: none !important;
+        color: white;
+        // @include easing($timing-default);
+        // @include fx-hover-nudge();
+        &:visited {
+            color: white;
+        }
+        &:hover, &:active {
+            // @include transform(translate(rem-calc(0px), rem-calc(2px)));
+            color: white;
+            border-bottom: 1px solid white;
+        }
+    }
+    &--yellow {
+        font-weight: $font-weight-bold;
+        text-decoration: none !important;
+        color: $color_yellow-glow;
+        // @include easing($timing-default);
+        // @include fx-hover-nudge();
+        &:visited {
+            color: $color_yellow-glow;
+        }
+        &:hover, &:active {
+            // @include transform(translate(rem-calc(0px), rem-calc(2px)));
+            color: $color_yellow-glow;
+            border-bottom: 1px solid $color_yellow-glow;
+        }
+    }
+    &--white, &--yellow {
+        border-bottom: 1px solid transparent;
+    }
+}
+.active {
+    color: $color_yellow-glow !important;
+    border-bottom: 1px solid $color_yellow-glow;
+}
+
+// Reset all headers. this should be done upstream in type.scss
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: $header-margin-bottom;
+    // padding: 0;
+    line-height: $header-lineheight;
+    font-weight: $font-weight-regular;
+}
+
+h1 {
+    font-weight: $font-weight-light;
+}
+h2 {
+    font-weight: $font-weight-light;
+}
+h3 {
+    // font-weight: $font-weight-regular;
+}
+h4 {
+    font-weight: $font-weight-bold;
+}
+h5 {
+    font-weight: $font-weight-bold;
+}
+h6 {
+    font-style: italic;
+}
+
+textarea {
+    @include textarea-selectable();
+    min-height: fit-content;
+}
+
+// pull apart the color component HSL values, and floor() them
+@function hsl-str($color) {
+  @return unquote("hsl: #{floor(hue($color)/1deg)},#{floor(saturation($color))},#{floor(lightness($color))}");
+}
+@mixin label-color($color, $luma){
+  @if lightness($color) >= $luma {
+    color: #000;
+  }
+  @else {
+    color: #fff;
+  }
+}
+
+%hsl-labels{
+    white-space: pre;
+    letter-spacing: -0.05em;
+    margin: 0;
+    font-family: $font-family-monospace;
+}
+
+.color {
+    @each $name, $color in $fill-color-list { // this generates all grays 1-12 (dark to lightest), sets color
+        $color-hsl: hsl-str($color);
+        &-label--#{$name} {
+            &:after {
+                // content: "#{$color}\A#{$color-hsl}";
+                content: " #{$color}";
+                @extend %hsl-labels;
+            }
+        }
+    }
+}
+
+// centered tabs, like in pricing
+$tab-border: 5px;
+
+ul.tabs-centered {
+    text-align: center;
+    li.tabs-title {
+        margin-bottom: 0;
+        float: none;
+        display: inline-block;
+        border-top: $tab-border solid transparent;
+        // border-color: $color_prime-alt;
+        transition: all 130ms linear;
+        a {
+            padding: 0.8rem; // make tabs a bit more compact for smallest viewports
+            font-weight: bold;
+            color: rgba(0,0,0,0.6);
+        }
+        &.is-active {
+            background-color: white;
+            border-color: $color_prime-alt;
+            a {
+                color: black;
+            }
+        }
+    }
+}

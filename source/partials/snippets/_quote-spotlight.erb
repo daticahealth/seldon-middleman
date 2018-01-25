@@ -1,0 +1,12 @@
+<% if p["customer_spotlight"].has_key?("quote") %>
+    <div class="callout callout--quote">
+        <blockquote class="quote-medium">
+            <!-- spotlight-entry quote -->
+            <%= p["customer_spotlight"]["quote"]["quote_body"] %>
+        </blockquote>
+        <% if p.has_key?("profile_pic") %>
+        <%= partial("partials/snippets/person", :locals => { :p => p }) %>
+            
+        <% end %>
+    </div><!-- END callout -->
+<% end %>

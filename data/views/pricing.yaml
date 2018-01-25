@@ -1,0 +1,54 @@
+plan_details:
+  -
+    title: "deploy an application."
+    slug: "standard"
+    primary_label: "Start with a free trial of the <strong>Standard Plan</strong> or choose the <strong>Professional Plan</strong>"
+    primary_url: https://product.datica.com/account/register
+    secondary_label: Learn about compliance
+    secondary_url: https://datica.com/platform
+    icon: https://images.contentful.com/189dvqdsjh46/2WudExVDDiaEkQGqieCiqC/55e5f88adbaf2bbbbc184df96c8809e9/icon-hosting.svg
+    color: aqua-glow
+    body: |
+      ### Technical Requirements
+      
+      Datica abstracts away all the things you used to do with on-premise or IaaS providers, like manage web servers, VMs and hardware.
+
+      The only thing you need to worry about is how much computing power and data storage resources you need in order to efficiently run your application. You do this by mapping dedicated RAM to individual services. Here’s a typical digital health application stack:
+
+      |Code service backend, like Java|1x 2GB RAM|
+      |Database service, like Postgres|1x 2GB RAM|
+      |Redis for caching|1x 1GB RAM|
+      |**Total required:**|**5GB RAM**|
+
+      This build fits nicely in the [Standard plan](https://product.datica.com/account/register). Should you need additional resources for other services as you grow, adding more RAM is as simple as clicking a button. Extra RAM is $100/GB.
+
+      ### Service Requirements
+
+      Beyond infrastructure, consider your support and service needs. Tech support, SLAs, and compliance extras are determined by the plan you select.
+  -
+    title: "integrate with EHRs"
+    slug: "pro"
+    primary_label: "Start with the <strong>Professional Plan</strong> to integrate with EHRs"
+    primary_url: https://product.datica.com/account/register
+    secondary_label: Learn about integration
+    secondary_url: https://datica.com/services
+    icon: https://images.contentful.com/189dvqdsjh46/1j6yIG0EUKWQoGKA2Ams8k/77909aa5f6a40288b6be649b9ab053d9/icon-integration.svg
+    color: yellow-glow
+    body: |
+      ### Integration Environment
+
+      You can purchase a one-click-install integration environment, which has all the technology components necessary to handle EHR integration: Highly-Available configured Mirth, load balancers, Postgres backups, and VPN management.
+
+      The environment takes a minimum of 8GB of RAM but also requires VPNs, which means the Professional Plan is the right place to start.
+
+      ### VPNs
+
+      Since each integration requires a VPN into the specific site, you will work with the Datica team to help set up each VPN. We charge a $1,500/year/VPN connection maintenance fee to ensure they are in a 24/7 Keep-Alive status.
+
+      ### Professional Services
+
+      Since each integration is its own journey where you integrate into a hospital's private network, you may need the occasional help. Datica offers wide variety of [professional services](/services) should you need it.
+
+      **Per-site go-live management:** We take on the entire process of a specific site's integration from start to finish. $6,000 one-time.
+
+      **Integration Engineering Assistance:** We can help with any extra ad-hoc help with integration tasks at an hourly rate.

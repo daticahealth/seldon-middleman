@@ -1,0 +1,248 @@
+// SVG icon & logo attributes
+.icon {
+    &-inline {
+        vertical-align: baseline;
+        width: 1em; // using 1em here makes it same height as text, good for inline
+        height:1em;
+        margin-bottom: -0.1em; // slight nudge down
+        &--white{
+            fill: white;
+        }
+    }
+    &-size {
+        &--small { // inline with content
+            width:  $thing-s;
+            height: $thing-s;
+            @media all and (max-width: 40rem){
+                height: auto;
+            }
+            // vertical-align: middle;
+        }
+        &--medium {
+            width:  $thing-m;
+            width:  $thing-m;
+            height: $thing-m;
+            // vertical-align: middle;
+        }
+        &--large {
+            width:  $thing-l;
+            height: $thing-l;
+            // vertical-align: middle;
+        }
+        &--xlarge {
+            width:  $thing-l * 1.5;
+            height: $thing-l * 1.5;
+            // vertical-align: middle;
+        }
+    }
+    // for inline icons, extra space before/after next to text. Default .menu behavior from ZF targets things inside menu elements.
+    &-before {
+        padding-right: 0.3em;
+        margin-left: 0;
+    }
+    &-after {
+        padding-left: 0.3em;
+        margin-right: 0;
+    }
+}
+
+
+// logos are non-square and need different attributes. If there's a more elegant way to do this, I'm all ears. - AW
+
+.logo {
+    &-size {
+        // gotta say, these sizes are kinda fuct and it's my fault - AW
+        &--small { // inline with content
+            max-height: $thing-s;
+            @include breakpoint(medium up) {
+                max-width: 90%; // avoid combining this and declared max-height at small viewports.
+                max-height: $thing-s;
+            }
+        }
+        &--small-mid{
+            max-width: 90%;
+            max-height: $thing-s;
+            @include breakpoint(medium up){
+                max-height: 2rem;
+            }
+        }
+        &--medium {
+            max-width: 90%;
+            max-height: $thing-s;
+            @include breakpoint(medium up) {
+                max-height: $thing-m;
+            }
+        }
+        &--large {
+            max-width: 90%;
+            max-height: $thing-s;
+            @include breakpoint(medium up) {
+                max-height: $thing-l;
+            }
+        }
+        &--xlarge {
+            max-height: $thing-l;
+            @include breakpoint(medium up) {
+                max-height: $thing-l * 2;
+            }
+        }
+    }
+    &-basic {
+        max-width: 90vw;
+        height: $thing-l;
+        @include breakpoint(medium up) {
+            height: $thing-m;
+        }
+    }
+    &-style {
+        &--monochrome {
+            @extend .grayscale;
+        }
+        &--brightness-invert{
+            @extend .brightness-invert;
+        }
+    }
+}
+// for logo clouds. Wrap logos in this class, then ensure .logo-cloud--item is on each image. Sizing classes optional (above)
+.logo-cloud {
+    @include flex-it(0 0 auto);
+    padding: 0.25rem 0.5rem;
+    margin-bottom: $global-margin;
+    @include breakpoint(medium up) {
+        padding: 1rem 1.5rem;
+    }
+    &--item {
+        margin: 0.3rem 0.5rem;
+        @include breakpoint(medium up) {
+            margin: 0.5rem 0.75rem;
+        }
+        @include breakpoint(large up) {
+            margin: 0.5rem 1rem;
+        }
+    }
+}
+// there are objects that are not paths that have fill =/ - only if all is not converted to fills first, which all *color-able* SVG must be! Already done for older icons, part of cleanup. -AW
+.svg {
+    &-color { // styling inlined SVG here
+        // Datica glowyness
+        @each $color-name, $color in $fill-color-list {
+            &--#{$color-name} path, &--#{$color-name} ellipse, &--#{$color-name} circle, &--#{$color-name} polygon, &--#{$color-name} rect {
+                fill: $color;
+            }
+        }
+    }
+    &-opacity{
+        &--half{
+            @include opacity(0.5);
+        }
+    }
+}
+
+// status dots! Could be a sass-map for l33t
+
+.status-dot {
+    &--green {
+        @include status-dot($color_green, $thing-tiny);
+    }
+    &--green-glow {
+        @include status-dot($color_green-glow, $thing-tiny);
+    }
+    &--yellow-glow {
+        @include status-dot($color_yellow-glow, $thing-tiny);
+    }
+    &--yellow-glow-low-alpha {
+        @include status-dot($color_yellow-glow, $thing-tiny);
+        @include opacity(0.5);
+    }
+    &--blue-glow {
+        @include status-dot($color_yellow-glow, $thing-tiny);
+    }
+}
+
+// Custom icons
+
+// AW: I would like to see us move towards the inline SVG methods using SVGInjector. I have some examples from the guide I will point to.
+
+// .icon-cloud-w{
+//     display: inline-block;
+//     background: url('/public/icons/brand/icon-cloud-w.svg');
+//     width: $thing-s;
+//     height: $thing-s;
+//     background-size: $thing-s $thing-s;
+// }
+// .icon-cloud-alt{
+//     display: inline-block;
+//     background: url('/public/icons/brand/icon-cloud-alt.svg');
+//     width: $thing-s;
+//     height: $thing-s;
+//     background-size: $thing-s $thing-s;
+// }
+// .icon-integration-w{
+//     display: inline-block;
+//     background: url('/public/icons/brand/icon-integration-w.svg');
+//     width: $thing-s;
+//     height: $thing-s;
+//     background-size: $thing-s $thing-s;
+// }
+// .icon-integration-alt{
+//     display: inline-block;
+//     background: url('/public/icons/brand/icon-integration-alt.svg');
+//     width: $thing-s;
+//     height: $thing-s;
+//     background-size: $thing-s $thing-s;
+// }
+// .icon-compliance-w{
+//     display: inline-block;
+//     background: url('/public/icons/brand/icon-compliance-w.svg');
+//     width: $thing-s;
+//     height: $thing-s;
+//     background-size: $thing-s $thing-s;
+// }
+// .icon-compliance-alt{
+//     display: inline-block;
+//     background: url('/public/icons/brand/icon-compliance-alt.svg');
+//     width: $thing-s;
+//     height: $thing-s;
+//     background-size: $thing-s $thing-s;
+// }
+// .icon-cloud{
+//     display: inline-block;
+//     background: url('/public/icons/brand/icon-cloud.svg');
+//     width: $thing-s;
+//     height: $thing-s;
+//     background-size: $thing-s $thing-s;
+// }
+// .icon-integration{
+//     display: inline-block;
+//     background: url('/public/icons/brand/icon-integration.svg');
+//     width: $thing-s;
+//     height: $thing-s;
+//     background-size: $thing-s $thing-s;
+// }
+// .icon-services{
+//     display: inline-block;
+//     background: url('/public/icons/brand/icon-services.svg');
+//     width: $thing-s;
+//     height: $thing-s;
+//     background-size: $thing-s $thing-s;
+// }
+
+// .icon-link-group{
+//     svg,
+//     a{
+//         display: block;
+//         float: left;
+//     }
+//     a{margin: rem-calc(15px) 0 0 rem-calc(10px);}
+// }
+
+.green-check{
+    color: $color_green;
+}
+
+.icon-with-margin{
+    display: block;
+    &--bottom{
+        margin: 0 0 1rem 0;
+    }
+}

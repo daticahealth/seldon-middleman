@@ -1,0 +1,31 @@
+<%
+    # This snippet is an example of how dev-only content can be displayed. 
+    p = locals[:item]
+%>
+
+<% if config[:host_label] == "dev" %>
+    <section class="section-article container-gray-3">
+        <div class="row collapse align-center">
+            <div class="columns small-12 large-8">
+                <h2 class="headline-4">Preview Image</h2>
+                <p>This section only appears on the development server.</p>
+                <div class="share-preview">
+                    <div class="share-preview--content row align-middle">
+                        <div class="columns small-4 text-right">
+                            <img class="share-preview--logo" src="/public/img/company/datica-logo-vertical-white.svg" alt="logo">
+                        </div>
+                        <div class="columns small-8">
+                            <h3 class="share-preview--header"><%= p["title"] %> <i class="callout--article-action fa fa-arrow-circle-right"></i></h3>
+                            <% if p.has_key?("summary") %>
+                                <div class="share-preview--body">
+                                    <%= Kramdown::Document.new(p["summary"]).to_html %>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="share-preview--image container-image--center" data-interchange="[<%= p["featured_image"]["url"] %>?fit=scale&w=800&h=400&q=60, small]"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+<% end %>

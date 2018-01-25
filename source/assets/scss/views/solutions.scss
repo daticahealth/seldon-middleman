@@ -1,0 +1,19 @@
+@import '../settings';
+@import '../modules/functions';
+
+.group {
+    &--divider {
+        margin-bottom: 3rem;
+        &:not(:last-child) {
+            padding-bottom: 3rem;
+            border-bottom: 1px solid $gray-10;
+        }
+    }
+}
+.callout {
+    &--masthead {
+        background-color: white(0.7);
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+}

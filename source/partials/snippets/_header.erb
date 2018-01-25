@@ -1,0 +1,66 @@
+<header class="main-header main-header<% if defined?(style) && style == "light" %>--white<% end %>">
+    <a href="/" class="logo" title="Datica Home"></a>
+    <%#= inline_svg("datica-logo-horiz", class: "icon-size--medium svg-color--white") %>
+    <nav class="left">
+        <div class="hide-for-large">
+            <div class="group input-nav input-nav--white">
+                <%= partial "partials/snippets/search-field" %>
+            </div>
+            <a href="/contact" class="expanded button button--light">Contact us</a>
+        </div>
+        <a href="/platform" title="Datica's Platform">Platform</a>
+        <a href="/services" title="Datica's Professional Services">Services</a>
+        <a href="/pricing" title="Pricing Information">Pricing</a>
+        <a href="/dhsf" title="The Digital Health Success Framework: for teams building digital products">DHSF</a>
+        <div class="a" id="resourcesDropdown">
+            <span class="selector">Resources <i class="fa fa-caret-down"></i></span>
+            <div class="dropdown dropdown-resources drop dropdown-list--block">
+                <div class="container-color--white">
+                    <ul class="no-bullet dropdown-group">
+                        <li class="dropdown-group--item no-wrap"><a class="dropdown-item--link" href="/dhsf" title="The Digital Health Success Framework">Digital Health Success Framework</a></li>
+                        <li class="dropdown-group--item"><a class="dropdown-item--link" href="/innovation" title="Datica's premiere collection of insights, reports, ">Healthcare Innovators</a></li>
+                        <li class="dropdown-group--item"><a class="dropdown-item--link" href="/podcast" title="Exploring innovation in healthcare through interviews with the industry's top thinkers and doers.">Podcast</a></li>
+                        <li class="dropdown-group--item"><a class="dropdown-item--link" href="/academy" title="Full archive of Datica's educational materials">The Academy</a></li>
+                    </ul>
+                    <hr class="hr">
+                    <div class="list-title">Learn More:</div>
+                    <ul class="no-bullet dropdown-group">
+                        <% sorted_discover_posts = data.site.discover.to_a.sort_by{ |id, post| post['title'] } %>
+                        <% sorted_discover_posts.each do | id, post | %>
+                            <li class="dropdown-group--item">
+                                <a class="dropdown-item--link" href="/discover/<%= post["slug"] %>" title="Discover <%= post["title"] %>"><%= post["title"] %></a>
+                            </li>
+                        <% end %>
+                    </ul>
+                </div>
+                <div class="container-color--gray-light alt-nav show-for-large">
+                    <a href="//help.datica.com" title="Search our documentation for Datica solutions.">Documentation</a>
+                    <a href="//datica.com/support" title="Get help and the support you need.">Support</a>
+                    <a href="http://status.catalyze.io" title="Is it working? Find out here.">System Status</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="a" id="companyDropdown">
+            <span class="selector">Company <i class="fa fa-caret-down"></i></span>
+            <div class="dropdown dropdown-company drop dropdown-list--block">
+                <div class="container-color--white">
+                    <ul class="no-bullet dropdown-group">
+                        <%= partial "partials/snippets/nav-sub-company", :locals => { :class_li => "dropdown-group--item", :class_a => "dropdown-item--link" } %>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="right">
+        <div class="input-nav input-nav--<% if defined?(style) && style == "light" %>white<% else %>black<% end %> hide-for-large-only">
+            <%= partial "partials/snippets/search-field" %>
+        </div>
+        <a href="//product.datica.com">Sign in</a>
+        <a href="/contact" id="topNavCTA" class="button <% if defined?(style) && style == "light" %>button--light<% else %> success<% end %>">Contact us</a>
+    </nav>
+    <div class="mobile-menu">
+        <i class="fa fa-bars"></i>
+    </div>
+</header>

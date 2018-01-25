@@ -1,0 +1,188 @@
+---
+title: Typography
+navTitle: Type
+summary: "Basic typography styles and formatting."
+customCSS: styleguide
+hide_from_sitemap: true
+---
+<section id="content-top" class="container-pad--medium container-color--gray-light">
+    <div class="row align-center">
+        <div class="columns small-12 text-center group">
+            <h3 class="headline-2 no-margin">Headers, subheaders and text colors</h3>
+            <p>Use <code>.subhead--spaced</code> when you want an all-caps, spaced-out subhead above a title. Useful for categories like, "blog".</p>
+        </div>
+    </div>
+    <div class="row align-stretch full-width">
+        <div class="columns small-12 large-6">
+            <div class="callout callout--stretch drop">
+                <div class="group">
+                    <%= partial "/seldon/partials/header-stack" %>
+                </div>
+                <hr class="divider">
+                <div class="group">
+                    <h3 class="headline-3">Subheaders - default style</h3>
+                    <div class=""><span class="headline-4 subhead--spaced">Spaced-out subheader</span> <code>headline-4</code></div>
+                    <div class=""><span class="headline-5 subhead--spaced">Spaced-out subheader</span> <code>headline-5</code></div>
+                    <div class=""><span class="headline-6 subhead--spaced">Spaced-out subheader</span> <code>headline-6</code></div>
+                </div>
+                <div class="group">
+                    <h4 class="headline-4">Text color classes</h4>
+                    <p>These class names and colors are built from the <code>$fill-color-list</code> in <code>settings.scss:160</code>.</p>
+                    <div><span class="headline-6 text--purple-deep subhead--spaced">Spaced-out subheader</span> <code>.text--purple-deep</code></div>
+                    <div><span class="headline-6 text--blue-bright subhead--spaced">Spaced-out subheader</span> <code>.text--blue-bright</code></div>
+                    <div><span class="headline-6 text--brand subhead--spaced">Spaced-out subheader</span> <code>.text--brand</code></div>
+                    <div><span class="headline-6 text--blue subhead--spaced">Spaced-out subheader</span> <code>.text--blue</code></div>
+                    <div><span class="headline-6 text--gray subhead--spaced">Spaced-out subheader</span> <code>.text--gray</code></div>
+                    <div><span class="headline-6 text--black subhead--spaced">Spaced-out subheader</span> <code>.text--black</code></div>
+                </div>
+                <div class="group">
+                    <h4 class="headline-4">Text with ribbons</h4>
+                    <p>The ribbon classes wrap text in a colored background, for a "highlighter" effect. Good for a different emphasis style. Built from the <code>$fill-color-list</code> in <code>settings.scss:160</code></p>
+
+                    <div class="row collapse">
+                        <div class="columns small-12 medium-6">
+                            <ul class="no-bullet">
+                                <% data.guide.styles.fill_color_list[0...12].each do |style| %>
+                                    <li><span class="ribbon--<%= style %> color-label--<%= style %>">.ribbon--<%= style %></span></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                        <div class="columns small-12 medium-6">
+                            <ul class="no-bullet">
+                                <% data.guide.styles.fill_color_list[13...27].each do |style| %>
+                                    <li><span class="ribbon--<%= style %> color-label--<%= style %>">.ribbon--<%= style %></span></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns small-12 large-6">
+            <div class="callout--dark callout--stretch">
+                <div class="group">
+                    <%= partial "/seldon/partials/header-stack" %>
+                </div>
+                <hr class="divider">
+                <div class="group">
+                    <h3 class="headline-3">Subheaders on dark backgrounds</h3>
+                    <div class=""><span class="headline-4 subhead--spaced">Spaced-out subheader</span> <code>headline-4</code></div>
+                    <div class=""><span class="headline-5 subhead--spaced">Spaced-out subheader</span> <code>headline-5</code></div>
+                    <div class=""><span class="headline-6 subhead--spaced">Spaced-out subheader</span> <code>headline-6</code></div>
+                </div>
+                <div class="group">
+                    <h4 class="headline-4">Text color classes for use on dark backgrounds</h4>
+                    <p>These classes are useful on dark backgrounds. They can be applied to any text. These class names and colors are built from the <code>$fill-color-list</code> in <code>settings.scss:160</code></p>
+                    <div><span class="headline-6 text--white subhead--spaced">Spaced-out subheader</span> <code>.text--white | .text--inverted</code></div>
+                    <div><span class="headline-6 text--magenta-glow subhead--spaced">Spaced-out subheader</span> <code>.text--magenta-glow</code></div>
+                    <div><span class="headline-6 text--orange-glow subhead--spaced">Spaced-out subheader</span> <code>.text--orange-glow</code></div>
+                    <div><span class="headline-6 text--yellow-glow subhead--spaced">Spaced-out subheader</span> <code>.text--yellow-glow</code></div>
+                    <div><span class="headline-6 text--green-glow subhead--spaced">Spaced-out subheader</span> <code>.text--green-glow</code></div>
+                    <div><span class="headline-6 text--aqua-glow subhead--spaced">Spaced-out subheader</span> <code>.text--aqua-glow</code></div>
+                    <div><span class="headline-6 text--blue-glow subhead--spaced">Spaced-out subheader</span> <code>.text--blue-glow</code></div>
+                </div>
+                <div class="group">
+                    <h4 class="headline-4">Text with ribbons</h4>
+                    <p>The ribbon classes wrap text in a colored background, for a "highlighter" effect. Good for a different emphasis style. Built from the <code>$fill-color-list</code> in <code>settings.scss:160</code></p>
+
+                    <div class="row collapse">
+                        <div class="columns small-12 medium-6">
+                            <ul class="no-bullet">
+                                <% data.guide.styles.fill_color_list[0...12].each do |style| %>
+                                    <li><span class="ribbon--<%= style %> color-label--<%= style %>">.ribbon--<%= style %></span></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                        <div class="columns small-12 medium-6">
+                            <ul class="no-bullet">
+                                <% data.guide.styles.fill_color_list[13...27].each do |style| %>
+                                    <li><span class="ribbon--<%= style %> color-label--<%= style %>">.ribbon--<%= style %></span></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="type-headlines" class="row align-center container-pad--large">
+        <div class="columns small-12 medium-12 large-10 text-center group">
+            <h3 class="headline-2 no-margin">Header examples using headline classes</h3>
+            <p>These examples show content styled with the new <code>headline-n</code> classes.</p>
+        </div>
+        <div class="columns small-12 medium-12 large-10 callout callout--large drop">
+            <div class="group">
+                <h1 class="headline-1">Healthcare’s Full-Stack Partner</h1>
+                <p class="lead">This is a <code>.lead</code> block. It's used at the top of articles to set off the first paragraph or two.</p>
+                <p>Each of these text blocks is wrapped in a <code>.group</code> class; all it does is add space around grouped items. </p>
+                <h2 class="headline-2 no-margin">This h2 has no margin below</h2>
+                <h3 class="headline-6">Because sometimes you want a subheader.</h3>
+                <p>Use <code>.no-margin</code> on a header (or anything) to set <code>margin-bottom: 0</code>. The company that unlocked the problem of securely hosting healthcare data in the cloud changes its name to better reflect its core focus during an industry transformation.</p>
+            </div>
+            <div class="person-card--vertical float-right-on-medium">
+                <img class="avatar circle" src="//images.contentful.com/189dvqdsjh46/4gVcDm2n5SGuS46wUI4eM/eba5483e34263e500f2278f80e82e881/laleh.jpg">
+                <div class="person-card--caption">
+                    <div class="person-name">Laleh Hassibi</div>
+                    <div class="person-title">Director of Content Marketing</div>
+                </div>
+            </div>
+            <div class="group">
+                <h3 class="headline-5">Here's an h3, with .headline-5 as the style override</h3>
+                <p>This demonstrates how we can choose the right header tag (h1-h6) for semantic value, and override it with the <code>.headline-n</code> style our design needs. </p>
+            </div>
+            <div class="group">
+                <h3 class="headline-3">A collection of words</h3>
+                <p>This is an H3 with the class headline-3. In part 2 of our healthcare innovators series, Catalyze co-founder Mohan Balachandran continues his conversations with Grahame Grieve (&quot;The Father of FHIR&quot;). </p>
+            </div>
+            <div class="group">
+                <h4 class="headline-4">In this case study, you will learn:</h4>
+                <ul>
+                  <li>How to solve data exchange dilemmas when data requirements fall outside the scope of traditional standards</li>
+                  <li>How to bridge the gap between industry-wide promise of interoperability and current data exchange needs</li>
+                  <li>The various factors that weigh into a “build versus buy” decision that have bottom line impact</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="type-inline-icons" class="section-article">
+    <div class="row align-center">
+        <div class="columns small-12 medium-12 large-8 text-center">
+            <p>Any image or SVG with the <code>.icon-inline</code> applied should neatly align itself vertially with the header. Add a space after the icon in the header to space it properly.</p>
+            <h1 class="headline-1"><img class="inject-me svg-color--black icon-inline" src="/public/icons/brand/icon-ehr.svg" alt="an icon" /> Headers with icons</h1>
+            <h2 class="headline-2"><img class="inject-me svg-color--gray icon-inline" src="/public/icons/brand/icon-integration.svg" alt="an icon" /> Headers with icons</h2>
+            <h3 class="headline-3"><img class="inject-me svg-color--gray icon-inline" src="/public/icons/brand/icon-moneys.svg" alt="an icon" /> Headers with icons</h3>
+            <h4 class="headline-4"><img class="inject-me svg-color--gray icon-inline" src="/public/icons/brand/icon-pyramid.svg" alt="an icon" /> Headers with icons</h4>
+            <h5 class="headline-5"><img class="inject-me svg-color--gray icon-inline" src="/public/icons/brand/icon-services.svg" alt="an icon" /> Headers with icons</h5>
+        </div>
+    </div>
+</section>
+
+<section id="type-content" class="section-article container-color--gray-light full-width">
+    <div class="row align-center">
+        <div class="columns small-12 medium-12 large-10">
+            <div class="text-center group">
+                <h2 class="headline-2">Blog Post Samples</h2>
+                <p>Blog posts, and other content rendered from the Contentful CMS, will not have classes applied to markup. Base styles must be managed by the h1-h6 default styling. Content entries themselves must not contain headers higher than H2 - H1's are reserved for templates.</p>
+            </div>
+                <% sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
+                <% sorted_posts.take(2).each do | id, post | %>
+                    <div class="group drop">
+                        <div class="container-pad--large container-color--gray-dark">
+                            <p class="blog-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></p>
+                            <h1 class="headline-2"><%= post["title"] %></h1>
+                        </div>
+                        <div class="container-pad--large container-color--white">
+                            <article class="content-dynamic">
+                                <% if post.has_key?("blog_lead") %>
+                                    <div class="lead"><%= Kramdown::Document.new(post["blog_lead"]).to_html %></div>
+                                <% end %>
+                                <div class="section--body blog-post-content group"><%= Kramdown::Document.new(post["post"]).to_html %></div>
+                            </article>
+                        </div>
+                    </div>
+                <% end %>
+        </div>
+    </div>
+</section>

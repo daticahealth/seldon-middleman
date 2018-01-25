@@ -1,0 +1,28 @@
+---
+title: "Datica Press and Media Resources"
+summary: "Datica press releases, announcements, media coverage, and contact information"
+author: "Datica, Inc."
+tags: "media, press releases, press, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "January 1, 2017"
+share_image: "/public/img/share-posters/datica-social-twitter-thumb.png"
+header: "Media Resources"
+subheader: "Company Info, Press Releases, Coverage"
+layout: basic
+---
+
+<section class="section-article">
+    <div class="row">
+        <div class="columns small-12 medium-8">
+            <h2>Press Releases</h2>
+            <hr class="short">
+            <% data.site.pressReleases.each do |id, post| %>
+                <div class="group">
+                    <a href="/press-release/<%= post["slug"] %>"><%= post["title"] %></a>
+                    <p>
+                        <%= post["summary"] %>
+                    </p>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</section>

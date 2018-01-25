@@ -1,0 +1,583 @@
+// Global Type Styles
+
+.lead {
+    // color: black(0.6); // color is inherited from block above
+    // opacity: 0.8;
+    margin-bottom: 1em;
+    @include breakpoint (small only){
+        font-size: medium;
+        // opacity: 0.8;
+    }
+}
+
+
+// Colors
+// To-do: these .color-name classes are deprecated - the .text--[color] classes should cover it.
+.color-white {color: $color_white;}
+.color-talk, .color-gray {color: $color_talk;}
+.color-talk-alt, .color-gray-light {color: $color_talk-alt;}
+.color-red {color: $color_service;}
+.color-blue {color: $color_prime-alt;}
+
+// for new subheader class. different namespace. Note text-color classes override opacity below
+.subhead {
+    &--spaced {
+        opacity: 0.5;
+        @extend .spaced-out;
+        margin-bottom: 0;
+    }
+    // &--large {
+    //
+    // }
+    &--small {
+        font: {
+            weight: $font-weight-regular;
+            // Use map-deep-get() to access deep attributes in header styles array in settings.scss
+            size: rem-calc(map-deep-get($header-styles, "large", "h6", "font-size"));
+        }
+    }
+}
+// text colors moved to overrides.scss because OOO
+.listing-page-title {
+    // font-size: rem-calc(40px);
+    // font-weight: $font-weight-light;
+    color: $color_white;
+    margin-bottom: 0.25em;
+}
+
+.white-background-header{
+    font-size: rem-calc(35px);
+    color: $color_deep;
+    margin: rem-calc(50px) 0;
+}
+.dark-background-header{
+    @extend .white-background-header;
+    color: $color_white;
+}
+.medium-blue{
+    font-weight: $font-weight-light;
+    font-size: rem-calc(32px);
+    color: $color_prime-alt;
+}
+.subheader--spaced-out {
+    font: {
+        // size: 1.3rem;
+        weight: $font-weight-bold;
+    }
+    opacity: 0.5;
+    @extend .spaced-out;
+    margin-bottom: $pad * 0.25;
+}
+
+blockquote {
+    font-style: italic;
+}
+code {
+    font-size: 0.9em;
+    background-blend-mode: multiply;
+}
+li { // not sure why, this isn't getting rendered in foundation default type stuff
+    line-height: $paragraph-lineheight; // * 0.9;
+    margin-bottom: $list-margin-bottom;
+}
+// dl dt {
+//     font-size: 110%;
+// }
+dl dd {
+    @include hyphens (auto);
+}
+dd + dt {
+    margin-top: 1.5rem; // add extra space to dt once in list
+}
+footer {
+    font-size: smaller;
+    a.active, a[aria-current]:not([aria-current="false"]) {
+        font-weight: $font-weight-bold !important;
+    }
+    // color: white(0.6) !important; // assumes a dark footer
+}
+
+.quote {
+    &--serif { // new style going forward
+        color: inherit;
+        opacity: 0.9;
+        font: {
+            family: $font_serif;
+            size: larger;
+            style: normal;
+        }
+        line-height: 1.6;
+        // margin: 1.75rem 0 2rem 0rem;
+        padding: 0 0 0 1rem;
+        // border-left: 3px solid transparentize($color_prime-alt, 0.6);
+        @include breakpoint (medium) {
+            // margin: 1.75rem 0 2rem 0.25rem;
+            padding: 0 0 0 1.5rem;
+            // border-left-width: 5px;
+        }
+        // inserted quotation marks
+        quotes: "\201C""\201D";
+        &:before {
+            opacity: 0.4;
+            content: open-quote;
+            font-size: 2.6em;
+            line-height: 0;
+            vertical-align: -0.4em;
+            padding: 0 0.1em 0 0;
+            margin-left: -0.6em;
+            font-weight: bold;
+        }
+        // &:after {
+        //     opacity: 0.6;
+        //     content: close-quote;
+        //     font-size: 2em;
+        //     line-height: 0.3em;
+        //     margin-right: 0.25em;
+        //     margin-left: -0.2em;
+        //     vertical-align: -0.2em;
+        //     padding: 0 0 0 0.1em;
+        // }
+        &:first-child {
+            display: block;
+            padding-top: 1.3em;
+        }
+        &:last-child {
+            display: block;
+        }
+
+
+        & p { // p is often nested in bq
+            color: $gray-3;
+        }
+        & > p { // for those pesky nested situations
+            margin-top: -2rem;
+        }
+        &-plain {
+            padding: 0;
+            border: none;
+            &:before {
+                content: none;
+            }
+        }
+    }
+
+    font: {
+        weight: $font-weight-light;
+        size: 1.1rem;
+        style: italic;
+    }
+    // line-height: 1.4;
+    @include breakpoint (medium up){
+        font-size: 1.3rem;
+    }
+
+    // variations
+    &--flush-left { // ikr?
+        padding-left: 0;
+    }
+    &-medium {
+        font: {
+            size: 1.3rem;
+            style: italic;
+            // weight: $font-weight-bold;
+        }
+        &--large{
+            font: {
+                size: 1.5rem;
+                style: italic;
+                // weight: $font-weight-bold;
+            }
+        }
+    }
+    &-large {
+        border: none;
+        padding-left: 0;
+        font: {
+            weight: $font-weight-light;
+            size: 1.5rem;
+            style: normal;
+        }
+        @include breakpoint (medium up){
+            font-size: 2.5rem;
+        }
+    }
+
+    &--marks {
+        // inserted quotation marks
+        quotes: "\201C""\201D";
+        &:before {
+            opacity: 0.6;
+            content: open-quote;
+            font-size: 2em;
+            line-height: 0;
+            vertical-align: -0.3em;
+            padding: 0 0.1em 0 0;
+            margin-left: -0.5em;
+        }
+        &:after {
+            opacity: 0.6;
+            content: close-quote;
+            font-size: 2em;
+            line-height: 0.3em;
+            margin-right: 0.25em;
+            margin-left: -0.2em;
+            vertical-align: -0.2em;
+            padding: 0 0 0 0.1em;
+        }
+        &:first-child {
+            display: absolute;
+            padding-top: 1.3em;
+        }
+        &:last-child {
+            display: absolute;
+        }
+    }
+
+    &--dark{
+        p{color: $color_talk-alt;}
+        color: $color_talk-alt;
+    }
+
+    &--basic{
+        font-size: 1.2rem;
+        color: inherit;
+        font-style: italic;
+        line-height: 1.5;
+    }
+}
+// p{
+//     line-height: $paragraph-lineheight;
+//     strong{
+//         font-weight: $font-weight-bold;
+//     }
+// }
+h4.caret-header{
+    display: inline-block;
+    font-size: $global-font-size;
+    color: $color_deep;
+    padding: rem-calc(7px) rem-calc(10px);
+    @extend .inline-highlight;
+}
+.inline-highlight{
+    color: $color_deep;
+    background-color: $color_yellow-glow;
+    display: inline-block;
+}
+.highlight{
+    color: $color_deep;
+    background-color: $color_yellow-glow;
+}
+ul.large-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+        margin: 0 0 1.5rem 0;
+        &:last-of-type{margin: 0;}
+    }
+    &--with-check{
+        li{
+            position: relative;
+            padding: 0 0 0 1.5rem;
+        }
+        i{
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+// Color helpers -- beter way to do this? - RR
+
+.blue-text{color: $color_prime-alt;}
+
+// Random helpers
+.type-uppercase{text-transform: uppercase;}
+.type-light{font-weight: $font-weight-light;}
+.type-underline{
+    display: inline-block;
+    padding: 0 0 rem-calc(2px) 0;
+    border-bottom: rem-calc(2px) solid $color_deep;
+}
+// text ribbons - background color with text
+.ribbon {
+    @each $name, $color in $fill-color-list { // this generates all grays 1-12 (dark to lightest), sets color
+        $color-hsl: hsl-str($color);
+        &--#{$name} {
+            $color-lightness: lightness($color);
+            @if $color-lightness >= 55% {
+                color: #000;
+            }
+            @else {
+                color: #fff;
+            }
+            background: $color;
+            padding: 0.3em;
+            display: inline-block;
+        }
+    }
+}
+
+.hyphenate {
+    @include hyphens (auto);
+}
+
+// Light styles
+// To-do: find where these classes are used and kill them. weight is fine, should not be paired with size or other attribs. Or, make these very specific classes. - AW
+.light{
+    font-size: 2.1875rem;
+    font-weight: $font-weight-light;
+}
+.mid{
+    font-size: 100%;
+    font-weight: $font-weight-mid;
+    line-height: 1.5;
+}
+// TO-DO: this whole .section needs to be replaced with utility classes. - AW
+.section {
+    &--header-dark{
+        &-group{
+            h4{
+                color: $color_white;
+                font-size: rem-calc(12px);
+                text-transform: uppercase;
+                letter-spacing: rem-calc(3px);
+                font-weight: $font-weight-bold;
+            }
+            h1{
+                font-size: rem-calc(35px);
+                color: $color_white;
+                line-height: 1.5;
+                font-weight: $font-weight-light;
+                margin: 0 0 rem-calc(30px) 0;
+                @media all and (max-width: $custom_breakpoint-mid){
+                    font-size: 2rem;
+                    margin: 0 0 1rem 0;
+                }
+            }
+            hr{
+                display: block;
+                background-color: $color_aqua-glow;
+                max-width: rem-calc(150px);
+                margin: 0 auto;
+                @include opacity(0.2);
+            }
+            h2{
+                font-size: $global-font-size;
+                line-height: 1.5;
+                margin-top: rem-calc(30px);
+                margin-bottom: rem-calc(30px);
+                color: $color_light;
+                font-weight: $font-weight-mid;
+                max-width: rem-calc(450px);
+                @media all and (max-width: $custom_breakpoint-mid){
+                    margin: 1rem auto;
+                    font-weight: $font-weight-regular;
+                    font-size: 1rem;
+                }
+            }
+            p.lead{margin: rem-calc(30px) auto;}
+            &-small{
+                h1{
+                    margin-bottom: 20rem;
+                }
+            }
+        }
+    }
+    &--header-light{
+        &-group{
+            h4{
+                color: $color_deep;
+                font-size: rem-calc(12px);
+                text-transform: uppercase;
+                letter-spacing: rem-calc(3px);
+                font-weight: $font-weight-bold;
+            }
+            h1{
+                font-size: rem-calc(35px);
+                color: $color_deep;
+                line-height: 1.5;
+                font-weight: $font-weight-light;
+                margin: 0 0 rem-calc(30px) 0;
+                @media all and (max-width: $custom_breakpoint-mid){
+                    font-size: 2rem;
+                    margin: 0 0 1rem 0;
+                }
+            }
+            h2{
+                font-size: $global-font-size;
+                line-height: 1.5;
+                margin-bottom: rem-calc(30px);
+                color: $color_talk;
+                font-weight: $font-weight-mid;
+                max-width: rem-calc(450px);
+                @media all and (max-width: $custom_breakpoint-mid){
+                    margin: 1rem auto;
+                    font-weight: $font-weight-regular;
+                    font-size: 1rem;
+                }
+            }
+            &-small{
+                h1{margin-bottom: 0;}
+            }
+        }
+    }
+    &--header-dark-alt{
+        &-group{
+            h1{
+                font-size: rem-calc(35px);
+                color: $color_white;
+                line-height: 1.5;
+                font-weight: $font-weight-light;
+                margin: 0 0 rem-calc(30px) 0;
+            }
+            h2{
+                font-size: $global-font-size;
+                line-height: 1.5;
+                margin: 0 auto rem-calc(30px) auto;
+                color: $color_white;
+                font-weight: $font-weight-mid;
+                max-width: rem-calc(450px);
+            }
+        }
+    }
+    &--block-header-dark{
+        &-group{
+            h1{
+                font-size: rem-calc(35px);
+                color: $color_white;
+                line-height: 1.5;
+                font-weight: $font-weight-light;
+                margin: 0 0 rem-calc(30px) 0;
+            }
+            h2{
+                font-size: $global-font-size;
+                line-height: 1.5;
+                margin: 0 auto rem-calc(30px) auto;
+                color: $color_white;
+                font-weight: $font-weight-mid;
+            }
+        }
+    }
+    &--subheader {
+        font: {
+            size: 1.2rem;
+            weight: $font-weight-bold;
+        };
+        opacity: 0.7;
+    }
+    &--block-header {
+        font: {
+            size: 1rem;
+            weight: $font-weight-bold;
+        }
+    }
+    // &--pubdate {
+    //     // font-style: italic;
+    //     // font-family: $font_serif;
+    //     font-weight: $font-weight-bold;
+    //     font-size: 0.7rem;
+    //     @extend .faded;
+    // }
+}
+
+// Blog and looped content styles
+.date{
+    // font-size: rem-calc(14px);
+    // font-weight: $font-weight-bold;
+    color: $color_talk-alt;
+}
+.read-more,
+.blog-date, .pub-date{
+    text-transform: uppercase;
+    font-size: rem-calc(12px);
+    font-weight: $font-weight-bold;
+    margin-bottom: 0.3em;
+}
+.card-title{
+    color: $color_deep;
+    font-weight: $font-weight-mid;
+}
+.card-content{
+    color: $color_talk;
+}
+// 2-up logo + header combo
+.logo-header { // this could go here, or in typography... it's a mix!
+    &-group {//parent container
+        @extend .group--sm; // margin-bottom that's all
+    }
+    &-image {
+        height: 2.5rem;
+        @include breakpoint(medium up) {
+            vertical-align: middle;
+            // float: left;
+            margin-right: 1rem;
+            display: inline;
+        }
+    }
+    &-title {
+        font: {
+            // weight: $font-weight-bold;
+            size: 1rem;
+        };
+        @extend .spaced-out;
+        &--combo {
+            @include breakpoint(medium up) {
+                // float: left;
+                vertical-align: middle;
+                font-weight: $font-weight-regular;
+                padding: 0.75rem 1rem;
+                border-left: 2px solid $color_border;
+                display: inline;
+            }
+        }
+    }
+}
+// Inline list style
+.inline-list{
+    margin: 0 auto;
+    padding: 0;
+    li{
+        display: inline-block;
+        padding: 1rem;
+    }
+    &--compact li {
+        padding: 0.5rem;
+    }
+}
+
+.art-directed--quote-block{
+    blockquote{
+        font-weight: $font-weight-mid;
+        padding: 0;
+        margin: 0 0 0 rem-calc(70px);
+        line-height: 1.5;
+    }
+    .card-person{
+        margin: 1rem 0 0 0;
+        padding: 1rem 0 0 0;
+        border-top: rem-calc(1px) solid $color_border;
+    }
+}
+
+// Customer header styles
+.medium-small-header{
+    font-weight: $font-weight-bold;
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+}
+
+.no-blockquote-quote{
+    color: $color_talk-alt;
+    font-style: italic;
+}
+.text-small, .text-smaller {
+    font-size: smaller; // goes one step smaller than parent element
+}
+.text-smallest {
+    font-size: 75%;
+}
+.text-light {
+    font-weight: $font-weight-light;
+}

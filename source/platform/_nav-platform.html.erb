@@ -1,0 +1,11 @@
+<% ordered_pages = sitemap.resources.select{|p| p.data.collectionName == "platform" }.sort_by{ |page| page.data.collectionOrder } %>
+<% ordered_pages.each do |page| %>
+    <li class="menu-item">
+        <a href="<%= page.url %>" title="<%= page.data.summary %>" class="menu-item--link<% if page.url == current_page.url %> is-current<% end %>">
+            <%= page.data.navTitle %>
+        </a>
+    </li>
+<% end %>
+<li class="menu-item menu-item--cta">
+    <a class="button button--primary small" href="/pricing" title="Sign up">Pricing <i class="fa fa-angle-right icon-after"></i></a>
+</li>

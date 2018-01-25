@@ -1,0 +1,389 @@
+{
+  "name": "Blog Posts",
+  "description": "Blog posts for main blog.",
+  "displayField": "title",
+  "fields": [
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "min": 6,
+            "max": 256
+          },
+          "message": "Keep it short-ish!"
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "seoTitle",
+      "name": "SEO Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "min": 1,
+            "max": 128
+          },
+          "message": "Keep it concise!"
+        }
+      ],
+      "disabled": true,
+      "omitted": true
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "^[a-z0-9-]+",
+            "flags": "g"
+          },
+          "message": "An url slug must have lowercase words separated by dashes (-)."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "pubDate",
+      "name": "Publish Date",
+      "type": "Date",
+      "localized": false,
+      "required": true,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "tags",
+      "name": "Tags",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkContentType": [
+              "products",
+              "tags"
+            ]
+          }
+        ],
+        "linkType": "Entry"
+      }
+    },
+    {
+      "id": "categoriesBlog",
+      "name": "Categories, Blog",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "in": [
+            "company",
+            "engineering",
+            "design",
+            "healthcare"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "author",
+      "name": "Author",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "person"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "featuredImage",
+      "name": "Featured Image",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ]
+        },
+        {
+          "assetImageDimensions": {
+            "width": {
+              "min": 600,
+              "max": 3000
+            },
+            "height": {
+              "min": null,
+              "max": 3000
+            }
+          },
+          "message": "Images must be at least 600px wide, and no more than 2400px wide."
+        },
+        {
+          "assetFileSize": {
+            "max": 4194304
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "shareImage",
+      "name": "Social Share Image",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ]
+        },
+        {
+          "assetImageDimensions": {
+            "width": {
+              "min": null,
+              "max": 1600
+            },
+            "height": {
+              "min": null,
+              "max": 1600
+            }
+          }
+        },
+        {
+          "assetFileSize": {
+            "max": 3145728
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "featuredPerson",
+      "name": "Featured Person",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "person"
+          ]
+        }
+      ],
+      "disabled": true,
+      "omitted": true,
+      "linkType": "Entry"
+    },
+    {
+      "id": "keyTakeaways",
+      "name": "Key Takeaways",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": true,
+      "omitted": true
+    },
+    {
+      "id": "summary",
+      "name": "Summary",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 1600
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "blogLead",
+      "name": "Lead",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 1600
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "post",
+      "name": "Main Entry",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "ctaRef",
+      "name": "Call to Action",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "cta"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "relatedEntries",
+      "name": "Related Entries",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 5
+          },
+          "message": "Let's keep it simple. 5 Max!"
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkContentType": [
+              "blog",
+              "podcastEntry"
+            ]
+          }
+        ],
+        "linkType": "Entry"
+      }
+    },
+    {
+      "id": "discoveryTopic",
+      "name": "Discovery Topic",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "discover"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "dateString",
+      "name": "Date String",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": true,
+      "omitted": true
+    },
+    {
+      "id": "tagString",
+      "name": "Tag String",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": true,
+      "omitted": true
+    }
+  ],
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "189dvqdsjh46"
+      }
+    },
+    "id": "blog",
+    "type": "ContentType",
+    "createdAt": "2016-08-15T17:31:23.776Z",
+    "updatedAt": "2017-09-07T18:40:26.986Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedCounter": 45,
+    "version": 90,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedVersion": 89,
+    "firstPublishedAt": "2016-08-15T17:31:24.016Z",
+    "publishedAt": "2017-09-07T18:40:26.986Z"
+  }
+}

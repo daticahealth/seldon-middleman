@@ -1,0 +1,180 @@
+---
+layout: "basic"
+customCSS: "customers"
+---
+<% p = locals[:item]
+current_page.data.title = p["company_name"] + " | Datica Customer Profile"
+if p.has_key?("customer_story_short")
+    current_page.data.summary = safe_summary(p.customer_story_short)
+else
+    current_page.data.summary = current_page.data.title
+end
+if p.has_key?("featured_image")
+    current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
+else
+    current_page.data.share_image = site_url + "/public/img/customer-logos/" + p["slug"] + "-logo.png"
+end
+if p.has_key?("tags")
+    current_page.data.tags = get_tag_list(p["tags"])
+else
+    current_page.data.tags = "healthcare, blog, IT"
+end
+if p.has_key?("author")
+    current_page.data.author = p["author"]["fullname"]
+else
+    current_page.data.author = "Datica, Inc."
+end
+if p.has_key?("pub_date")
+    current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
+else
+    current_page.data.date = "Januray 1, 2017"
+end
+%>
+<%= partial "partials/snippets/header", :locals => { :style => "dark" } %>
+
+<section class="section-article">
+    <article class="content-static">
+    <div class="row align-center">
+        <div class="columns small-12 large-8">
+            <div class="logo-header-group text-center">
+                <img class="logo-header-image" src="/public/img/customer-logos/<%= p["slug"] %>-logo.png" alt="<%= p["company_name"] %> Logo"/>
+                <% if p.has_key?("case_study") %>
+                    <h2 class="logo-header-title logo-header-title--combo" id="case-study">Datica Case Study</h2>
+                <% elsif p.has_key?("customer_spotlight") && p.has_key?("case_study") == false %>
+                    <h2 class="logo-header-title logo-header-title--combo" id="spotlight">Datica Customer Spotlight</h2>
+                <% else %>
+                    <h2 class="logo-header-title logo-header-title--combo" id="customer-profile">Datica Customer Profile</h2>
+                <% end %>
+            </div>
+        </div>
+    </div><!-- END row align-center-->
+    <% if p.has_key?("case_study") %>
+        <div class="row align-center">
+            <div class="columns small-12 large-10 group">
+                <h1 class="headline-2 text-center" id="case_study"><%= p["case_study"]["case_study_title"] %></h1>
+            </div>
+        </div><!-- END row -->
+        <div class="row align-center group--2x">
+            <div class="columns small-12 large-6">
+                <% if p["case_study"].has_key?("body") %>
+                    <div class="group">
+                        <%= Kramdown::Document.new(p["case_study"]["body"]).to_html %>
+                    </div>
+                <% end %>
+                <% if p["case_study"].has_key?("media_object") %>
+                    <div class="group">
+                        <%= p["case_study"]["media_object"] %>
+                    </div>
+                <% end %>
+                <% if p["case_study"].has_key?("customer_quote") %>
+                    <div class="callout callout--gray-light">
+                        <blockquote class="quote--serif">
+                            <%= p["case_study"]["customer_quote"]["quote_body"] %>
+                        </blockquote>
+                        <% if p.has_key?("profile_pic") %>
+                        <%= partial("partials/snippets/person", :locals => { :p => p }) %>
+                        <% end %>
+                    </div>
+                <% end %>
+            </div><!-- END columns -->
+            <div class="columns small-12 large-6">
+            <% if p["case_study"].has_key?("form_id") %>
+                <div class="callout callout--large drop">
+                    <h3 class="headline-4 text-center group">Download this case study for free</h3>
+                    <%= partial("partials/snippets/form-hubspot", :locals => { :form_id => p["case_study"]["form_id"] }) %>
+                </div>
+            <% end %>
+            </div>
+        </div><!-- END row -->
+    <% end %><!-- END if #p.has_key?("case_study") -->
+    </article>
+    <article class="content-dynamic">
+    <% if p.has_key?("customer_spotlight") %>
+        <div class="row align-center">
+            <div class="columns small-12 large-8">
+                <% if p.has_key?("case_study") %>
+                    <h3 class="headline-5 subhead--spaced" id="spotlight">Datica Customer Spotlight</h3>
+                <% end %>
+                <h1 class="headline-2"><%= p["customer_spotlight"]["title"] %></h1>
+                <div class="lead spotlight--lead">
+                    <%= Kramdown::Document.new(p["customer_spotlight"]["lead"]).to_html %>
+                </div>
+            </div>
+        </div><!-- END row -->
+        <div class="row align-center spotlight--body">
+            <div class="columns small-12 large-8">
+                <% if p["customer_spotlight"].has_key?("postTop") %>
+                    <%= Kramdown::Document.new(p["customer_spotlight"]["postTop"]).to_html %>
+                <% end %>
+
+                <% if p.has_key?("customer_quote")
+                    # for spotlights, only customer entries can contain the quote, for now. No quotes inside spotlights, CF is not parsing the depth correctly. - AW
+                %>
+                    <div class="callout callout--quote">
+                        <blockquote class="quote-medium">
+                            <!-- customer-entry quote -->
+                            <%= p["customer_quote"]["quote_body"] %>
+                        </blockquote>
+                        <% if p.has_key?("profile_pic") %>
+                        <%= partial("partials/snippets/person", :locals => { :p => p }) %>
+                            
+                        <% end %>
+                    </div><!-- END callout -->
+                <% end %>
+                <div class="group">
+                    <%= Kramdown::Document.new(p["customer_spotlight"]["post_bottom"]).to_html %>
+                </div>
+            </div><!-- END columns -->
+        </div><!-- END row -->
+    <% end %>
+    <% if !p.has_key?("customer_spotlight") && !p.has_key?("case_study") %>
+    <div class="row align-center">
+        <div class="columns small-12 medium-6">
+            <% if p.has_key?("customer_quote") %>
+                <div class="callout drop">
+                    <blockquote class="quote">
+                        <%= p["customer_quote"]["quote_body"] %>
+                    </blockquote>
+                </div>
+            <% end %>
+            <% if p.has_key?("profile_pic") %>
+                <div class="callout callout--gray-light">
+                    <div class="media-object card-person">
+                        <%= partial("partials/snippets/person", :locals => { :p => p }) %>
+
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% end %>
+    </article>
+
+    <div class="row align-center" id="pageNav">
+        <div class="columns small-12 large-8">
+            <div class="row collapse">
+                <% filtered_customers = data.site.customers.select{ |id, customer| (customer.has_key?("case_study") || customer.has_key?("customer_spotlight")) } %>
+                <% previous_item = get_previous_item(filtered_customers, p, "company_name") %>
+                <% if previous_item != nil %>
+                    <div class="columns small-12 medium-4">
+                        <a href="/customer/<%= previous_item["slug"] %>" title="View Previous Profile" class="button button--light expanded">
+                            <i class="fa fa-angle-left"></i> Previous: <%= previous_item["company_name"] %>
+                        </a>
+                    </div>
+                <% end %>
+                <div class="columns small-12 medium-4 text-center">
+                    <a class="button hollow hollow-invisible" href="/platform/success" title="Datica Customer Proof - See All"><i class="fa fa-angle-left"></i> Proof</a>&nbsp; &nbsp;
+                    <a class="button hollow hollow-invisible" href="#top" class="">Back to top <i class="fa fa-angle-up" aria-hidden="true"></i></a>
+                </div>
+                <% next_item = get_next_item(filtered_customers, p, "company_name") %>
+                <% if next_item != nil %>
+                    <div class="columns small-12 medium-4">
+                        <a href="/customer/<%= next_item["slug"] %>" title="View Next Profile" class="button <% if !p.has_key?("customer_spotlight") && p.has_key?("case_study") %>button--light<% else %>button--primary<% end %> expanded">
+                            Next: <%= next_item["company_name"] %> <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>

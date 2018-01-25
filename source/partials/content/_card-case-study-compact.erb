@@ -1,0 +1,56 @@
+<!-- card-case-study partial -->
+<div class="card drop">
+    <% if cf_customer["case_study"].has_key?("media_object") %>
+        <div class="responsive-embed widescreen">
+            <%= cf_customer["case_study"]["media_object"] %>
+        </div>
+    <% end %>
+    <div class="card-divider container-color--blue-alt">
+        <% if defined?(subhead) %>
+            <div class="subheader-small"><%= subhead %></div>
+        <% end %>
+        <h4 class="headline-5">
+            <a class="link--white" href="/customer/<%= cf_customer["slug"] %>" title="<%= cf_customer["company_name"] %> case study">
+                <%= cf_customer["case_study"]["case_study_title"] %>
+            </a>
+        </h4>
+    </div>
+    <div class="card-section">
+        <% if cf_customer["case_study"].has_key?("customer_quote") %>
+                <blockquote class="quote--serif">
+                    <%= cf_customer["case_study"]["customer_quote"]["quote_body"] %>
+                </blockquote>
+                <%#= partial("partials/snippets/person", :locals => { :p => cf_customer }) %>
+                <div class="media-object card-person">
+                    <% if cf_customer.has_key?("profile_pic") %>
+                        <div class="media-object-section media-object--avatar"><img src="<%= cf_customer["profile_pic"]["url"] %>?f=face&fit=thumb&w=250&q=45" class="avatar avatar--large circle" alt="<%= cf_customer["fullname"] %>"></div>
+                    <% end %>
+                    <div class="media-object-section media-object--info main-section align-self-middle">
+                        <h4 class="person-name">
+                            <% if cf_customer.has_key?("person_type") && cf_customer["person_type"] == "Datica Executives"%>
+                            <%# if cf_customer.has_key?("profile_URL") %>
+                                <a href="/about/<%= cf_customer["slug"] %>" title="Learn more about <%= cf_customer["fullname"] %>">
+                                    <%= cf_customer["fullname"] %>
+                                </a>
+                            <% else %>
+                                <%= cf_customer["fullname"] %>
+                            <% end %>
+                        </h4>
+                        <% if cf_customer.has_key?("role") %>
+                            <div class="person-title"><%= cf_customer["role"] %></div>
+                        <% end %>
+                        <a href="/customer/<%= cf_customer["slug"] %>" title="<%= cf_customer["company_name"] %> case study">
+                            <img class="logo-size--small" src="/public/img/customer-logos/<%= cf_customer["slug"] %>-logo.png" alt="<%= cf_customer["company_name"] %> Logo"/>
+                        </a>
+                    </div>
+                </div>
+
+                
+        <% else %>
+            <% if cf_customer["case_study"].has_key?("value_prop") %>
+                <p class="lead"><%= cf_customer["case_study"]["value_prop"] %></p>
+            <% end %>
+        <% end %>
+    </div>
+
+</div>

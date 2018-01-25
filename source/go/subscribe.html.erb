@@ -1,0 +1,72 @@
+---
+title: "Subscribe to the Datica Blog"
+summary: "Get the latest updates from the Datica Blog and more — insights from the team behind healthcare's trusted cloud"
+author: "Datica, Inc."
+tags: "healthcare, blogs, email, newsletter, HIPAA, HITRUST, certification, hosting"
+date: "April 3, 2017"
+share_image: "/public/img/share-posters/datica-blog-share-poster.jpg"
+header: "Subscribe to the Datica Blog"
+subheader: "Insights from the team behind healthcare's trusted cloud"
+layout: basic
+---
+<div class="container-color--purple-grad-noise">
+    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+    <section class="section-article">
+        <div class="row align-center">
+            <div class="columns small-12 large-8">
+                <div class="group text-center">
+                    <h1 class="headline-2 nomargin"><%= current_page.data.header %></h1>
+                    <% if current_page.data.has_key?("subheader") %>
+                        <p class="lead faded"><%= current_page.data.subheader %></p>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="row align-center">
+            <div class="columns small-12 medium-8 large-6">
+                <%= partial "blog/partials/blog-subscription", :locals => { :color => "gray" } %>
+            </div>
+        </div>
+        <div class="row align-center">
+            <div class="columns small-12 large-9">
+                <h3 class="headline-2 text-center group--2x">Recent Blog Posts</h3>
+            </div>
+        </div>
+        <div class="masonry-group">
+            <% sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
+            <% sorted_posts[0...7].each do | id, post | %>
+                <aside class="masonry-group--item">
+                    <div class="card card--hover drop container-gray-12">
+                        <% if post.has_key?("featured_image") %>
+                            <a class="" href="/blog/<%= post["slug"] %>" title="Read this blog post">
+                                <img class="card-img" src="<%= post["featured_image"]["url"] %>?fit=thumb&w=400&h=200&q=55" alt="Image: <%= post["title"] %>" />
+                            </a>
+                        <% end %>
+                        <div class="card-section">
+
+                            <h3 class="headline-4">
+                                <a class="" href="/blog/<%= post["slug"] %>" title="Read this blog post"><%= post["title"] %></a>
+                            </h3>
+                            <% if post["author"].has_key?("profile_pic") %>
+                                <%= partial("partials/snippets/person-small", :locals => { :p => post["author"] }) %>
+                            <% end %>
+                            <% if post.has_key?("pub_date") %>
+                                <div class="text-tiny"><i class="fa fa-calendar" aria-hidden="true"></i> <%= post['pub_date'].strftime('%B %-d, %Y') %> &nbsp;</div>
+                            <% end %>
+                            <% if post.has_key?("summary") || post["summary"] == "" %>
+                                <p><%= post["summary"] %></p>
+                                <%#= Kramdown::Document.new(post["summary"]).to_html %>
+                            <% else %>
+                                <% if post.has_key?("blog_lead") %>
+                                    <%= Kramdown::Document.new(post["blog_lead"]).to_html %>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </div>
+                </aside>
+            <% end %>
+        </div>
+    </section>
+
+
+</div>

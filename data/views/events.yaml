@@ -1,0 +1,339 @@
+events_list:
+    -
+        event_title: 'HITRUST Third Party Assurance Summit'
+        event_date: 'February 21'
+        date_start: !ruby/object:DateTime 2018-02-21 00:00:00.000000000 Z
+        # date_end: !ruby/object:DateTime 2018-02-21 00:00:00.000000000 Z
+        event_year: '2017'
+        event_content: |
+            Datica Director of Compliance [Lori Meals](https://datica.com/about/lori-meals) speaks alongside Blue Cross Blue Shield Association VP & CISO Peter Naumovski about _"Leveraging Information Privacy and Security as a Competitive Advantage"_ on February 21 at 10:00am CST in Chicago.
+
+            Register and see the [full conference agenda here](https://hitrustalliance.net/documents/summit/tpa2018/TPA_Summit_2018_FINAL.pdf).
+
+            Have compliance questions? Schedule a meeting with Lori at [press@datica.com](mailto:press@datica.com).
+        event_image: 'https://images.contentful.com/189dvqdsjh46/6EEwqOYzwAmucCmy42cGqk/67cb5d6471b966a368900eb98bcb30e8/HITRUST_Third_Party_Assurance_Summit__comic_book_cover__2017_.jpg'
+    -
+        event_title: 'AWS Re:Invent'
+        event_logo_file: 'https://images.contentful.com/189dvqdsjh46/4ysc9facYgkYymYY8OgYEg/97a8e5c0cfd4f67c4dfb1122212ee228/aws-reinvent-logo-2x-centered.png'
+        event_date: 'November 27-December 1'
+        date_start: !ruby/object:DateTime 2017-11-27 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-12-01 00:00:00.000000000 Z
+        event_year: '2017'
+        event_content: |
+            At the AWS re:Invent conference, Datica CTO Adam Leko and Methodist Le Bonheur Healthcare's David Deas presented, _How Methodist Le Bonheur Healthcare's Focus on Standardizing Compliant Ops Led to Breakthrough Apps_.
+
+            Read the [blog post and AWS re:Invent recap](https://datica.com/blog/how-a-major-health-system-got-onto-aws-recapping-the-featured-session-today/).
+    -
+        event_title: 'Connected Health Conference'
+        event_date: 'Oct. 25-27'
+        date_start: !ruby/object:DateTime 2017-10-25 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        event_year: '2017'
+        event_content: 'Datica Chief Data Officer Mark Olschesky attended this conference to meet with industry leaders on interoperability and EHR integration.'
+    -
+        event_title: 'Health 2.0'
+        event_date: 'Oct. 1-4'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2017'
+        event_content: 'Datica hosted a Lunch N Learn panel on the topic "What Does The Success Of Digital Health Look Like?"'
+    -
+        event_title: 'Beckers Hospital Review 3rd Annual Health IT + Revenue Cycle Conference'
+        event_date: 'Sept. 21-23'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2017'
+        event_content: 'Datica was a Gold Sponsor of this event.'
+    -
+        event_title: 'Boston Health IT Summit Series'
+        event_date: 'June 15-16'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2017'
+        event_content: 'Datica CEO Travis Good, MD gave a talk at this event in Boston titled: "The Digital Health Success Framework: How Organizations are Triumphantly Transforming Healthcare with New Technologies"'
+    -
+        event_title: 'HITRUST Annual Conference'
+        event_date: 'May 8-11'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2017'
+        event_content: 'Co-founder and CEO Travis Good, MD, gave a talk about compliance in the cloud at the annual HITRUST Alliance get together.'
+    -
+        event_title: 'HL7 Value-Based Care FHIR Summit'
+        event_date: 'Apr. 11-12'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2017'
+        event_content: 'Chief Data Officer Mark Olschesky attended this summit to discuss with the community the benefits of FHIR and value-based care.'
+    -
+        event_title: 'HealthXL - Global Gathering'
+        event_date: 'Apr. 4'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2017'
+        event_content: 'CEO Travis Good attended this event to talk join in the dicussion on varying topics like Alternative Care Delivery Models, Connected Health, Patient Engagement, and Payer Solutions.'
+    -
+        event_title: '2nd annual FHIR Applications Roundtable'
+        event_date: 'Mar. 7-8'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2017'
+        event_content: 'Chief Data Officer Mark Olschesky attended this event at the Duke University School of Medicine, and presented on the topic: "We used FHIR as the consumption and querying mechanism for the Datica Data Hub, which provides a plug and play solution for applications to build around an interoperable, longitudinal patient care record." You can read his recap [here](/blog/fhir-is-no-longer-just-a-concept/).'
+    -
+        event_title: 'HIMSS 2017'
+        event_date: 'Feb. 19-23'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2017'
+        event_content: 'The Datica team was out in full force at HIMSS17. Travis recapped the experience [here](/blog/reflections-on-himss-2017-same-same-but-different/).'
+    -
+        event_title: 'AWS Re:Invent'
+        event_date: 'Nov. 23 - Dec. 2'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Several members of the team attended Re:Invent. We wrote to recaps from the event: [Re:Cap 1](/blog/aws-reinvent-recap-1), [Re:Cap 2](/blog/aws-reinvent-recap-2)'
+    -
+        event_title: 'Value-Based Care Summit'
+        event_date: 'Nov. 15'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Chief Data Officer Mark Olschesky attended.'
+    -
+        event_title: 'IBM Cloud Innovation Tour'
+        event_date: 'Nov. 15'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Co-founder Mohan Balachandran was on a panel to talk about the benefits of moving to the cloud for healthcare.'
+    -
+        event_title: 'VUE16'
+        event_date: 'Nov. 9-11'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'After an excellent 2015 event, Datica returned to VUE16, the annual event held by Voalte. CEO Travis Good participated on a panel titled "Integrating the EHR with Your Mobile Communication Strategy". Chief Strategy Officer Casey Bryson recapped the conference [here](/blog/major-announcement-rolls-out-of-voaltes-user-experience-vue16).'
+    -
+        event_title: 'Big Data & Health Analytics Forum'
+        event_date: 'Oct. 25-26'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Chief Data Officer Mark Olschesky attended sessions and met with the media at this excellent event.'
+    -
+        event_title: 'Health 2.0 10th Annual Conference'
+        event_date: 'Sept. 25-28'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Members of the team attended the Health 2.0 10th annual conference in Santa Clara. We summarized each day of the event: [Day 1](/blog/health-2.0-recap-day-1), [Day 2](/blog/health-2.0-recap-day-2), [Day 3](/blog/health-2.0-recap-day-3)'
+    -
+        event_title: 'HL7 FHIR Applications Roundtable'
+        event_date: 'July 27-28'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Chief Data Officer Mark Olschesky spoke at this roundtable event at the Havard Medical School in Boston on the topic of [FHIR and interoperability](https://www.hl7.org/events/roundtable072016/program.cfm#schedule)'
+    -
+        event_title: "The Future of Healthcare Conference: What's next in Wisconsin healthcare"
+        event_date: 'July 28'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Chief Strategy Officer Casey Bryson participated in this event focused on the future of healthcare on the state of Wisconsin, where Datica is headquartered.'
+    -
+        event_title: 'HITRUST Annual Summit'
+        event_date: 'Apr. 25-28'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Co-founder and CEO Travis Good, MD, spoke on a panel "Business Associates and Cloud Assessor’s Retrospectives on HITRUST CSF Certification".'
+    -
+        event_title: 'Health Evolution Partners Summit'
+        event_date: 'Apr. 13-15'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Co-founder Mohan Balachandran attended the summit, focusing on interoperability and integration challenges and solutions.'
+    -
+        event_title: 'HOSTINGcustomerSUMMIT.com'
+        event_date: 'Apr. 13-15'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Co-founder and CEO Travis Good, MD, attended the HOSTINGcustomerSUMMIT.com event—the 7th annual HOSTING customer summit event.'
+    -
+        event_title: 'HealthXL Global Conference'
+        event_date: 'Apr. 12'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Datica attended this exclusive, invite-only event for 60 handpicked senior executives from the HealthXL members network, advisors, and founders of the most innovative digital health companies.'
+    -
+        event_title: 'HIMSS16 — Health IT Conference for 2016'
+        event_date: 'Feb. 29 - Mar. 4'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'Multiple members of the leadership attended the HIMSS 2016 annual event. Datica co-hosted an event with HOSTING.com.'
+    -
+        event_title: 'vegas.HOSTING.com Conference'
+        event_date: 'Feb. 3-5'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2016'
+        event_content: 'CEO Travis Good, MD, gave a keynote address on the topic "Regulation in Unregulated Industries" at the vent put on by HOSTING.com.'
+    -
+        event_title: 'HITRUST Third Party Assurance Summit'
+        event_date: 'Nov. 13'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2015'
+        event_content: 'CEO Travis Good, MD, presented at an afternoon panel title “Leveraging Reports with other Partners Program.” [Read our recap](/blog/industry-shaking-news-at-the-hitrust-3rd-party-assurance-conference)'
+    -
+        event_title: 'Vue15'
+        event_date: 'Nov. 10-12'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2015'
+        event_content: 'Travis moderated a panel on the topic "Lessons from mHealth History". [Read our recap](/blog/vue15-recap-voalte-uber)'
+    -
+        event_title: 'mHealth Summit'
+        event_date: 'Nov. 8-11'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2015'
+        event_content: 'Chief Data Officer Mark Olschesky attended the annual mHealth Summit.'
+    -
+        event_title: 'ILOVEAPIs - The Digital Acceleration Conference'
+        event_date: 'Oct. 12-14'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2015'
+        event_content: 'Chief Data Officer Mark Olschesky visited the first annual ILOVEAPIs event. [Read his recap](/blog/open-apis-solve-lack-of-ehr-interoperability)'
+    -
+        event_title: 'Stanford MedicineX'
+        event_date: 'Sept. 25-27'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2015'
+        event_content: 'Travis presented at the Ignite! Stage on the topic of HIPAA, innovation, and the change in healthcare models prompted by the ACA. [Read our recap](/blog/stanford-medicine-x-conference-ignites-a-revolution)'
+    -
+        event_title: 'Digital Health Summer Summit <strong class="ctz-new">Sponsor</strong>'
+        event_date: 'June 18-19'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2015'
+        event_content: 'Travis moderated a fireside chat with Dr. Molly Coye and Adam Odessky. [Read our recap](/blog/digital-health-summer-summit-hits-peak-of-healthcare-innovation)'
+        event_image: 'https://images.contentful.com/189dvqdsjh46/2KEPUGwEY8osmCIwgCiqKu/732702d61a1896cb9d49fe420f49b885/maxresdefault.jpg'
+    -
+        event_title: 'Open mHealth San Francisco Summit <strong class="ctz-new">Sponsor</strong>'
+        event_date: 'June 17'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2015'
+        event_content: 'Mark presented on the future of healthcare integration and interoperability. [Read our recap](/blog/it-executives-and-clinicians-collaborate-at-sold-out-open-mhealth-summit-2015)'
+    -
+        event_title: 'HIMSS 2015'
+        event_date: 'Apr. 12-16'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2015'
+        event_content: 'Interesting trends this year ranged from care coordination to Watson. [Read our recap](/blog/himss-2015-recap)'
+    -
+        event_title: 'SXSW'
+        event_date: 'Mar. 13-22'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2015'
+        event_content: 'Travis participated in a panel about HIPAA, digital health startups, and the path to compliance. [Read our recap](/blog/with-sxsw-in-the-rearview-we-look-ahead-to-himss-2015)'
+        event_image: 'https://images.contentful.com/189dvqdsjh46/3Lo5eDTyqAyKucAIwCEGEi/d219a7008f43e0594e6ec7853db5bd57/blog-main-sxsw2.jpg'
+    -
+        event_title: 'mHealth Summit 2014'
+        event_date: 'Dec. 6-12'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2014'
+    -
+        event_title: 'HIMSS 2014'
+        event_date: 'Apr. 12-16'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2014'
+    -
+        event_title: 'mHealth Summit 2013'
+        event_date: 'Dec. 9'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2013'
+        event_content: 'Travis participated in a panel discussion at the annual mHealth Summit with former U.S. Senate Majority Leader Tom Daschle (D-SD). The panel focused on government compliance. [Official announcement](http://www.himss.org/News/NewsDetail.aspx?ItemNumber=26386)'
+    -
+        event_title: 'AHIMA Conference'
+        event_date: 'Oct. 26-30'
+        date_start: !ruby/object:DateTime 2017-10-01 00:00:00.000000000 Z
+        date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
+        event_year: '2013'
+        event_content: 'Travis presented a keynote titled "Connected Health—The Coming Wave in Search of a Beach". [AHIMA coverage](http://www.fortherecordmag.com/news/enews_1013_02.shtml)'
+
+speaking_list:
+    -
+        name: HIMSS
+        slug: himss
+        logo_file: https://images.contentful.com/189dvqdsjh46/2WdaMH3TnW4ocsEUQy2s6a/172150c175e4caef69491b8ea3f201d3/himss-logo.png
+        logoSize: small-mid
+    -
+        name: SXSW
+        slug: sxsw
+        logo_file: https://images.contentful.com/189dvqdsjh46/2V0xUfqjMcQ6c6aeCCu6GI/965560e325092aa510a3ddd924c1f8bc/sxsw-logo.png
+        logoSize: small-mid
+    -
+        name: AHIMA
+        slug: ahima
+        logo_file: https://images.contentful.com/189dvqdsjh46/5BY5m1yckEqs8W4Ci0imq8/a19714263b7468b0cc30e50f54be39af/ahima-logo.png
+        logoSize: small-mid
+    -
+        name: AHIP
+        slug: ahip
+        logo_file: https://images.contentful.com/189dvqdsjh46/5gXaSOUrXqCASAAgskYU0c/e5320ac6130aaa4b8f3b2bf777992e14/ahip-logo.png
+        logoSize: small-mid
+    -
+        name: Health 2.0
+        slug: health20
+        logo_file: https://images.contentful.com/189dvqdsjh46/3TmU3OWWAgUkIcEMeYCEAs/afc9bd0603128ddbd5a7dfbb75c3ef38/health20-logo.png
+        logoSize: small-mid
+    -
+        name: IBM Cloud Innovation Tour
+        slug: ibmtour
+        logo_file: https://images.contentful.com/189dvqdsjh46/5Zfoy6JAlOgyCI2sec6i0Y/f2ac7826da31a379af92d50769f94ed8/ibmtour-logo.png
+        logoSize: small-mid
+    -
+        name: Digital Health Summit
+        slug: digitalhealthsummit
+        logo_file: https://images.contentful.com/189dvqdsjh46/4Zw0Zi6IKQQCikOIamMigE/2bb4c15c77c0df0bf22e9e7b8574fd8d/digitalhealthsummit-logo.png
+        logoSize: small-mid
+    -
+        name: Stanford MedX
+        slug: medx
+        logo_file: https://images.contentful.com/189dvqdsjh46/5d7kTvdxNeEIa2yEAaEyyg/45733aa04ce17958ffcc59420f8a326a/medx-logo.png
+        logoSize: small-mid
+    -
+        name: Vue15
+        slug: vue15
+        logo_file: https://images.contentful.com/189dvqdsjh46/3nNBld1w0MEiIYcSWGGWiG/95904f57c2f58fb613902a581ec2b3b4/vue15-logo.png
+        logoSize: small-mid
+    -
+        name: Vue16
+        slug: vue16
+        logo_file: https://images.contentful.com/189dvqdsjh46/3glvNQuvZSeGCUKeaw8K2u/28d64b2479a20bce6880cd75735d74e0/vue16-logo.png
+        logoSize: small-mid
+    -
+        name: Open mHealth
+        slug: openmhealth
+        logo_file: https://images.contentful.com/189dvqdsjh46/5eBbamSR2gwoIqQGQ4EuOk/62fbe13ae65df7ad800f67745be1e947/openmhealth-logo.png
+        logoSize: small-mid
+    -
+        name: HOSTING Summit Series
+        slug: hostingsummit
+        logo_file: https://images.contentful.com/189dvqdsjh46/74jbS2Tb2MWYQQuK4oGWuM/ab7fcec508f9365fbf43e1a64d10e844/hostingsummit-logo.png
+        logoSize: small-mid

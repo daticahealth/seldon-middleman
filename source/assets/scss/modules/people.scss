@@ -1,0 +1,194 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+@import '../../../../node_modules/foundation-sites/scss/components/_badge.scss';
+@import '../modules/colors';
+@import '../modules/functions';
+
+// Breadcrumb nav: http://foundation.zurb.com/sites/docs/breadcrumbs.html
+.breadcrumb {
+    li {
+        &:not(:last-child)::after {
+            content: "\203A"; // a '›' http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/
+        }
+    }
+}
+
+// media object: http://foundation.zurb.com/sites/docs/media-object.html
+.media-object{
+    img{
+        @include breakpoint(medium down) {
+            max-width: 4rem;
+        }
+    }
+}
+blockquote + .media-object, .blockquote-info { // line person/info up with quote indent
+    margin-left: 1.5rem;
+}
+.media-object--indent { //just align it dude
+    margin-left: 1.5rem;
+}
+
+.avatar {
+    &--small { // inline with content
+        // max-width: 90%;
+        width: $thing-m;
+        @include breakpoint(medium up) {
+            width: $thing-s;
+        }
+        @include breakpoint(medium down) {
+            max-width: 4rem;
+        }
+    }
+    &--medium {
+        // max-width: 90%;
+        width: $thing-m;
+        @include breakpoint(medium up) {
+            width: $thing-m;
+        }
+        @include breakpoint(medium down) {
+            max-width: 4rem;
+        }
+    }
+    &--large {
+        padding: 0;
+        width: $thing-l;
+        @include breakpoint(medium down) {
+            max-width: 4rem;
+        }
+    }
+    &--large-mid { // heh... need a smarter system than this
+        // padding: 0;
+        max-width: 7rem;
+        // @include breakpoint(medium down) {
+        //     max-width: 4rem;
+        // }
+    }
+    &--xlarge {
+        padding: 0;
+        max-width: $thing-xl;
+        @include breakpoint(medium down) {
+            max-width: $thing-xl * 1.5;
+        }
+    }
+}
+.person {
+    &-name {
+        font: {
+            size: 1em;
+            weight: $font-weight-mid;
+        }
+        line-height: 1.1;
+        margin-bottom: 0.3em;
+        display: table; // collapses width
+        a {
+            font-weight: $font-weight-mid;
+        }
+    }
+    &-title {
+        line-height: 1.3;
+        font-size: 90%;
+        font-style: italic;
+        display: table; // collapses width
+    }
+    &-role {
+        display: table; // collapses width
+    }
+    &-small {
+        // overrides sizes above
+        font-size: smaller;
+    }
+    // person-card variations
+    &-card {
+        &--vertical {
+            padding: 2rem;
+            float: none;
+            max-width: $thing-xl * 1.5;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            // designed to use floats. Clear it for small widths (default); larger widths it's floated left or right with .float-left|right
+            display: block;
+            @include breakpoint (medium) {
+                padding: 0.5rem;
+                // display: inline;
+                max-width: $thing-xl;
+            }
+            @include breakpoint (large) {
+                max-width: $thing-xl * 1.1;
+            }
+            .avatar {
+                padding: 1rem;
+            }
+            .avatar--large-mid { // who named these things! Oh me...
+                margin-bottom: 0.6em; //scale with headers if needed
+            }
+        }
+        &--caption {
+            .person-name, .person-title, .person-role {
+                display: block;
+                line-height: 1.2;
+                display: inline-block;
+            }
+        }
+    }
+    &-simple {
+        text-align: center;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        max-width: 14rem;
+        margin-left: auto;
+        margin-right: auto;
+        .avatar {
+            margin: 0 0.8rem 0.8rem 0.8rem;
+        }
+        a .avatar {
+            @include hover-border;
+            // transition: box-shadow 150ms ease;
+            // // transition-delay: 0;
+            // &:hover {
+            //     box-shadow: 0 0 0 6px $color_prime-alt;
+            //     // transition-delay: 100ms;
+            // }
+        }
+        .person-name, .person-title {
+            text-align: center;
+            display: block;
+        }
+        .person-name {
+            font-size: 1.1em;
+        }
+        .person-title {
+            @include spaced-out;
+            font-size: 0.7rem;
+            font-style: normal;
+            font-weight: bold;
+        }
+    }
+    &-avatar { // just the person avatar, snippets/_person-avatar.erb
+        a .avatar {
+            @include hover-border ($color_prime-alt, 4px);
+        }
+    }
+}
+
+.people-group { // a container for people, horiz by default, stacks on small
+    @include flex;
+    @include flex-align($x: 'center');
+    @include flex-direction(column); // default vertical stack.
+    & > .media-object {
+        flex: 0 1 auto; // flex-shrink
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    &[data-stack-breakpoint='small'] { // perhaps paradoxical, but bp value here means, "below this bp, stack vert"
+        @include breakpoint (medium) { // horizontal stack medium-up
+            @include flex-direction(row);
+        }
+    }
+    &[data-stack-breakpoint='medium'] { // perhaps paradoxical, but bp value here means, "below this bp, stack vert"
+        @include breakpoint (large) { // horizontal stack medium-up
+            @include flex-direction(row);
+        }
+    }
+}

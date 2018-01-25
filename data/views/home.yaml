@@ -1,0 +1,109 @@
+customers:
+    -
+        name: 'BSC'
+        file: 'bsc-logo-wide'
+        url: 'http://blueshieldca.com'
+        logoSize: 'small'
+    -
+        name: 'The VA'
+        file: 'veterans-affairs-logo'
+        url: 'https://www.va.gov/'
+        logoSize: 'small-mid'
+    -
+        name: 'J&J'
+        file: 'jnj-logo'
+        url: 'https://www.jnj.com/'
+        logoSize: 'small-mid'
+    -
+        name: 'Amgen'
+        file: 'amgen-logo'
+        url: 'http://www.amgen.com/'
+        logoSize: 'small'
+    -
+        name: 'Stony Brook'
+        file: 'stony-brook-logo'
+        url: 'https://www.stonybrookmedicine.edu'
+        logoSize: 'medium'
+    -
+        name: 'TigerText'
+        file: 'tigertext-logo'
+        url: 'https://www.tigertext.com/'
+        logoSize: 'medium'
+    -
+        name: 'University of Kansas Hospital'
+        file: 'university-of-kansas-hospital-logo'
+        url: 'http://www.kumed.com/'
+        logoSize: 'small-mid'
+    -
+        name: 'Voalte'
+        file: 'voalte-logo'
+        url:  'https://www.voalte.com/'
+        logoSize: 'small-mid'
+    -
+        name: 'Hennepin County Medical Center'
+        file: 'hcmc-logo'
+        url: 'https://www.hcmc.org/'
+        logoSize: 'small-mid'
+    -
+        name: 'Hurley Medical Center'
+        file: 'hurley-medical-center-logo'
+        url: 'http://www.hurleymc.com/'
+        logoSize: 'medium'
+    -
+        name: 'Wisconsin Primary Health Care Association'
+        file: 'wphca-logo'
+        url: 'http://www.wphca.org/'
+        logoSize: 'small-mid'
+    -
+        name: 'Zipnosis'
+        file: 'zipnosis-logo'
+        url: 'http://zipnosis.com'
+        logoSize: 'small-mid'
+    -
+        name: 'Healthloop'
+        file: 'healthloop-logo'
+        url: 'http://healthloop.com'
+        logoSize: 'small-mid'
+    -
+        name: 'Ginger.io'
+        file: 'ginger-logo'
+        url: 'http://ginger.io'
+        logoSize: 'small-mid'
+    -
+        name: 'NavHealth'
+        file: 'navhealth-logo'
+        url: 'http://navhealth.com'
+        logoSize: 'small-mid'
+    -
+        name: 'Optum'
+        file: 'optum-logo'
+        url: 'http://optum.com'
+        logoSize: 'small-mid'
+
+# block_hero_1:
+#     -
+#         title: "HITRUST is how healthcare does business"
+#         body: "The HITRUST Common Security Framework (CSF) has become the preferred way to prove compliance in healthcare. HITRUST certification helps establish and accelerate partnerships. If you plan to do business in healthcare at the speed of change, you need to be HITRUST CSF Certified."
+#         bg: https://place-hold.it/480x240/f2f2f2/ccc.ededed.png&text=background-image&fontsize=32
+#     -
+#         title: "Datica’s HITRUST CSF Certification gives you industry credibility overnight"
+#         body: "Datica leads the industry with the first, most complete HIPAA compliant cloud infrastructure. Datica Managed Cloud is HITRUST CSF Certified on AWS, Microsoft Azure, IBM SoftLayer, and Rackspace, achieving the highest industry privacy and security standards across infrastructure providers."
+#         bg: https://place-hold.it/480x240/CACACA/fff.png&text=background-image&fontsize=32
+#     -
+#         title: "You inherit Datica’s certification"
+#         body: "HITRUST allows for inheritance, which means if you are planning to obtain your own CSF certification, you can inherit Datica’s certificate to shortcut 40% of the time and costs of the process."
+#         bg: https://place-hold.it/480x240/dadada/fff.png&text=background-image&fontsize=32
+
+# block_innovation_a:
+#     -
+#         title: "Speed time-to-market"
+#         body: "Prototyping in healthcare is hard. Datica Managed Cloud dramatically increases a team’s time-to-market by removing compliance as a blocker during development and deployment."
+#         icon: /public/icons/brand/icon-large-redpoint-diamond.svg
+#     -
+#         title: "Make life easier with a single BAA"
+#         body: "Aligning Business Associate Agreements amongst all technology partners is a full-time job. You sign one BAA with Datica to cover the entirety of compliance in the cloud."
+#         icon: /public/icons/brand/icon-large-redpoint-ehr.svg
+#     -
+#         title: "Empower technology teams"
+#         body: "Engineers are liberated to focus on problem and features more closely related to products, and not on reinventing the wheel on compliance, resulting in happier, more productive teams."
+#         icon: /public/icons/brand/icon-large-redpoint-globe.svg

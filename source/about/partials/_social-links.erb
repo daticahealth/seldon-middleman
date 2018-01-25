@@ -1,0 +1,15 @@
+<%
+unless defined?(datican) && datican == true
+	datican = false
+end
+%>
+
+<% if entry.has_key?("email") && datican == true %>
+    <li><a href="mailto: <%= entry["email"]%>" title="Connect with <%= entry["fullname"]%> via Email"><i class="fa fa-envelope"></i> <%= entry["email"]%></a></li>
+<% end %>
+<% if entry.has_key?("profile_twitter") %>
+    <li><a href="http://twitter.com/<%= entry["profile_twitter"]%>" title="Connect with <%= entry["fullname"]%> via Twitter"><i class="fa fa-twitter"></i> @<%= entry["profile_twitter"]%></a></li>
+<% end %>
+<% if entry.has_key?("profile_linkedin") %>
+    <li><a href="http://linkedin.com/in/<%= entry["profile_linkedin"] %>" title="Connect with <%= entry["fullname"] %> via Linkedin"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+<% end %>

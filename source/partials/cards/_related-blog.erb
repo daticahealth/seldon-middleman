@@ -1,0 +1,62 @@
+<%
+if post.has_key?("share_image")
+    image_url = data.site.blog[post.id].share_image.url
+elsif post.has_key?("featured_image")
+    image_url = data.site.blog[post.id].featured_image.url
+else
+    image_url = nil
+end
+if defined?(size) && size == "large"
+    card_size = ""
+else
+    card_size = "text-small"
+end
+if defined?(fit) && fit == "edge"
+    fit_classes = "no-radius"
+else
+    fit_classes = nil
+end
+if defined?(style) && style == "dark"
+    style_classes = "container-gray-1"
+else
+    style_classes = "drop"
+end
+%>
+<%# Renders a card inside a post loop. Post var must be injected - AW %>
+<div class="card <%= style_classes %> <%= fit_classes %>">
+    <% unless image_url == nil %>
+        <a class="" href="/blog/<%= post["slug"] %>" title="Read '<%= post["title"] %>'">
+            <img data-interchange="[<%= image_url %>?fit=thumb&w=750&h=400, small]" alt="Image: <%= post["title"] %>" />
+        </a>
+    <% end %>
+    
+    <div class="card-section show-for-medium">
+        <% unless post.has_key?("share_image") %>
+            <a class="" href="/blog/<%= post["slug"] %>" title="Read '<%= post["title"] %>'"><h3 class="headline-5"><%= post["title"] %></h3></a>
+        <% end %>
+        <% if post["author"].has_key?("fullname") %>
+            <div class="media-object card-person">
+                <% if post["author"].has_key?("profile_pic") %>
+                    <div class="media-object-section">
+                        <img src="<%= data.site.person[post.author.id].profile_pic.url %>?fit=thumb&w=148&h=148&f=face&q=45" class="avatar avatar--medium circle"></div>
+                <% end %>
+                <div class="<%= card_size %> media-object-section main-section align-self-middle">
+                    <h4 class="person-name"><%= post["author"]["fullname"] %></h4>
+                    <% if post["author"].has_key?("role") %>
+                        <p class="person-title"><%= post["author"]["role"] %></p>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+        <% if post.has_key?("pub_date") %>
+            <div class="faded <%= card_size %>"><i class="fa fa-calendar" aria-hidden="true"></i> <%= post['pub_date'].strftime('%B %-d, %Y') %> &nbsp;</div>
+        <% end %>
+        <div class="<%= card_size %>">
+        <% if post.has_key?("summary") || post["summary"] == "" %>
+            <%= Kramdown::Document.new(post["summary"]).to_html %>
+        <% elsif post.has_key?("lead") || post["lead"] == "" %>
+            <%= Kramdown::Document.new(post["lead"]).to_html %>
+        <% end %>
+        </div>
+    </div>
+</div>

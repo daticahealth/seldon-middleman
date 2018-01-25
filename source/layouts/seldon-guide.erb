@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- Meta tags -->
+      <%= partial "partials/head/tags" %>
+      <!-- Icons -->
+      <%= partial "partials/head/icons" %>
+      <!-- Assets -->
+      <%= stylesheet_link_tag "seldon" %>
+      <% if current_page.data.has_key?("customCSS") %>
+          <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
+      <% end %>
+  </head>
+  <body class="<%= page_classes %>">
+    <div class="off-canvas position-right container-gray-2" id="offCanvasRight" data-off-canvas>
+        <div class="callout--trans">
+            <h3 class="headline-4">Seldon Style Guide</h3>
+        </div>
+        <hr class="divider">
+        <ul class="menu vertical">
+            <% sitemap.resources.each do |page| %>
+              <% if page.url =~ /^(\/seldon\/)/ && page.data.is_index != true %>
+                  <li>
+                      <a href="<%= page.url %>" title="<%= page.data.summary %>" class="link--white<% if page.url == current_page.url %> active<% end %>">
+                          <%= page.data.navTitle %>
+                      </a>
+                  </li>
+                <% end %>
+            <% end %>
+            <li><hr class="divider"></li>
+            <li><a class="link--white" href="http://foundation.zurb.com/sites/docs/" target="_blank" rel="external">Foundation documentation</a></li>
+            <li><a class="link--white" href="https://middlemanapp.com" target="_blank" rel="external">Middleman Documentation</a></li>
+            <li><a class="link--white" href="/">Main Site (local)</a></li>
+        </ul>
+    </div>
+    <div class="off-canvas-content" data-off-canvas-content>
+        <a href="#top"></a>
+        <header data-interchange="[/public/img/data-distortion-textures-@1x.png, small], [/public/img/data-distortion-textures-@2x.png, large]" class="masthead container-image-fill">
+            <div class="row full-width">
+                <div class="columns small-12">
+                    <div class="group clearfix">
+                        <span class="float-left">
+                            <a href="/" title="Datica Home">
+                                <img class="" src="/public/img/logo-w.svg" alt="Datica Home" />
+                            </a>
+                        </span>
+                        <span class="float-right"><a class="link--white" data-open="offCanvasRight"><i class="fa fa-bars fa-2x"></i></a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-center">
+                <div class="small-12 medium-9 large-9 columns text-center">
+                    <h3 class="subhead--spaced headline-6">Seldon Style Guide</h3>
+                    <h1 class="headline-1"><%= current_page.data.title %></h1>
+                    <% if current_page.data.has_key?("subhead") %>
+                        <h2 class="headline-4"><%= current_page.data.subhead %></h2>
+                    <% end %>
+                    <p class="lead"><%= current_page.data.summary %></p>
+                </div>
+            </div>
+        </header>
+        <main>
+
+        <%= yield %>
+
+        </main>
+
+        <% if current_page.data.is_index != true %>
+            <div class="row section-article">
+                <div class="columns text-center">
+                    <%= partial "partials/snippets/to-top" %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <%= javascript_include_tag "svg-injector" %>
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        // console.log("DOM fully loaded and parsed");
+        // SVG Injector: turns linked SVGs into inline ones, where they can be styled with CSS> https://www.npmjs.com/package/svg-injector
+        // Elements to inject - needs to happen as early as possible in ops
+        var mySVGsToInject = document.querySelectorAll('img.inject-me');
+        SVGInjector(mySVGsToInject);
+        // console.log("SVG injected");
+    });
+
+    </script>
+<%= javascript_include_tag "jquery", "foundation.min" %>
+<script type="text/javascript">
+$("document").ready(function(){
+    // init foundation stuff - interchange, close box, etc.
+    $(document).foundation();
+});
+</script>
+    <!-- Custom JS files -->
+    <% if current_page.data.has_key?("customJS") %>
+        <% current_page.data.customJS.split(",").each do |filename| %>
+            <script src="<%= filename.strip %>"></script>
+        <% end %>
+    <% end %>
+  </body>
+</html>

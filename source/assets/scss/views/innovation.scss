@@ -1,0 +1,48 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import '../modules/colors';
+@import '../modules/functions';
+// @import '../modules/masonry';
+@import 'home';
+
+.innovation {
+    &--section-header { // for the big page section headers
+        text-align: center;
+        margin-bottom: $pad * 1.5;
+        font: {
+            weight: $font-weight-bold;
+            // Use map-deep-get() to access deep attributes in header styles array in settings.scss
+            size: rem-calc(map-deep-get($header-styles, "large", "h3", "font-size"));
+        }
+    }
+    &--category { // this is the span class for the media type intro in the header.
+        opacity: 0.7;
+        font-weight: $font-weight-regular;
+    }
+    &--podcast-entry {
+        margin-bottom: 3rem;
+        &__summary {
+            a:not(.button) {
+                color: $color_yellow-glow;
+                font-weight: $font-weight-bold;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.person-vertical {
+    display: block;
+    .person-name {
+        display: block;
+    }
+}
+@include breakpoint (small only) { // mimic .expanded class on small only
+    .button {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}

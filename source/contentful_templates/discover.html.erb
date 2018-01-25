@@ -1,0 +1,325 @@
+---
+layout: basic
+customCSS: discover
+ogType: article
+---
+<% p = locals[:item]
+current_page.data.title = p["title"] + " | Discovery Topics"
+current_page.data.summary = safe_summary(p.summary)
+if p.has_key?("featured_image")
+    current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
+end
+if p.has_key?("topic_tag")
+    current_page.data.tags = get_tag_list(p["topic_tag"])
+else
+    current_page.data.tags = "healthcare, blog, IT"
+end
+if p.has_key?("author")
+    current_page.data.author = p["author"]["fullname"]
+else
+    current_page.data.author = "Datica, Inc."
+end
+if p.has_key?("pub_date")
+    current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
+else
+    current_page.data.date = "January 1, 2017"
+end
+%>
+<div class="discover--page container-image--fixed" data-interchange="[<%= p["featured_image"]["url"] %>?fit=thumb&w=800&h=800&q=40, small], [<%= p["featured_image"]["url"] %>?w=1200&q=50, medium], [<%= p["featured_image"]["url"] %>?w=2000&q=50, large]">
+    <div class="container-color--white drop">
+        <%= partial "partials/snippets/header", :locals => { :style => "dark" } %>
+    </div>
+    <div id="discoverTop" class="show-for-medium-large" data-sticky-container>
+        <div class="sticky sticky-nav container-color--white drop text-center" id="pageNav" data-sticky data-margin-top="0" style="width:100%;" data-margin-bottom="0" data-top-anchor="discoverTop" data-btm-anchor="ctaBottom:bottom" data-animation-duration="250" data-active-class="active" data-sticky-on="medium">
+            <nav>
+                <ul class="menu horizontal align-center" data-magellan>
+                    <!-- <li class="show-for-large">Discover <strong></strong></li> -->
+                    <li class="menu-item"><a class="menu-item--link" href="#discoverTop" title="<%= p["title"] %> Overview"><%= p["title"] %></a></li>
+                    <% if p.has_key?("related_academy") %><li class="menu-item"><a class="menu-item--link" href="#discoverAcademy">Academy Articles</a></li><% end %>
+                    <% if p.has_key?("related_blog") %><li class="menu-item"><a class="menu-item--link" href="#discoverBlog">Blog Posts</a></li><% end %>
+                    <% if p.has_key?("related_whitepaper") %><li class="menu-item"><a class="menu-item--link" href="#discoverWhitepaper">White Papers</a></li><% end %>
+                    <% if p.has_key?("related_guides") %><li class="menu-item"><a class="menu-item--link" href="#discoverGuides">Guides</a></li><% end %>
+                    <% if p.has_key?("related_podcast") %><li class="menu-item"><a class="menu-item--link" href="#discoverInnovation">Podcasts</a></li><% end %>
+                    <% if p.has_key?("cta_ref") %><li class="menu-item menu-item--cta"><a class="button button--primary small" href="#ctaBottom" title="<%= p["cta_ref"]["cta_title"] %>"><%= p["cta_ref"]["cta_label"] %> <i class="fa fa-angle-down icon-after"></i></a></li><% end %>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="discover--top-section">
+        <div class="row collapse align-center">
+            <div class="columns small-12 large-8">
+                <div class="discover--header">
+                    <span class="ribbon--gray-12">
+                        <h4 class="text--spaced headline-5 no-margin color-gray">Discover</h4>
+                        <h1 class="headline-1"><%= p["title"] %></h1>
+                    </span>
+                    <% if p.has_key?("subhead") %>
+                        <p class="headline-4 ribbon--gray-12"><%= p["subhead"] %></p>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="row collapse align-center">
+            <div class="columns small-12 large-8">
+                <div class="discover--content-box container-gray-12">
+                    <% if p.has_key?("media_object") %>
+                        <div id="discover-video" class="group">
+                            <%= Kramdown::Document.new(p["media_object"]).to_html %>
+                        </div>
+                    <% end %>
+                    <% if p.has_key?("lead") %>
+                        <div class="lead discover--lead">
+                            <%= Kramdown::Document.new(p["lead"]).to_html %>
+                        </div>
+                    <% end %>
+                    <!-- CTA -->
+                    <% if p["cta_ref"].has_key?("cta_image") %>
+                        <aside class="callout discover--cta discover--cta-image" id="ctaTop">
+                            <a class="" href="<%= p["cta_ref"]["cta_url"] %>" title="<%= p["cta_ref"]["cta_label"] %>">
+                                <img src="<%= p["cta_ref"]["cta_image"]["url"] %>" alt="<%= p["cta_ref"]["cta_label"] %>">
+                            </a>
+                        </aside>
+                    <% else %>
+                        <aside class="callout discover--cta container-color--white" id="ctaTop">
+                            <% if p["cta_ref"].has_key?("cta_icon") %>
+                                <img src="<%= p["cta_ref"]["cta_icon"] %>" alt="icon" class="cta--icon inject-me svg-color--gray">
+                            <% end %>
+                            <div class="cta--body<% if p["cta_ref"].has_key?("cta_icon") %> cta--body-right<% end %>">
+                                <h3 class="headline-4"><%= p["cta_ref"]["cta_title"] %></h3>
+                                <div class="cta--desc"><%= Kramdown::Document.new(p["cta_ref"]["cta_desc"]).to_html %></div>
+                                <a class="button button--primary button--cta" href="<%= p["cta_ref"]["cta_url"] %>"><%= p["cta_ref"]["cta_label"] %>  <i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </aside>
+                    <% end %>
+
+                    <% if p.has_key?("body") %>
+                        <div class="discover--body content-dynamic">
+                            <%= Kramdown::Document.new(p["body"]).to_html %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <% if p.has_key?("related_academy") %>
+        <section id="discoverAcademy" data-magellan-target="discoverAcademy" class="section-article container-color--blue-alt">
+            <div class="row">
+                <div class="columns small-12 text-center">
+                    <h3 class="discover--section-header"><span class="discover--category">Datica Academy articles on</span> <%= p["title"] %></h3>
+                </div>
+            </div>
+            <div class="row align-center small-up-1 medium-up-2 large-up-3">
+                <% p["related_academy"].each do |post| %>
+                    <div class="column discover--aside-item">
+                        <h3 class="headline-5">
+                            <a class="link--white" href="/academy/<%= post["slug"] %>" title="Read this Academy article"><%= post["title"] %></a>
+                        </h3>
+                        <p class="hyphenate">
+                            <% if post.has_key?("summary") || post["summary"] == "" %>
+                                <%= post["summary"] %>
+                            <% else %>
+                                <%= post["blog_lead"] %>
+                            <% end %>
+                        </p>
+                    </div>
+                <% end %>
+            </div>
+        </section>
+    <% end %>
+
+    <% if p.has_key?("related_blog") %>
+    <section data-magellan-target="discoverBlog" id="discoverBlog" class="section-article container-color--tint-70">
+        <div class="row align-center">
+            <div class="columns small-12 large-9">
+                <h3 class="discover--section-header"><span class="discover--category">Blog posts on</span> <%= p["title"] %></h3>
+            </div>
+        </div>
+        <div class="masonry-group">
+            <% p["related_blog"].each do |post| %>
+            <% related_post = data.site.blog[post.id] %>
+            <% related_post.uri = "/" + related_post._meta.content_type_id + "/" + related_post.slug %>
+                <aside class="masonry-group--item">
+                    <div class="card card--hover drop container-gray-12">
+                        <% if related_post.has_key?("featured_image") %>
+                            <a class="" href="<%= related_post.uri %>" title="Read this blog post">
+                                <img class="card-img" src="<%= related_post.featured_image.url %>?fit=thumb&w=400&h=200&q=55" alt="Image: <%= related_post.title %>" />
+                            </a>
+                        <% end %>
+                        <div class="card-section">
+
+                            <h3 class="headline-5">
+                                <a class="" href="<%= related_post.uri %>" title="Read this blog post"><%= related_post.title %></a>
+                            </h3>
+                            <% if related_post.has_key?("pub_date") %>
+                                <div class="text-tiny"><i class="fa fa-calendar" aria-hidden="true"></i> <%= related_post['pub_date'].strftime('%B %-d, %Y') %> &nbsp;</div>
+                            <% end %>
+                            <% if related_post.has_key?("summary") || related_post["summary"] == "" %>
+                                <p><%= related_post["summary"] %></p>
+                                <%#= Kramdown::Document.new(related_post["summary"]).to_html %>
+                            <% else %>
+                                <% if related_post.has_key?("blog_lead") %>
+                                    <%= Kramdown::Document.new(related_post["blog_lead"]).to_html %>
+                                <% end %>
+                            <% end %>
+                        </div>
+                        <!-- <div class="card-divider card-divider--flush">
+                            <a href="/blog/<%= post["slug"] %>" class="button small hollow">Read this post <i class="fa fa-angle-right"></i></a>
+                        </div> -->
+                    </div>
+                </aside>
+            <% end %>
+        </div>
+    </section>
+    <% end %>
+
+    <% if p.has_key?("related_whitepaper") %>
+        <section data-magellan-target="discoverWhitepaper" id="discoverWhitepaper" class="discover--whitepapers section-article container-color--white">
+
+            <div class="row align-center">
+                <div class="columns small-12 medium-3 large-2 show-for-medium">
+                    <img class="group" alt="Datica Whitepapers" data-interchange="[/public/img/art/art-whitepapers-bulb.png, small]">
+                </div>
+                <div class="columns small-12 medium-9 large-8">
+                    <h3 class="discover--section-header"><%= p["title"] %>: <span class="discover--category">White Papers</span></h3>
+                <% p["related_whitepaper"].each do |post| %>
+                <% related_whitepaper = data.site.whitepapers[post.id] %>
+                <% related_whitepaper.uri = "/" + related_whitepaper._meta.content_type_id + "/" + related_whitepaper.slug %>
+                    <aside class="discover--guide-entry group">
+                        <h4 class="headline-3">
+                            <a class="" href="<%= related_whitepaper.uri %>" title="Get the White Paper"><%= related_whitepaper.title %></a>
+                        </h4>
+                            <% if related_whitepaper.has_key?("summary") %>
+                                <%= Kramdown::Document.new(post.summary).to_html %>
+                            <% end %>
+                    </aside>
+                <% end %>
+                </div>
+            </div>
+        </section>
+    <% end %>
+
+    <% if p.has_key?("related_guides") %>
+        <section data-magellan-target="discoverGuides" id="discoverGuides" class="discover--guides section-article container-gray-11">
+            <div class="row align-center">
+                <div class="columns small-12 large-10">
+                    <h3 class="discover--section-header"><span class="discover--category">Datica Guides on</span> <%= p["title"] %></h3>
+                </div>
+            </div>
+            <div class="row align-center">
+                <div class="columns small-12 medium-3 large-3 text-center">
+                    <img class="group" alt="Datica Guides" data-interchange="[https://images.contentful.com/189dvqdsjh46/2zqo1GLqz6uAOgSCMe4aoc/ae9ed493b7dc700d63aad63b57689562/Guide_-_integration_featured_image.png?w=150, small], [https://images.contentful.com/189dvqdsjh46/2zqo1GLqz6uAOgSCMe4aoc/ae9ed493b7dc700d63aad63b57689562/Guide_-_integration_featured_image.png?w=400, medium]">
+                </div>
+                <div class="columns small-12 medium-9 large-8">
+                <% p["related_guides"].each do |post| %>
+                <% related_guide = data.site.guides[post.id] %>
+                <% related_guide.uri = "/guide/" + related_guide.slug %>
+
+                    <aside class="discover--guide-entry group--2x">
+                        <h4 class="headline-4">
+                            <a class="" href="<%= related_guide.uri %>" title="Get the Guide"><%= related_guide.title %></a>
+                        </h4>
+                            <% if related_guide.has_key?("desc") %>
+                                <%= Kramdown::Document.new(related_guide.desc).to_html %>
+                            <% end %>
+                            <!-- <p class=""><a class="button" href="/guide/<%= post["slug"] %>" title="Listen now">Get the Guide <i class="fa fa-angle-right" aria-hidden="true"></i></a></p> -->
+                    </aside>
+                <% end %>
+                </div>
+            </div>
+        </section>
+    <% end %>
+
+<% if p.has_key?("related_podcast") %>
+    <section data-magellan-target="discoverInnovation" id="discoverInnovation" class="discover--podcast section-article container-color--dark-alt container-image--middle" data-interchange="[/public/img/art/art-sound-bars-purple.svg, small]">
+        <div class="row align-center">
+            <div class="columns small-12 medium-10 large-8">
+                <h3 class="discover--section-header"><span class="discover--category">Healthcare Innovators Podcast on</span> <%= p["title"] %></h3>
+            <% p["related_podcast"].each do |post| %>
+                <aside class="discover--podcast-entry">
+                    <h3 class="headline-5">
+                        <a class="link--yellow" href="/innovation/<%= post["slug"] %>" title="Listen to this episode now"><%= post["title"] %></a>
+                    </h3>
+                    <% podcast_guest = data.site.podcast[post.id].guest %>
+                    <%# if post.has_key?("guest") %>
+                        <%# if post["guest"].has_key?("fullname") %>
+                        <div class="person-card--vertical float-right-on-medium">
+                            <a class="" href="/innovation/<%= post["slug"] %>" title="Listen to this episode now">
+                                <img src="<%= podcast_guest.profile_pic.url %>?fit=thumb&w=400&h=400&f=face&q=45" class="avatar circle" alt="<%= podcast_guest.fullname %>">
+                            </a>
+                            <div class="person-card--caption">
+                                <div class="person-name"><%= podcast_guest.fullname %></div>
+                                <div class="person-title"><%= podcast_guest.role %></div>
+                            </div>
+                        </div>
+                        <%# end %>
+                    <%# end %>
+                    <p>
+                        <% if post.has_key?("pub_date") %>
+                            <span class="pub-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></span>
+                        <% end %>
+                        <% if post.has_key?("tags") %>
+                            <% post["tags"].each do |tag| %>
+                                <% if tag.has_key?("tag_full") %>
+                                    <span class="label info round faded"><%= tag["tag_full"] %></span>
+                                <% end %>
+                            <% end %>
+                        <% end %>
+                    </p>
+                        <% if post.has_key?("summary") %>
+                        <div class="discover--podcast-entry__summary">
+                            <%= Kramdown::Document.new(post["summary"]).to_html %> <a class="link--yellow" href="/innovation/<%= post["slug"] %>" title="Listen now">Listen now <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                        <% end %>
+                </aside>
+            <% end %>
+            </div>
+        </div>
+    </section>
+<% end %>
+<% if p.has_key?("cta_ref") %>
+    <section data-magellan-target="cta" id="ctaBottom" class="section-article--xl container-color--tint-70">
+        <div class="row align-center">
+            <div class="columns small-12 large-8">
+                <!-- CTA -->
+                <% if p["cta_ref"].has_key?("cta_image") %>
+                    <aside class="discover--cta-image">
+                        <a class="" href="<%= p["cta_ref"]["cta_url"] %>" title="<%= p["cta_ref"]["cta_label"] %>">
+                            <img src="<%= p["cta_ref"]["cta_image"]["url"] %>" alt="<%= p["cta_ref"]["cta_label"] %>">
+                        </a>
+                    </aside>
+                <% else %>
+                    <aside class="text-center">
+                        <% if p["cta_ref"].has_key?("cta_icon") %>
+                            <img src="<%= p["cta_ref"]["cta_icon"] %>" alt="icon" class="inject-me svg-color--white">
+                        <% end %>
+                        <div class="">
+                            <h3 class="headline-2"><%= p["cta_ref"]["cta_title"] %></h3>
+                            <div class="lead"><%= Kramdown::Document.new(p["cta_ref"]["cta_desc"]).to_html %></div>
+                            <a class="button button--primary button--cta" href="<%= p["cta_ref"]["cta_url"] %>"><%= p["cta_ref"]["cta_label"] %>  <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </aside>
+                <% end %>
+            </div>
+        </div>
+    </section>
+<% end %>
+
+<section id="discoverMain" class="container-color--dark-alt section-article">
+<% sorted_posts = data.site.discover.to_a.sort_by{ |id, post| post['title'] } %>
+    <div class="row align-center">
+        <div class="columns small-12 large-8 text-center">
+            <h3 class="discover--section-header">Discover <span class="discover--category">Healthcare Technology Topics</span></h3>
+        </div>
+    </div>
+    <div class="row align-center align-middle small-up-1 medium-up-2 large-up-3">
+        <% sorted_posts.each do | id, post | %>
+        <div class="column">
+            <%= partial "partials/cards/discover", :locals => { :post => post, :classes => "" } %>
+        </div>
+        <% end %>
+    </div>
+</section>
+
+</div>

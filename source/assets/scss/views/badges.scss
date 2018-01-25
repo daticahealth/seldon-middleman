@@ -1,0 +1,6 @@
+@import '../settings';
+@import '../modules/functions';
+// Styles for code snippets on customer badges page. - AW
+textarea {
+    @include textarea-selectable();
+}

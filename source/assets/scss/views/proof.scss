@@ -1,0 +1,20 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../modules/functions';
+
+// Sections
+
+// Blocks at top
+.proof-nav-block{
+    ul{margin: 0 auto;}
+    li{
+        .button{
+            min-width: rem-calc(150px);
+        }
+    }
+}
+.card {
+    .media-object { // people
+        margin: 0.5rem 0 0 1.5rem;
+    }
+}

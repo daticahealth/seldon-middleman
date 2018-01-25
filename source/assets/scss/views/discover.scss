@@ -1,0 +1,230 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import '../modules/colors';
+@import '../modules/functions';
+// @import '../modules/masonry';
+// @import '../modules/fonts-optional';
+
+.discover {
+    $r: $global-radius * 0.5;
+    &--page {
+        a {
+            font-weight: $font-weight-bold; // should be everywhere...someday
+        }
+        @include color--dark-alt;
+        color: initial;
+        .person-card--vertical {
+            padding-top: 0;
+        }
+    }
+    &--top-section {
+        margin-top: 15vw; // open up space to see the background
+        margin-bottom: 0;
+        @include breakpoint (large) {
+            margin-bottom: 10vw;
+        }
+    }
+    &--header {
+        // margin-top: -15vw; // pull 'tab' up above background
+        .headline-1 {
+            font-size: 2rem;
+            @include breakpoint (medium) {
+                font-size: 3rem;
+            }
+            @include breakpoint (large) {
+                font-size: 4rem;
+            }
+            margin-bottom: 0;
+            // font-weight: $font-weight-regular;
+        }
+        text-align: center;
+        @include breakpoint (medium-large) {
+            text-align: left;
+        }
+        [class*='ribbon'] { // use custom dimensions for top bit
+            padding: 2.5rem 2.5rem 0 2.5rem;
+            display: inline-block;
+            margin-bottom: 0;
+            border-top-left-radius:  $global-radius;
+            border-top-right-radius: $global-radius;
+        }
+        .subhead--spaced {
+            opacity: 1;
+        }
+    }
+    &--cta {
+        padding: 2rem;
+        // border-radius: 0;
+        margin-top: 2rem;
+        @include breakpoint (large) {
+            // pull it left out of container
+            margin-left: -6rem;
+            margin-right: 1rem;
+        }
+        transition: all $transition-speed linear;
+        @include shadow-anarchy(0 .2rem .5rem 0 hsla(220, 90%, 13%, 0.4));
+        &:hover {
+            @include shadow-anarchy(.3rem .3rem 1rem 0 hsla(220, 90%, 13%, 0.3));
+            & .button {
+                @include fx-hover-nudge;
+            }
+        }
+        &-image {
+            padding: 0;
+        }
+    }
+    &--content-box { // first <section> needs padding adjustments
+        padding: $pad;
+        @include breakpoint (medium) {
+            padding: 2.2rem 3rem;
+            margin-bottom: 0 !important;
+        }
+        @include breakpoint (large) {
+            border-radius: $global-radius;
+            border-top-left-radius: 0;
+        }
+    }
+    &--aside {
+        padding: 1.5rem 0.5rem;
+        @include breakpoint (medium){
+            padding: 2.2rem 0.5rem;
+        }
+        &-item {
+            margin-bottom: 1rem;
+        }
+    }
+    &--section-header { // for the big page section headers
+        text-align: center;
+        margin-bottom: $pad * 1.5;
+        font: {
+            weight: $font-weight-bold;
+            // Use map-deep-get() to access deep attributes in header styles array in settings.scss
+            size: rem-calc(map-deep-get($header-styles, "large", "h3", "font-size"));
+        }
+    }
+    &--category { // this is the span class for the media type intro in the header.
+        opacity: 0.7;
+        font-weight: $font-weight-regular;
+    }
+    &--body {
+        font: {
+            // family: $font_serif;
+            weight: $font-weight-light;
+            // size: 1.1rem;
+        }
+        p {
+            line-height: $paragraph-lineheight * 1.2;
+        }
+        &-callout { // these are the styled lists in containers, like asides inline
+            border-radius: 3px;
+            @include shadow-anarchy(0 0.3rem 0.4rem 0 hsla(220, 90%, 12%, 0.3));
+            // these classes will be added inline in the CMS; writer picks left, right, or none
+            &.float-right, &.float-right-on-medium, &.float-left, &.float-left-on-medium {
+                width: 100%;
+                margin-bottom: 1rem;
+                @include breakpoint (medium) {
+                    max-width: 45%;
+                }
+                @include breakpoint (medium-large) {
+                    margin-top: 1rem;
+                }
+            }
+            &.float-left, &.float-left-on-medium {
+                @include breakpoint (medium) {
+                    margin-right: 1.5rem !important;
+                }
+            }
+            &.float-right, &.float-right-on-medium {
+                @include breakpoint (medium) {
+                    margin-left: 1.5rem !important;
+                }
+                @include breakpoint (large) {
+                    margin-right: -5rem;
+                }
+            }
+            h2, h3, h4 {
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                text-align: center;
+                font-weight: $font-weight-regular;
+                font-size: 1.1rem;
+            }
+            ul {
+                margin-left: 0;
+            }
+            li {
+                list-style-type: none;
+                line-height: 1.15em;
+                margin-bottom: 1em;
+                a {
+                    font-weight: $font-weight-mid;
+                }
+            }
+        }
+    }
+    &--intro {
+        a {
+            @include link-colors();
+        }
+    }
+    &--podcast {
+        &-entry {
+            @include clearfix();
+            margin-bottom: 4rem;
+            &__summary {
+                a {
+                    @include link-colors ($color_yellow-glow, $color_blue-glow, true);
+                }
+            }
+            .person-card--vertical { // massively clean up the layout on mobile.
+                @include breakpoint (small only) {
+                    float: right;
+                    max-width: 9rem;
+                    padding: 0;
+                    .person-card--caption {display: none;}
+                }
+            }
+        }
+    }
+    .sticky {
+        // .is-[state] classes for control over its appearance and exit if needed. Desktop only
+        @include breakpoint (large) {
+            transition: opacity 100ms linear;
+            opacity: 0;
+            &.is-anchored {
+                opacity: 0;
+            }
+            &.is-stuck {
+                opacity: 1;
+            }
+        }
+        // moved to nav.scss module, using it more
+        // .menu {
+        //     &-item {
+        //         margin-bottom: 0;
+        //         padding: 0;
+        //         &--link {
+        //             transition-duration: 100ms;
+        //             font-weight: $font-weight-bold;
+        //             padding: $pad * 0.5;
+        //             &:hover {
+        //                 background-color: $gray-11;
+        //             }
+        //             &.active {
+        //                 background-color: $gray-2;
+        //                 color: white;
+        //             }
+        //         }
+        //         &--cta {
+        //             margin-left: 1rem;
+        //             &:focus,
+        //             &:hover { // clear 'nudge' behavior
+        //                 transform: initial;
+        //             }
+        //         }
+        //     }
+        // }
+    }
+}

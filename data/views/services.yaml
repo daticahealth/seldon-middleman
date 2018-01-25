@@ -1,0 +1,42 @@
+services_full:
+    -
+        title: "Integration Project Management"
+        body: "Integration is a process, not an API. If you need help along the journey, Datica's in-house integrations team will help see you through to a successfully completed integration by project managing the entire process. We’ve helped manage hundreds of live integrations this way."
+    -
+        title: "Workflow Solutioning & Integration Engineering"
+        body: "Knowing HL7 is only half the battle. Successful integrations require an understanding of where to fit the solution within an existing workflow inside the EHR or other clinical system. Datica's team of in-house integration experts can guide you through the process of nailing the right workflow fit."
+    -
+        title: "Integration Sales Support"
+        body: "If you are a digital health solutions provider selling into hospitals or health systems, integration can sometimes be a hard sell. Companies without the sales expertise or resources turn to Datica to help train their sales teams on how to properly sell integrations, and are available on an on-going basis."
+    -
+        title: "Full-stack Integrations"
+        body: "Some customers look for the full suite of integration assistence. If you need something done—anything done—for your integration project, we can do it, from setting up and managing VPN configurations to building complex workflows to managing integration engines, and more."
+    -
+        title: "Managed Infrastructure"
+        body: "Large and small organizations looking to migrate to the cloud from a co-lo or on-premesis facility turn to Datica's team of cloud experts to manage the complexity of the migration. Custom solutions centered on compliance and security can meet both the simplest and most complex use cases."
+    -
+        title: "Custom Solutions Architecting"
+        body: "Technical teams with unique artichture requirements turn to Datica to help optimize their configurations for compliant deployment on the cloud. "
+    -
+        title: "Custom Development"
+        body: "Projects in need of extra application design or development aid use Datica's expertise in healthcare to break through with ideas that work. Johnson & Johnson recently turned to Datica to help them develop an innovative new digital health application within the life sciences industry."
+    -
+        title: "Compliance Audit Support"
+        body: "Inevitably you will be audited by your customers, especially if your customers are Covered Entities like hospitals or health systems. Datica has successfully helped our customers go over 1,000 of these independent audits, all passed with flying colors."
+    -
+        title: "White-glove On-boarding & Product Training"
+        body: "Need help getting up to speed with the Datica platform? We’re here to help with our custom tailored product training suited for companies of any size."
+# use get_cf_item_by_key to pull from data/site/customers via contenful
+customer_quotes:
+    -
+        customer: healthloop
+    -
+        customer: hurley-medical-center
+    -
+        customer: zipnosis
+    -
+        customer: propeller
+    -
+        customer: healthfinch
+    -
+        customer: docbookmd

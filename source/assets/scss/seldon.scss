@@ -1,0 +1,89 @@
+@charset 'utf-8';
+
+@import 'settings';
+// // We want the uncompiled sass, so that we can leverage the settings files.
+@import 'node_modules/foundation-sites/scss/foundation.scss';
+
+@include foundation-global-styles;
+// @include foundation-grid;
+@include foundation-flex-grid;
+// new XY grid, acts like CSS Grid. would involve complete rewrite of all grid usage. So, next project. ;)
+// @include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+// @include foundation-range-input;
+// @include foundation-accordion;
+// @include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+// @include foundation-button-group;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+// @include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+// @include foundation-orbit;
+// @include foundation-pagination;
+// @include foundation-progress-bar;
+// @include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-flex-classes;
+// extra features when prototyping, not for production.
+// @include foundation-prototype-classes;
+
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
+
+
+// *** our stuff. Items LOWER in the list override the UPPERMOST items. Important! ***
+
+@import 'modules/functions'; // this must come first
+@import 'modules/colors';
+@import 'modules/fonts';
+@import 'modules/forms';
+@import 'modules/utility';
+@import 'modules/containers';
+// @import 'modules/ui';
+@import 'modules/nav';
+// @import 'modules/footer';
+@import 'modules/links';
+@import 'modules/type';
+@import 'modules/headers';
+@import 'modules/icons';
+@import 'modules/images';
+@import 'modules/components';
+@import 'modules/callouts';
+@import 'modules/cards';
+@import 'modules/buttons';
+// @import 'modules/hero';
+@import 'modules/tables';
+@import 'modules/modal';
+@import 'modules/content';
+@import 'modules/masonry';
+// @import 'modules/animation'; // import this into views/*.scss as needed. Note also the animation mixins above, probabaly best to use those. - AW
+@import 'modules/people';
+@import 'sitewide';
+
+// Import any vendors here
+@import 'vendor/font-awesome/font-awesome.scss';
+
+// overrides should compile last - useful place to put overrides in the ITCSS pyramid. Use sparingly!
+@import 'modules/overrides';

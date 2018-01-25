@@ -1,0 +1,44 @@
+academy_guides:
+    -
+        title: "HIPAA Guide"
+        body: "Everything you need to know about HIPAA compliance, packaged in a simple guide."
+        label: "Get the Guide "
+        slug: hipaa
+        color-class: blue
+    -
+        title: "HITRUST Guide"
+        body: "Up-to-date information on the growing importance of HITRUST. Free guided walk through."
+        label: "Get the Guide "
+        slug: hitrust
+        color-class: blue
+    -
+        title: "Application Compliance Guide"
+        body: "HIPAA compliance at the Application-level is it's own animal. This guide breaks it down."
+        label: "Get the Guide "
+        slug: application-hipaa-compliance
+        color-class: blue
+    -
+        title: "FHIR Guide"
+        body: "The complexity of FHIR explained. Extinguish the mystery of healthcare's latest standard."
+        label: "Get the Guide "
+        slug: fhir
+        color-class: blue
+    -
+        title: "How to Integration with Hospitals Guide"
+        body: "This guide explains the typical process of how to integrate with hospitals or health systems."
+        label: "Get the Guide "
+        slug: how-to-integrate-with-hospitals
+        color-class: blue
+    -
+        title: "Total Cost of Ownership of Healthcare Integrations Guide"
+        body: "Understanding the costs of integration is a challenge because many initial an ongoing costs are hidden. This guide breaks down the formulas of how to measure the cost of a typical integration."
+        label: "Get the Guide "
+        slug: total-cost-of-ownership-of-integrations
+        color-class: blue
+
+    -
+        title: "What Health Systems Can Gain From FHIR Adoption"
+        body: "The Datica guide to FHIR for Health Systems and Hospitals explains how to adopt open data models to fuel transformation."
+        label: "Get the Guide "
+        slug: fhir-for-health-systems
+        color-class: blue

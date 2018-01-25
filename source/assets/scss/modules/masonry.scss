@@ -1,0 +1,39 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import '../modules/colors';
+@import '../modules/functions';
+
+
+$masonry-group-column-gap: $global-margin * 2;
+
+.masonry-group {
+    column-gap: $masonry-group-column-gap;
+    @include multicolumns (1, 15em, 2rem);
+    @include breakpoint(medium) {
+        @include multicolumns (2, 15em, 2rem);
+    }
+
+    @include breakpoint(large) {
+        @include multicolumns (3, 15em, 2rem);
+    }
+
+    @include breakpoint(xlarge) {
+        @include multicolumns (4, 15em, 2rem);
+    }
+    &--3col { // use this when larger viewports need fewer cols
+        column-gap: $masonry-group-column-gap;
+        @include breakpoint(large) {
+            @include multicolumns (2, 15em, 2rem);
+        }
+
+        @include breakpoint(xlarge) {
+            @include multicolumns (3, 15em, 2rem);
+        }
+    }
+    &--item {
+        @include break-inside;
+        margin-bottom: $masonry-group-column-gap;
+    }
+}

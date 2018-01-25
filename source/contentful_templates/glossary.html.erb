@@ -1,0 +1,51 @@
+---
+layout: listing
+ogType: article
+---
+<% p = locals[:item]
+current_page.data.title = p["title"] + " | The Datica Academy: Glossary"
+current_page.data.summary = p["title"] + " on the Datica Academy"
+%>
+<article>
+    <section class="section-article container-color--white">
+        <div class="row">
+            <header class="columns small-12 large-8 section--header-group">
+                <h3 class="subheader--spaced-out">Glossary</h3>
+                <h1 class="headline-2 section--title"><%= p["title"] %></h1>
+                <p>
+                    <%#= partial "/partials/snippets/pubdate", :locals => p %>
+                    <% if p.has_key?("tags") %>
+                        <!-- &nbsp;|&nbsp; -->
+                        <%= partial "/partials/content/tags", :locals => p %>
+                    <% end %>
+                </p>
+            </header>
+        </div>
+            <div class="row">
+                <div class="columns small-12 large-8">
+                    <!-- Summary is for list views, and metadata.-->
+                    <div class="section--body"<%= Kramdown::Document.new(p["post"]).to_html %></div>
+                    <% if p.has_key?("cta_ref") %>
+                        <aside class="callout cta container-color--blue">
+                            <h3 class="cta--header"><%= p["cta_ref"]["cta_title"] %></h3>
+                            <p><%= p["cta_ref"]["cta_desc"] %></p>
+                            <a class="button button-hollow--white" href="<%= p["cta_ref"]["cta_url"] %>"><%= p["cta_ref"]["cta_label"] %></a>
+                        </aside>
+                    <% end %>
+                </div>
+                <aside class="columns small-12 large-4 section--sidebar">
+                    <hr>
+                        <h4>Navigation work</h4>
+                        <!-- Exploring ways to display parent and sibling links -->
+                        <p>Parent: <%= current_page.parent %></p>
+                        <p>
+                            <!-- We need this to be dynamic, eg. link to parent -->
+                            <a href="/glossary" title="All Glossary Entries">Glossary</a>
+                        </p>
+                </aside>
+            </div>
+
+            </div>
+        </div>
+    </section>
+</article>

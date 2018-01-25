@@ -1,0 +1,235 @@
+{
+  "name": "Podcasts",
+  "description": "Innovation Series podcasts, hosted at Soundcloud.",
+  "displayField": "title",
+  "fields": [
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "min": 6,
+            "max": 128
+          },
+          "message": "Keep it short-ish!"
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "seoTitle",
+      "name": "SEO Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "min": 1,
+            "max": 128
+          },
+          "message": "Keep it concise!"
+        }
+      ],
+      "disabled": false,
+      "omitted": true
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "max": 128
+          },
+          "message": "URLs must be short for that tasty SEO juice!"
+        },
+        {
+          "regexp": {
+            "pattern": "^[a-z0-9-]+",
+            "flags": "g"
+          },
+          "message": "An url slug must have lowercase words separated by dashes (-)."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "pubDate",
+      "name": "Publish Date",
+      "type": "Date",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "tags",
+      "name": "Tags",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkContentType": [
+              "products",
+              "tags"
+            ]
+          }
+        ],
+        "linkType": "Entry"
+      }
+    },
+    {
+      "id": "author",
+      "name": "Author",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "person"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "guest",
+      "name": "Guest",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "person"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "soundcloudEmbed",
+      "name": "Soundcloud Embed",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "summary",
+      "name": "Summary",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 1000
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "keyTakeaways",
+      "name": "Key Takeaways",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "post",
+      "name": "Main Entry",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "discoveryTopic",
+      "name": "Discovery Topic",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "discover"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    }
+  ],
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "189dvqdsjh46"
+      }
+    },
+    "id": "podcastEntry",
+    "type": "ContentType",
+    "createdAt": "2016-08-13T00:02:27.059Z",
+    "updatedAt": "2017-08-31T02:38:38.506Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedCounter": 31,
+    "version": 62,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedVersion": 61,
+    "firstPublishedAt": "2016-08-13T00:02:27.459Z",
+    "publishedAt": "2017-08-31T02:38:38.506Z"
+  }
+}

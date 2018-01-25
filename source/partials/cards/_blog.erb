@@ -1,0 +1,38 @@
+<%#
+%>
+<%# Renders a card inside a post loop. Post var must be injected - AW %>
+<aside class="column">
+    <div class="card drop container-gray-12">
+        <% if post.has_key?("featured_image") %>
+            <img src="<%= post["featured_image"]["url"] %>?fit=thumb&w=400&h=200&q=55" alt="Image: <%= post["title"] %>" />
+        <% end %>
+        <div class="card-section">
+            <% if post.has_key?("pub_date") %>
+                <div class="text-small"><i class="fa fa-calendar" aria-hidden="true"></i> <%= post['pub_date'].strftime('%B %-d, %Y') %> &nbsp;</div>
+            <% end %>
+            <h3 class="headline-4">
+                <a class="" href="/blog/<%= post["slug"] %>" title="Read this blog post"><%= post["title"] %></a>
+            </h3>
+            <% if post["author"].has_key?("fullname") %>
+                <div class="media-object card-person">
+                    <% if post["author"].has_key?("profile_pic") %>
+                        <div class="media-object-section"><img src="<%= post["author"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="avatar avatar--large circle"></div>
+                    <% end %>
+                    <div class="media-object-section main-section align-self-middle">
+                        <h4 class="person-name"><%= post["author"]["fullname"] %></h4>
+                        <% if post["author"].has_key?("role") %>
+                            <p class="person-title"><%= post["author"]["role"] %></p>
+                        <% end %>
+                    </div>
+                </div>
+            <% end %>
+            <p class="">
+            <% if post.has_key?("summary") || post["summary"] == "" %>
+                <%= post["summary"] %>
+            <% else %>
+                <%= post["blog_lead"] %>
+            <% end %>
+            </p>
+        </div>
+    </div>
+</aside>

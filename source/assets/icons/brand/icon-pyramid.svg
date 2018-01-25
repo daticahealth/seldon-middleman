@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="47px" height="47px" viewBox="0 0 47 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-pyramid</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="gray" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons,-Large-Datica" transform="translate(-526.000000, -264.000000)" fill="#757575">
+            <g id="icon-pyramid" transform="translate(526.000000, 264.000000)">
+                <path d="M36.04,27 L32.74,22 L14.26,22 L10.96,27 L36.04,27 Z M37.36,29 L40,33 L7,33 L9.64,29 L37.36,29 Z M31.42,20 L28.12,15 L18.88,15 L15.58,20 L31.42,20 Z M26.8,13 L23.5,8 L20.2,13 L26.8,13 Z" id="Combined-Shape"></path>
+                <path d="M23.5,47 C36.4786916,47 47,36.4786916 47,23.5 C47,10.5213084 36.4786916,0 23.5,0 C10.5213084,0 0,10.5213084 0,23.5 C0,36.4786916 10.5213084,47 23.5,47 Z M23.5,45 C11.6258779,45 2,35.3741221 2,23.5 C2,11.6258779 11.6258779,2 23.5,2 C35.3741221,2 45,11.6258779 45,23.5 C45,35.3741221 35.3741221,45 23.5,45 Z" id="Oval-14"></path>
+            </g>
+        </g>
+    </g>
+</svg>

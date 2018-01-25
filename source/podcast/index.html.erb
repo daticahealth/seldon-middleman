@@ -1,0 +1,84 @@
+---
+title: "Healthcare Innovators Podcast from Datica"
+summary: "How does healthcare innovate? Datica explores this topic in a new series of interviews with several of the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
+author: "Datica, Inc."
+tags: "HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "January 1, 2017"
+share_image: "https://images.contentful.com/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/bc7605c8d6702518cedcedf7cf0de3bb/podcast-art-share-2018.png"
+header: "The Healthcare Innovators Podcast"
+subheader: "How does healthcare innovate? Datica explores this topic in a new series of interviews with several of the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
+layout: basic
+customCSS: "podcast"
+---
+<div class="container-color--dark-alt container-image--bottom" data-interchange="[/public/img/art/art-sound-bars-bg.svg, small]">
+    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+    <section class="section-article">
+        <div class="row">
+            <div class="columns small-12 medium-8 featured-post">
+                <h1 class="headline-3 headline--inverted"><%= current_page.data.header %></h1>
+                <p class="lead"><%= current_page.data.subheader %></p>
+            </div>
+        </div>
+    </section>
+</div>
+<section class="section-article">
+    <div class="row">
+        <div class="columns small-12 large-8">
+            <div class="group">
+                <% sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse! %>
+                <% sorted_podcasts.take(1).each do | id, podcast | %>
+                <%# data.site.podcast.each do |id, podcast| %>
+                    <div class="row collapse group">
+                        <div class="columns small-12">
+                            <p class="blog-date color-talk-alt"><%= podcast['pub_date'].strftime('%B %-d, %Y') %></p>
+                            <h2 class="headline-3"><a href="/innovation/<%= podcast["slug"] %>"><%= podcast["title"] %></a></h2>
+                            <div class="row collapse group">
+                                <div class="columns small-12 medium-6">
+                                    <% if podcast.has_key?("guest") %>
+                                        <%= partial("partials/snippets/person", :locals => { :p => podcast["guest"] }) %>
+                                    <% end %>
+                                </div>
+                                <div class="columns small-12 medium-6">
+                                    <% if podcast.has_key?("author") %>
+                                        <%= partial("partials/snippets/person", :locals => { :p => podcast["author"] }) %>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="media-object">
+                                <%= podcast['soundcloud_embed'] %>
+                            </div>
+                            <div class="lead">
+                                <%= Kramdown::Document.new(podcast["summary"]).to_html %>
+                            </div>
+                            <a class="button button--primary" href="/innovation/<%= podcast["slug"] %>" title="Listen now">Listen now <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+        <aside class="columns small-12 large-4 section--sidebar">
+            <div class="group">
+                <%= partial "innovation/partials/subscribe" %>
+            </div>
+            <%= partial "innovation/partials/2016-ebook" %>
+        </aside>
+    </div>
+</section>
+<section class="section-article container-color--gray-light">
+    <div class="row">
+        <div class="columns small-12 large-8">
+            <% sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse! %>
+            <% sorted_podcasts[1...-1].each do | id, podcast | %>
+
+                <%= partial("partials/snippets/podcast-summary", :locals => { :podcast => podcast, :hideSummary => false }) %>
+
+            <% end %>
+            <hr>
+            <%= partial "partials/snippets/to-top" %>
+        </div>
+        <aside class="columns small-12 large-4 section--sidebar">
+            <%= partial "innovation/partials/2015-ebook" %>
+        </aside>
+    </div>
+</section>
+<%= partial "partials/section-promos/report-promo-latest" %>

@@ -1,0 +1,130 @@
+.row--card-grid {
+    .column, .columns { // adds bottom margin for equal height cards
+        margin-bottom: 2.5rem;
+    }
+    .card { // only create equal height cards in here. Cards can live fine outside this parent class, just won't be full-height.
+        height: 100%;
+        margin-bottom: 0; // I *think* this is what we want...
+    }
+}
+.card {
+    &-img { // at mobile widths images get distorted... this seems to fix
+        width: 100%;
+    }
+    .button {
+        @extend .expanded; // always fill that space with buttons
+        margin-bottom: 0;
+    }
+    .button{
+        &.button-group { // use when you have n-up buttons in a horizontal row (say, via .float-[dir])
+            &:first-child {
+                margin-bottom: 1rem; // if there's a group, then more than 1 button, so first one stacks. dunno
+            }
+            @include breakpoint (large) {
+                display: inline-block;
+                width: auto;
+                margin-bottom: 0;
+                &:first-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    ul.menu li { // handy for action icons in list
+        margin-bottom: 0;
+    }
+    &-section, &-divider {
+        &--flush { // no pad at top edge, better fit in stacked situations
+            padding-top: 0;
+        }
+        // this is moved to overrides.scss
+        // blockquote {
+        //     padding-top: 0 !important;
+
+        // }
+    }
+    &-section {
+        p, li {
+            @include hyphens (auto);
+        }
+    }
+    &-divider {
+        display: block; // overrides global-flexbox: true in settings:268. Not sure how this setting will play out (which components are flexbox-enabled? - AW)
+    }
+    &--hover {
+        transition: box-shadow $timing-default * 0.7 linear;
+        // box-shadow: 0 1px 1px 0 black(0);
+        &:hover {
+            box-shadow: 0 5px 15px 0 black(0.4);
+        }
+    }
+    // featured card container
+    &-featured-section {
+        @extend .section-article--med;
+        padding-bottom: 1rem;
+    }
+    // featured image atop card, with title set at bottom
+    &-header {
+        &-image { // container w. image
+            position: relative;
+            height: 15rem;
+            &--compact {
+                height: 11rem;
+            }
+            
+            &:hover {
+                transition: all $timing-default ease;
+                .card-header-title {
+                    transition: all $timing-default ease;
+                    transform: translate3d(3px, 0, 0);
+                    color: $color_yellow-glow;
+                }
+                .card-header-icon {
+                    transition: all $timing-default * 2 ease;
+                    opacity: 1;
+                    transform: translate3d(1rem, 0, 0);
+                }
+            }
+        }
+        &-subhead {
+            position: absolute;
+            text-align: right;
+            right: 0;
+            top: 0;
+            margin: 1rem;
+            @extend .subheader-small;
+            color: white;
+        }
+        &-title { // title hugs bottom
+            position: absolute;
+            transition: all $timing-default ease-out;
+            bottom: 0;
+            margin: 1rem;
+            max-width: 75%;
+            min-width: 15rem; // prevents getting squished when cards are narrow at lower edge of large breakpoint. Waiting for container queries...
+            z-index: 5;
+        }
+        &-icon {
+            position: absolute;
+            transition: all $timing-default ease-out;
+            bottom: 1rem;
+            right:  2rem;
+            opacity: 0;
+        }
+    }
+}
+.card-section--with-grid { // when rows/cols are within a card-section, need to kill the padding on sides. <shrug>
+    padding-left:  0;
+    padding-right: 0;
+}
+.reveal .card { // cards by default have small margin below; when contained by a Reveal modal, remove margin.
+    margin-bottom: 0;
+}
+.collapse { // only used with .row, this Foundation class removes all gutters for a tight grid
+    .column, .columns, .card {
+        margin-bottom: 0;
+    }
+    .card {
+        border-radius: 0;
+    }
+}

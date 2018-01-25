@@ -1,0 +1,6 @@
+<%# this script injects an alignment class in embedded tweets. needs to happen when DOM rendered, but before other JS.%>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        $('blockquote .twitter-tweet').addClass("tw-align-center");
+    });
+</script>

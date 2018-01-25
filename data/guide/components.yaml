@@ -1,0 +1,280 @@
+block_hitrust:
+    -
+        title: "HITRUST is how healthcare does business"
+        body: "The HITRUST Common Security Framework (CSF) has become the preferred way to prove compliance in healthcare. HITRUST certification helps establish and accelerate partnerships. If you plan to do business in healthcare at the speed of change, you need to be HITRUST CSF Certified."
+        bg: https://images.contentful.com/189dvqdsjh46/1oI0NBus2wky0CeAGuWgow/fee7884b02c0ceebcccdd0b1fa798b55/jellyfish_-_sebastian-spindler-221561.jpg?w=550&fit=thumb&q=50
+        style: dark
+    -
+        title: "Datica’s HITRUST CSF Certification gives you industry credibility overnight"
+        body: "Datica leads the industry with the first, most complete HIPAA compliant cloud infrastructure. Datica Managed Cloud is HITRUST CSF Certified on AWS, Microsoft Azure, IBM SoftLayer, and Rackspace, achieving the highest industry privacy and security standards across infrastructure providers."
+        bg: https://images.contentful.com/189dvqdsjh46/49djlplVDiu4SqioicckGo/cfe307ff9c64133cc855db37ee061b93/blog-free-trial-mts.jpg?w=550&fit=crop
+        style: light
+    -
+        title: "You inherit Datica’s certification"
+        body: "HITRUST allows for inheritance, which means if you are planning to obtain your own CSF certification, you can inherit Datica’s certificate to shortcut 40% of the time and costs of the process."
+        bg: https://images.contentful.com/189dvqdsjh46/5S6PVmufh6CcCKMMkkKWIG/2b63e35eca91cf4efef06b5d3743609d/aurora_in_the_forest_-_vincent-guth-183405.jpg?w=550&fit=scale
+        style: dark
+
+block_articles:
+    -
+        date: "April 10, 2017"
+        title: "The Accelerating Migration to the Healthcare Cloud"
+        body: "In this article, we explore the migration to cloud computing in healthcare, the benefits of cloud computing in healthcare, and HIPAA cloud compliant hosting."
+        bg: /assets/img/company-3.jpg
+        bgColor: dark
+    -
+        date: "March 28, 2017"
+        title: "FHIR Fuels Transformation at Hospitals"
+        body: "For the first time in twenty years, hospitals, vendors, and even payers and life sciences providers agree on something: FHIR is the way forward."
+        bg: /assets/img/company-4.jpg
+        bgColor: red
+    -
+        date: "March 15, 2017"
+        title: "FHIR is No Longer Just a Concept"
+        body: "Mark Olschesky shares what he learned, saw, and enjoyed at the 2nd annual HL7 FHIR Applications Roundtable. Hint: FHIR is fast becoming a reality."
+        bg: https://images.contentful.com/189dvqdsjh46/4D7eG9JiLYo8qw8sqCQ6qE/74ef1e545b792eca9b8618159bca87a2/IMG_4322.jpg?w=600
+        bgColor: blue-alt
+    -
+        date: "February 9, 2017"
+        title: "2017 Healthcare Trends Part 4: Healthcare costs and challenges are about a lot more than healthcare"
+        body: "This 4th part of our 2017 Healthcare trends series looks at some of the not so obvious costs and challenges that add into the healthcare equation."
+        bg: //images.contentful.com/189dvqdsjh46/1stVKhLD3CESqKqeUw20CK/372fd526fd6be5ab8f96abe92e09d655/climber-984380_1280.jpg?w=600
+        bgColor: dark-alt
+
+customers_managed:
+    -
+        name: 'BSC'
+        file: 'bsc-logo-wide'
+        url: 'http://blueshieldca.com'
+    -
+        name: 'HealthFinch'
+        file: 'healthfinch-logo'
+        url: 'http://healthfinch.com'
+    -
+        name: 'BCGDV'
+        file: 'bcgdv-logo'
+        url: 'http://bcgdv.com'
+    -
+        name: 'SwipeSense'
+        file: 'swipesense-logo'
+        url: 'http://swipesense.com'
+    -
+        name: 'Reach'
+        file: 'reach-logo'
+        url: 'http://reachhealth.com'
+    -
+        name: 'Propeller Health'
+        file: 'propeller-logo'
+        url:  'propellerhealth.com'
+    -
+        name: 'PINT'
+        file: 'pint-logo'
+        url: 'http://pint.com'
+    -
+        name: 'Ayogo'
+        file: 'ayogo-logo'
+        url: 'http://ayogo.com'
+    -
+        name: 'Healthloop'
+        file: 'healthloop-logo'
+        url: 'http://healthloop.com'
+    -
+        name: 'CareMessage'
+        file: 'caremessage-logo'
+        url: 'http://caremessage.org'
+    -
+        name: 'Hennepin County Medical Center'
+        file: 'hcmc-logo'
+        url: 'http://hcmc.org'
+    -
+        name: 'NavHealth'
+        file: 'navhealth-logo'
+        url: 'http://navhealth.com'
+    -
+        name: 'MetaBahn'
+        file: 'metabahn-logo'
+        url:  'metabahn.com'
+    -
+        name: 'Welkin'
+        file: 'welkin-logo'
+        url: 'http://welkinhealth.com'
+    -
+        name: 'Cohere'
+        file: 'cohere-logo'
+        url: 'http://coherehealth.com'
+    -
+        name: 'InsightRX'
+        file: 'insightrx-logo'
+        url: 'http://insight-rx.com'
+    -
+        name: 'CirrusMD'
+        file: 'cirrusmd-logo'
+        url: 'http://cirrusmd.com'
+    -
+        name: 'COTA'
+        file: 'cota-logo'
+        url: 'http://oncota.com'
+    -
+        name: 'Hale Health'
+        file: 'hale-health-logo'
+        url: 'http://hale-health'
+    -
+        name: 'MolecularMatch'
+        file: 'molecularmatch-logo'
+        url: 'http://molecularmatch.com'
+    -
+        name: 'Dispatch Health'
+        file: 'dispatchhealth-logo'
+        url: 'http://dispatchhealth.com'
+    -
+        name: 'CareKinesis'
+        file: 'carekinesis-logo'
+        url: 'http://carekinesis.com'
+
+customersCore:
+    -
+        name: "BSC"
+        slug: bsc
+        logoSize: medium
+    -
+        name: "HealthFinch"
+        slug: healthfinch
+        logoSize: small
+    -
+        name: "BCGDV"
+        slug: bcgdv
+        logoSize: small
+    -
+        name: "Zipnosis"
+        slug: zipnosis
+        logoSize: small
+    -
+        name: "Reach"
+        slug: reach
+        logoSize: small
+    -
+        name: "Propeller Health"
+        slug: propeller
+        logoSize: small
+    -
+        name: "PINT"
+        slug: pint
+        logoSize: small
+    -
+        name: "Ayogo"
+        slug: ayogo
+        logoSize: small
+    -
+        name: "Cordata"
+        slug: cordata
+        logoSize: small
+    -
+        name: "HealthLoop"
+        slug: healthloop
+        logoSize: small
+    -
+        name: "CareMessage"
+        slug: caremessage
+        logoSize: small
+    -
+        name: "Hennepin County Medical Center"
+        slug: hcmc
+        logoSize: small
+    -
+        name: "NavHealth"
+        slug: navhealth
+        logoSize: small
+    -
+        name: "MetaBahn"
+        slug: metabahn
+        logoSize: small
+    -
+        name: "Welkin"
+        slug: welkin
+        logoSize: small
+    -
+        name: "InsightRX"
+        slug: insightrx
+        logoSize: small
+    -
+        name: "CirrusMD"
+        slug: cirrusmd
+        logoSize: small
+    -
+        name: "COTA"
+        slug: cota
+        logoSize: small
+    -
+        name: "Hale Health"
+        slug: hale-health
+        logoSize: small
+    -
+        name: "MolecularMatch"
+        slug: molecularmatch
+        logoSize: small
+    -
+        name: "Dispatch Health"
+        slug: dispatchhealth
+        logoSize: small
+    -
+        name: "CareKinesis"
+        slug: carekinesis
+        logoSize: small
+
+customersHT:
+    -
+        name: Cleveland Clinic
+        slug: clevelandclinic
+        logoSize: small-mid
+    -
+        name: Cedars-Sinai
+        slug: cedars
+        logoSize: small-mid
+    -
+        name: MultiCare
+        slug: multicare
+        logoSize: small-mid
+    -
+        name: Texas Health Resources
+        slug: texashr
+        logoSize: small-mid
+    -
+        name: Children's Healthcare of Atlanta
+        slug: choa
+        logoSize: small-mid
+    -
+        name: Fairview
+        slug: fairview
+        logoSize: small-mid
+    -
+        name: Meridian
+        slug: meridian
+        logoSize: small-mid
+    -
+        name: Froedtert
+        slug: froedtert
+        logoSize: small-mid
+    -
+        name: Baylor Scott & White Health
+        slug: baylor
+        logoSize: small-mid
+    -
+        name: John Muir
+        slug: johnmuir
+        logoSize: small-mid
+    -
+        name: Children's Hospital of Wisconsin
+        slug: chow
+        logoSize: small-mid
+    -
+        name: Hackensack UMC
+        slug: humc
+        logoSize: small-mid
+    -
+        name: Aurora
+        slug: aurora
+        logoSize: small-mid
+    -
+        name: Florida Hospital
+        slug: floridahospital
+        logoSize: small-mid

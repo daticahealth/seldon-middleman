@@ -1,0 +1,31 @@
+---
+is_index: true
+title: "Seldon Style Guide - Home"
+subhead: Built with Middleman.
+summary: "Below are a few styleguide pages from the Seldon project."
+customCSS: styleguide
+hide_from_sitemap: true
+---
+<%#= partial "seldon/partials/home" %>
+
+<section data-interchange="[/public/img/data-distortion-textures-@1x.png, small], [/public/img/data-distortion-textures-@2x.png, large]" class="full-width full-height align-middle masthead container-image-fill">
+    <div class="row align-center">
+        <div class="columns small-12 medium-12">
+            <div class="row small-up-1 medium-up-3 large-up-4">
+                <!-- Ignore pages in sitemap query: http://stackoverflow.com/questions/29498476/how-to-ignore-pages-in-middleman-sitemap -->
+                <% sitemap.resources.each do |page| %>
+                    <% if page.url =~ /^(\/seldon\/)/ && page.data.is_index != true && page.path != /^(\/seldon\/partials)/ %>
+                        <% if page.data.has_key?("title") %>
+                            <div class="column">
+                                <div class="callout callout--stretch">
+                                    <h4><%= link_to page.data.title, page.url %></h4>
+                                    <p><%= page.data.summary %></p>
+                                </div>
+                            </div>
+                        <% end %>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>

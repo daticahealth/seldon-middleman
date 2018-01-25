@@ -1,0 +1,36 @@
+projects:
+    -
+        title: 'Datica Policies'
+        url: '/open-source/policies'
+        icon: 'icon-hitrust'
+        cssClass: 'svg-color--white'
+        description: "Datica helps relieve the technical burden with our HIPAA-compliant cloud and solutions for healthcare."
+        cta: "Overview"
+    -
+        title: 'Datica Compliant Cloud CLI'
+        url: '//github.com/daticahealth/cli'
+        icon: 'icon-datica-cli'
+        cssClass: 'svg-color--white'
+        description: "To learn more about the Datica CLI and all the great features we've added, we recommend reading the documentation."
+        cta: "View on GitHub"
+    -
+        title: 'Datica HIPAA Training'
+        url: '//github.com/catalyzeio/training'
+        icon: 'icon-ruby-lang'
+        cssClass: 'svg-color--white'
+        description: "This is an overview training of HIPAA, with coverage of key definitions and provisions for the handing of HIPAA-relevant data."
+        cta: "View on GitHub"
+    -
+        title: 'Datica Legal Docs'
+        url: '//github.com/catalyzeio/legal'
+        icon: 'icon-ebook'
+        cssClass: 'svg-color--white'
+        description: "The Datica Legal Docs exist to outline Datica Health, Inc's terms of service and other legalese."
+        cta: "View on GitHub"
+    -
+        title: 'Datica Mirth Transforms'
+        url: 'https://github.com/daticahealth/Mirth-Transforms'
+        icon: 'icon-transform-gears'
+        cssClass: 'svg-color--white'
+        description: "Here you can find and contribute to a growing community of content intitiated by Datica with the intent of making Mirth connect-based integrations easier."
+        cta: "View on GitHub"

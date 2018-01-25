@@ -1,0 +1,184 @@
+---
+title: User Interface Elements
+navTitle: UI elements
+summary: "Various interaction patterns, such as buttons, dropdowns, and more."
+customCSS: styleguide
+hide_from_sitemap: true
+---
+
+<section id="content-top" class="section-article">
+    <div class="row">
+        <div class="columns small-12 section--header-group">
+            <h1 class="section--header">Buttons</h1>
+            <p>Add the attribute
+                <code>type=“button”</code>
+                to
+                <code>button</code>
+                elements, unless the button submits a form, in which case you use
+                <code>type=“submit”</code>
+            </p>
+            <p>Also check out the powerful Button ruby partial in <code>partials/snippets/button</code>. Documentation in the file.</p>
+        </div>
+    </div>
+    <div class="row align-middle small-up-1 medium-up-2">
+        <div class="column group">
+            <div class="callout callout--gray-light">
+                    <h3>Style Variations</h3>
+                    <p>
+                        By default, the <code>.button</code> class covers most of the sizing, padding, and behavior. Additional button styles are available in <code>/modules/_buttons.scss</code>.
+                    </p>
+                    <div class="row">
+                        <div class="columns small-12 large-7">
+                            Primary (main style)<code>.button--primary</code>
+                        </div>
+                        <div class="columns small-12 large-5">
+                            <a href="#" class="button button--primary">Primary <%= daticon("material/ic_chevron_right_18px") %></a>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="columns small-12 large-7">
+                            Notification <code>.button--notification</code>
+                        </div>
+                        <div class="columns small-12 large-5">
+                            <a href="#" class="button button--notification">
+                                <span class="status-dot--green"></span>
+                                Notification <%= daticon("material/ic_chevron_right_18px") %></a>
+                        </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="columns small-12 large-7">
+                            "Light" Button <code>.button--light</code>
+                        </div>
+                        <div class="columns small-12 large-5">
+                            <a href="#" class="button button--light">light <%= daticon("material/ic_chevron_right_18px") %></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columns small-12 large-7">
+                            "Transparent" Button <code>.hollow .hollow-invisible</code>
+                        </div>
+                        <div class="columns small-12 large-5">
+                            <a href="#" class="button hollow hollow-invisible">Invisibutton <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="column group">
+            <h3>Sizing</h3>
+            <p>Additional classes can be added to your button to change its size and shape.</p>
+            <!-- <a href="#" class="tiny button">So Tiny</a> -->
+            <p>
+                <a href="#" class="small button button--primary">So Small</a>
+                <a href="#" class="button button--primary has-icon">
+                    Using daticon icon helper
+                    <%= daticon("material/ic_check_18px") %>
+                </a>
+                <a href="#" class="button button--primary">So Basic</a>
+            </p>
+            <p>
+                <!-- <a href="#" class="large button button--primary">So Large</a> -->
+                <a href="#" class="large button button--primary has-icon">
+                    Large + Daticon
+                    <%= daticon("material/ic_chevron_right_24px") %>
+                </a>
+            </p>
+            <a href="#" class="expanded button button--primary">Such Expand</a>
+            <a href="#" class="small expanded button button--primary">Wow, Small Expand</a>
+        </div>
+        <div class="column group">
+            <h3>Coloring</h3>
+            <p>Give a button additional meaning by adding a coloring class, or .disabled to create a faded appearance.</p>
+            <div class="callout--gray-light">
+                <p>The
+                    <code>.disabled</code>
+                    class is purely visual style, and won’t actually disable a control. For
+                    <code>button</code>
+                    elements, you can add the
+                    <code>disabled</code>
+                    attribute to disable it. If you want to disable a link, you should add the aria-disabled attribute to mark it as disabled for assistive technology.</p>
+            </div>
+
+            <hr>
+            <a href="#" class="secondary button">Secondary Color</a>
+            <a href="#" class="success button">Success Color</a>
+            <a href="#" class="alert button">Alert Color</a>
+            <a href="#" class="warning button">Warning Color</a>
+            <a href="#" class="disabled button">Disabled Button</a>
+
+        </div>
+        <div class="column group">
+            <h3>Hollow Style</h3>
+            <p>Add the .hollow class to a button to give it a hollow style. Change the $button-fill variable in your settings file to hollow to make this the default style. Changing this setting will remove the .hollow class from your CSS.</p>
+            <button href="#" class="hollow button">Primary Color</button>
+            <button href="#" class="secondary hollow button">Secondary Color</button>
+            <button href="#" class="success hollow button">Success Color</button>
+            <button href="#" class="alert hollow button">Alert Color</button>
+            <button href="#" class="warning hollow button">Warning Color</button>
+            <a href="#" class="button hollow hollow-invisible">"Invisible" button <i class="fa fa-angle-right"></i></a>
+            <div class="callout callout--dark">
+                <p>On dark backgrounds, add the <code>.hollow-inverted</code> class.</p>
+                <p>
+                    <a href="#" class="button hollow hollow-inverted hollow-invisible">"Invisible" button <i class="fa fa-angle-right"></i></a>
+                    <button href="#" class="hollow button hollow-inverted">Hollow and inverted</button>
+                    <button href="#" class="button holloy hollow-inverted small">Smaller and inverted</button>
+
+                </p>
+            </div>
+        </div>
+        <div class="column group">
+            <h3>Dropdown Arrows</h3>
+            <p>Add a dropdown arrow to your button with the .dropdown class.</p>
+            <div class="callout--gray-light">
+                <p>This doesn’t add dropdown functionality automatically. To do that, you can attach our
+                    <a href="dropdown.html">Dropdown plugin</a>.</p>
+            </div>
+            <button class="tiny dropdown button">Dropdown Button</button>
+            <button class="small dropdown button">Dropdown Button</button>
+            <button class="dropdown button">Dropdown Button</button>
+            <button class="large dropdown button">Dropdown Button</button>
+            <button class="expanded dropdown button">Dropdown Button</button>
+        </div>
+        <div class="column group">
+            <h3>Accessibility</h3>
+            <p>Make sure that the text of the button is descriptive. If for some reason, your button contains no readable text (for example, just a symbol or icon), add screen reader-only text to the button to clarify it’s purpose. The symbol or icon should be
+                wrapped in an element with the attribute
+                <code>aria-hidden=&quot;true&quot;</code>, to prevent screen readers from trying to pronounce the symbol. Use the
+                <code>.show-for-sr</code>
+                class to define screen reader-only text.</p>
+
+            <button type="button" class="button">
+                <span class="show-for-sr">Close</span>
+                <%= daticon("material/ic_close_18px") %>
+            </button>
+        </div>
+        <hr class="divider">
+    </div>
+    <div class="row">
+        <div class="columns small-12 section--header-group">
+            <h1 class="section--header">Labels</h1>
+            <p class="lead">Good for tags or info</p>
+            <div class="group">
+                <span class="label round">Basic Default Label
+                </span>
+                <span class="label round secondary">Secondary
+                </span>
+                <span class="label round info">Info</span>
+                <span class="label round success">Success</span>
+            </div>
+            <div class="group">
+                <p aria-describedby="emailLabel1 emailLabel2">For improved
+                    <code>a11y</code>, labels can be associated with an element that they describe.</p>
+                <span id="emailLabel1" class="label">High Priority</span>
+                <span id="emailLabel2" class="label">Unread</span>
+            </div>
+            <div class="callout callout--dark">
+                <p><span class="label secondary">TO-DO</span> On dark backgrounds, use the <code>.label .label-hollow--inverted</code> classes.</p>
+                <div class="group">
+                    <span class="label">Basic Default Label</span>
+                    <span class="label label-hollow--inverted">hollow inverted</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

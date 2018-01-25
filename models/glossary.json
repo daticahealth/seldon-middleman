@@ -1,0 +1,201 @@
+{
+  "name": "Glossary",
+  "description": "New to HIPAA or the technical world? Our glossary of common HIPAA and technology terms will aid you as you start to put the pieces together. Check back for periodic additions and updates.",
+  "displayField": "title",
+  "fields": [
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "min": 6,
+            "max": 90
+          },
+          "message": "Keep it short-ish!"
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "seoTitle",
+      "name": "SEO Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "min": 1,
+            "max": 40
+          },
+          "message": "Keep it concise!"
+        }
+      ],
+      "disabled": true,
+      "omitted": true
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "max": 128
+          },
+          "message": "URLs must be short for that tasty SEO juice!"
+        },
+        {
+          "regexp": {
+            "pattern": "^[a-z0-9-]+",
+            "flags": "g"
+          },
+          "message": "An url slug must have lowercase words separated by dashes (-)."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "tags",
+      "name": "Tags",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkContentType": [
+              "products",
+              "tags"
+            ]
+          }
+        ],
+        "linkType": "Entry"
+      }
+    },
+    {
+      "id": "relatedEntries",
+      "name": "Related Entries",
+      "type": "Array",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 5
+          },
+          "message": "Let's keep it simple. 5 Max!"
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "items": {
+        "type": "Link",
+        "validations": [
+          {
+            "linkContentType": [
+              "academy",
+              "blog",
+              "podcastEntry"
+            ]
+          }
+        ],
+        "linkType": "Entry"
+      }
+    },
+    {
+      "id": "ctaRef",
+      "name": "Call to Action",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "cta"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Entry"
+    },
+    {
+      "id": "summary",
+      "name": "Summary",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 1000
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "post",
+      "name": "Main Entry",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    }
+  ],
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "189dvqdsjh46"
+      }
+    },
+    "id": "glossary",
+    "type": "ContentType",
+    "createdAt": "2016-11-09T23:17:04.937Z",
+    "updatedAt": "2016-11-29T19:39:07.545Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedCounter": 6,
+    "version": 12,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedVersion": 11,
+    "firstPublishedAt": "2016-11-09T23:17:05.207Z",
+    "publishedAt": "2016-11-29T19:39:07.525Z"
+  }
+}

@@ -1,0 +1,131 @@
+# @ schema. wrap strings in double quotes
+# [faq-category-name]
+#     -
+#         question: string
+#         answer: string, can be markdown
+---
+platform_tech:
+    -
+        question: "Does Datica own its own server infrastructure?"
+        answer: "No. Datica sits on top of the top public infrastructure-as-a-service providers, like AWS, Microsoft Azure, and IBM SoftLayer. We help make their clouds fully HIPAA compliant."
+    -
+        question: "Is Datica SOC2 compliant?"
+        answer: "Yes."
+    -
+        question: "Will I have to re-architect my application to deploy onto Datica’s platform-as-a-service?"
+        answer: "It depends what your application architecture looks like. Many customers leverage Datica's expertise in containerization to help re-architect their applications to be ready for a container-based future. Otherwise if your application already runs in the cloud, chances are it will run on Datica. You can leverage Datica's Services offering to engage with us to assess your options."
+    -
+        question: "Can I use 3rd party applications?"
+        answer: "Usage of 3rd party applications within your architecture is up to you. Many customers leverage 3rd party apps, such as New Relic, within their environments. If you are curious about a specific app, ask our support team."
+    -
+        question: "Does Datica offer SMS capabilities? Notifications? Transactional email?"
+        answer: "Datica does not offer any transactional communication tools at this time. In general, those tools are not necessarily compliant—for example, you never want to send PHI over email. For usage of those tools in a compliant way—such as sending a link to a user to login—Datica does not offer those capabilities on the platform."
+    -
+        question: "How is SSL managed?"
+        answer: "SSL certificates are managed via our command line utility. We provide an SSL certs command that gives you the ability to install, update and delete certificates as needed. At this time we are not able to provide you with a certificate out of the box. You must purchase the certificate on your own. We recommend digicert for those looking to buy a certificate. For free certificates we recommend Let’s Encrypt. "
+    -
+        question: "Does Datica provide staging or test environments?"
+        answer: "While we don’t provide any non-compliant environments, customers are more than welcome to deploy multiple applications within multiple environments on the Datica platform. Datica's approach is to apply our industry-best management of compliance to all customer environments, bar none. Consequently, we do not offer staging environments at a cheaper price point. Customers looking for staging environments typically create parallel environments with fewer dedicated resources."
+    -
+        question: "Do I need to manage my own load balancing? How does Datica manage it for me?"
+        answer: "Datica provides load balancing for all customer applications. Our built-in service proxy service is placed as the gateway to your environment. This service load balances requests across containers of the same service to allow horizontal scaling. Typically, this is done via round robin."
+    -
+        question: "Does Datica handle failovers?"
+        answer: "Yes. Our Mongo and Redis services have automated failover pathways, while our Postgresql and MySQL services require Datica manual failovers."
+    -
+        question: "Does Datica handle regionalism through their cloud infrastructure partners?"
+        answer: "No. We can support Cross Region Replication for S3, but do not have environments that can span regions at this time."
+    -
+        question: "Can I buy CPU cores?"
+        answer: "No. Compute resources are fully managed through the Datica platform on top of the various IaaS providers. Customers instead purchase and allocate RAM within their environments."
+    -
+        question: "What is the equivalent EC2 instance for one of your app containers?"
+        answer: "Application containers typically reside on an m4.xlarge and can use anywhere from 1, 2, 4, 8, or 16GB of RAM. We can accommodate different types of instances depending on contract size and desired use case."
+    -
+        question: "Does Datica support Windows VMs?"
+        answer: "Yes."
+    -
+        question: "Does Datica support custom deployment models, such as Chef or Puppet?"
+        answer: "Yes, although only at certain customer tiers. If your deployment process is dependent upon one of those tools, be sure to talk to a Datica team member about that requirement."
+    -
+        question: "If Datica uses Docker to orchestrate environments, can I bring my own Docker containers?"
+        answer: "Yes."
+    -
+        question: "Do we support Canada deployments?"
+        answer: "Yes, Canadian deployments are available on the AWS Montreal AZ. This option is available to all customers."
+    -
+        question: "Do we support international deployments?"
+        answer: "International deployments are available for Enterprise Plan customers only. We do not support multi-tenant deployments outside of USA and Canada at this time."
+    -
+        question: "Do we support Oracle DB via RDS?"
+        answer: "Yes, we support Oracle via AWS’s RDS availability."
+    -
+        question: "Does Datica have a DMZ network segment isolated from production environments?"
+        answer: "Yes. [View our policy notes here.](https://policy.datica.com/#1.4-datica-organizational-concepts)"
+    -
+        question: "How do I manage a VPN on Datica?"
+        answer: "Datica provisions VPNs on behalf of customers on the Platform. Datica's cloud engineering & support team will provide customers with VPN credentials and information as needed. Customers can manage VPN permissions, ACLs and groups directly in the dashboard."
+    -
+        question: "What are the differences between a site-to-site VPN and a Roadwarrior VPN?"
+        answer: "Site-to-site VPNs are used during health system integration to create a permanent connection to a hardware device. Roadwarrior VPNs are provided transient connections, typically to workstations."
+    -
+        question: "How does logging work on the Platform?"
+        answer: "Datica provides an ELK stack (elastic search, logstash, and Kibana) to all customers on the Platform. Customers point to our logging endpoints to store their logs."
+    -
+        question: "Does Datica provide an SFTP service?"
+        answer: "Datica provides two primary SFTP solutions. Customers needing SFTP should reach out to our cloud engineering & support team."
+    -   
+        question: "Does Datica support AWS lambda?"
+        answer: "We do not currently support Lambda."
+    -
+        question: "Does Datica support all AWS HIPAA eligible services?"
+        answer: "Of AWS's 57 services, 27 are covered under their BAA as HIPAA Eligible. Of those, almost all have basic support through our platform, but there are a few we do not yet support. Discuss with our team service availability if you have questions about your architecture."
+    
+platform_integration:
+    -
+        question: "Do you integrate with [EHR]?"
+        answer: "Datica has live, active integrations with 27 of the top 35 EHRs. More projects are planned to bring us closer to live integrations with the top 40. If you are needing integration services outside of that list, chances are we can still help you."
+    -
+        question: "Do you integrate with [data standard]?"
+        answer: "Datica has live integrations with almost every main data standard you can think of. There are some we are more proficient in than others—e.g. we have more integrations for HL7 with hospitals than we do for Claims with clearinghouses—but if there is a specific technology you are curious about, contact us."
+    -
+        question: "If I complete an Epic (or Cerner, or...) integration with Datica, does that mean I get access to all Epic (or Cerner, or...) customers?"
+        answer: "No. Healthcare integrations are inherently point-to-point. You will integrate with a specific site's version of an EHR. It is a myth that you can connect once into an EHR and get access to their customer base."
+    -
+        question: "Does Datica provide sandboxes for integrations?"
+        answer: "We provide open APIs that anyone can test against. Those are found at hl7.datica.com and fhir.datica.com. Beyond that, extra requirements are scoped out with Datica's Services team for an additional cost."
+    -
+        question: "Does Datica help with testing an integration?"
+        answer: "We most definitely do! Customers can engage with our Managed Integration services."
+    -
+        question: "Does Datica help stress-test my integration?"
+        answer: "Part of Datica's Managed Integration service is to help scope out expected message volume and work with customers accordingly on setting up their environment to support that."
+    -
+        question: "How many messages per second can Datica's integration stack handle?"
+        answer: "The base product can handle close to 50msg/s. Supporting higher frequency of messages is as easy as dedicating more resources to the integration environment."
+    -
+        question: "Can Datica help with Single-Sign-On within an EHR integration?"
+        answer: "Potentially yes. It will depend on your type of integration. You will want to engage with our Managed Integration services to determine fit."
+
+pricing:
+    -
+        question: "Do Docker containers dedicated for compliance components, like monitoring or logging, count against my allocated RAM?"
+        answer: "No. All resources required to run Datica's compliance layer supporting your environment are included with every account. RAM allocated for customers is reserved strictly for your technology, such as application or database hosting. "
+    -
+        question: "Do backups and disaster recovery count against my allocated disk space?"
+        answer: "No. Similar to RAM allocation, available disk space is entirely yours. Nightly backups are a basic feature of Datica's platform, and the space they required is baked into the product."
+    -
+        question: "What is included in the Business Associate Agreement?"
+        answer: "Datica's BAA is publicly available here: [policy.datica.com](https://policy.datica.com). We encourage you to review it and compare to others. If you have any questions about your coverage, please feel free to contact us. "
+    -
+        question: "Is your Business Associate Agreement negotiable?"
+        answer: "Enterprise-tier customers may negotiate separate BAAs. Customers on the developer and growth tiers should plan to use Datica’s standard BAA."
+    -
+        question: "Am I able to pick which cloud infrastructure provider I wish to deploy my application?"
+        answer: "This capability is only available to Enterprise-tier customers."
+    -
+        question: "What if I need extra help, like to re-architect my application for containerization, etc?"
+        answer: "Datica provides a variety of custom Services that most likely will fit your need."
+    -
+        question: "How does Datica handle licensing fees for technology like SQL Server or Oracle DB via AWS RDS?"
+        answer: "Licensing fees are pass through to our customers. If a customer requires proprietary technology within their environment configuration, Datica does not take on the license fees to use that technology."

@@ -1,0 +1,23 @@
+<%# p = locals[:item] %>
+<% if p.has_key?("cta_image") %>
+    <aside class="cta cta--image" id="cta">
+        <a class="" href="<%= p["cta_url"] %>" title="<%= p["cta_label"] %>">
+            <img src="<%= p["cta_image"]["url"] %>" alt="<%= p["cta_label"] %>">
+        </a>
+    </aside>
+<% else %>
+    <% if p.has_key?("cta_color") %>
+        <aside class="callout cta callout--<%= p["cta_color"] %><% if p["cta_color"] == ("gray-light" || "white") %> drop<% end %>" id="cta">
+    <% else %>
+        <aside class="callout cta callout--blue" id="cta">
+    <% end %>
+        <% if p.has_key?("cta_icon") %>
+            <img src="<%= p["cta_icon"] %>" alt="icon" class="cta--icon inject-me svg-color--<% if p.has_key?("cta_color") && p["cta_color"] == ("gray-light" || "white") %>blue<% else %>white<% end %>">
+        <% end %>
+        <div class="cta--body<% if p.has_key?("cta_icon") %> cta--body-right<% end %>">
+            <h3 class="headline-3 cta--header"><%= p["cta_title"] %></h3>
+            <p class="cta--desc"><%= p["cta_desc"] %></p>
+            <a class="button--cta button button--<% if p.has_key?("cta_color") && p["cta_color"] == ("gray-light" || "white") %>primary<% else %>light<% end %>" href="<%= p["cta_url"] %>"><%= p["cta_label"] %>  <i class="fa fa-angle-right"></i></a>
+        </div>
+    </aside>
+<% end %>

@@ -1,0 +1,17 @@
+<div class="column media-object card-person">
+    <% if p.has_key?("profile_pic") %>
+        <div class="media-object-section"><img src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=250&fm=jpg&q=60" class="avatar avatar--large circle" alt="<%= p["fullname"] %>"></div>
+    <% end %>
+    <div class="media-object-section main-section align-self-middle">
+        <h4 class="person-name">
+            <% if p.has_key?("profile_URL") %>
+                <a href="<%= p["profile_URL"] %>" title="Learn more about <%= p["fullname"] %>">
+                    <%= p["fullname"] %>
+                </a>
+            <% else %>
+                <%= p["fullname"] %>
+            <% end %>
+        </h4>
+        <p class="person-title"><%= p["role"] %></p>
+    </div>
+</div>

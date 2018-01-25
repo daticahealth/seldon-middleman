@@ -1,0 +1,113 @@
+@mixin color--white {
+    background-color: $white;
+}
+@mixin color--dark {
+    background-color: $color_deep;
+    color: $white;
+}
+@mixin color--dark-alt {
+    background-color: $color_deep-alt;
+    color: $white;
+}
+@mixin color--blue {
+    background-color: $color_prime;
+    color: $color_white;
+}
+@mixin color--blue-bright {
+    background: linear-gradient(to right, $color_prime-alt 0%, adjust-color($color_prime-alt, $hue: -20%, $lightness: 10%, $saturation: 80%) 100%);
+    color: $white;
+}
+@mixin color--blue-alt{
+    background-color: $color_prime-alt;
+    color: $white;
+}
+@mixin color--blue-bright-noise {
+    @include noisy;
+    color: $color_white;
+    // background: linear-gradient(to right, $color_prime-alt 0%, adjust-color($color_prime-alt, $hue: -20%, $lightness: 10%, $saturation: 80%) 100%);
+    &:before {
+        background: linear-gradient(to right, $color_prime-alt 0%, adjust-color($color_prime-alt, $hue: -20%, $lightness: 10%, $saturation: 80%) 100%);
+    }
+}
+@mixin color--gray {
+    background-color: $color_talk;
+    background: linear-gradient(to bottom, $color_talk 0%, adjust-color($color_talk, $lightness: 15%) 100%);
+    color: $color_white;
+}
+@mixin color--gray-light {
+    background-color: $color_light-alt;
+    color: $body-font-color;
+}
+@mixin color--white-to-gray-light {
+    background-color: $gray-11;
+    background: linear-gradient(to bottom, $white 0%, $gray-11 100%);
+}
+@mixin color--gray-dark {
+    color: $color_white;
+    background-color: $color_deep-alt;
+    @include bg-noise;
+}
+@mixin color--gray-dark-grad {
+    background-color: $color_deep-alt;
+    background: linear-gradient(to top, $color_deep-alt 0%, adjust-color($color_deep-alt, $lightness: 10%) 100%);
+    color: $color_white;
+}
+@mixin color--gray-dark-grad-noise {
+    @include noisy;
+    color: $color_white;
+    // @include gradient(-135deg, #2B2D45 0%, #1E2127 52%, #1E2127 100%);
+    &:before{
+        @include gradient(-135deg, #2B2D45 0%, #1E2127 52%, #1E2127 100%);
+    }
+}
+@mixin noisy {
+    // color: $color_white;
+    position: relative;
+    &:before, &:after {
+        content:"";
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+    }
+    &:before{
+        z-index:-2;
+        // let the class that calls this mixin handle the gradient, ex:
+        // background-image: radial-gradient(50% 50%, #17181D 50%, #17181D 83%);
+    }
+    &:after{
+        opacity: 0.25; // global noise opacity. Can barely see it at .25.
+        z-index:-1;
+        @include bg-noise;
+    }
+}
+@mixin color--purple-grad {
+    background-color: $color_purple-deep;
+    background: linear-gradient(to bottom, $color_purple-deep 0%, $color_deep-alt 20%, $color_deep-alt 80%, $color_purple-deep 100%);
+    color: $color_white;
+}
+@mixin color--red {
+    background-color: $color_service;
+    color: $color_white;
+}
+@mixin color--red-dark {
+    background-color: $color_service;
+    color: $color_white;
+}
+@mixin color--tint {
+    background: black(0.8);
+    color: $color_white;
+}
+@mixin color--dark-alpha{
+    background: rgba(0,0,0,0.3);
+    color: $color_white;
+}
+@mixin color--red-dark {
+    background-color: $color_service;
+    color: white;
+}
+@mixin color--tint {
+    background-color: black(0.8);
+    color: white;
+}

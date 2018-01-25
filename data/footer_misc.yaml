@@ -1,0 +1,16 @@
+-
+    title: "&copy; Datica Health, Inc."
+    url: "/"
+    desc: "Datica Health, Inc main page"
+-
+    title: "(888) 377-3184"
+    url: "tel:8883773184"
+    desc: "Tap to call us"
+-
+    title: "hello@datica.com"
+    url: "mailto:hello@datica.com"
+    desc: "Email us today"
+-
+    title: "316 W Washington Ave. Suite 900, Madison, WI 53703"
+    url: "https://www.google.com/maps/place/316+W+Washington+Ave+%23900,+Madison,+WI+53703/@43.0730573,-89.3905378,17z/data=!3m1!4b1!4m5!3m4!1s0x88065339c57a9895:0xe80da136f666e278!8m2!3d43.0730573!4d-89.3883491"
+    desc: "See our location in Google maps"

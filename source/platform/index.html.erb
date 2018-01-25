@@ -1,0 +1,171 @@
+---
+title: "Datica Platform for Compliance in the Cloud"
+summary: "The Datica Platform provides compliant hosting and data integration for digital health products"
+navTitle: "Platform Overview"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "July 15, 2017"
+ogType: "product"
+share_image: "/public/img/share-posters/datica-social-twitter-thumb.png"
+customCSS: "platform"
+layout: platform
+collectionName: "platform"
+collectionOrder: 1
+priority: "0.9"
+---
+<aside class="hide-for-large pad--sm container-color--blue-alt">
+    <div class="row align-middle align-center">
+        <div class="columns small-6 medium-4">
+            <a href="/platform/technology" title="Datica Platform Technology" class="button hollow--inverted expanded small nomargin">Technology <i class="fa fa-angle-right"></i></a>
+        </div>
+        <div class="columns small-6 medium-4">
+            <a href="/pricing" title="sign up" class="button button--light expanded small nomargin">Pricing <i class="fa fa-icon fa-angle-right"></i></a>
+        </div>
+    </div>
+</aside>
+<section class="section-article container-color--gray-light">
+    <div class="row align-center">
+        <div class="columns small-12 medium-10 large-6 text-center">
+            <h1 class="headline-3">The cloud enablement layer for <br><strong>all healthcare</strong> applications</h1>
+            <p>The Datica platform makes hosting compliant healthcare applications and data integration tooling as simple as <code>git-push</code>.</p>
+        </div>
+    </div>
+    <div class="row align-center">
+        <div class="columns small-12 large-4">
+            <hr>
+        </div>
+    </div>
+    <div class="row align-center">
+        <div class="columns small-12 large-4">
+            <p>The Datica platform enables you to focus on building and securing your app by managing all compliance and security obligations on the cloud.</p>
+            <p>This is what <strong>complete HIPAA compliance in the cloud</strong> looks like.</p>
+        </div>
+        <div class="columns small-12 large-8">
+            <img class="img-crisp" src="/public/img/platform-overview-diagram-2x.png" alt="Compliance Overview diagram">
+        </div>
+    </div>
+</section>
+<section class="section-article">
+    <div class="row group align-center">
+        <div class="columns small-12">
+            <script src="https://fast.wistia.com/embed/medias/08ebxufc4q.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_08ebxufc4q seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+        </div>
+    </div>
+    <div class="row small-up-1 medium-up-3 group">
+        <% data.views.compliant_cloud.block_innovation_a.each do |item| %>
+            <div class="column">
+                <!-- the icons are inlined with .inject-me and a color class, but not strictly necessary. -AW -->
+                <img class="icon-size--medium inject-me svg-color--black" src="<%= item["icon"] %>" alt="<%= item["title"] %> icon"/>
+                <p><strong><%= item["title"] %></strong></p>
+                <p><%= item["body"] %></p>
+            </div>
+        <% end %>
+    </div>
+</section>
+<section class="section-article container-image--fixed container-color--blue-bright-noise">
+    <div class="row align-center">
+        <div class="columns small-12 medium-10 large-8 text-center">
+            <h2 class="headline-4 nomargin">Platform use cases</h2>
+            <p class="lead">How developers use the Datica platform</p>
+        </div>
+    </div>
+    <div class="row align-center">
+        <div class="small-12 large-11">
+            <div class="row align-justify align-middle platform-bg-bridge" data-interchange="[/public/img/bg/datica-bridge-w.png, medium]">
+                <div class="columns small-12 medium-5 large-5 text-center">
+                    <div class="card drop">
+                        <div class="card-section">
+                            <h3 class="headline-4">Your App</h3>
+                            <p>Host your digital health application just like you would on any other cloud provider, except being fully HIPAA compliant. Deployment is as simple as a <code>git-push</code>.</p>
+                        </div>
+                        <div class="card-divider card-divider--flush">
+                            <a href="/platform/technology" title="View tech support and features">View tech support and features <i class="fa fa-icon fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns small-12 medium-5 large-5 text-center">
+                    <div class="card drop">
+                        <div class="card-section">
+                            <h3 class="headline-4">Data Integration</h3>
+                            <p>Instantly spin up the complete cloud toolset to conduct compliant, scalable data exchange with EHRs or other systems.</p>
+                        </div>
+                        <div class="card-divider card-divider--flush">
+                            <a href="/platform/integration" title="Learn more about integration capabilities">Learn more about integration capabilities <i class="fa fa-icon fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-article">
+    <div id="companies" class="row align-center">
+        <div class="columns small-12 large-12 text-center">
+            <h3 class="headline-3"><strong>World-class companies</strong> trust Datica</h3>
+            <div class="logo-cloud group">
+                <% data.views.home.customers.each do |logo| %>
+                    <img src="/public/img/customer-logos/sm/<%= logo["file"] %>.png" alt="<%= logo["name"] %>" class="logo-cloud--item logo-size--<%= logo['logoSize'] %>" />
+                <% end %>
+            </div>
+            <a href="/platform/success" title="Customer Success Stories" class="button hollow">View Customer Success Stories <i class="fa fa-icon fa-angle-right"></i></a>
+        </div>
+    </div>
+</section>
+<section class="section-article container-color--gray-dark-grad-mono-noise">
+    <div class="row align-center">
+        <div class="columns small-12 medium-8 text-center section--header-dark-group">
+            <h3 class="headline-3">Compliance ownership is a liability, not an asset. Don't shoulder that risk by yourself.</h3>
+        </div>
+    </div>
+    <div class="row align-center">
+        <p class="lead text-center">Those who choose the Datica Platform get the calculus right.</p>
+        <div class="columns small-12 large-8">
+            <table class="table table--dark table--chubby-cells">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>What we do...</th>
+                        <th>...to your benefit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="fa fa-check green-check"></i></td>
+                        <td><strong>BAAs</strong><br/>Datica takes on all the risk via one smart Business Associate Agreement.</td>
+                        <td>You don't have to juggle multiple BAAs and align conflicting requirements&mdash;typically a huge headache!</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-check green-check"></i></td>
+                        <td><strong>Up-to-date</strong><br/>Datica is responsible for staying current with all regulation changes.</td>
+                        <td>You never have to spend time and money to stay current on government changes, which are hard to track.</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-check green-check"></i></td>
+                        <td><strong>Audits</strong><br/>Datica absorbs the cost of third-party audits and HITRUST certification.</td>
+                        <td>It all comes down to audits, which can cost $100,000s across technologies, and are reoccurring annual costs.</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-check green-check"></i></td>
+                        <td><strong>Maintenance Headaches</strong><br/>Datica shoulders the responsibility of maintenance, updates, and patches.</td>
+                        <td>Every single update or patch you would do to your infrastructure needs to be done in a compliant way. The time-cost requirements add up quickly.</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-check green-check"></i></td>
+                        <td><strong>Time-to-Market</strong><br/>Datica's tools immediately bring your organization to the starting line, enabling focus on business priorities.</td>
+                        <td>Do not waste precious months getting your infrastructure to a compliant state just to get started on your product or initiative.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section class="section-article container-color--gray-light">
+    <div class="row group">
+        <div class="column text-center">
+            <div class="group">
+                <img class="log-size--medium" src="/public/img/apn-tech-small.png" alt="apn tech">
+            </div>
+            <p>Datica is an <strong>Amazon Web Services Advanced Tier Technology Partner</strong> with a <strong>Healthcare Competency</strong> focus.</p>
+        </div>
+    </div>
+</section>

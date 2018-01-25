@@ -1,0 +1,84 @@
+// ==== Headers ====
+// Base header styles are spec'd in _settings.scss:278. Overrides & tweaks here.
+// all header styles collected in the Guide /guide/typography.
+
+
+// we need these functions for that nice loop at end
+@import 'node_modules/foundation-sites/scss/foundation.scss';
+
+.headline {
+    &-1 {
+        font-weight: $font-weight-light;
+    }
+    &-2 {
+        font-weight: $font-weight-light;
+    }
+    &-3 {
+        // font-weight: $font-weight-regular;
+    }
+    &-4 {
+        font-weight: $font-weight-bold;
+    }
+    &-5 {
+        font-weight: $font-weight-bold;
+    }
+    &-6 {
+        font-style: normal;
+        font-weight: $font-weight-bold;
+        opacity: 0.8;
+    }
+    &-1, &-2, &-3, &-4, &-5, &-6 {
+        margin-bottom: $header-margin-bottom;
+        line-height: $header-lineheight;
+    }
+}
+// note - subheaders moved to type.scss because order of ops with opacity - AW
+
+// (based on Foundation header size list in settings, which drives all current headers)
+$headline-sizes: (
+  small: (
+    '.headline-1': 42,
+    '.headline-2': 30,
+    '.headline-3': 26,
+    '.headline-4': 22,
+    '.headline-5': 18,
+    '.headline-6': 16,
+  ),
+  medium: (
+    '.headline-1': 42,
+    '.headline-2': 30,
+    '.headline-3': 26,
+    '.headline-4': 22,
+    '.headline-5': 18,
+    '.headline-6': 16,
+  ),
+  large: (
+    '.headline-1': 58,
+    '.headline-2': 46,
+    '.headline-3': 32,
+    '.headline-4': 22,
+    '.headline-5': 18,
+    '.headline-6': 16,
+  )
+);
+
+// Heading sizes
+@each $size, $headers in $headline-sizes {
+  @include breakpoint($size) {
+    @each $header, $font-size in $headers {
+      #{$header} {
+        font-size: rem-calc($font-size);
+      }
+    }
+  }
+}
+
+.subheader-small {
+    @extend .spaced-out;
+    font: {
+        weight: $font-weight-bold;
+        size: rem-calc(12);
+    }
+    opacity: 1;
+    margin-bottom: 0.3em;
+}

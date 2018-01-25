@@ -1,0 +1,49 @@
+<%
+unless p.has_key?("accent_color")
+    accent_color = "container-color--blue-alt"
+end
+unless p.has_key?("container_color")
+    p.container_color = "container-color--dark-alt"
+end
+if p.has_key?("bg_image")
+    # puts "warning: the report section promo at #{current_page.data.url} has no 'bg_image'. "
+    # the_img = p.bg_image.url
+    section_style = %(class="section-article container-color--dark-alt container-image--center #{p.container_color}" data-interchange="[#{p.bg_image.url}#{image_featured_large}, small]")
+else
+    section_style = %(class="section-article #{p.accent_color} #{p.container_color}")
+end
+if p.has_key?("image_thumb")
+    # image_thumb = p.image_thumb.url
+    callout_style = %(class="callout--thumb callout--large #{p.container_color}" data-interchange="[#{p.image_thumb.url}?fit=thumb&w=600, medium]")
+else
+    callout_style = %(class="callout callout--large callout--gray-light drop")
+end
+unless defined?(headline)
+    headline = "Datica Innovation Report"
+end
+%>
+<div class="callout">
+<h4 class="subhead--spaced faded headline-6"><%= headline %></h4>
+<h3 class="headline-5"><%= p.title %></h3>
+<% if p.has_key?("image_thumb") %>
+    <a href="/innovation/<%= p.slug %>" title="Free report: <%= p.title %>">
+        <img src="<%= p.image_thumb.url %>?w=400" alt="Free report: <%= p.title %>">
+    </a>
+<% else %>
+    <%= Kramdown::Document.new(p["lead"]).to_html %>
+    <%= 
+    partial "partials/snippets/button", 
+        :locals => {
+            :label => "Download your free report", 
+            :title => "Get the report", 
+            :url => "/innovation/" + p.slug, 
+            # :rel => "external", 
+            :button_classes => "button button--primary card-button-override", 
+            :icon => "icon-chevron-right", 
+            :icon_color => "white", 
+            :icon_align => "right"
+        }
+    %>
+<% end %>
+</div>
+</div>

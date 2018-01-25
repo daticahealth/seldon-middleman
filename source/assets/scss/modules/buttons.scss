@@ -1,0 +1,138 @@
+// .button-group {
+//     .button:not(.button-hollow) {
+//         border: 0;
+//     }
+// }
+
+.button {
+    // global button attributes
+    border: 0px; // For some reason there's a 1px solid transparent border being added to the button, I can't find where it originates - RR
+    // @include easing($timing-default);
+    line-height: 1.15;
+    @include fx-hover-nudge();
+    font: {
+        weight: $font-weight-mid; // chose the 500 weight for best legibility.
+        family: $font_sans !important; // overrides normalize.css
+    }
+    // &:focus{
+    //     background-color: inherit;
+    //     color: inherit;
+    //     @include transform(translate(rem-calc(0px), rem-calc(0px)));
+    // }
+    // button style variations must change as little as possible. Base padding, sizing, etc. is default .button
+    &--primary {
+        @include gradient(to bottom, $color_prime-alt 0%, lighten($color_prime-alt, 7%) 100%);
+        color: $color_white;
+        &:active, &:focus {
+            // color: $color_product;
+            @include gradient(to bottom, darken(#2C72FF, 5%) 0%, darken(#1260FF, 10%) 100%);
+        }
+    }
+    &--dark {
+        @include gradient(to bottom, $gray-3 0%, $gray-1 100%);
+        color: $color_white;
+        &:active, &:focus {
+            // color: $color_product;
+            background-color: $black;
+            // @include gradient(to bottom, $gray-1 0%, $gray-2 100%);
+        }
+    }
+    &--light, &--tertiary { // use these on dark or busy backgrounds
+        @include gradient(to bottom, white 0%, $gray-12 100%);
+        // @include shadow-anarchy(inset 0 -1px 2px 0 #B3C8D6);
+        color: darken($color_product, 20%);
+        &:hover, &:active, &:focus {
+            color: black;
+            // @include gradient(to bottom, $gray-12 0%, $gray-11 100%);
+        }
+    }
+    &--transparent{
+        font-size: rem-calc(12px);
+        @include opacity(0.5);
+        &-dark{
+            background-color: rgba(0,0,0,0.1);
+            color: $color_talk-alt;
+            &:hover &:active, &:focus {
+                background-color: $color_deep;
+            }
+        }
+    }
+    &--notification {
+        background: $color_white;
+        color: $color_talk-alt;
+        padding: 10px;
+        font-size: $global-font-size;
+        font-weight: $font-weight-regular;
+        text-align: left;
+        @include shadow-anarchy(0px 3px 6px $color_shadow);
+        @include border-radius(8px);
+        &:hover &:active, &:focus {
+            background-color: $color_white;
+            color: initial;
+            @include shadow-anarchy(0px 4px 10px darken($color_shadow, 10%));
+        }
+    }
+    &--inline {
+        margin-bottom: 0;
+    }
+    &--inverted {
+        // used in close buttons or plain inverted buttons
+        color: white;
+        &:hover &:active, &:focus {
+            color: lighten($color_yellow-glow, 10%);
+        }
+    }
+    // &--cta {
+    //     font-weight: $font-weight-bold;
+    // }
+    &.hollow-inverted {
+        border: 1px solid $white;
+        color: white;
+        background-color: transparent;
+        &:hover, &:focus {
+            color: lighten($color_yellow-glow, 10%);
+            border: 1px solid lighten($color_yellow-glow, 10%);
+        }
+    }
+    &.hollow-invisible {
+        border: 1px solid transparent;
+        background-color: transparent;
+        &:hover {
+            border: 1px solid inherit;
+        }
+    }
+    &--neat{
+        @include gradient (#59BDFF 0%, #548CFE 100%);
+        box-shadow: inset 0 -1px 2px 0 rgba(20,30,47,0.30);
+        font-weight: $font-weight-bold;
+        color: $color_white;
+        &:hover, &:active, &:focus {color: $color_light-alt;}
+    }
+    &.disabled {
+        // background-color: $gray-4;
+        opacity: 0.4;
+    }
+    &.small {
+        border-radius: $global-radius * 0.75;
+    }
+    &--big-ass { // it's really big
+        padding: 1.2rem;
+        font-size: 1.1rem;
+        width: 100%;
+        max-height: 100%;
+    }
+    &.round { // this is normally in Foundation, seems to be missing
+        border-radius: 1000px;
+    }
+    &[data-expand-on-small='true'] {
+        @include breakpoint(small only) {
+            @include button-expand(true);
+        }
+    }
+    &.card-button-override {
+        @include button-expand(true);
+        @include breakpoint(medium) {
+            @include button-expand(false);
+        }
+    }
+}

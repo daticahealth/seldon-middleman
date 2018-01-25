@@ -1,0 +1,8 @@
+<% p = locals[:item]
+# current_page.parent.data.title = p["title"]
+%>
+<% p["tags"].each do |tag| %>
+    <% if tag.has_key?("tag_full") %>
+        <span class="label label-hollow round"><%= tag["tag_full"] %></span>
+    <% end %>
+<% end %>

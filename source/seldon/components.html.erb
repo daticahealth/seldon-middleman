@@ -1,0 +1,250 @@
+---
+title: Components
+navTitle: Components
+summary: "Components are more complex objects, like varieties of cards."
+customCSS: styleguide
+hide_from_sitemap: true
+---
+<article class="context-content">
+<section class="section-article">
+    <div class="row">
+        <div class="columns small-12 large-8">
+            <h2 class="headline-2">Modals</h2>
+            <hr class="divider">
+            <p>Modal dialogs, or pop-up windows, are handy for prototyping and production. Foundation includes <a href="http://foundation.zurb.com/sites/docs/reveal.html" title="Foundation Reveal docs"></a>Reveal, the jQuery modal plugin, to make this easy for you.</p>
+        </div>
+        <div class="columns small-12 large-4">
+            <a data-toggle="reportModal1">
+                <img width="150" src="https://images.contentful.com/189dvqdsjh46/1OrH0GVvn2iAaqGuOMi66U/65b0f7f0407c6229bca3561517303c53/report-infographic-preview-sq.jpg?w=300" alt="Datica Innovation Report">
+            </a>
+
+            <div class="large reveal" id="reportModal1" data-reveal data-close-on-click="true" data-close-on-esc="true" data-animation-in="fade-in" data-animation-ou="fade-out">
+                <img data-interchange="[https://images.contentful.com/189dvqdsjh46/6ycPF4EFqMcoOWegYGKaKC/0ebdad302c5a47e8db14c72bf5527927/report-infographic-full.png, small]" alt="Datica Innovation Report">
+                <button class="close-button" data-close aria-label="Close reveal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-article">
+    <div class="row">
+        <div class="columns small-12 section--header-group">
+            <h2 class="headline-2">Callouts</h2>
+            <hr class="divider">
+            <p>Uses the flexbox n-up grid, and are responsive. Wrap <code>.callout</code> inside the <code>.column</code> classes to respect the padding.</p>
+        </div>
+    </div>
+    <div class="row small-up-1 medium-up-2 large-up-3 xlarge-up-3 group">
+        <div class="columns">
+            <div class="callout drop">
+                <h4 class="headline-4">Default Callout</h4>
+                <p>Use the <code>.drop</code> drop shadow class with it as a default. <code>.callout--hover</code> is an optional effect.</p>
+                <div class="text-center">
+                    <a href="#" class="button small button--primary">"Primary" button</a> <a href="#" class="button small hollow">Hollow button</a>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="callout--gray-light">
+                <h4 class="headline-4">Light Gray Callout</h4>
+                <p><code>.callout callout--gray-light</code> has a slight gray tint.</p> <p>HealthLoop achieved a first-year cost savings of $135,000 that continues to improve as it expands with the Datica Managed Cloud.</p>
+                <div class="text-center">
+                    <a href="#" class="button small button--primary">Primary button</a> <a href="#" class="button small hollow">Hollow button</a>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="callout--dark">
+                <h4 class="headline-4">Dark Gray Callout</h4>
+                <p><code>.callout callout--dark</code> has a dark, transparent tint.</p>
+                <p>Zipnosis was able to quickly scale to meet substantial growth in demand by trusting in the Datica Managed Cloud.</p>
+                <div class="text-center">
+                    <a href="#" class="button small button--light">Light button</a> <a href="#" class="button small hollow-inverted">Hollow button</a>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="callout--blue-bright">
+                <h4 class="headline-4">Callout - Primary Brand Color</h4>
+                <p><code>.callout callout--blue</code> has a slight gray tint.</p>
+                <p>In 2015, we open sourced our internal company policies to help relieve the burden of compliance for organizations large and small.</p>
+                <div class="text-center">
+                    <a href="#" class="button small button--light">Light button</a> <a href="#" class="button small hollow-inverted">Hollow button</a>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="callout--blue-bright">
+                <h4 class="headline-4">Callout - Bright blue gradient</h4>
+                <p><code>.callout callout--blue-bright</code> has a brighter blue-to-blue-green gradient and noise texture.</p>
+                <p>As FHIR matures as a data standard, health systems are struggling to understand the best way to leverage it.</p>
+                <div class="text-center">
+                    <a href="#" class="button small button--light">Light button</a> <a href="#" class="button small hollow-inverted">Hollow button</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-article container-color--gray-light full-width">
+    <div class="row">
+        <div class="columns small-12 medium-6">
+            <div class="callout callout--large drop-blue">
+                <h3 class="headline-3">Callout: Large</h3>
+                <p>You can add the dedicated sizing classes to callouts. This one adds <code>.callout callout--large</code>.</p>
+                <p>This callout also has the <code>.drop-blue</code> drop-shadow class added. Use these on any object you want drop shadow added to.</p>
+            </div>
+        </div>
+        <div class="columns small-12 medium-6">
+            <div class="callout drop">
+                <div class="row">
+                    <div class="columns medium-6">
+                        <h4 class="headline-4">Callout</h4>
+                        <p>Callouts can contain other callouts. Use the small variation in tight spaces.</p>
+                    </div>
+                    <div class="columns medium-6">
+                        <div class="callout--small callout--gray-light">
+                            <h5 class="headline-5">Callout: Small</h5>
+                            <p>You can add the dedicated sizing classes to callouts. This one adds <code>.callout callout--small</code>.</p>
+                            <a href="#" class="button small hollow">It's a callout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-article container-color--gray-dark full-width">
+    <div class="row small-up-1 medium-up-2 large-up-3 xlarge-up-3 group align-stretch">
+        <div class="columns">
+            <div class="callout callout--stretch drop-dark">
+                <h4 class="headline-4">Default Callout</h4>
+                <p>Use the <code>.callout</code> as the default.</p>
+                <ul class="menu simple">
+                    <li><span class="label">label</span></li>
+                    <li><img class="inject-me svg-color--gray icon-inline" src="/public/icons/brand/icon-ui-storage.svg" alt="an icon" /></li>
+                    <li><img class="inject-me svg-color--gray icon-inline" src="/public/icons/brand/icon-ui-open.svg" alt="an icon" /></li>
+                    <li><img class="inject-me svg-color--gray icon-inline" src="/public/icons/brand/icon-ui-links.svg" alt="an icon" /></li>
+                </ul>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="callout callout--stretch callout--gray-light drop-light">
+                <h4 class="headline-4">Light Gray Callout</h4>
+                <p><code>.callout callout--gray-light</code> has a slight gray tint.</p> <p>HealthLoop achieved a first-year cost savings of $135,000 that continues to improve as it expands with the Datica Managed Cloud.</p>
+                <ul class="menu simple">
+                    <li><span class="label">label</span></li>
+                    <li><img class="inject-me svg-color--gray icon-inline" src="/public/icons/brand/icon-ui-storage.svg" alt="an icon" /></li>
+                    <li><img class="inject-me svg-color--gray icon-inline" src="/public/icons/brand/icon-ui-open.svg" alt="an icon" /></li>
+                    <li><img class="inject-me svg-color--gray icon-inline" src="/public/icons/brand/icon-ui-links.svg" alt="an icon" /></li>
+                </ul>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="callout callout--stretch callout--dark">
+                <h4 class="headline-4">Dark Gray Callout</h4>
+                <p><code>.callout callout--dark</code> has a dark, transparent tint.</p>
+                <p>Zipnosis was able to quickly scale to meet substantial growth in demand by trusting in the Datica Managed Cloud.</p>
+                <ul class="menu simple">
+                    <li><span class="label tertiary">label tertiary</span></li>
+                    <li><img class="inject-me svg-color--white icon-inline" src="/public/icons/brand/icon-ui-storage.svg" alt="an icon" /></li>
+                    <li><img class="inject-me svg-color--white icon-inline" src="/public/icons/brand/icon-ui-open.svg" alt="an icon" /></li>
+                    <li><img class="inject-me svg-color--white icon-inline" src="/public/icons/brand/icon-ui-links.svg" alt="an icon" /></li>
+                </ul>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="callout callout--stretch callout--blue drop-dark">
+                <h4 class="headline-4">Callout - Primary Brand Color</h4>
+                <p><code>.callout callout--blue</code></p>
+                <p>In 2015, we open sourced our internal company policies to help relieve the burden of compliance for organizations large and small.</p>
+                <ul class="menu simple">
+                    <li><span class="label tertiary">label tertiary</span></li>
+                    <li><img class="inject-me svg-color--white icon-inline" src="/public/icons/brand/icon-ui-storage.svg" alt="an icon" /></li>
+                    <li><img class="inject-me svg-color--white icon-inline" src="/public/icons/brand/icon-ui-open.svg" alt="an icon" /></li>
+                    <li><img class="inject-me svg-color--white icon-inline" src="/public/icons/brand/icon-ui-links.svg" alt="an icon" /></li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="columns">
+            <div class="callout callout--stretch callout--blue-bright drop-dark">
+                <h4 class="headline-4">Callout - Bright blue gradient</h4>
+                <p><code>.callout callout--blue-bright</code> has a slight gray tint.</p>
+                <p>As FHIR matures as a data standard, health systems are struggling to understand the best way to leverage it.</p>
+                <ul class="menu simple">
+                    <li><span class="label secondary">label</span></li>
+                    <li><img class="inject-me svg-color--white icon-inline" src="/public/icons/brand/icon-ui-storage.svg" alt="an icon" /></li>
+                    <li><img class="inject-me svg-color--white icon-inline" src="/public/icons/brand/icon-ui-open.svg" alt="an icon" /></li>
+                    <li><img class="inject-me svg-color--white icon-inline" src="/public/icons/brand/icon-ui-links.svg" alt="an icon" /></li>
+                </ul>
+            </div>
+        </div> -->
+    </div>
+</section>
+<section class="section-article container-color--gray-light">
+    <div class="row">
+        <div class="columns small-12 section--header-group">
+            <h3 class="section--header">Background images with Interchange</h3>
+            <p>Each callout div here has <code>callout callout--stretch container-image-fill</code> applied. Be sure to choose a light or dark callout helper style, which will set the text to black or white to ensure readability.</p>
+        </div>
+    </div>
+    <div class="row small-up-1 medium-up-2 large-up-3">
+        <% data.guide.components.block_hitrust.each do |card| %>
+            <div class="column">
+                <div data-interchange="[<%= card["bg"] %>, small]" class="callout callout--stretch container-image-fill<% if defined?(card["style"]) && card["style"] == "dark" %> callout--dark<% end %>">
+                    <h4 class="cardTitle"><%= card["title"] %></h4>
+                    <p><%= card["body"] %></p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</section>
+<div class="section-strip--blue">
+</div>
+
+<section class="section-article container-color--white">
+    <div class="row align-center">
+        <div class="columns small-12 medium-8 section--header-group">
+            <h1 class="section--header">Logo Clouds</h1>
+            <hr class="divider">
+            <h3 class="headline-3">These logo clouds are designed to be responsive, and have options for logo sizing.</h3>
+            <h4 class="headline-4">Sizing</h4>
+            <p>Logo sizing is managed with the <code>.logo-size--[small|medium|large]</code>, attached to each logo image. This allows flexible sizing options, without having to style each individually when there are aspect ratio variations. The size classes manage the height of the image, and have responsive adjustments for different viewports.</p>
+            <h4 class="headline-4">Leverage Middleman Data Structures</h4>
+            <p>
+                Use the example Middleman loop in this page, with YAML data for easy management of custom logo clouds. They typically have a name, web url, filename, and can have per-item custom classes (great for sizing variations on odd aspect ratios).
+            </p>
+            <h4 class="headline-4">Flexbox Classes</h4>
+            <p>
+                The <code>.logo-cloud</code> class contains the objects with <code>.logo-cloud--item</code>, and uses flexbox for positioning. Use <code>.logo-size--[small|medium|large]</code> for sizing, and if you want grayscale logos with a CSS filter, apply <code>.logo-style--monochrome</code> to the <code><img></code> tag.
+            </p>
+            <p>
+                <a href="https://www.webaccessibility.com/best_practices.php?best_practice_id=808">Accessibility</a> is maintained through using <code>alt</code> <code>title</code> attributes, if the images are links (<a href="https://github.com/catalyzeio/seldon/pull/24#discussion_r90565246">Read more on accessibility</a>).
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="columns small-12 text-center">
+            <h3 class="section--subheader">Logo clouds</h3>
+            <div class="logo-cloud">
+                <% data.guide.components.customers_managed.each do |logo| %>
+                        <img src="/public/img/customer-logos/<%= logo["file"] %>.png" alt="<%= logo["name"] %>" class="logo-cloud--item logo-size--small logo-style--monochrome" />
+                <% end %>
+            </div>
+            <div class="button button-hollow">Learn more</div>
+            <hr/>
+        </div>
+        <div class="columns small-12 text-center">
+            <h3 class="section--subheader">We have successfully worked with all major EHRs</h3>
+            <div class="logo-cloud">
+                <% data.guide.components.customersCore.each do |logo| %>
+                    <img src="/public/img/customer-logos/<%= logo["slug"] %>-logo.png" alt="<%= logo["name"] %>" class="logo-cloud--item logo-size--<%= logo['logoSize']%> " />
+                <% end %>
+            </div>
+            <a href="http://codepen.io/allanwhite/pen/ORLgYX" class="button button-hollow">See a relevant logo cloud at this pen</a>
+        </div>
+    </div>
+</section>
+</article>

@@ -1,0 +1,411 @@
+.masthead {
+    color: white;
+    background: {
+        color: $color_deep-alt;
+    };
+    padding: 2em; //legacy - this sets it for old browsers
+    padding-bottom: 5vw;
+    padding-left:  3vw;
+    padding-right: 3vw;
+    @include breakpoint(xlarge up){
+        padding-left:  0;
+        padding-right: 0;
+    }
+    &--subheader {
+        font: {
+            size: 1.5em;
+            weight: $font-weight-bold;
+        };
+        opacity: 0.7;
+    }
+    &-featured { // for large featured images
+        @include background-fill (center top);
+        &--caption {
+            height: 30vw;
+            @include breakpoint (xlarge up){ // desktop
+                height: 40vw;
+            }
+        }
+
+        //@include background-fill (center top);
+    }
+}
+.section-article--stack { // adding this parent above sections will remove top padding on children, for stacking. Don't use with differing colors as is often the case. only in a group!
+    .section-article + .section-article {
+        border-top: 0;
+    }
+}
+.section {
+    &-article {
+        @include container-pad; // defaults for mobile -> ipad
+        // @include breakpoint (medium){ // ipad
+        //     padding: 2.5rem 1.875rem;
+        // }
+        @include breakpoint (medium){ // desktop
+            padding: 2.5rem 1rem;
+        }
+        @include breakpoint (large){ // desktop
+            padding: 3rem 1.875rem;
+        }
+        @include breakpoint (xlarge up){ // desktop xl
+            padding: 6.25rem 1.875rem;
+        }
+        // here's the deal with this. I intended for the padding in containers to scale with the viewport - giant screens get more padding, mobile keeps it tight. The VW units do that. BUT that means there is no "pixel-perfect state" regarding padding - it's fluid. That said, here's my compromise: variable padding for small to medium, and fixed above that for desktop. -AW
+        &--med {
+            @include container-pad; // defaults for mobile -> ipad
+            @include breakpoint (large up){ // desktop
+                padding: 3rem 1.875rem;
+            }
+        }
+        &--small {
+            padding: 1rem 1.875rem 1.2rem 1.875rem;
+        }
+        &--xlarge, &--xl {
+            @include container-pad; // defaults for mobile -> ipad
+            @include breakpoint (medium){ // desktop
+                padding: 20vw 1rem;
+            }
+            // @include breakpoint (large){ // desktop
+            //     padding: 3rem 1.875rem;
+            // }
+            // @include breakpoint (xlarge up){ // desktop xl
+            //     padding: 6.25rem 1.875rem;
+            // }
+        }
+    }
+    &--header {
+        &-group {
+            margin-bottom: 1.5rem;
+        }
+    }
+    // all section--type stuff is now in type.scss. - AW
+    &--icon {
+        margin-bottom: $pad / 3;
+        height: 42px;
+        width: 42px;
+    }
+    &--block {
+        margin-bottom: $pad / 2;
+    }
+    &-xpad { // for those times when you really want dat padding
+        padding-top:    6vw;
+        padding-bottom: 6vw;
+        // &--h {
+        //
+        // }
+    }
+    &--cta-blue {
+        @include color--blue-alt;
+        transition: all 400ms ease;
+        &:hover {
+            @include color--blue;
+        }
+    }
+    &--grad-bright {
+        color: white;
+        @include gradient(0deg, #ce1c26 0%, #1043ff 100%);
+    }
+}
+
+.group {// generic container; add .group to a div to give it extra bottom menu-margin
+    $gap: 1.5rem;
+    margin-bottom: $gap !important;
+    @include breakpoint(medium up) {
+        margin-bottom: $gap * 1.5 !important;
+    }
+    &--sm {
+        margin-bottom: $gap * 0.6 !important;
+        @include breakpoint(medium up) {
+            margin-bottom: $gap * 0.75 !important;
+        }
+    }
+    &--med { // moar spacing!
+        margin-bottom: $gap * 1.2 !important;
+        @include breakpoint(medium up) {
+            margin-bottom: $gap * 2 !important;
+        }
+    }
+    &--2x, &--lg { // moar spacing!
+        margin-bottom: $gap * 1.5 !important;
+        @include breakpoint(medium up) {
+            margin-bottom: $gap * 3 !important;
+        }
+    }
+}
+.pad {
+    $gap: 1.5rem;
+    padding: $gap;
+    &--sm {
+        padding: $gap * 0.6;
+    }
+    &--lg { // moar spacing!
+        padding: $gap * 1.5 !important;
+    }
+}
+.block { // useful when you need to cap the width of a person widget, etc.
+    &-width-medium {
+        max-width: 14rem;
+    }
+}
+.container { // this is generally only for color & image settings on containers
+    &-image {
+        &-fill {
+            @include background-fill (center top);
+        }
+        &--center {
+            @include background-fill (center center);
+        }
+        &--fixed {
+            background:{
+                attachment: fixed;
+                repeat: no-repeat;
+                size: cover;
+                position: center center;
+            }
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+        }
+        &--top {
+            @include background-fill (center top);
+            background-size: contain;
+        }
+        &--middle {
+            @include background-fill (center center);
+            background-size: contain;
+        }
+        &--bottom {
+            @include background-fill (center bottom);
+            background-size: contain;
+        }
+        // AW: Idea here is to have a background image for containers, that only appears on one side of the container, at medium or large widths.
+        // Use Interchange to pass attach an image in the markup.
+        // In this approach, [medium-to large] background images are not done in CSS classes.
+        // &--right {
+        //     // this occupies a full area; hack to hide it when at mobile widths
+        //     background-position: -900px;
+        //     @include breakpoint(large up) {
+        //         background-position: bottom right; // have a mixin for this
+        //     }
+        //     background:{
+        //         repeat: no-repeat;
+        //         size: contain; // sets it to height of container.
+        //     }
+        // }
+        // bg image, aligned right, designed for background
+        &--right {
+            background: {
+                position: center right;
+                repeat: no-repeat;
+                size: contain; // sets it to height of container.
+            }
+        }
+        &--right-bottom {
+            background: {
+                position: bottom right;
+                repeat: no-repeat;
+                size: contain; // sets it to height of container.
+            }
+        }
+        &--article-featured { // for blog another other article content
+            @include background-fill (center top); // chose center-top because of images with any people
+            height: 40vw; // will gently scale down with viewport
+            @include breakpoint(large up) {
+                height: 30vw;
+                border-radius: $global-radius;
+            }
+            display: block;
+            margin: 0 0 1rem 0;
+        }
+    }
+    @each $name, $color in $gray-list { // this generates all grays 1-12 (dark to lightest), sets color
+        $color-hsl: hsl-str($color);
+        &-#{$name} {
+            $color-lightness: lightness($color);
+            @if $color-lightness >= 50% {
+                color: #000;
+            }
+            @else {
+                color: #fff;
+            }
+            background-color: $color;
+            // &:after {
+            //     content: "#{$color}\A#{$color-hsl}";
+            //     @extend %hsl-labels;
+            // }
+        }
+    }
+    &-color { // this could totally be done with a sass-map, though there are some variations like gradients.
+        &--white {
+            @include color--white;
+        }
+        &--blue {
+            @include color--blue;
+        }
+        &--blue-bright {
+            @include color--blue-bright;
+        }
+        &--blue-alt {
+            @include color--blue-alt;
+        }
+        &--blue-bright-noise {
+            @include color--blue-bright-noise;
+        }
+        &--dark {
+            @include color--dark;
+        }
+        &--dark-alt {
+            @include color--dark-alt;
+        }
+        &--gray {
+            @include color--gray;
+        }
+        &--gray-light {
+            @include color--gray-light;
+        }
+        // &--gray-light-border-top-bottom {
+        //     @include color--gray-light;
+        //     border-top: rem-calc(1px) solid $color_border;
+        //     border-bottom: rem-calc(1px) solid $color_border;
+        // }
+        &--white-to-gray-light {
+            @include color--white-to-gray-light;
+        }
+        &--gray-dark {
+            @include color--gray-dark;
+        }
+        &--gray-dark-grad {
+            @include color--gray-dark-grad;
+        }
+        &--gray-dark-grad-noise {
+            @include color--gray-dark-grad-noise;
+        }
+        &--gray-light-grad-horizontal-noise {
+            @include noisy;
+            &:before {
+                background-image: linear-gradient(-135deg, $color_white 0%, #F3F7FF 100%);
+            }
+        }
+        &--tint-20 {
+            background-color: black(0.2);
+        }
+        &--tint-50 {
+            background-color: black(0.5);
+        }
+        &--tint-70 {
+            background-color: black(0.7);
+            color: white;
+        }
+        &--trans {// clear
+            background-color: transparent;
+            color: inherit;
+        }
+        &--gray-dark-grad-mono-noise {
+            @include noisy;
+            color: $color_white; // optional, only spec if needed
+            &:before {
+                background-image: radial-gradient(50% 50%, #17181D 50%, #17181D 83%);
+            }
+        }
+        &--gray-dark-grad-center-noise {
+            @include noisy;
+            color: $color_white; // optional, only spec if needed
+            &:before {
+                background-image: radial-gradient(50% 50%, #1B2044 50%, #17181D 83%);
+            }// you can adjust opacity in :after if needed
+        }
+        &--gray-gradient{
+            background-image: linear-gradient(top, $color_light-alt 50%, $color_white 100%);
+            background-image: -webkit-linear-gradient(top, $color_light-alt 50%, $color_white 100%);
+            background-image: -o-linear-gradient(top, $color_light-alt 50%, $color_white 100%);
+        }
+        &--gray-dark-grad-top-bottom-noise {
+            @include noisy;
+            color: $color_white; // optional, only spec if needed
+            &:before {
+                background-image: linear-gradient(-135deg, #1B2044 0%, #17181D 52%, #17181D 100%);
+            }
+        }
+        &--purple-grad-noise {
+            @include noisy;
+            color: $color_white; // optional, only spec if needed
+            &:before {
+                background-image: linear-gradient(-135deg, #3B4862 0%, #352A3D 52%, #2F335B 100%);
+            }
+        }
+        &--purple-grad {
+            @include color--purple-grad;
+        }
+        &--red {
+            @include color--red;
+        }
+        &--red-dark {
+            @include color--red-dark;
+        }
+        &--tint {
+            @include color--tint;
+        }
+    }
+    // generic container padding classes
+    &-pad {
+        &--medium {
+            padding: 1.5em; //legacy
+            padding: 3vw 2vw;
+        }
+        &--large {
+            padding: 2em; //legacy
+            padding: 4vw 3vw;
+        }
+    }
+}
+// just background colors
+.bg {
+    @each $name, $color in $fill-color-list { // this generates all grays 1-12 (dark to lightest), sets color
+        $color-hsl: hsl-str($color);
+        &--#{$name} {
+            $color-lightness: lightness($color);
+            @if $color-lightness >= 55% {
+                color: #000;
+            }
+            @else {
+                color: #fff;
+            }
+            background: $color;
+            // padding: 0.3em;
+            // display: inline-block;
+        }
+    }
+}
+// Vertical align helper
+.vertical-align {
+    display: block;
+    @include vertical-center;
+}
+
+.split-section {
+    &--dark {
+        background-color: rgba(0,0,0,0.2);
+    }
+}
+
+
+.row {
+    &--full-width { // Full width row - you can use .full-width on anything, same result. - AW
+        @extend .row;
+        max-width: 100%;
+    }
+    &--gutter-small { // when that default gutter is too wide. targets all child columns
+        .column {
+            padding-left: 0rem;
+        }
+    }
+}
+
+// Q: Why is .row {.row {}} so buggy? Going to remove this negative margin for now and see what happens
+// A: because (in Foundation land) a .column must always follow a .row. There should never be nested .row.row. - AW
+.row {
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

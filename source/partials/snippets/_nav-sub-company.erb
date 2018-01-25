@@ -1,0 +1,15 @@
+<% 
+if defined?(class_li)
+	list_class = " class=\"#{class_li}\""
+else
+	list_class = nil
+end
+unless defined?(class_a)
+	class_a = nil
+end
+%>
+<% data.nav_company.nav_items.each do |m| %>
+    <li<%= list_class %>>
+        <%= current_link_to m.title, m.url, title: m.desc, class: class_a %>
+    </li>
+<% end %>

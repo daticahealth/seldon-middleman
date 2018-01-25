@@ -1,0 +1,181 @@
+form{
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+form, input {
+    .button {
+        font-weight: $font-weight-bold;
+    }
+}
+.form-error{
+    li{
+        label{
+            font-size: rem-calc(14px);
+            font-weight: $font-weight-mid;
+            color: $color_service;
+        }
+    }
+}
+.form-header{
+    color: $color_talk-alt;
+    margin: 0 0 1rem 0;
+    border-bottom: rem-calc(1px) solid $color_border;
+}
+label{
+    font-size: 100%;
+    font-weight: $font-weight-mid;
+    color: $color_deep;
+    margin: 0;
+    padding: 0 0 rem-calc(10px) 0;
+}
+.contact-us-form-block{
+    .callout{
+        position: absolute;
+    }
+}
+.split-section-form{
+    .callout{
+        position: absolute;
+        @include breakpoint(small down){
+            position: relative;
+        }
+    }
+}
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea,
+input,
+input[type="text"],
+input[type="email"],
+input[type="number"]{
+    padding: rem-calc(10px);
+    color: $color_talk;
+    border: rem-calc(1px) solid $color_border;
+    @include border-radius(5px);
+    @include shadow-anarchy(0 0 0 transparent);
+    &:focus{
+        border: rem-calc(1px) solid $color_border;
+        @include shadow-anarchy(0 rem-calc(3px) rem-calc(6px) 0 rgba(0,0,0,0.12));
+    }
+}
+select{border: rem-calc(1px) solid $color_border;}
+
+// nav search field in top bar
+.input-nav {
+    @include breakpoint(large up) {
+        display: inline-block;
+    }
+    position: relative;
+    input[type="search"], input[type="text"] {
+        width: 100%;
+        @include breakpoint(large up) {
+            width: rem-calc(150);
+        }
+        margin: 0 1rem 0 0;
+        padding-left: 1.7rem; // room for icon
+        @include easing($timing-default);
+        &:focus {
+            @include breakpoint(large) {
+                width: rem-calc(170);
+            }
+            @include breakpoint(xlarge up) {
+                width: rem-calc(300);
+            }
+        }
+    }
+    &--black {
+        input {
+            background-color: white(1);
+            border: 1px solid black(0.25);
+            ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+                color: $gray-5;
+            }
+            color: $gray-5;
+            &:focus{
+                border: 1px solid black(1);
+                background-color: lighten($color_yellow-glow, 10%);
+                ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+                    color: $gray-3;
+                }
+                color: $black;
+            }
+        }
+    }
+    &--white {
+        input {
+            background-color: $color_deep-alt;
+            border: 1px solid white(0.25);
+            ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+                color: $gray-5;
+            }
+            color: $gray-5;
+            &:focus {
+                border: 1px solid white(1);
+                background-color: $black;
+                ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+                    color: $gray-10;
+                }
+                color: $white;
+            }
+        }
+    }
+    &--icon {
+        // color: white(0.5);
+        margin-left: 0.5rem;
+        position: absolute;
+        top: 0.4rem;
+        z-index: 1;
+    }
+    &--white &--icon {
+        color: white(0.5);
+    }
+    &--black &--icon {
+        color: black(0.6);
+    }
+}
+.filter-search { // used for long list filtering (academy, et. al.)
+    input[type="search"], input[type="text"] {
+        $input-width: 300;
+        width: 100%;
+        padding-bottom: 0;
+        padding-top:    0;
+        border: 2px solid black(0.4);
+        background-color: white;
+        @include breakpoint(large up) {
+            width: rem-calc($input-width);
+        }
+        ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+            color: $gray-3;
+            opacity: 1;
+        }
+        &:focus {
+            background-color: white;
+            border: 2px solid $color_prime-alt;
+            @include breakpoint(large) {
+                width: rem-calc($input-width + 20);
+            }
+            @include breakpoint(xlarge up) {
+                width: rem-calc($input-width + 150);
+            }
+        }
+    }
+}
+// overrides of Swiftype CSS.
+div.st-ui-autocomplete div.st-query-present a.st-ui-result, section.st-ui-slide-autocomplete div.st-query-present a.st-ui-result {
+    padding-left: rem-calc(15) !important;
+}

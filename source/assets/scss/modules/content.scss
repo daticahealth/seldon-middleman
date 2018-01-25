@@ -1,0 +1,56 @@
+$media-pad: $pad;
+article.content-dynamic {
+    margin-bottom: $media-pad; // this will add space above CTAs, only in <article>, allowing most content stuff to be applicable anywhere
+}
+// these article-level overrides for unstyled content from CMS (contentful). Apply this class on <article> or other spots you need these styles.
+.content {
+    &-dynamic {
+        p + h2, p + h3, p + h4 { // add a bit of space above headers preceded by <p>
+            margin-top: 1em; // type stuff in content-dynamic is em units - relative units valid here
+        }
+        p img {
+            &:not([class]) { // images in p without classes
+                min-width: 100%;
+                margin: $media-pad 0;
+            }
+        }
+        .lead {
+            margin-bottom: 2rem;
+        }
+        table {
+            margin-bottom: $media-pad * 1.5;
+        }
+        a { // like to see this become the standard everywhere. no links < 500 weight! -AW
+            font-weight: $font-weight-mid;
+        }
+        // reset sizes to headline classes; bump them down a notch
+        h1 { @extend .headline-2; }
+        h2 { @extend .headline-3; color: #000;} // very thin weight, needs more density in articles
+        h3 { @extend .headline-4; color: black(0.55);}
+        h4 { @extend .headline-5; color: black(0.5);}
+        h5 { @extend .headline-6; }
+        h6 { @extend .headline-6; }
+
+        blockquote {
+            @extend .quote--serif; // new style going forward
+            margin: 1.75rem 0 2rem 0rem;
+            @include breakpoint (medium) {
+                margin: 1.75rem auto 2rem auto;
+                max-width: 35em;
+                max-width: 65ch;
+            }
+            // & p { // p is often nested in bq
+            //     color: $gray-3;
+            // }
+        }
+        blockquote, blockquote p {
+            line-height: 1.7;
+        }
+        blockquote > p { // for those pesky nested situations
+            margin-top: -2rem;
+        }
+        h2 + blockquote, h3 + blockquote, h4 + blockquote { // for those times when a quote is right after a headline, seems to happen a lot...
+            margin-top: 0;
+        }
+    }
+}

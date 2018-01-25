@@ -1,0 +1,388 @@
+// functions includes mixins for now
+
+/// Return black or white with alpha
+/// @access public
+/// @param {Opacity} $opacity, 0-1
+/// @return - black or white with alpha, like rgba(0,0,0,0.4);
+@function black($opacity) {
+    @return rgba(0,0,0,$opacity);
+}
+@function white($opacity) {
+    @return rgba(255,255,255,$opacity);
+}
+/// Map deep get
+/// @author Hugo Giraudel
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} - Desired value
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+// === mixins ====
+$link-color-default: #fff !default;
+$underline: false !default;
+@mixin link-colors($color: $link-color-default, $hover-color: $color_yellow-glow, $has-underline: $underline ) {
+    color: $color !important;
+    &:hover {
+        color: $hover-color !important;
+        @if $has-underline == true {
+            border-bottom: 1px solid $hover-color;
+        }
+    }
+}
+@mixin spaced-out {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+@mixin border-radius($r){
+     -webkit-border-radius: ($r);
+     -moz-border-radius: ($r);
+     border-radius: ($r);
+}
+@mixin easing($s){
+    -moz-transition: all $s ease;
+    -webkit-transition: all $s ease;
+    -o-transition: all $s ease;
+    transition: all $s ease
+}
+@mixin transform($t){
+    -ms-transform: $t;
+    -webkit-transform: $t;
+    transform: $t;
+}
+
+@mixin vertical-center-text(){
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+@mixin animation($arg){
+    -webkit-animation: $arg;
+    -moz-animation: $arg;
+    -o-animation: $arg;
+    animation: $arg;
+}
+
+// this mixin sets up animations. Still need to call the newly created keyframed animation with the above
+// eg. @include animation (dotpulse 1s infinite); - AW
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin shadow($offset, $blur, $color, $opacity) {
+    // ex: shadow(0, 20px, $black, 0.4);
+    -moz-box-shadow: $offset $offset $blur transparentize($color, $opacity);
+    -webkit-box-shadow: $offset $offset $blur transparentize($color, $opacity);
+    box-shadow: $offset $offset $blur transparentize($color, $opacity);
+}
+@mixin shadow-anarchy($s...){ // no more kings! let chaos reign
+    -moz-box-shadow: $s;
+    -webkit-box-shadow: $s;
+    box-shadow: $s;
+}
+
+@mixin blur($radius){ // covers most browsers...FF needs JS for this I think. http://codepen.io/ebellempire/pen/rnvEK
+    $r: $radius * 1px;
+    filter: blur($r); /* Someday, sigh ... */
+    -webkit-filter: blur($r); /* Prefixed CSS3 blur filters */
+    -moz-filter: blur($r);
+    -o-filter: blur($r);
+    -ms-filter: blur($r);
+    // filter: url(#blur); /* Firefox needs SVG */
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='$radius'); /* IE lte 9 */
+}
+
+
+@mixin opacity($alpha){
+    opacity: $alpha;
+}
+@mixin container-pad() {
+    // padding: 5.5vw 4vw;
+    padding: 2rem 1rem; // any rows & cols should handle padding at small viewports. - AW
+}
+// centered bg images
+@mixin background-fill ($align...) { // center center
+    background:{
+        repeat: no-repeat !important;
+        position: $align !important;
+        size: cover;
+    }
+}
+
+/// Adds basic styles for a callout, including padding and margin. Forked from Foundation's callout mixin
+@mixin seldon-callout-base() {
+  margin: $callout-margin;
+  padding: $callout-padding;
+  border: $callout-border;
+  border-radius: $callout-radius;
+  position: relative;
+  // color: $callout-font-color;
+
+  // Respect the padding, fool.
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Mobile faux callout - this allows us to add the mixin to any class on mobile and -->
+// turn that into something that looks like a callout. This works best for blocks -->
+// of text that look nice without a callout on desktop, but fall apart on mobile
+@mixin mobile-callout(){
+    margin: 0 0 2.5rem 0;
+    padding: 1.2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    @include border-radius(rem-calc(6px));
+}
+
+@mixin button-hollow($color){
+    $button-border-width: 1px;
+    background-color: transparent;
+    background-image: none !important;
+    border: $button-border-width solid $color;
+    color: $color;
+    &:hover,
+    &:focus {
+        border: $button-border-width solid adjust-color($color, $lightness: 20%);
+        background-color: transparent;
+        color: adjust-color($color, $lightness: 20%);
+    }
+}
+
+// pass any arguments to a flex: statement
+@mixin flex-it ($set...){
+    -webkit-box-flex: 0;
+        -webkit-flex: $set;
+            -ms-flex: $set;
+                flex: $set;
+}
+@mixin fx-hover-nudge {
+    transition: all $timing-default * 0.8 ease-out;
+    &:focus,
+    &:hover {
+        transform: translate3d(3px, 0, 0);
+    }
+}
+
+// Gradient mixins
+
+@mixin gradient($args...){ // pass whatever you want, as long as it's a valid gradient
+    background-image: -webkit-linear-gradient($args);
+    background-image: -o-linear-gradient($args);
+    background-image: linear-gradient($args);
+}
+
+@mixin clip-path($a, $b, $c, $d){
+    -webkit-clip-path: polygon($a, $b, $c, $d);
+    clip-path: polygon($a, $b, $c, $d);
+}
+// Angled bottom -- right now this only works with solid colors :(
+@mixin angle($pseudo, $flip: false, $angle: 5.5deg){
+    @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both'{
+        position: relative;
+        z-index: 1;
+        $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
+        #{$selector}{
+            background: inherit;
+            content: '';
+            display: block;
+            height: 50%;
+            left: 0;
+            position: absolute;
+            right: 0;
+            z-index: -1;
+            -webkit-backface-visibility: hidden;
+        }
+        @if $pseudo == 'before'{
+            #{$selector}{
+                top: 0;
+                @if $flip{
+                    transform: skewY($angle * -1);
+                    transform-origin: 0 0;
+                }@else{
+                    transform: skewY($angle);
+                    transform-origin: 100% 0;
+                }
+            }
+        }
+        @if $pseudo == 'after'{
+            #{$selector}{
+                bottom: 0;
+                @if $flip{
+                    transform: skewY($angle);
+                    transform-origin: 0 100%;
+                }@else{
+                    transform: skewY($angle * -1);
+                    transform-origin: 100%;
+                }
+            }
+        }
+        @if $pseudo == 'both'{
+            &:before{
+                top: 0;
+                @if $flip{
+                    transform: skewY($angle * -1);
+                    transform-origin: 0 0;
+                }@else{
+                    transform: skewY($angle);
+                    transform-origin: 100% 0;
+                }
+            }
+            &:after{
+                bottom: 0;
+                @if $flip{
+                    transform: skewY($angle);
+                    transform-origin: 0 0;
+                }@else{
+                    transform: skewY($angle * -1);
+                    transform-origin: 100%;
+                }
+            }
+        }
+    }
+}
+// for the .status-dot classes in _icons. Pass a color and one of the $thing-[size] vars for nice defaults.
+@mixin status-dot($color, $size) {
+    @include border-radius(50%);
+    background-color: $color;
+    display: inline-block;
+    height: $size;
+    width:  $size;
+    // vertical-align: middle;
+}
+
+// Border radius only on right side
+@mixin border-radius-right($r){
+    -webkit-border-top-right-radius: $r;
+    -webkit-border-bottom-right-radius: $r;
+    -moz-border-radius-topright: $r;
+    -moz-border-radius-bottomright: $r;
+    border-top-right-radius: $r;
+    border-bottom-right-radius: $r;
+}
+
+// Border radius only on left side
+@mixin border-radius-left($r){
+    -webkit-border-top-left-radius: $r;
+    -webkit-border-bottom-left-radius: $r;
+    -moz-border-radius-topleft: $r;
+    -moz-border-radius-bottomleft: $r;
+    border-top-left-radius: $r;
+    border-bottom-left-radius: $r;
+}
+
+// Border radius only on bottom side
+@mixin border-radius-bottom($r){
+    -webkit-border-bottom-left-radius: $r;
+    -moz-border-radius-bottomleft: $r;
+    border-bottom-left-radius: $r;
+    -webkit-border-bottom-right-radius: $r;
+    -moz-border-radius-bottomright: $r;
+    border-bottom-right-radius: $r;
+}
+
+// Border radius only on TOP right side
+@mixin border-radius-top-right($r){
+    -webkit-border-top-right-radius: $r;
+    -moz-border-radius-topright: $r;
+    border-top-right-radius: $r;
+}
+
+// Border radius only on TOP left side
+@mixin border-radius-top-left($r){
+    -webkit-border-top-left-radius: $r;
+    -moz-border-radius-topleft: $r;
+    border-top-left-radius: $r;
+}
+
+// Border radius only on BOTTOM right side
+@mixin border-radius-bottom-right($r){
+    -webkit-border-bottom-right-radius: $r;
+    -moz-border-radius-bottomright: $r;
+    border-bottom-right-radius: $r;
+}
+
+// Border radius only on BOTTOm left side
+@mixin border-radius-bottom-left($r){
+    -webkit-border-bottom-left-radius: $r;
+    -moz-border-radius-bottomleft: $r;
+    border-bottom-left-radius: $r;
+}
+
+@mixin bg-noise {
+    background-image: url(data:image/png;base64,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);
+}
+
+// animation moved to modules/animation.scss. only functions & mixins here - because this file is @included by other files.
+
+@mixin textarea-selectable {
+    min-height: 9em;
+    font: {
+        family: $font-family-monospace;
+        size: 0.9rem;
+    }
+    background-color: transparent;
+    color: inherit; // from parent container
+    &:focus {
+        background-color: transparentize($color_prime-alt, 0.9);
+        color: inherit;
+    }
+    border: 1px solid transparentize($gray-7, 0.5);
+}
+
+@mixin hyphens ($args...){
+    -webkit-hyphens: $args;
+    -ms-hyphens:     $args;
+    hyphens:         $args;
+}
+// @ columns: 1 15em; column-gap: 2rem;
+@mixin multicolumns ($cols, $height, $gap: 1.5rem){
+    -webkit-columns: $cols $height;
+       -moz-columns: $cols $height;
+            columns: $cols $height;
+    -webkit-column-gap: $gap;
+       -moz-column-gap: $gap;
+            column-gap: $gap;
+}
+
+@mixin break-inside { // use in children of multicolumns such as .masonry-group--item
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+@mixin break-before {
+    -webkit-column-break-before: always;
+    // -moz-column-break-before: column; 
+    column-break-before: always;
+    break-before: column;
+}
+@mixin hover-border($color: $color_prime-alt, $border-width: 6px) {
+    // a .avatar {
+    transition: box-shadow 150ms ease;
+    // transition-delay: 0;
+    &:hover {
+        box-shadow: 0 0 0 $border-width $color;
+        // transition-delay: 100ms;
+    }
+    // }
+}

@@ -1,0 +1,197 @@
+
+  "name": "Calls To Action (CTA)",
+  "description": "A call-to-action that can be associated with any entry.",
+  "displayField": "ctaTitle",
+  "fields": [
+    {
+      "id": "ctaTitle",
+      "name": "Call to Action Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "max": 70
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "ctaDesc",
+      "name": "CTA Description",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "size": {
+            "max": 450
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "ctaLabel",
+      "name": "CTA Button Label",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "size": {
+            "max": 64
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "ctaURL",
+      "name": "CTA URL",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "regexp": {
+            "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-\\/]))?$"
+          },
+          "message": "Must be a fully qualified URL."
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "ctaLink",
+      "name": "CTA In-Site Reference",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkContentType": [
+            "academy",
+            "blog",
+            "caseStudy",
+            "spotlights",
+            "customers",
+            "glossary",
+            "guides",
+            "podcastEntry",
+            "pressReleases",
+            "products",
+            "whitepapers"
+          ]
+        }
+      ],
+      "disabled": true,
+      "omitted": true,
+      "linkType": "Entry"
+    },
+    {
+      "id": "ctaSvgIcon",
+      "name": "CTA SVG Icon",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "ctaIcon",
+      "name": "CTA Icon Path",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": true,
+      "omitted": false
+    },
+    {
+      "id": "ctaColor",
+      "name": "CTA Color",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "in": [
+            "white",
+            "gray-light",
+            "blue-alt",
+            "dark",
+            "dark-alt",
+            "tint"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "ctaImage",
+      "name": "CTA Full Image",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    }
+  ],
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "189dvqdsjh46"
+      }
+    },
+    "id": "cta",
+    "type": "ContentType",
+    "createdAt": "2016-08-15T20:54:29.091Z",
+    "updatedAt": "2017-09-14T22:21:11.718Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedCounter": 18,
+    "version": 36,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "60Kj4jclOBUIPO7QTlk4kN"
+      }
+    },
+    "publishedVersion": 35,
+    "firstPublishedAt": "2016-08-15T20:54:29.358Z",
+    "publishedAt": "2017-09-14T22:21:11.718Z"
+  }
+}
