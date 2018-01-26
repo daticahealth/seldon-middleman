@@ -10,15 +10,15 @@ hide_from_sitemap: true
 	<div class="row align-center">
 		<div class="columns small-12 medium-8 text-center group">
 			<p class="">To manage Calls-to-action, edit them in the "CTA" section of Contentful.</p>
-			<p>These are sorted most recently updated first, which is a rough proxy for newer promotions.</p>
+			<p>Sorted oldest to newest.</p>
 		</div>
 	</div>
     <div class="row full-width">
-        <% sorted_entries = data.site.cta.to_a.sort_by{ |id, p| p['_meta']['updated_at'].reverse! } %>
+        <% sorted_entries = data.site.cta.to_a.sort_by{ |id, p| p['_meta']['updated_at'] } %>
         <% sorted_entries.each do | id, p | %>
             <div class="columns small-12 medium-6">
             	<h5 class="headline-5"><%= p["cta_title"] %></h5>
-            	<div class="group">
+            	<div class="group--2x">
                 <%= partial("/partials/content/cta", :locals => { :p => p }) %>
                 </div>
 			</div>
@@ -29,6 +29,8 @@ hide_from_sitemap: true
   <img src="<%= h p["cta_image"]["url"] %>" alt="<%= h p["cta_label"] %>">
 </a>
 </textarea>
+<% elsif p.has_key?("cta_widget") %>
+<p>This CTA gets its code from another source, like Hubspot.</p>
 <% else %>
 <textarea rows="1">
 <a href="<%= h p["cta_url"] %>"><%= p["cta_title"] %></a>
