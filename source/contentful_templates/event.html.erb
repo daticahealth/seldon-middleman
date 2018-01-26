@@ -75,7 +75,7 @@ end
                             <% end %>
                         </p>
                     <% end %>
-                    <%= partial "/partials/snippets/share", :locals => { :p => p, :classes => "" }  %>
+                    <%#= partial "/partials/snippets/share", :locals => { :p => p, :classes => "" }  %>
                 </div>
             <% if p.has_key?("cta_ref") %>
                 <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
