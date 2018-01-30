@@ -44,6 +44,7 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashie (3.5.6)
+    htmlcompressor (0.2.0)
     http (2.2.2)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -99,6 +100,9 @@ GEM
       servolux
       tilt (~> 2.0)
       uglifier (~> 3.0)
+    middleman-minify-html (3.4.1)
+      htmlcompressor (~> 0.2.0)
+      middleman-core (>= 3.2)
     middleman-search_engine_sitemap (1.4.0)
       builder
       middleman-core (~> 4.0)
@@ -157,6 +161,7 @@ DEPENDENCIES
   inline_svg
   middleman
   middleman-blog
+  middleman-minify-html
   middleman-search_engine_sitemap
   oga
   sanitize

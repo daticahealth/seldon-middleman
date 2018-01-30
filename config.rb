@@ -58,29 +58,28 @@ configure :build do
     ignore 'contentful_templates/glossary.html.erb'
     config[:host] = 'https://datica.com'
     config[:host_label] = 'prod'
-    activate :asset_hash, :exts => %w(.css) # Only hash for .css
+    # minify HTML
+    activate :minify_html
+    # activate :asset_hash, :exts => %w(.css) # Only hash for .css
     # set :build_dir, 'build/'
 end
 configure :production do
-    config[:host] = 'http://development.datica.com'
+    config[:host] = 'https://datica.com'
     config[:host_label] = 'prod'
     set :build_dir, 'build/'
 end
 
 configure :development do
-    config[:host] = 'http://development.datica.com'
+    config[:host] = 'https://datica.netlify.com'
     config[:host_label] = 'dev'
     set :build_dir, 'build/'
 end
 
 configure :test do
-    config[:host] = 'http://development.datica.com'
+    config[:host] = 'http://localhost:3000'
     config[:host_label] = 'test'
-    set :build_dir, '../Datica_Seldon_Build'
+    set :build_dir, '../datica_build'
 end
-
-# Set build directory for new static build repo
-# set :build_dir, '../Datica_Seldon_Build'
 
 # Sitemap
 set :url_root, 'https://datica.com'
