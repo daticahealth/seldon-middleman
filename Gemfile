@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'middleman'
+gem 'middleman-minify-html'
 gem 'middleman-search_engine_sitemap'
 
 # https://github.com/middleman/middleman-minify-html#middleman-minify-html
