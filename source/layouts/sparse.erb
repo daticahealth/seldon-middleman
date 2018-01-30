@@ -12,16 +12,17 @@
             <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
         <% end %>
     </head>
+    <%= partial "partials/scripts/google-tm-body" %>
     <body class="<%= page_classes %>">
         <%#= partial "partials/snippets/alert-ribbon" %>
         <%= yield %>
         <% if build? %>
-            <%# GA %>
-            <%= partial "partials/head/hubspot" %>
-            <%= partial "partials/head/ga" %>
+            <%# Analytics %>
+            <%= partial "partials/scripts/hubspot" %>
+            <%= partial "partials/scripts/ga" %>
         <% end %>
         <%= partial "partials/snippets/footer" %>
-        <%#= partial "partials/head/scripts-footer" %>
+        <%#= partial "partials/scripts/footer" %>
         <%= javascript_include_tag "svg-injector" %>
         <script>
             document.addEventListener("DOMContentLoaded", function(event) {

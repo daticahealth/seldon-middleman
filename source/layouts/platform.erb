@@ -9,6 +9,7 @@
       <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
     <% end %>
 </head>
+<%= partial "partials/scripts/google-tm-body" %>
     <body class="<%= page_classes %>">
         <%#= partial "partials/snippets/alert-ribbon" %>
         <div class="container-gray-2">
@@ -31,11 +32,11 @@
             <% end %>
         </div>
         <%= partial "partials/snippets/footer" %>
-        <%= partial "partials/head/scripts-footer" %>
+        <%= partial "partials/scripts/footer" %>
         <% if build? %>
-            <%# GA %>
-            <%= partial "partials/head/hubspot" %>
-            <%= partial "partials/head/ga" %>
+            <%# Analytics %>
+            <%= partial "partials/scripts/hubspot" %>
+            <%= partial "partials/scripts/ga" %>
         <% end %>
         <%# Custom JS files %>
         <% if current_page.data.has_key?("customJS") %>
