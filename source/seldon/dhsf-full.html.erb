@@ -1,0 +1,188 @@
+---
+title: "Digital Health Success Framework"
+summary: "DHSF in full-page form."
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "July 12, 2017"
+share_image: "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+hide_from_sitemap: true
+customCSS: "dhsf"
+customJS: "/public/js/dhsf.js"
+---
+<style type="text/css">
+    /*li.menu-item {
+        ;
+    }*/
+    .df .menu li > a {
+        padding-left: 1rem;
+    }
+    .menu-item--link {
+        border-bottom: 3px solid transparent;
+    }
+    .is-current {
+        color: blue;
+        border-bottom: 3px solid blue;
+    }
+    .is-current:hover {
+        transition: all 200ms linear;
+        /*background-color: white(0);*/
+        border-bottom: 3px solid blue;
+    }
+
+
+</style>
+<div class="df dhsf">
+    <section class="section-article container-gray-12" id="df-top">
+        <div class="row">
+            <div class="columns small-12 medium-10 large-8">
+                <h1 class="subhead--small text--spaced">The Digital Health Success Framework</h1>
+                <p class="lead">The Digital Health Success Framework (DHSF) is a simple guide for the makers of digital healthcare products.</p>
+                <p class="lead">The Internet is full of  resources to help turn ideas into lean startups or businesses, but things are a little different in the wild wild west of digital health technology. There are considerations in healthcare not found in any other industry, and no one has time to learn them all.</p>
+                <p class="lead">We’ve simplified the unique complexities to help you get your digital health products from napkin scribble to market adoption with fewer surprises. You will leave with a better understanding of how to manage the challenges ahead.</p>
+                <p>It purposefully has a narrow scope, giving guidance around five main topics:</p>
+                <ul>
+                    <% data.views.dhsf.phases.each_with_index do |phase, id| %>
+                        <li><strong><%= phase["label"] %></strong>: <%= phase["desc"] %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div id="topicNav" class="show-for-medium group" data-sticky-container>
+        <nav class="sticky sticky-nav container-color--white drop text-center full-width" data-sticky data-options="marginTop:0; topAnchor:topicNav;">
+            <ul class="menu horizontal align-center align-middle" data-magellan data-options="activeClass:is-current; offset: 50; animationEasing: swing">
+                <li class="subhead--small text--spaced menu-item ">Topics</li>
+                <% data.views.dhsf.phases.each_with_index do |phase, id| %>
+                    <li class="menu-item">
+                        <a href="#df-<%= phase["slug"] %>-strategy" title="<%= phase["label"] %>" class="menu-item--link">
+                            <%= phase["label"] %>
+                        </a>
+                    </li>
+                <% end %>
+            </ul>
+        </nav>
+    </div>
+    <div id="content" class="df-container">
+        <% data.views.dhsf.phases.each_with_index do |phase, id| %>
+            <section id="df-<%= phase["slug"] %>-strategy" class="df-phase--section" data-magellan-target="df-<%= phase["slug"] %>-strategy">
+                <div class="row">
+                    <div class="columns small-12 large-8">
+                        <h2 class="headline-2"><%= phase["label"] %></h2>
+                        <p class="lead"><%= phase["desc"] %></p>
+                        <hr>
+                    </div>
+                </div>
+                <div id="df-<%= phase["slug"] %>-stage-content" class="_tabs-content df-stage" data-animate="fade-in fade-out" _data-tabs-content="df-stage--timeline-<%= id %>">
+                    <% phase["stages"].each_with_index do |stage, index| %>
+                        <div id="<%= phase["slug"] %>-<%= stage["slug"] %>" class="_tabs-panel df-stage--item">
+                            <div class="row">
+                                <div class="columns small-12 large-8">
+                                    <div class="subheader-small text--blue">Month <%= stage["time"] %></div>
+                                    <h3 class="headline-5">
+                                        <%= stage["title"] %> <a class="faded" href="/dhsf/#<%= phase["slug"] %>-<%= stage["slug"] %>" title="A link to the DHSF entry for '<%= stage["title"] %>'.">#</a>
+                                    </h3>
+                                    <% if phase.has_key?("lead") %>
+                                        <!-- <div class="subheader-small">Strategy Overview</div> -->
+                                        <div class="lead df-phase--lead" data-columns="false">
+                                            <%= Kramdown::Document.new(phase["lead"]).to_html %>
+                                        </div>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="columns small-12 large-8">
+                                    <!-- <div class="df-stage--content" data-columns="<% if stage["body"].length < 400 || stage.has_key?("col_full") %>false<% else %>true<% end %>"> -->
+                                    <div class="df-stage--content">
+                                        <div class="content-dynamic group"><%= Kramdown::Document.new(stage["body"]).to_html %></div>
+                                    </div>
+                                </div>
+                                <div class="columns small-12 large-4">
+                                    <% if stage.has_key?("asides") %>
+                                        <% stage["asides"].each do |aside| %>
+                                            <div class="group"><%= aside %></div>
+                                        <% end %>
+                                    <% end %>
+                                    <% if stage.has_key?("discovery_topic") %>
+                                        <% related_discover = data.site.discover[stage.discovery_topic.to_s] %>
+                                        <%= partial "/partials/cards/discover", :locals => { :post => related_discover, :classes => "group" } %>
+                                    <% end %>
+                                    <% if stage.has_key?("customer_id") %>
+                                        <% related_customer = data.site.customers[stage.customer_id.to_s] %>
+                                            <%= partial "/partials/content/card-case-study-compact",  :locals => { :cf_customer => related_customer, :subhead => "case study" } %>
+                                    <% end %>
+                                    <% if stage.has_key?("quote_id") %>
+                                        <% related_quote = data.site.quotes[stage.quote_id.to_s] %>
+                                        <!-- <blockquote class="quote-serif">
+                                            <%#= Kramdown::Document.new(related_quote.quote_body).to_html %>
+                                        </blockquote> -->
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </section>
+        <% end %>
+    </div>
+    <section class="section-article container-gray-12">
+        <div class="row align-center">
+            <div class="columns small-12 medium-10 large-8">
+                <div class="group text-center">
+                    <h4 class="subhead--small text--spaced">Background</h4>
+                    <h2 class="headline-3">The Details Behind the Framework</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row align-center">
+            <div class="columns small-12 medium-6 large-4">
+                <h3 class="headline-4" id="living-document">This is a living document</h3>
+                <p>The guide will be constantly evolving. Developing new articles and strategies are an on-going effort as Datica continues to have rich conversations with the market.</p>
+                <p>If you have any feedback, send an email to <strong>hello@datica.com</strong>. We love community input, but more importantly, we love to hear your story.</p>
+                <h3 class="headline-4" id="what-this-framework-is-not">What this framework is not</h3>
+                <p>Don’t mistake the DHSF as an all-encompassing guide to successful company-building. A successful business succeeds along innumerable dimensions, outside of compliance, infrastructure, or integration. This framework is not those ingredients:</p>
+                <ul>
+                    <li>Fundraising advice</li>
+                    <li>Company formulation practices</li>
+                    <li>Lean startup principles</li>
+                    <li>How to hire</li>
+                    <li>How to develop a strategy</li>
+                    <li>And so on</li>
+                </ul>
+                <p>That’s what incubators like YCombinator or Gener8tor do, or programs like Cedars-Sinai+TechStars, focus on.</p>
+                <p>Specific to healthcare, this framework does not go deep into FDA regulations or life science particulars like GxP. While there is significant overlap with our expertise in compliance, we aren’t yet experts in those arenas to provide a detailed guide on
+                    navigating the FDA or meeting GxP requirements. We will furnish helpful external resources to learn more elsewhere, however.</p>
+            </div>
+            <div class="columns small-12 medium-6 large-4">
+                <h3 class="headline-4" id="how-we-became-experts">How We Became Experts</h3>
+                <p>Over the last 4-plus years, Datica has engaged with thousands of digital health organizations, from single-founder startups to groups within Fortune 100 companies like Johnson &amp; Johnson or UnitedHealthcare. We often chat with them as they are figuring
+                    out how to deal with HIPAA compliance or data exchange. Some were far enough along with their idea to become customers, but many did not as they first searched for traction.</p>
+                <p>Over the course of several thousand conversations, we started to see clear patterns emerge around topics like technology, infrastructure, compliance, and interoperability. This framework is the distillation of what matters to the success of digital health
+                    products.
+                </p>
+                <p>Datica is not going to pretend we know the entire scope of what it takes to make a successful business—things like capitalization strategies or Lean Startup advice—or the best methodologies for product development—like debating waterfall vs. agile, or
+                    outcome-driven innovation. But we <em>do</em> have one of the most credible points of view on the technological underpinnings of digital health. Companies and teams, ideas and innovations, can look to this framework to obtain a stronger handle on
+                    an intelligent way to manage the underlying burdens unique to digital health products.</p>
+            </div>
+            <div class="columns small-12 medium-6 large-4">
+                <div class="callout callout--dark group">
+                    <div class="text-center">
+                        <h3 class="headline-4 nomargin" id="company-snapshot">Company Snapshot</h3>
+                        <div class="pub-date">As of July 1, 2017</div>
+                    </div>
+                    <ul>
+                        <li>3,272 unique organizations, companies, groups, and individuals with which we have engaged via a business relationship. Each one we heard their story, understood their needs, and observed their trajectory.</li>
+                        <li>Hundreds of digital health customers</li>
+                        <li>More than 200 integration partners</li>
+                    </ul>
+                </div>
+                <div class="group text-center">
+                    <a href="https://datica.com/guide/digital-health-success-framework-ebook/" title="Download your ebook">
+                        <img src="https://images.contentful.com/189dvqdsjh46/2q4JydYcuAgSQ6SKmy88US/47ce92d94666f955ab2ef252297fa838/dhsf-report-preview.png?w=500" alt="DHSF Ebook" class="group">
+                    </a>
+                    <!-- <h3 class="headline-4">Get your free DHSF ebook</h3> -->
+                    <a class="button hollow" href="/guide/digital-health-success-framework-ebook/" title="Download your ebook">Get your free DHSF ebook today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
