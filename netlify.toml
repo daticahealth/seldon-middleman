@@ -6,6 +6,7 @@
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
     strict-transport-security = "max-age=31536000; includeSubDomains"
+    Content-Security-Policy-Report-Only: default-src https: 'unsafe-inline' 'unsafe-eval'
 
 [Settings]
   ID = "3bbf38ec-f306-4e70-9223-dff0e4c980d3"
