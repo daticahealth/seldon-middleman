@@ -20,7 +20,7 @@ customJS: "/public/js/dhsf.js"
         border-bottom: 3px solid transparent;
     }
     .is-current {
-        color: blue;
+        color: black;
         border-bottom: 3px solid blue;
     }
     .is-current:hover {
@@ -28,8 +28,18 @@ customJS: "/public/js/dhsf.js"
         /*background-color: white(0);*/
         border-bottom: 3px solid blue;
     }
-
-
+    .df-stage--timeline {
+        z-index: initial;
+    }
+    .df-stage--timeline__line {
+        top: -2px;
+        margin-bottom: 2rem;
+    }
+    .df-stage--dot-group {
+        top: initial;
+        margin-bottom: initial;
+        z-index: 3;
+    }
 </style>
 <div class="df dhsf">
     <section class="section-article container-gray-12" id="df-top">
@@ -49,7 +59,7 @@ customJS: "/public/js/dhsf.js"
         </div>
     </section>
     <div id="topicNav" class="show-for-medium group" data-sticky-container>
-        <nav class="sticky sticky-nav container-color--white drop text-center full-width" data-sticky data-options="marginTop:0; topAnchor:topicNav;">
+        <nav class="sticky sticky-nav container-color--white drop-light text-center full-width" data-sticky data-options="marginTop:0; topAnchor:topicNav;">
             <ul class="menu horizontal align-center align-middle" data-magellan data-options="activeClass:is-current; offset: 50; animationEasing: swing">
                 <li class="subhead--small text--spaced menu-item ">Topics</li>
                 <% data.views.dhsf.phases.each_with_index do |phase, id| %>
@@ -65,13 +75,42 @@ customJS: "/public/js/dhsf.js"
     <div id="content" class="df-container">
         <% data.views.dhsf.phases.each_with_index do |phase, id| %>
             <section id="df-<%= phase["slug"] %>-strategy" class="df-phase--section" data-magellan-target="df-<%= phase["slug"] %>-strategy">
-                <div class="row">
-                    <div class="columns small-12 large-8">
-                        <h2 class="headline-2"><%= phase["label"] %></h2>
+
+                <div class="row df-stage--timeline">
+                    <div class="columns small-12 large-12 df-stage--dot-group">
+                        <h2 class="headline-3 no-wrap df-phase--title">
+                            <span data-tooltip aria-haspopup="true" class="" data-fade-in-duration="20" data-fade-out-duration="100" data-allow-html="true" data-disable-hover="false" data-v-offset="20" data-click-open="false"  title="<%= phase["desc"] %>">
+                                <%= phase["label"] %>
+                            </span>
+                        </h2>
                         <p class="lead"><%= phase["desc"] %></p>
-                        <hr>
+                        <ul class="tabs" data-tabs data-link-class="df-dot" data-active-collapse="true" id="df-stage--timeline-<%= id %>">
+                            <% phase["stages"].each_with_index do |stage, index| %>
+                                <li class="df-dot" style="left: <%= ((stage["time"].to_f / 36) * 100 ).to_i %>%;">
+                                    <a class="df-dot--link" href="#<%= phase["slug"] %>-<%= stage["slug"] %>">
+                                        <span data-tooltip aria-haspopup="true" class="badge df-badge has-tip top" data-fade-in-duration="20" data-fade-out-duration="100" data-allow-html="true" data-disable-hover="false" data-v-offset="20" data-click-open="false" tabindex="<%= index %>" title="Month <%= stage["time"] %>: <%= stage["title"] %>">
+                                            <%= stage["time"] %>
+                                        </span>
+                                    </a>
+                                </li>
+                            <% end %>
+                        </ul>
                     </div>
                 </div>
+                <div class="df-stage--timeline__line"></div>
+
+<!--                 <div class="row collapse df-series--container show-for-medium <% if id.to_i == 0 %> is-first<% end %>">
+                    <div class="columns small-12 medium-10 medium-offset-2 large-10 large-offset-2">
+                        <ul id="df-<%= phase["slug"] %>-series" class="menu expanded df-series">
+                            <li class="df-series--label">Start</li>
+                            <% data.views.dhsf.timespan.each do |time| %>
+                            <li class="df-series--label"><%= time %></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+ -->
+
                 <div id="df-<%= phase["slug"] %>-stage-content" class="_tabs-content df-stage" data-animate="fade-in fade-out" _data-tabs-content="df-stage--timeline-<%= id %>">
                     <% phase["stages"].each_with_index do |stage, index| %>
                         <div id="<%= phase["slug"] %>-<%= stage["slug"] %>" class="_tabs-panel df-stage--item">

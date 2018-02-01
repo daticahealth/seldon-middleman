@@ -8,6 +8,8 @@ current_page.data.title = p["title"] + " | Datica Events"
 current_page.data.summary = safe_summary(p.summary)
 if p.has_key?("featured_image")
     current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
+else
+    current_page.data.share_image: "https://images.contentful.com/189dvqdsjh46/2HzxmY3I4ESUU6ICM0ge0Y/f5ed3801dfe3328ec1ee09ea83434ba6/events-share-default.jpg" + image_size_small
 end
 # if p.has_key?("tags")
 #     current_page.data.tags = get_tag_list(p["tags"])
