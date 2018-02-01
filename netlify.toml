@@ -1,3 +1,12 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "same-origin"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    strict-transport-security = "max-age=31536000; includeSubDomains"
+
 [Settings]
   ID = "3bbf38ec-f306-4e70-9223-dff0e4c980d3"
   Path = ""
