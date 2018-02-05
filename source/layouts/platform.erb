@@ -37,7 +37,6 @@
         <% if build? %>
             <%# Analytics %>
             <%= partial "partials/scripts/hubspot" %>
-            <%= partial "partials/scripts/ga" %>
         <% end %>
         <%# Custom JS files %>
         <% if current_page.data.has_key?("customJS") %>
