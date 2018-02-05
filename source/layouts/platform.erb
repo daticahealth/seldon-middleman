@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <%# datica platform 2017 %>
-<head>
-    <%= partial "partials/head/tags" %>
-    <%= partial "partials/head/icons" %>
-    <%= stylesheet_link_tag "seldon" %>
-    <% if current_page.data.has_key?("customCSS") %>
-      <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
-    <% end %>
-</head>
-<%= partial "partials/scripts/google-tm-body" %>
+    <head>
+        <% if build? %><%= partial "partials/scripts/google-tm-head" %><% end %>
+        <%= partial "partials/head/tags" %>
+        <%= partial "partials/head/icons" %>
+        <%= stylesheet_link_tag "seldon" %>
+        <% if current_page.data.has_key?("customCSS") %>
+          <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
+        <% end %>
+    </head>
+    <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
     <body class="<%= page_classes %>">
         <%#= partial "partials/snippets/alert-ribbon" %>
         <div class="container-gray-2">
@@ -36,7 +37,6 @@
         <% if build? %>
             <%# Analytics %>
             <%= partial "partials/scripts/hubspot" %>
-            <%= partial "partials/scripts/ga" %>
         <% end %>
         <%# Custom JS files %>
         <% if current_page.data.has_key?("customJS") %>
