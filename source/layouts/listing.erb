@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <% if build? %><%= partial "partials/scripts/google-tm-head" %><% end %>
         <%# Meta tags %>
         <%= partial "partials/head/tags" %>
         <%# Icons %>
@@ -12,7 +13,7 @@
             <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
         <% end %>
     </head>
-    <%= partial "partials/scripts/google-tm-body" %>
+    <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
     <body class="<%= page_classes %>">
         <a name="top"></a>
         <%# Main dark header %>
@@ -34,7 +35,6 @@
         <% if build? %>
             <%# Analytics %>
             <%= partial "partials/scripts/hubspot" %>
-            <%= partial "partials/scripts/ga" %>
         <% end %>
         <%= partial "partials/snippets/footer" %>
         <%= partial "partials/scripts/footer" %>
