@@ -1,14 +1,9 @@
 <%= javascript_include_tag "svg-injector" %>
 <script>
 document.addEventListener("DOMContentLoaded", function(event) {
-    // console.log("DOM fully loaded and parsed");
-    // SVG Injector: turns linked SVGs into inline ones, where they can be styled with CSS> https://www.npmjs.com/package/svg-injector
-    // Elements to inject - needs to happen as early as possible in ops
     var mySVGsToInject = document.querySelectorAll('img.inject-me');
     SVGInjector(mySVGsToInject);
-    // console.log("SVG injected");
 });
-
 </script>
 <%= javascript_include_tag "jquery", "foundation.min" %>
 <%#= javascript_include_tag "nav", "smooth-scroll", "cookie", "sharer", "all" %>
