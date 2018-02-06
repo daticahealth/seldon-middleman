@@ -8,19 +8,19 @@
             </div>
             <a href="/contact" class="expanded button button--light">Contact us</a>
         </div>
-        <a href="/platform" title="Datica's Platform">Platform</a>
-        <a href="/services" title="Datica's Professional Services">Services</a>
-        <a href="/pricing" title="Pricing Information">Pricing</a>
-        <a href="/dhsf" title="The Digital Health Success Framework: for teams building digital products">DHSF</a>
+        <% data.nav_primary.nav_main.each do |m| %>
+            <%= current_link_to m.title, m.url, title: m.desc, class: "is-current" %>
+        <% end %>
         <div class="a" id="resourcesDropdown">
             <span class="selector">Resources <i class="fa fa-caret-down"></i></span>
             <div class="dropdown dropdown-resources drop dropdown-list--block">
                 <div class="container-color--white">
                     <ul class="no-bullet dropdown-group">
-                        <li class="dropdown-group--item no-wrap"><a class="dropdown-item--link" href="/dhsf" title="The Digital Health Success Framework">Digital Health Success Framework</a></li>
-                        <li class="dropdown-group--item"><a class="dropdown-item--link" href="/innovation" title="Datica's premiere collection of insights, reports, ">Healthcare Innovators</a></li>
-                        <li class="dropdown-group--item"><a class="dropdown-item--link" href="/podcast" title="Exploring innovation in healthcare through interviews with the industry's top thinkers and doers.">Podcast</a></li>
-                        <li class="dropdown-group--item"><a class="dropdown-item--link" href="/academy" title="Full archive of Datica's educational materials">The Academy</a></li>
+                        <% data.nav_primary.nav_resources_a.each do |m| %>
+                            <li class="dropdown-group--item no-wrap">
+                            <%= current_link_to m.title, m.url, title: m.desc, class: "is-current" %>
+                            </li>
+                        <% end %>
                     </ul>
                     <hr class="hr">
                     <div class="list-title">Learn More:</div>
@@ -32,22 +32,49 @@
                             </li>
                         <% end %>
                     </ul>
-                </div>
-                <div class="container-color--gray-light alt-nav show-for-large">
-                    <a href="//help.datica.com" title="Search our documentation for Datica solutions.">Documentation</a>
-                    <a href="//datica.com/support" title="Get help and the support you need.">Support</a>
-                    <a href="http://status.catalyze.io" title="Is it working? Find out here.">System Status</a>
+                    <hr class="hr">
+                    <ul class="no-bullet dropdown-group">
+                        <% data.nav_primary.nav_resources_b.each do |m| %>
+                            <li class="dropdown-group--item no-wrap">
+                            <%= current_link_to m.title, m.url, title: m.desc, class: "is-current" %>
+                            </li>
+                        <% end %>
+                    </ul>
                 </div>
             </div>
         </div>
-
         <div class="a" id="companyDropdown">
             <span class="selector">Company <i class="fa fa-caret-down"></i></span>
             <div class="dropdown dropdown-company drop dropdown-list--block">
                 <div class="container-color--white">
                     <ul class="no-bullet dropdown-group">
-                        <%= partial "partials/snippets/nav-sub-company", :locals => { :class_li => "dropdown-group--item", :class_a => "dropdown-item--link" } %>
-                        
+                        <% data.nav_primary.nav_company_a.each do |m| %>
+                            <li class="dropdown-group--item no-wrap">
+                            <%= current_link_to m.title, m.url, title: m.desc, class: "is-current" %>
+                            </li>
+                        <% end %>
+                    </ul>
+                    <hr class="hr">
+                    <ul class="no-bullet dropdown-group">
+                        <% data.nav_primary.nav_company_b.each do |m| %>
+                            <li class="dropdown-group--item no-wrap">
+                            <%= current_link_to m.title, m.url, title: m.desc, class: "is-current" %>
+                            </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="a" id="customerDropdown">
+            <span class="selector">Customers <i class="fa fa-caret-down"></i></span>
+            <div class="dropdown dropdown-customer drop dropdown-list--block">
+                <div class="container-color--white">
+                    <ul class="no-bullet dropdown-group">
+                        <% data.nav_primary.nav_customers.each do |m| %>
+                            <li class="dropdown-group--item no-wrap">
+                            <%= current_link_to m.title, m.url, title: m.desc, class: "is-current" %>
+                            </li>
+                        <% end %>
                     </ul>
                 </div>
             </div>
