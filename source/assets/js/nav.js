@@ -13,10 +13,12 @@ var fadeOutTime = 150;
 var hoverOutDelay = 550;
 
 var ww = $(window).width();
+
 if(ww > 1010){
     // There's probably a more elegent way to do this
     // customer hover
     customer.hover(function(){
+        console.log(Foundation.MediaQuery.current);
         customerContent.stop(true).fadeIn(fadeInTime);
         companyContent.stop(true).fadeOut(fadeOutTime);
         resourcesContent.stop(true).fadeOut(fadeOutTime);
