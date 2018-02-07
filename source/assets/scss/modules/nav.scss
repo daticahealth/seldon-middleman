@@ -218,9 +218,7 @@
         // This simply gives me the ability to grab the text within a dropdown selector
         span.selector {margin: 0 0 1rem 0;display: block;}
         // Instead of creating a new class we can just target these with the ID selectors we're using for JS
-        #companyDropdown,
-        #resourcesDropdown,
-        #customerDropdown {
+        .dropdown-container {
             background-color: $color_deep-alt;
             padding: 1rem;
             width: 100%;
@@ -441,9 +439,15 @@ nav {
         margin-bottom: 0 !important; // argh!!
         @include breakpoint (small) {
             @include link-colors (white, $color_yellow-glow, false);
+            &:last-child { //grrrr
+                padding: 0.4rem 0 0.4rem 0; // larger tap-targets on mobile.
+            }
         }
         @include breakpoint (large) {
             @include link-colors ($gray-2, $color_prime-alt, false);
+            &:last-child { //grrrr
+                padding: 0;
+            }
         }
     }
     a.active, a[aria-current]:not([aria-current="false"]) {
