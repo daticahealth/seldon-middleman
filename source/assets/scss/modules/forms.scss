@@ -64,7 +64,7 @@ input[type="text"],
 input[type="email"],
 input[type="number"]{
     padding: rem-calc(10px);
-    color: $color_talk;
+    color: $gray-5;
     border: rem-calc(1px) solid $color_border;
     @include border-radius(5px);
     @include shadow-anarchy(0 0 0 transparent);
@@ -84,7 +84,7 @@ select{border: rem-calc(1px) solid $color_border;}
     input[type="search"], input[type="text"] {
         width: 100%;
         @include breakpoint(large up) {
-            width: rem-calc(150);
+            width: rem-calc(98);
         }
         margin: 0 1rem 0 0;
         padding-left: 1.7rem; // room for icon
@@ -100,17 +100,17 @@ select{border: rem-calc(1px) solid $color_border;}
     }
     &--black {
         input {
-            background-color: white(1);
-            border: 1px solid black(0.25);
-            ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
-                color: $gray-5;
+            background-color: white(0);
+            border: 1px solid black(0);
+            @include input-placeholder {
+                color: black(0.7);
             }
-            color: $gray-5;
+            color: black(0.7);
             &:focus{
                 border: 1px solid black(1);
                 background-color: lighten($color_yellow-glow, 10%);
-                ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
-                    color: $gray-3;
+                @include input-placeholder {
+                    color: black(0.7);
                 }
                 color: $black;
             }
@@ -118,17 +118,17 @@ select{border: rem-calc(1px) solid $color_border;}
     }
     &--white {
         input {
-            background-color: $color_deep-alt;
-            border: 1px solid white(0.25);
-            ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
-                color: $gray-5;
+            background-color: black(0);
+            border: 1px solid white(0);
+            @include input-placeholder {
+                color: white(1);
             }
-            color: $gray-5;
+            color: white(1);
             &:focus {
                 border: 1px solid white(1);
                 background-color: $black;
-                ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
-                    color: $gray-10;
+                @include input-placeholder {
+                    color: white(0.8);
                 }
                 color: $white;
             }
@@ -142,7 +142,7 @@ select{border: rem-calc(1px) solid $color_border;}
         z-index: 1;
     }
     &--white &--icon {
-        color: white(0.5);
+        color: white(0.8);
     }
     &--black &--icon {
         color: black(0.6);
@@ -159,7 +159,7 @@ select{border: rem-calc(1px) solid $color_border;}
         @include breakpoint(large up) {
             width: rem-calc($input-width);
         }
-        ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder {
+        @include input-placeholder {
             color: $gray-3;
             opacity: 1;
         }
