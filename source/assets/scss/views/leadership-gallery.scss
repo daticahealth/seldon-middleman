@@ -1,13 +1,15 @@
 @charset 'utf-8';
 @import '../settings';
 @import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+@import '../../../../node_modules/foundation-sites/scss/components/_breadcrumbs.scss';
 // @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
-@import '../modules/colors';
-@import '../modules/functions';
-@import '../modules/animation';
+@import '../mixins/colors';
+@import '../mixins/functions';
+@import '../mixins/animation';
 // @import '../vendor/slick';
 // @import '../modules/masonry';
 // @import '../modules/fonts-optional';
+@include foundation-breadcrumbs;
 
 $color-hilight:  $gray-3;// $color_prime-alt;
 $color-selected: $gray-2;// $color_prime;

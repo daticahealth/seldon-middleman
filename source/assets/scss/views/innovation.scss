@@ -2,8 +2,8 @@
 @import '../settings';
 @import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
 // @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
-@import '../modules/colors';
-@import '../modules/functions';
+@import '../mixins/colors';
+@import '../mixins/functions';
 // @import '../modules/masonry';
 @import 'home';
 

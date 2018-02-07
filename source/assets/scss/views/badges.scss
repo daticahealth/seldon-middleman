@@ -1,5 +1,5 @@
 @import '../settings';
-@import '../modules/functions';
+@import '../mixins/functions';
 // Styles for code snippets on customer badges page. - AW
 textarea {
     @include textarea-selectable();

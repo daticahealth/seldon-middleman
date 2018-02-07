@@ -16,7 +16,7 @@
 // @include foundation-accordion;
 // @include foundation-accordion-menu;
 @include foundation-badge;
-@include foundation-breadcrumbs;
+// @include foundation-breadcrumbs;
 // @include foundation-button-group;
 @include foundation-callout;
 @include foundation-card;
@@ -29,7 +29,7 @@
 @include foundation-responsive-embed;
 @include foundation-label;
 @include foundation-media-object;
-@include foundation-off-canvas;
+// @include foundation-off-canvas;
 // @include foundation-orbit;
 // @include foundation-pagination;
 // @include foundation-progress-bar;
@@ -55,8 +55,9 @@
 
 // *** our stuff. Items LOWER in the list override the UPPERMOST items. Important! ***
 
-@import 'modules/functions'; // this must come first
-@import 'modules/colors';
+@import 'mixins/functions'; // this must come first
+@import 'mixins/colors';
+@import 'mixins/animation'; // import this into views/*.scss as needed. Note also the animation mixins above, probabaly best to use those. - AW
 @import 'modules/fonts';
 @import 'modules/forms';
 @import 'modules/utility';
@@ -78,7 +79,6 @@
 @import 'modules/modal';
 @import 'modules/content';
 @import 'modules/masonry';
-// @import 'modules/animation'; // import this into views/*.scss as needed. Note also the animation mixins above, probabaly best to use those. - AW
 @import 'modules/people';
 @import 'sitewide';
 

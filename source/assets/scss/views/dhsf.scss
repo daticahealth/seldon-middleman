@@ -2,9 +2,9 @@
 @import '../settings';
 @import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
 // @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
-@import '../modules/colors';
-@import '../modules/functions';
-@import '../modules/animation';
+@import '../mixins/colors';
+@import '../mixins/functions';
+@import '../mixins/animation';
 // @import '../vendor/slick';
 // @import '../modules/masonry';
 // @import '../modules/fonts-optional';
