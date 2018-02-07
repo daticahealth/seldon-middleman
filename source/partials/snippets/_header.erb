@@ -11,7 +11,7 @@
         <% data.nav_primary.nav_main.each do |m| %>
             <%= current_link_to m.title, m.url, title: m.desc, class: "is-current" %>
         <% end %>
-        <div class="a" id="resourcesDropdown">
+        <div class="a dropdown-container" id="resourcesDropdown">
             <span class="selector">Resources <i class="fa fa-caret-down"></i></span>
             <div class="dropdown dropdown-resources drop dropdown-list--block">
                 <div class="container-color--white">
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="a" id="companyDropdown">
+        <div class="a dropdown-container" id="companyDropdown">
             <span class="selector">Company <i class="fa fa-caret-down"></i></span>
             <div class="dropdown dropdown-company drop dropdown-list--block">
                 <div class="container-color--white">
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div class="a" id="customerDropdown">
+        <div class="a dropdown-container" id="customerDropdown">
             <span class="selector">Customers <i class="fa fa-caret-down"></i></span>
             <div class="dropdown dropdown-customer drop dropdown-list--block">
                 <div class="container-color--white">

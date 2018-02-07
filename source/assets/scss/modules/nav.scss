@@ -174,6 +174,15 @@
     }
 }
 .no-js .top-bar {display: none;}
+// .dropdown-container { // le sigh
+//     background-color: $color_deep-alt;
+//     @include breakpoint (medium-large) {
+//         background-color: white;
+//     }
+//     padding: 1rem;
+//     width: 100%;
+//     border-radius: $global-radius;
+// }
 // Responsive menu
 @media all and (max-width: rem-calc($custom_breakpoint-larger-nav)) {
     .main-header {
@@ -211,7 +220,7 @@
         // Instead of creating a new class we can just target these with the ID selectors we're using for JS
         #companyDropdown,
         #resourcesDropdown,
-        #productDropdown {
+        #customerDropdown {
             background-color: $color_deep-alt;
             padding: 1rem;
             width: 100%;
