@@ -372,7 +372,7 @@ $underline: false !default;
 }
 @mixin break-before {
     -webkit-column-break-before: always;
-    // -moz-column-break-before: column; 
+    // -moz-column-break-before: column;
     column-break-before: always;
     break-before: column;
 }
@@ -385,4 +385,12 @@ $underline: false !default;
         // transition-delay: 100ms;
     }
     // }
+}
+
+@mixin input-placeholder { // mixin to properly target placeholder text styling; just pass css rules into include.
+    &::placeholder               {@content};
+    &::-webkit-input-placeholder {@content};
+    &:-moz-placeholder           {@content};
+    &::-moz-placeholder          {@content};
+    &:-ms-input-placeholder      {@content};
 }
