@@ -400,7 +400,12 @@
         }
     }
 }
-
+.width {
+    // use these in conjunction with float classes, like .float-left, .float-right, .float-right-on-medium, etc.
+    @include breakpoint (large) {
+        @include percentage-widths;
+    }
+}
 // Q: Why is .row {.row {}} so buggy? Going to remove this negative margin for now and see what happens
 // A: because (in Foundation land) a .column must always follow a .row. There should never be nested .row.row. - AW
 .row {

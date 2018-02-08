@@ -1,51 +1,3 @@
-tier_hosted:
-    title: Hosted
-    subhead: Maximum Convenience
-    price: Starting at $249 / mo
-    cta:
-        label: Contact Sales to Explore Pricing Options
-        url: "/contact"
-    points:
-        - |
-            Deploy containerized workloads to our multi-tenant Platform through self-service tooling. Customers interact with Datica support and billing.
-        - |
-            Customers prefer this option when speed and convenience matter most while not sacrificing the best compliance approach on the cloud.
-        - |
-            ### This Model Works Great For...
-            {: .headline-4}
-        - |
-            * Startups looking to develop quickly while also getting instant security and compliance credibility.
-            * Enterprise teams who need to move quickly but constrained by internal IT, security, and compliance groups.
-        - |
-            ### Why This Over Other Providers...
-            {: .headline-4}
-        - |
-            Other Platform-as-a-Service options do not cover the full scope of HIPAA compliance. None cover HITRUST, GxP, and GDPR. Compare [Our BAA] to other options when researching.
-
-tier_licensed:
-    title: Licensed
-    subhead: Maximum Flexibility
-    price: Starting at $120,000 / year
-    cta:
-        label: Contact Sales to Explore Pricing Options
-        url: "/contact"
-    points:
-        - |
-            Install the Datica Platform on your existing AWS or Azure account, then deploy containerized workloads onto it for continuous compliance.
-        - |
-            Customers prefer this option when full control over AWS or Azure accounts matters most, while still receiving the same compliance assurances from the Platform.
-        - |
-            ### This Model Works Great For...
-            {: .headline-4}
-        - |
-            * Engineering orgs who need compliance guarantees but can't build everything themselves for less than one cloud engineer FTE.
-            * Teams who need compliance help but have a hard requirement to directly own their AWS or Azure accounts.
-        - |
-            ### Why This Over Msps...
-            {: .headline-4}
-        - |
-            All other installable technologies aren't platforms meant to greatest compliance coverage with the best experience. Instead, you pay for consultant service fees.
-
 tiers:
     -
         title: Hosted
@@ -98,3 +50,50 @@ tier_points_paired:
         - |
             All other installable technologies aren't platforms meant to greatest compliance coverage with the best experience. Instead, you pay for consultant service fees.
 
+# tier_hosted:
+#     title: Hosted
+#     subhead: Maximum Convenience
+#     price: Starting at $249 / mo
+#     cta:
+#         label: Contact Sales to Explore Pricing Options
+#         url: "/contact"
+#     points:
+#         - |
+#             Deploy containerized workloads to our multi-tenant Platform through self-service tooling. Customers interact with Datica support and billing.
+#         - |
+#             Customers prefer this option when speed and convenience matter most while not sacrificing the best compliance approach on the cloud.
+#         - |
+#             ### This Model Works Great For...
+#             {: .headline-4}
+#         - |
+#             * Startups looking to develop quickly while also getting instant security and compliance credibility.
+#             * Enterprise teams who need to move quickly but constrained by internal IT, security, and compliance groups.
+#         - |
+#             ### Why This Over Other Providers...
+#             {: .headline-4}
+#         - |
+#             Other Platform-as-a-Service options do not cover the full scope of HIPAA compliance. None cover HITRUST, GxP, and GDPR. Compare [Our BAA] to other options when researching.
+
+# tier_licensed:
+#     title: Licensed
+#     subhead: Maximum Flexibility
+#     price: Starting at $120,000 / year
+#     cta:
+#         label: Contact Sales to Explore Pricing Options
+#         url: "/contact"
+#     points:
+#         - |
+#             Install the Datica Platform on your existing AWS or Azure account, then deploy containerized workloads onto it for continuous compliance.
+#         - |
+#             Customers prefer this option when full control over AWS or Azure accounts matters most, while still receiving the same compliance assurances from the Platform.
+#         - |
+#             ### This Model Works Great For...
+#             {: .headline-4}
+#         - |
+#             * Engineering orgs who need compliance guarantees but can't build everything themselves for less than one cloud engineer FTE.
+#             * Teams who need compliance help but have a hard requirement to directly own their AWS or Azure accounts.
+#         - |
+#             ### Why This Over Msps...
+#             {: .headline-4}
+#         - |
+#             All other installable technologies aren't platforms meant to greatest compliance coverage with the best experience. Instead, you pay for consultant service fees.
