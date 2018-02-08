@@ -1,33 +1,78 @@
+badges:
+    -
+        name: "HITRUST Alliance"
+        fileUrl: "https://images.contentful.com/189dvqdsjh46/tPI7wEI7zaSEQ2cu6MqOc/7f837591f0a7f85448180a4a1e61158d/logo-hitrust-certified.png"
+        logoSize: "xlarge"
+    -
+        name: "HIPAA logo"
+        fileUrl: "https://images.contentful.com/189dvqdsjh46/7twnCUuD72YGS4cusiS6mQ/fa43b0f1faaecb4e8865415add79e538/logo-hipaa-federal.png"
+        logoSize: "xlarge"
+    -
+        name: "SOC2 AICPA"
+        fileUrl: "https://images.contentful.com/189dvqdsjh46/1Tt54MVMgkqIW8OWaYKmoo/7cb2c9e5e3d4f54cbd7498cc7e001fec/logo-aicpa.png"
+        logoSize: "xlarge"
+    -
+        name: "GDPR"
+        fileUrl: "https://images.contentful.com/189dvqdsjh46/2gXAIuikiQyWYMmU4QAoOe/0106b4a35cd09e120f0eca6ee6a15446/gdpr-ready-badge.png"
+        logoSize: "xlarge"
+
 customers:
+    -
+        name: 'Johnson & Johnson'
+        file: 'jnj-logo'
+        url: 'https://www.jnj.com/'
+        logoSize: 'medium'
+    -
+        name: 'Zipnosis'
+        file: 'zipnosis-logo'
+        url: 'http://zipnosis.com'
+        logoSize: 'medium'
+    -
+        name: 'Healthloop'
+        file: 'healthloop-logo'
+        url: 'http://healthloop.com'
+        logoSize: 'small-mid'
     -
         name: 'BSC'
         file: 'bsc-logo-wide'
         url: 'http://blueshieldca.com'
         logoSize: 'small'
     -
-        name: 'The VA'
-        file: 'veterans-affairs-logo'
-        url: 'https://www.va.gov/'
+        name: 'healthfinch'
+        file: 'healthfinch-logo'
+        url: 'http://healthfinch.com'
+        logoSize: 'medium'
+    -
+        name: 'BCGDV'
+        file: 'bcgdv-logo'
+        url: 'http://bcgdv.com'
+    -
+        name: 'Propeller Health'
+        file: 'propeller-logo'
+        url:  'propellerhealth.com'
         logoSize: 'small-mid'
     -
-        name: 'J&J'
-        file: 'jnj-logo'
-        url: 'https://www.jnj.com/'
+        name: 'Hennepin County Medical Center'
+        file: 'hcmc-logo'
+        url: 'http://hcmc.org'
+    -
+        name: 'COTA'
+        file: 'cota-logo'
+        url: 'http://oncota.com'
         logoSize: 'small-mid'
     -
-        name: 'Amgen'
-        file: 'amgen-logo'
-        url: 'http://www.amgen.com/'
-        logoSize: 'small'
+        name: 'CirrusMD'
+        file: 'cirrusmd-logo'
+        url: 'http://cirrusmd.com'
     -
         name: 'Stony Brook'
         file: 'stony-brook-logo'
         url: 'https://www.stonybrookmedicine.edu'
         logoSize: 'medium'
     -
-        name: 'TigerText'
-        file: 'tigertext-logo'
-        url: 'https://www.tigertext.com/'
+        name: 'Optum'
+        file: 'optum-logo'
+        url: 'http://optum.com'
         logoSize: 'medium'
     -
         name: 'University of Kansas Hospital'
@@ -35,50 +80,24 @@ customers:
         url: 'http://www.kumed.com/'
         logoSize: 'small-mid'
     -
-        name: 'Voalte'
-        file: 'voalte-logo'
-        url:  'https://www.voalte.com/'
-        logoSize: 'small-mid'
-    -
-        name: 'Hennepin County Medical Center'
-        file: 'hcmc-logo'
-        url: 'https://www.hcmc.org/'
-        logoSize: 'small-mid'
-    -
         name: 'Hurley Medical Center'
         file: 'hurley-medical-center-logo'
         url: 'http://www.hurleymc.com/'
         logoSize: 'medium'
     -
-        name: 'Wisconsin Primary Health Care Association'
-        file: 'wphca-logo'
-        url: 'http://www.wphca.org/'
+        name: 'The VA'
+        file: 'veterans-affairs-logo'
+        url: 'https://www.va.gov/'
         logoSize: 'small-mid'
     -
-        name: 'Zipnosis'
-        file: 'zipnosis-logo'
-        url: 'http://zipnosis.com'
+        name: 'University of Washington'
+        file: 'university-washington-logo'
+        url: 'https://www.washington.edu/'
         logoSize: 'small-mid'
     -
-        name: 'Healthloop'
-        file: 'healthloop-logo'
-        url: 'http://healthloop.com'
-        logoSize: 'small-mid'
-    -
-        name: 'Ginger.io'
-        file: 'ginger-logo'
-        url: 'http://ginger.io'
-        logoSize: 'small-mid'
-    -
-        name: 'NavHealth'
-        file: 'navhealth-logo'
-        url: 'http://navhealth.com'
-        logoSize: 'small-mid'
-    -
-        name: 'Optum'
-        file: 'optum-logo'
-        url: 'http://optum.com'
-        logoSize: 'small-mid'
+        name: 'Methodist Lebonheur Hospital'
+        file: 'mlh-logo'
+        url: 'http://www.methodisthealth.org'
 
 # block_hero_1:
 #     -
