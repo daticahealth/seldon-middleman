@@ -13,7 +13,7 @@ collectionName: "platform"
 collectionOrder: 1
 priority: "0.9"
 ---
-<aside class="hide-for-large pad--sm container-color--blue-alt">
+<nav class="hide-for-large pad--sm container-color--blue-alt">
     <div class="row align-middle align-center">
         <div class="columns small-6 medium-4">
             <a href="/platform/technology" title="Datica Platform Technology" class="button hollow--inverted expanded small nomargin">Technology <i class="fa fa-angle-right"></i></a>
@@ -22,15 +22,48 @@ priority: "0.9"
             <a href="/pricing" title="sign up" class="button button--light expanded small nomargin">Pricing <i class="fa fa-icon fa-angle-right"></i></a>
         </div>
     </div>
-</aside>
-<section class="section-article container-color--gray-light">
+</nav>
+
+<section class="section-article container-gray-12">
     <div class="row align-center">
         <div class="columns small-12 medium-10 large-6 text-center">
-            <h1 class="headline-3">The cloud enablement layer for <br><strong>all healthcare</strong> applications</h1>
-            <p>The Datica platform makes hosting compliant healthcare applications and data integration tooling as simple as <code>git-push</code>.</p>
+            <h1 class="headline-3"><strong>End-to-end compliance</strong> on AWS and Azure is possible.</h1>
+            <p>The Datica Platform fills the compliance gaps on top of public clouds like AWS and Azure by combining the best technology available and mapping it to frameworks like HIPAA, HITRUST, GDPR, and GxP. Customers use Kubernetes-enabled orchestration to deploy containerized workloads to the Platform that are <strong>guaranteed to be continuously compliant.</strong></p>
         </div>
     </div>
     <div class="row align-center">
+        <div class="columns small-6 text-right">
+            <%= 
+            partial "partials/snippets/button", 
+                :locals => {
+                    :label => "Explore capabilities", 
+                    :title => "Explore the capabilities of the Datica Platform", 
+                    :url => "/compliance", 
+                    # :rel => "external", 
+                    :button_classes => "button hollow", 
+                    # :icon => "icon-chevron-right", 
+                    # :icon_color => "white", 
+                    # :icon_align => "right"
+                }
+            %>
+        </div>
+        <div class="columns small-6 text-left">
+            <%= 
+            partial "partials/snippets/button", 
+                :locals => {
+                    :label => "View Pricing", 
+                    :title => "View Platform pricing", 
+                    :url => "/pricing", 
+                    # :rel => "external", 
+                    :button_classes => "button", 
+                    :icon => "icon-chevron-right", 
+                    :icon_color => "white", 
+                    :icon_align => "right"
+                }
+            %>
+        </div>
+    </div>
+<!--     <div class="row align-center">
         <div class="columns small-12 large-4">
             <hr>
         </div>
@@ -43,21 +76,44 @@ priority: "0.9"
         <div class="columns small-12 large-8">
             <img class="img-crisp" src="//images.contentful.com/189dvqdsjh46/1zXwr2EWQoMkIskG68y8Qk/9b634cd5b8a778dc4fc7ae51d6a11239/platform-overview-diagram-2x.png" alt="Compliance Overview diagram">
         </div>
-    </div>
+    </div> -->
 </section>
-<section class="section-article">
-    <div class="row group align-center">
-        <div class="columns small-12">
-            <script src="https://fast.wistia.com/embed/medias/08ebxufc4q.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_08ebxufc4q seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
-        </div>
+<section class="section-article container-color--gray-dark-grad-top-bottom-noise">
+    <div class="row align-center">
+        <% data.views.platform.tiers.each do |tier| %>
+            <div class="columns medium-6">
+                <h2 class="headline-2"><%= tier.title %></h2>
+                <h3 class="headline-3 subhead--spaced"><%= tier.subhead %></h3>
+                <h4 class="headline-4"><%= tier.price %></h4>
+            </div>
+        <% end %>
     </div>
-    <div class="row small-up-1 medium-up-3 group">
-        <% data.views.compliant_cloud.block_innovation_a.each do |item| %>
-            <div class="column">
-                <!-- the icons are inlined with .inject-me and a color class, but not strictly necessary. -AW -->
-                <img class="icon-size--medium inject-me svg-color--black" src="<%= item["icon"] %>" alt="<%= item["title"] %> icon"/>
-                <p><strong><%= item["title"] %></strong></p>
-                <p><%= item["body"] %></p>
+    <% data.views.platform.tier_points_paired.each_with_index do |dyad, i| %>
+        <div class="row align-center">
+            <% dyad.each do |point| %>
+                <div class="columns medium-6">
+                   <%= Kramdown::Document.new(point).to_html %>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+    <hr class="content">
+    <div class="row align-center">
+        <% data.views.platform.tiers.each do |tier| %>
+            <div class="columns medium-6">
+            <%= 
+            partial "partials/snippets/button", 
+                :locals => {
+                    :label => tier.cta.label, 
+                    :title => tier.cta.label, 
+                    :url => tier.cta.url, 
+                    # :rel => "external", 
+                    :button_classes => tier.cta.classes, 
+                    :icon => "icon-chevron-right", 
+                    :icon_color => "white", 
+                    :icon_align => "right"
+                }
+            %>
             </div>
         <% end %>
     </div>
@@ -65,36 +121,30 @@ priority: "0.9"
 <section class="section-article container-image--fixed container-color--blue-bright-noise">
     <div class="row align-center">
         <div class="columns small-12 medium-10 large-8 text-center">
-            <h2 class="headline-4 nomargin">Platform use cases</h2>
-            <p class="lead">How developers use the Datica platform</p>
+            <h2 class="headline-3">You wouldn't build payment processing infrastructure to charge credit cards. You'd use Stripe.</h2>
+            <h3 class="headline-4">So why waste money and take on unnecessary risk building your own compliance layer?</h3>
+            <%= 
+            partial "partials/snippets/button", 
+                :locals => {
+                    :label => "Explore Datica on AWS", 
+                    :title => "Explore Datica on AWS", 
+                    :url => "/discover/aws-hipaa",
+                    :button_classes => "button button--light group", 
+                    :icon => "icon-chevron-right", 
+                    :icon_color => "black", 
+                    :icon_align => "right"
+                }
+            %>
         </div>
     </div>
+
     <div class="row align-center">
-        <div class="small-12 large-11">
-            <div class="row align-justify align-middle platform-bg-bridge" data-interchange="[https://images.contentful.com/189dvqdsjh46/5HcbN9TcZyESeyIw0uK2GC/870332a9c45bedbcea4da46174548748/datica-bridge-w.png, medium]">
-                <div class="columns small-12 medium-5 large-5 text-center">
-                    <div class="card drop">
-                        <div class="card-section">
-                            <h3 class="headline-4">Your App</h3>
-                            <p>Host your digital health application just like you would on any other cloud provider, except being fully HIPAA compliant. Deployment is as simple as a <code>git-push</code>.</p>
-                        </div>
-                        <div class="card-divider card-divider--flush">
-                            <a href="/platform/technology" title="View tech support and features">View tech support and features <i class="fa fa-icon fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="columns small-12 medium-5 large-5 text-center">
-                    <div class="card drop">
-                        <div class="card-section">
-                            <h3 class="headline-4">Data Integration</h3>
-                            <p>Instantly spin up the complete cloud toolset to conduct compliant, scalable data exchange with EHRs or other systems.</p>
-                        </div>
-                        <div class="card-divider card-divider--flush">
-                            <a href="/platform/integration" title="Learn more about integration capabilities">Learn more about integration capabilities <i class="fa fa-icon fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="small-12 medium-8 large-6">
+            <ul>
+                <li>Shared Responsibility overview</li>
+                <li>Explanation of what the Platform does on top of AWS</li>
+                <li>Total Cost of Ownership guide vs. building something similar yourself on AWS</li>
+            </ul>
         </div>
     </div>
 </section>
