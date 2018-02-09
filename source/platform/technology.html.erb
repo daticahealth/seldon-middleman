@@ -40,35 +40,36 @@ ctaCustom: true
     </section>
 </div>
 <section class="section-article container-gray-12">
-    <% data.site.featureCategories.each do | category, id | %>
+    <% data.site.featureCategories.each do | id, featureCat | %>
         <div class="row">
-            <div class="columns small-12 large-6">
-                <h3 class="headline-4"><%= category["title"] %></h3>
-                <% if category.has_key?("desc") %>
-                    <p class="lead"><%= category["desc"] %></p>
+            <div class="columns small-12 large-8">
+                <h3 class="headline-4"><%= featureCat["title"] %></h3>
+                <% if featureCat.has_key?("desc") %>
+                    <p class="lead"><%= featureCat["desc"] %></p>
                 <% end %>
             </div>
         </div>
-        <div class="row">
+        <div class="row group--2x">
             <div class="columns small-12 multicol-3">
-                <% if category.has_key?("related_features") %>
+                <% if featureCat.has_key?("related_features") %>
                     <dl class="">
-                        <% category["related_features"].each do | feature | %>
+                        <% featureCat["related_features"].each do | feature | %>
+                        <span class="no-break">
                             <dt><%= feature.title %></dt>
                             <% if feature.has_key?("summary") %>
                                 <dd><%= Kramdown::Document.new(feature.summary).to_html %></dd>
                             <% end %>
-                            <% if feature.has_key?("desc") %>
+                            <!-- <% if feature.has_key?("desc") %>
                                 <dd><%= Kramdown::Document.new(feature.desc).to_html %></dd>
-                            <% end %>
+                            <% end %> -->
+                        </span>
                         <% end %>
                 <% end %>
-
             </div>
         </div>
     <% end %>
-
 </section>
+
 <section class="section-article">
     <div class="row align-center">
         <div class="columns small-12 text-center group">
