@@ -50,7 +50,7 @@
       <!-- Icons -->
       <%= partial "partials/head/icons" %>
       <!-- Assets -->
-      <%= stylesheet_link_tag "seldon" %>
+      <%= stylesheet_link_tag "seldon", "views/styleguide" %>
       <% if current_page.data.has_key?("customCSS") %>
           <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
       <% end %>
@@ -65,9 +65,7 @@
                 <% sitemap.resources.each do |page| %>
                   <% if page.url =~ /^(\/seldon\/)/ && page.data.is_index != true %>
                       <li>
-                          <a href="<%= page.url %>" title="<%= page.data.summary %>" class="link--white<% if page.url == current_page.url %> active<% end %>">
-                              <%= page.data.navTitle %>
-                          </a>
+                          <%= current_link_to page.data.navTitle, page.url, title: page.data.summary, class: "link--white" %>
                       </li>
                     <% end %>
                 <% end %>
@@ -119,7 +117,7 @@
         </div>
         <%#= partial "partials/snippets/footer" %>
         <!-- Please leave these commented bits in place; when JS compiling is working properly we'll use them. -AW -->
-        
+
         <%= javascript_include_tag "svg-injector" %>
         <script>
         document.addEventListener("DOMContentLoaded", function(event) {

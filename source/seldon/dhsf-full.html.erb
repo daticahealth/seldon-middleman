@@ -1,13 +1,9 @@
 ---
 title: "Digital Health Success Framework"
+navTitle: DHSF
 summary: "DHSF in full-page form."
-author: "Datica, Inc."
-tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
-date: "July 12, 2017"
-share_image: "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+customCSS: dhsf
 hide_from_sitemap: true
-customCSS: "dhsf"
-customJS: "/public/js/dhsf.js"
 ---
 <style type="text/css">
     /*li.menu-item {
@@ -98,19 +94,6 @@ customJS: "/public/js/dhsf.js"
                     </div>
                 </div>
                 <div class="df-stage--timeline__line"></div>
-
-<!--                 <div class="row collapse df-series--container show-for-medium <% if id.to_i == 0 %> is-first<% end %>">
-                    <div class="columns small-12 medium-10 medium-offset-2 large-10 large-offset-2">
-                        <ul id="df-<%= phase["slug"] %>-series" class="menu expanded df-series">
-                            <li class="df-series--label">Start</li>
-                            <% data.views.dhsf.timespan.each do |time| %>
-                            <li class="df-series--label"><%= time %></li>
-                            <% end %>
-                        </ul>
-                    </div>
-                </div>
- -->
-
                 <div id="df-<%= phase["slug"] %>-stage-content" class="_tabs-content df-stage" data-animate="fade-in fade-out" _data-tabs-content="df-stage--timeline-<%= id %>">
                     <% phase["stages"].each_with_index do |stage, index| %>
                         <div id="<%= phase["slug"] %>-<%= stage["slug"] %>" class="_tabs-panel df-stage--item">
@@ -121,7 +104,6 @@ customJS: "/public/js/dhsf.js"
                                         <%= stage["title"] %> <a class="faded" href="/dhsf/#<%= phase["slug"] %>-<%= stage["slug"] %>" title="A link to the DHSF entry for '<%= stage["title"] %>'.">#</a>
                                     </h3>
                                     <% if phase.has_key?("lead") %>
-                                        <!-- <div class="subheader-small">Strategy Overview</div> -->
                                         <div class="lead df-phase--lead" data-columns="false">
                                             <%= Kramdown::Document.new(phase["lead"]).to_html %>
                                         </div>
@@ -130,7 +112,6 @@ customJS: "/public/js/dhsf.js"
                             </div>
                             <div class="row">
                                 <div class="columns small-12 large-8">
-                                    <!-- <div class="df-stage--content" data-columns="<% if stage["body"].length < 400 || stage.has_key?("col_full") %>false<% else %>true<% end %>"> -->
                                     <div class="df-stage--content">
                                         <div class="content-dynamic group"><%= Kramdown::Document.new(stage["body"]).to_html %></div>
                                     </div>
@@ -151,9 +132,6 @@ customJS: "/public/js/dhsf.js"
                                     <% end %>
                                     <% if stage.has_key?("quote_id") %>
                                         <% related_quote = data.site.quotes[stage.quote_id.to_s] %>
-                                        <!-- <blockquote class="quote-serif">
-                                            <%#= Kramdown::Document.new(related_quote.quote_body).to_html %>
-                                        </blockquote> -->
                                     <% end %>
                                 </div>
                             </div>
@@ -218,7 +196,6 @@ customJS: "/public/js/dhsf.js"
                     <a href="https://datica.com/guide/digital-health-success-framework-ebook/" title="Download your ebook">
                         <img src="https://images.contentful.com/189dvqdsjh46/2q4JydYcuAgSQ6SKmy88US/47ce92d94666f955ab2ef252297fa838/dhsf-report-preview.png?w=500" alt="DHSF Ebook" class="group">
                     </a>
-                    <!-- <h3 class="headline-4">Get your free DHSF ebook</h3> -->
                     <a class="button hollow" href="/guide/digital-health-success-framework-ebook/" title="Download your ebook">Get your free DHSF ebook today</a>
                 </div>
             </div>
