@@ -78,9 +78,14 @@ end
 configure :test do
     config[:host] = 'http://localhost:3000'
     config[:host_label] = 'test'
-    set :build_dir, '../datica_build'
+    set :build_dir, '../datica-build'
 end
 
+configure :static do
+    config[:host] = 'https://datica.com'
+    config[:host_label] = 'static'
+    set :build_dir, '../datica-build'
+end
 # Sitemap
 set :url_root, 'https://datica.com'
 activate :search_engine_sitemap, default_priority: 0.5, default_change_frequency: "weekly"
