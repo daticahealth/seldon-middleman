@@ -13,6 +13,20 @@ priority: "0.9"
 collectionName: "platform"
 collectionOrder: 2
 ctaCustom: true
+content_lead: |
+    AWS and Azure provide VPCs, which cover a portion of compliance and security requirements.
+
+    Within a VPC, the Datica Platform is installed. Everything within the Platform is strictly managed in adherence to Datica policies. The Platform uses a combination of Kubernetes and proprietary technology to orchestrate all DevOps duties for customers.
+
+    Customers create an account within the Datica Platform. It is through the account that they gain access to HIPAA-eligible AWS Primitives or Azure Services, which are strictly controlled by the Platform.
+
+    Within a customer account, the Platform containerizes all technology required to meet compliance controls from HIPAA, HITRUST, GDPR, and GxP. Things like logging, intrusion detection, and penetration testing, to name a few.
+
+    Customers deploy their applications to containerized environments. They can have multiple environments within their Datica account, managing any type of technical use case.
+
+    Administration of AWS Primitives or Azure Services are no longer required. Instead, customers simply allocate RAM to individual containers. Datica takes care of the rest.
+
+    Deployment is done either through a `git push` buildpack-based process or by pushing custom Docker containers.
 ---
 <aside class="hide-for-large pad--sm container-color--blue-alt">
     <div class="row align-middle align-center">
@@ -28,22 +42,31 @@ ctaCustom: true
     <section class="section-article">
         <div class="row align-center">
             <div class="columns small-12 medium-10 large-7 text-center">
-                <h1 class="headline-3"><strong>Complete</strong> Cloud Compliance</h1>
-                <p>Datica's platform prioritizes security and compliance. Under the hood, we use a Docker-based multi-tenant network across several public clouds, configured precisely to meet the controls within HIPAA regulation and NIST standards.</p>
+                <h1 class="headline-3 group">We focus on the <strong>Compliant Ops</strong>, so you can focus on your <strong>Apps</strong></h1>
+                <!-- <p>Datica's platform prioritizes security and compliance. Under the hood, we use a Docker-based multi-tenant network across several public clouds, configured precisely to meet the controls within HIPAA regulation and NIST standards.</p> -->
+                <h2 class="headline-4 spaced-out">How the Platform Works</h2>
             </div>
         </div>
         <div class="row align-center">
             <div class="columns small-12 medium-6 large-6">
-                <img data-interchange="[/public/img/platform-gfx-primary-1x.png, small], [/public/img/platform-gfx-primary-2x.png, large]" alt="Platform Integration">
+                <img data-interchange="[https://images.contentful.com/189dvqdsjh46/4qOeISMqXeUQwIAWme4GGC/6667c65343bff05cfaf8d65ebdf588eb/shared-responsibilty-diagram-2018.png, small]" alt="Shared Responsibility Model">
+            </div>
+            <div class="columns small-12 large-6">
+                <%= Kramdown::Document.new(current_page.data.content_lead).to_html %>
             </div>
         </div>
     </section>
 </div>
 <section class="section-article container-gray-12">
+    <div class="row align-center">
+        <div class="columns small-12 text-center group">
+            <h2 class="headline-4 spaced-out">Datica Platform Features</h2>
+        </div>
+    </div>
     <% data.site.featureCategories.each do | id, featureCat | %>
         <div class="row">
             <div class="columns small-12 large-8">
-                <h3 class="headline-4"><%= featureCat["title"] %></h3>
+                <h3 class="headline-43"><%= featureCat["title"] %></h3>
                 <% if featureCat.has_key?("desc") %>
                     <p class="lead"><%= featureCat["desc"] %></p>
                 <% end %>
