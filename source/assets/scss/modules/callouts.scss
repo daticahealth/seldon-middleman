@@ -28,10 +28,9 @@
         margin-bottom: 0; // only callout style to do so
     }
     &.callout--large {
-        @include callout-size(3rem);
-        // Reduce padding on mobile
-        @media all and (max-width: 53.5rem){
-            @include callout-size(1rem);
+        padding: 1rem;
+        @include breakpoint (medium-large) { // larger breakpoints
+            padding: 3rem 3rem 3.5rem 3rem;
         }
     }
     // Clipped background images on callouts

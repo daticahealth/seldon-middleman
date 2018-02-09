@@ -1,4 +1,5 @@
 // Main header - the anchor to all of Seldon
+$duration: $timing-default * 1.5; //settings.scss:281
 .main-header {
     // Could possibly opt for 2rem here
     padding: rem-calc(30px);
@@ -34,9 +35,9 @@
             position: relative;
             display: inline-block;
             cursor: pointer;
-            @include easing(350ms);
+            @include transition (all $timing-default ease);
             &:hover {
-                @include easing(350ms);
+                // @include easing($duration);
                 text-decoration: none;
                 border: 0;
                 color: $color_prime-alt;
@@ -119,7 +120,9 @@
         display: block;
         padding: 0 0 0.5rem 0;
         margin: 0;
-        &:hover {@include transform(translate(rem-calc(2px), rem-calc(0px)));}
+        &:hover {
+            @include transform(translate3D(3px, 0, 0));
+        }
         &:last-child {
             padding: 0;
         }
@@ -327,11 +330,11 @@
                 border-bottom: rem-calc(2px) solid transparent;
                 border-left: rem-calc(1px) solid $color_light-alt;
                 font-size: rem-calc(14px);
-                @include easing(350ms);
+                @include easing($duration);
                 &:hover {
                     color: $color_deep;
                     border-bottom: rem-calc(2px) solid $color_light;
-                    @include easing(350ms);
+                    @include easing($duration);
                 }
             }
             .active, [aria-current]:not([aria-current="false"]) {
