@@ -27,6 +27,25 @@ content_lead: |
     Administration of AWS Primitives or Azure Services are no longer required. Instead, customers simply allocate RAM to individual containers. Datica takes care of the rest.
 
     Deployment is done either through a `git push` buildpack-based process or by pushing custom Docker containers.
+content_mirth: |
+    Add a new environment to your account with the click of a button. OCI Mirth Connect is a pre-packaged configuration of all the open source integration tooling you need to integrate with EHRs.
+    {: .lead}
+
+    The add-on includes:
+
+    * Mirth configured to be highly-available
+    * Load balancers
+    * Redundant Postgres for initial data ingestion
+    * Mirth alerting and monitoring
+    * VPN management
+
+    We open sourced our Mirth HL7 transformations used over the past three years. With OCI Mirth, you can get started today using these tools. Or, should you require help integrating into a specific hospital, we offer professional services to project manage an integration to completion.
+content_sansoro: |
+    Sansoro Health Emissary(R)
+    Emissary is an elegant approach to data interoperability that is unique and proven.
+    {: .lead}
+
+    Customers can choose to deploy Emissary as a new environment into their Datica Platform account. Datica will manage the infrastructure compliance and security, while Sansoro is available to support the Emissary product experience itself.
 ---
 <aside class="hide-for-large pad--sm container-color--blue-alt">
     <div class="row align-middle align-center">
@@ -92,7 +111,63 @@ content_lead: |
         </div>
     <% end %>
 </section>
-
+<section class="section-article">
+    <div class="row align-center text-center">
+        <div class="columns small-12 large-6">
+            <h2 class="headline-3">Integrate with any EHR</h2>
+            <p class="lead">Modern healthcare applications must integrate with Electronic Health Records, like Epic or Cerner, in order to improve their value. Datica helps you get that job done in a secure, compliant, and scalable way.</p>
+        </div>
+    </div>
+    <div class="row align-center text-center collapse">
+        <div class="columns small-12 large-10">
+            <div class="logo-cloud">
+                <% data.views.ehrs.ehr_list.each do |logo| %>
+                    <img src="/public/img/customer-logos/sm/<%= logo["slug"] %>-logo.png" alt="<%= logo["name"] %>" class="logo-cloud--item logo-size--<%= logo['logoSize'] %>" />
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <hr class="divider">
+    <div class="row align-center">
+        <div class="columns small-12 large-6">
+            <h3 class="headline-4 text-center">One-click-install Mirth Connect</h3>
+            <%= Kramdown::Document.new(current_page.data.content_mirth).to_html %>
+            <%=
+            partial "partials/snippets/button",
+                :locals => {
+                    :label => "Test out your own version of Mirth today",
+                    :title => "Test out your own version of Mirth today",
+                    :url => "/pricing",
+                    # :rel => "external",
+                    :button_classes => "button text-center",
+                    :icon => "icon-chevron-right",
+                    :icon_color => "white",
+                    # :icon_align => "right"
+                }
+            %>
+        </div>
+    </div>
+    <hr class="divider">
+    <div class="row align-center">
+        <div class="columns small-12 large-6">
+            <h3 class="headline-4 text-center">Sansoro Health Emissary &reg;</h3>
+            <%= Kramdown::Document.new(current_page.data.content_sansoro).to_html %>
+            <%=
+            partial "partials/snippets/button",
+                :locals => {
+                    :label => "Contact us to learn more",
+                    :title => "Contact us to learn more",
+                    :url => "/contact",
+                    # :rel => "external",
+                    :button_classes => "button hollow",
+                    :icon => "icon-chevron-right",
+                    :icon_color => "blue",
+                    # :icon_align => "right"
+                }
+            %>
+        </div>
+    </div>
+</section>
 <section class="section-article">
     <div class="row align-center">
         <div class="columns small-12 text-center group">
