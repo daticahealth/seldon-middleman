@@ -28,6 +28,7 @@
         margin-bottom: 0; // only callout style to do so
     }
     &.callout--large {
+        border-radius: $global-radius * 2;
         padding: 1rem;
         @include breakpoint (medium-large) { // larger breakpoints
             padding: 3rem 3rem 3.5rem 3rem;
