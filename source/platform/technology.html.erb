@@ -57,7 +57,7 @@ content_sansoro: |
         </div>
     </div>
 </aside>
-<div class="container-color--gray-light">
+<div class="container-color--gray-light" id="tech">
     <section class="section-article">
         <div class="row align-center">
             <div class="columns small-12 medium-10 large-7 text-center">
@@ -76,7 +76,7 @@ content_sansoro: |
         </div>
     </section>
 </div>
-<section class="section-article container-gray-12">
+<section class="section-article container-gray-12" id="tech-features">
     <div class="row align-center">
         <div class="columns small-12 text-center group">
             <h2 class="headline-4 spaced-out">Datica Platform Features</h2>
@@ -91,27 +91,24 @@ content_sansoro: |
                 <% end %>
             </div>
         </div>
-        <div class="row group--2x">
-            <div class="columns small-12 multicol-3">
+        <div class="row small-up-2 medium-up-2 large-up-3 xlarge-up-4 group--2x">
                 <% if featureCat.has_key?("related_features") %>
-                    <dl class="">
-                        <% featureCat["related_features"].each do | feature | %>
-                        <span class="no-break">
-                            <dt><%= feature.title %></dt>
+                    <% featureCat["related_features"].each do | feature | %>
+                        <div class="column">
+                            <h4 class="headline-6"><%= feature.title %></h4>
                             <% if feature.has_key?("summary") %>
-                                <dd><%= Kramdown::Document.new(feature.summary).to_html %></dd>
+                                <%= Kramdown::Document.new(feature.summary).to_html %>
                             <% end %>
                             <!-- <% if feature.has_key?("desc") %>
                                 <dd><%= Kramdown::Document.new(feature.desc).to_html %></dd>
                             <% end %> -->
-                        </span>
-                        <% end %>
+                        </div>
+                    <% end %>
                 <% end %>
-            </div>
         </div>
     <% end %>
 </section>
-<section class="section-article">
+<section class="section-article" id="tech-ehrs">
     <div class="row align-center text-center">
         <div class="columns small-12 large-6">
             <h2 class="headline-3">Integrate with any EHR</h2>
@@ -168,7 +165,24 @@ content_sansoro: |
         </div>
     </div>
 </section>
-<section class="section-article">
+
+<section class="section-article" id="tech-hcms">
+    <div class="row align-center">
+        <div class="columns small-12 text-center group">
+            <h2 class="headline-3 nomargin">Healthcare Compliance Management System</h2>
+            <!-- <p class="lead"></p> -->
+        </div>
+    </div>
+    <div class="row align-center">
+        <div class="columns small-12 medium-6 large-7">
+            <img src="https://images.contentful.com/189dvqdsjh46/3wzJLEqLHqs4kC2cAk4Msq/1131a6ae3d921e934fa8effa21802b35/hcms-dashboard.png?w=1200" alt="HCMS Dashboard">
+        </div>
+        <div class="columns small-12 medium-6 large-4">
+            <p>Visibility into the continuous compliance and security provided by the Datica Platform is important to our customers. The HCMS is a compliance dashboard that gives insights into all compliance controls across all customer environments.</p>
+        </div>
+    </div>
+</section>
+<!-- <section class="section-article">
     <div class="row align-center">
         <div class="columns small-12 text-center group">
             <h2 class="headline-4 nomargin">Building On The Platform</h2>
@@ -206,7 +220,7 @@ content_sansoro: |
             <p>Once you’re application is live on Datica you’ll enjoy a suite of tools and products to manage your application’s environment. From intrusion detection to backups and much much more.</p>
         </div>
     </div>
-</section>
+</section> -->
 <section class="section-article container-color--gray-light">
     <div class="row align-center small-up-1 medium-up-2 large-up-3">
         <div class="column">
@@ -252,7 +266,7 @@ content_sansoro: |
         </div>
     </div>
 </section>
-<section class="section-article container-color--dark-alt">
+<!-- <section class="section-article container-color--dark-alt">
     <div class="row align-center">
         <div class="columns small-12 medium-8 large-6">
             <h2 class="heading-3 text-center group">Powerful capabilities and features under the hood</h2>
@@ -305,7 +319,7 @@ content_sansoro: |
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- cta -->
 <section id="ctaBottom" class="section-article section--cta-blue container-image--center" data-interchange="[/public/img/bg/platform-integration-inverted-bg.png, medium]">
