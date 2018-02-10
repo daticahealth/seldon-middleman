@@ -49,6 +49,7 @@ tier_points_paired:
             Other Platform-as-a-Service options do not cover the full scope of HIPAA compliance. None cover HITRUST, GxP, and GDPR. Compare [Our BAA] to other options when researching.
         - |
             All other installable technologies aren't platforms meant to greatest compliance coverage with the best experience. Instead, you pay for consultant service fees.
+
 tech_content:
     lead: |
         AWS and Azure provide VPCs, which cover a portion of compliance and security requirements.
@@ -106,50 +107,42 @@ platform_use:
         button:
             label: "View Services"
             url: /platform/services
-# tier_hosted:
-#     title: Hosted
-#     subhead: Maximum Convenience
-#     price: Starting at $249 / mo
-#     cta:
-#         label: Contact Sales to Explore Pricing Options
-#         url: "/contact"
-#     points:
-#         - |
-#             Deploy containerized workloads to our multi-tenant Platform through self-service tooling. Customers interact with Datica support and billing.
-#         - |
-#             Customers prefer this option when speed and convenience matter most while not sacrificing the best compliance approach on the cloud.
-#         - |
-#             ### This Model Works Great For...
-#             {: .headline-4}
-#         - |
-#             * Startups looking to develop quickly while also getting instant security and compliance credibility.
-#             * Enterprise teams who need to move quickly but constrained by internal IT, security, and compliance groups.
-#         - |
-#             ### Why This Over Other Providers...
-#             {: .headline-4}
-#         - |
-#             Other Platform-as-a-Service options do not cover the full scope of HIPAA compliance. None cover HITRUST, GxP, and GDPR. Compare [Our BAA] to other options when researching.
 
-# tier_licensed:
-#     title: Licensed
-#     subhead: Maximum Flexibility
-#     price: Starting at $120,000 / year
-#     cta:
-#         label: Contact Sales to Explore Pricing Options
-#         url: "/contact"
-#     points:
-#         - |
-#             Install the Datica Platform on your existing AWS or Azure account, then deploy containerized workloads onto it for continuous compliance.
-#         - |
-#             Customers prefer this option when full control over AWS or Azure accounts matters most, while still receiving the same compliance assurances from the Platform.
-#         - |
-#             ### This Model Works Great For...
-#             {: .headline-4}
-#         - |
-#             * Engineering orgs who need compliance guarantees but can't build everything themselves for less than one cloud engineer FTE.
-#             * Teams who need compliance help but have a hard requirement to directly own their AWS or Azure accounts.
-#         - |
-#             ### Why This Over Msps...
-#             {: .headline-4}
-#         - |
-#             All other installable technologies aren't platforms meant to greatest compliance coverage with the best experience. Instead, you pay for consultant service fees.
+compliance_header:
+    -
+        title: "If you are big..."
+        desc: "Large healthcare organizations are hesitant to migrate to AWS or Azure because they are concerned compliance requirements aren't being met. When they can't be sure, they stick with old infrastructure."
+    -
+        title: "If you are new..."
+        desc: "Emerging digital health products can't break through to their hospital, pharma, or payer market unless they demonstrate compliance and security credibility from Day 1. Compliance is central to the business model."
+    -
+        title: "Datica solves your problem"
+        desc: "The Datica Platform is a prescriptive way for any healthcare technology team to manage compliance on the cloud, giving healthcare the assurances it needs to adopt the benefits of the cloud."
+
+shared_responsibility:
+    - |
+        AWS and Azure are the world's best clouds at addressing compliance and security _of_ the cloud: physical controls and network controls. The rest is your responsibility.
+    
+        In their Shared Responsibility models, you must address the following on top of them in order to approach complete continuous compliance. The following list maps to a specific control in the HIPAA Omnibus, HITRUST CSF, GxP regulations, or GDPR articles.
+    - |
+        - Block-level encryption
+        - Network encryption between existing processes or services
+        - Sub-network segmentation
+        - Intrusion detection
+        - Vulnerability scanning
+        - Systems monitoring
+        - System-level logging
+        - App-level logging
+        - Log storage in an encrypted fashion
+        - Disaster recovery protocols
+        - Business continuity
+        - Patch management
+        - Breach management
+        - Daily backups
+        - Penetration testing
+        - Business Associate management
+        - Access control management
+    - |
+        None of it is impossible for you to figure out. But configuring, integrating, documenting, auditing, and managing it across a fleet of containers or VMs with every deployment is how continuous compliance happens.
+        
+        Datica does all this for you. We are compliance _on_ the cloud. Customers of Datica pass these Shared Responsibility obligations to us and are left with compliance _in_ the cloud, which are company-level and application-level responsibilities.

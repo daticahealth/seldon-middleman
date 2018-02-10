@@ -1,6 +1,6 @@
 ---
 title: "Compliance for the Datica Platform"
-summary: "Datica is HITRUST CSF Certified"
+summary: "Prescriptive Compliance is how Healthcare Adopts the Cloud"
 navTitle: "Compliance"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
@@ -25,16 +25,9 @@ priority: "0.9"
 </aside>
 <div class="container-color--gray-light">
     <section class="section-article">
-        <div class="row align-center">
-            <div class="columns small-12 medium-12 large-7 text-center group">
-                <h1 class="headline-3"><%= current_page.data.title %></h1>
-            </div>
-        </div>
-        <div class="row align-center">
-            <div class="columns small-12 medium-4 large-4 lead">
-                <p><strong class="highlight">Compliance matters</strong> because it establishes credibility of your product within the industry. Without it, you'll never get a foot in the door.<p>Satisfying compliance without sacrificing the benefits of the cloud is how you get to market faster while reducing costs.</p>
-            </div>
-            <div class="columns small-12 medium-8 large-6">
+        <div class="row align-center group">
+            <div class="columns small-12 medium-12 large-12">
+                <h1 class="headline-2 group text-center"><%= current_page.data.summary %></h1>
                 <div class="video drop">
                     <script src="//fast.wistia.com/embed/medias/1o1udvaa6z.jsonp" async></script>
                     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
@@ -46,26 +39,41 @@ priority: "0.9"
                 </div>
             </div>
         </div>
+        <div class="row">
+            <% data.views.platform.compliance_header.each do | block | %>
+                <div class="columns small-12 medium-4">
+                   <h3 class="headline-4"><%= block.title %></h3>
+                   <p><%= block.desc %></p>
+                </div>
+            <% end %>
+        </div>
     </section>
 </div>
 <section class="section-article">
     <div class="row group align-center">
         <div class="columns small-12">
+            <h2 class="headline-3">Understanding Shared Responsibility</h2>
             <script src="https://fast.wistia.com/embed/medias/08ebxufc4q.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_08ebxufc4q seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
         </div>
     </div>
-    <div class="row small-up-1 medium-up-3 group">
+    <div class="row align-center">
+        <% data.views.platform.shared_responsibility.each do | block | %>
+            <div class="columns small-12 medium-4">
+               <%= Kramdown::Document.new(block).to_html %>
+            </div>
+        <% end %>
+    </div>
+<!--     <div class="row small-up-1 medium-up-3 group">
         <% data.views.compliant_cloud.block_innovation_a.each do |item| %>
             <div class="column">
-                <!-- the icons are inlined with .inject-me and a color class, but not strictly necessary. -AW -->
                 <img class="icon-size--medium inject-me svg-color--black" src="<%= item["icon"] %>" alt="<%= item["title"] %> icon"/>
                 <p><strong><%= item["title"] %></strong></p>
                 <p><%= item["body"] %></p>
             </div>
         <% end %>
-    </div>
+    </div> -->
 </section>
-<section class="section-article">
+<!-- <section class="section-article">
     <div class="row align-center text-center">
         <div class="columns small-12 large-10">
             <h2 class="headline-3">Compliance Facts</h2>
@@ -100,7 +108,7 @@ priority: "0.9"
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <section class="section-article container-gray-12">
     <div class="row align-center">
         <div class="columns small-12 large-8 text-center group">
