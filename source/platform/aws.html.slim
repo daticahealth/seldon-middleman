@@ -1,0 +1,90 @@
+---
+title: "Datica Platform on AWS"
+summary: "Datica Platform on AWS"
+navTitle: "AWS"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "July 15, 2017"
+ogType: "product"
+share_image: "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+customCSS: "platform"
+layout: platform
+priority: "0.9"
+collectionName: "platform"
+collectionOrder: 2
+ctaCustom: true
+---
+
+aside.hide-for-large.pad--sm.container-color--blue-alt
+    .row.align-middle.align-center
+        .columns.small-6.medium-4
+            a.button.hollow--inverted.expanded.small.nomargin(href="/platform/integration" title="learn about integrations") Integrations
+        .columns.small-6.medium-4
+            = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Pricing", :url => "/pricing", :button_classes => "button button--light expanded small nomargin", :icon => "icon-angle-right", :icon_color => "white", :icon_align => "right" }
+section.section-article.container-gray-2
+    .row.align-center
+        .columns.small-12.medium-10.large-7.text-center
+            h1.headline-3.group Datica on AWS
+            p.lead
+                | (masthead - illustration, etc.)
+
+section.section-article.container-color--gray-light(id="shared-responsibility")
+    .row.align-center
+        .columns.small-12.medium-10.large-7.text-center
+            h2.headline-3.group Explaining Shared Responsibility
+            img(src="https://images.contentful.com/189dvqdsjh46/3RWNxidFGEsM0W44KmWQeK/9dc0eadc93dea2b5cf970821b4bee14c/aws-shared-responsibility-with-without.png" alt="Explaining Shared Responsibility")
+
+section.section-article(id="pricing-hosted")
+    .row.align-center
+        .columns.small-12.medium-10.large-8.text-center.group
+            h2.headline-3.nomargin Datica's Hosted Platform&mdash;starting at <strong>$249/mo</strong>
+            p.lead The industry's best multi-tenant platform that maximizes convenience and experience
+    .row.align-center.group
+        .columns.small-12.medium-4.large-4
+            img(src="https://images.contentful.com/189dvqdsjh46/4Si7uOEEyIeCCik0AAqcos/e6bc17840e630371d3fcec9842e1959b/aws-hosted-diagram.png" alt="Hosted platform diagram")
+        .columns.small-6.medium-8.large-5
+            markdown:
+                We wrote the book on how to make multi-tenant environments compliant and secure. The Hosted version of the Platform gives customers the best experience and the most convenience to get started immediately.
+
+                - Hundreds of customers, from startups to Fortune 500 organizations
+                - Thousands of applications deployed
+                - Over 1,000 security assessments and audits passed (100% success rate)
+
+                Note: Datica has a Business Associate Agreement with AWS. Datica customers sign a BAA with Datica, and inherit AWS's BAA through Datica's BAA.
+    .row.align-center
+        .columns.small-12.medium-10.large-8.text-center.group
+            h2.headline-3.nomargin Licensed Option — starting at <strong>$120,000/year</strong>
+            p.lead Install the Datica Platform on your existing AWS account for maximum flexibility
+    .row.align-center
+        .columns.small-12.medium-4.large-4
+            img(src="https://images.contentful.com/189dvqdsjh46/3VR4RYG9zWies6oyOCa8UA/51f7ad749a26806964016ec1e81ab5a2/aws-licensed-diagram.png" alt="Licensed platform diagram")
+        .columns.small-6.medium-8.large-5
+            markdown:
+                The Datica Platform orchestrates all required AWS Primitives on top your AWS account to be compliant with HIPAA, HITRUST, GDPR, and GxP.
+
+                The compliance and security assurances are the same as the Hosted version. The difference is customers can manage underlying infrastructure, like scaling EC2 compute resources, through their own AWS Consoles rather than through the Datica Platform.
+
+                Continuous monitoring and reporting of underlying infrastruture within the Datica Platform will keep track if any improper access to underlying resources occur that would make the account become non-compliant.
+
+                Note: Customers sign a Business Associate Agreement with both AWS and Datica.
+
+section.section-article(id="platform-benefits-1")
+    .row.align-center
+        .columns.small-12.medium-10.large-8.text-center.group
+            h2.headline-3.nomargin No matter your implementation, the Platform delivers the same assurances
+            p.lead Hosted and Licensed options solve compliance exactly the same way
+section.section-article(id="platform-benefits-2")
+    .row.align-center
+        .columns.small-12.medium-10.large-8.text-center.group
+            h2.headline-3.nomargin Pricing is predictable
+            p.lead Pay monthly or annual subscriptions to the Platform with pass-through pricing on all physical AWS resources, like RAM and EBS.
+section.section-article(id="platform-benefits-3")
+    .row.align-center
+        .columns.small-12.medium-10.large-8.text-center.group
+            h2.headline-3.nomargin All customers receive the Healthcare Compliance Management System
+            p.lead The dashboard gives you a view into compliance performance on both Hosted and Licensed versions of the Platform.
+    .row.align-center
+        .columns.small-12.medium-6.large-7
+            img alt=("HCMS Dashboard") src="https://images.contentful.com/189dvqdsjh46/3wzJLEqLHqs4kC2cAk4Msq/1131a6ae3d921e934fa8effa21802b35/hcms-dashboard.png?w=1200"
+        .columns.small-12.medium-6.large-4
+            p Customers receive a login to the dashboard which reports on account compliance performance, even for Licensed customers deploying on their AWS accounts.
