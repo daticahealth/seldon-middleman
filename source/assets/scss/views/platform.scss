@@ -2,12 +2,14 @@
 @import '../settings';
 @import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
 // @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import 'node_modules/foundation-sites/scss/components/_off-canvas.scss';
 @import '../mixins/colors';
 @import '../mixins/functions';
 @import '../mixins/animation';
 // @import '../vendor/slick';
 // @import '../modules/masonry';
 // @import '../modules/fonts-optional';
+@include foundation-off-canvas;
 
 .platform { // this is injected into body via MM
     #topNavCTA { // override, as is not primary cta

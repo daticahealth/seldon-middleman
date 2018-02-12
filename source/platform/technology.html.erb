@@ -49,7 +49,8 @@ ctaCustom: true
             <h2 class="headline-4 spaced-out">Datica Platform Features</h2>
         </div>
     </div>
-    <% data.site.featureCategories.each do | id, featureCat | %>
+    <% ordered_feature_categories = data.site.featureCategories.to_a.sort_by{ |id, featureCat| featureCat['sort_order'] } %>
+    <% ordered_feature_categories.each do | id, featureCat | %>
         <div class="row">
             <div class="columns small-12 large-8">
                 <h3 class="headline-43"><%= featureCat["title"] %></h3>
@@ -59,21 +60,48 @@ ctaCustom: true
             </div>
         </div>
         <div class="row small-up-2 medium-up-2 large-up-3 xlarge-up-4 group--2x">
-                <% if featureCat.has_key?("related_features") %>
-                    <% featureCat["related_features"].each do | feature | %>
-                        <div class="column">
-                            <h4 class="headline-6"><%= feature.title %></h4>
-                            <% if feature.has_key?("summary") %>
-                                <%= Kramdown::Document.new(feature.summary).to_html %>
-                            <% end %>
-                            <!-- <% if feature.has_key?("desc") %>
-                                <dd><%= Kramdown::Document.new(feature.desc).to_html %></dd>
-                            <% end %> -->
+            <% if featureCat.has_key?("related_features") %>
+                <% featureCat["related_features"].each do | feature | %>
+                    <div class="column">
+                        <h4 class="headline-6<% if feature.has_key?('desc') %> text--blue<% end %>" data-toggle="featureDetail_<%= feature.slug %>"><%= feature.title %></h4>
+                        <% if feature.has_key?("summary") %>
+                            <%= Kramdown::Document.new(feature.summary).to_html %>
+                        <% end %>
+                    </div>
+                    <% if feature.has_key?("desc") %>
+                        <div class="section-article--small container-gray-2 off-canvas position-bottom is-closed" data-content-overlay="false" data-transition="overlap" id="featureDetail_<%= feature.slug %>" data-off-canvas>
+                            <div class="row">
+                                <div class="columns small-12 large-8">
+                                    <h4 class="headline-6"><%= feature.title %></h4>
+                                    <%= Kramdown::Document.new(feature.desc).to_html %>
+                                </div>
+                            </div>
                         </div>
                     <% end %>
                 <% end %>
+            <% end %>
         </div>
     <% end %>
+<!-- <button type="button" class="button" data-toggle="offCanvasNestedPush">
+Open Nested Off-Canvas Push
+</button>
+<button type="button" class="button" data-toggle="offCanvasNestedOverlap">
+Open Nested Off-Canvas Overlap
+</button>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+<div class="off-canvas position-bottom is-closed" data-transition="push" id="offCanvasNestedPush" data-off-canvas>
+<div class="callout">
+<p>I'm a nested off-canvas that mustn't be a sibling of the off-canvas content anymore.</p>
+<p>Since push transition is currently not possible for nested elements, I'm forced to use overlayp transition.</p>
+</div>
+</div>
+<div class="off-canvas position-bottom is-closed" data-transition="overlap" id="offCanvasNestedOverlap" data-off-canvas>
+<div class="callout">I'm a nested off-canvas that uses overlap transition and the same position as the other nested off-canvas.</div>
+</div> -->
+
+<p>Enim, repudiandae officia dolores temporibus soluta, ipsa saepe tempora ipsum laudantium in mollitia quidem, nisi magni provident hic architecto rem culpa beatae.</p>
 </section>
 <section class="section-article" id="tech-ehrs">
     <div class="row align-center text-center">
