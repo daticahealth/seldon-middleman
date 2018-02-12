@@ -18,4 +18,4 @@
 # Basic redirect rules
 redirects = [
    {from = "/platform/integration", to = "/discover/ehr-integrations"},
-   {from = "/*", to = "/404/index.html", status = 404}]
+   {from = "/*", to = "/404/index.html", status = 404, force = true}]
