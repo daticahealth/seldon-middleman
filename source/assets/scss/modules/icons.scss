@@ -1,4 +1,4 @@
-// SVG icon & logo attributes
+// ====== SVG icon & logo attributes ======
 .icon {
     &-inline {
         vertical-align: baseline;
@@ -158,83 +158,6 @@
         @include status-dot($color_yellow-glow, $thing-tiny);
     }
 }
-
-// Custom icons
-
-// AW: I would like to see us move towards the inline SVG methods using SVGInjector. I have some examples from the guide I will point to.
-
-// .icon-cloud-w{
-//     display: inline-block;
-//     background: url('/public/icons/brand/icon-cloud-w.svg');
-//     width: $thing-s;
-//     height: $thing-s;
-//     background-size: $thing-s $thing-s;
-// }
-// .icon-cloud-alt{
-//     display: inline-block;
-//     background: url('/public/icons/brand/icon-cloud-alt.svg');
-//     width: $thing-s;
-//     height: $thing-s;
-//     background-size: $thing-s $thing-s;
-// }
-// .icon-integration-w{
-//     display: inline-block;
-//     background: url('/public/icons/brand/icon-integration-w.svg');
-//     width: $thing-s;
-//     height: $thing-s;
-//     background-size: $thing-s $thing-s;
-// }
-// .icon-integration-alt{
-//     display: inline-block;
-//     background: url('/public/icons/brand/icon-integration-alt.svg');
-//     width: $thing-s;
-//     height: $thing-s;
-//     background-size: $thing-s $thing-s;
-// }
-// .icon-compliance-w{
-//     display: inline-block;
-//     background: url('/public/icons/brand/icon-compliance-w.svg');
-//     width: $thing-s;
-//     height: $thing-s;
-//     background-size: $thing-s $thing-s;
-// }
-// .icon-compliance-alt{
-//     display: inline-block;
-//     background: url('/public/icons/brand/icon-compliance-alt.svg');
-//     width: $thing-s;
-//     height: $thing-s;
-//     background-size: $thing-s $thing-s;
-// }
-// .icon-cloud{
-//     display: inline-block;
-//     background: url('/public/icons/brand/icon-cloud.svg');
-//     width: $thing-s;
-//     height: $thing-s;
-//     background-size: $thing-s $thing-s;
-// }
-// .icon-integration{
-//     display: inline-block;
-//     background: url('/public/icons/brand/icon-integration.svg');
-//     width: $thing-s;
-//     height: $thing-s;
-//     background-size: $thing-s $thing-s;
-// }
-// .icon-services{
-//     display: inline-block;
-//     background: url('/public/icons/brand/icon-services.svg');
-//     width: $thing-s;
-//     height: $thing-s;
-//     background-size: $thing-s $thing-s;
-// }
-
-// .icon-link-group{
-//     svg,
-//     a{
-//         display: block;
-//         float: left;
-//     }
-//     a{margin: rem-calc(15px) 0 0 rem-calc(10px);}
-// }
 
 .green-check{
     color: $color_green;

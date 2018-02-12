@@ -10,7 +10,7 @@ share_image: "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/
 customCSS: "platform"
 layout: platform
 collectionName: "platform"
-collectionOrder: 4
+collectionOrder: 3
 priority: "0.9"
 ---
 <aside class="hide-for-large pad--sm container-color--blue-alt">
@@ -26,7 +26,7 @@ priority: "0.9"
 <div class="container-color--gray-light">
     <section class="section-article">
         <div class="row align-center group">
-            <div class="columns small-12 medium-12 large-12">
+            <div class="columns small-12 medium-12 large-8">
                 <h1 class="headline-2 group text-center"><%= current_page.data.summary %></h1>
                 <div class="video drop">
                     <script src="//fast.wistia.com/embed/medias/1o1udvaa6z.jsonp" async></script>
@@ -49,10 +49,10 @@ priority: "0.9"
         </div>
     </section>
 </div>
-<section class="section-article">
+<section class="section-article container-color--dark-alt">
     <div class="row group align-center">
         <div class="columns small-12">
-            <h2 class="headline-3">Understanding Shared Responsibility</h2>
+            <h2 class="headline-3 group text-center spaced-out">Understanding Shared Responsibility</h2>
             <script src="https://fast.wistia.com/embed/medias/08ebxufc4q.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_08ebxufc4q seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
         </div>
     </div>
@@ -147,18 +147,19 @@ priority: "0.9"
             <p class="lead">Datica is ready for GDPR on May 25th.</p>
         </div>
     </div>
-    <div class="row align-center align-middle">
-        <div class="columns small-12 medium-6 large-4">
-            <img src="https://images.contentful.com/189dvqdsjh46/6L09pVF6a4uAY00QMqSOYg/a99648672cbc3279925bf2fa7e146fd6/gdpr-ready-badge-text.png" alt="GDPR Ready">
+    <div class="row align-center">
+        <div class="columns small-12 medium-6 large-4 medium-order-2">
+            <img class="group" src="https://images.contentful.com/189dvqdsjh46/6L09pVF6a4uAY00QMqSOYg/a99648672cbc3279925bf2fa7e146fd6/gdpr-ready-badge-text.png" alt="GDPR Ready">
         </div>
         <div class="columns small-12 medium-6 large-6">
             <p>The European Union has created a new authoritative regulation on consumer data called GDPR. Fines start being handed out on May 25th, 2018. The regulation applies to all EU citizens regardless of service or where the data lives. Protected Health Information (PHI) is scoped within GDPR, so any healthcare organization who might service European Union citizens will be affected by it.</p>
             <p>Are you ready? Datica has gone through the necessary audits to ensure it is compliant with the regulation.</p>
-            <%= partial "partials/cards/discover", :locals => { :post => data.site.discover["6yNMzCKn84Q4qIsm0sWmUy"], :classes => "" } %>
+            <p><a href="/discover/<%= data.site.discover['6yNMzCKn84Q4qIsm0sWmUy'].slug %>">Learn more about GDPR</a>. </p>
+            <%#= partial "partials/cards/discover", :locals => { :post => data.site.discover["6yNMzCKn84Q4qIsm0sWmUy"], :classes => "" } %>
         </div>
     </div>
 </section>
-<section class="section-article container-color--gray-dark-grad text-center">
+<!-- <section class="section-article container-color--gray-dark-grad text-center">
     <div class="row align-center">
         <div class="columns small-12 medium-8">
             <div class="section--header-dark-group">
@@ -187,7 +188,7 @@ priority: "0.9"
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="section-article">
     <div class="row align-center">

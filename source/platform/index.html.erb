@@ -79,43 +79,61 @@ priority: "0.9"
     </div> -->
 </section>
 <section class="section-article container-color--gray-dark-grad-top-bottom-noise">
-    <div class="row align-center">
-        <% data.views.platform.tiers.each do |tier| %>
-            <div class="columns medium-6">
-                <h2 class="headline-2"><%= tier.title %></h2>
-                <h3 class="headline-3 subhead--spaced"><%= tier.subhead %></h3>
-                <h4 class="headline-4"><%= tier.price %></h4>
+    <div class="row hide-for-large group align-center">
+        <div class="columns small-12 medium-8">
+            <ul class="tabs" id="tier-tabs" data-tabs>
+                <li class="tabs-title is-active"><a href="#tierHosted" aria-selected="true">Hosted</a></li>
+                <li class="tabs-title"><a href="#tierLicensed" data-tabs-target="tierLicensed">Licensed</a></li>
+            </ul>
+            <div class="tabs-content" data-tabs-content="tier-tabs">
+                <div class="tabs-panel tier-panel is-active" id="tierHosted">
+                    <div class="text--white">Hosted content</div>
+                </div>
+                <div class="tabs-panel tier-panel drop" id="tierLicensed">
+                    <div class="text--white">Licensed content</div>
+                </div>
             </div>
-        <% end %>
+        </div>
     </div>
-    <% data.views.platform.tier_points_paired.each_with_index do |dyad, i| %>
+    <div class="show-for-medium">
         <div class="row align-center">
-            <% dyad.each do |point| %>
-                <div class="columns medium-6">
-                   <%= Kramdown::Document.new(point).to_html %>
+            <% data.views.platform.tiers.each do |tier| %>
+                <div class="columns small-6 medium-6 ">
+                    <h2 class="headline-2"><%= tier.title %></h2>
+                    <h3 class="headline-3 subhead--spaced"><%= tier.subhead %></h3>
+                    <h4 class="headline-4"><%= tier.price %></h4>
                 </div>
             <% end %>
         </div>
-    <% end %>
-    <hr class="content">
-    <div class="row align-center">
-        <% data.views.platform.tiers.each do |tier| %>
-            <div class="columns medium-6">
-            <%=
-            partial "partials/snippets/button",
-                :locals => {
-                    :label => tier.cta.label,
-                    :title => tier.cta.label,
-                    :url => tier.cta.url,
-                    # :rel => "external",
-                    :button_classes => tier.cta.classes,
-                    :icon => "icon-chevron-right",
-                    :icon_color => "white",
-                    :icon_align => "right"
-                }
-            %>
+        <% data.views.platform.tier_points_paired.each_with_index do |dyad, i| %>
+            <div class="row align-center">
+                <% dyad.each do |point| %>
+                    <div class="columns small-6 medium-6 ">
+                       <%= Kramdown::Document.new(point).to_html %>
+                    </div>
+                <% end %>
             </div>
         <% end %>
+        <hr class="content">
+        <div class="row align-center">
+            <% data.views.platform.tiers.each do |tier| %>
+                <div class="columns medium-6">
+                <%=
+                partial "partials/snippets/button",
+                    :locals => {
+                        :label => tier.cta.label,
+                        :title => tier.cta.label,
+                        :url => tier.cta.url,
+                        # :rel => "external",
+                        :button_classes => tier.cta.classes,
+                        :icon => "icon-chevron-right",
+                        :icon_color => "white",
+                        :icon_align => "right"
+                    }
+                %>
+                </div>
+            <% end %>
+        </div>
     </div>
 </section>
 

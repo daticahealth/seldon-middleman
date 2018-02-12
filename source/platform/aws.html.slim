@@ -11,14 +11,14 @@ customCSS: "platform"
 layout: platform
 priority: "0.9"
 collectionName: "platform"
-collectionOrder: 2
+collectionOrder: 5
 ctaCustom: true
 ---
 
 aside.hide-for-large.pad--sm.container-color--blue-alt
     .row.align-middle.align-center
         .columns.small-6.medium-4
-            a.button.hollow--inverted.expanded.small.nomargin(href="/platform/integration" title="learn about integrations") Integrations
+            = partial "partials/snippets/button", :locals => { :label => "Compliance", :title => "View Pricing", :url => "/platform/compliance", :button_classes => "button hollow--inverted expanded small nomargin", :icon => "icon-angle-left", :icon_color => "white", :icon_align => "left" }
         .columns.small-6.medium-4
             = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Pricing", :url => "/pricing", :button_classes => "button button--light expanded small nomargin", :icon => "icon-angle-right", :icon_color => "white", :icon_align => "right" }
 section.section-article.container-gray-2
@@ -42,7 +42,7 @@ section.section-article(id="pricing-hosted")
     .row.align-center.group
         .columns.small-12.medium-4.large-4
             img(src="https://images.contentful.com/189dvqdsjh46/4Si7uOEEyIeCCik0AAqcos/e6bc17840e630371d3fcec9842e1959b/aws-hosted-diagram.png" alt="Hosted platform diagram")
-        .columns.small-6.medium-8.large-5
+        .columns.small-12.medium-8.large-5
             markdown:
                 We wrote the book on how to make multi-tenant environments compliant and secure. The Hosted version of the Platform gives customers the best experience and the most convenience to get started immediately.
 
@@ -58,7 +58,7 @@ section.section-article(id="pricing-hosted")
     .row.align-center
         .columns.small-12.medium-4.large-4
             img(src="https://images.contentful.com/189dvqdsjh46/3VR4RYG9zWies6oyOCa8UA/51f7ad749a26806964016ec1e81ab5a2/aws-licensed-diagram.png" alt="Licensed platform diagram")
-        .columns.small-6.medium-8.large-5
+        .columns.small-12.medium-8.large-5
             markdown:
                 The Datica Platform orchestrates all required AWS Primitives on top your AWS account to be compliant with HIPAA, HITRUST, GDPR, and GxP.
 
