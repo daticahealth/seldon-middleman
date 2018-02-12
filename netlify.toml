@@ -14,3 +14,8 @@
 
 [Build]
   Publish = ""
+
+# Basic redirect rules
+redirects = [
+   {from = "/*", to = "/404/", status = 404, force = false},
+   {from = "/platform/integration", to = "/discover/ehr-integrations", status = 404, force = false}]
