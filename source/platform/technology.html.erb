@@ -18,12 +18,20 @@ ctaCustom: true
 <defs>
 <symbol id="icon-plus-disc" viewBox="0 0 32 32"><title>plus-disc</title>
 <g fill-rule="evenodd">
-    <%# hiding the disc for a more compact icon. 
-     <path fill="currentColor" class="disc" fill-rule="nonzero" d="M16,32 C7.163,32 0,24.837 0,16 C0,7.163 7.163,0 16,0 C24.837,0 32,7.163 32,16 C32,24.837 24.837,32 16,32 Z M16,28.8 C23.069,28.8 28.8,23.069 28.8,16 C28.8,8.931 23.069,3.2 16,3.2 C8.931,3.2 3.2,8.931 3.2,16 C3.2,23.069 8.931,28.8 16,28.8 Z"/> %>
+    <%# hiding the disc for a more compact icon.  %>
+     <path fill="currentColor" class="disc" fill-rule="nonzero" d="M16,32 C7.163,32 0,24.837 0,16 C0,7.163 7.163,0 16,0 C24.837,0 32,7.163 32,16 C32,24.837 24.837,32 16,32 Z M16,28.8 C23.069,28.8 28.8,23.069 28.8,16 C28.8,8.931 23.069,3.2 16,3.2 C8.931,3.2 3.2,8.931 3.2,16 C3.2,23.069 8.931,28.8 16,28.8 Z"/>
     <polygon fill="currentColor" class="plus" points="9.6 6.4 16 6.4 16 9.6 9.6 9.6 9.6 16 6.4 16 6.4 9.6 0 9.6 0 6.4 6.4 6.4 6.4 0 9.6 0" transform="translate(8 8)"/>
   </g>
 </symbol>
 </defs>
+</svg>
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" data-name="chevron" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <symbol id="icon-chevron-down" viewBox="0 0 18 18">
+        <title>chevron-down</title>
+        <path d="M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z"/>
+        </symbol>
+    </defs>
 </svg>
 <aside class="hide-for-large pad--sm container-color--blue-alt">
     <div class="row align-middle align-center">
@@ -78,7 +86,7 @@ ctaCustom: true
                             <h4 class="headline-5">
                                 <a class="is-toggle" data-toggle="feature-detail_<%= feature.slug %>">
                                 <%= feature.title %>
-                                <svg id="feature-icon-<%= feature.slug %>" class="icon-inline icon-toggle svg-color--blue icon icon-plus-disc" style="margin-bottom: 0.03em;"><use xlink:href="#icon-plus-disc" class="symbol-icon"></use></svg>
+                                <svg id="feature-icon-<%= feature.slug %>" class="icon-inline icon-toggle svg-color--blue icon icon-plus-disc" style="margin-bottom: 0.03em;"><use xlink:href="#icon-chevron-down" class="symbol-icon"></use></svg>
                                 <%#= inline_svg("small/icon-plus-disc", class: "icon-inline icon-toggle svg-color--blue") %>
                                 </a>
                             </h4>

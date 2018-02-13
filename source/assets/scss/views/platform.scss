@@ -26,24 +26,29 @@
 }
 // expand/toggle component
 .icon-toggle {
-    @include transition(transform $timing-default);
+    opacity: 0.5;
+    @include transition(transform $timing-default, opacity $timing-default);
 }
 
 .is-toggle {
     @include transition(color $timing-default, transform $timing-default);
+    &:hover {
+        .icon-toggle {
+            opacity: 1;
+            transform: translate3d(0, 2px, 0);
+        }
+    }
     &[aria-expanded="true"] {
         color: black;
         .icon-toggle {
-            transform: rotate(45deg);
+            transform: rotate(180deg);
         }
     }
     &[aria-expanded="false"] {
         color: $color_prime-alt;
     }
 }
-// .icon-is-toggled {
-//     transform: rotate(45deg);
-// }
+
 .show-more {
     &--container {
         display: none;
