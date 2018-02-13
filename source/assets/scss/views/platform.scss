@@ -54,7 +54,13 @@
         }
     }
 }
-        
+  
+.feature-item {
+    & > * {
+        margin-bottom: 0.3em; // tighten spacing in children
+    }
+    margin-bottom: 0.8rem;
+}      
 // @include transition(opacity $timing-default);
 
 .platform { // this is injected into body via MM

@@ -18,7 +18,8 @@ ctaCustom: true
 <defs>
 <symbol id="icon-plus-disc" viewBox="0 0 32 32"><title>plus-disc</title>
 <g fill-rule="evenodd">
-    <path fill="currentColor" class="disc" fill-rule="nonzero" d="M16,32 C7.163,32 0,24.837 0,16 C0,7.163 7.163,0 16,0 C24.837,0 32,7.163 32,16 C32,24.837 24.837,32 16,32 Z M16,28.8 C23.069,28.8 28.8,23.069 28.8,16 C28.8,8.931 23.069,3.2 16,3.2 C8.931,3.2 3.2,8.931 3.2,16 C3.2,23.069 8.931,28.8 16,28.8 Z"/>
+    <%# hiding the disc for a more compact icon. 
+     <path fill="currentColor" class="disc" fill-rule="nonzero" d="M16,32 C7.163,32 0,24.837 0,16 C0,7.163 7.163,0 16,0 C24.837,0 32,7.163 32,16 C32,24.837 24.837,32 16,32 Z M16,28.8 C23.069,28.8 28.8,23.069 28.8,16 C28.8,8.931 23.069,3.2 16,3.2 C8.931,3.2 3.2,8.931 3.2,16 C3.2,23.069 8.931,28.8 16,28.8 Z"/> %>
     <polygon fill="currentColor" class="plus" points="9.6 6.4 16 6.4 16 9.6 9.6 9.6 9.6 16 6.4 16 6.4 9.6 0 9.6 0 6.4 6.4 6.4 6.4 0 9.6 0" transform="translate(8 8)"/>
   </g>
 </symbol>
@@ -69,13 +70,13 @@ ctaCustom: true
                 <% end %>
             </div>
         </div>
-        <div class="row small-up-2 medium-up-2 large-up-3 xlarge-up-3 group--2x">
+        <div class="row small-up-1 medium-up-2 large-up-3 xlarge-up-3 group--2x">
             <% if featureCat.has_key?("related_features") %>
                 <% featureCat["related_features"].each do | feature | %>
                     <div class="column feature-item">
                         <% if feature.has_key?('desc') %>
-                            <h4 class="headline-6">
-                                <a data-toggle="feature-detail_<%= feature.slug %>">
+                            <h4 class="headline-5">
+                                <a class="is-toggle" data-toggle="feature-detail_<%= feature.slug %>">
                                 <%= feature.title %>
                                 <svg id="feature-icon-<%= feature.slug %>" class="icon-inline icon-toggle svg-color--blue icon icon-plus-disc" style="margin-bottom: 0.03em;"><use xlink:href="#icon-plus-disc" class="symbol-icon"></use></svg>
                                 <%#= inline_svg("small/icon-plus-disc", class: "icon-inline icon-toggle svg-color--blue") %>
