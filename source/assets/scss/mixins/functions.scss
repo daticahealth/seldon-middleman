@@ -56,7 +56,7 @@ $underline: false !default;
     transition: $args;
 }
 @mixin transform($t){
-    -ms-transform: $t;
+    // -ms-transform: $t;
     -webkit-transform: $t;
     transform: $t;
 }

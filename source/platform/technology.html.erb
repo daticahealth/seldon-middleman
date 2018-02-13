@@ -74,10 +74,12 @@ ctaCustom: true
                 <% featureCat["related_features"].each do | feature | %>
                     <div class="column feature-item">
                         <% if feature.has_key?('desc') %>
-                            <h4 class="headline-6 is-toggle" data-toggle="feature-detail_<%= feature.slug %>">
+                            <h4 class="headline-6">
+                                <a data-toggle="feature-detail_<%= feature.slug %>">
                                 <%= feature.title %>
                                 <svg id="feature-icon-<%= feature.slug %>" class="icon-inline icon-toggle svg-color--blue icon icon-plus-disc" style="margin-bottom: 0.03em;"><use xlink:href="#icon-plus-disc" class="symbol-icon"></use></svg>
                                 <%#= inline_svg("small/icon-plus-disc", class: "icon-inline icon-toggle svg-color--blue") %>
+                                </a>
                             </h4>
                         <% else %>
                             <h4 class="headline-6"><%= feature.title %></h4>
