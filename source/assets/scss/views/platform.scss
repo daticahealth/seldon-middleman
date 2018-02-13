@@ -13,26 +13,37 @@
 
 @include keyframes( expando ) {
     0% {
-        height: 0px;
+        // height: 0px;
         opacity: 0;
     }
     // 50% {
         
     // }
     100% {
-        height: auto;
+        // height: auto;
         opacity: 1;
     }
 }
+// expand/toggle component
+.icon-toggle {
+    @include transition(transform $timing-default);
+}
+
 .is-toggle {
-    @include transition(color $timing-default);
+    @include transition(color $timing-default, transform $timing-default);
     &[aria-expanded="true"] {
         color: black;
+        .icon-toggle {
+            transform: rotate(45deg);
+        }
     }
     &[aria-expanded="false"] {
         color: $color_prime-alt;
     }
 }
+// .icon-is-toggled {
+//     transform: rotate(45deg);
+// }
 .show-more {
     &--container {
         display: none;
@@ -75,6 +86,7 @@
         }
     }
 }
+
 .multicol {
     &-2 {
         @include multicolumns (2, 5em, 1.5rem);

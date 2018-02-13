@@ -1,4 +1,5 @@
 // ====== SVG icon & logo attributes ======
+
 .icon {
     &-inline {
         vertical-align: baseline;
@@ -120,6 +121,10 @@
             margin: 0.5rem 1rem;
         }
     }
+}
+svg { // normalize with css var
+    fill: currentColor;
+    // stroke: currentColor;
 }
 // there are objects that are not paths that have fill =/ - only if all is not converted to fills first, which all *color-able* SVG must be! Already done for older icons, part of cleanup. -AW
 .svg {
