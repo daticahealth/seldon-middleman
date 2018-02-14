@@ -1,0 +1,98 @@
+---
+title: "Compliance for the Datica Platform"
+summary: "Prescriptive Compliance is how Healthcare Adopts the Cloud"
+navTitle: "Compliance"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "July 15, 2017"
+ogType: "product"
+share_image: "//images.contentful.com/189dvqdsjh46/80SDxxPlIsygQUCWOowSS/cd68f00dc5c3ef7942a24af04b94c9b2/cta-free-trial-mts.jpg"
+customCSS: "platform"
+layout: platform
+collectionName: "platform"
+collectionOrder: 3
+priority: "0.9"
+---
+aside.hide-for-large.pad--sm.container-color--blue-alt
+  .row.align-middle.align-center
+    .columns.small-6.medium-4
+      a.button.hollow--inverted.expanded.small.nomargin href="/platform/success" title=("Hear from our customers") 
+        | Customer Success
+        i.fa.fa-angle-right
+    .columns.small-6.medium-4
+      a.button.button--light.expanded.small.nomargin href="/pricing" title=("sign up") 
+        | Pricing
+        i.fa.fa-icon.fa-angle-right
+
+.container-color--gray-light
+  section.section-article
+    .row.align-center.group
+      .columns.small-12.medium-12.large-8
+        h1.headline-2.group.text-center= current_page.data.summary
+        .video.drop
+          script async="" src="//fast.wistia.com/embed/medias/1o1udvaa6z.jsonp" 
+          script async="" src="//fast.wistia.com/assets/external/E-v1.js" 
+          .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;") 
+            .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;" 
+              span.wistia_embed.wistia_async_1o1udvaa6z class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"   
+    .row
+      - data.views.platform.compliance_header.each do | block |
+        .columns.small-12.medium-4
+          h3.headline-4= block.title
+          p= block.desc
+
+section.section-article.container-color--dark-alt
+  .row.group.align-center
+    .columns.small-12
+      h2.headline-3.group.text-center.spaced-out Understanding Shared Responsibility
+      script async="" src="https://fast.wistia.com/embed/medias/08ebxufc4q.jsonp" 
+      script async="" src="https://fast.wistia.com/assets/external/E-v1.js" 
+      .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;") 
+        .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;" 
+          .wistia_embed.wistia_async_08ebxufc4q class=("seo=false videoFoam=true") style="height:100%;width:100%"   
+  .row.align-center
+    - data.views.platform.shared_responsibility.each do | block |
+      .columns.small-12.medium-4
+        = Kramdown::Document.new(block).to_html
+
+section.section-article.container-gray-12
+  .row.align-center
+    .columns.small-12.large-8.text-center.group
+      h2.headline-3 Datica is HITRUST CSF Certified.
+      p.lead Customers benefit from serious credibility and accelerated audits with customers like hospitals, payers, and pharma.
+  .row.align-center.group
+    .columns.small-12.large-12
+      img.img-crisp alt="platform-controls-diagram" data-interchange="[https://images.contentful.com/189dvqdsjh46/fE9OrSoh0sa04GGIeUA6y/1ec20a7821aaf7c388f891786139e088/platform-hitrust-inheritance.png?w=640, small], [https://images.contentful.com/189dvqdsjh46/fE9OrSoh0sa04GGIeUA6y/1ec20a7821aaf7c388f891786139e088/platform-hitrust-inheritance.png, medium]"
+      hr.divider/
+section.section-article
+  .row.group.align-center
+    .columns.small-12.text-center
+      h2.headline-3 General Data Protection Regulation
+      p.lead Datica is ready for GDPR on May 25th.
+  .row.align-center
+    .columns.small-12.medium-6.large-4.medium-order-2
+      img.group alt=("GDPR Ready") src="https://images.contentful.com/189dvqdsjh46/6L09pVF6a4uAY00QMqSOYg/a99648672cbc3279925bf2fa7e146fd6/gdpr-ready-badge-text.png" /
+    .columns.small-12.medium-6.large-6
+      markdown:
+        The European Union has created a new authoritative regulation on consumer data called GDPR. Fines start being handed out on May 25th, 2018. The regulation applies to all EU citizens regardless of service or where the data lives. Protected Health Information (PHI) is scoped within GDPR, so any healthcare organization who might service European Union citizens will be affected by it.
+        
+        Are you ready? Datica has gone through the necessary audits to ensure it is compliant with the regulation.
+        
+        [Learn more about GDPR](/discover/#{data.site.discover['6yNMzCKn84Q4qIsm0sWmUy'].slug}).
+
+section.section-article
+  .row.group.align-center
+    .columns.small-12.text-center
+      h2.headline-3 GxP
+      p.lead (subhead)
+  .row.align-center
+    .columns.small-12.medium-6.large-6
+      markdown:
+        The European Union has created a new authoritative regulation on consumer data called GDPR. Fines start being handed out on May 25th, 2018. The regulation applies to all EU citizens regardless of service or where the data lives. Protected Health Information (PHI) is scoped within GDPR, so any healthcare organization who might service European Union citizens will be affected by it.
+        
+        Are you ready? Datica has gone through the necessary audits to ensure it is compliant with the regulation.
+        
+        [Learn more about GxP](/academy/gxp-and-business-associates-does-it-exist-like-hipaa).
+    .columns.small-12.medium-6.large-4
+      img.group alt=("GxP Ready") src="https://images.contentful.com/189dvqdsjh46/1MTvqDED4USkYYE8S2eSwU/3d8116969c0142abfc77f74e34594155/gxp-badge.png" /
+
