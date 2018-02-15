@@ -79,6 +79,11 @@ figcaption{
     background-blend-mode: multiply;
 }
 
+.html5-video-responsive {
+    width: calc(100vw);
+    text-align: center;
+}
+
 // .container--image-fit {
 //     position: relative;
 //     overflow: hidden;

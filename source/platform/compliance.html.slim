@@ -35,11 +35,17 @@ aside.hide-for-large.pad--sm.container-color--blue-alt
           .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;") 
             .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;" 
               span.wistia_embed.wistia_async_1o1udvaa6z class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"   
-    .row
+    .row.group
       - data.views.platform.compliance_header.each do | block |
         .columns.small-12.medium-4
           h3.headline-4= block.title
           p= block.desc
+    .row.align-center
+      .columns.small-6.large-5.text-right
+        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow" }
+      .columns.small-6.large-6.text-left
+        = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
+
 
 section.section-article.container-color--dark-alt
   .row.group.align-center
@@ -54,6 +60,7 @@ section.section-article.container-color--dark-alt
     - data.views.platform.shared_responsibility.each do | block |
       .columns.small-12.medium-4
         = Kramdown::Document.new(block).to_html
+
 
 section.section-article.container-gray-12
   .row.align-center
@@ -80,7 +87,6 @@ section.section-article
         
         [Learn more about GDPR](/discover/#{data.site.discover['6yNMzCKn84Q4qIsm0sWmUy'].slug}).
 
-section.section-article
   .row.group.align-center
     .columns.small-12.text-center
       h2.headline-3 GxP
@@ -95,4 +101,16 @@ section.section-article
         [Learn more about GxP](/academy/gxp-and-business-associates-does-it-exist-like-hipaa).
     .columns.small-12.medium-6.large-4
       img.group alt=("GxP Ready") src="https://images.contentful.com/189dvqdsjh46/1MTvqDED4USkYYE8S2eSwU/3d8116969c0142abfc77f74e34594155/gxp-badge.png" /
+
+aside.section-article.container-color--blue-bright-noise.container-image--center data-interchange="[/public/img/bg/platform-integration-inverted-bg.png, medium]" 
+  .row.align-center
+    .columns.small-12.medium-10.large-10.text-center
+      h2.headline-3 <strong>End-to-end compliance</strong> on AWS and Azure is possible.
+  .row.align-center
+    .columns.small-6.large-4.text-right
+      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow--inverted" }
+    .columns.small-6.large-6.text-left
+      = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
+
+
 

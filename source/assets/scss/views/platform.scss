@@ -100,10 +100,10 @@
 
 .multicol {
     &-2 {
-        @include multicolumns (2, 5em, 1.5rem);
-        // @include breakpoint (large) {
-        //     @include multicolumns (2, 15em, 2rem);
-        // }
+        // @include multicolumns (2, 5em, 1.5rem);
+        @include breakpoint (large) {
+            @include multicolumns (2, 15em, 2rem);
+        }
         // h3, h4 {
         //     @include break-before ();
         // }
