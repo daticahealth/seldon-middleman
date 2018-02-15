@@ -14,17 +14,16 @@ collectionName: "platform"
 collectionOrder: 2
 ctaCustom: true
 ---
-<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <symbol id="icon-plus-disc" viewBox="0 0 32 32"><title>plus-disc</title>
 <g fill-rule="evenodd">
-    <%# hiding the disc for a more compact icon.  %>
      <path fill="currentColor" class="disc" fill-rule="nonzero" d="M16,32 C7.163,32 0,24.837 0,16 C0,7.163 7.163,0 16,0 C24.837,0 32,7.163 32,16 C32,24.837 24.837,32 16,32 Z M16,28.8 C23.069,28.8 28.8,23.069 28.8,16 C28.8,8.931 23.069,3.2 16,3.2 C8.931,3.2 3.2,8.931 3.2,16 C3.2,23.069 8.931,28.8 16,28.8 Z"/>
     <polygon fill="currentColor" class="plus" points="9.6 6.4 16 6.4 16 9.6 9.6 9.6 9.6 16 6.4 16 6.4 9.6 0 9.6 0 6.4 6.4 6.4 6.4 0 9.6 0" transform="translate(8 8)"/>
   </g>
 </symbol>
 </defs>
-</svg>
+</svg> -->
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" data-name="chevron" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <symbol id="icon-chevron-down" viewBox="0 0 18 18">
@@ -87,7 +86,6 @@ ctaCustom: true
                                 <a class="is-toggle" data-toggle="feature-detail_<%= feature.slug %>">
                                 <%= feature.title %>
                                 <svg id="feature-icon-<%= feature.slug %>" class="icon-inline icon-toggle svg-color--blue icon icon-plus-disc" style="margin-bottom: 0.03em;"><use xlink:href="#icon-chevron-down" class="symbol-icon"></use></svg>
-                                <%#= inline_svg("small/icon-plus-disc", class: "icon-inline icon-toggle svg-color--blue") %>
                                 </a>
                             </h4>
                         <% else %>
@@ -183,45 +181,7 @@ ctaCustom: true
         </div>
     </div>
 </section>
-<!-- <section class="section-article">
-    <div class="row align-center">
-        <div class="columns small-12 text-center group">
-            <h2 class="headline-4 nomargin">Building On The Platform</h2>
-            <p class="lead">See how developers use the Datica platform to build compliant applications</p>
-        </div>
-    </div>
-    <div class="row section-platform--technology-build">
-        <div class="columns small-12 medium-4 align-center">
-            <div class="group">
-                <img src="/public/img/build_flow_step_1.png" alt="Build your product">
-            </div>
-        </div>
-        <div class="columns small-12 medium-4 align-center">
-            <div class="group">
-                <img src="/public/img/build_flow_step_2.png" alt="Build your product" id="two">
-            </div>
-        </div>
-        <div class="columns small-12 medium-4 align-center">
-            <div class="group">
-                <img src="/public/img/build_flow_step_3.png" alt="Build your product">
-            </div>
-        </div>
-    </div>
-    <div class="row section-platform--technology-build">
-        <div class="columns small-12 medium-4 align-center">
-            <p><strong class="highlight">Build <br></strong> Do what you do best. Build your product.</p>
-            <p>You’re building a product for healthcare. Be it for bettering patient outcomes through analytics or creating the next great telemedicine application.</p>
-        </div>
-        <div class="columns small-12 medium-4 align-center">
-            <p><strong class="highlight">Push <br> </strong>Git based deployments via the Datica CLI.</p>
-            <p>You’re ready to get your application live. Whether you’re launching your first application or making a routine product release. Being HIPAA compliant is as easy as “git push”.</p>
-        </div>
-        <div class="columns small-12 medium-4 align-center">
-            <p><strong class="highlight">Compliance</strong> <br> Your app is now compliant on Datica.</p>
-            <p>Once you’re application is live on Datica you’ll enjoy a suite of tools and products to manage your application’s environment. From intrusion detection to backups and much much more.</p>
-        </div>
-    </div>
-</section> -->
+
 <section class="section-article container-color--gray-light">
     <div class="row align-center small-up-1 medium-up-2 large-up-3">
         <div class="column">
@@ -267,60 +227,26 @@ ctaCustom: true
         </div>
     </div>
 </section>
-<!-- <section class="section-article container-color--dark-alt">
+
+<!-- cta -->
+<section id="ctaBottom" class="section-article container-color--blue-bright-noise container-image--center" data-interchange="[/public/img/bg/platform-integration-inverted-bg.png, medium]">
     <div class="row align-center">
-        <div class="columns small-12 medium-8 large-6">
-            <h2 class="heading-3 text-center group">Powerful capabilities and features under the hood</h2>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-check text--green"></i>Quickly deploy IPSEC or TLS VPNs in minutes</li>
-                <li><i class="fa-li fa fa-check text--green"></i>Nightly backups</li>
-                <li><i class="fa-li fa fa-check text--green"></i>Proactive security patching. <em>Remember WannaCry? We were patched 1 month prior to it hitting.</em></li>
-                <li><i class="fa-li fa fa-check text--green"></i>Automation of network overlays across Docker containers</li>
-                <li><i class="fa-li fa fa-check text--green"></i>Let’s Encrypt</li>
-                <li><i class="fa-li fa fa-check text--green"></i>Self-service scaling of internal application and database services</li>
-                <li><i class="fa-li fa fa-check text--green"></i>Proactive health checks</li>
-                <li><i class="fa-li fa fa-check text--green"></i>Hot database swaps</li>
-                <li><i class="fa-li fa fa-check text--green"></i>Enhanced service scheduling with zones</li>
-            </ul>
+        <div class="columns small-12 medium-8 text-center">
+            <strong>End-to-end compliance</strong> on AWS and Azure is possible.
+        </div>
+    </div>
+    <div class="row align-center">
+        <div class="columns small-12 large-4">
+            <% = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow--inverted" } %>
+        </div>
+        <div class="columns small-12 large-4">
+            <% = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/technology", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" } %>
         </div>
     </div>
 </section>
-<section class="section-article">
-    <div class="row align-center">
-        <div class="columns small-12 medium-10 text-center">
-            <p class="lead">
-                Using the Datica web dashboard is a delightful experience, with a full suite of tools available at your fingertips. The dashboard and CLI make building apps engaging while maintaining security.
-            </p>
-        </div>
-    </div>
-    <div class="row align-center">
-        <div class="columns small-12">
-            <div class="group">
-                <img class="img-crisp" data-interchange="[/public/img/product-combined-overview.png, small], [/public/img/product-combined-overview-@2x.png, large]" alt="Datica Compliant Cloud" >
-            </div>
-        </div>
-    </div>
-    <div class="row align-center">
-        <div class="columns small-12 medium-9">
-            <div class="row">
-                <div class="column small-12 medium-6">
-                    <div class="group">
-                        <img class="icon-size--medium icon-with-margin--bottom inject-me svg-color--black" src="/public/icons/brand/icon-large-mobile-globe.svg" alt="large-mobile-globe" />
-                        <h4 class="headline-5">Optimized for web and mobile</h4>
-                        <p>The dashboard is designed for the best experience on both web and mobile platforms.</p>
-                    </div>
-                </div>
-                <div class="column small-12 medium-6">
-                    <div class="group">
-                        <img class="icon-size--medium icon-with-margin--bottom inject-me svg-color--black" src="/public/icons/brand/icon-cli-prompt.svg" alt="cli-prompt" />
-                        <h4 class="headline-5">Command Line Interface</h4>
-                        <p>The Datica CLI gives engineers access to the control they need within the tools they are used to.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
+
+
+
 
 
 
