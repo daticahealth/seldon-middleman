@@ -25,18 +25,16 @@ nav.hide-for-large.pad--sm.container-color--blue-alt
         i.fa.fa-icon.fa-angle-right
 section.section-article.container-gray-12
   .row.align-center
-    .columns.small-12.medium-10.large-6.text-center
+    .columns.small-12.medium-10.large-7.text-center
       h1.headline-3
-        strong End-to-end compliance
+        strong End-to-end compliance 
         | on AWS and Azure is possible.
-      p
-        | The Datica Platform fills the compliance gaps on top of public clouds like AWS and Azure by combining the best technology available and mapping it to frameworks like HIPAA, HITRUST, GDPR, and GxP. Customers use Kubernetes-enabled orchestration to deploy containerized workloads to the Platform that are
+      p.lead
+        | The Datica Platform fills the compliance gaps on top of public clouds like AWS and Azure by combining the best technology available and mapping it to frameworks like HIPAA, HITRUST, GDPR, and GxP. Customers use Kubernetes-enabled orchestration to deploy containerized workloads to the Platform that are 
         strong guaranteed to be continuously compliant.
-  .row.align-center
-    .columns.small-6.text-right
-      = partial "partials/snippets/button", :locals => { :label => "Explore capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/technology", :button_classes => "button hollow" }
-    .columns.small-6.text-left
-      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
+      = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/technology", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
+    / .columns.small-6.text-left
+      =# partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
 
 section.section-article.container-color--gray-dark-grad-top-bottom-noise
   .row.hide-for-large.group.align-center
@@ -132,9 +130,23 @@ section.section-article.container-color--gray-light
       .group
         img.log-size--medium alt=("apn tech") src="https://d1.awsstatic.com/partner-network/APN-Advanced-Technology-Badge.d737de9106285590a46875b8805247f22f8433ba.png" /
       p
-        | Datica is an
-        strong Amazon Web Services Advanced Tier Technology Partner
-        | with a
-        strong Healthcare Competency
+        | Datica is an 
+        strong Amazon Web Services Advanced Tier Technology Partner 
+        | with a 
+        strong Healthcare Competency 
         | focus.
+
+aside.section-article.container-color--blue-bright-noise.container-image--center data-interchange="[/public/img/bg/platform-integration-inverted-bg.png, medium]" 
+  .row.align-center
+    .columns.small-12.medium-10.large-10.text-center
+      h2.headline-3
+        strong End-to-end compliance 
+        | on AWS and Azure is possible.
+  .row.align-center
+    .columns.small-6.text-right
+      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow--inverted" }
+    .columns.small-6.text-left
+      = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/technology", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
+
+
 
