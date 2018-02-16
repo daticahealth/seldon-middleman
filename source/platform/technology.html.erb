@@ -134,19 +134,7 @@ ctaCustom: true
         <div class="columns small-12 large-6">
             <h3 class="headline-4 text-center">One-click-install Mirth Connect</h3>
             <%= Kramdown::Document.new(data.views.platform.tech_content.mirth).to_html %>
-            <%=
-            partial "partials/snippets/button",
-                :locals => {
-                    :label => "Test out your own version of Mirth today",
-                    :title => "Test out your own version of Mirth today",
-                    :url => "/pricing",
-                    # :rel => "external",
-                    :button_classes => "button text-center",
-                    :icon => "icon-chevron-right",
-                    :icon_color => "white",
-                    # :icon_align => "right"
-                }
-            %>
+            <%= partial "partials/snippets/button", :locals => { :label => "Test out your own version of Mirth today", :url => "/pricing", :button_classes => "button text-center", :icon => "icon-chevron-right", :icon_color => "white" } %>
         </div>
     </div>
     <hr class="divider">
@@ -154,19 +142,7 @@ ctaCustom: true
         <div class="columns small-12 large-6">
             <h3 class="headline-4 text-center">Sansoro Health Emissary &reg;</h3>
             <%= Kramdown::Document.new(data.views.platform.tech_content.sansoro).to_html %>
-            <%=
-            partial "partials/snippets/button",
-                :locals => {
-                    :label => "Contact us to learn more",
-                    :title => "Contact us to learn more",
-                    :url => "/contact",
-                    # :rel => "external",
-                    :button_classes => "button hollow",
-                    :icon => "icon-chevron-right",
-                    :icon_color => "blue",
-                    # :icon_align => "right"
-                }
-            %>
+            <%= partial "partials/snippets/button", :locals => { :label => "Contact us to learn more", :url => "/contact", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }%>
         </div>
     </div>
 </section>
