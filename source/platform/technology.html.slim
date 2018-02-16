@@ -1,0 +1,208 @@
+---
+title: "Datica Technology Platform"
+summary: "Technology capabilities and support on the Datica Platform"
+navTitle: "Technology"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "July 15, 2017"
+ogType: "product"
+share_image: "//images.contentful.com/189dvqdsjh46/80SDxxPlIsygQUCWOowSS/cd68f00dc5c3ef7942a24af04b94c9b2/cta-free-trial-mts.jpg"
+customCSS: "platform"
+layout: platform
+priority: "0.9"
+collectionName: "platform"
+collectionOrder: 2
+ctaCustom: true
+---
+
+svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+  defs
+    symbol#icon-chevron-down viewbox=("0 0 18 18") 
+      title chevron-down
+      path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z") 
+aside.hide-for-large.pad--sm.container-color--blue-alt
+  .row.align-middle.align-center
+    .columns.small-6.medium-4
+      a.button.hollow--inverted.expanded.small.nomargin href="/platform/compliance" title=("Learn about integrations") 
+        | Integrations
+        i.fa.fa-angle-right
+    .columns.small-6.medium-4
+      a.button.button--light.expanded.small.nomargin href="/pricing" title=("sign up") 
+        | Pricing
+        i.fa.fa-icon.fa-angle-right
+section#tech.section-article
+  .row.align-center
+    .columns.small-12.medium-10.large-7.text-center
+      h1.headline-3.group We focus on the <strong>Compliant Ops</strong>, so you can focus on your <strong>Apps</strong>
+      = partial "partials/snippets/button", :locals => { :label => "See how Datica solves Compliance", :title => "See how Datica solves Compliance", :url => "/platform/compliance", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
+
+section.container-color--dark-alt style=("background-color: #23272C") 
+  video#vid-platform-diagram.html5-video-responsive autoplay="" loop="" muted="" playsinline="" poster="" 
+    source src="https://videos.contentful.com/189dvqdsjh46/6FV36Yd2JqYgCIgwGucKAm/bf8e90962701acda5f785ee00663cefd/Datica_Platform_Diagram_animation_2018_01.m4v" type="video/mp4" 
+  .section-article style=("padding-top: 1rem;") 
+    .row.align-center
+      .columns.small-12.large-8
+        h2.headline-4.spaced-out.text-center.group How the Platform Works
+        .multicol-2
+          markdown:
+            AWS and Azure provide VPCs, which cover a portion of compliance and security requirements.
+
+            Within a VPC, the Datica Platform is installed. Everything within the Platform is strictly managed in adherence to Datica policies. The Platform uses a combination of Kubernetes and proprietary technology to orchestrate all DevOps duties for customers.
+
+            Customers create an account within the Datica Platform. It is through the account that they gain access to HIPAA-eligible AWS Primitives or Azure Services, which are strictly controlled by the Platform.
+
+            Within a customer account, the Platform containerizes all technology required to meet compliance controls from HIPAA, HITRUST, GDPR, and GxP. Things like logging, intrusion detection, and penetration testing, to name a few.
+
+            Customers deploy their applications to containerized environments. They can have multiple environments within their Datica account, managing any type of technical use case.
+
+            Administration of AWS Primitives or Azure Services are no longer required. Instead, customers simply allocate RAM to individual containers. Datica takes care of the rest.
+
+            Deployment is done either through a `git push` buildpack-based process or by pushing custom Docker containers.
+
+section#tech-features.section-article.container-gray-12
+  .row.align-center
+    .columns.small-12.text-center.group
+      h2.headline-4.spaced-out Datica Platform Features
+  - ordered_feature_categories = data.site.featureCategories.to_a.sort_by{ |id, featureCat| featureCat['sort_order'] }
+  - ordered_feature_categories.each do | id, featureCat |
+    .row
+      .columns.small-12.large-8
+        h3.headline-43= featureCat["title"]
+        - if featureCat.has_key?("desc")
+          p.lead= featureCat["desc"]
+    .row.small-up-1.medium-up-2.large-up-3.xlarge-up-3.group--2x
+      - if featureCat.has_key?("related_features")
+        - featureCat["related_features"].each do | feature |
+          .column.feature-item
+            - if feature.has_key?('desc')
+              h4.headline-5
+                a.is-toggle data-toggle="feature-detail_#{feature.slug}" 
+                  = feature.title
+                  svg.icon-inline.icon-toggle.svg-color--blue.icon.icon-plus-disc id="feature-icon-#{feature.slug}" style=("margin-bottom: 0.03em;") 
+                    use.symbol-icon xlink:href="#icon-chevron-down" 
+            - else
+              h4.headline-6= feature.title
+            - if feature.has_key?("summary")
+              = Kramdown::Document.new(feature.summary).to_html
+            - if feature.has_key?("desc")
+              .show-more--container.text-smaller data-off-canvas="" data-toggler="" id="feature-detail_#{feature.slug}" 
+                = Kramdown::Document.new(feature.desc).to_html
+
+section#tech-ehrs.section-article
+  .row.align-center.text-center
+    .columns.small-12.large-6
+      h2.headline-3 Integrate with any EHR
+      p.lead Modern healthcare applications must integrate with Electronic Health Records, like Epic or Cerner, in order to improve their value. Datica helps you get that job done in a secure, compliant, and scalable way.
+  .row.align-center.text-center.collapse
+    .columns.small-12.large-10
+      .logo-cloud
+        - data.views.ehrs.ehr_list.each do |logo|
+          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+  hr.divider/
+  .row.align-center
+    .columns.small-12.large-6
+      h3.headline-4.text-center One-click-install Mirth Connect
+      markdown:
+        Add a new environment to your account with the click of a button. OCI Mirth Connect is a pre-packaged configuration of all the open source integration tooling you need to integrate with EHRs.
+        {: .lead}
+
+        The add-on includes:
+
+        * Mirth configured to be highly-available
+        * Load balancers
+        * Redundant Postgres for initial data ingestion
+        * Mirth alerting and monitoring
+        * VPN management
+
+        We open sourced our Mirth HL7 transformations used over the past three years. With OCI Mirth, you can get started today using these tools. Or, should you require help integrating into a specific hospital, we offer professional services to project manage an integration to completion.
+
+      = partial "partials/snippets/button", :locals => { :label => "Test out your own version of Mirth today", :url => "/pricing", :button_classes => "button text-center", :icon => "icon-chevron-right", :icon_color => "white" }
+  hr.divider/
+  .row.align-center
+    .columns.small-12.large-6
+      h3.headline-4.text-center Sansoro Health Emissary ®
+      markdown:
+        Sansoro Health Emissary(R)
+        Emissary is an elegant approach to data interoperability that is unique and proven.
+        {: .lead}
+
+        Customers can choose to deploy Emissary as a new environment into their Datica Platform account. Datica will manage the infrastructure compliance and security, while Sansoro is available to support the Emissary product experience itself.
+
+      = partial "partials/snippets/button", :locals => { :label => "Contact us to learn more", :url => "/contact", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }
+
+section#tech-hcms.section-article
+  .row.align-center
+    .columns.small-12.text-center.group
+      h2.headline-3.nomargin Healthcare Compliance Management System
+  .row.align-center
+    .columns.small-12.medium-6.large-7
+      img alt=("HCMS Dashboard") src="https://images.contentful.com/189dvqdsjh46/3wzJLEqLHqs4kC2cAk4Msq/1131a6ae3d921e934fa8effa21802b35/hcms-dashboard.png?w=1200" /
+    .columns.small-12.medium-6.large-4
+      p Visibility into the continuous compliance and security provided by the Datica Platform is important to our customers. The HCMS is a compliance dashboard that gives insights into all compliance controls across all customer environments.
+/! cta
+section#ctaBottom.section-article.container-color--blue-bright-noise.container-image--center data-interchange="[/public/img/bg/platform-integration-inverted-bg.png, medium]" 
+  .row.align-center
+    .columns.small-12.medium-10.text-center
+      h2.headline-3.group <strong>End-to-end compliance</strong> on AWS and Azure is possible.
+  .row.align-center
+    .columns.small-12.large-4.text-right
+      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow--inverted" }
+    .columns.small-12.large-6
+      = partial "partials/snippets/button", :locals => { :label => "See how Datica solves Compliance", :title => "See how Datica solves Compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
+
+
+section.section-article.container-color--gray-light
+  .row.align-center.small-up-1.medium-up-2.large-up-3
+    .column
+      h5.headline-5 Datica supports the following community buildpacks
+      ul.no-bullet.multicol-2.group
+        li Ruby
+        li Node.js
+        li Clojure
+        li Python
+        li Java
+        li Gradle
+        li Grails 3.x
+        li Scala
+        li Play 2.x
+        li PHP
+        li Go
+      h5.headline-5 Windows architecture support
+      ul.no-bullet
+        li Windows VMs on dedicated accounts
+        li Microsoft SQL Server
+    .column
+      h5.headline-5 Support for the following databases
+      ul.no-bullet.group
+        li Percona/MySQL
+        li PostgreSQL
+        li MongoDB
+      h5.headline-5 Support for the following utilities
+      ul.no-bullet.group
+        li Redis
+        li Memcached
+        li RabbitMQ
+    .column
+      .callout.callout--gray-light
+        p.lead Additionally, Datica customers can write their own buildpacks or use other third-party buildpacks.
+        p.lead Don't see a listed technology you wish to use? Contact sales to see additional compatability.
+section#faq-tech.section-article
+  .row.align-center
+    .columns.small-12.medium-8.large-8
+      h3.headline-3.text-center.group Frequently asked questions about our platform
+  .row.align-center
+    .columns.small-12.medium-4.large-4
+      .callout.callout--gray-light
+        ol
+          - data.views.faqs.platform_tech.each_with_index do |item, index|
+            li
+              a href="#platform-tech-question-#{index}" = item["question"]
+    .columns.small-12.medium-8.large-8
+      dl
+        - data.views.faqs.platform_tech.each_with_index do |item, index|
+          dt id="platform-tech-question-#{index}" = item["question"]
+          dd= Kramdown::Document.new(item["answer"]).to_html
+      hr.divider/
+      p.lead Get started with the Datica platform today
+      = partial "partials/snippets/button", :locals => { :label => "Learn about integrations", :url => "/pricing", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }
+

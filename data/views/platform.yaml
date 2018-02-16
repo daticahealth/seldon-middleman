@@ -50,40 +50,40 @@ tier_points_paired:
         - |
             All other installable technologies aren't platforms meant to greatest compliance coverage with the best experience. Instead, you pay for consultant service fees.
 
-tech_content:
-    lead: |
-        AWS and Azure provide VPCs, which cover a portion of compliance and security requirements.
+# tech_content:
+#     lead: |
+#         AWS and Azure provide VPCs, which cover a portion of compliance and security requirements.
 
-        Within a VPC, the Datica Platform is installed. Everything within the Platform is strictly managed in adherence to Datica policies. The Platform uses a combination of Kubernetes and proprietary technology to orchestrate all DevOps duties for customers.
+#         Within a VPC, the Datica Platform is installed. Everything within the Platform is strictly managed in adherence to Datica policies. The Platform uses a combination of Kubernetes and proprietary technology to orchestrate all DevOps duties for customers.
 
-        Customers create an account within the Datica Platform. It is through the account that they gain access to HIPAA-eligible AWS Primitives or Azure Services, which are strictly controlled by the Platform.
+#         Customers create an account within the Datica Platform. It is through the account that they gain access to HIPAA-eligible AWS Primitives or Azure Services, which are strictly controlled by the Platform.
 
-        Within a customer account, the Platform containerizes all technology required to meet compliance controls from HIPAA, HITRUST, GDPR, and GxP. Things like logging, intrusion detection, and penetration testing, to name a few.
+#         Within a customer account, the Platform containerizes all technology required to meet compliance controls from HIPAA, HITRUST, GDPR, and GxP. Things like logging, intrusion detection, and penetration testing, to name a few.
 
-        Customers deploy their applications to containerized environments. They can have multiple environments within their Datica account, managing any type of technical use case.
+#         Customers deploy their applications to containerized environments. They can have multiple environments within their Datica account, managing any type of technical use case.
 
-        Administration of AWS Primitives or Azure Services are no longer required. Instead, customers simply allocate RAM to individual containers. Datica takes care of the rest.
+#         Administration of AWS Primitives or Azure Services are no longer required. Instead, customers simply allocate RAM to individual containers. Datica takes care of the rest.
 
-        Deployment is done either through a `git push` buildpack-based process or by pushing custom Docker containers.
-    mirth: |
-        Add a new environment to your account with the click of a button. OCI Mirth Connect is a pre-packaged configuration of all the open source integration tooling you need to integrate with EHRs.
-        {: .lead}
+#         Deployment is done either through a `git push` buildpack-based process or by pushing custom Docker containers.
+#     mirth: |
+#         Add a new environment to your account with the click of a button. OCI Mirth Connect is a pre-packaged configuration of all the open source integration tooling you need to integrate with EHRs.
+#         {: .lead}
 
-        The add-on includes:
+#         The add-on includes:
 
-        * Mirth configured to be highly-available
-        * Load balancers
-        * Redundant Postgres for initial data ingestion
-        * Mirth alerting and monitoring
-        * VPN management
+#         * Mirth configured to be highly-available
+#         * Load balancers
+#         * Redundant Postgres for initial data ingestion
+#         * Mirth alerting and monitoring
+#         * VPN management
 
-        We open sourced our Mirth HL7 transformations used over the past three years. With OCI Mirth, you can get started today using these tools. Or, should you require help integrating into a specific hospital, we offer professional services to project manage an integration to completion.
-    sansoro: |
-        Sansoro Health Emissary(R)
-        Emissary is an elegant approach to data interoperability that is unique and proven.
-        {: .lead}
+#         We open sourced our Mirth HL7 transformations used over the past three years. With OCI Mirth, you can get started today using these tools. Or, should you require help integrating into a specific hospital, we offer professional services to project manage an integration to completion.
+#     sansoro: |
+#         Sansoro Health Emissary(R)
+#         Emissary is an elegant approach to data interoperability that is unique and proven.
+#         {: .lead}
 
-        Customers can choose to deploy Emissary as a new environment into their Datica Platform account. Datica will manage the infrastructure compliance and security, while Sansoro is available to support the Emissary product experience itself.
+#         Customers can choose to deploy Emissary as a new environment into their Datica Platform account. Datica will manage the infrastructure compliance and security, while Sansoro is available to support the Emissary product experience itself.
 
 platform_use:
     -
