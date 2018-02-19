@@ -1,0 +1,39 @@
+---
+title: "Datica Leadership Team"
+summary: "The leadership team behind Datica"
+author: "Datica, Inc."
+tags: "leadership, strategy, people"
+share_image: "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+layout: basic
+---
+- datica_execs     = data.site.person.to_a.select { |id, person| person["person_type"] == "Datica Executives" }
+- datica_vps       = data.site.person.to_a.select { |id, person| person["person_type"] == "Datica VP" }
+- datica_directors = data.site.person.to_a.select { |id, person| person["person_type"] == "Datica Directors" }
+- datica_alums     = data.site.person.to_a.select { |id, person| person["person_type"] == "Datica Alumni" && person["slug"] == "mohan" }
+- datica_team      = data.site.person.to_a.select { |id, person| (person["person_type"] == "Datica Executives" && person["person_type"] == "Datica VP" && person["person_type"] == "Datica Directors" && person["slug"] == "mohan") }
+- sorted_daticans  = data.site.person.to_a.sort_by{ |id, person| person['slug'] }
+- separator = %(<span style="opacity: 0;">, </span>)
+
+section.section-article.container-color--gray-light
+  .row
+    .column.small-12
+      table(width="100%")
+        thead
+          tr
+            th fullname
+            th role 
+            th Category 
+            th email
+            th phone
+        tbody
+          - sorted_daticans.each do |id, member|
+            - case member.person_type
+              - when "Datica Executives", "Datica VP", "Datica Directors"
+                tr
+                  td = member.fullname + separator
+                  td = member.role + separator
+                  td = member.person_type + separator
+                  td = member.email + separator
+                / - if has_key?(member.phone)
+                /   tr
+                /     td = member.phone
