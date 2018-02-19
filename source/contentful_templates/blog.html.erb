@@ -88,7 +88,7 @@ end
                 <% end %>
                 <div class="section--body blog-post-content group">
                     <% if p.has_key?("featured_person") %>
-                        <%= partial("partials/snippets/person-vertical", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" }) %>
+                        <%= partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" }) %>
                     <% end %>
                     <%= Kramdown::Document.new(p["post"]).to_html %>
                 </div>
