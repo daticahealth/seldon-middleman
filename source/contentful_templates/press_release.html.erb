@@ -43,12 +43,15 @@ end
 </section>
 <section class="section-article--med container-color--gray-light">
     <div class="row">
-        <div class="columns small-12 large-8">
+        <div class="columns small-12 large-9">
             <article class="callout callout--large drop">
                 <h4 class="headline-6 subheader--spaced-out">Press Release</h4>
                 <%= partial "/partials/snippets/pubdate", :locals => p %>
                 <h1 class="headline-3"><%= p["title"] %></h1>
                 <div class="content-dynamic group">
+                    <% if p.has_key?("featured_person") %>
+                        <%= partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" }) %>
+                    <% end %>
                     <%= Kramdown::Document.new(p["post"]).to_html %>
                 </div>
                 <div class="article-meta">
@@ -67,7 +70,7 @@ end
                 <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
             <% end %>
         </div>
-        <div class="columns small-12 large-4">
+        <div class="columns small-12 large-3">
                 <div class="media-object card-person">
                     <div class="media-object-section">
                         <img src="//images.contentful.com/189dvqdsjh46/FV6bMibcoS6KucswgSCec/9b32170214c6c1f3b0c967183c6ac9e6/prof-marcia.jpg" class="avatar avatar--medium circle" alt="Marcia Noyes">
