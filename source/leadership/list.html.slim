@@ -5,6 +5,7 @@ author: "Datica, Inc."
 tags: "leadership, strategy, people"
 share_image: "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
 layout: basic
+hide_from_sitemap: true
 ---
 - datica_execs     = data.site.person.to_a.select { |id, person| person["person_type"] == "Datica Executives" }
 - datica_vps       = data.site.person.to_a.select { |id, person| person["person_type"] == "Datica VP" }
@@ -17,13 +18,14 @@ layout: basic
 section.section-article.container-color--gray-light
   .row
     .column.small-12
+      h2.headline-3 Datica Leadership Team, simple format
       table(width="100%")
         thead
           tr
             th fullname
             th role 
-            th Category 
             th email
+            th Category 
             th phone
         tbody
           - sorted_daticans.each do |id, member|
@@ -32,8 +34,8 @@ section.section-article.container-color--gray-light
                 tr
                   td = member.fullname + separator
                   td = member.role + separator
-                  td = member.person_type + separator
                   td = member.email + separator
+                  td = member.person_type + separator
                 / - if has_key?(member.phone)
                 /   tr
                 /     td = member.phone
