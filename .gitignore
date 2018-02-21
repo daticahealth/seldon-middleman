@@ -66,3 +66,4 @@ jspm_packages
 .tmp
 .Temp
 robots.txt
+.ruby-version
