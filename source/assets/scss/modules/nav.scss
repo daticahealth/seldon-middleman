@@ -1,5 +1,20 @@
 // Main header - the anchor to all of Seldon
 $duration: $timing-default * 1.5; //settings.scss:281
+.dropdown-pip { // icon for dropdown, svg triangle usually
+    path {
+        @include transition (color $timing-default ease);
+        fill: $gray-7;
+    }
+}
+.menu-item--simple { // only menu items without dropdowns should have fade fx. default is "dark" nav (on white bg)
+    color: $gray-1;
+    @include transition (color $timing-default ease);
+    &:hover {
+        // @include easing($duration);
+        // opacity: 0.7;
+        color: $color_prime-alt;
+    }
+}
 .main-header {
     // Could possibly opt for 2rem here
     padding: rem-calc(30px);
@@ -30,27 +45,22 @@ $duration: $timing-default * 1.5; //settings.scss:281
         .a,
         a {
             font-weight: $font-weight-regular;
-            color: $color_deep;
+            // color: $color_deep;
             margin: 0 rem-calc(20px) 0 0;
             position: relative;
             display: inline-block;
             cursor: pointer;
-            @include transition (all $timing-default ease);
-            &:hover {
-                // @include easing($duration);
-                text-decoration: none;
-                border: 0;
-                color: $color_prime-alt;
-            }
+            text-decoration: none;
+            border: 0;
         }
         // Button requires some overrides here since we're not hitting a class on `nav > a`
-        a.button {
-            color: $white;
-            font-size: $global-font-size;
-            padding: rem-calc(10px);
-            position: relative;
-            margin-right: 0;
-        }
+        // a.button {
+        //     color: $white;
+        //     font-size: $global-font-size;
+        //     padding: rem-calc(10px);
+        //     position: relative;
+        //     margin-right: 0;
+        // }
     }
     // Differences in content require differences in margin. Not sure how better to solve this.
     .left {margin: rem-calc(8px) 0 0 0;}
@@ -63,16 +73,19 @@ $duration: $timing-default * 1.5; //settings.scss:281
             height: rem-calc(40px);
             background-size: rem-calc(99px) rem-calc(40px);
         }
-        nav {
-            // We want a nice blue glow on hover here
-            .a,
-            a {
-                color: $color_white;
-                &:hover {color: $color_talk-alt;}
+        .menu-item--simple { 
+            color: white;
+            &:hover {
+                color: $gray-9;
             }
-            // Need to specifically delcare hover style on button to retain style
-            a.button {color: $color_product;}
         }
+        // nav {
+        //     .a,
+        //     a {
+        //         color: $color_white;
+        //         &:hover {color: $gray-7;}
+        //     }
+        // }
         // The new dropdown was getting written over from above
         .dropdown {
             a {
@@ -80,6 +93,9 @@ $duration: $timing-default * 1.5; //settings.scss:281
                 color: $color_deep;
                 &:hover {
                     color: $color_prime-alt;
+                    .dropdown-pip path {
+                        fill: white;
+                    }
                 }
             }
         }
@@ -476,7 +492,7 @@ nav {
             margin-bottom: 0;
             padding: 0;
             &--link {
-                transition-duration: 100ms;
+                transition-duration: $timing-default;
                 font-weight: $font-weight-mid;
                 padding: $pad * 0.5;
                 &:hover {

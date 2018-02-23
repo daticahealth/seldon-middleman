@@ -1,6 +1,5 @@
 <header class="main-header main-header<% if defined?(style) && style == "light" %>--white<% end %>">
     <a href="/" class="logo" title="Datica Home"></a>
-    <%#= inline_svg("datica-logo-horiz", class: "icon-size--medium svg-color--white") %>
     <nav class="left">
         <div class="hide-for-large">
             <div class="group input-nav input-nav--white">
@@ -9,10 +8,17 @@
             <a href="/contact" class="expanded button button--light">Contact us</a>
         </div>
         <% data.nav_primary.nav_main.each do |m| %>
-            <%= current_link_to m.title, m.url, title: m.desc %>
+            <%= current_link_to m.title, m.url, title: m.desc, class: "menu-item--simple" %>
         <% end %>
+
+    </nav>
+    <nav class="right">
+
         <div class="a dropdown-container" id="resourcesDropdown">
-            <span class="selector">Resources <i class="fa fa-caret-down"></i></span>
+            <span class="selector">Resources 
+                    <%= inline_svg("small/icon-triangle-down", class: "dropdown-pip icon-inline") %>
+
+            </span>
             <div class="dropdown dropdown-resources drop dropdown-list--block">
                 <div class="container-color--white">
                     <ul class="no-bullet dropdown-group">
@@ -44,7 +50,9 @@
             </div>
         </div>
         <div class="a dropdown-container" id="companyDropdown">
-            <span class="selector">Company <i class="fa fa-caret-down"></i></span>
+            <span class="selector">Company 
+                <%= inline_svg("small/icon-triangle-down", class: "dropdown-pip icon-inline") %>
+            </span>
             <div class="dropdown dropdown-company drop dropdown-list--block">
                 <div class="container-color--white">
                     <ul class="no-bullet dropdown-group">
@@ -66,7 +74,10 @@
             </div>
         </div>
         <div class="a dropdown-container" id="customerDropdown">
-            <span class="selector">Customers <i class="fa fa-caret-down"></i></span>
+            <span class="selector">Customers 
+                    <%= inline_svg("small/icon-triangle-down", class: "dropdown-pip icon-inline") %>
+
+            </span>
             <div class="dropdown dropdown-customer drop dropdown-list--block">
                 <div class="container-color--white">
                     <ul class="no-bullet dropdown-group">
@@ -78,14 +89,8 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </nav>
-    <nav class="right">
-        <div class="input-nav input-nav--<% if defined?(style) && style == "light" %>white<% else %>black<% end %> hide-for-large-only">
-            <%= partial "partials/snippets/search-field" %>
-        </div>
-        <a href="//product.datica.com">Sign in</a>
-        <a href="/contact" id="topNavCTA" class="button <% if defined?(style) && style == "light" %>button--light<% else %> success<% end %>">Contact us</a>
+        </div>        
+        <a href="/contact" id="topNavCTA" class="button small<% if defined?(style) && style == "light" %> button hollow-inverted<% else %> success<% end %>">Contact us</a>
     </nav>
     <div class="mobile-menu">
         <!-- <span class="icon-label">menu</span> -->
