@@ -111,3 +111,6 @@
     background-color: black(0.8);
     color: white;
 }
+@mixin grad-bright ($angle: to right) { // super-saturated green-blue-purple for accent strips like .strip-bright
+    @include gradient($angle, hsl(187,100%,50%) 1%, hsl(194,100%,50%) 22%, hsl(278,100%,50%) 100%);
+}

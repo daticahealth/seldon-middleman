@@ -147,6 +147,10 @@
         max-width: 14rem;
     }
 }
+.strip-bright { // bright strip, supersat
+    min-height: calc(3px + 0.5vw);
+    @include grad-bright;
+}
 .container { // this is generally only for color & image settings on containers
     &-image {
         &-fill {
@@ -323,11 +327,12 @@
             background-image: -o-linear-gradient(top, $color_light-alt 50%, $color_white 100%);
         }
         &--gray-dark-grad-top-bottom-noise {
-            @include noisy;
+            // @include noisy;
             color: $color_white; // optional, only spec if needed
-            &:before {
-                background-image: linear-gradient(-135deg, #1B2044 0%, #17181D 52%, #17181D 100%);
-            }
+            @include gradient(-155deg, #1B2044 0%, #17181D 52%, #17181D 100%);
+            // &:before {
+            //     background-image: linear-gradient(-135deg, #1B2044 0%, #17181D 52%, #17181D 100%);
+            // }
         }
         &--purple-grad-noise {
             @include noisy;
