@@ -326,7 +326,7 @@
             background-image: -webkit-linear-gradient(top, $color_light-alt 50%, $color_white 100%);
             background-image: -o-linear-gradient(top, $color_light-alt 50%, $color_white 100%);
         }
-        &--gray-dark-grad-top-bottom-noise {
+        &--dark-grad-blue {
             // @include noisy;
             color: $color_white; // optional, only spec if needed
             @include gradient(-155deg, #1B2044 0%, #17181D 52%, #17181D 100%);

@@ -9,27 +9,28 @@ customCSS: "home"
 layout: "basic"
 priority: "1.0"
 ---
-.container-color--gray-dark-grad-top-bottom-noise
-  = partial "partials/snippets/header", :locals => { :style => "light" }
-  section.section-article
-    .row.align-middle
-      .columns.small-12.medium-6.large-7
-        h1.headline-1 Cloud Compliance for Healthcare Innovation
-        h2.headline-3 Datica manages healthcare compliance and security on AWS and Azure.
-        p.lead 
-          | The Datica Platform makes your cloud workloads compliant to the standards of HIPAA, HITRUST, GDPR, and GxP.
-        = partial "partials/snippets/button", :locals => { :label => "Explore the Platform", :url => "/platform", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right" }
-                    
-      .columns.small-12.medium-6.large-4
-        .card.container-color--light-shimmer
-          .card-section.text-center
-            h3.headline-5 Schedule a demo to learn more.
-            = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/contact", :button_classes => "button expanded spaced-out", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
-          .card-section.card-section--flush
-            h4.headline-4 Questions?
-            p
-              | Talk with a customer representative.
-              = partial "partials/snippets/button", :locals => { :label => "", :url => "/contact", :button_classes => "label round", :icon => "icon-comment", :icon_color => "white" }
+.container-color--dark-grad-blue
+  .container-image--center(data-interchange="[/assets/icons/inlined/art/waves-dots-full.svg, small]")
+    = partial "partials/snippets/header", :locals => { :style => "light" }
+    section.section-article
+      .row.align-middle
+        .columns.small-12.medium-6.large-7
+          h1.headline-1 Cloud Compliance for Healthcare Innovation
+          h2.headline-3 Datica manages healthcare compliance and security on AWS and Azure.
+          p.lead 
+            | The Datica Platform makes your cloud workloads compliant to the standards of HIPAA, HITRUST, GDPR, and GxP.
+          = partial "partials/snippets/button", :locals => { :label => "Explore the Platform", :url => "/platform", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right" }
+                      
+        .columns.small-12.medium-6.large-4
+          .card.container-color--light-shimmer
+            .card-section.text-center
+              h3.headline-5 Schedule a demo to learn more.
+              = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/contact", :button_classes => "button expanded spaced-out", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
+            .card-section.card-section--flush
+              h4.headline-4 Questions?
+              p
+                | Talk with a customer representative.
+                = partial "partials/snippets/button", :locals => { :label => "", :url => "/contact", :button_classes => "label round", :icon => "icon-comment", :icon_color => "white" }
 .strip-bright
 = partial "partials/section-promos/aws-mlh-video", :locals => { :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS", :container_color => "container-gray-11" }
 section.section-article
