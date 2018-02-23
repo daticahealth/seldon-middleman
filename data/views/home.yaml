@@ -2,7 +2,7 @@ badges:
     -
         name: "HITRUST Alliance"
         fileUrl: "https://images.contentful.com/189dvqdsjh46/tPI7wEI7zaSEQ2cu6MqOc/7f837591f0a7f85448180a4a1e61158d/logo-hitrust-certified.png"
-        logoSize: "xlarge"
+        logoSize: "large"
     -
         name: "HIPAA logo"
         fileUrl: "https://images.contentful.com/189dvqdsjh46/7twnCUuD72YGS4cusiS6mQ/fa43b0f1faaecb4e8865415add79e538/logo-hipaa-federal.png"
@@ -14,6 +14,10 @@ badges:
     -
         name: "GDPR"
         fileUrl: "https://images.contentful.com/189dvqdsjh46/2gXAIuikiQyWYMmU4QAoOe/0106b4a35cd09e120f0eca6ee6a15446/gdpr-ready-badge.png"
+        logoSize: "xlarge"
+    -
+        name: "GxP"
+        fileUrl: "https://images.contentful.com/189dvqdsjh46/1MTvqDED4USkYYE8S2eSwU/3d8116969c0142abfc77f74e34594155/gxp-badge.png"
         logoSize: "xlarge"
 
 customers:

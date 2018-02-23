@@ -15,6 +15,11 @@
         @extend .expanded; // always fill that space with buttons
         margin-bottom: 0;
     }
+    .button-inline { // sheesh there are outliers for buttons in cards sometimes :rolleyes:
+        display: inline;
+        width: auto;
+        margin-bottom: 0;
+    }
     .button{
         &.button-group { // use when you have n-up buttons in a horizontal row (say, via .float-[dir])
             &:first-child {

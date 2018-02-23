@@ -1,0 +1,51 @@
+---
+title: "Compliant Innovation | Datica"
+summary: "The Datica Platform makes your cloud workloads compliant and secure to the standards of HIPAA, HITRUST, GDPR, and GxP on AWS and Azure."
+author: "Datica, Inc."
+tags: "training, education, HIPAA, HL7, FHIR, interoperability, EHR, integration, resource"
+date: "January 1, 2017"
+share_image: "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+customCSS: "home"
+layout: "basic"
+priority: "1.0"
+---
+.container-color--dark-alt
+  = partial "partials/snippets/header", :locals => { :style => "light" }
+  section.section-article
+    .row.align-middle
+      .columns.small-12.medium-6.large-7
+        h1.headline-1 Cloud Compliance for Healthcare Innovation
+        h2.headline-3 Datica manages healthcare compliance and security on AWS and Azure.
+        p.lead 
+          | The Datica Platform makes your cloud workloads compliant to the standards of HIPAA, HITRUST, GDPR, and GxP.
+        = partial "partials/snippets/button", :locals => { :label => "Explore the Platform", :url => "/platform", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right" }
+                    
+      .columns.small-12.medium-6.large-4
+        .card.container-color--light-shimmer
+          .card-section.text-center
+            h3.headline-5 Schedule a demo to learn more.
+            = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/contact", :button_classes => "button expanded spaced-out", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
+          .card-section.card-section--flush
+            h4.headline-4 Questions?
+            p
+              | Talk with a customer representative.
+              = partial "partials/snippets/button", :locals => { :label => "", :url => "/contact", :button_classes => "label round", :icon => "icon-comment", :icon_color => "white" }
+
+= partial "partials/section-promos/aws-mlh-video", :locals => { :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS", :container_color => "container-gray-11" }
+section.section-article
+  .row.align-center.text-center
+    .columns.small-12.large-11
+      h2.headline-3 <strong>Healthcare's best compliance coverage</strong> <br>for teams large and small
+      .logo-cloud.group
+        - data.views.home.badges.each do |logo|
+          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="#{logo["fileUrl"]}?w=300" /
+      = partial "partials/snippets/button", :locals => { :label => "Platform Compliance Overview", :title => "Read more", :url => "/platform/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
+  hr.divider /
+  .row.align-center
+    .columns.small-12.large-11.text-center
+      h3.headline-3 <strong>World-class companies</strong> trust Datica
+      .logo-cloud
+        - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
+          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") data-interchange="[/public/img/customer-logos/sm/#{logo['file']}.png, small]" /
+
+

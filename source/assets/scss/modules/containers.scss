@@ -286,6 +286,9 @@
                 background-image: linear-gradient(-135deg, $color_white 0%, #F3F7FF 100%);
             }
         }
+        &--light-shimmer {
+            @include gradient(160deg, hsl(201, 91%, 96%) 20%, hsl(201, 26%, 85%) 40%, hsl(201, 21%, 91%) 40%);
+        }
         &--tint-20 {
             background-color: black(0.2);
         }
