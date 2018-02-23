@@ -10,14 +10,11 @@
         <% data.nav_primary.nav_main.each do |m| %>
             <%= current_link_to m.title, m.url, title: m.desc, class: "menu-item--simple" %>
         <% end %>
-
     </nav>
     <nav class="right">
-
         <div class="a dropdown-container" id="resourcesDropdown">
             <span class="selector">Resources 
-                    <%= inline_svg("small/icon-triangle-down", class: "dropdown-pip icon-inline") %>
-
+                <%= inline_svg("small/icon-triangle-down", class: "dropdown-pip icon-inline") %>
             </span>
             <div class="dropdown dropdown-resources drop dropdown-list--block">
                 <div class="container-color--white">

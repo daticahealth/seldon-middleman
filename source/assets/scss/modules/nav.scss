@@ -209,8 +209,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
         .mobile-menu {display: block;}
         // All floated elements collapse to full width
         a.logo {float: none;}
-        .right,
-        .left {float: none;margin: 0;}
+        .right, .left {float: none;margin: 0;}
         .right {display: none;}
         nav {
             // Hide the nav!

@@ -69,16 +69,16 @@
 // @include transition(opacity $timing-default);
 
 .platform { // this is injected into body via MM
-    #topNavCTA { // override, as is not primary cta
-        background-color: $gray-5;
-    }
-    .hollow {
-        &--inverted {
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-        }
-    }
+    // #topNavCTA { // override, as is not primary cta
+    //     background-color: $gray-5;
+    // }
+    // .hollow {
+    //     &--inverted {
+    //         background-color: transparent;
+    //         color: white;
+    //         border: 1px solid white;
+    //     }
+    // }
     &-bg {
         &-bridge {
             @include background-fill (center center);
