@@ -88,7 +88,7 @@ section#tech-features.section-article.container-gray-12
               .show-more--container.text-smaller data-off-canvas="" data-toggler="" id="feature-detail_#{feature.slug}" 
                 = Kramdown::Document.new(feature.desc).to_html
 
-section#tech-ehrs.section-article
+section#tech-integration.section-article
   .row.align-center.text-center
     .columns.small-12.large-6
       h2.headline-3 Integrate with any EHR
@@ -146,15 +146,23 @@ section#ctaBottom.section-article.container-color--blue-bright-noise.container-i
       h2.headline-3.group <strong>End-to-end compliance</strong> on AWS and Azure is possible.
   .row.align-center
     .columns.small-12.large-4.text-right
-      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow--inverted" }
+      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
     .columns.small-12.large-6
       = partial "partials/snippets/button", :locals => { :label => "See how Datica solves Compliance", :title => "See how Datica solves Compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
 
 
 section.section-article.container-color--gray-light
-  .row.align-center.small-up-1.medium-up-2.large-up-3
-    .column
-      h5.headline-5 Datica supports the following community buildpacks
+  .row
+    .columns.small-12.large-8.group
+      h3.headline-3 Platform Technical Capabilities
+      markdown:
+        Datica supports two primary methods of getting your software running on the Platform: [Buildpacks](#) with `git push`, and [Container Services](#) with `datica deploy`. Between these two methods, Datica can support almost any technology imaginable on the application layer. When it comes to services with volumes, we're a bit more prescriptive, given how automatic backups and disaster recovery works. 
+        {:.lead}
+  .row.align-center
+    .columns.small-12.medium-4.large-4
+      = inline_svg("icon-code", class: "icon-size--small svg-color--gray-3")
+      h5.headline-5 Common Languages
+      p Datica supports hundreds of languages and frameworks. Here are a few popular ones:
       ul.no-bullet.multicol-2.group
         li Ruby
         li Node.js
@@ -167,25 +175,31 @@ section.section-article.container-color--gray-light
         li Play 2.x
         li PHP
         li Go
-      h5.headline-5 Windows architecture support
-      ul.no-bullet
-        li Windows VMs on dedicated accounts
-        li Microsoft SQL Server
-    .column
-      h5.headline-5 Support for the following databases
+    .columns.small-12.medium-4.large-2
+      = inline_svg("icon-database-hotswap", class: "icon-size--small svg-color--gray-3")
+      h5.headline-5 Database Support
       ul.no-bullet.group
         li Percona/MySQL
         li PostgreSQL
         li MongoDB
-      h5.headline-5 Support for the following utilities
+      = inline_svg("icon-network", class: "icon-size--small svg-color--gray-3")
+      h5.headline-5 Other Services
       ul.no-bullet.group
         li Redis
         li Memcached
         li RabbitMQ
-    .column
-      .callout.callout--gray-light
-        p.lead Additionally, Datica customers can write their own buildpacks or use other third-party buildpacks.
-        p.lead Don't see a listed technology you wish to use? Contact sales to see additional compatability.
+    .columns.small-12.medium-4.large-6
+      = inline_svg("icon-windows", class: "icon-size--small svg-color--gray-3")
+      h5.headline-5 Windows architecture support
+      ul.no-bullet.group
+        li Windows VMs on dedicated accounts
+        li Microsoft SQL Server
+      .callout.drop-light
+        = inline_svg("icon-docker", class: "icon-size--large float-right svg-color--gray-3")
+        markdown:
+          Datica also supports Container Services with Docker; learn more [here](#).
+
+          Don't see a listed technology you wish to use? [Contact sales](/contact) to see additional compatability.
 section#faq-tech.section-article
   .row.align-center
     .columns.small-12.medium-8.large-8
