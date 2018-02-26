@@ -91,10 +91,6 @@
             url: "/innovation"
             desc: "How does healthcare innovate?"
         -
-            title: "Change Agent"
-            url: "https://medium.com/change-agent"
-            desc: "Our Medium publication on what it takes to evolve healthcare"
-        -
             title: "White Papers"
             url: "/whitepapers"
             desc: "A collection of our formal assessment of healthcare topics"
