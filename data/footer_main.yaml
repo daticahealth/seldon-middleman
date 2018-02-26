@@ -91,10 +91,6 @@
             url: "/innovation"
             desc: "How does healthcare innovate?"
         -
-            title: "Change Agent"
-            url: "https://medium.com/change-agent"
-            desc: "Our Medium publication on what it takes to evolve healthcare"
-        -
             title: "White Papers"
             url: "/whitepapers"
             desc: "A collection of our formal assessment of healthcare topics"
@@ -144,3 +140,7 @@
             title: "HIPAA Mappings"
             url: "https://hipaa.datica.com"
             desc: "How we map to HIPAA's rules"
+        -
+            title: "Datica Privacy Policy"
+            url: "https://privacy.datica.com/"
+            desc: "This Privacy Statement describes Datica’s Web site privacy practices."
