@@ -1,0 +1,107 @@
+---
+title: "Compliant Innovation | Datica"
+summary: "The Datica Platform makes your cloud workloads compliant and secure to the standards of HIPAA, HITRUST, GDPR, and GxP on AWS and Azure."
+author: "Datica, Inc."
+tags: "training, education, HIPAA, HL7, FHIR, interoperability, EHR, integration, resource"
+date: "January 1, 2017"
+share_image: "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+customCSS: "home"
+layout: "basic"
+priority: "1.0"
+---
+.container-color--dark-grad-blue
+  .container-image--center(data-interchange="[/public/icons/inlined/art/waves-dots-full.svg, small]")
+    = partial "partials/snippets/header", :locals => { :style => "light" }
+    section.section-article
+      .row.align-middle
+        .columns.small-12.medium-6.large-7
+          h1.headline-1 Cloud Compliance for Healthcare Innovation
+          h2.headline-3 Datica manages healthcare compliance and security on AWS and Azure.
+          p.lead 
+            | The Datica Platform makes your cloud workloads compliant to the standards of HIPAA, HITRUST, GDPR, and GxP.
+          = partial "partials/snippets/button", :locals => { :label => "Explore the Platform", :url => "/platform", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right" }
+                      
+        .columns.small-12.medium-6.large-4
+          .card.container-color--light-shimmer
+            .card-section.text-center
+              h3.headline-5 Schedule a demo to learn more.
+              = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/contact", :button_classes => "button expanded spaced-out", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
+            .card-section.card-section--flush
+              h4.headline-4 Questions?
+              p
+                | Talk with a customer representative.
+                = partial "partials/snippets/button", :locals => { :label => "", :url => "/contact", :button_classes => "label round", :icon => "icon-comment", :icon_color => "white" }
+.strip-bright
+= partial "partials/section-promos/aws-mlh-video", :locals => { :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS", :container_color => "container-gray-11" }
+section.section-article
+  .row.align-center.text-center
+    .columns.small-12.large-11
+      h2.headline-3 <strong>Healthcare's best compliance coverage</strong> <br>for teams large and small
+      .logo-cloud.group
+        - data.views.home.badges.each do |logo|
+          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="#{logo["fileUrl"]}?w=300" /
+      = partial "partials/snippets/button", :locals => { :label => "Platform Compliance Overview", :title => "Read more", :url => "/platform/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
+  hr.divider /
+  .row.align-center
+    .columns.small-12.large-11.text-center
+      h3.headline-3 <strong>World-class companies</strong> trust Datica
+      .logo-cloud
+        - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
+          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") data-interchange="[/public/img/customer-logos/sm/#{logo['file']}.png, small]" /
+
+
+- sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+- sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
+- sorted_academy = data.site.academy.to_a.sort_by{ |id, academy| academy['pub_date'] }.reverse!
+- sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse!
+section.container-gray-10.section-article
+  h3.headline-3.group.text-center <strong>Recently</strong> at Datica
+  .row.full-width.row--card-grid.align-center.small-up-1.medium-up-2.large-up-3.xlarge-up-4
+    .column
+      .card
+        .card-section
+          .subheader-small.text-right
+            = inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5")
+            | Mar. 5 – Mar. 9, 2018 
+          p
+            a href="/events/himss-2018" title="Schedule a time to meet at HIMSS 18"
+              img class="logo-size--medium" src="//images.contentful.com/189dvqdsjh46/BejYKjLiuWuE0iEK6WQIM/521488e52b97804bab49f7dd0a1994e2/himss-2018-logo.png?w=300" alt="Event Logo"
+          p
+            | Datica will have an exciting announcement for our platform at HIMSS this year. 
+            a href="/events/himss-2018" title="Schedule a time to meet at HIMSS 18" Stop by our booth #5077 
+            | to hear the news.
+        a href="/events/himss-2018" title="Schedule a time to meet at HIMSS 18"
+          img src="https://images.contentful.com/189dvqdsjh46/FPuVgZwr02yGkmCswWegw/216aeb7c46c57801b6de8c06e37e885f/Meet_at_himss_18_widget_art.jpg?w=1000" alt="schedule a time to meet at HIMSS'18"
+    - sorted_posts.take(1).each do | id, blog_entry |
+      .column
+        = partial "partials/cards/featured-blog", :locals => { :post => blog_entry, :style => "light", :size => "small", :show_type => true }
+    - sorted_podcasts.take(1).each do | id, podcast_entry |
+      .column
+        = partial "partials/cards/featured-blog", :locals => { :post => podcast_entry, :style => "light", :size => "small", :show_type => true }
+    - sorted_reports.take(1).each do | id, report_entry |
+      .column
+        .card.container-gray-2
+          .card-section
+            /! <span class="card-header-subhead">Datica</span
+            - if report_entry.has_key?("subhead")
+              .subheader-small.color-white= report_entry.subhead
+            h3.headline-4
+              a.link--white href="/innovation/#{report_entry.slug}" title=("Read report") 
+                = report_entry.title
+          - if report_entry.has_key?("image_thumb")
+            a.text-center href="/innovation/#{report_entry.slug}" title=("Read report") 
+              img alt="report" src="#{report_entry.image_thumb.url}?fit=thumb&w=800" style="padding: 0 1rem 0 1rem;" /
+
+aside.section-article.container-color--blue-bright-noise.container-image--center data-interchange="[https://images.contentful.com/189dvqdsjh46/24KaYDLfRW40mKMOuKEgsS/04a4779c83f98738cc15c9f37b636192/platform-integration-inverted-bg.png?fit=crop&w=1600&h=500, medium]" 
+  .row.align-center
+    .columns.small-12.medium-10.large-10.text-center
+      h2.headline-3 <strong>End-to-end compliance</strong> on AWS and Azure is possible.
+  .row.align-center
+    .columns.small-6.large-4.text-right
+      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
+    .columns.small-6.large-6.text-left
+      = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/platform", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue" }
+
+
+
+

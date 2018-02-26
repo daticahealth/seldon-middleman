@@ -71,17 +71,17 @@ figcaption{
 
 .image {
     // use these in conjunction with float classes, like .float-left, .float-right, .float-right-on-medium, etc.
-    &-half {
-        max-width: 50%;
-    }
-    &-third {
-        max-width: 33%;
-    }
+    @include percentage-widths;
 }
 .image-overlay { // experimental
     // opacity: 0.5;
     // filter: saturate(0);
     background-blend-mode: multiply;
+}
+
+.html5-video-responsive {
+    width: calc(100vw);
+    text-align: center;
 }
 
 // .container--image-fit {

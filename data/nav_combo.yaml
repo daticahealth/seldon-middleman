@@ -62,6 +62,10 @@ nav_primary:
         desc:
         children:
             -
+                title: "DHSF"
+                url: "/dhsf"
+                desc: "The Digital Health Success Framework (DHSF) is a simple guide for the makers of digital healthcare products."
+            -
                 title: "The Academy"
                 url: "/academy"
                 desc: "The definitive resource for those looking to learn about Compliance and Interoperability"
@@ -74,13 +78,9 @@ nav_primary:
                 url: "https://engineering.datica.com"
                 desc: "Our engineering team shares bleeding-edge insight on what it takes to build a compliant platform"
             -
-                title: "Healthcare Innovators Podcast"
+                title: "Innovation Hub"
                 url: "/innovation"
-                desc: "How does healthcare innovate?"
-            -
-                title: "Change Agent"
-                url: "https://medium.com/change-agent"
-                desc: "Our Medium publication on what it takes to evolve healthcare"
+                desc: "Original articles and podcasts from healthcare leaders on digital transformation, trends, and innovation in the health care environment."
             -
                 title: "White Papers"
                 url: "/whitepapers"

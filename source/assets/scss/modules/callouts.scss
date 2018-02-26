@@ -28,43 +28,13 @@
         margin-bottom: 0; // only callout style to do so
     }
     &.callout--large {
-        @include callout-size(3rem);
-        // Reduce padding on mobile
-        @media all and (max-width: 53.5rem){
-            @include callout-size(1rem);
+        border-radius: $global-radius * 2;
+        padding: 1rem;
+        @include breakpoint (medium-large) { // larger breakpoints
+            padding: 3rem 3rem 3.5rem 3rem;
         }
     }
-    // Clipped background images on callouts
-    // &--background-fhir{
-    //     position: absolute;
-    //     z-index: 0;
-    //     top: 0px;
-    //     right: 0px;
-    //     background: url('/public/img/background-fhir.svg');
-    //     width: rem-calc(446px);
-    //     height: rem-calc(513px);
-    //     background-size: rem-calc(446px) rem-calc(513px);
-    // }
-    // &--background-open-source{
-    //     position: absolute;
-    //     z-index: 0;
-    //     top: 0px;
-    //     right: 0px;
-    //     background: url('/public/img/background-open-source.svg');
-    //     width: rem-calc(476px);
-    //     height: rem-calc(476px);
-    //     background-size: rem-calc(476px) rem-calc(476px);
-    // }
-    // &--background-lock{
-    //     position: absolute;
-    //     z-index: 0;
-    //     top: rem-calc(-100px);
-    //     right: rem-calc(-130px);
-    //     background: url('/public/img/background-lock.svg');
-    //     width: rem-calc(476px);
-    //     height: rem-calc(476px);
-    //     background-size: rem-calc(476px) rem-calc(476px);
-    // }
+
     &--content{
         a.button{margin: 0;}
     }

@@ -1,10 +1,10 @@
 //=== Variable definitions ====//
 // Hover markers
-var product = $('#productDropdown');
+var customer = $('#customerDropdown');
 var resources = $('#resourcesDropdown');
 var company = $('#companyDropdown');
 // Hover content
-var productContent = $('.dropdown-product');
+var customerContent = $('.dropdown-customer');
 var resourcesContent = $('.dropdown-resources');
 var companyContent = $('.dropdown-company');
 
@@ -13,22 +13,24 @@ var fadeOutTime = 150;
 var hoverOutDelay = 550;
 
 var ww = $(window).width();
+
 if(ww > 1010){
     // There's probably a more elegent way to do this
-    // Product hover
-    product.hover(function(){
-        productContent.stop(true).fadeIn(fadeInTime);
+    // customer hover
+    customer.hover(function(){
+        console.log(Foundation.MediaQuery.current);
+        customerContent.stop(true).fadeIn(fadeInTime);
         companyContent.stop(true).fadeOut(fadeOutTime);
         resourcesContent.stop(true).fadeOut(fadeOutTime);
     }, function(){
-        productContent.stop(true).delay(hoverOutDelay).fadeOut(fadeOutTime);
+        customerContent.stop(true).delay(hoverOutDelay).fadeOut(fadeOutTime);
     });
 
     // Resources hover
     resources.hover(function(){
         resourcesContent.stop(true).fadeIn(fadeInTime);
         companyContent.stop(true).fadeOut(fadeOutTime);
-        productContent.stop(true).fadeOut(fadeOutTime);
+        customerContent.stop(true).fadeOut(fadeOutTime);
     }, function(){
         resourcesContent.stop(true).delay(hoverOutDelay).fadeOut(fadeOutTime);
     });
@@ -37,7 +39,7 @@ if(ww > 1010){
     company.hover(function(){
         companyContent.stop(true).fadeIn(fadeInTime);
         resourcesContent.stop(true).fadeOut(fadeOutTime);
-        productContent.stop(true).fadeOut(fadeOutTime);
+        customerContent.stop(true).fadeOut(fadeOutTime);
     }, function(){
         companyContent.stop(true).delay(hoverOutDelay).fadeOut(fadeOutTime);
     });

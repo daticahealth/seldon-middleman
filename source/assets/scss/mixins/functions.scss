@@ -43,14 +43,20 @@ $underline: false !default;
      -moz-border-radius: ($r);
      border-radius: ($r);
 }
-@mixin easing($s){
+@mixin easing($s){ // keeping this for legacy uses for now. Should use the one below, with transform3D
     -moz-transition: all $s ease;
     -webkit-transition: all $s ease;
     -o-transition: all $s ease;
-    transition: all $s ease
+    transition: all $s ease;
+}
+@mixin transition($args...){
+    -moz-transition: $args;
+    -webkit-transition: $args;
+    -o-transition: $args;
+    transition: $args;
 }
 @mixin transform($t){
-    -ms-transform: $t;
+    // -ms-transform: $t;
     -webkit-transform: $t;
     transform: $t;
 }
@@ -393,4 +399,15 @@ $underline: false !default;
     &:-moz-placeholder           {@content};
     &::-moz-placeholder          {@content};
     &:-ms-input-placeholder      {@content};
+}
+@mixin percentage-widths {
+    &-half {
+        max-width: 50%;
+    }
+    &-two-thirds {
+        max-width: 66%;
+    }
+    &-third {
+        max-width: 33%;
+    }
 }

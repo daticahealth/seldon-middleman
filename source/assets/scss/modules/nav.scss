@@ -1,4 +1,20 @@
 // Main header - the anchor to all of Seldon
+$duration: $timing-default * 1.5; //settings.scss:281
+.dropdown-pip { // icon for dropdown, svg triangle usually
+    path {
+        @include transition (color $timing-default ease);
+        fill: $gray-7;
+    }
+}
+.menu-item--simple { // only menu items without dropdowns should have fade fx. default is "dark" nav (on white bg)
+    color: $gray-1;
+    @include transition (color $timing-default ease);
+    &:hover {
+        // @include easing($duration);
+        // opacity: 0.7;
+        color: $color_prime-alt;
+    }
+}
 .main-header {
     // Could possibly opt for 2rem here
     padding: rem-calc(30px);
@@ -29,27 +45,22 @@
         .a,
         a {
             font-weight: $font-weight-regular;
-            color: $color_deep;
+            // color: $color_deep;
             margin: 0 rem-calc(20px) 0 0;
             position: relative;
             display: inline-block;
             cursor: pointer;
-            @include easing(350ms);
-            &:hover {
-                @include easing(350ms);
-                text-decoration: none;
-                border: 0;
-                color: $color_prime-alt;
-            }
+            text-decoration: none;
+            border: 0;
         }
         // Button requires some overrides here since we're not hitting a class on `nav > a`
-        a.button {
-            color: $white;
-            font-size: $global-font-size;
-            padding: rem-calc(10px);
-            position: relative;
-            margin-right: 0;
-        }
+        // a.button {
+        //     color: $white;
+        //     font-size: $global-font-size;
+        //     padding: rem-calc(10px);
+        //     position: relative;
+        //     margin-right: 0;
+        // }
     }
     // Differences in content require differences in margin. Not sure how better to solve this.
     .left {margin: rem-calc(8px) 0 0 0;}
@@ -62,18 +73,32 @@
             height: rem-calc(40px);
             background-size: rem-calc(99px) rem-calc(40px);
         }
-        nav {
-            // We want a nice blue glow on hover here
-            .a,
-            a {
-                color: $color_white;
-                &:hover {color: $color_talk-alt;}
+        .menu-item--simple { 
+            color: white;
+            &:hover {
+                color: $gray-9;
             }
-            // Need to specifically delcare hover style on button to retain style
-            a.button {color: $color_product;}
         }
+        // nav {
+        //     .a,
+        //     a {
+        //         color: $color_white;
+        //         &:hover {color: $gray-7;}
+        //     }
+        // }
         // The new dropdown was getting written over from above
-        .dropdown {a {display: block;color: $color_deep;&:hover {color: $color_prime-alt;}}}
+        .dropdown {
+            a {
+                display: block;
+                color: $color_deep;
+                &:hover {
+                    color: $color_prime-alt;
+                    .dropdown-pip path {
+                        fill: white;
+                    }
+                }
+            }
+        }
     }
 }
 // Dropdowns
@@ -111,7 +136,9 @@
         display: block;
         padding: 0 0 0.5rem 0;
         margin: 0;
-        &:hover {@include transform(translate(rem-calc(2px), rem-calc(0px)));}
+        &:hover {
+            @include transform(translate3D(3px, 0, 0));
+        }
         &:last-child {
             padding: 0;
         }
@@ -166,6 +193,15 @@
     }
 }
 .no-js .top-bar {display: none;}
+// .dropdown-container { // le sigh
+//     background-color: $color_deep-alt;
+//     @include breakpoint (medium-large) {
+//         background-color: white;
+//     }
+//     padding: 1rem;
+//     width: 100%;
+//     border-radius: $global-radius;
+// }
 // Responsive menu
 @media all and (max-width: rem-calc($custom_breakpoint-larger-nav)) {
     .main-header {
@@ -173,8 +209,7 @@
         .mobile-menu {display: block;}
         // All floated elements collapse to full width
         a.logo {float: none;}
-        .right,
-        .left {float: none;margin: 0;}
+        .right, .left {float: none;margin: 0;}
         .right {display: none;}
         nav {
             // Hide the nav!
@@ -201,9 +236,7 @@
         // This simply gives me the ability to grab the text within a dropdown selector
         span.selector {margin: 0 0 1rem 0;display: block;}
         // Instead of creating a new class we can just target these with the ID selectors we're using for JS
-        #companyDropdown,
-        #resourcesDropdown,
-        #productDropdown {
+        .dropdown-container {
             background-color: $color_deep-alt;
             padding: 1rem;
             width: 100%;
@@ -312,11 +345,11 @@
                 border-bottom: rem-calc(2px) solid transparent;
                 border-left: rem-calc(1px) solid $color_light-alt;
                 font-size: rem-calc(14px);
-                @include easing(350ms);
+                @include easing($duration);
                 &:hover {
                     color: $color_deep;
                     border-bottom: rem-calc(2px) solid $color_light;
-                    @include easing(350ms);
+                    @include easing($duration);
                 }
             }
             .active, [aria-current]:not([aria-current="false"]) {
@@ -424,9 +457,15 @@ nav {
         margin-bottom: 0 !important; // argh!!
         @include breakpoint (small) {
             @include link-colors (white, $color_yellow-glow, false);
+            &:last-child { //grrrr
+                padding: 0.4rem 0 0.4rem 0; // larger tap-targets on mobile.
+            }
         }
         @include breakpoint (large) {
             @include link-colors ($gray-2, $color_prime-alt, false);
+            &:last-child { //grrrr
+                padding: 0;
+            }
         }
     }
     a.active, a[aria-current]:not([aria-current="false"]) {
@@ -452,7 +491,7 @@ nav {
             margin-bottom: 0;
             padding: 0;
             &--link {
-                transition-duration: 100ms;
+                transition-duration: $timing-default;
                 font-weight: $font-weight-mid;
                 padding: $pad * 0.5;
                 &:hover {

@@ -29,7 +29,7 @@
             <%= yield %>
             </main>
             <% if current_page.data.has_key?("ctaCustom") != true %>
-                <%= partial "partials/ctas/platform-cta" %>
+                <%#= partial "partials/ctas/platform-cta" %>
             <% end %>
         </div>
         <%= partial "partials/snippets/footer" %>
