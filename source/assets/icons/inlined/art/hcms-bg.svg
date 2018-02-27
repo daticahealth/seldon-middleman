@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="891px" viewBox="0 0 1440 891" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>hcms-bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F1E5FF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="1046.28831 419.622517 2918.36644 1164.15377 2487.67894 1391.03658 979.991435 1164.15377 1033.7805 478.864705"></polygon>
+        <filter x="-3.9%" y="-4.8%" width="105.2%" height="110.1%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="-26" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0941176471   0 0 0 0 0.11372549   0 0 0 0 0.133333333  0 0 0 0.09 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#C0FFD4" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-5" points="288.640625 2191.57813 1886.13281 1210.25 1851.48438 2326.10938 233.21875 2286.27344"></polygon>
+        <filter x="-4.5%" y="-4.2%" width="106.0%" height="108.8%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="-26" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0941176471   0 0 0 0 0.11372549   0 0 0 0 0.133333333  0 0 0 0.09 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-7">
+            <stop stop-color="#C0D5FF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-8" points="175.898438 1457.78906 2047.97656 2202.32031 1617.28906 2429.20313 109.601563 2202.32031 163.390625 1517.03125"></polygon>
+        <filter x="-3.9%" y="-4.8%" width="105.2%" height="110.1%" filterUnits="objectBoundingBox" id="filter-9">
+            <feOffset dx="-26" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0941176471   0 0 0 0 0.11372549   0 0 0 0 0.133333333  0 0 0 0.09 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-10">
+            <stop stop-color="#FFE2C0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-11" points="134 2054.23438 2115.39844 1611 1832.41406 2747.89844 134 2218.10938"></polygon>
+        <filter x="-3.8%" y="-4.1%" width="105.0%" height="108.6%" filterUnits="objectBoundingBox" id="filter-12">
+            <feOffset dx="-26" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0941176471   0 0 0 0 0.11372549   0 0 0 0 0.133333333  0 0 0 0.09 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hcms-bg">
+            <g id="Group" transform="translate(1148.614522, 705.144096) rotate(40.000000) translate(-1148.614522, -705.144096) translate(-367.385478, -920.855904)">
+                <g id="Path-2" transform="translate(1949.178935, 905.329548) rotate(-30.000000) translate(-1949.178935, -905.329548) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+                <g id="Path" transform="translate(1059.675781, 1768.179688) rotate(-220.000000) translate(-1059.675781, -1768.179688) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="url(#linearGradient-4)" fill-rule="evenodd" xlink:href="#path-5"></use>
+                </g>
+                <g id="Path-2" transform="translate(1078.789063, 1943.496094) rotate(-220.000000) translate(-1078.789063, -1943.496094) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-9)" xlink:href="#path-8"></use>
+                    <use fill="url(#linearGradient-7)" fill-rule="evenodd" xlink:href="#path-8"></use>
+                </g>
+                <g id="Path-3" transform="translate(1124.699219, 2179.449219) rotate(-220.000000) translate(-1124.699219, -2179.449219) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-12)" xlink:href="#path-11"></use>
+                    <use fill="url(#linearGradient-10)" fill-rule="evenodd" xlink:href="#path-11"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
