@@ -17,12 +17,16 @@
         opacity: 0;
     }
     // 50% {
-        
+
     // }
     100% {
         // height: auto;
         opacity: 1;
     }
+}
+// Change headline weight to same as homepage
+.headline-1 {
+	font-weight: 100;
 }
 // expand/toggle component
 .icon-toggle {
@@ -59,13 +63,13 @@
         }
     }
 }
-  
+
 .feature-item {
     & > * {
         margin-bottom: 0.3em; // tighten spacing in children
     }
     margin-bottom: 0.8rem;
-}      
+}
 // @include transition(opacity $timing-default);
 
 .platform { // this is injected into body via MM

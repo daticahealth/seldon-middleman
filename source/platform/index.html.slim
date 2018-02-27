@@ -16,31 +16,45 @@ priority: "0.9"
 nav.hide-for-large.pad--sm.container-color--blue-alt
   .row.align-middle.align-center
     .columns.small-6.medium-4
-      a.button.hollow-inverted.expanded.small.nomargin href="/platform/technology" title=("Datica Platform Technology") 
+      a.button.hollow-inverted.expanded.small.nomargin href="/platform/technology" title=("Datica Platform Technology")
         | Technology
         i.fa.fa-angle-right
     .columns.small-6.medium-4
-      a.button.button--light.expanded.small.nomargin href="/pricing" title=("sign up") 
+      a.button.button--light.expanded.small.nomargin href="/pricing" title=("sign up")
         | Pricing
         i.fa.fa-icon.fa-angle-right
+
+.container-color--dark-grad-blue
+  section.section-article
+    .row
+      .columns.small-12.medium-5
+        h1.headline-2 End-to-end compliance on AWS and Azure is possible.
+        p.small
+          | The Datica Platform fills the compliance gaps on top of public clouds like AWS and Azure by combining the best technology available and mapping it to frameworks like HIPAA, HITRUST, GDPR, and GxP. Customers use Kubernetes-enabled orchestration to deploy containerized workloads to the Platform that are
+          strong guaranteed to be continuously compliant.
+        = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/technology", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white" }
+      .columns.small-12.medium-7
+        img.float-right-on-medium alt=("Datica Platform Architecture") src="/assets/img/platform_iso_architecture-2x.png"
+
+
 section.section-article.container-gray-12
   .row.align-center
     .columns.small-12.medium-10.large-9.text-center
       h1.headline-3 <strong>End-to-end compliance</strong> on AWS and Azure is possible.
       p.lead
-        | The Datica Platform fills the compliance gaps on top of public clouds like AWS and Azure by combining the best technology available and mapping it to frameworks like HIPAA, HITRUST, GDPR, and GxP. Customers use Kubernetes-enabled orchestration to deploy containerized workloads to the Platform that are 
+        | The Datica Platform fills the compliance gaps on top of public clouds like AWS and Azure by combining the best technology available and mapping it to frameworks like HIPAA, HITRUST, GDPR, and GxP. Customers use Kubernetes-enabled orchestration to deploy containerized workloads to the Platform that are
         strong guaranteed to be continuously compliant.
       = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/technology", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white" }
 
 section.section-article.container-color--dark-grad-blue
   .row.hide-for-large.group.align-center
     .columns.small-12.medium-8
-      ul#tier-tabs.tabs data-tabs="" 
+      ul#tier-tabs.tabs data-tabs=""
         li.tabs-title.is-active
           a aria-selected="true" href="#tierHosted"  Hosted
         li.tabs-title
           a data-tabs-target="tierLicensed" href="#tierLicensed"  Licensed
-      .tabs-content data-tabs-content="tier-tabs" 
+      .tabs-content data-tabs-content="tier-tabs"
         #tierHosted.tabs-panel.tier-panel.is-active
           .text--white Hosted content
         #tierLicensed.tabs-panel.tier-panel.drop
@@ -119,7 +133,7 @@ section#tech-hcms.section-article.container-color--dark-grad-blue
           .columns.small-12.medium-6.large-4
             p Visibility into the continuous compliance and security provided by the Datica Platform is important to our customers. The HCMS is a compliance dashboard that gives insights into all compliance controls across all customer environments.
 
-aside.section-article.container-color--blue-bright-noise.container-image--center data-interchange="[/public/img/bg/platform-integration-inverted-bg.png, medium]" 
+aside.section-article.container-color--blue-bright-noise.container-image--center data-interchange="[/public/img/bg/platform-integration-inverted-bg.png, medium]"
   .row.align-center
     .columns.small-12.medium-10.large-10.text-center
       h2.headline-3 <strong>End-to-end compliance</strong> on AWS and Azure is possible.
@@ -128,6 +142,3 @@ aside.section-article.container-color--blue-bright-noise.container-image--center
       = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
     .columns.small-6.large-6.text-left
       = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/technology", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
-
-
-
