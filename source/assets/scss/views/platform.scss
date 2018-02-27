@@ -11,6 +11,11 @@
 // @import '../modules/fonts-optional';
 // @include foundation-off-canvas;
 
+// Set max height on "building on the paltform" illustrations
+.build-height{
+  max-height: 155px;
+}
+
 @include keyframes( expando ) {
     0% {
         // height: 0px;

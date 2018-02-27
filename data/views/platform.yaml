@@ -89,21 +89,21 @@ platform_use:
     -
         title: "Deploy Your Application"
         desc: "Push your app through git-based CI/CD or deploy your own Docker containers. Customers customize application environments to fit their architecture then deploy the app as a containerized workload."
-        image: "https://images.contentful.com/189dvqdsjh46/3Ijl0wpXiEmAk6iGwYA6gW/f1b6a04e20e3d5d9477473dd0d7114e2/build_flow_step_2.png"
+        image: "/assets/img/app-deploy-2x.png"
         button:
             label: "View Technology Capabilities"
             url: /platform/technology
     -
         title: "Integrate with EHRs"
         desc: "Datica provides two solutions for data interoperability with EHRs. Customers deploy API products on the Datica platform to ensure compliance and security requirements are met for that part of their technology stack."
-        image: "https://images.contentful.com/189dvqdsjh46/6p4qvRe42kM8mcAyGqiIwE/f713310dfcf586ba5251e15f958f92f8/build_flow_step_1.png"
+        image: "/assets/img/app-integrate-2x.png"
         button:
             label: "View Integration Capabilities"
-            url: /platform/integration
+            url: /platform/technology#integration
     -
         title: "Custom Environments"
         desc: "Doing Big Data projects with Hadoop? Building out a Data Warehouse? Visualizing data with Tableau? Whatever extra use case you might have, making it work on the Datica Platform is straight forward. Customers engage with us to customize environments based on additional needs."
-        image: "https://images.contentful.com/189dvqdsjh46/3McfWoQ9Vmm4iciuu4oYe4/64ef01a47e5a89d1b31c45b8942bb076/build_flow_step_3.png"
+        image: "/assets/img/app-custom-2x.png"
         button:
             label: "View Services"
             url: /platform/services
@@ -122,7 +122,7 @@ compliance_header:
 shared_responsibility:
     - |
         AWS and Azure are the world's best clouds at addressing compliance and security _of_ the cloud: physical controls and network controls. The rest is your responsibility.
-    
+
         In their Shared Responsibility models, you must address the following on top of them in order to approach complete continuous compliance. The following list maps to a specific control in the HIPAA Omnibus, HITRUST CSF, GxP regulations, or GDPR articles.
     - |
         - Block-level encryption
@@ -144,5 +144,5 @@ shared_responsibility:
         - Access control management
     - |
         None of it is impossible for you to figure out. But configuring, integrating, documenting, auditing, and managing it across a fleet of containers or VMs with every deployment is how continuous compliance happens.
-        
+
         Datica does all this for you. We are compliance _on_ the cloud. Customers of Datica pass these Shared Responsibility obligations to us and are left with compliance _in_ the cloud, which are company-level and application-level responsibilities.
