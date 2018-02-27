@@ -89,21 +89,21 @@ platform_use:
     -
         title: "Deploy Your Application"
         desc: "Push your app through git-based CI/CD or deploy your own Docker containers. Customers customize application environments to fit their architecture then deploy the app as a containerized workload."
-        image: "/assets/img/app-deploy-2x.png"
+        image: "https://images.contentful.com/189dvqdsjh46/3X3MVW3n0ICW6wuacW2OIy/0bc6a437ab77038ad2b2c4153050ec86/app-deploy-2x.png"
         button:
             label: "View Technology Capabilities"
             url: /platform/technology
     -
         title: "Integrate with EHRs"
         desc: "Datica provides two solutions for data interoperability with EHRs. Customers deploy API products on the Datica platform to ensure compliance and security requirements are met for that part of their technology stack."
-        image: "/assets/img/app-integrate-2x.png"
+        image: "https://images.contentful.com/189dvqdsjh46/6WbSVfMeCQuSmKkaCO6KeY/ba92164e53fb2d84d4f8aabfdcdf26d4/app-integrate-2x.png"
         button:
             label: "View Integration Capabilities"
             url: /platform/technology#integration
     -
         title: "Custom Environments"
         desc: "Doing Big Data projects with Hadoop? Building out a Data Warehouse? Visualizing data with Tableau? Whatever extra use case you might have, making it work on the Datica Platform is straight forward. Customers engage with us to customize environments based on additional needs."
-        image: "/assets/img/app-custom-2x.png"
+        image: "https://images.contentful.com/189dvqdsjh46/27GWcYqUfe0SsWyusMwCQS/e0285fde7ea1b81684c89bfa949844da/app-custom-2x.png"
         button:
             label: "View Services"
             url: /platform/services
