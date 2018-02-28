@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="891px" viewBox="0 0 1440 891" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>platform-tech-bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="7.19816405%" x2="50%" y2="98.5341023%" id="linearGradient-1">
+            <stop stop-color="#003877" offset="0%"></stop>
+            <stop stop-color="#0F162B" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="platform-tech-bg" fill="url(#linearGradient-1)">
+            <circle id="Oval-5" cx="1154" cy="750" r="577"></circle>
+            <circle id="Oval-5" cx="1338" cy="445" r="577"></circle>
+            <circle id="Oval-5" transform="translate(557.000000, 0.000000) rotate(180.000000) translate(-557.000000, -0.000000) " cx="557" cy="0" r="577"></circle>
+            <circle id="Oval-5" cx="-57.5" cy="445.5" r="373.5"></circle>
+            <circle id="Oval-5" cx="980.5" cy="403.5" r="173.5"></circle>
+            <circle id="Oval-5" cx="324.5" cy="-1.5" r="173.5"></circle>
+            <circle id="Oval-5" cx="675" cy="230" r="98"></circle>
+            <circle id="Oval-5" cx="1440.5" cy="679.5" r="173.5"></circle>
+            <circle id="Oval-5" cx="130.5" cy="749.5" r="243.5"></circle>
+            <circle id="Oval-5" transform="translate(429.500000, 661.500000) rotate(180.000000) translate(-429.500000, -661.500000) " cx="429.5" cy="661.5" r="331.5"></circle>
+        </g>
+    </g>
+</svg>
