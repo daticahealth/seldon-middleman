@@ -74,13 +74,37 @@ platform_tech:
     -
         question: "Does Datica provide an SFTP service?"
         answer: "Datica provides two primary SFTP solutions. Customers needing SFTP should reach out to our cloud engineering & support team."
-    -   
+    -
         question: "Does Datica support AWS lambda?"
         answer: "We do not currently support Lambda."
     -
         question: "Does Datica support all AWS HIPAA eligible services?"
         answer: "Of AWS's 57 services, 27 are covered under their BAA as HIPAA Eligible. Of those, almost all have basic support through our platform, but there are a few we do not yet support. Discuss with our team service availability if you have questions about your architecture."
-    
+    -
+        question: "Do you integrate with [EHR]?"
+        answer: "Datica has live, active integrations with 27 of the top 35 EHRs. More projects are planned to bring us closer to live integrations with the top 40. If you are needing integration services outside of that list, chances are we can still help you."
+    -
+        question: "Do you integrate with [data standard]?"
+        answer: "Datica has live integrations with almost every main data standard you can think of. There are some we are more proficient in than others—e.g. we have more integrations for HL7 with hospitals than we do for Claims with clearinghouses—but if there is a specific technology you are curious about, contact us."
+    -
+        question: "If I complete an Epic (or Cerner, or...) integration with Datica, does that mean I get access to all Epic (or Cerner, or...) customers?"
+        answer: "No. Healthcare integrations are inherently point-to-point. You will integrate with a specific site's version of an EHR. It is a myth that you can connect once into an EHR and get access to their customer base."
+    -
+        question: "Does Datica provide sandboxes for integrations?"
+        answer: "We provide open APIs that anyone can test against. Those are found at hl7.datica.com and fhir.datica.com. Beyond that, extra requirements are scoped out with Datica's Services team for an additional cost."
+    -
+        question: "Does Datica help with testing an integration?"
+        answer: "We most definitely do! Customers can engage with our Managed Integration services."
+    -
+        question: "Does Datica help stress-test my integration?"
+        answer: "Part of Datica's Managed Integration service is to help scope out expected message volume and work with customers accordingly on setting up their environment to support that."
+    -
+        question: "How many messages per second can Datica's integration stack handle?"
+        answer: "The base product can handle close to 50msg/s. Supporting higher frequency of messages is as easy as dedicating more resources to the integration environment."
+    -
+        question: "Can Datica help with Single-Sign-On within an EHR integration?"
+        answer: "Potentially yes. It will depend on your type of integration. You will want to engage with our Managed Integration services to determine fit."
+
 platform_integration:
     -
         question: "Do you integrate with [EHR]?"
