@@ -85,7 +85,7 @@ section#tech-features.section-article.container-gray-12
       .row.align-center
         .columns.small-12.medium-8
           h1.headline-2.text-center Datica Platform Features
-          p.text-center Features that not only show you how to be compliant, but actually make you compliant against the industries most stringent security requirements.
+          p.text-center Features that not only show you how to be compliant, but actually make you compliant against the healthcare's most stringent security requirements.
   - ordered_feature_categories = data.site.featureCategories.to_a.sort_by{ |id, featureCat| featureCat['sort_order'] }
   - ordered_feature_categories.each do | id, featureCat |
     .row
@@ -127,25 +127,36 @@ section#tech-integration.section-article
       .logo-cloud
         - data.views.ehrs.ehr_list.each do |logo|
           img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
-  hr.divider/
+
+section.section-article.container-color--gray-light
+  .row.align-center
+    .columns.small-12.medium-12.large-8
+      h1.headline-3.group.text-center EHR <strong>Integration</strong> With Mirth Connect
+      .video.drop--big.group
+        script async="" src="https://fast.wistia.com/embed/medias/33cjcahhmy.jsonp"
+        script async="" src="https://fast.wistia.com/assets/external/E-v1.js"
+        .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;")
+          .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;"
+            .wistia_embed.wistia_async_33cjcahhmy class=("seo=false videoFoam=true") style="height:100%;width:100%"   
+
   .row.align-center
     .columns.small-12.large-6
-      h3.headline-4.text-center One-click-install Mirth Connect
-      markdown:
-        Add a new environment to your account with the click of a button. OCI Mirth Connect is a pre-packaged configuration of all the open source integration tooling you need to integrate with EHRs.
-        {: .lead}
+      p.lead Add a new environment to your account with the click of a button. OCI Mirth Connect is a pre-packaged configuration of all the open source integration tooling you need to integrate with EHRs.
 
-        The add-on includes:
-
-        * Mirth configured to be highly-available
-        * Load balancers
-        * Redundant Postgres for initial data ingestion
-        * Mirth alerting and monitoring
-        * VPN management
-
-        We open sourced our Mirth HL7 transformations used over the past three years. With OCI Mirth, you can get started today using these tools. Or, should you require help integrating into a specific hospital, we offer professional services to project manage an integration to completion.
-
-      = partial "partials/snippets/button", :locals => { :label => "Test out your own version of Mirth today", :url => "/pricing", :button_classes => "button text-center", :icon => "icon-chevron-right", :icon_color => "white" }
+  .row
+    .columns.small-12.large-6
+      .callout.drop
+        strong The add-on includes:
+        ul
+          li Mirth configured to be highly-available
+          li Load balancers
+          li Redundant Postgres for initial data ingestion
+          li Mirth alerting and monitoring
+          li VPN management
+    .columns.small-12.large-6
+      .callout.drop
+        p We open sourced our Mirth HL7 transformations used over the past three years. With OCI Mirth, you can get started today using these tools. Or, should you require help integrating into a specific hospital, we offer professional services to project manage an integration to completion.
+        = partial "partials/snippets/button", :locals => { :label => "Test out your own version of Mirth today", :url => "/pricing", :button_classes => "button text-center", :icon => "icon-chevron-right", :icon_color => "white" }
 
 .container-color--gray-light
   .container-image--center(data-interchange="[/public/icons/inlined/art/hcms-bg.svg, small]")
