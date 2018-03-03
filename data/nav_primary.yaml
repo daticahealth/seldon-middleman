@@ -40,7 +40,7 @@ nav_company_a:
     -
         title: "Leadership"
         url: "/leadership"
-        desc: "The team guiding Datica"        
+        desc: "The team guiding Datica"
     -
         title: "Careers"
         url: "/careers"
@@ -74,9 +74,9 @@ nav_company_b:
 
 nav_customers:
     -
-        title: "Login"
+        title: "Sign in"
         url: "https://product.datica.com"
-        desc: "Log into your dashboard"
+        desc: "Sign in to your dashboard"
     -
         title: "Documentation"
         url: "https://help.datica.com"

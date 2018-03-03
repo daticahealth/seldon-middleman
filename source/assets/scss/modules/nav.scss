@@ -67,6 +67,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
     }
     // Differences in content require differences in margin. Not sure how better to solve this.
     .left {margin: rem-calc(8px) 0 0 0;}
+    .right{margin: rem-calc(4px) 0 0 0;}
     // .right {margin: rem-calc(4px) 0 0 0;}
     &--white {
         // Overriding logo with just the background didn't work. There's a reason for the entire style block.
