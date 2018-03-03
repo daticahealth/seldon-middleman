@@ -161,6 +161,12 @@
         }
         p{font-size: rem-calc(18px);line-height: 1.5;}
     }
+    &-has-gray-border{
+      border: 1px solid $color_light;
+    }
+    &-has-gray-border--light{
+      border: 1px solid $color_light-alt;
+    }
     &-card{
         &--featured{
             @include border-radius(0);

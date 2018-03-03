@@ -150,6 +150,7 @@
 .strip-bright { // bright strip, supersat
     min-height: calc(3px + 0.5vw);
     @include grad-bright;
+    &--small{min-height: rem-calc(5px);}
 }
 .container { // this is generally only for color & image settings on containers
     &-image {
