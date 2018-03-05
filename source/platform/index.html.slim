@@ -13,16 +13,6 @@ collectionName: "platform"
 collectionOrder: 1
 priority: "0.9"
 ---
-nav.hide-for-large.pad--sm.container-color--blue-alt
-  .row.align-middle.align-center
-    .columns.small-6.medium-4
-      a.button.hollow-inverted.expanded.small.nomargin href="/platform/technology" title=("Datica Platform Technology")
-        | Technology
-        i.fa.fa-angle-right
-    .columns.small-6.medium-4
-      a.button.button--light.expanded.small.nomargin href="/pricing" title=("sign up")
-        | Pricing
-        i.fa.fa-icon.fa-angle-right
 
 .container-color--dark-grad-blue
   section.section-article
@@ -65,42 +55,6 @@ nav.hide-for-large.pad--sm.container-color--blue-alt
               li Engineering orgs who need compliance guarantees but can’t build everything themselves for less than one cloud engineer FTE.
               li Teams who need compliance help but have a hard requirement to directly own their AWS or Azure accounts.
             p All other installable technologies aren’t platforms meant to greatest compliance coverage with the best experience. Instead, you pay for consultant service fees.
-/
-  This section below is commented out. I left it around in case we wanted to re-use the partial and templating code above.
-/
-  section.section-article
-    .row.hide-for-large.group.align-center
-      .columns.small-12.medium-8
-        ul#tier-tabs.tabs data-tabs=""
-          li.tabs-title.is-active
-            a aria-selected="true" href="#tierHosted"  Hosted
-          li.tabs-title
-            a data-tabs-target="tierLicensed" href="#tierLicensed"  Licensed
-        .tabs-content data-tabs-content="tier-tabs"
-          #tierHosted.tabs-panel.tier-panel.is-active
-            .text--white Hosted content
-          #tierLicensed.tabs-panel.tier-panel.drop
-            .text--white Licensed content
-    .show-for-medium
-      .row.align-center
-        - data.views.platform.tiers.each do |tier|
-          .columns.small-6.medium-6
-            h2.headline-2= tier.title
-            h3.headline-3.subhead--spaced= tier.subhead
-            h4.headline-4= tier.price
-      - data.views.platform.tier_points_paired.each_with_index do |dyad, i|
-        .row.align-center
-          - dyad.each do |point|
-            .columns.small-6.medium-6
-              = Kramdown::Document.new(point).to_html
-      hr.content/
-      .row.align-center
-        - data.views.platform.tiers.each do |tier|
-          .columns.medium-6
-            = partial "partials/snippets/button", :locals => { :label => tier.cta.label, :title => tier.cta.label, :url => tier.cta.url, :button_classes => tier.cta.classes, :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
-
-/
-  Compliance shared Responsibility animation
 
 section.section-article.container-color--dark-alt
   .row.group.align-center

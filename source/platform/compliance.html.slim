@@ -13,16 +13,6 @@ collectionName: "platform"
 collectionOrder: 3
 priority: "0.9"
 ---
-aside.hide-for-large.pad--sm.container-color--blue-alt
-  .row.align-middle.align-center
-    .columns.small-6.medium-4
-      a.button.hollow-inverted.expanded.small.nomargin href="/platform/success" title=("Hear from our customers")
-        | Customer Success
-        i.fa.fa-angle-right
-    .columns.small-6.medium-4
-      a.button.button--light.expanded.small.nomargin href="/pricing" title=("sign up")
-        | Pricing
-        i.fa.fa-icon.fa-angle-right
 
 section.container-color--dark-alt style=("background-color: #23272C")
   .container-image--center(data-interchange="[/public/icons/inlined/art/compliance-bg.svg, small]")
@@ -47,7 +37,6 @@ section.container-color--dark-alt style=("background-color: #23272C")
         .columns.small-6.large-6.text-left
           = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
 
-
 section.section-article.container-color--dark-alt
   .row.group.align-center
     .columns.small-12
@@ -58,9 +47,8 @@ section.section-article.container-color--dark-alt
   .row.align-center
     .columns.small-12.medium-5
       .callout.callout--dark-alpha
+        h3.headline-5 Required Compliance Controls
         markdown:
-          <strong>Required Compliance Controls</strong>
-
           - Block-level encryption
           - Network encryption between existing processes or services
           - Sub-network segmentation
@@ -80,7 +68,7 @@ section.section-article.container-color--dark-alt
           - Access control management
     .columns.small-12.medium-7
       .callout.callout--dark-alpha
-        p <strong>Compliance is not magic, it's just a lot of work</strong>
+        h3.headline-5 Compliance is not magic, it's just a lot of work
         markdown:
           None of it is impossible for you to figure out. But configuring, integrating, documenting, auditing, and managing it across a fleet of containers or VMs with every deployment is how continuous compliance happens.
 
@@ -91,12 +79,13 @@ section.section-article.container-color--dark-alt
 
           In their Shared Responsibility models, you must address the following on top of them in order to approach complete continuous compliance. The following list maps to a specific control in the HIPAA Omnibus, HITRUST CSF, GxP regulations, or GDPR articles.
 
-
 section.section-article.container-gray-12
   .row.align-center
     .columns.small-12.large-8.text-center.group
       h2.headline-3 Datica is HITRUST CSF Certified.
       p.lead Customers benefit from serious credibility and accelerated audits with customers like hospitals, payers, and pharma.
+      markdown:
+        [HITRUST](/discover/hitrust) is the most important prescriptive compliance framework in healthcare. It helps give enterprises assurances that they can use the cloud as if compliance didn't exist, while giving digital health companies a shortcut to credibility.
   .row.align-center.group
     .columns.small-12.large-12
       img.img-crisp alt="platform-controls-diagram" data-interchange="[https://images.contentful.com/189dvqdsjh46/fE9OrSoh0sa04GGIeUA6y/1ec20a7821aaf7c388f891786139e088/platform-hitrust-inheritance.png?w=640, small], [https://images.contentful.com/189dvqdsjh46/fE9OrSoh0sa04GGIeUA6y/1ec20a7821aaf7c388f891786139e088/platform-hitrust-inheritance.png, medium]"
