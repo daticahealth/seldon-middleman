@@ -112,13 +112,9 @@
             url: "https://product.datica.com"
             desc: "Sign in to your dashboard"
         -
-            title: "Documentation"
+            title: "Documentation & Support"
             url: "https://help.datica.com"
-            desc: "Documentation across all Datica products"
-        -
-            title: "Support"
-            url: "https://help.datica.com"
-            desc: "Support for Datica customers"
+            desc: "Documentation & Support across all Datica products"
         -
             title: "System Status"
             url: "http://status.catalyze.io"

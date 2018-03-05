@@ -4,11 +4,13 @@ summary: "The Datica Platform makes your cloud workloads compliant and secure to
 author: "Datica, Inc."
 tags: "training, education, HIPAA, HL7, FHIR, interoperability, EHR, integration, resource"
 date: "January 1, 2017"
-share_image: "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
 customCSS: "home"
 layout: "basic"
 priority: "1.0"
 ---
+- current_page.data.share_image = image_share_platform
+- current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+
 .container-color--dark-grad-blue
   .container-image--center(data-interchange="[/public/icons/inlined/art/waves-dots-full.svg, small]")
     = partial "partials/snippets/header", :locals => { :style => "light" }
