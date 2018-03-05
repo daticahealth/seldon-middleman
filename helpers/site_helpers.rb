@@ -38,6 +38,9 @@ module SiteHelpers
     def image_share_default
         site_url + '/public/img/datica-social-twitter-2x.png'
     end
+    def image_share_platform # get ID from CF
+        data.site.cta["6KOQ7XhaJqCI00oYacessy"].cta_image.url + image_size_small
+    end
     def cf_asset_protocol
         'https:'
     end

@@ -6,7 +6,6 @@ author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 date: "July 15, 2017"
 ogType: "product"
-share_image: "//images.contentful.com/189dvqdsjh46/80SDxxPlIsygQUCWOowSS/cd68f00dc5c3ef7942a24af04b94c9b2/cta-free-trial-mts.jpg"
 customCSS: "platform"
 layout: platform
 priority: "0.9"
@@ -14,6 +13,7 @@ collectionName: "platform"
 collectionOrder: 2
 ctaCustom: true
 ---
+- current_page.data.share_image = image_share_platform
 
 svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   defs
@@ -30,12 +30,6 @@ aside.hide-for-large.pad--sm.container-color--blue-alt
       a.button.button--light.expanded.small.nomargin href="/pricing" title=("sign up")
         | Pricing
         i.fa.fa-icon.fa-angle-right
-/
-  section#tech.section-article
-    .row.align-center
-      .columns.small-12.medium-10.large-7.text-center
-        h1.headline-3.group We focus on the <strong>Compliant Ops</strong>, so you can focus on your <strong>Apps</strong>
-        = partial "partials/snippets/button", :locals => { :label => "See how Datica solves Compliance", :url => "/platform/compliance", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white" }
 
 section.container-color--dark-alt style=("background-color: #23272C")
   .container-image--center(data-interchange="[/public/icons/inlined/art/platform-tech-bg.svg, small]")
