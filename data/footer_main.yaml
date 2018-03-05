@@ -13,7 +13,7 @@
             desc: "The technology support and capabilities of the Datica platform"
         -
             title: "Data Integration"
-            url: "/platform/technology/#tech-integration"
+            url: "/platform/technology/#integration"
             desc: "The full-stack integration toolset for developers"
         -
             title: "Compliance Story"
