@@ -74,20 +74,16 @@ nav_company_b:
 
 nav_customers:
     -
-        title: "Sign in"
-        url: "https://product.datica.com"
-        desc: "Sign in to your dashboard"
-    -
         title: "Documentation"
         url: "https://help.datica.com"
         desc: "Documentation across all Datica products"
     -
         title: "Support"
-        url: "https://datica.zendesk.com/hc/en-us"
+        url: "https://help.datica.com"
         desc: "Support for Datica customers"
     -
         title: "System Status"
-        url: "http://status.catalyze.io"
+        url: "http://status.datica.com"
         desc: "System up time and alerts"
     -
         title: "Engineering Blog"

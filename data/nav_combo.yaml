@@ -104,7 +104,7 @@ nav_primary:
                 desc: "Documentation across all Datica products"
             -
                 title: "Support"
-                url: "https://datica.zendesk.com/hc/en-us"
+                url: "https://help.datica.com"
                 desc: "Support for Datica customers"
             -
                 title: "System Status"
