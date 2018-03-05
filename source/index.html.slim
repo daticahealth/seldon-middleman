@@ -55,22 +55,16 @@ section.section-article
       h2.headline-3.group Why <strong>hundreds</strong> of companies turn to Datica
     .row.align-center
       .columns.small-12.large-4
-        p.lead
-          <strong>Inherited trust</strong>
-        p
-          Datica customers have passed over 1,100 security and risk assessments. When an organization chooses Datica for policy-driven application deployment across projects, they acquire the security and compliance assurances that make healthcare development less risky.
+        h3.headline-5 Inherited trust
+        p Datica customers have passed over 1,100 security and risk assessments. When an organization chooses Datica for policy-driven application deployment across projects, they acquire the security and compliance assurances that make healthcare development less risky.
 
       .columns.small-12.large-4
-        p.lead
-          <strong>Cost-effective domain expertise</strong>
-        p
-          Using your own resources to build a compliance management layer is dilutive and ineffective. HIPAA, HITRUST, GDPR, GxP, SOC2, HL7, FHIR—healthcare is soup of acronyms all requiring individual expertise for you to be successful. Lean on our expertise for a fraction of the cost.
+        h3.headline-5 Cost-effective domain expertise
+        p Using your own resources to build a compliance management layer is dilutive and ineffective. HIPAA, HITRUST, GDPR, GxP, SOC2, HL7, FHIR &mdash; healthcare is a soup of acronyms, all requiring individual expertise for you to be successful. Lean on our expertise for a fraction of the cost.
 
       .columns.small-12.large-4
-        p.lead
-          <strong>Speed-to-value</strong>
-        p
-          Initial setup for true compliant infrastructure can take months and bust budgets—internal IT, security, compliance, cloud operations, and finance folks slow down the process even further. Skip all that and get your digital health product in the hands of users crazy fast.
+        h3.headline-5 Speed to value
+        p Initial setup for true compliant infrastructure can take months and bust budgets &mdash; internal IT, security, compliance, cloud operations, and finance folks slow down the process even further. Skip all that and get your digital health product in the hands of users crazy fast.
 
 - sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
 - sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
@@ -84,14 +78,14 @@ section.container-gray-10.section-article
         .card-section
           .subheader-small.text-right
             = inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5")
-            | Mar. 5 – Mar. 9, 2018
+            |  Mar. 5 – Mar. 9, 2018
           p
             a href="/events/himss-2018" title="Schedule a time to meet at HIMSS 18"
               img class="logo-size--medium" src="//images.contentful.com/189dvqdsjh46/BejYKjLiuWuE0iEK6WQIM/521488e52b97804bab49f7dd0a1994e2/himss-2018-logo.png?w=300" alt="Event Logo"
           p
-            | Datica will have an exciting announcement for our platform at HIMSS this year.
-            a href="/events/himss-2018" title="Schedule a time to meet at HIMSS 18" Stop by our booth #5077
-            | to hear the news.
+            | Datica will have an exciting announcement for our platform at HIMSS this year. 
+            a href="/events/himss-2018" title="Schedule a time to meet at HIMSS 18" Stop by our booth #5077 
+            | to hear the news. 
         a href="/events/himss-2018" title="Schedule a time to meet at HIMSS 18"
           img src="https://images.contentful.com/189dvqdsjh46/FPuVgZwr02yGkmCswWegw/216aeb7c46c57801b6de8c06e37e885f/Meet_at_himss_18_widget_art.jpg?w=1000" alt="schedule a time to meet at HIMSS'18"
     - sorted_posts.take(1).each do | id, blog_entry |

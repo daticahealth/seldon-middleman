@@ -106,7 +106,7 @@ platform_use:
         image: "https://images.contentful.com/189dvqdsjh46/27GWcYqUfe0SsWyusMwCQS/e0285fde7ea1b81684c89bfa949844da/app-custom-2x.png"
         button:
             label: "View Services"
-            url: /platform/services
+            url: /services
 
 compliance_header:
     -

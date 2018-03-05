@@ -91,7 +91,7 @@ section.section-article.container-color--dark-alt
             .columns.small-12.medium-6
               img.logo-size--xlarge.group alt=("apn tech") src="https://d1.awsstatic.com/partner-network/APN-Advanced-Technology-Badge.d737de9106285590a46875b8805247f22f8433ba.png"
               .group
-                = partial "partials/snippets/button",  :locals => { :label => "Explore Datica on AWS", :title => "Explore Datica on AWS", :url => "/discover/aws-hipaa", :button_classes => "button button--light group", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
+                = partial "partials/snippets/button",  :locals => { :label => "Explore Datica on AWS", :title => "Explore Datica on AWS", :url => "/platform/aws", :button_classes => "button button--light group", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
 
 section.section-article
   #companies.row.align-center
@@ -111,7 +111,7 @@ section#tech-hcms.section-article.container-color--dark-grad-blue
         .columns.small-12.text-center.group
           h2.headline-4.spaced-out How Customers Use the Datica Platform
       .row.align-center
-        .columns.small-12.text-center.group
+      .columns.small-12.text-center.group
           h2.headline-3.nomargin Building On The Platform
       .row.align-center.align-bottom
         - data.views.platform.platform_use.each do | step |
