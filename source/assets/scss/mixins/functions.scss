@@ -111,7 +111,7 @@ $underline: false !default;
     -o-filter: blur($r);
     -ms-filter: blur($r);
     // filter: url(#blur); /* Firefox needs SVG */
-    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='$radius'); /* IE lte 9 */
+    // filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='$radius'); /* IE lte 9 */
 }
 
 
