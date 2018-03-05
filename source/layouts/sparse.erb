@@ -17,10 +17,6 @@
     <body class="<%= page_classes %>">
         <%#= partial "partials/snippets/alert-ribbon" %>
         <%= yield %>
-        <% if build? %>
-            <%# Analytics %>
-            <%= partial "partials/scripts/hubspot" %>
-        <% end %>
         <%= partial "partials/snippets/footer" %>
         <%#= partial "partials/scripts/footer" %>
         <%= javascript_include_tag "svg-injector" %>

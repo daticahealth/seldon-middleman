@@ -19,10 +19,6 @@
         <a name="top"></a>
         <%= partial "partials/snippets/header", :locals => { :style => "dark" } %>
         <%= yield %>
-        <% if build? %>
-            <%# Analytics %>
-            <%= partial "partials/scripts/hubspot" %>
-        <% end %>
         <%= partial "partials/snippets/footer" %>
         <%= partial "partials/scripts/footer" %>
         <%# Custom JS files %>
