@@ -60,7 +60,7 @@ configure :build do
     config[:host_label] = 'prod'
     # minify HTML
     activate :minify_html
-    activate :asset_hash, :exts => %w(.css) # Only hash for .css
+    # activate :asset_hash, :exts => %w(.css) # Only hash for .css
     # set :build_dir, 'build/'
 end
 configure :production do
