@@ -1,5 +1,5 @@
 -
-    title: "Products & Services"
+    title: "Platform"
     url:
     desc:
     children:
@@ -13,7 +13,7 @@
             desc: "The technology support and capabilities of the Datica platform"
         -
             title: "Data Integration"
-            url: "/platform/integration"
+            url: "/platform/technology/#integration"
             desc: "The full-stack integration toolset for developers"
         -
             title: "Compliance Story"
@@ -103,22 +103,18 @@
             url: "https://hl7.datica.com"
             desc: "Experiment with the HL7 API for free"
 -
-    title: "Customers"
+    title: "Help"
     url:
     desc:
     children:
         -
-            title: "Login"
+            title: "Sign in"
             url: "https://product.datica.com"
-            desc: "Log into your dashboard"
+            desc: "Sign in to your dashboard"
         -
-            title: "Documentation"
+            title: "Documentation & Support"
             url: "https://help.datica.com"
-            desc: "Documentation across all Datica products"
-        -
-            title: "Support"
-            url: "https://datica.zendesk.com/hc/en-us"
-            desc: "Support for Datica customers"
+            desc: "Documentation & Support across all Datica products"
         -
             title: "System Status"
             url: "http://status.catalyze.io"

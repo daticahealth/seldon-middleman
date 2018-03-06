@@ -32,10 +32,6 @@
         </div>
         <%#= partial "partials/snippets/alert-ribbon" %>
         <%= yield %>
-        <% if build? %>
-            <%# Analytics %>
-            <%= partial "partials/scripts/hubspot" %>
-        <% end %>
         <%= partial "partials/snippets/footer" %>
         <%= partial "partials/scripts/footer" %>
         <%# Custom JS files %>

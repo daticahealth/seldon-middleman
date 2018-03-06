@@ -1,3 +1,10 @@
+[Settings]
+  ID = "3bbf38ec-f306-4e70-9223-dff0e4c980d3"
+  Path = ""
+
+[context.build]
+  publish = ""
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -8,9 +15,8 @@
     strict-transport-security = "max-age=31536000; includeSubDomains"
     # Content-Security-Policy-Report-Only = "default-src https: 'unsafe-inline' 'unsafe-eval'"
 
-[Settings]
-  ID = "3bbf38ec-f306-4e70-9223-dff0e4c980d3"
-  Path = ""
-
-[Build]
-  Publish = ""
+# Basic redirect rules
+redirects = [
+  {from = "/platform/integration", to = "/discover/ehr-integrations"},
+  {from = "/foo", to = "/discover/ehr-integrations"},
+  {from = "/*", to = "/404/index.html", status = 404}]

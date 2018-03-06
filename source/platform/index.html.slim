@@ -1,0 +1,136 @@
+---
+title: "Datica Platform for Compliance in the Cloud"
+summary: "The Datica Platform provides compliant hosting and data integration for digital health products"
+navTitle: "Platform Overview"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "March 5, 2018"
+ogType: "product"
+customCSS: "platform"
+layout: platform
+collectionName: "platform"
+collectionOrder: 1
+priority: "0.9"
+---
+- current_page.data.share_image = image_share_platform
+
+.container-color--dark-grad-blue
+  section.section-article
+    .row.align-middle
+      .columns.small-12.medium-5
+        h1.headline-2 End-to-end compliance on AWS and Azure is possible.
+        p.small The Datica Platform fills the compliance gaps on top of public clouds like AWS and Azure by combining the best technology available and mapping it to frameworks like HIPAA, HITRUST, GDPR, and GxP. Customers use Kubernetes-enabled orchestration to deploy containerized workloads to the Platform that <strong>are guaranteed to be continuously compliant</strong>.
+        = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/technology", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white" }
+      .columns.small-12.medium-7
+        img.float-right-on-medium alt=("Datica Platform Architecture") src="https://images.contentful.com/189dvqdsjh46/6vT9Mx9TlmoEAiGcOkwG24/b4f31fda3c1b6fcd6aeb5f926ce3979a/platform_iso_architecture-2x.png"
+
+.container-color--gray-light
+  .container-image--fixed(data-interchange="[https://images.contentful.com/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")
+    section.section-article
+      .row.align-center.text-center
+        .columns.small-12
+          h1.headline-2.group Models that <strong>work</strong> for any business
+      .row
+        .columns.small-12.medium-6
+          .callout.drop
+            h2.headline-3.group Hosted
+            p.headline-4 <strong>Maximum Convenience</strong>
+            p.lead.highlight Starting at $999 / month
+            p Deploy containerized (or let the platform do the containerizing for you) workloads to our multi-tenant Platform through self-service tooling. Customers interact with Datica support and billing.
+            p Customers prefer this option when speed and convenience matter most while not sacrificing the best compliance approach on the cloud.
+            p.headline-4 <strong>The Hosted Model Works Great For&hellip;</strong>
+            ul
+              li Startups looking to develop quickly while also getting instant security and compliance credibility.
+              li Enterprise teams who need to move quickly but constrained by internal IT, security, and compliance groups.
+            p Other Platform-as-a-Service options do not cover the full scope of HIPAA compliance. None cover HITRUST, GxP, and GDPR. Compare <a href="https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa"> Our BAA</a> to other options when researching.
+        .columns.small-12.medium-6
+          .callout.drop
+            h2.headline-3.group Licensed
+            p.headline-4 <strong>Maximum Flexibility</strong>
+            p.lead.highlight Starting at $40,000 / year
+            p Install the Datica Platform on your existing AWS or Azure account, then deploy containerized workloads onto it for continuous compliance.
+            p Customers prefer this option when full control over AWS or Azure accounts matters most, while still receiving the same compliance assurances from the Platform.
+            p.headline-4 <strong>The Licensed Model Works Great For&hellip;</strong>
+            ul
+              li Engineering orgs who need compliance guarantees but can’t build everything themselves for less than one cloud engineer FTE.
+              li Teams who need compliance help but have a hard requirement to directly own their AWS or Azure accounts.
+            p All other installable technologies aren’t platforms meant to greatest compliance coverage with the best experience. Instead, you pay for consultant service fees.
+      .row
+        .columns.small-12.text-center
+          = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo Today", :url => "/demo", :button_classes => "button", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
+
+section.section-article.container-color--dark-alt
+  .row.group.align-center
+    .columns.small-12
+      h2.headline-3.group.text-center.spaced-out Understanding Shared Responsibility
+
+      <script src="https://fast.wistia.com/embed/medias/08ebxufc4q.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_08ebxufc4q seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+
+  .row.align-center
+    - data.views.platform.shared_responsibility.each do | block |
+      .columns.small-12.medium-4
+        = Kramdown::Document.new(block).to_html
+
+.container-image--fixed.container-color--dark
+  .container-image--center(data-interchange="[https://images.contentful.com/189dvqdsjh46/qDYJLe7zyKsaU6OoGCSWg/55fed65d63a33a39b690697200a0d5b2/bg-rects-blue-dark.png?w=2400&h=1200&fit=thumb&fm=jpg&q=80, large]")
+    section.section-article
+      .row.align-middle.align-center
+        .columns.small-12.medium-8
+          h2.headline-3.text-center.group
+            | You wouldn't build payment processing infrastructure to charge credit cards.
+            br/
+            | You'd use Stripe.
+      .row.align-middle.align-center
+        .columns.small-12.medium-8
+          .row.align-center
+            .columns.small-12.medium-6
+              p.lead.group <strong>So why waste money and take on unnecessary risk building your own compliance layer?</strong>
+              p Datica is an <strong>Amazon Web Services Advanced Tier Technology Partner</strong> with a <strong>Healthcare Competency</strong> focus.
+            .columns.small-12.medium-6
+              img.logo-size--xlarge.group alt=("apn tech") src="https://d1.awsstatic.com/partner-network/APN-Advanced-Technology-Badge.d737de9106285590a46875b8805247f22f8433ba.png"
+              .group
+                = partial "partials/snippets/button",  :locals => { :label => "Explore Datica on AWS", :title => "Explore Datica on AWS", :url => "/platform/aws", :button_classes => "button button--light group", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
+
+section.section-article
+  #companies.row.align-center
+    .columns.small-12.large-12.text-center
+      h3.headline-3 <strong>World-class companies</strong> trust Datica
+      .logo-cloud.group
+        - data.views.home.customers.each do |logo|
+          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["file"]}.png" /
+      = partial "partials/snippets/button", :locals => { :label => "Read Customer Success Stories", :title => "View Platform pricing", :url => "/platform/success", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
+
+        i.fa.fa-icon.fa-angle-right
+
+section#tech-hcms.section-article.container-color--dark-grad-blue
+  .row.align-center
+    .columns.small-12
+      .row.align-center
+        .columns.small-12.text-center.group
+          h2.headline-4.spaced-out How Customers Use the Datica Platform
+      .row.align-center
+      .columns.small-12.text-center.group
+          h2.headline-3.nomargin Building On The Platform
+      .row.align-center.align-bottom
+        - data.views.platform.platform_use.each do | step |
+          .columns.small-12.medium-4
+            img.pad.build-height alt="#{step.title}" src="#{step.image}?w=500"
+      .row.align-center.group
+        - data.views.platform.platform_use.each do | step |
+          .columns.small-12.medium-4
+            h4.headline-5= step.title
+            p= step.desc
+            = partial "partials/snippets/button", :locals => { :label => step.button.label, :title => step.button.label, :url => step.button.url, :button_classes => "button small secondary", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
+
+section.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.contentful.com/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
+  = partial "partials/section-promos/hcms-screenshot"
+
+aside.section-article.container-color--blue-bright-noise.container-image--center data-interchange="[https://images.contentful.com/189dvqdsjh46/24KaYDLfRW40mKMOuKEgsS/04a4779c83f98738cc15c9f37b636192/platform-integration-inverted-bg.png?w=1600&h=500&fit=crop, medium]"
+  .row.align-center
+    .columns.small-12.medium-10.large-10.text-center
+      h2.headline-3 <strong>End-to-end compliance</strong> on AWS and Azure is possible.
+  .row.align-center
+    .columns.small-6.large-4.text-right
+      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
+    .columns.small-6.large-6.text-left
+      = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/technology", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }

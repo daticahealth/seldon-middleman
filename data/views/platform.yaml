@@ -1,0 +1,148 @@
+tiers:
+    -
+        title: Hosted
+        subhead: Maximum Convenience
+        price: Starting at $249 / mo
+        cta:
+            label: Get started today with a free 14-day trial
+            url: "/pricing"
+            align: right
+            classes: "button"
+    -
+        title: Licensed
+        subhead: Maximum Flexibility
+        price: Starting at $40,000 / year
+        cta:
+            label: Contact Sales to Explore Pricing Options
+            url: "/contact"
+            align: left
+            classes: "button hollow hollow-inverted"
+
+tier_points_paired:
+    -
+        - |
+            Deploy containerized workloads to our multi-tenant Platform through self-service tooling. Customers interact with Datica support and billing.
+        - |
+            Install the Datica Platform on your existing AWS or Azure account, then deploy containerized workloads onto it for continuous compliance.
+    -
+        - |
+            Customers prefer this option when speed and convenience matter most while not sacrificing the best compliance approach on the cloud.
+        - |
+            Customers prefer this option when full control over AWS or Azure accounts matters most, while still receiving the same compliance assurances from the Platform.
+    -
+        - |
+            ### The Hosted Model Works Great For...
+            {: .headline-4}
+        - |
+            ### The Licensed Model Works Great For...
+            {: .headline-4}
+    -
+        - |
+            * Startups looking to develop quickly while also getting instant security and compliance credibility.
+            * Enterprise teams who need to move quickly but constrained by internal IT, security, and compliance groups.
+
+        - |
+            * Engineering orgs who need compliance guarantees but can't build everything themselves for less than one cloud engineer FTE.
+            * Teams who need compliance help but have a hard requirement to directly own their AWS or Azure accounts.
+    -
+        - |
+            Other Platform-as-a-Service options do not cover the full scope of HIPAA compliance. None cover HITRUST, GxP, and GDPR. Compare [Our BAA] to other options when researching.
+        - |
+            All other installable technologies aren't platforms meant to greatest compliance coverage with the best experience. Instead, you pay for consultant service fees.
+
+# tech_content:
+#     lead: |
+#         AWS and Azure provide VPCs, which cover a portion of compliance and security requirements.
+
+#         Within a VPC, the Datica Platform is installed. Everything within the Platform is strictly managed in adherence to Datica policies. The Platform uses a combination of Kubernetes and proprietary technology to orchestrate all DevOps duties for customers.
+
+#         Customers create an account within the Datica Platform. It is through the account that they gain access to HIPAA-eligible AWS Primitives or Azure Services, which are strictly controlled by the Platform.
+
+#         Within a customer account, the Platform containerizes all technology required to meet compliance controls from HIPAA, HITRUST, GDPR, and GxP. Things like logging, intrusion detection, and penetration testing, to name a few.
+
+#         Customers deploy their applications to containerized environments. They can have multiple environments within their Datica account, managing any type of technical use case.
+
+#         Administration of AWS Primitives or Azure Services are no longer required. Instead, customers simply allocate RAM to individual containers. Datica takes care of the rest.
+
+#         Deployment is done either through a `git push` buildpack-based process or by pushing custom Docker containers.
+#     mirth: |
+#         Add a new environment to your account with the click of a button. OCI Mirth Connect is a pre-packaged configuration of all the open source integration tooling you need to integrate with EHRs.
+#         {: .lead}
+
+#         The add-on includes:
+
+#         * Mirth configured to be highly-available
+#         * Load balancers
+#         * Redundant Postgres for initial data ingestion
+#         * Mirth alerting and monitoring
+#         * VPN management
+
+#         We open sourced our Mirth HL7 transformations used over the past three years. With OCI Mirth, you can get started today using these tools. Or, should you require help integrating into a specific hospital, we offer professional services to project manage an integration to completion.
+#     sansoro: |
+#         Sansoro Health Emissary(R)
+#         Emissary is an elegant approach to data interoperability that is unique and proven.
+#         {: .lead}
+
+#         Customers can choose to deploy Emissary as a new environment into their Datica Platform account. Datica will manage the infrastructure compliance and security, while Sansoro is available to support the Emissary product experience itself.
+
+platform_use:
+    -
+        title: "Deploy Your Application"
+        desc: "Push your app through git-based CI/CD or deploy your own Docker containers. Customers customize application environments to fit their architecture then deploy the app as a containerized workload."
+        image: "https://images.contentful.com/189dvqdsjh46/3X3MVW3n0ICW6wuacW2OIy/0bc6a437ab77038ad2b2c4153050ec86/app-deploy-2x.png"
+        button:
+            label: "View Technology Capabilities"
+            url: /platform/technology
+    -
+        title: "Integrate with EHRs"
+        desc: "Datica provides two solutions for data interoperability with EHRs. Customers deploy API products on the Datica platform to ensure compliance and security requirements are met for that part of their technology stack."
+        image: "https://images.contentful.com/189dvqdsjh46/6WbSVfMeCQuSmKkaCO6KeY/ba92164e53fb2d84d4f8aabfdcdf26d4/app-integrate-2x.png"
+        button:
+            label: "View Integration Capabilities"
+            url: /platform/technology#integration
+    -
+        title: "Custom Environments"
+        desc: "Doing Big Data projects with Hadoop? Building out a Data Warehouse? Visualizing data with Tableau? Whatever extra use case you might have, making it work on the Datica Platform is straight forward. Customers engage with us to customize environments based on additional needs."
+        image: "https://images.contentful.com/189dvqdsjh46/27GWcYqUfe0SsWyusMwCQS/e0285fde7ea1b81684c89bfa949844da/app-custom-2x.png"
+        button:
+            label: "View Services"
+            url: /services
+
+compliance_header:
+    -
+        title: "If you are big..."
+        desc: "Large healthcare organizations are hesitant to migrate to AWS or Azure because they are concerned compliance requirements aren't being met. When they can't be sure, they stick with old infrastructure."
+    -
+        title: "If you are new..."
+        desc: "Emerging digital health products can't break through to their hospital, pharma, or payer market unless they demonstrate compliance and security credibility from Day 1. Compliance is central to the business model."
+    -
+        title: "Datica solves your problem"
+        desc: "The Datica Platform is a prescriptive way for any healthcare technology team to manage compliance on the cloud, giving healthcare the assurances it needs to adopt the benefits of the cloud."
+
+shared_responsibility:
+    - |
+        AWS and Azure are the world's best clouds at addressing compliance and security _of_ the cloud: physical controls and network controls. The rest is your responsibility.
+
+        In their Shared Responsibility models, you must address the following on top of them in order to approach complete continuous compliance. The following list maps to a specific control in the HIPAA Omnibus, HITRUST CSF, GxP regulations, or GDPR articles.
+    - |
+        - Block-level encryption
+        - Network encryption between existing processes or services
+        - Sub-network segmentation
+        - Intrusion detection
+        - Vulnerability scanning
+        - Systems monitoring
+        - System-level logging
+        - App-level logging
+        - Log storage in an encrypted fashion
+        - Disaster recovery protocols
+        - Business continuity
+        - Patch management
+        - Breach management
+        - Daily backups
+        - Penetration testing
+        - Business Associate management
+        - Access control management
+    - |
+        None of it is impossible for you to figure out. But configuring, integrating, documenting, auditing, and managing it across a fleet of containers or VMs with every deployment is how continuous compliance happens.
+
+        Datica does all this for you. We are compliance _on_ the cloud. Customers of Datica pass these Shared Responsibility obligations to us and are left with compliance _in_ the cloud, which are company-level and application-level responsibilities.

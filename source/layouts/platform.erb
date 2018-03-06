@@ -29,15 +29,11 @@
             <%= yield %>
             </main>
             <% if current_page.data.has_key?("ctaCustom") != true %>
-                <%= partial "partials/ctas/platform-cta" %>
+                <%#= partial "partials/ctas/platform-cta" %>
             <% end %>
         </div>
         <%= partial "partials/snippets/footer" %>
         <%= partial "partials/scripts/footer" %>
-        <% if build? %>
-            <%# Analytics %>
-            <%= partial "partials/scripts/hubspot" %>
-        <% end %>
         <%# Custom JS files %>
         <% if current_page.data.has_key?("customJS") %>
             <% current_page.data.customJS.split(",").each do |filename| %>

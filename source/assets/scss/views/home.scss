@@ -30,7 +30,23 @@
 //     transition: 1s opacity;
 // }
 
-.section-homepage--cta-group{
-    padding: 2rem 0.5rem;
-    .card{margin-bottom: 0;}
+// .section-homepage--cta-group{
+//     padding: 2rem 0.5rem;
+//     .card{margin-bottom: 0;}
+// }
+@font-face{
+    src: url('/public/fonts/gt-america-thin.woff') format('woff');
+    font-family: GT-America;
+	font-display: optional;
+    font-weight: 200;
 }
+.headline-1 {
+	font-weight: 200;
+}
+// @font-face{
+//     src: url('/public/fonts/gt-america-thinitalic.woff') format('woff');
+//     font-family: GT-America;
+// font-display: optional;
+//     font-weight: 200;
+//     font-style: italic;
+// }

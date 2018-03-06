@@ -147,6 +147,11 @@
         max-width: 14rem;
     }
 }
+.strip-bright { // bright strip, supersat
+    min-height: calc(3px + 0.5vw);
+    @include grad-bright;
+    &--small{min-height: rem-calc(5px);}
+}
 .container { // this is generally only for color & image settings on containers
     &-image {
         &-fill {
@@ -286,6 +291,9 @@
                 background-image: linear-gradient(-135deg, $color_white 0%, #F3F7FF 100%);
             }
         }
+        &--light-shimmer {
+            @include gradient(160deg, hsl(201, 91%, 96%) 20%, hsl(201, 26%, 85%) 40%, hsl(201, 21%, 91%) 40%);
+        }
         &--tint-20 {
             background-color: black(0.2);
         }
@@ -315,16 +323,16 @@
             }// you can adjust opacity in :after if needed
         }
         &--gray-gradient{
-            background-image: linear-gradient(top, $color_light-alt 50%, $color_white 100%);
-            background-image: -webkit-linear-gradient(top, $color_light-alt 50%, $color_white 100%);
-            background-image: -o-linear-gradient(top, $color_light-alt 50%, $color_white 100%);
+            @include gradient(top, $color_light-alt 50%, $color_white 100%);
         }
-        &--gray-dark-grad-top-bottom-noise {
-            @include noisy;
+        &--dark-grad-blue {
+            // @include noisy;
             color: $color_white; // optional, only spec if needed
-            &:before {
-                background-image: linear-gradient(-135deg, #1B2044 0%, #17181D 52%, #17181D 100%);
-            }
+            background-color: #08142f; // fallback
+            @include gradient(-155deg, #1B2044 0%, #17181D 52%, #17181D 100%);
+            // &:before {
+            //     background-image: linear-gradient(-135deg, #1B2044 0%, #17181D 52%, #17181D 100%);
+            // }
         }
         &--purple-grad-noise {
             @include noisy;
@@ -400,7 +408,12 @@
         }
     }
 }
-
+.width {
+    // use these in conjunction with float classes, like .float-left, .float-right, .float-right-on-medium, etc.
+    @include breakpoint (large) {
+        @include percentage-widths;
+    }
+}
 // Q: Why is .row {.row {}} so buggy? Going to remove this negative margin for now and see what happens
 // A: because (in Foundation land) a .column must always follow a .row. There should never be nested .row.row. - AW
 .row {

@@ -38,11 +38,11 @@
 <link rel="canonical" href="<%= site_url + current_page.url %>">
 <% if current_page.data.has_key?("share_image") %>
     <meta property="og:image" content="<%= current_page.data.share_image %>">
-    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:card" content="<%= current_page.data.share_image %>">
     <meta property="twitter:image" content="<%= current_page.data.share_image %>">
 <% elsif current_page.data.has_key?("featured_image") %>
     <meta property="og:image" content="<%= current_page.data.post_featured_image %>">
-	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:card" content="<%= current_page.data.post_featured_image %>">
     <meta property="twitter:image" content="<%= current_page.data.post_featured_image %>">
 <% else %>
     <meta property="og:image" content="<%= image_share_default %>">

@@ -1,6 +1,5 @@
 <header class="main-header main-header<% if defined?(style) && style == "light" %>--white<% end %>">
     <a href="/" class="logo" title="Datica Home"></a>
-    <%#= inline_svg("datica-logo-horiz", class: "icon-size--medium svg-color--white") %>
     <nav class="left">
         <div class="hide-for-large">
             <div class="group input-nav input-nav--white">
@@ -8,19 +7,23 @@
             </div>
             <a href="/contact" class="expanded button button--light">Contact us</a>
         </div>
-        <a href="/platform" title="Datica's Platform">Platform</a>
-        <a href="/services" title="Datica's Professional Services">Services</a>
-        <a href="/pricing" title="Pricing Information">Pricing</a>
-        <a href="/dhsf" title="The Digital Health Success Framework: for teams building digital products">DHSF</a>
-        <div class="a" id="resourcesDropdown">
-            <span class="selector">Resources <i class="fa fa-caret-down"></i></span>
+        <% data.nav_primary.nav_main.each do |m| %>
+            <%= current_link_to m.title, m.url, title: m.desc, class: "menu-item--simple" %>
+        <% end %>
+    </nav>
+    <nav class="right">
+        <div class="a dropdown-container" id="resourcesDropdown">
+            <span class="selector">Resources
+                <%= inline_svg("small/icon-triangle-down", class: "dropdown-pip icon-inline") %>
+            </span>
             <div class="dropdown dropdown-resources drop dropdown-list--block">
                 <div class="container-color--white">
                     <ul class="no-bullet dropdown-group">
-                        <li class="dropdown-group--item no-wrap"><a class="dropdown-item--link" href="/dhsf" title="The Digital Health Success Framework">Digital Health Success Framework</a></li>
-                        <li class="dropdown-group--item"><a class="dropdown-item--link" href="/innovation" title="Datica's premiere collection of insights, reports, ">Healthcare Innovators</a></li>
-                        <li class="dropdown-group--item"><a class="dropdown-item--link" href="/podcast" title="Exploring innovation in healthcare through interviews with the industry's top thinkers and doers.">Podcast</a></li>
-                        <li class="dropdown-group--item"><a class="dropdown-item--link" href="/academy" title="Full archive of Datica's educational materials">The Academy</a></li>
+                        <% data.nav_primary.nav_resources_a.each do |m| %>
+                            <li class="dropdown-group--item no-wrap">
+                            <%= current_link_to m.title, m.url, title: m.desc, class: "dropdown-item--link" %>
+                            </li>
+                        <% end %>
                     </ul>
                     <hr class="hr">
                     <div class="list-title">Learn More:</div>
@@ -32,35 +35,64 @@
                             </li>
                         <% end %>
                     </ul>
-                </div>
-                <div class="container-color--gray-light alt-nav show-for-large">
-                    <a href="//help.datica.com" title="Search our documentation for Datica solutions.">Documentation</a>
-                    <a href="//datica.com/support" title="Get help and the support you need.">Support</a>
-                    <a href="http://status.catalyze.io" title="Is it working? Find out here.">System Status</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="a" id="companyDropdown">
-            <span class="selector">Company <i class="fa fa-caret-down"></i></span>
-            <div class="dropdown dropdown-company drop dropdown-list--block">
-                <div class="container-color--white">
+                    <hr class="hr">
                     <ul class="no-bullet dropdown-group">
-                        <%= partial "partials/snippets/nav-sub-company", :locals => { :class_li => "dropdown-group--item", :class_a => "dropdown-item--link" } %>
-                        
+                        <% data.nav_primary.nav_resources_b.each do |m| %>
+                            <li class="dropdown-group--item no-wrap">
+                            <%= current_link_to m.title, m.url, title: m.desc, class: "dropdown-item--link" %>
+                            </li>
+                        <% end %>
                     </ul>
                 </div>
             </div>
         </div>
-    </nav>
-    <nav class="right">
-        <div class="input-nav input-nav--<% if defined?(style) && style == "light" %>white<% else %>black<% end %> hide-for-large-only">
-            <%= partial "partials/snippets/search-field" %>
+        <div class="a dropdown-container" id="companyDropdown">
+            <span class="selector">Company
+                <%= inline_svg("small/icon-triangle-down", class: "dropdown-pip icon-inline") %>
+            </span>
+            <div class="dropdown dropdown-company drop dropdown-list--block">
+                <div class="container-color--white">
+                    <ul class="no-bullet dropdown-group">
+                        <% data.nav_primary.nav_company_a.each do |m| %>
+                            <li class="dropdown-group--item no-wrap">
+                            <%= current_link_to m.title, m.url, title: m.desc, class: "dropdown-item--link" %>
+                            </li>
+                        <% end %>
+                    </ul>
+                    <hr class="hr">
+                    <ul class="no-bullet dropdown-group">
+                        <% data.nav_primary.nav_company_b.each do |m| %>
+                            <li class="dropdown-group--item no-wrap">
+                            <%= current_link_to m.title, m.url, title: m.desc, class: "dropdown-item--link" %>
+                            </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <a href="//product.datica.com">Sign in</a>
-        <a href="/contact" id="topNavCTA" class="button <% if defined?(style) && style == "light" %>button--light<% else %> success<% end %>">Contact us</a>
+        <div class="a dropdown-container" id="customerDropdown">
+            <span class="selector">Help
+                    <%= inline_svg("small/icon-triangle-down", class: "dropdown-pip icon-inline") %>
+
+            </span>
+            <div class="dropdown dropdown-customer drop dropdown-list--block">
+                <div class="container-color--white">
+                    <ul class="no-bullet dropdown-group">
+                        <% data.nav_primary.nav_customers.each do |m| %>
+                            <li class="dropdown-group--item no-wrap">
+                            <%= current_link_to m.title, m.url, title: m.desc, class: "dropdown-item--link" %>
+                            </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a href="https://product.datica.com" class="menu-item--simple" target="_blank">Sign in</a>
+        <a href="/contact" id="topNavCTA" class="button <% if defined?(style) && style == "light" %> button hollow-inverted<% else %> success<% end %>">Contact us</a>
     </nav>
     <div class="mobile-menu">
-        <i class="fa fa-bars"></i>
+        <!-- <span class="icon-label">menu</span> -->
+        <%= inline_svg("small/icon-menu", class: "icon-size--medium svg-color--white") %>
+        <!-- <i class="fa fa-bars"></i> -->
     </div>
 </header>

@@ -7,12 +7,27 @@
         margin-bottom: 0; // I *think* this is what we want...
     }
 }
+.row--skinny{
+  .column, .columns {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  @media print, screen and (min-width: 64em){
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}
 .card {
     &-img { // at mobile widths images get distorted... this seems to fix
         width: 100%;
     }
     .button {
         @extend .expanded; // always fill that space with buttons
+        margin-bottom: 0;
+    }
+    .button-inline { // sheesh there are outliers for buttons in cards sometimes :rolleyes:
+        display: inline;
+        width: auto;
         margin-bottom: 0;
     }
     .button{
@@ -71,7 +86,7 @@
             &--compact {
                 height: 11rem;
             }
-            
+
             &:hover {
                 transition: all $timing-default ease;
                 .card-header-title {

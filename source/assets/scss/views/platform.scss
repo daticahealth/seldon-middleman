@@ -1,25 +1,98 @@
 @charset 'utf-8';
 @import '../settings';
-@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+@import 'node_modules/foundation-sites/scss/util/_mixins.scss';
 // @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import 'node_modules/foundation-sites/scss/components/_off-canvas.scss';
 @import '../mixins/colors';
 @import '../mixins/functions';
 @import '../mixins/animation';
 // @import '../vendor/slick';
 // @import '../modules/masonry';
 // @import '../modules/fonts-optional';
+// @include foundation-off-canvas;
 
-.platform { // this is injected into body via MM
-    #topNavCTA { // override, as is not primary cta
-        background-color: $gray-5;
+// Set max height on "building on the paltform" illustrations
+.build-height{
+  max-height: 155px;
+}
+
+// Add a border to the bottom of the "How the Platform Works" images
+img.soft-border{
+  border-bottom: 1px solid $color_light;
+}
+
+@include keyframes( expando ) {
+    0% {
+        // height: 0px;
+        opacity: 0;
     }
-    .hollow {
-        &--inverted {
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
+    // 50% {
+
+    // }
+    100% {
+        // height: auto;
+        opacity: 1;
+    }
+}
+// Change headline weight to same as homepage
+.headline-1 {
+	font-weight: 100;
+}
+// expand/toggle component
+.icon-toggle {
+    opacity: 0.5;
+    @include transition(transform $timing-default, opacity $timing-default);
+}
+
+.is-toggle {
+    @include transition(color $timing-default, transform $timing-default);
+    &:hover {
+        .icon-toggle {
+            opacity: 1;
+            transform: translate3d(0, 2px, 0);
         }
     }
+    &[aria-expanded="true"] {
+        color: black;
+        .icon-toggle {
+            transform: rotate(180deg);
+        }
+    }
+    &[aria-expanded="false"] {
+        color: $color_prime-alt;
+    }
+}
+
+.show-more {
+    &--container {
+        display: none;
+        // height: 0;
+        &[aria-hidden='false'] { // ZF toggler
+            display: inline-block;
+            @include animation (expando 0.3s ease);
+        }
+    }
+}
+
+.feature-item {
+    & > * {
+        margin-bottom: 0.3em; // tighten spacing in children
+    }
+    margin-bottom: 0.8rem;
+}
+// @include transition(opacity $timing-default);
+
+.platform { // this is injected into body via MM
+    // #topNavCTA { // override, as is not primary cta
+    //     background-color: $gray-5;
+    // }
+    // .hollow {
+    //     &--inverted {
+    //         background-color: transparent;
+    //         color: white;
+    //         border: 1px solid white;
+    //     }
+    // }
     &-bg {
         &-bridge {
             @include background-fill (center center);
@@ -38,12 +111,13 @@
         }
     }
 }
+
 .multicol {
     &-2 {
-        @include multicolumns (2, 5em, 1.5rem);
-        // @include breakpoint (large) {
-        //     @include multicolumns (2, 15em, 2rem);
-        // }
+        // @include multicolumns (2, 5em, 1.5rem);
+        @include breakpoint (large) {
+            @include multicolumns (2, 5em, 1.5rem);
+        }
         // h3, h4 {
         //     @include break-before ();
         // }
@@ -83,6 +157,9 @@
         }
     }
 }
+.no-break { // keep dl list items together in cols. Might move to utils
+    @include break-inside;
+}
 
 .callout {
     // &-parent { // rare beast, that holds other callouts. Spacing adjustments
@@ -106,7 +183,7 @@
 .sticky {
     // .is-[state] classes for control over its appearance and exit if needed. Desktop only
     @include breakpoint (large) {
-        transition: box-shadow 200ms linear, background-color .3s linear;
+        transition: box-shadow $timing-default linear, background-color .3s linear;
         // background-color: $gray-11;
         @include shadow(1px, 1px, $black, 0.90);
         // opacity: 0;
@@ -115,17 +192,29 @@
         // }
         &.is-stuck {
             // opacity: 1;
-            background-color: $gray-12;            
+            background-color: $gray-12;
             @include shadow(4px, 4px, $black, 0.85);
+            .menu-item--logo { // subnav logo item
+                opacity: 1;
+            }
         }
     }
     .menu {
         $bar: rem-calc(2px);
         &-item {
+            &:first-child a {
+                padding-right: 0; // puts logo flush with next item.
+                padding-bottom: 0;
+            }
+            &--logo {
+                @include transition(opacity $timing-default);
+                opacity: 0;
+                height: rem-calc(29px); // must fit within nav space, and align with other li items
+            }
             &--link {
                 color: $color_talk;
                 &:hover {
-                    transition: all 200ms linear;
+                    transition: all $timing-default linear;
                     background-color: white(0);
                     border-bottom: $bar solid $color_prime-alt;
                 }
@@ -139,7 +228,6 @@
             // &--cta { // for cta button in sticky nav bar
             //     &:focus,
             //     &:hover { // clear 'nudge' behavior
-            //
             //     }
             // }
         }
@@ -155,7 +243,7 @@
 }
 
 
-.quote-callout { 
+.quote-callout {
     color: inherit;
     opacity: 0.9;
     font: {
@@ -208,4 +296,3 @@
     //     display: block;
     // }
 }
-

@@ -29,7 +29,6 @@ priority: "0.9"
 <div id="serviceNav" class="show-for-large" data-sticky-container>
     <nav class="sticky sticky-nav sticky-nav--secondary container-gray-12 text-center full-width" data-sticky data-options="marginTop:0; topAnchor:serviceNav; btmAnchor:cta;">
         <ul class="menu horizontal align-center" data-magellan data-options="activeClass: is-current; offset: 75; deepLinking: true;">
-            <li class="menu-item"><a class="menu-item--link" href="#benefits" title="Datica Services">Benefits</a></li>
             <% sorted_services.each do | id, service | %>
                 <li class="menu-item">
                     <a class="menu-item--link" href="#<%= service["slug"].downcase.tr("-", "_") %>" title="<%= service["title"] %>" class="menu-item--link">
@@ -84,7 +83,7 @@ priority: "0.9"
                                                 <%= partial("partials/snippets/person", :locals => { :p => customer, :classes => "nomargin" }) %>
                                             </div>
                                             <div class="flex-child-shrink">
-                                                <img class="logo-size--small-mid" src="/public/img/customer-logos/sm/<%= customer["slug"] %>-logo.png" alt="<%= customer["company_name"] %> Logo"/>            
+                                                <img class="logo-size--small-mid" src="/public/img/customer-logos/sm/<%= customer["slug"] %>-logo.png" alt="<%= customer["company_name"] %> Logo"/>
                                             </div>
                                         </div>
                                     <% end %>

@@ -4,28 +4,22 @@ summary: "A collection of Datica customer case studies, testamonials, and profil
 navTitle: "Customer Success"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
-date: "July 15, 2017"
+date: "March 5, 2018"
 ogType: "product"
-share_image: "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
 customCSS: "platform"
 layout: platform
 priority: "0.9"
 collectionName: "platform"
-collectionOrder: 5
+collectionOrder: 4
 ---
-<aside class="hide-for-large pad--sm container-color--blue-alt">
-    <div class="row align-middle align-center">
-        <div class="columns small-6 medium-4">
-            <a href="/pricing" title="sign up" class="button button--light expanded small nomargin">Pricing <i class="fa fa-icon fa-angle-right"></i></a>
-        </div>
-    </div>
-</aside>
+<% current_page.data.share_image = image_share_platform %>
+
 <div class="container-color--white">
     <section class="section-article">
         <div class="row align-center">
             <div class="columns small-12 medium-12 large-7 text-center">
                 <h1 class="headline-3">Healthcare's <strong>trusted</strong> partner</h1>
-                <p>We are the compliance and data foundation for industry leaders and thought leaders, health systems and vendors.</p>
+                <p>We are the compliance and data foundation for industry leaders and thought leaders, health systems and vendors. Start your <a href="/pricing" title="Free trial of the Datica Platform">free trial</a> today.</p>
             </div>
         </div>
     </section>
@@ -211,6 +205,16 @@ collectionOrder: 5
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section id="ctaBottom" class="section-article container-color--blue-bright-noise container-image--center" data-interchange="[https://images.contentful.com/189dvqdsjh46/24KaYDLfRW40mKMOuKEgsS/04a4779c83f98738cc15c9f37b636192/platform-integration-inverted-bg.png?w=1600&h=500&fit=crop, medium]">
+    <div class="row align-center">
+        <div class="columns small-12 medium-10 text-center">
+            <h2 class="headline-3 group"><strong>End-to-end compliance</strong> on AWS and Azure is possible.</h2>
+            <p class="lead">Start your free trial today.</p>
+            <%= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" } %>
         </div>
     </div>
 </section>

@@ -198,6 +198,8 @@ activate :contentful do |f|
         customers: 'customers',
         discover: 'discover',
         events: 'events',
+        features: 'features',
+        featureCategories: 'featureCategories',
         guides: 'guides',
         leadershipGallery: 'leadershipGallery',
         person: 'person',
