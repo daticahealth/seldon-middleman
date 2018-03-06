@@ -94,21 +94,17 @@ nav_primary:
                 url: "https://hl7.datica.com"
                 desc: "Experiment with the HL7 API for free"
     -
-        title: "Customers"
+        title: "Help"
         url:
         desc:
         children:
-            -
-                title: "Login"
-                url: "https://product.datica.com"
-                desc: "Log into your dashboard"
             -
                 title: "Documentation"
                 url: "https://help.datica.com"
                 desc: "Documentation across all Datica products"
             -
                 title: "Support"
-                url: "https://datica.zendesk.com/hc/en-us"
+                url: "https://help.datica.com"
                 desc: "Support for Datica customers"
             -
                 title: "System Status"

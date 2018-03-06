@@ -4,105 +4,151 @@ summary: "Prescriptive Compliance is how Healthcare Adopts the Cloud"
 navTitle: "Compliance"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
-date: "July 15, 2017"
+date: "March 5, 2018"
 ogType: "product"
-share_image: "//images.contentful.com/189dvqdsjh46/80SDxxPlIsygQUCWOowSS/cd68f00dc5c3ef7942a24af04b94c9b2/cta-free-trial-mts.jpg"
 customCSS: "platform"
 layout: platform
 collectionName: "platform"
 collectionOrder: 3
 priority: "0.9"
 ---
-aside.hide-for-large.pad--sm.container-color--blue-alt
-  .row.align-middle.align-center
-    .columns.small-6.medium-4
-      a.button.hollow-inverted.expanded.small.nomargin href="/platform/success" title=("Hear from our customers") 
-        | Customer Success
-        i.fa.fa-angle-right
-    .columns.small-6.medium-4
-      a.button.button--light.expanded.small.nomargin href="/pricing" title=("sign up") 
-        | Pricing
-        i.fa.fa-icon.fa-angle-right
+- current_page.data.share_image = image_share_platform
 
-.container-color--gray-light
-  section.section-article
-    .row.align-center.group
-      .columns.small-12.medium-12.large-8
-        h1.headline-2.group.text-center= current_page.data.summary
-        .video.drop
-          script async="" src="//fast.wistia.com/embed/medias/1o1udvaa6z.jsonp" 
-          script async="" src="//fast.wistia.com/assets/external/E-v1.js" 
-          .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;") 
-            .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;" 
-              span.wistia_embed.wistia_async_1o1udvaa6z class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"   
-    .row.group
-      - data.views.platform.compliance_header.each do | block |
-        .columns.small-12.medium-4
-          h3.headline-4= block.title
-          p= block.desc
-    .row.align-center
-      .columns.small-6.large-5.text-right
-        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow" }
-      .columns.small-6.large-6.text-left
-        = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
-
+section.container-color--dark-alt style=("background-color: #23272C")
+  .container-image--center(data-interchange="[/public/img/art/compliance-bg.svg, small]")
+    section.section-article
+      .row.align-center.group
+        .columns.small-12.medium-12.large-8
+          h1.headline-2.group.text-center= current_page.data.summary
+          .video.drop--big
+            script async="" src="//fast.wistia.com/embed/medias/1o1udvaa6z.jsonp"
+            script async="" src="//fast.wistia.com/assets/external/E-v1.js"
+            .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;")
+              .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;"
+                span.wistia_embed.wistia_async_1o1udvaa6z class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"   
+      .row.group
+        - data.views.platform.compliance_header.each do | block |
+          .columns.small-12.medium-4
+            h3.headline-4= block.title
+            p= block.desc
+      .row.align-center
+        .columns.small-6.large-5.text-right
+          = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
+        .columns.small-6.large-6.text-left
+          = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
 
 section.section-article.container-color--dark-alt
   .row.group.align-center
     .columns.small-12
       h2.headline-3.group.text-center.spaced-out Understanding Shared Responsibility
-      script async="" src="https://fast.wistia.com/embed/medias/08ebxufc4q.jsonp" 
-      script async="" src="https://fast.wistia.com/assets/external/E-v1.js" 
-      .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;") 
-        .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;" 
-          .wistia_embed.wistia_async_08ebxufc4q class=("seo=false videoFoam=true") style="height:100%;width:100%"   
+  .row
+    .columns.small-12
+      img.group alt=("Shared Responsibility") src="https://images.contentful.com/189dvqdsjh46/1mArNk3AccoEASMwSGkYsa/d92f9e24098115f59e54b9232f795287/shared-responsibility-model-2x.png" /
   .row.align-center
-    - data.views.platform.shared_responsibility.each do | block |
-      .columns.small-12.medium-4
-        = Kramdown::Document.new(block).to_html
+    .columns.small-12.medium-5
+      .callout.callout--dark-alpha
+        h3.headline-5 Required Compliance Controls
+        markdown:
+          - Block-level encryption
+          - Network encryption between existing processes or services
+          - Sub-network segmentation
+          - Intrusion detection
+          - Vulnerability scanning
+          - Systems monitoring
+          - System-level logging
+          - App-level logging
+          - Log storage in an encrypted fashion
+          - Disaster recovery protocols
+          - Business continuity
+          - Patch management
+          - Breach management
+          - Daily backups
+          - Penetration testing
+          - Business Associate management
+          - Access control management
+    .columns.small-12.medium-7
+      .callout.callout--dark-alpha
+        h3.headline-5 Compliance is not magic, it's just a lot of work
+        markdown:
+          None of it is impossible for you to figure out. But configuring, integrating, documenting, auditing, and managing it across a fleet of containers or VMs with every deployment is how continuous compliance happens.
 
+          Datica does all this for you. We are compliance _on_ the cloud. Customers of Datica pass these Shared Responsibility obligations to us and are left with compliance _in_ the cloud, which are company-level and application-level responsibilities.
+      .callout.callout--dark-alpha
+        markdown:
+          AWS and Azure are the world's best clouds at addressing compliance and security _of_ the cloud: physical controls and network controls. The rest is your responsibility.
+
+          In their Shared Responsibility models, you must address the following on top of them in order to approach complete continuous compliance. The following list maps to a specific control in the HIPAA Omnibus, HITRUST CSF, GxP regulations, or GDPR articles.
 
 section.section-article.container-gray-12
   .row.align-center
     .columns.small-12.large-8.text-center.group
       h2.headline-3 Datica is HITRUST CSF Certified.
       p.lead Customers benefit from serious credibility and accelerated audits with customers like hospitals, payers, and pharma.
+      markdown:
+        [HITRUST](/discover/hitrust) is the most important prescriptive compliance framework in healthcare. It helps give enterprises assurances that they can use the cloud as if compliance didn't exist, while giving digital health companies a shortcut to credibility.
   .row.align-center.group
     .columns.small-12.large-12
       img.img-crisp alt="platform-controls-diagram" data-interchange="[https://images.contentful.com/189dvqdsjh46/fE9OrSoh0sa04GGIeUA6y/1ec20a7821aaf7c388f891786139e088/platform-hitrust-inheritance.png?w=640, small], [https://images.contentful.com/189dvqdsjh46/fE9OrSoh0sa04GGIeUA6y/1ec20a7821aaf7c388f891786139e088/platform-hitrust-inheritance.png, medium]"
-      hr.divider/
+
 section.section-article
   .row.group.align-center
     .columns.small-12.text-center
       h2.headline-3 General Data Protection Regulation
-      p.lead Datica is ready for GDPR on May 25th.
+      /
+        p.lead Datica is ready for GDPR on May 25th. -> Good practices for Life Sciences on the Cloud
+      p.lead Good practices for Life Sciences on the Cloud
   .row.align-center
     .columns.small-12.medium-6.large-4.medium-order-2
-      img.group alt=("GDPR Ready") src="https://images.contentful.com/189dvqdsjh46/6L09pVF6a4uAY00QMqSOYg/a99648672cbc3279925bf2fa7e146fd6/gdpr-ready-badge-text.png" /
+      img.group.logo-size--xlarge alt=("GDPR Ready") src="https://images.contentful.com/189dvqdsjh46/6L09pVF6a4uAY00QMqSOYg/a99648672cbc3279925bf2fa7e146fd6/gdpr-ready-badge-text.png" /
     .columns.small-12.medium-6.large-6
       markdown:
         The European Union has created a new authoritative regulation on consumer data called GDPR. Fines start being handed out on May 25th, 2018. The regulation applies to all EU citizens regardless of service or where the data lives. Protected Health Information (PHI) is scoped within GDPR, so any healthcare organization who might service European Union citizens will be affected by it.
-        
-        Are you ready? Datica has gone through the necessary audits to ensure it is compliant with the regulation.
-        
-        [Learn more about GDPR](/discover/#{data.site.discover['6yNMzCKn84Q4qIsm0sWmUy'].slug}).
 
-  .row.group.align-center
+        Are you ready? Datica has gone through the necessary audits to ensure it is compliant with the regulation.
+
+        [Learn more about GDPR](/discover/#{data.site.discover['6yNMzCKn84Q4qIsm0sWmUy'].slug}).
+  .row.align-center
     .columns.small-12.text-center
       h2.headline-3 GxP
-      p.lead (subhead)
   .row.align-center
     .columns.small-12.medium-6.large-6
       markdown:
-        The European Union has created a new authoritative regulation on consumer data called GDPR. Fines start being handed out on May 25th, 2018. The regulation applies to all EU citizens regardless of service or where the data lives. Protected Health Information (PHI) is scoped within GDPR, so any healthcare organization who might service European Union citizens will be affected by it.
-        
-        Are you ready? Datica has gone through the necessary audits to ensure it is compliant with the regulation.
-        
+        GxP stands for “Good Practice” and is a set of operational controls for Life Sciences organizations working within the confines of the FDA.
+
+        The FDA publishes its regulations on the back of NIST, which is why GxP largely follows NIST standards. There is no one authoritative documentation source for GxP, like we have the [2013 Omnibus for HIPAA](/discover/hipaa-compliance/) or Articles from the European Union on [GDPR](/discover/gdpr/). Instead, GxP is an industry-accepted definition of best practices mapped to FDA regulations.
+
         [Learn more about GxP](/academy/gxp-and-business-associates-does-it-exist-like-hipaa).
     .columns.small-12.medium-6.large-4
-      img.group alt=("GxP Ready") src="https://images.contentful.com/189dvqdsjh46/1MTvqDED4USkYYE8S2eSwU/3d8116969c0142abfc77f74e34594155/gxp-badge.png" /
+      img.group.logo-size--xlarge alt=("GxP Ready") src="https://images.contentful.com/189dvqdsjh46/1MTvqDED4USkYYE8S2eSwU/3d8116969c0142abfc77f74e34594155/gxp-badge.png" /
 
-aside.section-article.container-color--blue-bright-noise.container-image--center data-interchange="[/public/img/bg/platform-integration-inverted-bg.png, medium]" 
+.container-color--gray-light
+  section.section-article
+    .row.align-center
+      .columns.small-12.large-6.text-center.group
+        h2.headline-3 Open sourced company policies give healthcare organizations a headstart
+    .row.align-center
+      .columns.small-12.medium-6.large-5
+        h4.headline-4 What people are saying about Datica’s Open Source Policies
+        div
+          p "We believe that for Datica to open source these documents is truly ground breaking in healthcare IT.
+          p In the past we’ve spent an enormous amount of funds creating &amp; updating our policies. We have yearly evaluations of our policies in October and this past October (2014) we were able to update and implement a number of improvements to our existing policies all based off the information we gathered from Datica's policies. This cost us zero dollars in comparison to our expensive updating of policies in prior years.
+          p This is definitely the first time we have seen policies open sourced and we applaud the use of tools like GitHub to manage version control of all policies.
+          p I think this could be revolutionary in helping the industry as a whole collaborate to improve privacy and security practices by gathering information from the highest level security/privacy experts in the field and making it available via similar open source methods.”
+        .media-object.card-person
+          .media-object-section
+            img.avatar.avatar--large.circle alt=("Katelyn Gleason") src="https://images.contentful.com/189dvqdsjh46/2gYOoWVhOEYW4IMAOIeyS0/599f8ca6d3642c732f3f003769563781/headshot-eligible.jpg?w=128" /
+          .media-object-section.main-section.align-self-middle
+            h4.person-name Katelyn Gleason
+            p.person-title CEO &amp; Cofounder, Eligible Inc.
+      .columns.small-12.medium-6.large-5
+        .callout.drop
+          h4.headline-4 We’re dedicated to making the industry better
+          p In 2014 Datica open sourced our company policies under a a CC BY-SA 4.0 license. Since then the response has been overwhelmingly positive—we have had more activity on GitHub than governmental institutions like the FDA. Along the way we’ve helped hundreds of businesses get started by eliminating this portion of HIPAA compliance as a burden.
+          p Our policies have been written with modern, cloud-based technology vendors in mind. We looked far and wide for policy examples that fit our company, and couldn’t find any. So we wrote our own. Importantly, these policies have been through multiple external audits—two HIPAA audits and one HITRUST audit.
+          p Do you handle PHI and not yet have your own company policies in place? Then you’ll find our content useful.
+          = partial "partials/snippets/button", :locals => { :label => "Policies Overview", :url => "/open-source/policies", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }
+
+aside.section-article.container-color--blue-bright-noise.container-image--center data-interchange="[https://images.contentful.com/189dvqdsjh46/24KaYDLfRW40mKMOuKEgsS/04a4779c83f98738cc15c9f37b636192/platform-integration-inverted-bg.png?w=1600&h=500&fit=crop, medium]"
   .row.align-center
     .columns.small-12.medium-10.large-10.text-center
       h2.headline-3 <strong>End-to-end compliance</strong> on AWS and Azure is possible.
@@ -111,6 +157,3 @@ aside.section-article.container-color--blue-bright-noise.container-image--center
       = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
     .columns.small-6.large-6.text-left
       = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
-
-
-

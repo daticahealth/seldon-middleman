@@ -76,7 +76,7 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
     </a><% end %>
     
     <% if post._meta.content_type_id == "academy" %>
-        <a class="container-image--center card-header-image card-header-image--compact section--cta-blue" href="<%= related_post_path %>" title="Read '<%= post["title"] %>'" data-interchange="[//images.contentful.com/189dvqdsjh46/24KaYDLfRW40mKMOuKEgsS/04a4779c83f98738cc15c9f37b636192/platform-integration-inverted-bg.png?fit=thumb&w=400&h=100, medium]">
+        <a class="container-image--center card-header-image card-header-image--compact section--cta-blue" href="<%= related_post_path %>" title="Read '<%= post["title"] %>'" data-interchange="[//images.contentful.com/189dvqdsjh46/24KaYDLfRW40mKMOuKEgsS/04a4779c83f98738cc15c9f37b636192/platform-integration-inverted-bg.png?w=1600&h=500&fit=crop?fit=thumb&w=400&h=100, medium]">
         <span class="card-header-subhead">Datica HIPAA Academy</span>
         <h2 class="card-header-title headline-5 ribbon--white link--dark"><%= post["title"] %></h2>
         <%= inline_svg("icon-hitrust", class: "icon-size--xlarge card-header-icon svg-color--white") %>

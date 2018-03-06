@@ -29,6 +29,9 @@
     &-blue {
         @include shadow-anarchy(0 rem-calc(6px) rem-calc(17px) 0 hsla(220, 100%, 46%, 0.3));
     }
+    &--big{
+      @include shadow-anarchy(0 rem-calc(10px) rem-calc(30px) 0 rgba(0,0,0,0.4));
+    }
 }
 
 

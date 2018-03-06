@@ -13,7 +13,7 @@
     </nav>
     <nav class="right">
         <div class="a dropdown-container" id="resourcesDropdown">
-            <span class="selector">Resources 
+            <span class="selector">Resources
                 <%= inline_svg("small/icon-triangle-down", class: "dropdown-pip icon-inline") %>
             </span>
             <div class="dropdown dropdown-resources drop dropdown-list--block">
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="a dropdown-container" id="companyDropdown">
-            <span class="selector">Company 
+            <span class="selector">Company
                 <%= inline_svg("small/icon-triangle-down", class: "dropdown-pip icon-inline") %>
             </span>
             <div class="dropdown dropdown-company drop dropdown-list--block">
@@ -71,7 +71,7 @@
             </div>
         </div>
         <div class="a dropdown-container" id="customerDropdown">
-            <span class="selector">Customers 
+            <span class="selector">Help
                     <%= inline_svg("small/icon-triangle-down", class: "dropdown-pip icon-inline") %>
 
             </span>
@@ -86,8 +86,9 @@
                     </ul>
                 </div>
             </div>
-        </div>        
-        <a href="/contact" id="topNavCTA" class="button small<% if defined?(style) && style == "light" %> button hollow-inverted<% else %> success<% end %>">Contact us</a>
+        </div>
+        <a href="https://product.datica.com" class="menu-item--simple" target="_blank">Sign in</a>
+        <a href="/contact" id="topNavCTA" class="button <% if defined?(style) && style == "light" %> button hollow-inverted<% else %> success<% end %>">Contact us</a>
     </nav>
     <div class="mobile-menu">
         <!-- <span class="icon-label">menu</span> -->

@@ -11,18 +11,32 @@
 // @import '../modules/fonts-optional';
 // @include foundation-off-canvas;
 
+// Set max height on "building on the paltform" illustrations
+.build-height{
+  max-height: 155px;
+}
+
+// Add a border to the bottom of the "How the Platform Works" images
+img.soft-border{
+  border-bottom: 1px solid $color_light;
+}
+
 @include keyframes( expando ) {
     0% {
         // height: 0px;
         opacity: 0;
     }
     // 50% {
-        
+
     // }
     100% {
         // height: auto;
         opacity: 1;
     }
+}
+// Change headline weight to same as homepage
+.headline-1 {
+	font-weight: 100;
 }
 // expand/toggle component
 .icon-toggle {
@@ -59,13 +73,13 @@
         }
     }
 }
-  
+
 .feature-item {
     & > * {
         margin-bottom: 0.3em; // tighten spacing in children
     }
     margin-bottom: 0.8rem;
-}      
+}
 // @include transition(opacity $timing-default);
 
 .platform { // this is injected into body via MM
