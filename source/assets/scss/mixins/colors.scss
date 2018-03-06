@@ -53,7 +53,7 @@
     color: $color_white;
 }
 @mixin color--gray-dark-grad-noise {
-    @include noisy;
+    // @include noisy;
     color: $color_white;
     // @include gradient(-135deg, #2B2D45 0%, #1E2127 52%, #1E2127 100%);
     &:before{

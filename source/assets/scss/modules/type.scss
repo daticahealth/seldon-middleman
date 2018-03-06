@@ -303,6 +303,26 @@ ul.large-list{
     padding: 0 0 rem-calc(2px) 0;
     border-bottom: rem-calc(2px) solid $color_deep;
 }
+
+
+// "magenta-glow": hsl(328, 100%, 69%),
+// "orange-glow":  hsl(37, 100%, 67%),
+// "yellow-glow":  hsl(57, 100%, 72%),
+// "green-glow":   hsl(127, 100%, 70%),
+// "aqua-glow":    hsl(175, 100%, 62%),
+// "blue-glow":    hsl(192, 100%, 58%),
+// "purple-deep":  hsl(236, 27%, 26%),
+// "blue-bright":  hsl(220, 100%, 53%),
+// "brand":        $color_prime,
+// "blue":         $color_prime-alt,
+// "red":          $color_service,
+// "green":        adjust-color($color_green, $hue: -5, $saturation: 40%, $lightness: -5%),
+// "gray":         $color_talk,
+// "gray-1":       $gray-1,...
+// "gray-12":      $gray-12,
+// "white":        #ffffff,
+// "black":        #000
+
 // text ribbons - background color with text
 .ribbon {
     @each $name, $color in $fill-color-list { // this generates all grays 1-12 (dark to lightest), sets color
@@ -316,7 +336,7 @@ ul.large-list{
                 color: #fff;
             }
             background: $color;
-            padding: 0.3em;
+            padding: 0.2em 0.4em;
             display: inline-block;
         }
     }

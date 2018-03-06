@@ -25,7 +25,7 @@ priority: "0.9"
         img.float-right-on-medium alt=("Datica Platform Architecture") src="https://images.contentful.com/189dvqdsjh46/6vT9Mx9TlmoEAiGcOkwG24/b4f31fda3c1b6fcd6aeb5f926ce3979a/platform_iso_architecture-2x.png"
 
 .container-color--gray-light
-  .container-image--fixed(data-interchange="[https://images.contentful.com/189dvqdsjh46/34GRLxPQ5y0OcOguemCYgC/cd1218b27c17478ccd8934425cd6dc6b/bg-rects-blue-light.png?w=1600&h=500&fit=crop, large]")
+  .container-image--fixed(data-interchange="[https://images.contentful.com/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")
     section.section-article
       .row.align-center.text-center
         .columns.small-12
@@ -57,7 +57,7 @@ priority: "0.9"
             p All other installable technologies aren’t platforms meant to greatest compliance coverage with the best experience. Instead, you pay for consultant service fees.
       .row
         .columns.small-12.text-center
-          = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo Today", :url => "/demo", :button_classes => "button hollow", :icon => "icon-event-check", :icon_color => "blue", :icon_align => "left" }
+          = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo Today", :url => "/demo", :button_classes => "button", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
 
 section.section-article.container-color--dark-alt
   .row.group.align-center
@@ -121,23 +121,9 @@ section#tech-hcms.section-article.container-color--dark-grad-blue
             h4.headline-5= step.title
             p= step.desc
             = partial "partials/snippets/button", :locals => { :label => step.button.label, :title => step.button.label, :url => step.button.url, :button_classes => "button small secondary", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
-.container-color--gray-light
-  .container-image--fixed(data-interchange="[https://images.contentful.com/189dvqdsjh46/34GRLxPQ5y0OcOguemCYgC/cd1218b27c17478ccd8934425cd6dc6b/bg-rects-blue-light.png?w=1600&h=500&fit=crop, large]")
-    section.section-article
-      .row.align-center
-        .columns.small-12.text-center.group
-          h2.headline-4.spaced-out Healthcare Compliance Management System
-      .row.align-center
-        .columns.small-12.text-center.group
-          h2.headline-3.nomargin Extending critical compliance controls
-      .row.align-center.align-middle
-        .columns.small-12.medium-6.large-7
-          img alt=("HCMS Dashboard") src="https://images.contentful.com/189dvqdsjh46/2mbtHnzGTyAayWaeiQqmyk/9f63a21da504f6cb8fc2808a864d13bf/hcms-mockups-2x.png?w=1200" /
-          .callout.drop
-            p.lead.highlight.text-center Continuous <strong>compliance</strong>, delivered.
-            p Visibility into the continuous compliance and security provided by the Datica Platform is important to our customers. The HCMS is a compliance dashboard that gives insights into all compliance controls across customer environments.
-            p The HCMS is shipping with initial versions of our Licensed Platform. To learn more about the HCMS, <a href="/contact">schedule time to talk with us today</a>.
 
+section.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.contentful.com/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
+  = partial "partials/section-promos/hcms-screenshot"
 
 aside.section-article.container-color--blue-bright-noise.container-image--center data-interchange="[https://images.contentful.com/189dvqdsjh46/24KaYDLfRW40mKMOuKEgsS/04a4779c83f98738cc15c9f37b636192/platform-integration-inverted-bg.png?w=1600&h=500&fit=crop, medium]"
   .row.align-center
