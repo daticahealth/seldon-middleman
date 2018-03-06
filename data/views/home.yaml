@@ -50,6 +50,7 @@ customers:
         name: 'BCGDV'
         file: 'bcgdv-logo'
         url: 'http://bcgdv.com'
+        logoSize: 'medium'
     -
         name: 'Propeller Health'
         file: 'propeller-logo'
@@ -59,6 +60,7 @@ customers:
         name: 'Hennepin County Medical Center'
         file: 'hcmc-logo'
         url: 'http://hcmc.org'
+        logoSize: 'medium'
     -
         name: 'COTA'
         file: 'cota-logo'
@@ -68,6 +70,7 @@ customers:
         name: 'CirrusMD'
         file: 'cirrusmd-logo'
         url: 'http://cirrusmd.com'
+        logoSize: 'medium'
     -
         name: 'Stony Brook'
         file: 'stony-brook-logo'
@@ -102,6 +105,7 @@ customers:
         name: 'Methodist Lebonheur Hospital'
         file: 'mlh-logo'
         url: 'http://www.methodisthealth.org'
+        logoSize: 'medium'
 
 # block_hero_1:
 #     -
