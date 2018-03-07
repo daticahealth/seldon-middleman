@@ -8,13 +8,13 @@ customJS: "/public/js/article.js"
 current_page.data.title = p["title"] + " | Datica Blog"
 current_page.data.summary = safe_summary(p.summary)
 
-share_image_fallback = "https://images.contentful.com/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+share_image_fallback = "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
 
 if p.has_key?("featured_image")
     post_featured_image = cf_asset_protocol + p["featured_image"]["url"]
     post_featured_image_title = p["featured_image"]["title"]
 else
-    post_featured_image = "https://images.contentful.com/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg"
+    post_featured_image = "https://images.ctfassets.net/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg"
     post_featured_image_title = "Datica Blog"
 end
 
