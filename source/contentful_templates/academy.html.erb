@@ -9,7 +9,7 @@ customJS: "/public/js/contents.js, /public/js/smooth-scroll.js, /public/js/artic
 
 current_page.data.title = p["title"] + " | The Datica Academy"
 current_page.data.summary = safe_summary(p.summary)
-current_page.data.share_image = "https://images.contentful.com/189dvqdsjh46/NL2SgI83KesMS86cWO44y/e908972bb9193eec594b639881e25e6f/academy-share-default.jpg?w=800"
+current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/NL2SgI83KesMS86cWO44y/e908972bb9193eec594b639881e25e6f/academy-share-default.jpg?w=800"
 
 if p.has_key?("tags")
     current_page.data.tags = get_tag_list(p["tags"])

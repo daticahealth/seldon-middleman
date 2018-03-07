@@ -11,10 +11,10 @@ events_list:
             Register and see the [full conference agenda here](https://hitrustalliance.net/documents/summit/tpa2018/TPA_Summit_2018_FINAL.pdf).
 
             Have compliance questions? Schedule a meeting with Lori at [press@datica.com](mailto:press@datica.com).
-        event_image: 'https://images.contentful.com/189dvqdsjh46/6EEwqOYzwAmucCmy42cGqk/67cb5d6471b966a368900eb98bcb30e8/HITRUST_Third_Party_Assurance_Summit__comic_book_cover__2017_.jpg'
+        event_image: 'https://images.ctfassets.net/189dvqdsjh46/6EEwqOYzwAmucCmy42cGqk/67cb5d6471b966a368900eb98bcb30e8/HITRUST_Third_Party_Assurance_Summit__comic_book_cover__2017_.jpg'
     -
         event_title: 'AWS Re:Invent'
-        event_logo_file: 'https://images.contentful.com/189dvqdsjh46/4ysc9facYgkYymYY8OgYEg/97a8e5c0cfd4f67c4dfb1122212ee228/aws-reinvent-logo-2x-centered.png'
+        event_logo_file: 'https://images.ctfassets.net/189dvqdsjh46/4ysc9facYgkYymYY8OgYEg/97a8e5c0cfd4f67c4dfb1122212ee228/aws-reinvent-logo-2x-centered.png'
         event_date: 'November 27-December 1'
         date_start: !ruby/object:DateTime 2017-11-27 00:00:00.000000000 Z
         date_end: !ruby/object:DateTime 2017-12-01 00:00:00.000000000 Z
@@ -226,7 +226,7 @@ events_list:
         date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
         event_year: '2015'
         event_content: 'Travis moderated a fireside chat with Dr. Molly Coye and Adam Odessky. [Read our recap](/blog/digital-health-summer-summit-hits-peak-of-healthcare-innovation)'
-        event_image: 'https://images.contentful.com/189dvqdsjh46/2KEPUGwEY8osmCIwgCiqKu/732702d61a1896cb9d49fe420f49b885/maxresdefault.jpg'
+        event_image: 'https://images.ctfassets.net/189dvqdsjh46/2KEPUGwEY8osmCIwgCiqKu/732702d61a1896cb9d49fe420f49b885/maxresdefault.jpg'
     -
         event_title: 'Open mHealth San Francisco Summit <strong class="ctz-new">Sponsor</strong>'
         event_date: 'June 17'
@@ -248,7 +248,7 @@ events_list:
         date_end: !ruby/object:DateTime 2017-10-04 00:00:00.000000000 Z
         event_year: '2015'
         event_content: 'Travis participated in a panel about HIPAA, digital health startups, and the path to compliance. [Read our recap](/blog/with-sxsw-in-the-rearview-we-look-ahead-to-himss-2015)'
-        event_image: 'https://images.contentful.com/189dvqdsjh46/3Lo5eDTyqAyKucAIwCEGEi/d219a7008f43e0594e6ec7853db5bd57/blog-main-sxsw2.jpg'
+        event_image: 'https://images.ctfassets.net/189dvqdsjh46/3Lo5eDTyqAyKucAIwCEGEi/d219a7008f43e0594e6ec7853db5bd57/blog-main-sxsw2.jpg'
     -
         event_title: 'mHealth Summit 2014'
         event_date: 'Dec. 6-12'
@@ -280,60 +280,60 @@ speaking_list:
     -
         name: HIMSS
         slug: himss
-        logo_file: https://images.contentful.com/189dvqdsjh46/2WdaMH3TnW4ocsEUQy2s6a/172150c175e4caef69491b8ea3f201d3/himss-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/2WdaMH3TnW4ocsEUQy2s6a/172150c175e4caef69491b8ea3f201d3/himss-logo.png
         logoSize: small-mid
     -
         name: SXSW
         slug: sxsw
-        logo_file: https://images.contentful.com/189dvqdsjh46/2V0xUfqjMcQ6c6aeCCu6GI/965560e325092aa510a3ddd924c1f8bc/sxsw-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/2V0xUfqjMcQ6c6aeCCu6GI/965560e325092aa510a3ddd924c1f8bc/sxsw-logo.png
         logoSize: small-mid
     -
         name: AHIMA
         slug: ahima
-        logo_file: https://images.contentful.com/189dvqdsjh46/5BY5m1yckEqs8W4Ci0imq8/a19714263b7468b0cc30e50f54be39af/ahima-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/5BY5m1yckEqs8W4Ci0imq8/a19714263b7468b0cc30e50f54be39af/ahima-logo.png
         logoSize: small-mid
     -
         name: AHIP
         slug: ahip
-        logo_file: https://images.contentful.com/189dvqdsjh46/5gXaSOUrXqCASAAgskYU0c/e5320ac6130aaa4b8f3b2bf777992e14/ahip-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/5gXaSOUrXqCASAAgskYU0c/e5320ac6130aaa4b8f3b2bf777992e14/ahip-logo.png
         logoSize: small-mid
     -
         name: Health 2.0
         slug: health20
-        logo_file: https://images.contentful.com/189dvqdsjh46/3TmU3OWWAgUkIcEMeYCEAs/afc9bd0603128ddbd5a7dfbb75c3ef38/health20-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/3TmU3OWWAgUkIcEMeYCEAs/afc9bd0603128ddbd5a7dfbb75c3ef38/health20-logo.png
         logoSize: small-mid
     -
         name: IBM Cloud Innovation Tour
         slug: ibmtour
-        logo_file: https://images.contentful.com/189dvqdsjh46/5Zfoy6JAlOgyCI2sec6i0Y/f2ac7826da31a379af92d50769f94ed8/ibmtour-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/5Zfoy6JAlOgyCI2sec6i0Y/f2ac7826da31a379af92d50769f94ed8/ibmtour-logo.png
         logoSize: small-mid
     -
         name: Digital Health Summit
         slug: digitalhealthsummit
-        logo_file: https://images.contentful.com/189dvqdsjh46/4Zw0Zi6IKQQCikOIamMigE/2bb4c15c77c0df0bf22e9e7b8574fd8d/digitalhealthsummit-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/4Zw0Zi6IKQQCikOIamMigE/2bb4c15c77c0df0bf22e9e7b8574fd8d/digitalhealthsummit-logo.png
         logoSize: small-mid
     -
         name: Stanford MedX
         slug: medx
-        logo_file: https://images.contentful.com/189dvqdsjh46/5d7kTvdxNeEIa2yEAaEyyg/45733aa04ce17958ffcc59420f8a326a/medx-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/5d7kTvdxNeEIa2yEAaEyyg/45733aa04ce17958ffcc59420f8a326a/medx-logo.png
         logoSize: small-mid
     -
         name: Vue15
         slug: vue15
-        logo_file: https://images.contentful.com/189dvqdsjh46/3nNBld1w0MEiIYcSWGGWiG/95904f57c2f58fb613902a581ec2b3b4/vue15-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/3nNBld1w0MEiIYcSWGGWiG/95904f57c2f58fb613902a581ec2b3b4/vue15-logo.png
         logoSize: small-mid
     -
         name: Vue16
         slug: vue16
-        logo_file: https://images.contentful.com/189dvqdsjh46/3glvNQuvZSeGCUKeaw8K2u/28d64b2479a20bce6880cd75735d74e0/vue16-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/3glvNQuvZSeGCUKeaw8K2u/28d64b2479a20bce6880cd75735d74e0/vue16-logo.png
         logoSize: small-mid
     -
         name: Open mHealth
         slug: openmhealth
-        logo_file: https://images.contentful.com/189dvqdsjh46/5eBbamSR2gwoIqQGQ4EuOk/62fbe13ae65df7ad800f67745be1e947/openmhealth-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/5eBbamSR2gwoIqQGQ4EuOk/62fbe13ae65df7ad800f67745be1e947/openmhealth-logo.png
         logoSize: small-mid
     -
         name: HOSTING Summit Series
         slug: hostingsummit
-        logo_file: https://images.contentful.com/189dvqdsjh46/74jbS2Tb2MWYQQuK4oGWuM/ab7fcec508f9365fbf43e1a64d10e844/hostingsummit-logo.png
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/74jbS2Tb2MWYQQuK4oGWuM/ab7fcec508f9365fbf43e1a64d10e844/hostingsummit-logo.png
         logoSize: small-mid

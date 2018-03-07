@@ -12,7 +12,7 @@ pod_summary = Kramdown::Document.new(p.summary).to_html
 
 current_page.data.title = p["title"] + " | Healthcare Innovators Podcast"
 current_page.data.summary = safe_summary(p.summary)
-current_page.data.share_image = "https://images.contentful.com/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/bc7605c8d6702518cedcedf7cf0de3bb/podcast-art-share-2018.png"
+current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/bc7605c8d6702518cedcedf7cf0de3bb/podcast-art-share-2018.png"
 if p.has_key?("tags")
     current_page.data.tags = get_tag_list(p["tags"])
 else
