@@ -28,7 +28,7 @@ module ImageHelpers
       svg      = document.css('svg').first
 
       svg.set(:class, css_class)
-      svg.set(:preserveAspectRatio, radio_default)
+      # svg.set(:preserveAspectRatio, radio_default)
 
       document.to_xml
     else
