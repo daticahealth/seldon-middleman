@@ -25,6 +25,7 @@
 #         }
 # %#>
 # ---
+
 # required elements
 unless defined?(label)
 	puts "The Button partial at #{current_page.url} requires a label!"
@@ -60,9 +61,25 @@ if defined?(rel)
 else
 	rel = ""
 end
+
+# GTM stuff
+unless defined?(tracking) && tracking == false
+	#url segments
+	if defined?(current_page.data.collectionName) # this is already a part of static pages/sections
+		data_funnel = ' data-tracking-group="' + current_page.data.collectionName + '" '
+	elsif defined?(data_track_group) # data_track_group should supercede collectionName if present in the partial obj.
+		data_funnel = ' data-tracking-group="#{data_track_group}" '
+	else
+		data_funnel = ' data-tracking-group="generic"'
+	end
+	# if tracking => "false", then don't render any tracking attributes. on buttons, should be on by default. 
+	else
+		data_track = ' data-track="true" ' + data_funnel
+	end
+end
 %>
 
-<a class="<%= button_classes %>" data-expand-on-small="true" href="<%= url %>" title="<%= title %>"<%= rel %>>
+<a class="<%= button_classes %>" <%= data_track %> data-expand-on-small="true" href="<%= url %>" title="<%= title %>"<%= rel %>>
 	<% if defined?(icon) %>
 		<% if icon_align == "right" %>
 			<%= label %>
@@ -72,6 +89,6 @@ end
 			<%= label %>
 		<% end %>
 	<% else %>
-		<%= label %>
+		<%= label %> 
 	<% end %>
 </a>
