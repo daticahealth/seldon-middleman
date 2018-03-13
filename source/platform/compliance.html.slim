@@ -14,7 +14,7 @@ priority: "0.9"
 ---
 - current_page.data.share_image = image_share_platform
 
-section.container-color--dark-alt style=("background-color: #23272C")
+section#compliance-top.container-color--dark-alt style=("background-color: #23272C")
   .container-image--center(data-interchange="[/public/img/art/compliance-bg.svg, small]")
     section.section-article
       .row.align-center.group
@@ -33,11 +33,11 @@ section.container-color--dark-alt style=("background-color: #23272C")
             p= block.desc
       .row.align-center
         .columns.small-6.large-5.text-right
-          = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
+          = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top-pricing" }
         .columns.small-6.large-6.text-left
-          = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
+          = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "cta_top-customers" }
 
-section.section-article.container-color--dark-alt
+section#compliance-shared-responsibility.section-article.container-color--dark-alt
   .row.group.align-center
     .columns.small-12
       h2.headline-3.group.text-center.spaced-out Understanding Shared Responsibility
@@ -79,7 +79,7 @@ section.section-article.container-color--dark-alt
 
           In their Shared Responsibility models, you must address the following on top of them in order to approach complete continuous compliance. The following list maps to a specific control in the HIPAA Omnibus, HITRUST CSF, GxP regulations, or GDPR articles.
 
-section.section-article.container-gray-12
+section#compliance-hitrust.section-article.container-gray-12
   .row.align-center
     .columns.small-12.large-8.text-center.group
       h2.headline-3 Datica is HITRUST CSF Certified.
@@ -90,7 +90,7 @@ section.section-article.container-gray-12
     .columns.small-12.large-12
       img.img-crisp alt="platform-controls-diagram" data-interchange="[https://images.ctfassets.net/189dvqdsjh46/fE9OrSoh0sa04GGIeUA6y/1ec20a7821aaf7c388f891786139e088/platform-hitrust-inheritance.png?w=640, small], [https://images.ctfassets.net/189dvqdsjh46/fE9OrSoh0sa04GGIeUA6y/1ec20a7821aaf7c388f891786139e088/platform-hitrust-inheritance.png, medium]"
 
-section.section-article
+section#compliance-other.section-article
   .row.group.align-center
     .columns.small-12.text-center
       h2.headline-3 General Data Protection Regulation
@@ -122,7 +122,7 @@ section.section-article
       img.group.logo-size--xlarge alt=("GxP Ready") src="https://images.ctfassets.net/189dvqdsjh46/1MTvqDED4USkYYE8S2eSwU/3d8116969c0142abfc77f74e34594155/gxp-badge.png" /
 
 .container-color--gray-light
-  section.section-article
+  section#compliance-open-source.section-article
     .row.align-center
       .columns.small-12.large-6.text-center.group
         h2.headline-3 Open sourced company policies give healthcare organizations a headstart

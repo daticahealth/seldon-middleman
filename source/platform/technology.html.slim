@@ -21,7 +21,7 @@ svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0;
       title chevron-down
       path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
 
-section.section-article.container-color--dark-grad-blue.container-image--center(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/3X0hgoNCSs0Y4KuqEOIqCg/4817329d1d35ec44a08c8767c72fafc3/bg-circles-blue-dark.png?w=1600&h=1600&fit=crop, medium]")
+section#tech-top.section-article.container-color--dark-grad-blue.container-image--center(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/3X0hgoNCSs0Y4KuqEOIqCg/4817329d1d35ec44a08c8767c72fafc3/bg-circles-blue-dark.png?w=1600&h=1600&fit=crop, medium]")
   .row.align-center
     .columns.small-12
       .row.align-center
@@ -112,7 +112,7 @@ section#integration.section-article
         - data.views.ehrs.ehr_list.each do |logo|
           img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
 
-section.section-article.container-color--gray-light
+section#tech-mirth.section-article.container-color--gray-light
   .row.align-center
     .columns.small-12.medium-12.large-8
       h1.headline-3.group.text-center EHR <strong>Integration</strong> With Mirth Connect
@@ -143,9 +143,7 @@ section.section-article.container-color--gray-light
         = partial "partials/snippets/button", :locals => { :label => "Test out your own version of Mirth today", :url => "/pricing", :button_classes => "button text-center", :icon => "icon-chevron-right", :icon_color => "white" }
 
 / bright strip, good divider for containers that are similar in brightness
-
 .strip-bright
-
 section.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
   = partial "partials/section-promos/hcms-screenshot"
 

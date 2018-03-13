@@ -13,7 +13,7 @@ priority: "1.0"
 
 .container-color--dark.container-image--center(data-interchange="[/public/img/art/pricing-v2-bg.svg, medium]")
   = partial "partials/snippets/header", :locals => { :style => "light" }
-  .section.section-article
+  section#pricing-tiers.section-article
     .row.align-center
       .columns.small-12
         .row.align-center
@@ -43,10 +43,10 @@ priority: "1.0"
               hr/
               ul.no-style
                 li <strong>Service</strong>
-                li <i class="fa fa-check"></i> 99.5% SLA
+                li <i class="fa fa-check"></i> 99.9% SLA
                 li <i class="fa fa-check"></i> 9-5 ticket support
               hr/
-              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button full-width", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", data_track_group => "platform" }
+              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button full-width", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "tier-standard" }
 
           .columns.small-12.medium-4
             .callout.drop
@@ -75,12 +75,12 @@ priority: "1.0"
               hr/
               ul.no-style
                 li <strong>Service</strong>
-                li <i class="fa fa-check"></i> 99.5% SLA
+                li <i class="fa fa-check"></i> 99.9% SLA
                 li <i class="fa fa-check"></i> 9-5 ticket support
                 li <i class="fa fa-check"></i> Security Audit Promise
                 li <i class="fa fa-check"></i> 4 Hour Breach Reporting
               hr/
-              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button full-width", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", tracking => false }
+              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button full-width", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "tier-professional" }
           .columns.small-12.medium-4
             .callout.drop
               p.lead.text-center.relative <span class="pill-new">new</span> Licensed
@@ -95,8 +95,8 @@ priority: "1.0"
                 li <i class="fa fa-check"></i> Full suite of compliance tooling
                 li <i class="fa fa-check"></i> Much, much more&hellip;
               hr/
-              = partial "partials/snippets/button", :locals => { :label => "Contact Sales", :url => "/contact", :button_classes => "button full-width", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
-        .row.align-center
+              = partial "partials/snippets/button", :locals => { :label => "Contact Sales", :url => "/contact", :button_classes => "button full-width", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right", :data_track_group => "platform", :item_id => "tier-licensed" }
+        #pricing-scaling.row.align-center
           .columns.small-12.medium-7.text-center
             h1.headline-2 Scaling Your Environments
             p.lead For hosted, multi-tenant customers, take advantage of Datica's AWS "at cost" infrastructure.
@@ -128,16 +128,16 @@ priority: "1.0"
                   ul.border-ul.custom-pass-through-list
                     li <strong>Pass-through on:</strong> VPN Pair
                     li <strong>Unit cost:</strong> $90.00/month
-        aside.row.align-center
+        aside#pricing-tco.row.align-center
           .columns.small-12.medium-10.large-6
             .callout.callout--dark-alpha
               = inline_svg("icon-dollar-circle", class: "icon-size--large svg-color--white float-right")
               h2.headline-3 Total Cost of Ownership of Compliance in the Cloud
               p In this guide are tested formulas and directional advice from the compliance and cloud experts at Datica on how to measure and manage the total cost of ownership to achieve compliance in the cloud.
               p
-                = partial "partials/snippets/button", :locals => { :label => "Get your free TCO Guide", :url => "/guide/total-cost-of-ownership-of-cloud-compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black" }
+                = partial "partials/snippets/button", :locals => { :label => "Get your free TCO Guide", :url => "/guide/total-cost-of-ownership-of-cloud-compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :data_track_group => "platform", :item_id => "tco-guide" }
 
-section#faq-pricing.section-article
+section#pricing-faq.section-article
   .row.align-center
     .columns.small-12.medium-8.large-8
       h3.headline-3.text-center.group Frequently asked questions about pricing

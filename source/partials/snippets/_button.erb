@@ -21,7 +21,9 @@
 #             :button_classes => "button button--primary button--large", 
 #             :icon => "icon-github-octocat", 
 #             :icon_color => "white", 
-#             :icon_align => "right" 
+#             :icon_align => "right",
+#             :tracking => "false", # optional, don't track this button in GTM. Negates the following
+#             :data_track_group => "funnelName" # optional, for GTM tracking group/funnel
 #         }
 # %#>
 # ---
@@ -63,23 +65,33 @@ else
 end
 
 # GTM stuff
-unless defined?(tracking) && tracking == false
-	#url segments
-	if defined?(current_page.data.collectionName) # this is already a part of static pages/sections
-		data_funnel = ' data-tracking-group="' + current_page.data.collectionName + '" '
-	elsif defined?(data_track_group) # data_track_group should supercede collectionName if present in the partial obj.
-		data_funnel = ' data-tracking-group="#{data_track_group}" '
-	else
-		data_funnel = ' data-tracking-group="generic"'
-	end
-	# if tracking => "false", then don't render any tracking attributes. on buttons, should be on by default. 
-	else
-		data_track = ' data-track="true" ' + data_funnel
-	end
+# unless defined?(tracking) || tracking == false
+track_me = ' data-track="true"'
+group = ' data-track-group='
+if defined?(current_page.data.collectionName) # this is already a part of static pages/sections
+	data_funnel = track_me + group + '"' + current_page.data.collectionName + '"'
+	section = "_" + current_page.data.collectionName
+elsif defined?(data_track_group) # data_track_group should supercede collectionName if present in the partial obj.
+	data_funnel = track_me + group + '"' + data_track_group + '"'
+	section = "_" + data_track_group
+else # neither, it's just generic
+	data_funnel = track_me + group + '"generic"'
+	section = ""
 end
+data_track = data_funnel
+unless defined?(item_id) # item_id can be passed to component
+	item_id = section
+	# tracking_id = "button" + item_id + "_" + label.parameterize
+	tracking_id = "button_" + label.parameterize
+else
+	tracking_id = "button_" + item_id
+end
+# puts tracking_id
+# else
+# 	data_track = nil
+# end
 %>
-
-<a class="<%= button_classes %>" <%= data_track %> data-expand-on-small="true" href="<%= url %>" title="<%= title %>"<%= rel %>>
+<a class="<%= button_classes %>" <%= data_track %> data-track-id="<%= tracking_id %>" data-expand-on-small="true" href="<%= url %>" title="<%= title %>"<%= rel %>>
 	<% if defined?(icon) %>
 		<% if icon_align == "right" %>
 			<%= label %>
