@@ -56,10 +56,12 @@ section.section-article.container-color--dark-grad-blue.container-image--center(
         .columns.small-12.medium-8
           h1.headline-2.text-center Platform Architecture
           p.text-center.group See where each piece of the Platform fits, from logging and monitoring, to networking and load balancing. The animation below is a comprehensive architectural overview of the Platform.
-      .row.align-center
+      .row.align-center.group--2x
         .columns.small-12
-
           <script src="https://fast.wistia.com/embed/medias/kbhkf6h7u9.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_kbhkf6h7u9 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+      .row.align-center
+        .columns.small-12.large-6.text-center
+          = partial "partials/snippets/button", :locals => { :label => "Next: see how Datica solves compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-compliance-checklist", :icon_color => "black", :icon_align => "left" }
 
 section#tech-features.section-article.container-gray-12
   .row.align-center
@@ -75,7 +77,7 @@ section#tech-features.section-article.container-gray-12
         .callout.drop
           .row
             .columns.small-12.medium-8
-              h3.headline-4 <strong> #{featureCat["title"]} </strong>
+              h3.headline-4(id="featureCat_#{featureCat.slug}") #{featureCat["title"]}
               - if featureCat.has_key?("desc")
                 p = featureCat["desc"]
           .row
@@ -86,10 +88,10 @@ section#tech-features.section-article.container-gray-12
               - featureCat["related_features"].each do | feature |
                 .column.feature-item
                   - if feature.has_key?('desc')
-                    h4.headline-5
+                    h4.headline-5(id="feature-#{feature.slug}")
                       a.is-toggle data-toggle="feature-detail_#{feature.slug}"
                         = feature.title
-                        svg.icon-inline.icon-toggle.svg-color--blue.icon.icon-plus-disc id="feature-icon-#{feature.slug}" style=("margin-bottom: 0.03em;")
+                        svg.icon-inline.icon-toggle.svg-color--blue.icon.icon-plus-disc id="feature-icon-#{feature.slug}"
                           use.symbol-icon xlink:href="#icon-chevron-down"
                   - else
                     h4.headline-6= feature.title
@@ -140,20 +142,24 @@ section.section-article.container-color--gray-light
         p We open sourced our <a href="https://github.com/daticahealth/Mirth-Transforms">Mirth HL7 transformations</a> used over the past three years. With OCI Mirth, you can get started today using these tools. Or, should you require help integrating into a specific hospital, we offer professional services to project manage an integration to completion.
         = partial "partials/snippets/button", :locals => { :label => "Test out your own version of Mirth today", :url => "/pricing", :button_classes => "button text-center", :icon => "icon-chevron-right", :icon_color => "white" }
 
+/ bright strip, good divider for containers that are similar in brightness
+
+.strip-bright
+
 section.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
   = partial "partials/section-promos/hcms-screenshot"
 
 /! cta
-section#ctaBottom.section-article.container-color--blue-bright-noise.container-image--center data-interchange="[https://images.ctfassets.net/189dvqdsjh46/24KaYDLfRW40mKMOuKEgsS/04a4779c83f98738cc15c9f37b636192/platform-integration-inverted-bg.png?w=1600&h=500&fit=crop, medium]"
-  .row.align-center
-    .columns.small-12.medium-10.text-center
-      h2.headline-3.group <strong>End-to-end compliance</strong> on AWS and Azure is possible.
-  .row.align-center
-    .columns.small-12.large-4.text-right
-      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
-    .columns.small-12.large-6
-      = partial "partials/snippets/button", :locals => { :label => "See how Datica solves Compliance", :title => "See how Datica solves Compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
-
+aside#ctaBottom.container-color--dark-grad-blue
+  .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
+    .row.align-center
+      .columns.small-12.medium-10.text-center
+        h2.headline-3.group <strong>End-to-end compliance</strong> on AWS and Azure is possible.
+    .row.align-center
+      .columns.small-12.large-4.text-right
+        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
+      .columns.small-12.large-6
+        = partial "partials/snippets/button", :locals => { :label => "See how Datica solves Compliance", :title => "See how Datica solves Compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
 
 section.section-article.container-color--gray-light
   .row
@@ -201,7 +207,7 @@ section.section-article.container-color--gray-light
       .callout.drop-light
         = inline_svg("icon-docker", class: "icon-size--large float-right svg-color--gray-3")
         markdown:
-          Datica also supports Container Services with Docker; learn more [here](#).
+          Datica also supports Container Services with Docker; learn more [here](#feature-custom-docker-containers).
 
           Don't see a listed technology you wish to use? [Contact sales](/contact) to see additional compatability.
 section#faq-tech.section-article
@@ -222,4 +228,4 @@ section#faq-tech.section-article
           dd= Kramdown::Document.new(item["answer"]).to_html
       hr.divider/
       p.lead Get started with the Datica platform today
-      = partial "partials/snippets/button", :locals => { :label => "Learn about integrations", :url => "/pricing", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }
+      = partial "partials/snippets/button", :locals => { :label => "Learn about integrations", :url => "/platform/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }

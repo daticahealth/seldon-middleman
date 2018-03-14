@@ -11,6 +11,22 @@
 // @import '../modules/fonts-optional';
 // @include foundation-off-canvas;
 
+.position-bottom-rt { // slap artwork to bottom right on medium-large and up; wrap under for small - med
+    width: 100%;
+    margin-bottom: -2rem; // offset the padding from .section-article at this viewport
+    @include breakpoint (medium) {
+        margin-bottom: -2.5rem; // I'd rather tweak these than mess with .section-article for this ONE thing
+    }
+    @include breakpoint (medium-large up) {
+        margin-bottom: 0;
+        position: absolute;
+        bottom: 0;
+        right: 1rem;
+        width: 58%;
+        max-height: 30rem;
+    }
+}
+
 // Set max height on "building on the paltform" illustrations
 .build-height{
   max-height: 155px;
@@ -41,6 +57,8 @@ img.soft-border{
 // expand/toggle component
 .icon-toggle {
     opacity: 0.5;
+    margin-bottom: 0.03em;
+    margin-left:   0.1em;
     @include transition(transform $timing-default, opacity $timing-default);
 }
 
