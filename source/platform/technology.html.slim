@@ -89,7 +89,7 @@ section#tech-features.section-article.container-gray-12
                 .column.feature-item
                   - if feature.has_key?('desc')
                     h4.headline-5(id="feature-#{feature.slug}")
-                      a.is-toggle(data-toggle="feature-detail_#{feature.slug}" data-track="true" data-track-group="platform" data-track-id="feature-detail_#{feature.slug}")
+                      a.is-toggle(data-toggle="feature-detail_#{feature.slug}" data-track="true" data-track-category="platform" data-track-id="feature-detail_#{feature.slug}")
                         = feature.title
                         svg.icon-inline.icon-toggle.svg-color--blue.icon.icon-plus-disc id="feature-icon-#{feature.slug}"
                           use.symbol-icon xlink:href="#icon-chevron-down"

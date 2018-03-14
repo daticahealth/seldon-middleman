@@ -67,15 +67,15 @@ end
 # GTM stuff
 # unless defined?(tracking) || tracking == false
 track_me = ' data-track="true"'
-group = ' data-track-group='
+track_category = ' data-track-category='
 if defined?(current_page.data.collectionName) # this is already a part of static pages/sections
-	data_funnel = track_me + group + '"' + current_page.data.collectionName + '"'
+	data_funnel = track_me + track_category + '"' + current_page.data.collectionName + '"'
 	section = "_" + current_page.data.collectionName
 elsif defined?(data_track_group) # data_track_group should supercede collectionName if present in the partial obj.
-	data_funnel = track_me + group + '"' + data_track_group + '"'
+	data_funnel = track_me + track_category + '"' + data_track_group + '"'
 	section = "_" + data_track_group
 else # neither, it's just generic
-	data_funnel = track_me + group + '"generic"'
+	data_funnel = track_me + track_category + '"generic"'
 	section = ""
 end
 data_track = data_funnel
