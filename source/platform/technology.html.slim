@@ -74,10 +74,10 @@ section#tech-features.section-article.container-gray-12
   - ordered_feature_categories.each do | id, featureCat |
     .row
       .columns.small-12
-        .callout.drop
+        .callout.callout--large.drop.group--2x
           .row
             .columns.small-12.medium-8
-              h3.headline-4(id="featureCat_#{featureCat.slug}") #{featureCat["title"]}
+              h3.headline-3(id="featureCat_#{featureCat.slug}") #{featureCat["title"]}
               - if featureCat.has_key?("desc")
                 p = featureCat["desc"]
           .row
