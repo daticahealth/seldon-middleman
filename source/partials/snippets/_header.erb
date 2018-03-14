@@ -8,7 +8,7 @@
             <a href="/contact" class="expanded button button--light">Contact us</a>
         </div>
         <% data.nav_primary.nav_main.each do |m| %>
-            <%= current_link_to m.title, m.url, title: m.desc, class: "menu-item--simple" %>
+            <%= current_link_to m.title, m.url, title: m.desc, class: "menu-item--simple", data_track: "data-track" %>
         <% end %>
     </nav>
     <nav class="right">
