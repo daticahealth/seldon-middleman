@@ -4,11 +4,14 @@ summary: "Connect with a compliance or integration expert at Datica"
 author: "Datica, Inc."
 tags: "HIPAA, HL7, FHIR, interoperability, EHR, integration"
 date: "January 1, 2017"
-share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
-customCSS: "contact-us"
 customJS: "/public/js/form.js"
 layout: basic
 ---
+
+<% 
+current_page.data.share_image = image_share_platform
+current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+%>
 <div class="container-color--blue-alt">
     <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
     <div class="section-article">
@@ -20,7 +23,7 @@ layout: basic
             </div>
             <div class="columns small-12 medium-6 position-relative split-section-form">
                 <div class="callout callout--large drop" id="absoluteForm">
-                    <p>A compliance and integration expert from Datica will follow up to learn how we might be able to help</p>
+                    <p>A compliance and integration expert from Datica will follow up to learn how we might be able to help.</p>
                     <hr/>
                     <%= partial("partials/snippets/form-hubspot", :locals => { :form_id => "2904bae4-9c64-4ed7-95a5-9af6ae6af302" }) %>
                 </div>
