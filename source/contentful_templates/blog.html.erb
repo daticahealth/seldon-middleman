@@ -133,7 +133,8 @@ end
                 <% if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta") %>
                     <%= partial "partials/cards/discover", :locals => { :post => p["discovery_topic"], :classes => "group" } %>
                     <% if p.discovery_topic.slug == "ehr-integrations" %>
-                        <%= partial "partials/ctas/ad-webinar" %>
+                        <%= partial("/partials/content/cta", :locals => { :p => data.site.cta["1h6f0OBRqiiayM2cy28qey"] }) %>
+                        <%#= partial "partials/ctas/ad-webinar" %>
                     <% end %>
                 <% end %>
                 <% if p.has_key?("related_entries") && p["related_entries"].count == 1 %>
