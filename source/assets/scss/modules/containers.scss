@@ -353,6 +353,9 @@
         &--tint {
             @include color--tint;
         }
+        &--grad-blue-waves {
+            @include color--grad-blue-waves;
+        }
     }
     // generic container padding classes
     &-pad {
