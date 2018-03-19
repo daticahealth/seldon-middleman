@@ -21,66 +21,186 @@ priority: "1.0"
             h1.headline-2 Simple, Predictable Pricing
             p.lead Infrastructure at cost, compliance built in. Choose a package to fit your needs. Scaling is predictable and self-service.
         .row.align-center.row--skinny
-          .columns.small-12.medium-4
+          .columns.small-12.medium-8
             .callout.drop
-              p.lead.text-center.relative Standard
-              p.lead.text-center <strong>$999</strong>
-              p.small.text-center per <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="An environment is your application + Datica services like Logging, Monitoring, Vulnerability Scanning, and more.">environment</span>/month
-              ul.no-style
-                li <strong>Compliance</strong>
-                li <i class="fa fa-check"></i> Business Associate Agreement
-                li <i class="fa fa-check"></i> <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="Datica is HITRUST CSF Certified. Customers can inherit some of our controls while doing their own audits or certification process.">HITRUST CSF Certification</span>
-                li <i class="fa fa-check"></i> <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="The SOC 2 report focuses on a business's non-financial reporting controls as they relate to security, availability, processing integrity, confidentiality, and privacy of a system, as opposed to SOC 1/SSAE 16 which is focused on the financial reporting controls.">SOC 2</span> Compliance
-              hr/
-              ul.no-style
-                li <strong>Technology Controls</strong>
-                li <i class="fa fa-check"></i> Technology Controls
-                li <i class="fa fa-check"></i> Logging & Monitoring
-                li <i class="fa fa-check"></i> Networking & Load-balancing
-                li <i class="fa fa-check"></i> Disaster Recovery & Backup
-                li <i class="fa fa-check"></i> Intrusion Detection
-                li <i class="fa fa-check"></i> Penetration Testing
-              hr/
-              ul.no-style
-                li <strong>Service</strong>
-                li <i class="fa fa-check"></i> 99.9% SLA
-                li <i class="fa fa-check"></i> 9-5 ticket support
-              hr/
-              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button full-width", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "tier-standard" }
-
-          .columns.small-12.medium-4
-            .callout.drop
-              p.lead.text-center.relative <span class="pill-best">best</span> Professional
-              p.lead.text-center <strong>$3,299</strong>
-              p.small.text-center per <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="An environment is your application + Datica services like Logging, Monitoring, Vulnerability Scanning, and more.">environment</span>/month
-              ul.no-style
-                li <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="All service levels and options are per environment — meaning, you get 4 development environments for each production environment you purchase."><strong>Infrastructure Options:</strong></span>
-                li <i class="fa fa-check"></i> Windows Availability
-                li <i class="fa fa-check"></i> <strong><span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="Development environments have no base fee — meaning you pay just for the infrastructure cost.">4 Additional Development Environments</span></strong>
-              hr/
-              ul.no-style
-                li <strong>Compliance</strong>
-                li <i class="fa fa-check"></i> Business Associate Agreement
-                li <i class="fa fa-check"></i> <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="Datica is HITRUST CSF Certified. Customers can inherit some of our controls while doing their own audits or certification process.">HITRUST CSF Certification</span>
-                li <i class="fa fa-check"></i> <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="The SOC 2 report focuses on a business's non-financial reporting controls as they relate to security, availability, processing integrity, confidentiality, and privacy of a system, as opposed to SOC 1/SSAE 16 which is focused on the financial reporting controls.">SOC 2</span> Compliance
-              hr/
-              ul.no-style
-                li <strong>Technology Controls</strong>
-                li <i class="fa fa-check"></i> Technology Controls
-                li <i class="fa fa-check"></i> Logging & Monitoring
-                li <i class="fa fa-check"></i> Networking & Load-balancing
-                li <i class="fa fa-check"></i> Disaster Recovery & Backup
-                li <i class="fa fa-check"></i> Intrusion Detection
-                li <i class="fa fa-check"></i> Penetration Testing
-              hr/
-              ul.no-style
-                li <strong>Service</strong>
-                li <i class="fa fa-check"></i> 99.9% SLA
-                li <i class="fa fa-check"></i> 9-5 ticket support
-                li <i class="fa fa-check"></i> Security Audit Promise
-                li <i class="fa fa-check"></i> 4 Hour Breach Reporting
-              hr/
-              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button full-width", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "tier-professional" }
+              table.table-custom-pricing
+                tr
+                  th
+                    p.lead.no-bold Hosted
+                  th
+                    p.lead.text-center Standard
+                  th
+                    p.lead.text-center Professional
+                tr
+                  td
+                    p &nbsp;
+                  td
+                    p.text-center.gray <strong>$999/mo/<span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="An environment is your application + Datica services like Logging, Monitoring, Vulnerability Scanning, and more.">environment</span></strong>
+                  td
+                    p.text-center.gray <strong>$3,299/mo/<span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="An environment is your application + Datica services like Logging, Monitoring, Vulnerability Scanning, and more.">environment</span></strong>
+                tr.table-section-header
+                  td
+                    <strong>Compliance</strong>
+                  td
+                    p &nbsp;
+                  td
+                    p &nbsp;
+                tr
+                  td
+                    p Business Associate Agreement
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr
+                  td
+                    p <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="Datica is HITRUST CSF Certified. Customers can inherit some of our controls while doing their own audits or certification process.">HITRUST CSF Certification</span>
+                  td
+                    p.text-center.green <strong>Yes, Inherited</strong>
+                  td
+                    p.text-center.green <strong>Yes, Inherited</strong>
+                tr
+                  td
+                    p <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="The SOC 2 report focuses on a business's non-financial reporting controls as they relate to security, availability, processing integrity, confidentiality, and privacy of a system, as opposed to SOC 1/SSAE 16 which is focused on the financial reporting controls.">SOC 2</span> Compliance
+                  td
+                    p.text-center.green <strong>Yes, Inherited</strong>
+                  td
+                    p.text-center.green <strong>Yes, Inherited</strong>
+                tr.table-section-header
+                  td
+                    <strong>Technology Controls</strong>
+                  td
+                    p &nbsp;
+                  td
+                    p &nbsp;
+                tr
+                  td
+                    p Logging &amp; Monitoring
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr
+                  td
+                    p Networking &amp; Load Balancing
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr
+                  td
+                    p Disaster Recovery &amp; Backup
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr
+                  td
+                    p Intrusion Detection
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr
+                  td
+                    p Penetration Testing
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr
+                  td
+                    p Vulnerability Scanning
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr.table-section-header
+                  td
+                    <strong>Service</strong>
+                  td
+                    p &nbsp;
+                  td
+                    p &nbsp;
+                tr
+                  td
+                    p Uptime SLA
+                  td
+                    p.text-center.green <strong>99.9%</strong>
+                  td
+                    p.text-center.green <strong>99.9%</strong>
+                tr
+                  td
+                    p Base Support
+                  td
+                    p.text-center.green <strong>9am - 5pm CST</strong>
+                  td
+                    p.text-center.green <strong>9am - 5pm CST</strong>
+                tr
+                  td
+                    p Premium Support
+                  td
+                    p.text-center.green <strong>$750/mo/environment</strong>
+                  td
+                    p.text-center.green <strong>$750/mo/environment</strong>
+                tr
+                  td
+                    p Breach Reporting
+                  td
+                    p.text-center.red <strong>16 Hours</strong>
+                  td
+                    p.text-center.green <strong>4 Hours</strong>
+                tr
+                  td
+                    p Security Audit Promise
+                  td
+                    p.text-center.red <strong>No</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr.table-section-header
+                  td
+                    p <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="All service levels and options are per environment — meaning, you get 4 development environments for each production environment you purchase."><strong>Infrastructure Options:</strong></span>
+                  td
+                    p &nbsp;
+                  td
+                    p &nbsp;
+                tr
+                  td
+                    p Buildpack Deployments
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr
+                  td
+                    p Container Services
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr
+                  td
+                    p Windows Availability
+                  td
+                    p.text-center.red <strong>No</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr
+                  td
+                    p <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="Development environments have no base fee — meaning you pay just for the infrastructure cost.">4 Additional Development Environments</span>
+                  td
+                    p.text-center.red <strong>No</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+                tr
+                  td
+                    p Global Deployment Options
+                  td
+                    p.text-center.red <strong>No</strong>
+                  td
+                    p.text-center.green <strong>Yes</strong>
+              hr
+              = partial "partials/snippets/button", :locals => { :label => "Schedule my demo", :url => "/demo", :button_classes => "button full-width", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right", :data_track_group => "platform", :item_id => "tier-licensed" }
           .columns.small-12.medium-4
             .callout.drop
               p.lead.text-center.relative <span class="pill-new">new</span> Licensed

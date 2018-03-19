@@ -138,3 +138,30 @@ ul.border-ul{
     font-size: 0.875rem;
   }
 }
+
+// Custom pricing table
+table.table-custom-pricing{
+  border: 0;
+  tbody{
+    border: 0;
+    tr{
+      background-color: $color_white;
+      th,td{
+        border-bottom: 1px solid $color_border;
+        padding: 0.75rem;
+        background-color: $color_white;
+        p{margin: 0;padding: 0;}
+        .red{color: $color_red;}
+        .green{color: $color_green;}
+        .gray{color: $gray-7;}
+        .no-bold{font-weight: 400;}
+      }
+    }
+    tr.table-section-header{
+      background-color: $color_light-alt;
+      td{
+        background-color: $color_light-alt;
+      }
+    }
+  }
+}
