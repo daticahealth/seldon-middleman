@@ -61,10 +61,10 @@
     }
 }
 @mixin color--grad-blue-waves {
-    $c-light: hsl(211, 66%, 35%);
-    $c-dark:  hsl(211, 66%, 20%);
+    $c-light: hsl(220, 66%, 35%);
+    $c-dark:  hsl(220, 66%, 20%);
     color: $color_white;
-    @include gradient(55deg, $c-light 3%, $c-dark 27%, $c-light 27%, $c-dark 85%, $c-light 100%);
+    @include gradient(55deg, $c-light 3%, $c-dark 27%, $c-light 27%, $c-dark 85%, $c-light 85%);
 }
 
 @mixin noisy {
