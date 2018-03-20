@@ -90,7 +90,7 @@ blockquote + .media-object, .blockquote-info { // line person/info up with quote
         font-size: 90%;
         font-style: italic;
         display: table; // collapses width
-        max-width: 18em;
+        // max-width: 18em; // max-width caused some layout ish 
     }
     &-role {
         display: table; // collapses width
