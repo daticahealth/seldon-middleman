@@ -29,7 +29,7 @@ GEM
       middleman-cli (~> 4.0)
       middleman-core (~> 4.0)
     contracts (0.13.0)
-    crass (1.0.2)
+    crass (1.0.3)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.2.1)
@@ -111,7 +111,7 @@ GEM
     multi_json (1.13.1)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
-    nokogumbo (1.4.13)
+    nokogumbo (1.5.0)
       nokogiri
     oga (2.11)
       ast
@@ -131,10 +131,10 @@ GEM
     ruby-ll (2.1.2)
       ansi
       ast
-    sanitize (4.5.0)
+    sanitize (4.6.4)
       crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
-      nokogumbo (~> 1.4.1)
+      nokogumbo (~> 1.4)
     sass (3.4.25)
     servolux (0.13.0)
     slim (3.0.9)
@@ -164,7 +164,7 @@ DEPENDENCIES
   middleman-minify-html
   middleman-search_engine_sitemap
   oga
-  sanitize
+  sanitize (~> 4.6.3)
   slim
 
 BUNDLED WITH

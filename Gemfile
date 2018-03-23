@@ -16,5 +16,5 @@ gem 'middleman-blog'
 # gem 'middleman-autoprefixer'
 gem 'oga' # for svginjection, xml parsing
 gem 'contentful_middleman'
-gem 'sanitize'
+gem 'sanitize', '~> 4.6.3'
 gem 'inline_svg'

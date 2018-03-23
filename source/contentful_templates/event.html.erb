@@ -80,7 +80,23 @@ end
                     <%#= partial "/partials/snippets/share", :locals => { :p => p, :classes => "" }  %>
                 </div>
             <% if p.has_key?("cta_ref") %>
-                <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
+                <% if p["cta_ref"].has_key?("custom_form") %>
+                <%= stylesheet_link_tag "views/forms-inline.css" %>
+                <div class="row collapse">
+                    <div class="columns small-12 medium-10 large-8">
+                        <div class="callout callout--large drop">
+                            <% if p["cta_ref"].has_key?("title") %>
+                                <h2 class="headline-4"><%= p.cta_ref.title %></h2>
+                                <hr class="divider" />
+                            <% end %>
+                            <% if p["cta_ref"].has_key?("desc") %><%= Kramdown::Document.new(p["cta_ref"]["desc"]).to_html %><% end %>
+                            <%= p.cta_ref.custom_form %>
+                        </div>
+                    </div>
+                </div>
+                <% else %>
+                    <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
+                <% end %>
             <% end %>
         </div>
         <!--
