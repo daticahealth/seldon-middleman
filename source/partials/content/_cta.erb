@@ -39,8 +39,8 @@ end
     </aside>
 <% elsif p.has_key?("cta_widget") %>
     <aside class="<%= style_classes %>" id="cta">
-        <h3 class="headline-4"><%= p["cta_title"] %></h3>
-        <% if p.has_key?("cta_widget") %><p class=""><%= p["cta_desc"] %></p><% end %>
+        <% if p.has_key?("cta_title") %><h3 class="headline-4"><%= p["cta_title"] %></h3><% end %>
+        <% if p.has_key?("cta_desc") %><p class=""><%= p["cta_desc"] %></p><% end %>
         <%= p.cta_widget %>
     </aside>
 <% else %>
