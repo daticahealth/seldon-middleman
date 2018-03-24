@@ -2,7 +2,7 @@
   ID = "3bbf38ec-f306-4e70-9223-dff0e4c980d3"
   Path = ""
 
-[context.build]
+[build]
   publish = ""
 
 [[headers]]
@@ -16,7 +16,15 @@
     # Content-Security-Policy-Report-Only = "default-src https: 'unsafe-inline' 'unsafe-eval'"
 
 # Basic redirect rules
-redirects = [
-  {from = "/platform/integration", to = "/discover/ehr-integrations"},
-  {from = "/foo", to = "/discover/ehr-integrations"},
-  {from = "/*", to = "/404/index.html", status = 404}]
+[[redirects]]
+  from = "/platform/integration"
+  to = "/discover/ehr-integrations"
+
+[[redirects]]
+  from = "/integration"
+  to = "/discover/ehr-integrations"
+
+[[redirects]]
+  from = "/*"
+  to = "/404/index.html"
+  status = 404
