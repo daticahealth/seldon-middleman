@@ -28,3 +28,603 @@
   from = "/*"
   to = "/404/index.html"
   status = 404
+
+[[redirects]]
+  from = "/blog/2017-healthcare-trends-part-three-the-rise-and-fall-of-the-ehr"
+  to = "/blog/2017-healthcare-trends-part-three-the-rise-a$"
+  status = 301
+
+[[redirects]]
+  from = "/about/mohan"
+  to = "/leadership"
+  status = 301
+
+## Support URLs
+[[redirects]]
+  from = "support.catalyze.io"
+  to = "https://help.datica.com/hc/en-us"
+  status = 301
+
+[[redirects]]
+  from = "/support"
+  to = "https://help.datica.com/hc/en-us"
+  status = 301
+
+## New URLs
+[[redirects]]
+  from = "/success.html"
+  to = "/activate/success"
+  status = 301
+
+[[redirects]]
+  from = "/invalid.html"
+  to = "/activate/invalid"
+  status = 301
+
+[[redirects]]
+  from = "/products"
+  to = "/platform"
+  status = 301
+
+[[redirects]]
+  from = "/product"
+  to = "/platform"
+  status = 301
+
+[[redirects]]
+  from = "/customers/*"
+  to = "/platform/success"
+  status = 301
+
+[[redirects]]
+  from = "/solutions"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/signup"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/why"
+  to = "/platform"
+  status = 301
+
+[[redirects]]
+  from = "/newsletter"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/about-us"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/contact"
+  status = 301
+
+## Compliant Cloud
+[[redirects]]
+  from = "/stratum"
+  to = "/platform"
+  status = 301
+
+[[redirects]]
+  from = "/compliant-cloud"
+  to = "/platform"
+  status = 301
+
+[[redirects]]
+  from = "/managed-integration"
+  to = "/platform/technology/#integration"
+  status = 301
+
+[[redirects]]
+  from = "/proof"
+  to = "/platform/success"
+  status = 301
+
+[[redirects]]
+  from = "/compliance"
+  to = "/platform/compliance"
+  status = 301
+
+[[redirects]]
+  from = "/strategic-services"
+  to = "/services"
+  status = 301
+
+## Managed Integration
+[[redirects]]
+  from = "/redpoint"
+  to = "/platform/technology/#integration"
+  status = 301
+
+## Team
+[[redirects]]
+  from = "/our-story"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/team/*"
+  to = "/about/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/travis"
+  to = "/about/travis"
+  status = 301
+
+[[redirects]]
+  from = "/team/mohan"
+  to = "/about/mohan"
+  status = 301
+
+[[redirects]]
+  from = "/mohan"
+  to = "/about/mohan"
+  status = 301
+
+### Resources
+[[redirects]]
+  from = "/innovators"
+  to = "/innovation"
+  status = 301
+
+[[redirects]]
+  from = "/innovation/innovation-doesn-t-follow-rules"
+  to = "/innovation/2015"
+  status = 301
+
+[[redirects]]
+  from = "/learn/*"
+  to = "/academy/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/glossary"
+  to = "/academy"
+  status = 301
+
+[[redirects]]
+  from = "/hipaa-compliance"
+  to = "/guide/hipaa"
+  status = 301
+
+[[redirects]]
+  from = "/hitrust"
+  to = "/guide/hitrust"
+  status = 301
+
+[[redirects]]
+  from = "/fhir"
+  to = "/guide/fhir"
+  status = 301
+
+[[redirects]]
+  from = "/how-to-integrate-with-hospitals"
+  to = "/guide/how-to-integrate-with-hospitals"
+  status = 301
+
+[[redirects]]
+  from = "/total-cost-of-ownership-integration"
+  to = "/guide/total-cost-of-ownership-integration"
+  status = 301
+
+## External sites
+[[redirects]]
+  from = "/hipaa"
+  to = "https://hipaa.datica.com/?__hstc=7523757.4c5e7fa1d36095eeb0af397de0caa2a5.1517038092906.1521842973639.1521853230625.33&__hssc=7523757.21.1521853230625&__hsfp=1616476943"
+  status = 301
+
+[[redirects]]
+  from = "/policy"
+  to = "https://policy.datica.com/?__hstc=7523757.4c5e7fa1d36095eeb0af397de0caa2a5.1517038092906.1521842973639.1521853230625.33&__hssc=7523757.22.1521853230625&__hsfp=1616476943"
+  status = 301
+
+[[redirects]]
+  from = "/employees"
+  to = "/careers"
+  status = 301
+
+[[redirects]]
+  from = "/legal"
+  to = "https://legal.datica.com"
+  status = 301
+
+[[redirects]]
+  from = "/baa"
+  to = "https://training.datica.com/?__hstc=7523757.4c5e7fa1d36095eeb0af397de0caa2a5.1517038092906.1521842973639.1521853230625.33&__hssc=7523757.22.1521853230625&__hsfp=1616476943"
+  status = 301
+
+[[redirects]]
+  from = "/acceptable-use-policy"
+  to = "https://legal.datica.com/#catalyze-acceptable-use-policy"
+  status = 301
+
+## Purged blog posts
+[[redirects]]
+  from = "/blog/ebook-release-innovation-doesnt-follow-rules"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/catalyze-partners-with-salesforce-microsoft-azure"
+  to = "/datica-partners-with-salesforce-microsoft-azure"
+  status = 301
+
+[[redirects]]
+  from = "/blog/the-acme-of-insight-raj-sundaramurthy-catalyze-chief-product-officer"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/announcing-change-agent-catalyzes-medium-publication"
+  to = "/blog/announcing-change-agent-daticas-medium-publication"
+  status = 301
+
+[[redirects]]
+  from = "/blog/catalyze-continues-expanding-industry-support-and-recognition"
+  to = "/blog/datica-continues-expanding-industry-support-and-recognition"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-chief-operating-officer-deepens-epic-experience-at-catalyze"
+  to = "/blog/new-chief-operating-officer-deepens-epic-experience-at-datica"
+  status = 301
+
+[[redirects]]
+  from = "/blog/getting-started-with-apple-healthkit-part-1"
+  to = "/blog/what-does-healthkit-mean-for-healthcare/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/getting-started-with-apple-healthkit-part-2"
+  to = "/blog/what-does-healthkit-mean-for-healthcare/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/happy-holidays-from-catalyze"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/catalyze-ceo-to-present-at-stanford-medicine-x-conference"
+  to = "/blog/datica-ceo-to-present-at-stanford-medicine-x-conference"
+  status = 301
+
+[[redirects]]
+  from = "/blog/celebrate-patient-engagement-month-with-catalyze"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/catalyze-is-hitrust-certified"
+  to = "/blog/datica-is-hitrust-certified"
+  status = 301
+
+[[redirects]]
+  from = "/blog/new-press-release-formal-release-of-open-source-policies"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/invite-only-applications"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/8-28-14-release-notes"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/health-pitch-2014-fargo-nd"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/ios-sdk-version-300-released"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/javascript-sdk-released"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hipaagram-hipaa-compliant-app"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/a-simple-hipaa-compliant-web-application-using-the-catalyze-v2-api"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/building-a-hipaa-compliant-ios-app"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/how-not-to-get-your-healthcare-app-on-this-list"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/introducing-acls-and-groups"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/create-a-hipaa-compliant-mobile-application-with-ionic-and-the-catalyze-api"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/migrating-from-parse-to-catalyze"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/android-sdk-released"
+  to = "/blog"
+  status = 301
+
+## Old blog posts that made it to the engineering blog
+[[redirects]]
+  from = "/blog/the-need-for-a-backend-as-a-service-in-healthcare"
+  to = "https://engineering.datica.com/the-need-for-a-backend-as-a-service-in-healthcare.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/intro-to-secure-APIs"
+  to = "https://engineering.datica.com/intro-to-secure-APIs.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/addressing-the-heartbleed-vulnerability-the-catalyze-way"
+  to = "https://engineering.datica.com/addressing-the-heartbleed-vulnerability-the-catalyze-way.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/the-journey-to-a-docker-based-platform-as-a-service-part-1"
+  to = "https://engineering.datica.com/the-journey-to-a-docker-based-platform-as-a-service-part-1.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/mobile-backend-as-a-service-stack"
+  to = "https://engineering.datica.com/mobile-backend-as-a-service-stack.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/how-to-design-a-HIPAA-compliant-healthcare-api-part-1"
+  to = "https://engineering.datica.com/how-to-design-a-HIPAA-compliant-healthcare-api-part-1.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/how-to-design-a-HIPAA-compliant-healthcare-API-part-2"
+  to = "https://engineering.datica.com/how-to-design-a-HIPAA-compliant-healthcare-API-part-2.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/how-to-design-a-HIPAA-compliant-healthcare-API-part-3"
+  to = "https://engineering.datica.com/how-to-design-a-HIPAA-compliant-healthcare-API-part-3.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/advanced-querying-for-custom-classes"
+  to = "https://engineering.datica.com/advanced-querying-for-custom-classes.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/configuration-management-part-2-commanding-your-minions-with-salt"
+  to = "https://engineering.datica.com/configuration-management-part-2-commanding-your-minions-with-salt.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/VPNs-security-and-healthcare-integration"
+  to = "https://engineering.datica.com/VPNs-security-and-healthcare-integration.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/mirth-connect-apache-HTTPClient-rhino-and-multi-part-forms"
+  to = "https://engineering.datica.com/mirth-connect-apache-HTTPClient-rhino-and-multi-part-forms.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/configuration-management-on-the-catalyze-docker-paas"
+  to = "https://engineering.datica.com/configuration-management-on-the-catalyze-docker-paas.html"
+  status = 301
+
+## Just delete entirely? Old stuff?
+[[redirects]]
+  from = "/learn/whitepapers"
+  to = "/whitepapers"
+  status = 301
+
+[[redirects]]
+  from = "/whitepapers/technology-driven-trends-in-healtchare"
+  to = "/whitepapers/technology-driven-trends-in-health/"
+  status = 301
+
+[[redirects]]
+  from = "/learn/hipaa"
+  to = "/discover/hipaa-compliance"
+  status = 301
+
+[[redirects]]
+  from = "/learn/hl7/hl7-202-the-hl7-ack"
+  to = "/academy/hl7-202-the-hl7-ack-acknowledgement-message/"
+  status = 301
+
+[[redirects]]
+  from = "/learn/hl7"
+  to = "/academy"
+  status = 301
+
+[[redirects]]
+  from = "/blog/tags"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/archive"
+  to = "/blog/archives"
+  status = 301
+
+[[redirects]]
+  from = "/blog/how-to-design-a-hipaa-compliant-healthcare-api-part-2-1"
+  to = "/blog/how-to-design-a-hipaa-compliant-healthcare-api-part-$"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hl7-203-the-hl7-orm-order-entry-message"
+  to = "/academy/hl7-203-the-hl7-orm-order-entry-message/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/the-who-and-how-of-hipaa-enforcement"
+  to = "/academy/the-who-and-how-of-hipaa-enforcement/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hipaa-contingency-planning-disaster-recovery"
+  to = "/academy/hipaa-contingency-planning-disaster-recovery/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hipaa-auditing-and-logging"
+  to = "/academy/hipaa-auditing-and-logging/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hipaa-and-encryption"
+  to = "/academy/hipaa-and-encryption/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hl7-202-the-hl7-ack-acknowledgement-message"
+  to = "/academy/hl7-202-the-hl7-ack-acknowledgement-message/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/risk-assessments-and-management"
+  to = "/academy/risk-assessments-and-management/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/the-hipaa-privacy-rule"
+  to = "/academy/the-hipaa-privacy-rule"
+  status = 301
+
+[[redirects]]
+  from = "/blog/business-associates-agreements"
+  to = "/academy/business-associates-agreements/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hl7-201-the-admission-discharge-transfer"
+  to = "/academy/hl7-201-the-admission-discharge-transfer-adt-message/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hl7-102-anatomy-of-an-hl7-message"
+  to = "/academy/hl7-102-anatomy-of-an-hl7-message/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hl7-101-a-primer"
+  to = "/academy/hl7-101-a-primer/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/how-do-you-do-hipaa-training"
+  to = "/academy/how-do-you-do-hipaa-training/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hipaa-and-data-breaches"
+  to = "/academy/hipaa-and-data-breaches/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/the-hipaa-security-rule"
+  to = "/academy/the-hipaa-security-rule/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hipaa-101-a-primer"
+  to = "/academy/hipaa-101-a-primer/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/what-is-protected-health-information-or-phi"
+  to = "/academy/what-is-protected-health-information-or-phi/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/why-hipaa-is-not-pci"
+  to = "/academy/why-hipaa-is-not-pci/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/customizable-hipaa"
+  to = "/academy/customizable-hipaa/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hipaa-subcontractors-and-baas"
+  to = "/academy/hipaa-subcontractors-and-baas/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/engineering"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/founders"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/design"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/blog/what-does-it-take-to-be-100-hipaa-compliant"
+  to = "/blog/what-does-it-take-to-be-a-100-hipaa-compliant-cloud-company/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/how-long-do-you-need-to-retain-medical-records-under-hipaa"
+  to = "/blog/how-long-to-keep-medical-records-under-hipaa/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/top-5-things-you-find-in-an-ideal-business-associates-agreement"
+  to = "/blog/top-5-things-you-find-in-an-ideal-business-a$"
+  status = 301
+
+[[redirects]]
+  from = "/blog/the-importance-of-business-associates-agreements"
+  to = "/blog/the-importance-of-business-associate-agreements-baas/"
+  status = 301
+
+[[redirects]]
+  from = "/learn/business-associates-agreements"
+  to = "/academy/business-associate-agreements/"
+  status = 301
+
+[[redirects]]
+  from = "/learn/risk-assessments-and-management"
+  to = "/academy/hipaa-risk-assessment-and-management/"
+  status = 301
