@@ -18,11 +18,11 @@
 # Basic redirect rules
 [[redirects]]
   from = "/platform/integration"
-  to = "/discover/ehr-integrations"
+  to = "/platform/technology/#integration"
 
 [[redirects]]
   from = "/integration"
-  to = "/discover/ehr-integrations"
+  to = "/platform/technology/#integration"
 
 [[redirects]]
   from = "/*"
