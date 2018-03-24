@@ -39,11 +39,6 @@
   to = "/leadership"
   status = "301"
 
-# [[redirects]]
-#   from = "/press-releases/catalyze-delivers-hitrust-csf-certified-compliant-cloud-solutions-for-amazon-web-services-workloads"
-#   to = "/p$"
-#   status = "301"
-
 ## Support URLs
 [[redirects]]
   from = "support.catalyze.io"
@@ -448,7 +443,6 @@
   to = "https://engineering.datica.com/configuration-management-on-the-catalyze-docker-paas.html"
   status = "301"
 
-
 ## Just delete entirely? Old stuff?
 [[redirects]]
   from = "/learn/whitepapers"
@@ -634,4 +628,3 @@
   from = "/learn/risk-assessments-and-management"
   to = "/academy/hipaa-risk-assessment-and-management/"
   status = "301"
-
