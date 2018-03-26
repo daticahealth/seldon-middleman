@@ -56,7 +56,7 @@ configure :build do
     ignore 'assets/*'
     ignore 'assets/icons/inlined/*'
     ignore 'contentful_templates/glossary.html.erb'
-    config[:host] = 'https://datica.com'
+    config[:host] = 'https://www.datica.com'
     config[:host_label] = 'prod'
     # minify HTML
     activate :minify_html
@@ -64,7 +64,7 @@ configure :build do
     # set :build_dir, 'build/'
 end
 configure :production do
-    config[:host] = 'https://datica.com'
+    config[:host] = 'https://www.datica.com'
     config[:host_label] = 'prod'
     set :build_dir, 'build/'
 end
@@ -82,12 +82,12 @@ configure :test do
 end
 
 configure :static do
-    config[:host] = 'https://datica.com'
+    config[:host] = 'https://www.datica.com'
     config[:host_label] = 'static'
     set :build_dir, '../datica-build'
 end
 # Sitemap
-set :url_root, 'https://datica.com'
+set :url_root, 'https://www.datica.com'
 activate :search_engine_sitemap, default_priority: 0.5, default_change_frequency: "weekly"
 
 # All the contentful configs
