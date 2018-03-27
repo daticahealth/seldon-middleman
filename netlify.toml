@@ -24,11 +24,6 @@
   to = "/platform/technology/#integration"
 
 [[redirects]]
-  from = "/blog/2017-healthcare-trends-part-three-the-rise-and-fall-of-the-ehr"
-  to = "/blog/2017-healthcare-trends-part-three-the-rise-a$"
-  status = 301
-
-[[redirects]]
   from = "/about/mohan"
   to = "/leadership"
   status = 301
@@ -203,6 +198,11 @@
   status = 301
 
 [[redirects]]
+  from = "/compliance/hitrust"
+  to = "/platform/compliance/#compliance-hitrust"
+  status = 301
+
+[[redirects]]
   from = "/fhir"
   to = "/guide/fhir"
   status = 301
@@ -254,7 +254,7 @@
 
 [[redirects]]
   from = "/blog/catalyze-partners-with-salesforce-microsoft-azure"
-  to = "/datica-partners-with-salesforce-microsoft-azure"
+  to = "/blog/datica-partners-with-salesforce-microsoft-azure"
   status = 301
 
 [[redirects]]
