@@ -178,6 +178,11 @@
   status = 301
 
 [[redirects]]
+  from = "/*/mark-braunstein"
+  to = "/:splat/dr-mark-braunstein"
+  status = 301
+
+[[redirects]]
   from = "/learn/*"
   to = "/academy/:splat"
   status = 301
