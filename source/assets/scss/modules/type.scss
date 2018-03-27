@@ -74,7 +74,12 @@ blockquote {
 }
 code {
     font-size: 0.9em;
-    background-blend-mode: multiply;
+    // background-blend-mode: multiply;
+}
+.prettyprint {
+    padding: 1rem;
+    border-radius: $global-radius;
+    margin-bottom: 1.5rem;
 }
 li { // not sure why, this isn't getting rendered in foundation default type stuff
     line-height: $paragraph-lineheight; // * 0.9;

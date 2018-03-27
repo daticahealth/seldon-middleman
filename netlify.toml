@@ -133,6 +133,10 @@
   status = 301
 
 [[redirects]]
+  from = "/guides"
+  to = "/academy"
+
+[[redirects]]
   from = "/strategic-services"
   to = "/services"
   status = 301
@@ -466,7 +470,7 @@
 
 [[redirects]]
   from = "/learn/hl7"
-  to = "/academy"
+  to = "/discover/ehr-integrations"
   status = 301
 
 [[redirects]]
