@@ -69,6 +69,11 @@
   status = 301
 
 [[redirects]]
+  from = "/customer/va"
+  to = "/customer/veterans-affairs"
+  status = 301
+
+[[redirects]]
   from = "/solutions"
   to = "/services"
   status = 301
@@ -149,6 +154,11 @@
 
 [[redirects]]
   from = "/travis"
+  to = "/about/travis"
+  status = 301
+
+[[redirects]]
+  from = "/about/travis-good"
   to = "/about/travis"
   status = 301
 
@@ -589,32 +599,32 @@
 
 [[redirects]]
   from = "/blog/what-does-it-take-to-be-100-hipaa-compliant"
-  to = "/blog/what-does-it-take-to-be-a-100-hipaa-compliant-cloud-company/"
+  to = "/blog/what-does-it-take-to-be-a-100-hipaa-compliant-cloud-company"
   status = 301
 
 [[redirects]]
   from = "/blog/how-long-do-you-need-to-retain-medical-records-under-hipaa"
-  to = "/blog/how-long-to-keep-medical-records-under-hipaa/"
+  to = "/blog/how-long-to-keep-medical-records-under-hipaa"
   status = 301
 
 [[redirects]]
   from = "/blog/top-5-things-you-find-in-an-ideal-business-associates-agreement"
-  to = "/blog/top-5-things-you-find-in-an-ideal-business-a$"
+  to = "/blog/top-5-things-you-find-in-an-ideal-business-agreement"
   status = 301
 
 [[redirects]]
   from = "/blog/the-importance-of-business-associates-agreements"
-  to = "/blog/the-importance-of-business-associate-agreements-baas/"
+  to = "/blog/the-importance-of-business-associate-agreements-baas"
   status = 301
 
 [[redirects]]
   from = "/learn/business-associates-agreements"
-  to = "/academy/business-associate-agreements/"
+  to = "/academy/business-associate-agreements"
   status = 301
 
 [[redirects]]
   from = "/learn/risk-assessments-and-management"
-  to = "/academy/hipaa-risk-assessment-and-management/"
+  to = "/academy/hipaa-risk-assessment-and-management"
   status = 301
 
 [[redirects]]
