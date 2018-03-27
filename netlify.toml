@@ -15,7 +15,6 @@
     strict-transport-security = "max-age=31536000; includeSubDomains"
     # Content-Security-Policy-Report-Only = "default-src https: 'unsafe-inline' 'unsafe-eval'"
 
-# Basic redirect rules
 [[redirects]]
   from = "/platform/integration"
   to = "/platform/technology/#integration"
@@ -23,11 +22,6 @@
 [[redirects]]
   from = "/integration"
   to = "/platform/technology/#integration"
-
-[[redirects]]
-  from = "/*"
-  to = "/404/index.html"
-  status = 404
 
 [[redirects]]
   from = "/blog/2017-healthcare-trends-part-three-the-rise-and-fall-of-the-ehr"
@@ -39,7 +33,6 @@
   to = "/leadership"
   status = 301
 
-## Support URLs
 [[redirects]]
   from = "support.catalyze.io"
   to = "https://help.datica.com/hc/en-us"
@@ -50,7 +43,6 @@
   to = "https://help.datica.com/hc/en-us"
   status = 301
 
-## New URLs
 [[redirects]]
   from = "/success.html"
   to = "/activate/success"
@@ -106,7 +98,6 @@
   to = "/contact"
   status = 301
 
-## Compliant Cloud
 [[redirects]]
   from = "/stratum"
   to = "/platform"
@@ -133,17 +124,19 @@
   status = 301
 
 [[redirects]]
+  from = "/guides"
+  to = "/academy"
+
+[[redirects]]
   from = "/strategic-services"
   to = "/services"
   status = 301
 
-## Managed Integration
 [[redirects]]
   from = "/redpoint"
   to = "/platform/technology/#integration"
   status = 301
 
-## Team
 [[redirects]]
   from = "/our-story"
   to = "/about"
@@ -169,7 +162,6 @@
   to = "/about/mohan"
   status = 301
 
-### Resources
 [[redirects]]
   from = "/innovators"
   to = "/innovation"
@@ -215,7 +207,6 @@
   to = "/guide/total-cost-of-ownership-integration"
   status = 301
 
-## External sites
 [[redirects]]
   from = "/hipaa"
   to = "https://hipaa.datica.com/?__hstc=7523757.4c5e7fa1d36095eeb0af397de0caa2a5.1517038092906.1521842973639.1521853230625.33&__hssc=7523757.21.1521853230625&__hsfp=1616476943"
@@ -246,7 +237,6 @@
   to = "https://legal.datica.com/#catalyze-acceptable-use-policy"
   status = 301
 
-## Purged blog posts
 [[redirects]]
   from = "/blog/ebook-release-innovation-doesnt-follow-rules"
   to = "/blog"
@@ -377,7 +367,6 @@
   to = "/blog"
   status = 301
 
-## Old blog posts that made it to the engineering blog
 [[redirects]]
   from = "/blog/the-need-for-a-backend-as-a-service-in-healthcare"
   to = "https://engineering.datica.com/the-need-for-a-backend-as-a-service-in-healthcare.html"
@@ -443,7 +432,6 @@
   to = "https://engineering.datica.com/configuration-management-on-the-catalyze-docker-paas.html"
   status = 301
 
-## Just delete entirely? Old stuff?
 [[redirects]]
   from = "/learn/whitepapers"
   to = "/whitepapers"
@@ -466,7 +454,7 @@
 
 [[redirects]]
   from = "/learn/hl7"
-  to = "/academy"
+  to = "/discover/ehr-integrations"
   status = 301
 
 [[redirects]]
@@ -628,3 +616,9 @@
   from = "/learn/risk-assessments-and-management"
   to = "/academy/hipaa-risk-assessment-and-management/"
   status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/404/index.html"
+  status = 404
+  force = false
