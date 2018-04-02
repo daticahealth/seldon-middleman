@@ -632,11 +632,6 @@
   status = 301
 
 [[redirects]]
-  from = "/about/*"
-  to = "/leadership"
-  status = 404
-
-[[redirects]]
   from = "/*"
   to = "/404/index.html"
   status = 404
