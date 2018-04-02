@@ -634,6 +634,7 @@
 [[redirects]]
   from = "/about/*"
   to = "/leadership"
+  force = true
   status = 404
 
 [[redirects]]
