@@ -24,11 +24,6 @@
   to = "/platform/technology/#integration"
 
 [[redirects]]
-  from = "/about/mohan"
-  to = "/leadership"
-  status = 301
-
-[[redirects]]
   from = "support.catalyze.io"
   to = "https://help.datica.com/hc/en-us"
   status = 301
@@ -89,11 +84,6 @@
   status = 301
 
 [[redirects]]
-  from = "/about-us"
-  to = "/about"
-  status = 301
-
-[[redirects]]
   from = "/contact-us"
   to = "/contact"
   status = 301
@@ -138,13 +128,22 @@
   status = 301
 
 [[redirects]]
-  from = "/our-story"
+  from = "/team/*"
+  to = "/about/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/leadership/*"
+  to = "/about/:splat"
+
+[[redirects]]
+  from = "/about-us"
   to = "/about"
   status = 301
 
 [[redirects]]
-  from = "/team/*"
-  to = "/about/:splat"
+  from = "/our-story"
+  to = "/about"
   status = 301
 
 [[redirects]]
