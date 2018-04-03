@@ -185,6 +185,9 @@ blockquote + .media-object, .blockquote-info { // line person/info up with quote
     &[data-stack-breakpoint='small'] { // perhaps paradoxical, but bp value here means, "below this bp, stack vert"
         @include breakpoint (medium) { // horizontal stack medium-up
             @include flex-direction(row);
+            .person-title {
+                max-width: 13em; // in horiz stack, these get too wide. Approx 7-8 words
+            }
         }
     }
     &[data-stack-breakpoint='medium'] { // perhaps paradoxical, but bp value here means, "below this bp, stack vert"
