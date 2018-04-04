@@ -73,13 +73,17 @@ end
 </section>
 <section class="section-article container-color--blue-alt">
     <div class="row align-center">
-        <div class="columns small-12 medium-7 large-6 large-order-2">
-            <% if p.has_key?("form_id") %>
-                <div class="callout callout--large drop">
+        <div class="columns small-12 medium-7 large-6 large-order-2 form-embed">
+            <div class="callout callout--large drop">
+                <% if p.has_key?("related_form") %>
+                    <%= stylesheet_link_tag "views/forms-inline.css" %>
+                    <h3 class="headline-4 text-center group"><%= p.title %></h3>
+                    <%= p.related_form.custom_form %>
+                <% elsif p.has_key?("form_id") %>
                     <h3 class="headline-4 text-center group">Get your copy of the guide</h3>
                     <%= partial("partials/snippets/form-hubspot", :locals => { :form_id => p["form_id"] }) %>
-                </div>
-            <% end %>
+                <% end %>
+            </div>
         </div>
         <div class="columns small-12 medium-5 large-6 large-order-1">
             <div class="callout callout--dark-alpha">
