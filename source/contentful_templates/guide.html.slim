@@ -67,6 +67,5 @@ section.section-article--med.container-gray-11
         #guide-form.columns.small-12.medium-large-6.xlarge-4
             .callout.drop.form-embed
                 - if p.has_key?("related_form")
-                    = stylesheet_link_tag "views/forms-inline.css"
                     h3.headline-4.text-center.group Get Your #{p.related_form.title}
                     = p.related_form.custom_form
