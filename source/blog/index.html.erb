@@ -3,12 +3,16 @@ title: "Thoughts from the team behind Healthcare's trusted cloud | The Datica Bl
 summary: "A collection of blog articles from Datica team members"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
-date: "January 1, 2017"
 share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
 layout: basic
 customCSS: "blog"
 ---
-<% sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
+<% 
+today = DateTime.now
+current_page.data.date = today.strftime('%B %-d, %Y')
+# today = time.inspect
+sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+%>
 <div class="container-color--dark-alt">
     <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
     <section class="custom-sticky custom-sticky--dark show-for-large">
