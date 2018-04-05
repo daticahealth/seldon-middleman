@@ -20,15 +20,19 @@ ogType: article
     - current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
 - else
     - current_page.data.date = "January 1, 2017"
+- if p.has_key?("image_thumb")
+    - pos = "center"
+    - offset = "large-offset-0"
+- else
+    - pos = "left"
+    - offset = "large-offset-1"
 
 section.container-gray-2#top
-    .container-color--tint-20.faded-max
+    .container-color--tint-20.faded-max.group
         = partial "partials/snippets/header", :locals => { :style => "light" }
-    .row
-        .columns.small-12.hide-for-large
-            = partial "partials/snippets/button", :locals => { :label => "Get your free guide", :url => "#guide-form", :button_classes => "button success", :icon => "icon-download", :icon_color => "black" }
-    .row.align-middle.align-center
-        .columns.small-12.large-7
+    .row.align-middle.align-#{pos}
+        .columns.small-12.medium-8.large-6.group.medium-order-2
+            = partial "partials/snippets/button", :locals => { :label => "Get your free guide", :url => "#guide-form", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
             .headline-5.subhead--spaced.faded.show-for-large Datica Guides
             h1.headline-3.text-strong
                 - if p.has_key?("subhead")
@@ -39,23 +43,22 @@ section.container-gray-2#top
                 / .content-dynamic
                 = Kramdown::Document.new(p["desc"]).to_html
         - if p.has_key?("image_thumb")
-            .columns.small-12.large-4
-                img.text-center(data-interchange="[#{p.image_thumb.url}?w=300, small], [#{p.image_thumb.url}?w=500, medium]" alt="Datica Guide: #{p.title}")
-section.section-article.container-gray-11
+            .columns.small-12.medium-4.large-4.text-center.medium-order-1
+                img.text-center.product-thumb(data-interchange="[#{p.image_thumb.url}?w=400, small], [#{p.image_thumb.url}?w=500, medium]" alt="Datica Guide: #{p.title}")
+section.section-article--med.container-gray-11
     .row.align-center
-        .columns.small-12.large-7
+        .columns.small-12.medium-large-6.large-6
             - if p.has_key?("guide_text")
                 article.group
                     = Kramdown::Document.new(p["guide_text"]).to_html
             - if p.has_key?("authors")
-                aside
+                aside.group
                     .subhead--spaced.faded.headline-5.group--sm With expert authors
                     - p["authors"].each do | author |
                         p
                             = partial("partials/snippets/person", :locals => { :p => author })
-
-        .columns.small-12.large-4
-            #guide-form.callout.callout--large.drop.form-embed
+        .columns.small-12.medium-large-6.large-4
+            #guide-form.callout.drop.form-embed
                 - if p.has_key?("related_form")
                     = stylesheet_link_tag "views/forms-inline.css"
                     h3.headline-4.text-center.group Get Your #{p.related_form.title}

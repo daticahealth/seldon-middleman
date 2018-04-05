@@ -1,3 +1,18 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../mixins/functions';
+
 article.content-dynamic {
     font-size: larger;
+}
+.form-embed {
+    // @include breakpoint(medium) {
+    //     margin-top: -4rem;
+    // }
+    @include breakpoint(large) {
+        margin-top: -7rem;
+    }
+}
+.product-thumb {
+
 }
