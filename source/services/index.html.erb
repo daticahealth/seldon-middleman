@@ -15,7 +15,7 @@ priority: "0.9"
 ---
 <% sorted_services = data.site.services.to_a.sort_by{ |id, service| service['sort_order'] } %>
 <div class="container-color--dark-alt">
-    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+    <%= partial "partials/head/header", :locals => { :style => "light" } %>
 </div>
 <section id="benefits" class="section-article" data-magellan-target="service_benefits">
     <div class="row align-center">

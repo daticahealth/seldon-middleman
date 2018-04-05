@@ -17,7 +17,7 @@
     <body class="<%= page_classes %>">
         <%#= partial "partials/snippets/alert-ribbon" %>
         <a name="top"></a>
-        <%= partial "partials/snippets/header", :locals => { :style => "dark" } %>
+        <%= partial "partials/head/header", :locals => { :style => "dark" } %>
         <%= yield %>
         <%= partial "partials/snippets/footer" %>
         <%= partial "partials/scripts/footer" %>

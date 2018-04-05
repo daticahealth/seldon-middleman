@@ -17,6 +17,12 @@
         }
     }
 }
+.faded-max {
+    @extend .faded;
+    @include breakpoint (large) {
+        @include opacity(0.1);
+    }
+}
 .drop { // drop shadows. Tried to use mixin & had issues with sass functions.
     // default - fat bluesish shadow
     @include shadow-anarchy(0 rem-calc(6px) rem-calc(17px) 0 hsla(220, 90%, 13%, 0.2));

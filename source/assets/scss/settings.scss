@@ -152,9 +152,10 @@ $color_talk-alt:         #7A848D;
 $color_light:            $gray-10; //hsl(204, 29%, 77%);
 $color_light-alt:        $gray-12; //hsl(204, 18%, 94%);
 $color_border:           lighten(#B3C8D6, 10%);
-$color_green:            hsl(150, 85%, 39%); // hsl(160, 100%, 34%);
+$color_green:            hsl(152, 79%, 39%); //hsl(150, 85%, 39%); // hsl(160, 100%, 34%);
 $color_shadow:           #DCE4E9;
 $color_highlight-yellow: #FEDB45;
+$color_red:              hsl(349, 72%, 39%); // cool darker red
 // named color lists
 $color-slugs: (
     white,
@@ -200,9 +201,9 @@ $foundation-palette:(
   tertiary:  white,
   dark:      $gray-2,
   info:      $gray-7,
-  success:   $color_prime-alt,
+  success:   $color_green,
   warning:   $color_prime-alt,
-  alert:     $color_prime-alt
+  alert:     $color_red
 );
 
 $badge-palette: $foundation-palette;
@@ -628,7 +629,7 @@ $input-prefix-padding: 1rem;
 $form-label-color: $black;
 $form-label-font-size: rem-calc(14);
 $form-label-font-weight: $global-weight-normal;
-$form-label-line-height: 1.8;
+$form-label-line-height: 1.4;
 $select-background: $white;
 $select-triangle-color: $dark-gray;
 $select-radius: $global-radius;

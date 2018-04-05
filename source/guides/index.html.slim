@@ -1,0 +1,38 @@
+---
+title: "Datica Guides"
+summary: "Authoritative Guides Written By Industry Experts"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration, GDPR"
+share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+layout: basic
+---
+ruby:
+    today = DateTime.now
+    current_page.data.date = today.strftime('%B %-d, %Y')
+
+- sorted_entries = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] }
+.container-gray-11
+    section#top
+        / .faded-max.group
+        = partial "partials/head/header", :locals => { :style => "dark" }
+    section.section-article
+        .row.align-center
+            .columns.small-12.large-6.text-center.group
+                h2.headline-3 Datica Guides
+                p.lead Authoritative Guides Written By Industry Experts
+
+        .row.align-center
+            .columns.small-12.large-8
+                - sorted_entries.each do | id, guide_entry |
+                    .row.group
+                        .columns.small-8
+                            .h2.headline-4
+                                a(href="/guide/#{guide_entry["slug"]}" title="Get your free guide") = guide_entry["title"]
+                            = Kramdown::Document.new(guide_entry["summary"]).to_html
+                            = partial "partials/snippets/button", :locals => { :label => "Get your free guide", :url => "/guide/#{guide_entry["slug"]}", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
+                        - if guide_entry.has_key?("image_thumb")
+                            .columns.small-4
+                                a href="/guide/#{guide_entry["slug"]}" title=("Get your free guide")
+                                    img(src="#{guide_entry.image_thumb.url}?h=200" alt="#{guide_entry.title}")
+
+                = partial "partials/snippets/button", :locals => { :label => "Learn more at the Datica Academy", :url => "/academy", :button_classes => "button", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "white" }

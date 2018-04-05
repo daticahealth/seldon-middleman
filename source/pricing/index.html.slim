@@ -12,7 +12,7 @@ priority: "1.0"
 .strip-bright.strip-bright--small
 
 .container-color--dark.container-image--center(data-interchange="[/public/img/art/pricing-v2-bg.svg, medium]")
-  = partial "partials/snippets/header", :locals => { :style => "light" }
+  = partial "partials/head/header", :locals => { :style => "light" }
   section#pricing-tiers.section-article
     .row.align-center
       .columns.small-12
@@ -152,18 +152,18 @@ section#pricing-faq.section-article
         - data.views.faqs.pricing.each_with_index do |item, index|
           dt id="platform-tech-question-#{index}" = item["question"]
           dd= Kramdown::Document.new(item["answer"]).to_html
-- data.views.pricing.plan_details.each_with_index do |content, id|
-  .medium.reveal data-options=("closeOnEsc: true; animationSpeed: 150; animationIn: bounce-in") data-reveal="" id="tier#{content['slug']}Modal"
-    .card
-      .card-divider.container-gray-11.text-center
-        img.inject-me.svg-color--black.icon-size--xlarge src="#{content["icon"]}" /
-        h3.headline-4.text-light
-          | I want to
-          strong= content["title"]
-      .card-section.content-dynamic
-        = Kramdown::Document.new(content["body"]).to_html
-      .card-divider.container-gray-3.text-center
-        h4.headline-4.text-light.nomargin= content["primary_label"]
-        /! <a href="<haml_loud> content[&quot;primary_url&quot;] </haml_loud>" class="button button--neat nomargin"><haml_loud> content[&quot;primary_label&quot;] </haml_loud> <i class="fa fa-angle-right"></i></a
-    button.close-button aria-label=("Close panel") data-close="" type="button"
-      span aria-hidden="true"  ×
+/ - data.views.pricing.plan_details.each_with_index do |content, id|
+/   .medium.reveal data-options=("closeOnEsc: true; animationSpeed: 150; animationIn: bounce-in") data-reveal="" id="tier#{content['slug']}Modal"
+/     .card
+/       .card-divider.container-gray-11.text-center
+/         img.inject-me.svg-color--black.icon-size--xlarge src="#{content["icon"]}" /
+/         h3.headline-4.text-light
+/           | I want to
+/           strong= content["title"]
+/       .card-section.content-dynamic
+/         = Kramdown::Document.new(content["body"]).to_html
+/       .card-divider.container-gray-3.text-center
+/         h4.headline-4.text-light.nomargin= content["primary_label"]
+/         /! <a href="<haml_loud> content[&quot;primary_url&quot;] </haml_loud>" class="button button--neat nomargin"><haml_loud> content[&quot;primary_label&quot;] </haml_loud> <i class="fa fa-angle-right"></i></a
+/     button.close-button aria-label=("Close panel") data-close="" type="button"
+/       span aria-hidden="true"  ×
