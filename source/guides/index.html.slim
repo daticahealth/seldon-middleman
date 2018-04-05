@@ -27,9 +27,12 @@ ruby:
                     .row.group
                         .columns.small-8
                             .h2.headline-4
-                                a href="/guide/#{guide_entry["slug"]}" title=("Get your free guide") = guide_entry["title"]
+                                a(href="/guide/#{guide_entry["slug"]}" title="Get your free guide") = guide_entry["title"]
                             = Kramdown::Document.new(guide_entry["summary"]).to_html
                             = partial "partials/snippets/button", :locals => { :label => "Get your free guide", :url => "/guide/#{guide_entry["slug"]}", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
                         - if guide_entry.has_key?("image_thumb")
                             .columns.small-4
-                                img(src="#{guide_entry.image_thumb.url}?h=200" alt="#{guide_entry.title}")
+                                a href="/guide/#{guide_entry["slug"]}" title=("Get your free guide")
+                                    img(src="#{guide_entry.image_thumb.url}?h=200" alt="#{guide_entry.title}")
+
+                = partial "partials/snippets/button", :locals => { :label => "Learn more at the Datica Academy", :url => "/academy", :button_classes => "button", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "white" }
