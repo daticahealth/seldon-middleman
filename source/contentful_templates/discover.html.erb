@@ -27,7 +27,7 @@ end
 %>
 <div class="discover--page container-image--fixed" data-interchange="[<%= p["featured_image"]["url"] %>?fit=thumb&w=800&h=800&q=40, small], [<%= p["featured_image"]["url"] %>?w=1200&q=50, medium], [<%= p["featured_image"]["url"] %>?w=2000&q=50, large]">
     <div class="container-color--white drop">
-        <%= partial "partials/snippets/header", :locals => { :style => "dark" } %>
+        <%= partial "partials/head/header", :locals => { :style => "dark" } %>
     </div>
     <div id="discoverTop" class="show-for-medium-large" data-sticky-container>
         <div class="sticky sticky-nav container-color--white drop text-center" id="pageNav" data-sticky data-margin-top="0" style="width:100%;" data-margin-bottom="0" data-top-anchor="discoverTop" data-btm-anchor="ctaBottom:bottom" data-animation-duration="250" data-active-class="active" data-sticky-on="medium">

@@ -14,7 +14,7 @@ current_page.data.date = today.strftime('%B %-d, %Y')
 sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
 %>
 <div class="container-color--dark-alt">
-    <%= partial "partials/snippets/header", :locals => { :style => "light" } %>
+    <%= partial "partials/head/header", :locals => { :style => "light" } %>
     <section class="custom-sticky custom-sticky--dark show-for-large">
         <div class="row">
             <div class="columns small-12 medium-12">

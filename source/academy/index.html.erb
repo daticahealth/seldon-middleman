@@ -13,7 +13,7 @@ customJS: "/public/js/academy.js"
 today = DateTime.now
 current_page.data.date = today.strftime('%B %-d, %Y')
 %>
-<%= partial "partials/snippets/header", :locals => { :style => "dark" } %>
+<%= partial "partials/head/header", :locals => { :style => "dark" } %>
 <section class="section-article">
     <div class="row align-center">
         <div class="columns small-12 medium-10 large-8 text-center group">
