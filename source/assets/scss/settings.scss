@@ -152,7 +152,7 @@ $color_talk-alt:         #7A848D;
 $color_light:            $gray-10; //hsl(204, 29%, 77%);
 $color_light-alt:        $gray-12; //hsl(204, 18%, 94%);
 $color_border:           lighten(#B3C8D6, 10%);
-$color_green:            hsl(150, 85%, 39%); // hsl(160, 100%, 34%);
+$color_green:            hsl(152, 79%, 39%); //hsl(150, 85%, 39%); // hsl(160, 100%, 34%);
 $color_shadow:           #DCE4E9;
 $color_highlight-yellow: #FEDB45;
 // named color lists
@@ -200,7 +200,7 @@ $foundation-palette:(
   tertiary:  white,
   dark:      $gray-2,
   info:      $gray-7,
-  success:   $color_prime-alt,
+  success:   $color_green,
   warning:   $color_prime-alt,
   alert:     $color_prime-alt
 );
