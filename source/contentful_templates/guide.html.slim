@@ -7,9 +7,6 @@ ruby:
     p = locals[:item]
     current_page.data.title = p["title"] + " | Datica Guide"
     current_page.data.summary = safe_summary(p.summary)
-    if p.has_key?("featured_image")
-        current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
-    end
     if p.has_key?("tags")
         current_page.data.tags = get_tag_list(p["tags"])
     else
@@ -25,6 +22,13 @@ ruby:
     else
         today = DateTime.now
         current_page.data.date = today.strftime('%B %-d, %Y')
+    end
+    if p.has_key?("share_image")
+        current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_size_small
+    elsif p.has_key?("image_thumb")
+        current_page.data.share_image = cf_asset_protocol + p["image_thumb"]["url"] + image_size_small
+    else
+        current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/NL2SgI83KesMS86cWO44y/e908972bb9193eec594b639881e25e6f/academy-share-default.jpg" + image_size_small
     end
     if p.has_key?("image_thumb")
         row_align = "align-center"
