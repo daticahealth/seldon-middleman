@@ -25,12 +25,19 @@ ruby:
     else
         current_page.data.date = "January 1, 2017"
     end
+    if p.has_key?("image_thumb")
+        row_align = "align-center"
+        col_offset = nil
+    else
+        row_align = "align-left"
+        col_offset = "large-offset-1"
+    end
 
 section.container-gray-2#top
     .container-color--tint-20.faded-max.group
         = partial "partials/snippets/header", :locals => { :style => "light" }
-    .row.align-middle.align-center
-        .columns.small-12.medium-8.large-6.group.medium-order-2
+    .row.align-middle(class=row_align)
+        .columns.small-12.medium-8.large-6.group.medium-order-2(class=col_offset)
             = partial "partials/snippets/button", :locals => { :label => "Get your free guide", :url => "#guide-form", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
             .headline-5.subhead--spaced.faded.show-for-large Datica Guides
             h1.headline-3.text-strong
@@ -41,8 +48,8 @@ section.container-gray-2#top
             - if p.has_key?("desc")
                 / .content-dynamic
                 = Kramdown::Document.new(p["desc"]).to_html
-        .columns.small-12.medium-4.large-4.text-center.medium-order-1
-            - if p.has_key?("image_thumb")
+        - if p.has_key?("image_thumb")
+            .columns.small-12.medium-4.large-4.text-center.medium-order-1
                 img.text-center.product-thumb(data-interchange="[#{p.image_thumb.url}?w=400, small], [#{p.image_thumb.url}?w=500, medium]" alt="Datica Guide: #{p.title}")
 section.section-article--med.container-gray-11
     .row.align-center
@@ -56,8 +63,8 @@ section.section-article--med.container-gray-11
                     - p["authors"].each do | author |
                         p
                             = partial("partials/snippets/person", :locals => { :p => author })
-        .columns.small-12.medium-large-6.large-4
-            #guide-form.callout.drop.form-embed
+        #guide-form.columns.small-12.medium-large-6.large-4
+            .callout.drop.form-embed
                 - if p.has_key?("related_form")
                     = stylesheet_link_tag "views/forms-inline.css"
                     h3.headline-4.text-center.group Get Your #{p.related_form.title}
