@@ -135,9 +135,12 @@
             @include button-expand(false);
         }
     }
-    // &.success { // $color_green is a bit dark
-    //     color: white;
-    // }
+    &.success { // $color_green is a bit dark
+        // color: white;
+        &:hover, &:active, &:focus {
+            background-color: scale-color($success_color, $lightness: 15%);
+        }
+    }
     // &.icon-inline { // target svg icon
 
     // }

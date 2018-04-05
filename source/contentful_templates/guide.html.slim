@@ -3,34 +3,33 @@ layout: basic
 customCSS: guide
 ogType: article
 ---
-- p = locals[:item]
-- current_page.data.title = p["title"] + " | Datica Guide"
-- current_page.data.summary = safe_summary(p.summary)
-- if p.has_key?("featured_image")
-    - current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
-- if p.has_key?("tags")
-    - current_page.data.tags = get_tag_list(p["tags"])
-- else
-    - current_page.data.tags = "healthcare, blog, IT"
-- if p.has_key?("author")
-    - current_page.data.author = p["author"]["fullname"]
-- else
-    - current_page.data.author = "Datica, Inc."
-- if p.has_key?("pub_date")
-    - current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
-- else
-    - current_page.data.date = "January 1, 2017"
-- if p.has_key?("image_thumb")
-    - pos = "center"
-    - offset = "large-offset-0"
-- else
-    - pos = "left"
-    - offset = "large-offset-1"
+ruby:
+    p = locals[:item]
+    current_page.data.title = p["title"] + " | Datica Guide"
+    current_page.data.summary = safe_summary(p.summary)
+    if p.has_key?("featured_image")
+        current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
+    end
+    if p.has_key?("tags")
+        current_page.data.tags = get_tag_list(p["tags"])
+    else
+        current_page.data.tags = "healthcare, blog, IT"
+    end
+    if p.has_key?("author")
+        current_page.data.author = p["author"]["fullname"]
+    else
+        current_page.data.author = "Datica, Inc."
+    end
+    if p.has_key?("pub_date")
+        current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
+    else
+        current_page.data.date = "January 1, 2017"
+    end
 
 section.container-gray-2#top
     .container-color--tint-20.faded-max.group
         = partial "partials/snippets/header", :locals => { :style => "light" }
-    .row.align-middle.align-#{pos}
+    .row.align-middle.align-center
         .columns.small-12.medium-8.large-6.group.medium-order-2
             = partial "partials/snippets/button", :locals => { :label => "Get your free guide", :url => "#guide-form", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
             .headline-5.subhead--spaced.faded.show-for-large Datica Guides
@@ -42,12 +41,12 @@ section.container-gray-2#top
             - if p.has_key?("desc")
                 / .content-dynamic
                 = Kramdown::Document.new(p["desc"]).to_html
-        - if p.has_key?("image_thumb")
-            .columns.small-12.medium-4.large-4.text-center.medium-order-1
+        .columns.small-12.medium-4.large-4.text-center.medium-order-1
+            - if p.has_key?("image_thumb")
                 img.text-center.product-thumb(data-interchange="[#{p.image_thumb.url}?w=400, small], [#{p.image_thumb.url}?w=500, medium]" alt="Datica Guide: #{p.title}")
 section.section-article--med.container-gray-11
     .row.align-center
-        .columns.small-12.medium-large-6.large-6
+        .columns.small-12.medium-large-6.large-6.group--2x
             - if p.has_key?("guide_text")
                 article.group
                     = Kramdown::Document.new(p["guide_text"]).to_html
