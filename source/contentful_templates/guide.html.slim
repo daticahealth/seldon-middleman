@@ -21,39 +21,39 @@ ogType: article
 - else
     - current_page.data.date = "January 1, 2017"
 
-section.container-gray-2
+section.container-gray-2#top
+    .container-color--tint-20.faded-max
+        = partial "partials/snippets/header", :locals => { :style => "light" }
     .row
         .columns.small-12.hide-for-large
             = partial "partials/snippets/button", :locals => { :label => "Get your free guide", :url => "#guide-form", :button_classes => "button success", :icon => "icon-download", :icon_color => "black" }
-    .row
-        .columns.small-12.large-8
+    .row.align-middle.align-center
+        .columns.small-12.large-7
             .headline-5.subhead--spaced.faded.show-for-large Datica Guides
-            h1.headline-2
+            h1.headline-3.text-strong
                 - if p.has_key?("subhead")
                     = p.subhead
                 - else
                     = p.title
             - if p.has_key?("desc")
-                .content-dynamic
-                    = Kramdown::Document.new(p["desc"]).to_html
+                / .content-dynamic
+                = Kramdown::Document.new(p["desc"]).to_html
         - if p.has_key?("image_thumb")
             .columns.small-12.large-4
                 img.text-center(data-interchange="[#{p.image_thumb.url}?w=300, small], [#{p.image_thumb.url}?w=500, medium]" alt="Datica Guide: #{p.title}")
-section.section-article.container-gray-12
-    .row
-        .columns.small-12.large-8
+section.section-article.container-gray-11
+    .row.align-center
+        .columns.small-12.large-7
             - if p.has_key?("guide_text")
-                article.content-dynamic
+                article.group
                     = Kramdown::Document.new(p["guide_text"]).to_html
-        - if p.has_key?("authors")
-            aside.columns.small-12.medium-5.large-4.section--sidebar
-                .callout.drop
-                    .subhead--spaced.faded.headline-5.text-center.group--sm With expert authors
+            - if p.has_key?("authors")
+                aside
+                    .subhead--spaced.faded.headline-5.group--sm With expert authors
                     - p["authors"].each do | author |
-                        p= author.fullname
-                            / = partial("partials/snippets/person", :locals => { :p => author })
+                        p
+                            = partial("partials/snippets/person", :locals => { :p => author })
 
-    .row
         .columns.small-12.large-4
             #guide-form.callout.callout--large.drop.form-embed
                 - if p.has_key?("related_form")
