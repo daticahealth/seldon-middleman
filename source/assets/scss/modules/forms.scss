@@ -25,11 +25,11 @@ form, input {
     border-bottom: rem-calc(1px) solid $color_border;
 }
 label{
-    font-size: 100%;
-    font-weight: $font-weight-mid;
-    color: $color_deep;
-    margin: 0;
-    padding: 0 0 rem-calc(10px) 0;
+    // font-size: 100%;
+    // font-weight: $font-weight-light;
+    // color: $gray-4;
+    // margin: 0;
+    padding-bottom: rem-calc(4px);
 }
 .contact-us-form-block{
     .callout{

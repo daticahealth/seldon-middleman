@@ -9,3 +9,8 @@
 	font-weight: bold;
 	padding: 11px 18px;
 }
+.hs-error-msgs li label {
+	font-style: italic;
+	color: darken($alert_color, 5%);
+	margin-bottom: 1.2rem;
+}
