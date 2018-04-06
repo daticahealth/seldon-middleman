@@ -4,154 +4,77 @@ summary: "Choose a package to fit your needs. Scaling is predictable and self-se
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 date: "January 1, 2017"
-share_image: "https://images.ctfassets.net/189dvqdsjh46/80SDxxPlIsygQUCWOowSS/cd68f00dc5c3ef7942a24af04b94c9b2/cta-free-trial-mts.jpg"
+share_image: "https://images.ctfassets.net/189dvqdsjh46/80SDxxPlIsygQUCWOowSS/789e2f55d9d2a10b3a0887ef8536f7c0/cta-schedule-demo.jpg"
 customCSS: "pricing"
 layout: "basic"
 priority: "1.0"
 ---
 .strip-bright.strip-bright--small
+.container-color--gray-light
+  .container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")
+    = partial "partials/head/header", :locals => { :style => "dark" }
+    section#pricing-tiers.section-article
+      .row.align-center.group
+        .columns.small-12.large-9.text-center
+          h1.headline-2 Plans & Platform Options
+          p.lead Infrastructure at cost, with compliance built in. Our Datica Experts will help you find the features and services to fit your needs.
+      .row.align-center
+        .columns.small-12.medium-10.large-7
+          .card.pad.drop
+            .card-section
+              h4.headline-5 
+                = inline_svg("small/icon-ui-checkmark", class: "icon-inline icon-left svg-color--green")
+                | Datica Platform Subscription
+              p A Datica Platform subscription is comprised of a <em>Licensing</em> and a <em>Continuous Compliance Management</em> Fee.
+              h4.headline-5 
+                = inline_svg("small/icon-ui-checkmark", class: "icon-inline icon-left svg-color--green") 
+                | Deployment Models
+              p We can deploy a Kubernetes cluster into your cloud account, or Datica's cloud. We give you the flexibility to decide how much, or how little you want to manage.
+              h4.headline-5 
+                = inline_svg("small/icon-ui-checkmark", class: "icon-inline icon-left svg-color--green") 
+                | Support
+              p All customers receive basic ticket support with their Platform subscription. We also offer premium support to enterprise customers.
+              h4.headline-5 
+                = inline_svg("small/icon-plus-circle", class: "icon-inline icon-left svg-color--blue")
+                / span.text--blue + 
+                | Add-ons
+              p We're dedicated to giving you the flexibility you need, while still providing the highest level of compliance available on the market. With add-ons, Datica can make any cloud native service compliant. Additionally, our industry-leading approach to EHR integration includes an HA Mirth Connect Environment.
+              h4.headline-5 
+                = inline_svg("small/icon-plus-circle", class: "icon-inline icon-left svg-color--blue")
+                / span.text--blue + 
+                | Professional Services
+              p Rely on Datica experts for compliance, auditing, and technical developer operations needs. Datica offers <a href="/services" title="Professional Services">a wide range of professional services</a>.
+            #pricing-cta.text-center.card-divider
+              p.lead Choose a time to see a Platform demo, and our Datica Experts will help you get the features and support you need.
+              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button large button-inline", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "pricing-demo" }
 
-.container-color--dark.container-image--center(data-interchange="[/public/img/art/pricing-v2-bg.svg, medium]")
-  = partial "partials/head/header", :locals => { :style => "light" }
-  section#pricing-tiers.section-article
-    .row.align-center
-      .columns.small-12
-        .row.align-center
-          .columns.small-12.medium-8.text-center
-            h1.headline-2 Simple, Predictable Pricing
-            p.lead Infrastructure at cost, compliance built in. Choose a package to fit your needs. Scaling is predictable and self-service.
-        .row.align-center.row--skinny
-          .columns.small-12.medium-4
-            .callout.drop
-              p.lead.text-center.relative Standard
-              p.lead.text-center <strong>$999</strong>
-              p.small.text-center per <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="An environment is your application + Datica services like Logging, Monitoring, Vulnerability Scanning, and more.">environment</span>/month
-              ul.no-style
-                li <strong>Compliance</strong>
-                li <i class="fa fa-check"></i> Business Associate Agreement
-                li <i class="fa fa-check"></i> <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="Datica is HITRUST CSF Certified. Customers can inherit some of our controls while doing their own audits or certification process.">HITRUST CSF Certification</span>
-                li <i class="fa fa-check"></i> <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="The SOC 2 report focuses on a business's non-financial reporting controls as they relate to security, availability, processing integrity, confidentiality, and privacy of a system, as opposed to SOC 1/SSAE 16 which is focused on the financial reporting controls.">SOC 2</span> Compliance
-              hr/
-              ul.no-style
-                li <strong>Technology Controls</strong>
-                li <i class="fa fa-check"></i> Technology Controls
-                li <i class="fa fa-check"></i> Logging & Monitoring
-                li <i class="fa fa-check"></i> Networking & Load-balancing
-                li <i class="fa fa-check"></i> Disaster Recovery & Backup
-                li <i class="fa fa-check"></i> Intrusion Detection
-                li <i class="fa fa-check"></i> Penetration Testing
-              hr/
-              ul.no-style
-                li <strong>Service</strong>
-                li <i class="fa fa-check"></i> 99.9% SLA
-                li <i class="fa fa-check"></i> 9-5 ticket support
-              hr/
-              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button full-width", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "tier-standard" }
-
-          .columns.small-12.medium-4
-            .callout.drop
-              p.lead.text-center.relative <span class="pill-best">best</span> Professional
-              p.lead.text-center <strong>$3,299</strong>
-              p.small.text-center per <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="An environment is your application + Datica services like Logging, Monitoring, Vulnerability Scanning, and more.">environment</span>/month
-              ul.no-style
-                li <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="All service levels and options are per environment — meaning, you get 4 development environments for each production environment you purchase."><strong>Infrastructure Options:</strong></span>
-                li <i class="fa fa-check"></i> Windows Availability
-                li <i class="fa fa-check"></i> <strong><span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="Development environments have no base fee — meaning you pay just for the infrastructure cost.">4 Additional Development Environments</span></strong>
-              hr/
-              ul.no-style
-                li <strong>Compliance</strong>
-                li <i class="fa fa-check"></i> Business Associate Agreement
-                li <i class="fa fa-check"></i> <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="Datica is HITRUST CSF Certified. Customers can inherit some of our controls while doing their own audits or certification process.">HITRUST CSF Certification</span>
-                li <i class="fa fa-check"></i> <span class="has-tip top revert-has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" title="The SOC 2 report focuses on a business's non-financial reporting controls as they relate to security, availability, processing integrity, confidentiality, and privacy of a system, as opposed to SOC 1/SSAE 16 which is focused on the financial reporting controls.">SOC 2</span> Compliance
-              hr/
-              ul.no-style
-                li <strong>Technology Controls</strong>
-                li <i class="fa fa-check"></i> Technology Controls
-                li <i class="fa fa-check"></i> Logging & Monitoring
-                li <i class="fa fa-check"></i> Networking & Load-balancing
-                li <i class="fa fa-check"></i> Disaster Recovery & Backup
-                li <i class="fa fa-check"></i> Intrusion Detection
-                li <i class="fa fa-check"></i> Penetration Testing
-              hr/
-              ul.no-style
-                li <strong>Service</strong>
-                li <i class="fa fa-check"></i> 99.9% SLA
-                li <i class="fa fa-check"></i> 9-5 ticket support
-                li <i class="fa fa-check"></i> Security Audit Promise
-                li <i class="fa fa-check"></i> 4 Hour Breach Reporting
-              hr/
-              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button full-width", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "tier-professional" }
-          .columns.small-12.medium-4
-            .callout.drop
-              p.lead.text-center.relative <span class="pill-new">new</span> Licensed
-              p.lead.text-center <strong>Starting at $40k</strong>
-              p.small.text-center per cluster/year
-              p.highlight.highlight-pad A brand new offering from Datica giving users the flexibility to run a compliant Kubernetes cluster in their own cloud account(s) (AWS and Azure).
-              ul.no-style
-                li <strong>Additional Details:</strong>
-                li <i class="fa fa-check"></i> Fully compliant Kubernetes cluster
-                li <i class="fa fa-check"></i> Control mappings to HITRUST CSF
-                li <i class="fa fa-check"></i> Options to run on both AWS &amp; Azure
-                li <i class="fa fa-check"></i> Full suite of compliance tooling
-                li <i class="fa fa-check"></i> Much, much more&hellip;
-              hr/
-              = partial "partials/snippets/button", :locals => { :label => "Contact Sales", :url => "/contact", :button_classes => "button full-width", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right", :data_track_group => "platform", :item_id => "tier-licensed" }
-        #pricing-scaling.row.align-center
-          .columns.small-12.medium-7.text-center
-            h1.headline-2 Scaling Your Environments
-            p.lead For hosted, multi-tenant customers, take advantage of Datica's AWS "at cost" infrastructure.
-        .row.align-center
-          .columns.small-12.medium-12
-            .callout.drop
-              .row.align-center.row--skinny
-                .columns.small-12.medium-3
-                  p.lead <strong>RAM</strong>
-                  p RAM is often the most costly infrastructure component. On Datica, scaling RAM is predictable and affordable.
-                  ul.border-ul.custom-pass-through-list
-                    li <strong>Pass-through on:</strong> AWS EC2 Instances
-                    li <strong>Unit cost:</strong> $13.39/GB/month
-                .columns.small-12.medium-3
-                  p.lead <strong>Disk</strong>
-                  p Datica takes advantage of AWS's EBS volumes for disk space. Your directly benefit from this low cost solution.
-                  ul.border-ul.custom-pass-through-list
-                    li <strong>Pass-through on:</strong> AWS EBS Volumes
-                    li <strong>Unit cost:</strong> $0.12/GB/month
-                .columns.small-12.medium-3
-                  p.lead <strong>Block Storage</strong>
-                  p Compliant S3 buckets on Datica are often times even cheaper than buying non-compliant buckets directly from AWS.
-                  ul.border-ul.custom-pass-through-list
-                    li <strong>Pass-through on:</strong> AWS S3
-                    li <strong>Unit cost:</strong> $0.024/GB/month
-                .columns.small-12.medium-3
-                  p.lead <strong>VPN</strong>
-                  p VPNs are often required to access sensitive information like PHI. Datica provides VPNs for all customers on all tiers.
-                  ul.border-ul.custom-pass-through-list
-                    li <strong>Pass-through on:</strong> VPN Pair
-                    li <strong>Unit cost:</strong> $90.00/month
-        aside#pricing-tco.row.align-center
-          .columns.small-12.medium-10.large-6
-            .callout.callout--dark-alpha
-              = inline_svg("icon-dollar-circle", class: "icon-size--large svg-color--white float-right")
-              h2.headline-3 Total Cost of Ownership of Compliance in the Cloud
-              p In this guide are tested formulas and directional advice from the compliance and cloud experts at Datica on how to measure and manage the total cost of ownership to achieve compliance in the cloud.
-              = partial "partials/snippets/button", :locals => { :label => "Get your free TCO Guide", :url => "/guide/total-cost-of-ownership-of-cloud-compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :data_track_group => "platform", :item_id => "tco-guide" }
-
-section#pricing-faq.section-article
-  .row.align-center
-    .columns.small-12.medium-8.large-8
-      h3.headline-3.text-center.group Frequently asked questions about pricing
-  .row.align-center
-    .columns.small-12.medium-4.large-4
-      .callout.callout--gray-light
-        ol
-          - data.views.faqs.pricing.each_with_index do |item, index|
-            li
-              a href="#platform-tech-question-#{index}" = item["question"]
-    .columns.small-12.medium-8.large-8
-      dl
-        - data.views.faqs.pricing.each_with_index do |item, index|
-          dt id="platform-tech-question-#{index}" = item["question"]
-          dd= Kramdown::Document.new(item["answer"]).to_html
+/ .container-color--gray-light
+/   .container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")
+/     section.section-article
+/       aside#pricing-tco.row.align-center
+/         .columns.small-12.medium-10.large-6
+/           .callout.drop
+/             = inline_svg("icon-dollar-circle", class: "icon-size--large svg-color--white float-right")
+/             h2.headline-3 Total Cost of Ownership of Compliance in the Cloud
+/             p In this guide are tested formulas and directional advice from the compliance and cloud experts at Datica on how to measure and manage the total cost of ownership to achieve compliance in the cloud.
+/             = partial "partials/snippets/button", :locals => { :label => "Get your free TCO Guide", :url => "/guide/total-cost-of-ownership-of-cloud-compliance", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :data_track_group => "platform", :item_id => "tco-guide" }
+/ /
+/  section#pricing-faq.section-article
+/    .row.align-center
+/      .columns.small-12.medium-8.large-8
+/        h3.headline-3.text-center.group Frequently asked questions about pricing
+/    .row.align-center
+/      .columns.small-12.medium-4.large-4
+/        .callout.callout--gray-light
+/          ol
+/            - data.views.faqs.pricing.each_with_index do |item, index|
+/              li
+/                a href="#platform-tech-question-#{index}" = item["question"]
+/      .columns.small-12.medium-8.large-8
+/        dl
+/          - data.views.faqs.pricing.each_with_index do |item, index|
+/            dt id="platform-tech-question-#{index}" = item["question"]
+/            dd= Kramdown::Document.new(item["answer"]).to_html
 / - data.views.pricing.plan_details.each_with_index do |content, id|
 /   .medium.reveal data-options=("closeOnEsc: true; animationSpeed: 150; animationIn: bounce-in") data-reveal="" id="tier#{content['slug']}Modal"
 /     .card

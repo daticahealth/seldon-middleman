@@ -133,23 +133,8 @@ platform_integration:
 
 pricing:
     -
-        question: "Do Docker containers dedicated for compliance components, like monitoring or logging, count against my allocated RAM?"
-        answer: "No. All resources required to run Datica's compliance layer supporting your environment are included with every account. RAM allocated for customers is reserved strictly for your technology, such as application or database hosting. "
+        question: "What are the major differences between deploying the Datica Platform on my account vs. Datica's Cloud?"
+        answer: "When we deploy the Platform to your account, you manage the underlying infrastructure (add, scale, and resize VMs, etc.). In most cases, customers have in-house expertise to manage cloud provider resources. When customers do not have in-house expertise, they can rely on Datica to host the Platform for them."
     -
         question: "Do backups and disaster recovery count against my allocated disk space?"
-        answer: "No. Similar to RAM allocation, available disk space is entirely yours. Nightly backups are a basic feature of Datica's platform, and the space they required is baked into the product."
-    -
-        question: "What is included in the Business Associate Agreement?"
-        answer: "Datica's BAA is publicly available here: [policy.datica.com](https://policy.datica.com). We encourage you to review it and compare to others. If you have any questions about your coverage, please feel free to contact us. "
-    -
-        question: "Is your Business Associate Agreement negotiable?"
-        answer: "Enterprise-tier customers may negotiate separate BAAs. Customers on the developer and growth tiers should plan to use Datica’s standard BAA."
-    -
-        question: "Am I able to pick which cloud infrastructure provider I wish to deploy my application?"
-        answer: "This capability is only available to Enterprise-tier customers."
-    -
-        question: "What if I need extra help, like to re-architect my application for containerization, etc?"
-        answer: "Datica provides a variety of custom Services that most likely will fit your need."
-    -
-        question: "How does Datica handle licensing fees for technology like SQL Server or Oracle DB via AWS RDS?"
-        answer: "Licensing fees are pass through to our customers. If a customer requires proprietary technology within their environment configuration, Datica does not take on the license fees to use that technology."
+        answer: "..."
