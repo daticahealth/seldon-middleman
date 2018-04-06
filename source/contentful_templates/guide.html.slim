@@ -1,0 +1,75 @@
+---
+layout: basic
+customCSS: guide
+ogType: article
+---
+ruby:
+    p = locals[:item]
+    current_page.data.title = p["title"] + " | Datica Guide"
+    current_page.data.summary = safe_summary(p.summary)
+    if p.has_key?("tags")
+        current_page.data.tags = get_tag_list(p["tags"])
+    else
+        current_page.data.tags = "healthcare, blog, IT"
+    end
+    if p.has_key?("author")
+        current_page.data.author = p["author"]["fullname"]
+    else
+        current_page.data.author = "Datica, Inc."
+    end
+    if p.has_key?("pub_date")
+        current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
+    else
+        today = DateTime.now
+        current_page.data.date = today.strftime('%B %-d, %Y')
+    end
+    if p.has_key?("share_image")
+        current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_size_small
+    elsif p.has_key?("image_thumb")
+        current_page.data.share_image = cf_asset_protocol + p["image_thumb"]["url"] + image_size_small
+    else
+        current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/NL2SgI83KesMS86cWO44y/e908972bb9193eec594b639881e25e6f/academy-share-default.jpg" + image_size_small
+    end
+    if p.has_key?("image_thumb")
+        row_align = "align-center"
+        col_offset = nil
+    else
+        row_align = "align-left"
+        col_offset = "large-offset-1"
+    end
+
+section.container-gray-2#top
+    .container-color--tint-20.faded-max.group
+        = partial "partials/head/header", :locals => { :style => "light" }
+    .row.align-middle
+        .columns.small-12.medium-8.xlarge-6.group.medium-order-2
+            = partial "partials/snippets/button", :locals => { :label => "Get your free guide", :url => "#guide-form", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
+            .headline-5.subhead--spaced.faded.show-for-large Datica Guides
+            h1.headline-3.text-strong
+                - if p.has_key?("subhead")
+                    = p.subhead
+                - else
+                    = p.title
+            - if p.has_key?("desc")
+                / .content-dynamic
+                = Kramdown::Document.new(p["desc"]).to_html
+        - if p.has_key?("image_thumb")
+            .columns.small-12.medium-4.xlarge-4.text-center.medium-order-1
+                img.text-center.product-thumb(data-interchange="[#{p.image_thumb.url}?w=400, small], [#{p.image_thumb.url}?w=500, medium]" alt="Datica Guide: #{p.title}")
+section.section-article--med.container-gray-11
+    .row
+        .columns.small-12.medium-large-6.xlarge-6.group--2x
+            - if p.has_key?("guide_text")
+                article.group
+                    = Kramdown::Document.new(p["guide_text"]).to_html
+            - if p.has_key?("authors")
+                aside.group
+                    .subhead--spaced.faded.headline-5.group--sm With expert authors
+                    - p["authors"].each do | author |
+                        p
+                            = partial("partials/snippets/person", :locals => { :p => author })
+        #guide-form.columns.small-12.medium-large-6.xlarge-4
+            .callout.drop.form-embed
+                - if p.has_key?("related_form")
+                    h3.headline-4.text-center.group Get Your #{p.related_form.title}
+                    = p.related_form.custom_form

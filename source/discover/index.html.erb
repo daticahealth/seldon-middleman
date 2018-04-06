@@ -9,7 +9,7 @@ layout: basic
 ---
 <% sorted_posts = data.site.discover.to_a.sort_by{ |id, post| post['title'] } %>
 <div class="container-gray-10 container-image--center" data-interchange="[https://images.ctfassets.net/189dvqdsjh46/6KPzYzTJLi6QgqSwAiEy06/9fb4b68a3a6f3d56449a91aa411454c9/ski_hiker_in_snow_trail__4x3_crop.jpg?w=1600&q=45, medium]">
-    <%= partial "partials/snippets/header", :locals => { :style => "dark" } %>
+    <%= partial "partials/head/header", :locals => { :style => "dark" } %>
     <section class="section-article">
         <div class="row align-center">
             <div class="columns small-12 large-8 text-center group--2x">

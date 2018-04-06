@@ -25,11 +25,11 @@ form, input {
     border-bottom: rem-calc(1px) solid $color_border;
 }
 label{
-    font-size: 100%;
-    font-weight: $font-weight-mid;
-    color: $color_deep;
-    margin: 0;
-    padding: 0 0 rem-calc(10px) 0;
+    // font-size: 100%;
+    // font-weight: $font-weight-light;
+    // color: $gray-4;
+    // margin: 0;
+    padding-bottom: rem-calc(4px);
 }
 .contact-us-form-block{
     .callout{
@@ -178,4 +178,17 @@ select{border: rem-calc(1px) solid $color_border;}
 // overrides of Swiftype CSS.
 div.st-ui-autocomplete div.st-query-present a.st-ui-result, section.st-ui-slide-autocomplete div.st-query-present a.st-ui-result {
     padding-left: rem-calc(15) !important;
+}
+// hubspot
+.hs-button {
+    background-color: $success_color;
+    color: white;
+    font-weight: bold;
+    padding: 11px 18px;
+    width: 100%;
+}
+.hs-error-msgs li label {
+    font-style: italic;
+    color: darken($alert_color, 5%);
+    margin-bottom: 1.2rem;
 }
