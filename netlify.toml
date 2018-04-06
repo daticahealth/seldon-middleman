@@ -114,10 +114,6 @@
   status = 301
 
 [[redirects]]
-  from = "/guides"
-  to = "/academy"
-
-[[redirects]]
   from = "/strategic-services"
   to = "/services"
   status = 301
