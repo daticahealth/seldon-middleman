@@ -17,9 +17,9 @@ collectionName: "home"
     = partial "partials/head/header", :locals => { :style => "light" }
     section.section-article
       .row.align-middle
-        .columns.small-12.medium-6.large-7
-          h1.headline-1 Cloud Compliance for Healthcare Innovation
-          h2.headline-4 Datica manages healthcare compliance and security on AWS and Azure.
+        .columns.small-12.medium-6.large-8
+          h1.headline-1 A security and compliance layer for Kubernetes.
+          h2.headline-4 Datica manages healthcare compliance on top of Azure and AWS.
           p.lead
             | The Datica Platform makes your cloud workloads compliant to the standards of HIPAA, HITRUST, GDPR, and GxP.
           = partial "partials/snippets/button", :locals => { :label => "Explore the Platform", :url => "/platform", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right" }
@@ -31,7 +31,7 @@ collectionName: "home"
               = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/demo", :button_classes => "button expanded spaced-out", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
             .card-section.card-section--flush.text-center
               h4.headline-5.nomargin Questions?
-              a(href="/contact" title="Let's talk.") Talk with a customer representative. 
+              a(href="/contact" title="Let's talk.") Talk with a customer representative.
               = inline_svg("hubspot-chat-blue", class: "icon-inline svg-color--gray-6")
 .strip-bright
 section.section-article
@@ -86,9 +86,9 @@ section.container-gray-10.section-article
     /         a href="/events/himss-2018" title="Schedule a time to meet at HIMSS 18"
     /           img class="logo-size--medium" src="//images.ctfassets.net/189dvqdsjh46/BejYKjLiuWuE0iEK6WQIM/521488e52b97804bab49f7dd0a1994e2/himss-2018-logo.png?w=300" alt="Event Logo"
     /       p
-    /         | Datica will have an exciting announcement for our platform at HIMSS this year. 
-    /         a href="/events/himss-2018" title="Schedule a time to meet at HIMSS 18" Stop by our booth #5077 
-    /         | to hear the news. 
+    /         | Datica will have an exciting announcement for our platform at HIMSS this year.
+    /         a href="/events/himss-2018" title="Schedule a time to meet at HIMSS 18" Stop by our booth #5077
+    /         | to hear the news.
     /     a href="/events/himss-2018" title="Schedule a time to meet at HIMSS 18"
     /       img src="https://images.ctfassets.net/189dvqdsjh46/FPuVgZwr02yGkmCswWegw/216aeb7c46c57801b6de8c06e37e885f/Meet_at_himss_18_widget_art.jpg?w=1000" alt="schedule a time to meet at HIMSS'18"
     - sorted_posts.take(2).each do | id, blog_entry |
