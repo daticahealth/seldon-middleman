@@ -4,55 +4,48 @@ summary: "Choose a package to fit your needs. Scaling is predictable and self-se
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 date: "January 1, 2017"
-share_image: "https://images.ctfassets.net/189dvqdsjh46/80SDxxPlIsygQUCWOowSS/cd68f00dc5c3ef7942a24af04b94c9b2/cta-free-trial-mts.jpg"
+share_image: "https://images.ctfassets.net/189dvqdsjh46/80SDxxPlIsygQUCWOowSS/789e2f55d9d2a10b3a0887ef8536f7c0/cta-schedule-demo.jpg"
 customCSS: "pricing"
 layout: "basic"
 priority: "1.0"
 ---
 .strip-bright.strip-bright--small
-
-.container-color--gray-light
-  = partial "partials/head/header", :locals => { :style => "dark" }
-  section#pricing-tiers.section-article
-    .row.align-center
-      .columns.small-12
-        .row.align-center
-          .columns.small-12.medium-8.text-center
-            h1.headline-2 Plans & Platform Options
-            p.lead Infrastructure at cost, compliance built in. Choose a package to fit your needs.
-        .row.align-center.row--skinny
-          .columns.small-12.medium-8
-            .callout.drop
-              p.small <strong>Datica Platform Subscription</strong>
-              p.small A Datica Platform subscription is comprised of a <em>Licensing</em> and a <em>Continuous Compliance Management</em> Fee.
-
-              p.small <strong>Deployment Models</strong>
-              p.small We can deploy a Kubernetes cluster into your cloud account, or Datica's cloud. We give you the flexibility to decide how much, or how little you want to manage.
-
-              p.small <strong>Support</strong>
-              p.small All customers receive basic ticket support with their Platform subscription. We also offer premium support to enterprise customers.
-
-              p.small <strong>Add-ons</strong>
-              p.small We're dedicated to giving you the flexibility you need, while still providing the highest level of compliance available on the market. With add-ons, Datica can make any cloud native service compliant. Additionally, our industry-leading approach to EHR integration includes an HA Mirth Connect Environment.
-
-              p.small <strong>Professional Services</strong>
-              p.small Rely on Datica experts for compliance, auditing, and technical developer operations needs. Datica offers a wide range of professional services.
-
-              .row.align-center
-                .columns.small-12.medium-4
-                  = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button full-width", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "tier-standard" }
-
 .container-color--gray-light
   .container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")
-    section.section-article
-      aside#pricing-tco.row.align-center
-        .columns.small-12.medium-10.large-6
-          .callout.drop
-            = inline_svg("icon-dollar-circle", class: "icon-size--large svg-color--white float-right")
-            h2.headline-3 Total Cost of Ownership of Compliance in the Cloud
-            p In this guide are tested formulas and directional advice from the compliance and cloud experts at Datica on how to measure and manage the total cost of ownership to achieve compliance in the cloud.
-            = partial "partials/snippets/button", :locals => { :label => "Get your free TCO Guide", :url => "/guide/total-cost-of-ownership-of-cloud-compliance", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :data_track_group => "platform", :item_id => "tco-guide" }
-/
+    = partial "partials/head/header", :locals => { :style => "dark" }
+    section#pricing-tiers.section-article
+      .row.align-center.group
+        .columns.small-12.large-9.text-center
+          h1.headline-2 Plans & Platform Options
+          p.lead Infrastructure at cost, with compliance built in. Choose a package to fit your needs.
+      .row.align-center
+        .columns.small-12.medium-10.large-7
+          .card.drop
+            .card-section
+              h4.headline-5 Datica Platform Subscription
+              p A Datica Platform subscription is comprised of a <em>Licensing</em> and a <em>Continuous Compliance Management</em> Fee.
+              h4.headline-5 Deployment Models
+              p We can deploy a Kubernetes cluster into your cloud account, or Datica's cloud. We give you the flexibility to decide how much, or how little you want to manage.
+              h4.headline-5 Support
+              p All customers receive basic ticket support with their Platform subscription. We also offer premium support to enterprise customers.
+              h4.headline-5 Add-ons
+              p We're dedicated to giving you the flexibility you need, while still providing the highest level of compliance available on the market. With add-ons, Datica can make any cloud native service compliant. Additionally, our industry-leading approach to EHR integration includes an HA Mirth Connect Environment.
+              h4.headline-5 Professional Services
+              p Rely on Datica experts for compliance, auditing, and technical developer operations needs. Datica offers a wide range of professional services.
+            #pricing-cta.text-center.card-divider
+              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button full-width", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "tier-standard" }
+
+/ .container-color--gray-light
+/   .container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")
+/     section.section-article
+/       aside#pricing-tco.row.align-center
+/         .columns.small-12.medium-10.large-6
+/           .callout.drop
+/             = inline_svg("icon-dollar-circle", class: "icon-size--large svg-color--white float-right")
+/             h2.headline-3 Total Cost of Ownership of Compliance in the Cloud
+/             p In this guide are tested formulas and directional advice from the compliance and cloud experts at Datica on how to measure and manage the total cost of ownership to achieve compliance in the cloud.
+/             = partial "partials/snippets/button", :locals => { :label => "Get your free TCO Guide", :url => "/guide/total-cost-of-ownership-of-cloud-compliance", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :data_track_group => "platform", :item_id => "tco-guide" }
+/ /
 /  section#pricing-faq.section-article
 /    .row.align-center
 /      .columns.small-12.medium-8.large-8
