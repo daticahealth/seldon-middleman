@@ -46,7 +46,14 @@
         margin-right: 0;
     }
 }
-
+.icon-inline {
+    &.icon-left {
+        margin-right: 0.3em;
+    }
+    &.icon-right {
+        margin-left: 0.3em;
+    }
+}
 
 // logos are non-square and need different attributes. If there's a more elegant way to do this, I'm all ears. - AW
 
