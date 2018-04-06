@@ -4,9 +4,16 @@ if defined?(current_page.data.collectionName) # this is already a part of static
 else
     track_category = "nav"
 end
+if defined?(style) && style == "light"
+    header_class = " main-header--white"
+    element_color = "white"
+else
+    header_class = nil
+    element_color = "black"
+end
 %>
 
-<header class="main-header main-header<% if defined?(style) && style == "light" %>--white<% end %>">
+<header class="main-header <%= header_class %>">
     <a href="/" class="logo" title="Datica Home"></a>
     <nav class="left">
         <div class="hide-for-large">
@@ -100,7 +107,7 @@ end
     </nav>
     <div class="mobile-menu">
         <!-- <span class="icon-label">menu</span> -->
-        <%= inline_svg("small/icon-menu", class: "icon-size--medium svg-color--white") %>
+        <%= inline_svg("small/icon-menu", class: "icon-size--medium svg-color--#{element_color}") %>
         <!-- <i class="fa fa-bars"></i> -->
     </div>
 </header>
