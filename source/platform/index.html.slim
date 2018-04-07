@@ -20,48 +20,58 @@ priority: "0.9"
       .columns.small-12.medium-large-6
         h1.headline-2 End-to-end compliance on AWS and Azure is possible.
         p.small The Datica Platform fills the compliance gaps on top of public clouds like AWS and Azure by combining the best technology available and mapping it to frameworks like HIPAA, HITRUST, GDPR, and GxP. Customers use Kubernetes-enabled orchestration to deploy containerized workloads to the Platform that <strong>are guaranteed to be continuously compliant</strong>.
-        = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/technology", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :item_id => "top-tech" }
+        .button-group.stack-for-small
+          = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
+          = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/technology", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :item_id => "top-tech" }
     img.position-bottom-rt(src="/public/img/art/platform-iso-illustration.svg" alt="Datica Platform illustration")
 
-.container-color--gray-light
-  .container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")
-    section#platform-tiers.section-article
-      .row.align-center.text-center
-        .columns.small-12
-          h1.headline-2.group Models that <strong>work</strong> for any business
-      .row
-        .columns.small-12.medium-6
-          .callout.drop
-            h2.headline-3.group Hosted
-            p.headline-4 <strong>Maximum Convenience</strong>
-            p.lead.highlight Starting at $999 / month
-            p Deploy containerized (or let the platform do the containerizing for you) workloads to our multi-tenant Platform through self-service tooling. Customers interact with Datica support and billing.
-            p Customers prefer this option when speed and convenience matter most while not sacrificing the best compliance approach on the cloud.
-            p.headline-4 <strong>The Hosted Model Works Great For&hellip;</strong>
-            ul
-              li Startups looking to develop quickly while also getting instant security and compliance credibility.
-              li Enterprise teams who need to move quickly but constrained by internal IT, security, and compliance groups.
-            p Other Platform-as-a-Service options do not cover the full scope of HIPAA compliance. None cover HITRUST, GxP, and GDPR. Compare <a href="https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa"> Our BAA</a> to other options when researching.
-        .columns.small-12.medium-6
-          .callout.drop
-            h2.headline-3.group Licensed
-            p.headline-4 <strong>Maximum Flexibility</strong>
-            p.lead.highlight Starting at $40,000 / year
-            p Install the Datica Platform on your existing AWS or Azure account, then deploy containerized workloads onto it for continuous compliance.
-            p Customers prefer this option when full control over AWS or Azure accounts matters most, while still receiving the same compliance assurances from the Platform.
-            p.headline-4 <strong>The Licensed Model Works Great For&hellip;</strong>
-            ul
-              li Engineering orgs who need compliance guarantees but can’t build everything themselves for less than one cloud engineer FTE.
-              li Teams who need compliance help but have a hard requirement to directly own their AWS or Azure accounts.
-            p All other installable technologies aren’t platforms meant to greatest compliance coverage with the best experience. Instead, you pay for consultant service fees.
-      .row
-        .columns.small-12.text-center
-          = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo Today", :url => "/demo", :button_classes => "button", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :item_id => "demo" }
+section#platform-customers.section-article.container-gray-12
+  #companies.row.align-center.group--2x
+    .columns.small-12.large-12.text-center
+      h3.headline-3 <strong>World-class companies</strong> trust Datica
+      .logo-cloud.group
+        - data.views.home.customers.each do |logo|
+          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["file"]}.png" /
+      = partial "partials/snippets/button", :locals => { :label => "Read Customer Success Stories", :title => "View Platform pricing", :url => "/platform/success", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "customers" }
+  .row
+    .columns.small-12
+      h3.headline-3.group.text-center Build <strong>Breakthrough</strong> Compliant Apps
+  .row
+    .columns.small-12.medium-6
+      <script src="https://fast.wistia.com/embed/medias/djywh7kkgd.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_djywh7kkgd seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+    .columns.small-12.medium-6
+      .group
+        blockquote.quote--serif
+          ruby:
+            quote_id = "5fDbO1XJ1CAEWAEIoiO6mS"
+            the_quote = data.site.quotes[quote_id]
+          = Kramdown::Document.new(the_quote["quote_body"]).to_html
+        = partial("partials/snippets/person", :locals => { :p => the_quote.customer, :company => the_quote.customer.company_name } )
 
-section.section-article.container-color--dark-alt#platform-shared-responsibility
+section#tech-hcms.section-article.container-color--dark-grad-blue
+  .row.align-center
+    .columns.small-12
+      .row.align-center
+        .columns.small-12.text-center.group
+          h2.headline-4.spaced-out How Customers Use the Datica Platform
+      .row.align-center
+      .columns.small-12.text-center.group
+          h2.headline-3.nomargin Building On The Platform
+      .row.align-center.align-bottom
+        - data.views.platform.platform_use.each do | step |
+          .columns.small-12.medium-4
+            img.pad.build-height alt="#{step.title}" src="#{step.image}?w=500"
+      .row.align-center.group
+        - data.views.platform.platform_use.each do | step |
+          .columns.small-12.medium-4
+            h4.headline-5= step.title
+            p= step.desc
+            = partial "partials/snippets/button", :locals => { :label => step.button.label, :title => step.button.label, :url => step.button.url, :button_classes => "button small secondary", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
+
+section.section-article.container-gray-10#platform-shared-responsibility
   .row.group.align-center
     .columns.small-12
-      h2.headline-3.group.text-center.spaced-out Understanding Shared Responsibility
+      h2.headline-4.group.text-center.spaced-out Understanding Shared Responsibility
 
       <script src="https://fast.wistia.com/embed/medias/08ebxufc4q.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_08ebxufc4q seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
 
@@ -89,37 +99,6 @@ section.section-article.container-color--dark-alt#platform-shared-responsibility
               img.logo-size--xlarge.group alt=("apn tech") src="https://d1.awsstatic.com/partner-network/APN-Advanced-Technology-Badge.d737de9106285590a46875b8805247f22f8433ba.png"
               .group
                 = partial "partials/snippets/button",  :locals => { :label => "Explore Datica on AWS", :title => "Explore Datica on AWS", :url => "/platform/aws", :button_classes => "button button--light group", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "aws" }
-
-section#platform-customers.section-article
-  #companies.row.align-center
-    .columns.small-12.large-12.text-center
-      h3.headline-3 <strong>World-class companies</strong> trust Datica
-      .logo-cloud.group
-        - data.views.home.customers.each do |logo|
-          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["file"]}.png" /
-      = partial "partials/snippets/button", :locals => { :label => "Read Customer Success Stories", :title => "View Platform pricing", :url => "/platform/success", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "customers" }
-
-        i.fa.fa-icon.fa-angle-right
-
-section#tech-hcms.section-article.container-color--dark-grad-blue
-  .row.align-center
-    .columns.small-12
-      .row.align-center
-        .columns.small-12.text-center.group
-          h2.headline-4.spaced-out How Customers Use the Datica Platform
-      .row.align-center
-      .columns.small-12.text-center.group
-          h2.headline-3.nomargin Building On The Platform
-      .row.align-center.align-bottom
-        - data.views.platform.platform_use.each do | step |
-          .columns.small-12.medium-4
-            img.pad.build-height alt="#{step.title}" src="#{step.image}?w=500"
-      .row.align-center.group
-        - data.views.platform.platform_use.each do | step |
-          .columns.small-12.medium-4
-            h4.headline-5= step.title
-            p= step.desc
-            = partial "partials/snippets/button", :locals => { :label => step.button.label, :title => step.button.label, :url => step.button.url, :button_classes => "button small secondary", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
 
 section.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
   = partial "partials/section-promos/hcms-screenshot"
