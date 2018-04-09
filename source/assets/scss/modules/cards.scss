@@ -30,7 +30,7 @@
         width: auto;
         margin-bottom: 0;
     }
-    .button{
+    .button{ // ** replace this with button-group ZF modules, solves the problem https://foundation.zurb.com/sites/docs/button-group.html
         &.button-group { // use when you have n-up buttons in a horizontal row (say, via .float-[dir])
             &:first-child {
                 margin-bottom: 1rem; // if there's a group, then more than 1 button, so first one stacks. dunno
