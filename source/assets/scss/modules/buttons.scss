@@ -1,8 +1,4 @@
-// .button-group {
-//     .button:not(.button-hollow) {
-//         border: 0;
-//     }
-// }
+@import '../settings';
 
 .button {
     // global button attributes
@@ -144,4 +140,21 @@
     // &.icon-inline { // target svg icon
 
     // }
+}
+.button-cluster { // pair with zf .menu for flexbox button grouping
+    // when stacking vertically, space between. 
+    // Several behaviors on stacking... are stacking up here
+    & > .button {
+        margin-right:  0;
+        margin-bottom: $buttongroup-margin;
+        // &:not([expanded]) {
+            
+        // }
+        @include breakpoint(medium up) { // see data-expand above ^
+            margin-right: $buttongroup-margin;
+        }
+        // &:last-child {
+        //     margin-bottom: 0;
+        // }
+    }
 }
