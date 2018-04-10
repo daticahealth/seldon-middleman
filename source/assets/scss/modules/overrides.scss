@@ -1,3 +1,8 @@
+@import '../settings';
+// @import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+@import '../mixins/colors';
+@import '../mixins/functions';
+
 // ---------
 // 37. Datica Custom Helpers
 // ---------
@@ -227,4 +232,28 @@
 }
 .relative{
   position: relative;
+}
+
+// === overrides third-party hubspot forms, widgets, etc. ===
+
+// Swiftype CSS.
+div.st-ui-autocomplete div.st-query-present a.st-ui-result, section.st-ui-slide-autocomplete div.st-query-present a.st-ui-result {
+    padding-left: rem-calc(15) !important;
+}
+// hubspot
+.hs-button {
+    @include easing($timing-default);
+    background-color: $success_color;
+    color: white;
+    font-weight: bold;
+    padding: 11px 18px;
+    width: 100%;
+    &:hover {
+        background-color: adjust-color($success_color, $lightness: 5%, $saturation: 10%);
+    }
+}
+.hs-error-msgs li label {
+    font-style: italic;
+    color: darken($alert_color, 5%);
+    margin-bottom: 1.2rem;
 }
