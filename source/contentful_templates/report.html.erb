@@ -69,26 +69,29 @@ end
     <% end %>
     <div class="row">
         <div class="columns small-12 medium-5 large-6 large-order-2">
-            <% if p.has_key?("form_id") %>
-                <div class="callout callout--large drop group">
-                    <h3 class="headline-4 text-center group">Get your free innovation report</h3>
+            <% if p.has_key?("related_form") %>
+                <div class="callout callout--large drop">
+                    <h3 class="headline-4 text-center group">Get your Innovation Report</h3>
+                    <%= Kramdown::Document.new(p["related_form"]["custom_form"]).to_html %>
+                </div>
+            <% elsif p.has_key?("form_id") %>
+                <div class="callout callout--large drop">
+                    <h3 class="headline-4 text-center group">Get your Innovation Report</h3>
                     <%= partial("partials/snippets/form-hubspot", :locals => { :form_id => p["form_id"] }) %>
                 </div>
             <% end %>
              <% if p.has_key?("authors") && p["authors"].count > 1 %>
-                
                     <div class="subhead--spaced faded headline-5 text-center group--sm"><% if p["authors"].count > 1 %>With expert authors<% else %>Datica expert<% end %></div>
                     <% p["authors"].each do |author| %>
                         <p><%= partial("partials/snippets/person", :locals => { :p => author }) %></p>
                     <% end %>
-                
             <% end %>
                 
             </div>
         <div class="columns small-12 medium-7 large-6 large-order-1">
             <% if p.has_key?("desc") %>
                 <article class="content-dynamic">
-                <%= Kramdown::Document.new(p["desc"]).to_html %>
+                <div class="group"><%= Kramdown::Document.new(p["desc"]).to_html %></div>
                 <%= person_widget("travis") %>
                 </article>
             <% end %>

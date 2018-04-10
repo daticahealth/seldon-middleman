@@ -72,4 +72,4 @@ section.section-article--med.container-gray-11
             .callout.drop.form-embed
                 - if p.has_key?("related_form")
                     h3.headline-4.text-center.group Get Your #{p.related_form.title}
-                    = p.related_form.custom_form
+                    = Kramdown::Document.new(p["related_form"]["custom_form"]).to_html
