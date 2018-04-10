@@ -3,14 +3,21 @@ title: "Datica Guides"
 summary: "Authoritative Guides Written By Industry Experts"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration, GDPR"
-share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
 layout: basic
 ---
 ruby:
     today = DateTime.now
     current_page.data.date = today.strftime('%B %-d, %Y')
+    sorted_entries = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] }
+    sorted_entries.take(1).each do | id, guide_entry |
+    if guide_entry.has_key?("share_image")
+        current_page.data.share_image = cf_asset_protocol + guide_entry["share_image"]["url"] + image_size_small
+    elsif guide_entry.has_key?("image_thumb")
+        current_page.data.share_image = cf_asset_protocol + guide_entry["image_thumb"]["url"] + image_size_small
+    else
+        current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/NL2SgI83KesMS86cWO44y/e908972bb9193eec594b639881e25e6f/academy-share-default.jpg" + image_size_small
+    end
 
-- sorted_entries = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] }
 .container-gray-11
     section#top
         / .faded-max.group

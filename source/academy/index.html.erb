@@ -41,7 +41,7 @@ current_page.data.date = today.strftime('%B %-d, %Y')
                     <div class="card-section">
                         <% if guide_entry.has_key?("image_thumb") %>
                             <a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>">
-                                <img class="float-right" data-interchange="[<%= guide_entry.image_thumb.url %>?fit=thumb&w=600, medium]" width="40%">
+                                <img class="float-right" data-interchange="[<%= guide_entry.image_thumb.url %>?fit=thumb&w=200, medium]" width="40%">
                             </a>
                         <% end %>
                         <%= Kramdown::Document.new(guide_entry["summary"]).to_html %>
