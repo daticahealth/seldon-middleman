@@ -4,7 +4,7 @@ summary: "How does healthcare innovate? Datica explores this topic through new s
 author: "Datica, Inc."
 tags: "HIPAA, HL7, FHIR, interoperability, EHR, integration"
 date: "January 1, 2017"
-share_image: "https://images.ctfassets.net/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/bc7605c8d6702518cedcedf7cf0de3bb/podcast-art-share-2018.png"
+share_image: ""
 header: "Datica Innovation"
 subheader: "How does healthcare innovate? Datica explores this topic in a new series of interviews with the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
 layout: basic
@@ -37,6 +37,11 @@ customCSS: "innovation"
 
     <% sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse! %>
     <% sorted_reports.take(1).each do | id, report | %>
+        <%
+            if report.has_key?("share_image")
+                current_page.data.share_image = cf_asset_protocol + report["share_image"]["url"] + image_size_small
+            end 
+        %>
         <%= partial "partials/section-promos/report-promo", :locals => { :p => report } %>
     <% end %>
 
