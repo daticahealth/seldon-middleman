@@ -80,19 +80,19 @@ end
                     <%= partial("partials/snippets/form-hubspot", :locals => { :form_id => p["form_id"] }) %>
                 </div>
             <% end %>
-             <% if p.has_key?("authors") && p["authors"].count > 1 %>
-                    <div class="subhead--spaced faded headline-5 text-center group--sm"><% if p["authors"].count > 1 %>With expert authors<% else %>Datica expert<% end %></div>
-                    <% p["authors"].each do |author| %>
-                        <p><%= partial("partials/snippets/person", :locals => { :p => author }) %></p>
-                    <% end %>
-            <% end %>
-                
             </div>
         <div class="columns small-12 medium-7 large-6 large-order-1">
             <% if p.has_key?("desc") %>
                 <article class="content-dynamic">
                 <div class="group"><%= Kramdown::Document.new(p["desc"]).to_html %></div>
-                <%= person_widget("travis") %>
+                    <% if p.has_key?("authors") %>
+                        <div class="subhead--spaced faded headline-5 text-light group--sm">
+                            <% if p["authors"].count > 1 %>With expert authors<% else %>By Datica expert<% end %>    
+                        </div>
+                    <% end %>
+                    <% p["authors"].each do |author| %>
+                        <p><%= partial("partials/snippets/person", :locals => { :p => author }) %></p>
+                    <% end %>
                 </article>
             <% end %>
         </div>
@@ -103,13 +103,6 @@ end
 <% if p.has_key?("bg_image") %>
     <section class="section-article container-image-fill" data-interchange="[<%= p.bg_image.url %>?fit=thumb&w=1800&h=200&fm=jpg&q=50, medium]">
 <% else %>
-    <section class="container-gray-5 container-image--fixed" data-interchange="[//images.ctfassets.net/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg?w=1200&q=50, large]">
+    <section class="container-gray-5 container-image--fixed" data-interchange="[//images.ctfassets.net/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg?fit=thumb&w=1800&h=200&fm=jpg&q=50, large]">
 <% end %>
-    <% if p.has_key?("cta_ref") %>
-        <div class="row align-center">
-            <div class="columns small-12 medium-5 large-6 large-order-1">
-                <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
-            </div>
-        </div>
-    <% end %>
 </section>
