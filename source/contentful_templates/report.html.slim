@@ -43,33 +43,40 @@ section.container-gray-2#top
         = partial "partials/head/header", :locals => { :style => "light" }
     .row.align-middle
         .columns.small-12.medium-8.xlarge-6.group.medium-order-2
-            = partial "partials/snippets/button", :locals => { :label => "Get your free guide", :url => "#guide-form", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
-            .headline-5.subhead--spaced.faded.show-for-large Datica Guides
+            = partial "partials/snippets/button", :locals => { :label => "Get your free report", :url => "#report-form", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
+            .headline-5.subhead--spaced.faded.show-for-large Datica Innovation Reports
             h1.headline-3.text-strong
                 - if p.has_key?("subhead")
                     = p.subhead
                 - else
                     = p.title
-            - if p.has_key?("desc")
-                / .content-dynamic
-                = Kramdown::Document.new(p["desc"]).to_html
         - if p.has_key?("image_thumb")
             .columns.small-12.medium-4.xlarge-4.text-center.medium-order-1
                 img.text-center.product-thumb(data-interchange="[#{p.image_thumb.url}?w=400, small], [#{p.image_thumb.url}?w=500, medium]" alt="Datica Guide: #{p.title}")
 section.section-article--med.container-gray-11
     .row
         .columns.small-12.medium-large-6.xlarge-6.group--2x
-            - if p.has_key?("guide_text")
-                article.group
-                    = Kramdown::Document.new(p["guide_text"]).to_html
+            - if p.has_key?("lead")
+                .lead
+                    = Kramdown::Document.new(p["lead"]).to_html
+            - if p.has_key?("desc")
+                article.group.content-dynamic
+                    = Kramdown::Document.new(p["desc"]).to_html
             - if p.has_key?("authors")
+                ruby:
+                    author_hed=(p["authors"].count > 1 ? 'With expert authors' : 'With Datica Expert')
                 aside.group
-                    .subhead--spaced.faded.headline-5.group--sm With expert authors
+                    .subhead--spaced.faded.headline-5.group--sm= author_hed
                     - p["authors"].each do | author |
                         p
                             = partial("partials/snippets/person", :locals => { :p => author })
-        #guide-form.columns.small-12.medium-large-6.xlarge-4
+        #report-form.columns.small-12.medium-large-6.xlarge-4
             .callout.drop.form-embed
                 - if p.has_key?("related_form")
                     h3.headline-4.text-center.group Get Your #{p.related_form.title}
                     = Kramdown::Document.new(p["related_form"]["custom_form"]).to_html
+
+- if p.has_key?("bg_image")
+    section.section-article.container-image-fill data-interchange="[#{p.bg_image.url}?fit=thumb=1800=200=jpg=50, medium]"
+- else
+    section.container-gray-5.container-image--fixed data-interchange="[//images.ctfassets.net/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg?fit=thumb&w=1800&h=200&fm=jpg&q=50, large]" 

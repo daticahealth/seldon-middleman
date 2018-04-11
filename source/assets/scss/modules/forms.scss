@@ -75,13 +75,13 @@ input[type="number"]{
 }
 select{border: rem-calc(1px) solid $color_border;}
 
-// nav search field in top bar
+// nav search field in top bar 😢
 .input-nav {
     @include breakpoint(large up) {
         display: inline-block;
     }
     position: relative;
-    input[type="search"], input[type="text"] {
+    & > input[type="search"], & > input[type="text"] {
         width: 100%;
         @include breakpoint(large up) {
             width: rem-calc(98);
@@ -150,7 +150,7 @@ select{border: rem-calc(1px) solid $color_border;}
 }
 .filter-search { // used for long list filtering (academy, et. al.)
     input[type="search"], input[type="text"] {
-        $input-width: 300;
+        $input-width: 400;
         width: 100%;
         padding-bottom: 0;
         padding-top:    0;
@@ -174,21 +174,4 @@ select{border: rem-calc(1px) solid $color_border;}
             }
         }
     }
-}
-// overrides of Swiftype CSS.
-div.st-ui-autocomplete div.st-query-present a.st-ui-result, section.st-ui-slide-autocomplete div.st-query-present a.st-ui-result {
-    padding-left: rem-calc(15) !important;
-}
-// hubspot
-.hs-button {
-    background-color: $success_color;
-    color: white;
-    font-weight: bold;
-    padding: 11px 18px;
-    width: 100%;
-}
-.hs-error-msgs li label {
-    font-style: italic;
-    color: darken($alert_color, 5%);
-    margin-bottom: 1.2rem;
 }
