@@ -30,7 +30,8 @@ else
     current_page.data.date = "Januray 1, 2017"
 end
 %>
-<%= partial "partials/head/header", :locals => { :style => "dark" } %>
+<div class="container-gray-12">
+    <%= partial "partials/head/header", :locals => { :style => "dark" } %>
 
 <section class="section-article">
     <article class="content-static">
@@ -156,30 +157,24 @@ end
     </article>
 
     <div class="row align-center" id="pageNav">
-        <div class="columns small-12 large-8">
-            <div class="row collapse">
+        <div class="columns small-12">
+            <div class="menu button-cluster align-center">
                 <% filtered_customers = data.site.customers.select{ |id, customer| (customer.has_key?("case_study") || customer.has_key?("customer_spotlight")) } %>
                 <% previous_item = get_previous_item(filtered_customers, p, "company_name") %>
+                <%= partial "partials/snippets/button", :locals => { :label => "Customer Success", :title => "Datica Customer Proof - See All", :url => "/platform/success", :button_classes => "medium-order-2 button hollow hollow-invisible", :icon => "icon-chevron-up", :icon_align => "right", :icon_color => "blue" } %>
                 <% if previous_item != nil %>
-                    <div class="columns small-12 medium-4">
-                        <a href="/customer/<%= previous_item["slug"] %>" title="View Previous Profile" class="button button--light expanded">
-                            <i class="fa fa-angle-left"></i> Previous: <%= previous_item["company_name"] %>
-                        </a>
-                    </div>
+                    <%= partial "partials/snippets/button", :locals => { :label => "#{previous_item.company_name}", :title => "View Previous Profile", :url => "/customer/#{previous_item.slug}", :button_classes => "medium-order-1 button hollow", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "blue" } %>
                 <% end %>
-                <div class="columns small-12 medium-4 text-center">
-                    <a class="button hollow hollow-invisible" href="/platform/success" title="Datica Customer Proof - See All"><i class="fa fa-angle-left"></i> Proof</a>&nbsp; &nbsp;
-                    <a class="button hollow hollow-invisible" href="#top" class="">Back to top <i class="fa fa-angle-up" aria-hidden="true"></i></a>
-                </div>
                 <% next_item = get_next_item(filtered_customers, p, "company_name") %>
                 <% if next_item != nil %>
-                    <div class="columns small-12 medium-4">
-                        <a href="/customer/<%= next_item["slug"] %>" title="View Next Profile" class="button <% if !p.has_key?("customer_spotlight") && p.has_key?("case_study") %>button--light<% else %>button--primary<% end %> expanded">
+                    <%= partial "partials/snippets/button", :locals => { :label => "#{next_item.company_name}", :title => "View Next Profile", :url => "/customer/#{next_item.slug}", :button_classes => "medium-order-3 button", :icon => "icon-chevron-right", :icon_align => "right", :icon_color => "white" } %>
+
+<!--                         <a href="/customer/<%= next_item["slug"] %>" title="View Next Profile" class="button <% if !p.has_key?("customer_spotlight") && p.has_key?("case_study") %>button--light<% else %>button--primary<% end %> expanded">
                             Next: <%= next_item["company_name"] %> <i class="fa fa-angle-right"></i>
-                        </a>
-                    </div>
+                        </a> -->
                 <% end %>
             </div>
         </div>
     </div>
 </section>
+</div>
