@@ -161,13 +161,13 @@ end
             <div class="menu button-cluster align-center">
                 <% filtered_customers = data.site.customers.select{ |id, customer| (customer.has_key?("case_study") || customer.has_key?("customer_spotlight")) } %>
                 <% previous_item = get_previous_item(filtered_customers, p, "company_name") %>
-                <%= partial "partials/snippets/button", :locals => { :label => "Customer Success", :title => "Datica Customer Proof - See All", :url => "/platform/success", :button_classes => "medium-order-2 button hollow hollow-invisible", :icon => "icon-chevron-up", :icon_align => "right", :icon_color => "blue" } %>
+                <%= partial "partials/snippets/button", :locals => { :label => "Customer Success", :title => "Datica Customer Proof - See All", :url => "/platform/success", :button_classes => "medium-order-2 button hollow hollow-invisible", :icon => "icon-chevron-up", :icon_align => "right", :icon_color => "blue", :rel => "prev" } %>
                 <% if previous_item != nil %>
                     <%= partial "partials/snippets/button", :locals => { :label => "#{previous_item.company_name}", :title => "View Previous Profile", :url => "/customer/#{previous_item.slug}", :button_classes => "medium-order-1 button hollow", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "blue" } %>
                 <% end %>
                 <% next_item = get_next_item(filtered_customers, p, "company_name") %>
                 <% if next_item != nil %>
-                    <%= partial "partials/snippets/button", :locals => { :label => "#{next_item.company_name}", :title => "View Next Profile", :url => "/customer/#{next_item.slug}", :button_classes => "medium-order-3 button", :icon => "icon-chevron-right", :icon_align => "right", :icon_color => "white" } %>
+                    <%= partial "partials/snippets/button", :locals => { :label => "#{next_item.company_name}", :title => "View Next Profile", :url => "/customer/#{next_item.slug}", :button_classes => "medium-order-3 button", :icon => "icon-chevron-right", :icon_align => "right", :icon_color => "white", :rel => "next" } %>
 
 <!--                         <a href="/customer/<%= next_item["slug"] %>" title="View Next Profile" class="button <% if !p.has_key?("customer_spotlight") && p.has_key?("case_study") %>button--light<% else %>button--primary<% end %> expanded">
                             Next: <%= next_item["company_name"] %> <i class="fa fa-angle-right"></i>
