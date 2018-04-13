@@ -94,11 +94,10 @@ section#compliance-other.section-article
   .row.group.align-center
     .columns.small-12.text-center
       h2.headline-3 General Data Protection Regulation
-      /
-        p.lead Datica is ready for GDPR on May 25th. -> Good practices for Life Sciences on the Cloud
-      p.lead Good practices for Life Sciences on the Cloud
+      / p.lead Datica is ready for GDPR on May 25th
   .row.align-center
     .columns.small-12.medium-6.large-4.medium-order-2
+      / = partial "partials/cards/card-report", :locals => { :post => data.site.guides["6ZjDEiocKI20ssIM4Eu4UO"], :style => "dark", :size => "small" }
       img.group.logo-size--xlarge alt=("GDPR Ready") src="https://images.ctfassets.net/189dvqdsjh46/6L09pVF6a4uAY00QMqSOYg/a99648672cbc3279925bf2fa7e146fd6/gdpr-ready-badge-text.png" /
     .columns.small-12.medium-6.large-6
       markdown:
@@ -106,10 +105,12 @@ section#compliance-other.section-article
 
         Are you ready? Datica applies the rules of GDPR and GXP and will be able to prove full compliance once our audit is complete in May 2018.
 
-        [Learn more about GDPR](/discover/#{data.site.discover['6yNMzCKn84Q4qIsm0sWmUy'].slug}).
+      = partial "partials/snippets/button", :locals => { :label => "Get the Datica GDPR Report", :url => "/guide/gdpr-compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :data_track_group => "platform" }
+
   .row.align-center
     .columns.small-12.text-center
       h2.headline-3 GxP
+      p.lead Good practices for Life Sciences on the Cloud
   .row.align-center
     .columns.small-12.medium-6.large-6
       markdown:

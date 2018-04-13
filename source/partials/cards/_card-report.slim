@@ -1,0 +1,54 @@
+ruby:
+    case post._meta.content_type_id
+        when "guides"
+            url_segment = "guide"
+            card_subhead = "Datica Guides"
+            link_title = "Get the guide, '#{post.title}'"
+        when "reports"
+            url_segment = "innovation"
+            card_subhead = post.subhead
+            link_title = "Get the latest report, '#{post.title}'"
+    end
+    related_post_path = "/" + url_segment + "/" + post.slug
+
+    if post.has_key?("image_thumb")
+        image_url = post.image_thumb.url
+    else
+        image_url = nil
+    end
+    if defined?(size) && size == "large"
+        card_size = ""
+    else
+        card_size = "text-small"
+    end
+    if defined?(fit) && fit == "edge"
+        fit_classes = "no-radius"
+    else
+        fit_classes = nil
+    end
+    if defined?(style) && style == "dark"
+        style_classes = "container-gray-3"
+    else
+        style_classes = "drop"
+    end
+    # if post.has_key?("summary") && post.summary != ""
+    #     entry_summary = post.summary
+    # elsif post.has_key?("lead") && post.lead != ""
+    #     entry_summary = post.lead
+    # else
+    #     card_summary = nil
+    # end
+    # card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
+
+/ Renders a card inside a post loop. Post var must be injected - AW
+
+.card(class="#{style_classes} #{fit_classes}")
+    .card-section
+        .subheader-small.color-white
+            = card_subhead
+        h3.headline-4
+            a.link--white href=related_post_path title=link_title
+                = post.title
+    - if post.has_key?("image_thumb")
+        a.text-center href=related_post_path title=link_title
+            img alt="preview" data-interchange="[#{image_url}?fit=thumb&w=400&q=50, small], [#{image_url}?fit=thumb&w=600, large]" style="padding: 0 1rem 0 1rem;" /
