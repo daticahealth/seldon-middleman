@@ -1,0 +1,61 @@
+---
+title: "Search Datica.com"
+summary: "Search the site."
+author: "Datica, Inc."
+tags: "search, tools, HIPAA, HL7, FHIR, interoperability, EHR, integration, resource"
+layout: "basic"
+hide_from_sitemap: true
+---
+- current_page.data.share_image = image_share_platform
+- current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+
+.container-gray-11
+  = partial "partials/head/header", :locals => { :style => "dark" }
+  section.section-article
+    .row.align-middle
+      .columns.small-12.medium-6.large-8
+        h1.headline-1 Search
+        / h2.headline-4 Datica manages healthcare compliance on top of Azure and AWS.
+        javascript:
+          (function() {
+            var cx = '006279446550962417368:itpq879uacm';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+          })();
+        | <gcse:search></gcse:search>
+
+- sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+- sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
+- sorted_academy = data.site.academy.to_a.sort_by{ |id, academy| academy['pub_date'] }.reverse!
+- sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse!
+- sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
+section.container-gray-10.section-article
+  h3.headline-3.group.text-center <strong>Recently</strong> at Datica
+  .row.full-width.align-center.small-up-1.medium-up-2.large-up-3.xlarge-up-4
+    - sorted_guides.take(1).each do | id, guide_entry |
+      .column
+        = partial "partials/cards/card-report", :locals => { :post => guide_entry, :style => "dark", :size => "small" }
+    - sorted_posts.take(1).each do | id, blog_entry |
+      .column
+        = partial "partials/cards/featured-blog", :locals => { :post => blog_entry, :style => "light", :size => "small", :show_type => true }
+    - sorted_podcasts.take(1).each do | id, podcast_entry |
+      .column
+        = partial "partials/cards/featured-blog", :locals => { :post => podcast_entry, :style => "light", :size => "small", :show_type => true }
+    - sorted_reports.take(1).each do | id, report_entry |
+      .column
+        = partial "partials/cards/card-report", :locals => { :post => report_entry, :style => "dark", :size => "small" }
+
+aside#ctaBottom.container-color--dark-grad-blue
+  .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
+    .row.align-center
+      .columns.small-12.medium-10.large-10.text-center
+        h2.headline-3 <strong>End-to-end compliance</strong> on AWS and Azure is possible.
+    .row.align-center
+      .columns.small-6.large-4.text-right
+        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
+      .columns.small-6.large-6.text-left
+        = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/platform", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black" }
