@@ -9,7 +9,7 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
     xml.tag!("link", "rel" => "alternate", "href" => site_url, "type" => "text/html") 
     xml.tag!("link", "rel" => "self", "href" => site_url + "feed.xml", "type" => "application/atom+xml") 
     xml.author { xml.name companyname }
-    xml.icon site_icon + "&amp;w=48&amp;h=48"
+    xml.icon site_icon + "?w=48"
     xml.logo "https://images.contentful.com/189dvqdsjh46/4SwayIJ5AcCe4iCU820mQs/504b8e57eacc0d81032d01ace96bc622/datica_logo__black.png?w=150"
     sorted_posts.take(1).each do | id, post |
         xml.updated post['pub_date'].to_time.iso8601
