@@ -8,8 +8,6 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
     xml.subtitle "Thoughts from the team behind Healthcare's trusted cloud"
     xml.tag!("link", "rel" => "alternate", "href" => site_url, "type" => "text/html") 
     xml.tag!("link", "rel" => "self", "href" => site_url + "feed.xml", "type" => "application/atom+xml") 
-    # xml.atom :link { "href" => "feed.xml", "rel" => "self" }
-    # xml.link "href" => site_url, "rel" => "self"
     xml.author { xml.name "Datica Health, Inc." }
     xml.icon "https://datica.com/favicon.ico"
     xml.logo "https://images.contentful.com/189dvqdsjh46/4SwayIJ5AcCe4iCU820mQs/504b8e57eacc0d81032d01ace96bc622/datica_logo__black.png?w=150"
@@ -25,10 +23,6 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
             xml.updated post['pub_date'].to_time.iso8601
             xml.author { xml.name post["author"]["fullname"] }
             xml.summary safe_summary(post.summary)
-            # xml.summary Kramdown::Document.new(post["summary"]).to_html, "type" => "html"
-            # xml.content Kramdown::Document.new(post["blog_lead"]).to_html, "type" => "html"
-            # if post.has_key?("share_image")
-            #     post_image = post["share_image"]
             if post.has_key?("featured_image")
                 post_image = '<img src="' + post.featured_image.url + image_featured_small + '" width="420" alt="' + post.title + '">'
             else
