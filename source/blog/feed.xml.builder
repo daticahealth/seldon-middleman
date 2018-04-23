@@ -1,6 +1,6 @@
 sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
 
-xml.instruct!
+xml.instruct! :xml, :version => '1.0', :encoding => 'UTF-8'
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
     site_url = "https://datica.com/blog/"
     xml.title "Datica Company Blog"
@@ -9,7 +9,7 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
     xml.tag!("link", "rel" => "alternate", "href" => site_url, "type" => "text/html") 
     xml.tag!("link", "rel" => "self", "href" => site_url + "feed.xml", "type" => "application/atom+xml") 
     xml.author { xml.name "Datica Health, Inc." }
-    xml.icon "https://datica.com/favicon.ico"
+    xml.icon site_icon + "&amp;w=48&amp;h=48"
     xml.logo "https://images.contentful.com/189dvqdsjh46/4SwayIJ5AcCe4iCU820mQs/504b8e57eacc0d81032d01ace96bc622/datica_logo__black.png?w=150"
     sorted_posts.take(1).each do | id, post |
         xml.updated post['pub_date'].to_time.iso8601
@@ -28,7 +28,12 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
             else
                 post_image = nil
             end
-            post_all = post_image + Kramdown::Document.new(post["blog_lead"]).to_html
+            # if post.has_key?("cta_ref")
+            #     post_cta = '<h3>Next: <a href="' + post.cta_ref.cta_url + '">' + post.cta_ref.cta_title + '</a></h3>'
+            # else
+            #     post_cta = nil
+            # end
+            post_all = post_image + Kramdown::Document.new(post["blog_lead"]).to_html + Kramdown::Document.new(post["post"]).to_html + '<p><a href="' + site_url + post.slug + '"> Continue reading, &quot;' + post.title + '&quot;</a></p>'
             xml.tag!("content", "type" => "html") { xml.cdata!(post_all) }
         end
     end

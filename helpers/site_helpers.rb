@@ -4,6 +4,9 @@ module SiteHelpers
     def site_url
         return ENV["DATICA_SITE_URL"] ? ENV["DATICA_SITE_URL"] : "https://datica.com"
     end
+    def site_icon # append &w=n&h=n where n is dimensions in pixels. This one is black btw.
+        'https://images.ctfassets.net/189dvqdsjh46/32chySeS5qMcCWeAwEyCQM/cf6c8d516896bc66f0c67d142869360a/datica-icon-256.png'
+    end
     # def contentful_space
     #     return ENV["DATICA_CF_SPACE"] ? ENV["DATICA_CF_SPACE"] : contentful_space_local
     # end
