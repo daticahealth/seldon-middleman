@@ -49,3 +49,6 @@
 	<meta property="twitter:card" content="summary">
     <meta property="twitter:image" content="<%= image_share_default %>">
 <% end %>
+<% if current_page.data.has_key?("feed_url") %>
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<%= current_page.data.feed_url %>">
+<% end %>
