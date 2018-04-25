@@ -8,7 +8,12 @@ hide_from_sitemap: true
 img_share = "?w=800"
 img_bg = "?fit=thumb&w=1200&h=400"
 img_thumb = "?fit=thumb&w=300&h=300"
+sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
+sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse!
+sorted_guides = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] }
 %>
+
 <div class="container-gray-11">
     <div class="full-width container-color--white drop">
         <ul class="tabs tabs-centered" data-tabs id="recents-tabs">
@@ -22,7 +27,17 @@ img_thumb = "?fit=thumb&w=300&h=300"
         <section class="tabs-panel is-active" id="panel-blog">
             <h2 class="headline-2 text-center group">Blog Brand Elements</h2>
             <div class="row align-center">
-                <div class="columns small-12 medium-12 large-12">
+                <div class="columns small-12 medium-6 large-4">
+                    <div class="card container-gray-10 card-section">
+                        <h3 class="headline-5">Jump to:</h3>
+                        <ul class="no-bullet text-small">
+                            <% sorted_posts[0...5].each do | id, post | %>
+                                <li><a class="" title="Jump to this entry on this page" href="#blog-<%= post["slug"] %>"><%= post["title"] %></a></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="columns small-12 medium-6 large-8">
                     <div class="callout group callout--large">
                         <p class="blog-date">Blog Generic Share Image</p>
                         <p>
@@ -30,14 +45,17 @@ img_thumb = "?fit=thumb&w=300&h=300"
                             <textarea cols="30">https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png<%= img_share %></textarea>
                         </p>
                     </div>
+                </div>
+            </div>
+            <div class="row align-center">
+                <div class="columns small-12 medium-12 large-12">
                     <h2 class="headline-2 text-center group">Blog Post Samples</h2>
-                    <% sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
                     <% sorted_posts[0...5].each do | id, post | %>
-                    <div class="callout group callout--large">
+                    <div id="blog-<%= post.slug %>" class="callout group callout--large">
                         <div class="row">
                             <div class="columns small-12 medium-6 large-5">
                                 <p class="blog-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></p>
-                                <h2 class="headline-4"><a href="/blog/<%= post["slug"] %>"><%= post["title"] %></a></h1>
+                                <h2 class="headline-4"><a href="/blog/<%= post["slug"] %>"><%= post["title"] %></a></h2>
                                 <div class="group">
                                     <% if post.has_key?("summary") %>
                                         <%= Kramdown::Document.new(post["summary"]).to_html %>
@@ -76,28 +94,36 @@ img_thumb = "?fit=thumb&w=300&h=300"
         <section class="tabs-panel" id="panel-podcast">
             <h2 class="headline-2 text-center group">Podcast Brand elements</h2>
             <div class="row align-center">
-                <div class="columns small-12 medium-12 large-12">
-
-                        <div class="callout group callout--large">
-                            <p class="blog-date">Podcast Generic Share Image</p>
-                            <p>
-                                <img src="https://images.ctfassets.net/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/4e0140e8f981742be948e84cdd687970/podcast-art-share-h.jpg<%= img_share %>">
-                                <textarea>https://images.ctfassets.net/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/4e0140e8f981742be948e84cdd687970/podcast-art-share-h.jpg<%= img_share %></textarea>
-                            </p>
-                            <p class="blog-date">Show Image</p>
-                            <p>
-                                <img src="https://images.ctfassets.net/189dvqdsjh46/3d9wcnPdhm4mQA4a4Y4WMK/51232bdb711f16512d03b250a9bb422e/HI_Podcast_Poster_2017_No.3__new_look_Q3_-512px.jpg<%= img_thumb %>" width="140">
-                                <textarea>https://images.ctfassets.net/189dvqdsjh46/3d9wcnPdhm4mQA4a4Y4WMK/51232bdb711f16512d03b250a9bb422e/HI_Podcast_Poster_2017_No.3__new_look_Q3_-512px.jpg<%= img_thumb %></textarea>
-                            </p>
-                        </div>
+                <div class="columns small-12 medium-6 large-4">
+                    <div class="card container-gray-10 card-section">
+                        <h3 class="headline-5">Jump to:</h3>
+                        <ul class="no-bullet text-small">
+                            <% sorted_podcasts[0...3].each do | id, podcast | %>
+                                <li><a class="" title="Jump to this entry on this page" href="#podcast-<%= podcast["slug"] %>"><%= podcast["title"] %></a></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="columns small-12 medium-6 large-8">
+                    <div class="callout group callout--large">
+                        <p class="blog-date">Podcast Generic Share Image</p>
+                        <p>
+                            <img src="https://images.ctfassets.net/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/4e0140e8f981742be948e84cdd687970/podcast-art-share-h.jpg<%= img_share %>">
+                            <textarea>https://images.ctfassets.net/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/4e0140e8f981742be948e84cdd687970/podcast-art-share-h.jpg<%= img_share %></textarea>
+                        </p>
+                        <p class="blog-date">Show Image</p>
+                        <p>
+                            <img src="https://images.ctfassets.net/189dvqdsjh46/3d9wcnPdhm4mQA4a4Y4WMK/51232bdb711f16512d03b250a9bb422e/HI_Podcast_Poster_2017_No.3__new_look_Q3_-512px.jpg<%= img_thumb %>" width="140">
+                            <textarea>https://images.ctfassets.net/189dvqdsjh46/3d9wcnPdhm4mQA4a4Y4WMK/51232bdb711f16512d03b250a9bb422e/HI_Podcast_Poster_2017_No.3__new_look_Q3_-512px.jpg<%= img_thumb %></textarea>
+                        </p>
+                    </div>
                 </div>
             </div>
             <h2 class="headline-2 text-center group">Podcast Samples</h2>
             <div class="row align-center">
                 <div class="columns small-12 medium-12 large-12">
-                    <% sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse! %>
                     <% sorted_podcasts[0...3].each do | id, podcast | %>
-                        <div class="callout group callout--large">
+                        <div id="podcast-<%= podcast.slug %>" class="callout group callout--large">
                             <div class="row">
                                 <div class="columns small-12">
                                     <h3 class="headline-4 group">
@@ -123,11 +149,23 @@ img_thumb = "?fit=thumb&w=300&h=300"
         </section>
         <section class="tabs-panel" id="panel-reports">
             <h2 class="headline-2 text-center group">Reports</h2>
+            <div class="row align-left">
+                <div class="columns small-12 medium-6 large-4 group">
+                    <div class="card container-gray-10 card-section">
+                        <h3 class="headline-5">Jump to:</h3>
+                        <ul class="no-bullet text-small">
+                            <% sorted_reports.each do | id, report | %>
+                                <li><a class="" title="Jump to this entry on this page" href="#report-<%= report["slug"] %>"><%= report["title"] %></a></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="row align-center">
                 <div class="columns small-12">
-                    <% sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse! %>
                     <% sorted_reports.each do | id, report | %>
-                        <div class="callout callout--large drop">
+                        <div id="report-<%= report.slug %>" class="callout callout--large drop">
                             <div class="row">
                                 <div class="columns small-12 medium-6 large-5">
                                     <% if report.has_key?("subhead") %>
@@ -172,17 +210,28 @@ img_thumb = "?fit=thumb&w=300&h=300"
         </section>
         <section class="tabs-panel" id="panel-guides">
             <h2 class="headline-2 text-center group">Guides</h2>
+            <div class="row align-left">
+                <div class="columns small-12 medium-6 large-4 group">
+                    <div class="card container-gray-10 card-section">
+                        <h3 class="headline-5">Jump to:</h3>
+                        <ul class="no-bullet text-small">
+                            <% sorted_guides.each do | id, guide | %>
+                                <li><a class="" title="Jump to this entry on this page" href="#guide-<%= guide["slug"] %>"><%= guide["title"] %></a></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="row align-center">
                 <div class="columns small-12">
-                    <% sorted_guides = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] } %>
                     <% sorted_guides.each do | id, guide | %>
-                        <div class="callout callout--large drop">
+                        <div id="guide-<%= guide.slug %>" class="callout callout--large drop">
                             <div class="row">
                                 <div class="columns small-12 medium-6 large-5">
-                                    <% if guide.has_key?("subhead") %>
-                                        <h4 class="headline-5 spaced-out text-small"><%= guide.subhead %></h4>
-                                    <% end %>
                                     <h2 class="headline-4"><%= guide.title %></h2>
+                                    <% if guide.has_key?("subhead") %>
+                                        <h4 class="headline-5"><%= guide.subhead %></h4>
+                                    <% end %>
                                     <% if guide.has_key?("desc") %>
                                         <%= Kramdown::Document.new(guide["desc"]).to_html %>
                                     <% end %>
