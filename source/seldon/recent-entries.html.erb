@@ -49,21 +49,21 @@ img_thumb = "?fit=thumb&w=300&h=300"
                                     <% if post.has_key?("featured_image") %>
                                         <p class="blog-date">Background Image</p>
                                         <img src="<%= post["featured_image"]["url"] %><%= img_bg %>" alt="Background Image">
-                                        <textarea><%= h post["featured_image"]["url"] %><%= img_bg %></textarea>
+                                        <textarea><%= cf_asset_protocol %><%= h post["featured_image"]["url"] %><%= img_bg %></textarea>
                                     <% end %>
                                 </div>
                                 <div class="group">
                                     <% if post.has_key?("share_image") %>
                                         <p class="blog-date">Share Image</p>
                                         <img class="" src="<%= post["share_image"]["url"] %><%= img_share %>" alt="Share Image">
-                                        <textarea cols="30"><%= h post["share_image"]["url"] %><%= img_share %></textarea>
+                                        <textarea cols="30"><%= cf_asset_protocol %><%= h post["share_image"]["url"] %><%= img_share %></textarea>
                                     <% end %>
                                 </div>
                                 <div class="group">
                                     <% if post.has_key?("featured_image") %>
                                         <p class="blog-date">Thumbnail Image</p>
                                         <img class="" src="<%= post["featured_image"]["url"] %><%= img_thumb %>" alt="Thumbnail Image">
-                                        <textarea cols="30"><%= h post["featured_image"]["url"] %><%= img_thumb %></textarea>
+                                        <textarea cols="30"><%= cf_asset_protocol %><%= h post["featured_image"]["url"] %><%= img_thumb %></textarea>
                                     <% end %>
                                 </div>
                             </div>
@@ -143,7 +143,7 @@ img_thumb = "?fit=thumb&w=300&h=300"
                                     <p class="blog-date">Background (Featured) Image</p>
                                         <p>
                                             <img class="" src="<%= report.bg_image.url %><%= img_bg %>">
-                                            <textarea><%= h report.bg_image.url %><%= img_bg %></textarea>
+                                            <textarea><%= cf_asset_protocol %><%= h report.bg_image.url %><%= img_bg %></textarea>
                                         </p>
                                     <% end %>
 
@@ -151,7 +151,7 @@ img_thumb = "?fit=thumb&w=300&h=300"
                                         <p class="blog-date">Share Image</p>
                                         <p>
                                             <img class="" src="<%= report.share_image.url %><%= img_share %>">
-                                            <textarea><%= h report.share_image.url %><%= img_share %></textarea>
+                                            <textarea><%= cf_asset_protocol %><%= h report.share_image.url %><%= img_share %></textarea>
                                         </p>
                                     <% end %>
 
@@ -160,7 +160,7 @@ img_thumb = "?fit=thumb&w=300&h=300"
                                     <p class="blog-date">Thumbnail Image</p>
                                         <p>
                                             <img class="" src="<%= report.image_thumb.url %><%= img_thumb %>">
-                                            <textarea><%= h report.image_thumb.url %><%= img_thumb %></textarea>
+                                            <textarea><%= cf_asset_protocol %><%= h report.image_thumb.url %><%= img_thumb %></textarea>
                                         </p>
                                     <% end %>
                                 </div>
@@ -192,7 +192,7 @@ img_thumb = "?fit=thumb&w=300&h=300"
                                     <p class="blog-date">Background (Featured) Image</p>
                                         <p>
                                             <img class="" src="<%= guide.bg_image.url %><%= img_bg %>">
-                                            <textarea><%= h guide.bg_image.url %><%= img_bg %></textarea>
+                                            <textarea><%= cf_asset_protocol %><%= h guide.bg_image.url %><%= img_bg %></textarea>
                                         </p>
                                     <% end %>
 
@@ -200,7 +200,7 @@ img_thumb = "?fit=thumb&w=300&h=300"
                                         <p class="blog-date">Share Image</p>
                                         <p>
                                             <img class="" src="<%= guide.share_image.url %><%= img_share %>">
-                                            <textarea><%= h guide.share_image.url %><%= img_share %></textarea>
+                                            <textarea><%= cf_asset_protocol %><%= h guide.share_image.url %><%= img_share %></textarea>
                                         </p>
                                     <% end %>
 
@@ -209,7 +209,7 @@ img_thumb = "?fit=thumb&w=300&h=300"
                                     <p class="blog-date">Thumbnail Image</p>
                                         <p>
                                             <img class="" src="<%= guide.image_thumb.url %><%= img_thumb %>">
-                                            <textarea><%= h guide.image_thumb.url %><%= img_thumb %></textarea>
+                                            <textarea><%= cf_asset_protocol %><%= h guide.image_thumb.url %><%= img_thumb %></textarea>
                                         </p>
                                     <% end %>
                                 </div>
