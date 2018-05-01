@@ -44,17 +44,18 @@
             url: "/dhsf"
             desc: "The framework for teams building digital health products"
         -
-            title: "Discover: Healthcare Topics"
-            url: "/discover"
-            desc: "A Curated Collection of Healthcare Technology Topics from Datica"
+            title: "Innovation Hub"
+            url: "/innovation"
+            desc: "Home of the Healthcare Innovators Podcast, In-depth Reports, and More"
         -
             title: "The Academy"
             url: "/academy"
             desc: "The definitive resource for those looking to learn about Compliance and Interoperability"
+            has_divider: true
         -
-            title: "Healthcare Innovators Podcast"
-            url: "/innovation"
-            desc: "How does healthcare innovate?"
+            title: "Discover: Healthcare Topics"
+            url: "/discover"
+            desc: "A Curated Collection of Healthcare Technology Topics from Datica"
         -
             title: "White Papers"
             url: "/whitepapers"

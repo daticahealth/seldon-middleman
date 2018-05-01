@@ -13,7 +13,7 @@ html lang="en"
     //- if build?
     //  = partial "partials/scripts/google-tm-body"
     = yield
-    // = partial "partials/snippets/footer"
+    = partial "partials/snippets/footer"
     = partial "partials/scripts/footer"
     - if current_page.data.has_key?("customJS")
       - current_page.data.customJS.split(",").each do |filename|
