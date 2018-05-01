@@ -1,0 +1,20 @@
+doctype html
+html lang="en" 
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    //- if build?
+    //  = partial "partials/scripts/google-tm-head"
+    = partial "partials/head/tags"
+    // = partial "partials/head/icons"
+    = stylesheet_link_tag "seldon"
+    - if current_page.data.has_key?("customCSS")
+      = stylesheet_link_tag "views/"+current_page.data.customCSS
+  body
+    //- if build?
+    //  = partial "partials/scripts/google-tm-body"
+    = yield
+    // = partial "partials/snippets/footer"
+    = partial "partials/scripts/footer"
+    - if current_page.data.has_key?("customJS")
+      - current_page.data.customJS.split(",").each do |filename|
+        script src="#{filename.strip}" 

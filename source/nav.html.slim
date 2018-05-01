@@ -1,0 +1,39 @@
+---
+title: "Nav development"
+summary: "The leadership team behind Datica"
+author: "Datica, Inc."
+tags: "leadership, strategy, people"
+share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+layout: testing
+hide_from_sitemap: true
+---
+nav
+  .top-bar(data-responsive-toggle="nav-mobile", data-hide-for="large")
+    button(type="button", data-toggle="nav-mobile")
+      .menu-icon
+      .title-bar Menu
+  .top-bar#nav-mobile.hide-for-large
+
+nav
+  .top-bar.show-for-large#nav-desktop
+    .top-bar-left
+      ul.menu
+        - data.footer_main[0].children.each do |nav_list|
+          - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
+            li
+              = current_link_to nav_list.title, nav_list.url, title: nav_list.desc, class: ""
+    .top-bar-right
+      ul.dropdown.menu(data-dropdown-menu)
+        - data.footer_main[1...4].each do |f|
+          - if f.has_key?("children")
+            li.has-submenu = f.title
+              ul.submenu.menu.vertical(data-submenu)
+                - f["children"].each do |c|
+                  li
+                    = current_link_to c.title, c.url, title: c.desc, class: ""
+            li
+              ruby:
+                sign_link = data.footer_main[4].children[0]
+              = current_link_to sign_link.title, sign_link.url, title: sign_link.desc, class: ""
+
+
