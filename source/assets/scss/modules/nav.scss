@@ -117,17 +117,20 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
+.nav-logo--link {
+    color: $gray-1;
+}   
+
+.nav[data-theme="dark"] {
+    .nav-logo--link, .menu-header, .is-active .menu-header {
+        color: white;
+        &:hover, &:active {
+            color: $color_yellow-glow;
+        }
+    }
+}
 .nav-desktop {
     .nav-logo--link {
         padding: 0.2rem 1rem 0.2rem 0.2rem;
     }
-}
-.nav-logo--link {
-    color: $gray-1;
-    // .svg-color--black path {
-    //     fill: black;
-    // }
-    // .svg-color--white path {
-    //     fill: white;
-    // }
 }
