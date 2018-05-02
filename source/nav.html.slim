@@ -37,7 +37,6 @@ css:
         a.button.nav-button href="#" title="Main Menu" data-toggle="nav-mobile"
           span.nav-button--label Menu
           = inline_svg("small/icon-menu", class: "nav-button--icon svg-color--white")
-
     .title-bar#nav-mobile
       .row.align-center.align-middle
         .columns.small-12.medium-6.medium-order-2
@@ -46,7 +45,6 @@ css:
         .columns.small-12.medium-6.medium-order-1.group
           .callout.callout--dark-alt
             ul.menu.vertical.full-width
-              li
               - data.footer_main[0].children.each do |nav_list|
                 - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
                   li
@@ -62,8 +60,9 @@ css:
                 - nav_dropdown["children"].each do |menu_child|
                   ruby:
                     item_class = (menu_child.has_key?("has_divider") ? 'submenu-divider' : nil)
-                  li(class=item_class)
-                    = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: "link--white text-light"
+                  - unless menu_child.has_key?("show_on_mobile") && menu_child.show_on_mobile == false
+                    li(class=item_class)
+                      = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: "link--white text-light"
       .row.small-up-1.medium-up-2
         .column
           a.button.expanded href="/contact" title="Contact Us" Get in touch

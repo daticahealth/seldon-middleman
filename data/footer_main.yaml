@@ -4,9 +4,9 @@
     desc:
     children:
         -
-            title: "Datica Platform"
+            title: "Platform"
             url: "/platform"
-            desc: "The cloud enablement layer for all healthcare applications"
+            desc: "The Datica Platform is a cloud enablement layer for all healthcare applications"
             nav_main: true
         -
             title: "Technology Overview"
@@ -65,10 +65,12 @@
             title: "Mock FHIR API"
             url: "https://fhir.datica.com"
             desc: "Experiment with the FHIR API for free"
+            show_on_mobile: false
         -
             title: "Mock HL7 API"
             url: "https://hl7.datica.com"
             desc: "Experiment with the HL7 API for free"
+            show_on_mobile: false
 -
     title: "Company"
     url:

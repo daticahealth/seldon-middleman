@@ -38,7 +38,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
     .callout {
-        padding: 0.4rem 0.2rem;
+        padding: 0.8rem 1.4rem;
         margin-bottom: 1rem;
     }
     .is-submenu-item {
@@ -55,6 +55,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
     }
     .menu.vertical {
         li a {
+            line-height: 1.3;
             padding-top:    0.4rem;
             padding-bottom: 0.4rem;
         }
@@ -108,6 +109,11 @@ $duration: $timing-default * 1.5; //settings.scss:281
             @extend .spaced-out;
             font-size: 70%;
             margin-right: 0.3rem;
+        }
+    }
+    .menu.vertical {
+        li a {
+            padding: 0.3rem 0.3rem 0.3rem 0;
         }
     }
 }
