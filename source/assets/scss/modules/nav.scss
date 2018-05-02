@@ -29,7 +29,9 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
-
+.menu li {
+    margin-bottom: unset;
+}
 .nav {
     a.link--white {
         border-bottom: none !important;
@@ -117,11 +119,11 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
-.nav-logo--link {
+.nav-logo--link { // data-theme = dark default
     color: $gray-1;
 }   
 
-.nav[data-theme="dark"] {
+.nav[data-theme="light"] {
     .nav-logo--link, .menu-header, .is-active .menu-header {
         color: white;
         &:hover, &:active {
