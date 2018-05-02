@@ -139,10 +139,15 @@ $gray-list-short: (
 );
 
 // Datica Colors
+$color_blue:             hsl(219, 94%, 48%);
+$color_green:            hsl(152, 79%, 39%); //hsl(150, 85%, 39%); // hsl(160, 100%, 34%);
+$color_shadow:           #DCE4E9;
+$color_highlight-yellow: #FEDB45;
+$color_red:              hsl(349, 72%, 39%); // cool darker red
 $color_deep:             #010101;
 $color_deep-alt:         #1E2127;
 $color_prime:            hsl(235, 88%, 51%);
-$color_prime-alt:        hsl(219, 94%, 48%);
+$color_prime-alt:        $color_blue;
 $color_product:          #426788;
 $color_product-alt:      #6C93B5;
 $color_service:          #D93939;
@@ -152,10 +157,6 @@ $color_talk-alt:         #7A848D;
 $color_light:            $gray-10; //hsl(204, 29%, 77%);
 $color_light-alt:        $gray-12; //hsl(204, 18%, 94%);
 $color_border:           lighten(#B3C8D6, 10%);
-$color_green:            hsl(152, 79%, 39%); //hsl(150, 85%, 39%); // hsl(160, 100%, 34%);
-$color_shadow:           #DCE4E9;
-$color_highlight-yellow: #FEDB45;
-$color_red:              hsl(349, 72%, 39%); // cool darker red
 // named color lists
 $color-slugs: (
     white,
@@ -264,7 +265,7 @@ $global-radius:                 6px;
 $global-position: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-menu-padding: 0.7rem 1rem;
+$global-menu-padding: 0.8rem 1.1rem;
 $global-menu-nested-margin: 1rem;
 $global-text-direction:         ltr;
 $global-flexbox:                true; // watch this for any problems

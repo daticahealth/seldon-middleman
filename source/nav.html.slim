@@ -7,42 +7,64 @@ share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/f
 layout: testing
 hide_from_sitemap: true
 ---
-nav
-  .top-bar(data-responsive-toggle="nav-mobile", data-hide-for="large")
-    button(type="button", data-toggle="nav-mobile")
-      .menu-icon
-      .title-bar Menu
-  .top-bar#nav-mobile.hide-for-large
+ruby:
+  if defined?(current_page.data.collectionName) # this is already a part of static pages/sections
+    track_category = current_page.data.collectionName
+  else
+      track_category = "nav"
+  end
+  if defined?(style) && style == "light"
+      header_class = " main-header--white"
+      element_color = "white"
+  else
+      header_class = nil
+      element_color = "black"
+  end
 
-nav
-  .top-bar.show-for-large#nav-desktop
-    .top-bar-left
-      ul.menu
-        - data.footer_main[0].children.each do |nav_list|
-          - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
-            li
-              = current_link_to nav_list.title, nav_list.url, title: nav_list.desc, class: ""
-    .top-bar-right
-      ul.dropdown.menu(data-dropdown-menu)
+.container-gray-12
+  nav
+    .top-bar(data-responsive-toggle="nav-mobile", data-hide-for="large")
+      button(type="button", data-toggle="nav-mobile")
+        .menu-icon
+        .title-bar Menu
+    .top-bar#nav-mobile.hide-for-large
+
+  nav
+    .top-bar.show-for-large#nav-desktop
+      .top-bar-left
+        ul.menu
+          - data.footer_main[0].children.each do |nav_list|
+            - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
+              li
+                = current_link_to nav_list.title, nav_list.url, title: nav_list.desc, class: ""
+      .top-bar-right
+        ul.dropdown.menu(data-dropdown-menu)
+          - data.footer_main[1...4].each do |f|
+            - if f.has_key?("children")
+              li.has-submenu
+                a = f.title
+                ul.submenu.menu.vertical(data-submenu)
+                  - f["children"].each do |c|
+                    ruby:
+                      item_class = (c.has_key?("has_divider") ? 'submenu-divider' : nil)
+                    li(class=item_class)
+                      = current_link_to c.title, c.url, title: c.desc, class: ''
+          li
+            ruby:
+              sign_link = data.footer_main[3].children[0]
+            = current_link_to sign_link.title, sign_link.url, title: sign_link.desc, class: ""
+          li
+            a.button(href="/contact", title="Contact Us") Contact
+  .row
+    .columns
+      ul.dropdown.menu
         - data.footer_main[1...4].each do |f|
           - if f.has_key?("children")
             li.has-submenu
               a = f.title
-              ul.submenu.menu.vertical(data-submenu)
+              ul.submenu.menu.vertical.js-dropdown-active
                 - f["children"].each do |c|
                   ruby:
                     item_class = (c.has_key?("has_divider") ? 'submenu-divider' : nil)
                   li(class=item_class)
                     = current_link_to c.title, c.url, title: c.desc, class: ''
-        li
-          ruby:
-            sign_link = data.footer_main[3].children[0]
-          = current_link_to sign_link.title, sign_link.url, title: sign_link.desc, class: ""
-        li
-          a.button(href="/contact", title="Contact Us") Contact
-
-
-css:
-  .submenu-divider {
-    border-bottom: 1px solid gray;
-  }
