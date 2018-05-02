@@ -49,11 +49,11 @@ ruby:
           - if nav_dropdown.has_key?("children")
               .headline-5 = nav_dropdown.title
               ul.no-bullet.group
-              - nav_dropdown["children"].each do |menu_child|
-                ruby:
-                  item_class = (menu_child.has_key?("has_divider") ? 'submenu-divider' : nil)
-                li(class=item_class)
-                  = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: "link--white text-light"
+                - nav_dropdown["children"].each do |menu_child|
+                  ruby:
+                    item_class = (menu_child.has_key?("has_divider") ? 'submenu-divider' : nil)
+                  li(class=item_class)
+                    = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: "link--white text-light"
         ul.no-bullet
           li
             a.button href="/contact" title="Contact Us" data-expand-on-small="true" Get in touch
