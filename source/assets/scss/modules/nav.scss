@@ -17,16 +17,58 @@ $duration: $timing-default * 1.5; //settings.scss:281
         opacity: 0;
     }
 }
-.nav-logo {
-    height: 2rem;
-    width: auto;
+.no-js { // preventing FOUC
+    @include breakpoint (small only) {
+        .top-bar {
+            display: none;
+        }
+    }
+    @include breakpoint (medium) {
+        .title-bar {
+            display: none;
+        }
+    }
 }
-.menu {
+
+.nav {
+    a.link--white {
+        border-bottom: none !important;
+        &:hover {
+            border-bottom: none !important;
+        }
+    }
+    .callout {
+        padding: 0.4rem 0.2rem;
+        margin-bottom: 1rem;
+    }
+    .is-submenu-item {
+        margin-bottom: 0;
+        a {
+            transition: none;
+            transition: color $timing-default linear;
+            color: $gray-3;
+            font-weight: $font-weight-mid;
+            &:hover {
+                color: $color_prime-alt;
+            }
+        }
+    }
+    .menu.vertical {
+        li a {
+            padding-top:    0.4rem;
+            padding-bottom: 0.4rem;
+        }
+    }
     .submenu {
-        @include shadow-anarchy(2px 3px 5px 0 black(0.3));
+        @include shadow-anarchy(2px 2px 6px 0 black(0.2));
         border-radius: $global-radius;
+        margin-top: 0.5rem;
+        padding-top:    0.8rem;
+        padding-bottom: 0.8rem;
         &-divider {
-            border-bottom: 1px solid black(0.3);
+            border-bottom: 1px solid transparentize($gray-5, 0.8);
+            padding-bottom:    0.5rem;
+            margin-bottom:  0.5rem;
         }
         &::before {
             $tri-size: 10px;
@@ -39,20 +81,47 @@ $duration: $timing-default * 1.5; //settings.scss:281
     .menu-header { // primary nav items, that are sometimes not links =/
         font-weight: $font-weight-mid;
         color: $gray-2;
-    }
-    .is-submenu-item {
-        margin-bottom: 0;
-        a {
-            transition: color $timing-default linear;
-            color: $gray-3;
-            font-weight: $font-weight-mid;
-            &:hover {
-                color: $color_prime-alt;
-            }
+        &:hover {
+            color: $color_prime-alt;
         }
     }
     .js-dropdown-active {
         display: inline-block;
         @include animation (fadeIn 0.3s ease);
     }
+}
+.nav-logo { // pairing with svg use symbol, requires express dimensions. Aspect ratio is maintained, but spacing can be weird.
+    height: 2.3rem;
+    width: 5.6rem;
+}
+.nav-mobile {
+    .nav-button {
+        @include no-nudge;
+        background-color: black;
+        margin-bottom: 0;
+        &--icon {
+            width:  1.3em;
+            height: 1.3em;
+            vertical-align: middle;
+        } 
+        &--label {
+            @extend .spaced-out;
+            font-size: 70%;
+            margin-right: 0.3rem;
+        }
+    }
+}
+.nav-desktop {
+    .nav-logo--link {
+        padding: 0.2rem 1rem 0.2rem 0.2rem;
+    }
+}
+.nav-logo--link {
+    color: $gray-1;
+    // .svg-color--black path {
+    //     fill: black;
+    // }
+    // .svg-color--white path {
+    //     fill: white;
+    // }
 }

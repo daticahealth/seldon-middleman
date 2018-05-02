@@ -20,49 +20,64 @@ ruby:
       header_class = nil
       element_color = "black"
   end
+css:
+  .submenu, #nav-mobile {
+    display: none;
+  }
+= partial "assets/icons/inlined/datica-logo-horiz-symbol.svg"
 
-/ = inline_svg("datica-logo-horiz-symbol")
 .container-gray-12
-  nav
+  nav.nav.nav-mobile.hide-for-large
     .title-bar.align-middle data-responsive-toggle="nav-mobile" data-hide-for="large"
       .columns.small-6
-        / svg.icon-inline.svg-color--white id="datica-logo-mobile"
-        /   use.symbol-icon xlink:href="#datica-logo-horiz"
-        = inline_svg("datica-logo-horiz", class: "nav-logo svg-color--white")
+        a.nav-logo--link.link--white
+          svg.nav-logo.svg-color--white id="datica-logo-mobile"
+            use.symbol-icon xlink:href="#datica-logo-horiz"
       .columns.small-6.text-right
-        button type="button" data-toggle="nav-mobile"
-          = inline_svg("small/icon-menu", class: "icon-size--small icon-inline svg-color--white")
-          span.text--white.pub-date Menu
+        a.button.nav-button href="#" title="Main Menu" data-toggle="nav-mobile"
+          span.nav-button--label Menu
+          = inline_svg("small/icon-menu", class: "nav-button--icon svg-color--white")
 
-    .title-bar#nav-mobile.hide-for-large
-      / data-animate="hinge-in-from-top hinge-out-from-top"
-      ul.no-bullet
-        li
-          a.button href="/contact" title="Contact Us" data-expand-on-small="true" Contact Us
-        - data.footer_main[0].children.each do |nav_list|
-          - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
-            li
-              = current_link_to nav_list.title, nav_list.url, title: nav_list.desc, class: "headline-5 link--white"
-              p.text-small.faded = nav_list.desc
-        hr.divider
+    .title-bar#nav-mobile
+      .row.align-center.align-middle
+        .columns.small-12.medium-6.medium-order-2
+          = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact", :button_classes => "button", :icon => "icon-comment", :icon_align => "left" }
+        / data-animate="hinge-in-from-top hinge-out-from-top"
+        .columns.small-12.medium-6.medium-order-1.group
+          .callout.callout--dark-alt
+            ul.menu.vertical.full-width
+              li
+              - data.footer_main[0].children.each do |nav_list|
+                - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
+                  li
+                    a.link--white href=nav_list.url title=nav_list.desc
+                      .headline-5 = nav_list.title
+                      .text-small.text-light = nav_list.desc
+      .row.small-up-1.medium-up-2
         - data.footer_main[1...4].each do |nav_dropdown|
           - if nav_dropdown.has_key?("children")
+            .column.group
               .headline-5 = nav_dropdown.title
-              ul.no-bullet.group
+              ul.menu.vertical
                 - nav_dropdown["children"].each do |menu_child|
                   ruby:
                     item_class = (menu_child.has_key?("has_divider") ? 'submenu-divider' : nil)
                   li(class=item_class)
                     = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: "link--white text-light"
-        ul.no-bullet
-          li
-            a.button href="/contact" title="Contact Us" data-expand-on-small="true" Get in touch
-          li
-            = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "button hollow-inverted", :icon => "icon-phone" }
-  nav
-    .top-bar.show-for-large#nav-desktop
+      .row.small-up-1.medium-up-2
+        .column
+          a.button.expanded href="/contact" title="Contact Us" Get in touch
+        .column
+          = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "button hollow-inverted expanded", :icon => "icon-phone" }
+
+  nav.nav.nav-desktop.show-for-large
+    .top-bar#nav-desktop
       .top-bar-left
         ul.menu
+          li
+            a.nav-logo--link href="/" title="Datica Home"
+              svg id="datica-logo-mobile" class="nav-logo"
+                use.symbol-icon xlink:href="#datica-logo-horiz"
           - data.footer_main[0].children.each do |nav_list|
             - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
               li
@@ -78,23 +93,10 @@ ruby:
                     ruby:
                       item_class = (menu_child.has_key?("has_divider") ? 'submenu-divider' : nil)
                     li(class=item_class)
-                      = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: ''
+                      = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: 'menu-header'
           li
             ruby:
               sign_link = data.footer_main[3].children[0]
-            = current_link_to sign_link.title, sign_link.url, title: sign_link.desc, class: ""
+            = current_link_to sign_link.title, sign_link.url, title: sign_link.desc, class: "menu-header"
           li
             a.button(href="/contact", title="Contact Us") Contact
-  .row
-    .columns
-      ul.dropdown.menu
-        - data.footer_main[1...4].each do |f|
-          - if f.has_key?("children")
-            li.has-submenu
-              a = f.title
-              ul.submenu.menu.vertical.js-dropdown-active
-                - f["children"].each do |c|
-                  ruby:
-                    item_class = (c.has_key?("has_divider") ? 'submenu-divider' : nil)
-                  li(class=item_class)
-                    = current_link_to c.title, c.url, title: c.desc, class: ''

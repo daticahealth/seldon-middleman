@@ -189,7 +189,12 @@ $underline: false !default;
         transform: translate3d(3px, 0, 0);
     }
 }
-
+@mixin no-nudge {
+    &:focus,
+    &:hover {
+        transform: translate3d(0, 0, 0);
+    }
+}
 // Gradient mixins
 
 @mixin gradient($args...){ // pass whatever you want, as long as it's a valid gradient
