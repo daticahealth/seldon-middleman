@@ -17,29 +17,42 @@ $duration: $timing-default * 1.5; //settings.scss:281
         opacity: 0;
     }
 }
-
-.submenu {
-    @include shadow-anarchy(2px 3px 5px 0 black(0.3));
-    border-radius: $global-radius;
-    &-divider {
-        border-bottom: 1px solid black(0.3);
-    }
-    &::before {
-        @include css-triangle(10px, white, up);
-    }
+.nav-logo {
+    height: 2rem;
+    width: auto;
 }
-.is-submenu-item {
-    margin-bottom: 0;
-    a {
-        transition: color $timing-default linear;
-        color: $gray-3;
-        font-weight: $font-weight-mid;
-        &:hover {
-            color: $color_prime-alt;
+.menu {
+    .submenu {
+        @include shadow-anarchy(2px 3px 5px 0 black(0.3));
+        border-radius: $global-radius;
+        &-divider {
+            border-bottom: 1px solid black(0.3);
+        }
+        &::before {
+            $tri-size: 10px;
+            @include css-triangle(10px, white, up);
+            position: absolute;
+            top: -$tri-size;
+            right: $tri-size * 4;
         }
     }
-}
-.js-dropdown-active {
-    display: inline-block;
-    @include animation (fadeIn 0.3s ease);
+    .menu-header { // primary nav items, that are sometimes not links =/
+        font-weight: $font-weight-mid;
+        color: $gray-2;
+    }
+    .is-submenu-item {
+        margin-bottom: 0;
+        a {
+            transition: color $timing-default linear;
+            color: $gray-3;
+            font-weight: $font-weight-mid;
+            &:hover {
+                color: $color_prime-alt;
+            }
+        }
+    }
+    .js-dropdown-active {
+        display: inline-block;
+        @include animation (fadeIn 0.3s ease);
+    }
 }

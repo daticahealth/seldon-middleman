@@ -593,7 +593,7 @@ $dropdown-sizes: (
 // -----------------
 
 $dropdownmenu-arrows: true;
-$dropdownmenu-arrow-color: $anchor-color;
+$dropdownmenu-arrow-color: $gray-5;
 $dropdownmenu-arrow-size: 6px;
 $dropdownmenu-arrow-padding: 1.5rem;
 $dropdownmenu-min-width: 300px;
@@ -1027,7 +1027,7 @@ $thumbnail-radius: $global-radius * 0.8;
 // 53. Title Bar
 // -------------
 
-$titlebar-background: $black;
+$titlebar-background: $gray-2;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
