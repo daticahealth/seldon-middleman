@@ -13,6 +13,9 @@ ruby:
     header_class = nil
     element_color = "black"
   end
+  sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+  sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
+
 css:
   .submenu, #nav-mobile {
     display: none;
@@ -35,15 +38,26 @@ header.main-header
         .columns.small-12.medium-6.medium-order-2
           = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact", :button_classes => "button", :icon => "icon-comment", :icon_align => "left" }
         / data-animate="hinge-in-from-top hinge-out-from-top"
-        .columns.small-12.medium-6.medium-order-1.group
+        .columns.small-12.medium-6.medium-order-1
           .callout.callout--dark-alt
             ul.menu.vertical.full-width
               - data.footer_main[0].children.each do |nav_list|
                 - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
                   li
                     a.link--white href=nav_list.url title=nav_list.desc
-                      .headline-5 = nav_list.title
+                      .headline-5.no-margin = nav_list.title
                       .text-small.text-light = nav_list.desc
+      .row
+        .columns.small-12
+          .callout.callout--dark-alt.group
+            h4.pub-date.faded Blog
+            - sorted_posts.take(1).each do | id, blog_entry |
+              p
+                a.link--white.text-light(href="/blog/" + blog_entry.slug title=blog_entry.summary)= blog_entry.title
+            h4.pub-date.faded Latest Guide
+            - sorted_guides.take(1).each do | id, guide_entry |
+              p
+                a.link--white.text-light(href="/guide/" + guide_entry.slug title=guide_entry.summary)= guide_entry.title
       .row.small-up-1.medium-up-2
         - data.footer_main[1...4].each do |nav_dropdown|
           - if nav_dropdown.has_key?("children")

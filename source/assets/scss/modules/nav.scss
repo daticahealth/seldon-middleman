@@ -41,7 +41,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
         li a {
             font: {
                 size: 90%;
-                weight: $font-weight-mid;
+                // weight: $font-weight-mid;
             }
             // &[aria-current="page"] {
             // }
@@ -71,7 +71,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
             padding: 0;
             &--link {
                 transition-duration: $timing-default;
-                font-weight: $font-weight-mid;
+                // font-weight: $font-weight-mid;
                 padding: 1rem 1rem calc(1rem - $active-border-height) 1rem;
                 border-bottom: $active-border-height solid transparent;
                 transition: border-color $timing-default linear;
@@ -116,7 +116,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
     .menu-header { // primary nav items, that are sometimes not links =/
-        font-weight: $font-weight-mid;
+        // font-weight: $font-weight-mid;
         color: black(0.8);
         &:hover {
             color: $color_prime-alt;
@@ -147,7 +147,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
             transition: none;
             transition: color $timing-default linear;
             color: $gray-3;
-            font-weight: $font-weight-mid;
+            // font-weight: $font-weight-mid;
             &:hover {
                 color: $color_prime-alt;
             }
@@ -184,14 +184,16 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
-// desktop nav theming; see .menu stuff at top of this file for defaults.
+// ==== desktop nav theming; see .menu stuff at top of this file for defaults.
 .nav-logo--link { // data-theme = dark default
     color: $gray-1;
 }   
 .nav[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
     .nav-logo--link, .menu-header, .is-active .menu-header {
         color: white(0.8);
-        font-weight: $font-weight-regular;
+        // font-weight: $font-weight-regular;
+        transition-property: background-color, color;
+        transition-duration: $timing-default;
         &:hover, &:active {
             color: $color_yellow-glow;
         }
@@ -201,8 +203,10 @@ $duration: $timing-default * 1.5; //settings.scss:281
             li a {
                 color: white(0.6);
                 padding: 1rem;
-                transition: background-color $timing-default linear;
+                transition-property: background-color, color;
+                transition-duration: $timing-default;
                 &:hover {
+                    color: white;
                     background-color: transparentize($gray-5, 0.5);
                 }
                 &[aria-current="page"] {

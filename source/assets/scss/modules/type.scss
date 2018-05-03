@@ -296,18 +296,6 @@ ul.large-list{
         }
     }
 }
-// Color helpers -- beter way to do this? - RR
-
-.blue-text{color: $color_prime-alt;}
-
-// Random helpers
-.type-uppercase{text-transform: uppercase;}
-.type-light{font-weight: $font-weight-light;}
-.type-underline{
-    display: inline-block;
-    padding: 0 0 rem-calc(2px) 0;
-    border-bottom: rem-calc(2px) solid $color_deep;
-}
 
 
 // "magenta-glow": hsl(328, 100%, 69%),
@@ -600,12 +588,4 @@ ul.large-list{
     color: $color_talk-alt;
     font-style: italic;
 }
-.text-small, .text-smaller {
-    font-size: smaller; // goes one step smaller than parent element
-}
-.text-smallest {
-    font-size: 75%;
-}
-.text-light {
-    font-weight: $font-weight-light;
-}
+
