@@ -60,13 +60,13 @@
 @import 'mixins/colors';
 @import 'mixins/animation'; // import this into views/*.scss as needed. Note also the animation mixins above, probabaly best to use those. - AW
 @import 'modules/fonts';
+@import 'modules/links';
 @import 'modules/forms';
 @import 'modules/utility';
 @import 'modules/containers';
 // @import 'modules/ui';
 @import 'modules/nav';
 // @import 'modules/footer';
-@import 'modules/links';
 @import 'modules/type';
 @import 'modules/headers';
 @import 'modules/icons';

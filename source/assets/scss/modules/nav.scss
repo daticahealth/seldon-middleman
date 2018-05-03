@@ -124,6 +124,9 @@ $duration: $timing-default * 1.5; //settings.scss:281
     }
     .submenu {
         @include shadow-anarchy(2px 2px 6px 0 black(0.2));
+        li a {
+            @include fx-hover-nudge;
+        }
         border-radius: $global-radius;
         margin-top: 0.5rem;
         padding-top:    0.8rem;
