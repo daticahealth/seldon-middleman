@@ -44,12 +44,13 @@ end
 # 	icon_color = "white"
 # 	svg_class = "icon-inline svg-color--#{icon_color}"
 # end
-if defined?(icon_color)
-	svg_class = "icon-inline svg-color--#{icon_color}"
-else
-	icon_color = "white"
-	svg_class = "icon-inline"
-end
+# if defined?(icon_color)
+# 	svg_class = "icon-inline svg-color--#{icon_color}"
+# else
+# 	icon_color = "white"
+# 	svg_class = "icon-inline"
+# end
+svg_class = "icon-inline"
 # check for icon alignment; if anything BUT "left" ensure it's "right"
 if defined?(icon_align) && icon_align == "left"
 	svg_class = svg_class + " icon-left"

@@ -183,7 +183,7 @@ $underline: false !default;
                 flex: $set;
 }
 @mixin fx-hover-nudge {
-    transition: transform $timing-default * 0.8 ease, color $timing-default * 0.8 ease;
+    transition: transform $timing-default * 0.8 ease, color $timing-default * 0.8 linear;
     &:focus,
     &:hover {
         transform: translate3d(3px, 0, 0);
