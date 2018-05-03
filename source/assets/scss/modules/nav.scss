@@ -36,6 +36,13 @@ $duration: $timing-default * 1.5; //settings.scss:281
         padding: 0.6rem 0.8rem;
     }
 }
+// .menu {
+//     &-secondary { // this is now preferred solution for secondary stacked navs
+//         li a[aria-current="page"] {
+
+//         }
+//     }
+// }
 
 .sticky {
     $active-border-height: 4px;
@@ -67,7 +74,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
                     background-color: $gray-2;
                     color: white;
                 }
-                &.is-active { // js-applied state by ZF plugins
+                &.is-active, [aria-current="page"] { // js-applied state by ZF plugins
                     border-color: $color_prime-alt;
                 }
             }
@@ -189,14 +196,26 @@ $duration: $timing-default * 1.5; //settings.scss:281
             color: $color_yellow-glow;
         }
     }
+    .menu {
+        &-secondary { // this is now preferred solution for secondary stacked navs
+            li a {
+                padding: 0.5rem;
+                transition: background-color $timing-default linear;
+                &:hover {
+                    background-color: transparentize($gray-5, 0.5);
+                }
+                &[aria-current="page"] {
+                    border-bottom: 3px solid $color_yellow-glow;
+                }
+            }
+        }
+    }
 }
 .nav-desktop {
     .nav-logo--link {
         padding: 0.2rem 1rem 0.2rem 0.2rem;
     }
 }
-
-
 .nav-title--compact {
     font-size: 90%;
 }

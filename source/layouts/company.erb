@@ -19,7 +19,14 @@
         <div class="container-color--dark-alt">
             <%= partial "partials/head/header", :locals => { :style => "light" } %>
         </div>
-        <section class="custom-sticky custom-sticky--dark show-for-large">
+        <div id="companyTop" class="show-for-large" data-sticky-container>
+            <nav class="nav nav-desktop sticky sticky-nav container-gray-1 full-width" data-sticky data-options="marginTop:0; topAnchor:companyTop" data-theme="light">
+                <ul class="menu horizontal align-center menu-secondary">
+                    <%= partial "partials/snippets/nav-sub-company", :locals => { :class_li => "menu-item", :class_a => "menu-header menu-item--link" } %>
+                </ul>
+            </nav>
+        </div>
+<!--         <section class="custom-sticky custom-sticky--dark show-for-large">
             <div class="row">
                 <div class="columns small-12 medium-12">
                     <ul>
@@ -27,7 +34,7 @@
                     </ul>
                 </div>
             </div>
-        </section>
+        </section> -->
         <%= yield %>
         <%= partial "partials/snippets/footer" %>
         <%= partial "partials/scripts/footer" %>
