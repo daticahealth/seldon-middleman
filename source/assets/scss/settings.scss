@@ -282,6 +282,7 @@ $pad: 2rem;
 // Default global transition timing
 $timing-default: 175ms;
 $transition-speed: $timing-default; // synonyms
+$transition-default: $timing-default;
 
 // S, M, L, XL sizes for round/square things
 $thing-tiny: 0.5rem;//8px;

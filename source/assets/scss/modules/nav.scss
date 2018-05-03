@@ -29,8 +29,66 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
+// foundation sticky nav basics
 .menu li {
     margin-bottom: unset;
+    .button.small {
+        padding: 0.6rem 0.8rem;
+    }
+}
+
+.sticky {
+    $active-border-height: 4px;
+    // .is-[state] classes for control over its appearance and exit if needed. Desktop only
+    // @include breakpoint (large) {
+    //     transition: opacity 100ms linear;
+    //     opacity: 0;
+    //     &.is-anchored {
+    //         opacity: 0;
+    //     }
+    //     &.is-stuck {
+    //         opacity: 1;
+    //     }
+    // }
+    .menu {
+        &-item {
+            margin-bottom: 0;
+            padding: 0;
+            &--link {
+                transition-duration: $timing-default;
+                font-weight: $font-weight-mid;
+                padding: 1rem 1rem calc(1rem - $active-border-height) 1rem;
+                border-bottom: $active-border-height solid transparent;
+                transition: border-color $timing-default linear;
+                &:hover {
+                    background-color: $gray-11;
+                }
+                &.active, [aria-current]:not([aria-current="false"]) {
+                    background-color: $gray-2;
+                    color: white;
+                }
+                &.is-active { // js-applied state by ZF plugins
+                    border-color: $color_prime-alt;
+                }
+            }
+            &--cta { // for cta button in sticky nav bar
+                padding: 0.5rem 0.7rem;
+                margin-left: 1rem;
+                &:focus,
+                &:hover { // clear 'nudge' behavior
+                    transform: initial;
+                }
+            }
+        }
+    }
+    &-nav--secondary { // secondary sticky nav... it happens
+        ul li a {
+            font: {
+                size: 90%;
+                weight: $font-weight-mid !important;
+            }
+        }
+    }
 }
 .nav {
     a.link--white {
@@ -43,23 +101,18 @@ $duration: $timing-default * 1.5; //settings.scss:281
         padding: 0.8rem 1.4rem;
         margin-bottom: 1rem;
     }
-    .is-submenu-item {
-        margin-bottom: 0;
-        a {
-            transition: none;
-            transition: color $timing-default linear;
-            color: $gray-3;
-            font-weight: $font-weight-mid;
-            &:hover {
-                color: $color_prime-alt;
-            }
-        }
-    }
     .menu.vertical {
         li a {
             line-height: 1.3;
             padding-top:    0.4rem;
             padding-bottom: 0.4rem;
+        }
+    }
+    .menu-header { // primary nav items, that are sometimes not links =/
+        font-weight: $font-weight-mid;
+        color: $gray-2;
+        &:hover {
+            color: $color_prime-alt;
         }
     }
     .submenu {
@@ -81,11 +134,16 @@ $duration: $timing-default * 1.5; //settings.scss:281
             right: $tri-size * 4;
         }
     }
-    .menu-header { // primary nav items, that are sometimes not links =/
-        font-weight: $font-weight-mid;
-        color: $gray-2;
-        &:hover {
-            color: $color_prime-alt;
+    .is-submenu-item {
+        margin-bottom: 0;
+        a {
+            transition: none;
+            transition: color $timing-default linear;
+            color: $gray-3;
+            font-weight: $font-weight-mid;
+            &:hover {
+                color: $color_prime-alt;
+            }
         }
     }
     .js-dropdown-active {
@@ -119,13 +177,14 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
+// desktop nav theming
 .nav-logo--link { // data-theme = dark default
     color: $gray-1;
 }   
-
-.nav[data-theme="light"] {
+.nav[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
     .nav-logo--link, .menu-header, .is-active .menu-header {
         color: white;
+        font-weight: $font-weight-light;
         &:hover, &:active {
             color: $color_yellow-glow;
         }
@@ -135,4 +194,9 @@ $duration: $timing-default * 1.5; //settings.scss:281
     .nav-logo--link {
         padding: 0.2rem 1rem 0.2rem 0.2rem;
     }
+}
+
+
+.nav-title--compact {
+    font-size: 90%;
 }
