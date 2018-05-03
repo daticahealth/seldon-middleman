@@ -30,20 +30,28 @@ $duration: $timing-default * 1.5; //settings.scss:281
     }
 }
 // foundation sticky nav basics
-.menu li {
-    margin-bottom: unset;
-    .button.small {
-        padding: 0.6rem 0.8rem;
+.menu {
+    li {
+        margin-bottom: unset;
+        .button.small {
+            padding: 0.6rem 0.8rem;
+        }
+    }
+    &-secondary { // this is now preferred solution for secondary stacked navs
+        li a {
+            font: {
+                size: 90%;
+                weight: $font-weight-mid;
+            }
+            // &[aria-current="page"] {
+            // }
+        }
     }
 }
-// .menu {
-//     &-secondary { // this is now preferred solution for secondary stacked navs
-//         li a[aria-current="page"] {
-
-//         }
-//     }
-// }
-
+    // &-nav--secondary { // secondary sticky nav... it happens
+    //     ul li a {
+    //     }
+    // }
 .sticky {
     $active-border-height: 4px;
     // .is-[state] classes for control over its appearance and exit if needed. Desktop only
@@ -88,14 +96,6 @@ $duration: $timing-default * 1.5; //settings.scss:281
             }
         }
     }
-    &-nav--secondary { // secondary sticky nav... it happens
-        ul li a {
-            font: {
-                size: 90%;
-                weight: $font-weight-mid !important;
-            }
-        }
-    }
 }
 .nav {
     a.link--white {
@@ -117,7 +117,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
     }
     .menu-header { // primary nav items, that are sometimes not links =/
         font-weight: $font-weight-mid;
-        color: $gray-2;
+        color: black(0.8);
         &:hover {
             color: $color_prime-alt;
         }
@@ -184,14 +184,14 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
-// desktop nav theming
+// desktop nav theming; see .menu stuff at top of this file for defaults.
 .nav-logo--link { // data-theme = dark default
     color: $gray-1;
 }   
 .nav[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
     .nav-logo--link, .menu-header, .is-active .menu-header {
-        color: white;
-        font-weight: $font-weight-light;
+        color: white(0.8);
+        font-weight: $font-weight-regular;
         &:hover, &:active {
             color: $color_yellow-glow;
         }
@@ -199,12 +199,14 @@ $duration: $timing-default * 1.5; //settings.scss:281
     .menu {
         &-secondary { // this is now preferred solution for secondary stacked navs
             li a {
-                padding: 0.5rem;
+                color: white(0.6);
+                padding: 1rem;
                 transition: background-color $timing-default linear;
                 &:hover {
                     background-color: transparentize($gray-5, 0.5);
                 }
                 &[aria-current="page"] {
+                    color: white;
                     border-bottom: 3px solid $color_yellow-glow;
                 }
             }
