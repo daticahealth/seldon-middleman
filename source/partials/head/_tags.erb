@@ -30,11 +30,6 @@
 <meta property="twitter:title" content="<%= current_page.data.title %>">
 <meta property="twitter:description" content="<%= current_page.data.summary %>">
 
-<meta class="swiftype" name="title" data-type="string" content="<%= current_page.data.title %>" />
-<meta class="swiftype" name="body" data-type="text" content="<%= current_page.data.summary %>" />
-<meta class="swiftype" name="url" data-type="enum" content="<%= site_url + current_page.url %>" />
-<meta class="swiftype" name="tags" data-type="string" content="<%= current_page.data.tags %>" />
-
 <link rel="canonical" href="<%= site_url + current_page.url %>">
 <% if current_page.data.has_key?("share_image") %>
     <meta property="og:image" content="<%= current_page.data.share_image %>">
@@ -48,4 +43,7 @@
     <meta property="og:image" content="<%= image_share_default %>">
 	<meta property="twitter:card" content="summary">
     <meta property="twitter:image" content="<%= image_share_default %>">
+<% end %>
+<% if current_page.data.has_key?("feed_url") %>
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<%= current_page.data.feed_url %>">
 <% end %>

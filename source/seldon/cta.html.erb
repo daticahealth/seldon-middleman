@@ -9,12 +9,12 @@ hide_from_sitemap: true
 	<div class="row align-center">
 		<div class="columns small-12 medium-8 text-center group">
 			<p class="">To manage Calls-to-action, edit them in the "CTA" section of Contentful.</p>
-			<p>Sorted oldest to newest.</p>
+			<!-- <p>Sorted oldest to newest.</p> -->
 		</div>
 	</div>
-    <div class="row full-width">
-        <% sorted_entries = data.site.cta.to_a.sort_by{ |id, p| p['_meta']['updated_at'] } %>
+        <% sorted_entries = data.site.cta.to_a.sort_by{ |id, p| p['_meta']['updated_at'] }.reverse! %>
         <% sorted_entries.each do | id, p | %>
+        <div class="row group--2x">
             <div class="columns small-12 medium-6">
             	<h5 class="headline-5"><%= p["cta_title"] %></h5>
             	<div class="group--2x">
@@ -22,7 +22,7 @@ hide_from_sitemap: true
                 </div>
 			</div>
 <div class="columns small-12 medium-6">
-<h5 class="headline-5 spaced-out">Code</h5>
+<h5 class="pub-date">Code</h5>
 <% if p.has_key?("cta_image") %>
 <textarea rows="3"><a href="<%= h p["cta_url"] %>" title="<%= h p["cta_label"] %>">
   <img src="<%= h p["cta_image"]["url"] %>" alt="<%= h p["cta_label"] %>">
@@ -34,16 +34,16 @@ hide_from_sitemap: true
 <textarea rows="1">
 <a href="<%= h p["cta_url"] %>"><%= p["cta_title"] %></a>
 </textarea>
-<h5 class="headline-5 spaced-out">Text-only</h5>
+<% end %>
+<h5 class="pub-date">Text-only</h5>
 <div class="callout callout--gray-light callout--small">
 <pre class="text-smaller"><%= p["cta_title"] %>
 <%#= p["cta_desc"] %>
 <%= h p["cta_url"] %>
 </pre>
 </div>
-<% end %>
+</div>
 </div>
         <% end %>
-        </div>
     </div>
 </section>

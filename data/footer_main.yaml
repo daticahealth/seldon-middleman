@@ -4,9 +4,10 @@
     desc:
     children:
         -
-            title: "Datica Platform"
+            title: "Platform"
             url: "/platform"
-            desc: "The cloud enablement layer for all healthcare applications"
+            desc: "The Datica Platform is a cloud enablement layer for all healthcare applications"
+            nav_main: true
         -
             title: "Technology Overview"
             url: "/platform/technology"
@@ -27,11 +28,49 @@
             title: "Services"
             url: "/services"
             desc: "Professional services offered by Datica"
+            nav_main: true
         -
             title: "Pricing"
             url: "/pricing"
             desc: "Pricing for the Datica platform"
-
+            nav_main: true
+-
+    title: "Resources"
+    url:
+    desc:
+    children:
+        -
+            title: "Digital Health Success Framework"
+            url: "/dhsf"
+            desc: "The framework for teams building digital health products"
+        -
+            title: "Innovation Hub"
+            url: "/innovation"
+            desc: "Home of the Healthcare Innovators Podcast, In-depth Reports, and More"
+        -
+            title: "HIPAA Academy"
+            url: "/academy"
+            desc: "The definitive resource for those looking to learn about compliance and interoperability"
+            has_divider: true
+        -
+            title: "Discover: Healthcare Topics"
+            url: "/discover"
+            desc: "A Curated Collection of Healthcare Technology Topics from Datica"
+        -
+            title: "White Papers"
+            url: "/whitepapers"
+            desc: "A collection of our formal assessment of healthcare topics"
+            has_divider: true
+        -
+            title: "Mock FHIR API"
+            url: "https://fhir.datica.com"
+            desc: "Experiment with the FHIR API for free"
+            show_on_mobile: false
+        -
+            title: "Mock HL7 API"
+            url: "https://hl7.datica.com"
+            desc: "Experiment with the HL7 API for free"
+            show_on_mobile: false
 -
     title: "Company"
     url:
@@ -46,17 +85,10 @@
             url: "/leadership"
             desc: "The team guiding Datica"
         -
-            title: "Company Blog"
-            url: "/blog"
-            desc: "News and notes from the Datica team"
-        -
-            title: "Engineering Blog"
-            url: "https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog"
-            desc: "Our engineering team shares bleeding-edge insight on what it takes to build a compliant platform"
-        -
             title: "Careers"
             url: "/careers"
             desc: "Job opportunities at Datica"
+            has_divider: true
         -
             title: "Press"
             url: "/press"
@@ -69,39 +101,15 @@
             title: "Open Source"
             url: "/open-source"
             desc: "We believe in the importance of open source."
--
-    title: "Resources"
-    url:
-    desc:
-    children:
+            has_divider: true
         -
-            title: "Digital Health Success Framework"
-            url: "/dhsf"
-            desc: "The framework for teams building digital health products"
+            title: "Engineering Blog"
+            url: "https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog"
+            desc: "Our engineering team shares bleeding-edge insight on what it takes to build a compliant platform"
         -
-            title: "Discover: Healthcare Topics"
-            url: "/discover"
-            desc: "A Curated Collection of Healthcare Technology Topics from Datica"
-        -
-            title: "The Academy"
-            url: "/academy"
-            desc: "The definitive resource for those looking to learn about Compliance and Interoperability"
-        -
-            title: "Healthcare Innovators Podcast"
-            url: "/innovation"
-            desc: "How does healthcare innovate?"
-        -
-            title: "White Papers"
-            url: "/whitepapers"
-            desc: "A collection of our formal assessment of healthcare topics"
-        -
-            title: "Mock FHIR API"
-            url: "https://fhir.datica.com"
-            desc: "Experiment with the FHIR API for free"
-        -
-            title: "Mock HL7 API"
-            url: "https://hl7.datica.com"
-            desc: "Experiment with the HL7 API for free"
+            title: "Company Blog"
+            url: "/blog"
+            desc: "News and notes from the Datica team"
 -
     title: "Help"
     url:

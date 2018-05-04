@@ -1,6 +1,7 @@
 ---
-layout: basic
+layout: company
 ogType: article
+sharer: true
 ---
 <%
 p = locals[:item]
@@ -28,23 +29,7 @@ else
     current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
 end
 %>
-<div class="container-color--dark-alt">
-    <%= partial "partials/head/header", :locals => { :style => "light" } %>
-</div>
-<section class="custom-sticky custom-sticky--dark show-for-large">
-    <div class="row">
-        <div class="columns small-12 medium-12">
-            <ul>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/leadership">Leadership</a></li>
-                <li><a href="/press">Press</a></li>
-                <li><a href="/events" class="active">Events</a></li>
-                <li><a href="/open-source">Open Source</a></li>
-                <li><a href="/careers">Careers</a></li>
-            </ul>
-        </div>
-    </div>
-</section>
+
 <section class="section-article container-color--gray-light">
     <div class="row align-center">
         <div class="columns small-12 large-8">

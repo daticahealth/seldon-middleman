@@ -4,8 +4,9 @@ summary: "A collection of blog articles from Datica team members"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
-layout: basic
+layout: company
 customCSS: "blog"
+feed_url: "https://datica.com/blog/feed.xml"
 ---
 <% 
 today = DateTime.now
@@ -14,16 +15,6 @@ current_page.data.date = today.strftime('%B %-d, %Y')
 sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
 %>
 <div class="container-color--dark-alt">
-    <%= partial "partials/head/header", :locals => { :style => "light" } %>
-    <section class="custom-sticky custom-sticky--dark show-for-large">
-        <div class="row">
-            <div class="columns small-12 medium-12">
-                <ul>
-                    <%= partial "partials/snippets/nav-sub-company" %>
-                </ul>
-            </div>
-        </div>
-    </section>
     <% sorted_posts.take(1).each do | id, post | %>
         <% if post.has_key?("featured_image") %>
             <div class="container-image-fill" data-interchange="[<%= post["featured_image"]["url"] + image_featured_small %>, small], [<%= post["featured_image"]["url"] + image_featured_large %>, medium]">
@@ -102,11 +93,7 @@ sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.revers
     </div>
     <div class="row">
         <div class="column small-12 medium-6">
-            <div class="callout drop">
-                <h4 class="headline-4">Search the blog</h4>
-                <input type="text" class="eng-blog-search" placeholder="Search the blog by keyword...">
-                <p>You can also <a class="" href="/blog/archives/" title="View archived blog posts">browse the archives <i class="fa fa-angle-right"></i></a></p>
-            </div>
+            <%= partial "partials/snippets/button", :locals => { :label => "Browse the blog archives", :url => "/blog/archives/", :button_classes => "button", :icon => "icon-files", :icon_align => "left" } %>
         </div>
         <div class="column small-12 medium-6">
             <%= partial "blog/partials/blog-subscription", :locals => {:color => "dark"} %>

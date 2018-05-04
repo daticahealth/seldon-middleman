@@ -44,12 +44,10 @@ section.container-gray-2#top
     .row.align-middle
         .columns.small-12.medium-8.xlarge-6.group.medium-order-2
             = partial "partials/snippets/button", :locals => { :label => "Get your free report", :url => "#report-form", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
-            .headline-5.subhead--spaced.faded.show-for-large Datica Innovation Reports
+            .headline-5.subhead--spaced.faded.show-for-large
+                = (p.has_key?("subhead") ? p.subhead : "Datica Innovation Reports")
             h1.headline-3.text-strong
-                - if p.has_key?("subhead")
-                    = p.subhead
-                - else
-                    = p.title
+                = p.title
         - if p.has_key?("image_thumb")
             .columns.small-12.medium-4.xlarge-4.text-center.medium-order-1
                 img.text-center.product-thumb(data-interchange="[#{p.image_thumb.url}?w=400, small], [#{p.image_thumb.url}?w=500, medium]" alt="Datica Guide: #{p.title}")
