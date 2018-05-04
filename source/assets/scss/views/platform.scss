@@ -58,7 +58,28 @@
 img.soft-border{
   border-bottom: 1px solid $color_light;
 }
-
+ul.bullet-outside {
+    margin-left: 0;
+}
+.bullets-chevron {
+    list-style: none;
+    li {
+        margin-bottom: 1.5em;
+        @include breakpoint (xlarge) {
+            &:before {
+                content: '';
+                display: inline-block;
+                height: 2em;
+                width:  2em;
+                // background-image: url(http://placehold.it/32?text=fallback); // Fallback PNG
+                background-image: url(/public/icons/inlined/chevron-right-circle-white.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin: -2rem 0.5rem -0.5rem -2.5rem;
+            }
+        }
+    }
+}
 @include keyframes( expando ) {
     0% {
         // height: 0px;
@@ -73,9 +94,9 @@ img.soft-border{
     }
 }
 // Change headline weight to same as homepage
-.headline-1 {
-	font-weight: 100;
-}
+// .headline-1 {
+// 	font-weight: 100;
+// }
 // expand/toggle component
 .icon-toggle {
     opacity: 0.5;
