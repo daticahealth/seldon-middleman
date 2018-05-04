@@ -1,6 +1,6 @@
 ---
 title: "Datica Platform for Compliance in the Cloud"
-summary: "The Datica Platform provides compliant hosting and data integration for digital health products"
+summary: "Datica bridges security, compliance and your favorite technologies together to offer a complete, enterprise cloud solution for regulated industries."
 navTitle: "Platform Overview"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
@@ -18,12 +18,21 @@ priority: "0.9"
   section#platform-top.section-article.position-relative
     .row.align-middle
       .columns.small-12.medium-large-6
-        h1.headline-2 End-to-end compliance on AWS and Azure is possible.
-        p.small The Datica Platform fills the compliance gaps on top of public clouds like AWS and Azure by combining the best technology available and mapping it to frameworks like HIPAA, HITRUST, GDPR, and GxP. Customers use Kubernetes-enabled orchestration to deploy containerized workloads to the Platform that <strong>are guaranteed to be continuously compliant</strong>.
+        h1.headline-2 HITRUST + Kubernetes = Datica
+        p.lead= current_page.data.summary
+        p Customers use technologies like Kubernetes to deploy containerized workloads combined with Datica to guarantee a continuously compliant state. Additionally, Datica add-ons give users the option to deploy cloud native services and other 3rd party tools that are configured to be compliant by default against Datica’s Cloud Compliance Management System — the mechanism that powers all the Datica Platform.
+
+        h2.headline-3 The Datica Cloud Compliance Management System (CCMS)
+        p The CCMS is a complex set of components that give you visibility and control over the compliance of your technology:
+        ul.bullet-outside.bullets-chevron
+          li <strong>Compliance Artifact Storage (CAS):</strong> Datica’s Compliance deployments(i) within the your technology stack will report and log compliance artifacts to the CAS. The CAS resides on your Cloud account as an encrypted block storage object.
+          li <strong>Ingestion Mechanism (IM):</strong> The running state of your technology is reported back to the Datica Continuous Compliance Engine (CCE) for processing. The CCE will then send certain compliance artifacts back to the CAS for storage.
+          li <strong>Continuous Compliance Engine (CCE):</strong> The core value of the Datica Cloud Compliance Management System is that we are continuously ensuring the complete compliance of both your cluster, and the underlying infrastructure that it resides on. We do this by comparing the running state with the expected compliance state.
+          li <strong>Cloud Compliance Management System Dashboard:</strong> As compliance artifact data, processing, and reporting becomes available, we provide that back to users via a dashboard. You can build reports for GDPR, HITRUST and more in the click of a button. Use the dashboard to pass audits and to continuously monitor the compliance of your environment.
         .menu.button-cluster
           = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
           = partial "partials/snippets/button", :locals => { :label => "Explore The Platform", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/technology", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :item_id => "top-tech" }
-    img.position-bottom-rt(src="/public/img/art/platform-iso-illustration.svg" alt="Datica Platform illustration")
+    img.position-bottom-rt(src="https://images.ctfassets.net/189dvqdsjh46/16drHKsNBa6qqEWGim0QmS/bb9f4e3afd2413111479541b85119d6a/platform-diagram-1.png" alt="Datica Platform illustration")
 
 section#platform-customers.section-article.container-gray-12
   #companies.row.align-center.group--2x

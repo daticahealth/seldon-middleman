@@ -219,6 +219,10 @@ $duration: $timing-default * 1.5; //settings.scss:281
             }
         }
     }
+    // // fix pip color 
+    // .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+    //     border-color: white(0.3);
+    // }
 }
 .nav-desktop {
     .nav-logo--link {
