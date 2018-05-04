@@ -38,25 +38,21 @@ section#compliance-top.container-color--dark-alt style=("background-color: #2327
           p The Datica Platform allows development flexibility via Kubernetes while providing a prescriptive compliance and security layer on top.
           p.lead With Datica, any technology team can manage compliance on the cloud, giving organizations the assurances they need to adopt the benefits of the cloud.
       .menu.button-cluster.align-center
-        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top-pricing" }
+        = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button hollow-inverted", :item_id => "cta_top-demo", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
         = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "cta_top-customers" }
 
-section.section-article.container-gray-10#platform-shared-responsibility
+section#compliance-shared-responsibility.section-article.container-gray-11
   .row.group.align-center
-    .columns.small-12
-      h2.headline-4.group.text-center.spaced-out Understanding Shared Responsibility
-      <script src="https://fast.wistia.com/embed/medias/08ebxufc4q.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_08ebxufc4q seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
-
-section#compliance-shared-responsibility.section-article.container-color--dark-alt
-  .row.group.align-center
-    .columns.small-12
-      h2.headline-3.group.text-center.spaced-out Understanding Shared Responsibility
-  .row
-    .columns.small-12
-      img.group alt=("Shared Responsibility") src="https://images.ctfassets.net/189dvqdsjh46/1mArNk3AccoEASMwSGkYsa/d92f9e24098115f59e54b9232f795287/shared-responsibility-model-2x.png" /
+    .columns.small-12.text-center
+      h2.headline-2 Understanding Shared Responsibility
   .row.align-center
-    .columns.small-12.medium-5
-      .callout.callout--dark-alpha
+    .columns.small-12.large-8
+      img src="https://images.ctfassets.net/189dvqdsjh46/3I1RMHbhTiWi2cGYwoWusI/1faccfe27a55c511b84cd60a660080c7/shared-resp-1.svg" alt="Shared Responsibility"
+    .columns.small-12.large-12
+      img src="https://images.ctfassets.net/189dvqdsjh46/28YL53F8qMaumKQ0IA4sEW/bac9312c3dd67951702edb063bccdf49/shared-resp-2.svg" alt="Shared Responsibility Diagram"
+  .row.align-center
+    .columns.small-12.medium-5.large-4
+      .callout
         h3.headline-5 Required Compliance Controls
         markdown:
           - Block-level encryption
@@ -76,18 +72,61 @@ section#compliance-shared-responsibility.section-article.container-color--dark-a
           - Penetration testing
           - Business Associate management
           - Access control management
-    .columns.small-12.medium-7
-      .callout.callout--dark-alpha
+    .columns.small-12.medium-7.large-8
+      .callout
         h3.headline-5 Compliance is not magic, it's just a lot of work
         markdown:
           None of it is impossible for you to figure out. But configuring, integrating, documenting, auditing, and managing it across a fleet of containers or VMs with every deployment is how continuous compliance happens.
 
           Datica does all this for you. We are compliance _on_ the cloud. Customers of Datica pass these Shared Responsibility obligations to us and are left with compliance _in_ the cloud, which are company-level and application-level responsibilities.
-      .callout.callout--dark-alpha
-        markdown:
+
           AWS and Azure are the world's best clouds at addressing compliance and security _of_ the cloud: physical controls and network controls. The rest is your responsibility.
 
-          In their Shared Responsibility models, you must address the following on top of them in order to approach complete continuous compliance. The following list maps to a specific control in the HIPAA Omnibus, HITRUST CSF, GxP regulations, or GDPR articles.
+          In their Shared Responsibility models, you must address the following on top of them in order to approach complete continuous compliance. The this list maps to a specific control in the HIPAA Omnibus, HITRUST CSF, GxP regulations, or GDPR articles.
+        |
+          <script src="https://fast.wistia.com/embed/medias/08ebxufc4q.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_08ebxufc4q seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+
+section#compliance-hitrust.section-article
+  .row.align-center
+    .columns.small-12.large-8.text-center.group
+      h2.headline-3 Advanced Compliance Features
+      / p.lead Customers benefit from serious credibility and accelerated audits with customers like hospitals, payers, and pharma.
+  .row.small-up-1.medium-up-2.icon-columns-left-group.group
+    .column
+      = inline_svg("icon-state-box", :class => "icon-size--large icon-pull-left-medium")
+      h3.headline-4 Key Infrastructure
+      p Datica’s private key infrastructure ensures that your data is protected and can only be accessed by those with appropriate permission.
+      ul
+        li You have the option to either provide your own Root CA, or rely on Datica to create and store one for you.
+        li Once the Root CA is established, Datica creates an intermediate CA.
+        li This intermediate CA is used for generating all cluster specific certs. 
+    .column
+      = inline_svg("icon-shield-half", :class => "icon-size--large icon-pull-left-medium")
+      h3.headline-4 Compliance Artifact Storage
+      p Once your Kubernetes cluster is installed and configured, Datica will store compliance artifact data.
+      ul
+        li Our logging stack ties directly into the compliance artifact storage.
+        li Certain compliance data must be relayed back to Datica’s centrally managed Healthcare Compliance Management System for processing.
+        li The Compliance Artifact Storage mechanism is the lifeblood of the Healthcare Compliance Management System.
+    .column
+      = inline_svg("icon-keys", :class => "icon-size--large icon-pull-left-medium")
+      h3.headline-4 Continuous Compliance Engine
+      p The core value of the Datica Healthcare Compliance Management System is that we are continuously ensuring the complete compliance of both your cluster, and the underlying infrastructure that it resides on.
+      ul
+        li We do this by comparing the running state with the expected compliance state.
+        li When anomalies and events are detected, a Datica Security and Compliance expert will review the logs and take necessary steps.
+    .column
+      = inline_svg("icon-dashboard", :class => "icon-size--large icon-pull-left-medium")
+      h3.headline-4  Compliance Dashboard
+      p The compliance dashboard is home to all of your compliance data and reporting. The dashboard gives compliance admins incredible insight into their organization’s cloud environments.
+      ul
+        li Run reports for HITRUST, GDPR, GxP and more.
+        li Manage your compliance tools in one place. We know compliance admins are not developers, that’s why we provide logging and monitoring data in a simple, usable format within the CCMS.
+
+  .row.align-center
+    .columns.small-12.medium-6.large-4
+      .card.container-color--light-shimmer
+        = partial("partials/ctas/card-schedule-demo")
 
 section#compliance-hitrust.section-article.container-gray-12
   .row.align-center

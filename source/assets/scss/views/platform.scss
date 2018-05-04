@@ -33,6 +33,19 @@
         width: 62%;
     }
 }
+.icon-columns-left-group {
+    .column, .columns {
+        margin-bottom: 1.5rem;
+        @include breakpoint (medium) {
+        }
+    }
+}
+.icon-pull-left-medium {
+    @include breakpoint (medium) {
+        float: left;
+        margin-right: 1rem;
+    }
+}
 // .position-bottom-rt { // slap artwork to bottom right on medium-large and up; wrap under for small - med
 //     width: 100%;
 //     margin-bottom: -2rem; // offset the padding from .section-article at this viewport
