@@ -27,13 +27,7 @@ feed_url: "https://datica.com/blog/feed.xml"
 
         .columns.small-12.medium-6.large-4
           .card.container-color--light-shimmer
-            .card-section.text-center
-              h3.headline-5 Schedule a demo to learn more.
-              = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/demo", :button_classes => "button expanded spaced-out", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
-            .card-section.card-section--flush.text-center
-              h4.headline-5.nomargin Questions?
-              a(href="/contact" title="Let's talk.") Talk with a customer representative.
-              = inline_svg("hubspot-chat-blue", class: "icon-inline svg-color--gray-6")
+            = partial("partials/ctas/card-schedule-demo")
 .strip-bright
 section.section-article
   .row.align-center.text-center

@@ -31,83 +31,102 @@ priority: "0.9"
           li <strong>Ingestion Mechanism (IM):</strong> The running state of your technology is reported back to the Datica Continuous Compliance Engine (CCE) for processing. The CCE will then send certain compliance artifacts back to the CAS for storage.
           li <strong>Continuous Compliance Engine (CCE):</strong> The core value of the Datica Cloud Compliance Management System is that we are continuously ensuring the complete compliance of both your cluster, and the underlying infrastructure that it resides on. We do this by comparing the running state with the expected compliance state.
           li <strong>Cloud Compliance Management System Dashboard:</strong> As compliance artifact data, processing, and reporting becomes available, we provide that back to users via a dashboard. You can build reports for GDPR, HITRUST and more in the click of a button. Use the dashboard to pass audits and to continuously monitor the compliance of your environment.
-    .menu.button-cluster.align-center
+    .menu.button-cluster.align-center.z-stack-10
       = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
       = partial "partials/snippets/button", :locals => { :label => "Explore The Platform", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/technology", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :item_id => "top-tech" }
     .platform-art-1.container-image--top(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/16drHKsNBa6qqEWGim0QmS/0811cf54417ac3aebbd1340835044b67/k8-arch-diagram-1-dark.svg, medium]")
 
-section#platform-customers.section-article.container-gray-12
-  #companies.row.align-center.group--2x
-    .columns.small-12.large-12.text-center
-      h3.headline-3 <strong>World-class companies</strong> trust Datica
-      .logo-cloud.group
-        - data.views.home.customers.each do |logo|
-          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["file"]}.png" /
-      = partial "partials/snippets/button", :locals => { :label => "Read Customer Success Stories", :title => "View Platform pricing", :url => "/platform/success", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "customers" }
-  .row
-    .columns.small-12
-      h3.headline-3.group.text-center Build <strong>Breakthrough</strong> Compliant Apps
-  .row
-    .columns.small-12.medium-6
-      <script src="https://fast.wistia.com/embed/medias/djywh7kkgd.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_djywh7kkgd seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
-    .columns.small-12.medium-6
-      .group
-        blockquote.quote--serif
-          ruby:
-            quote_id = "5fDbO1XJ1CAEWAEIoiO6mS"
-            the_quote = data.site.quotes[quote_id]
-          = Kramdown::Document.new(the_quote["quote_body"]).to_html
-        = partial("partials/snippets/person", :locals => { :p => the_quote.customer, :company => the_quote.customer.company_name } )
+// section#platform-customers.section-article.container-gray-12
+//   #companies.row.align-center.group--2x
+//     .columns.small-12.large-12.text-center
+//       h3.headline-3 <strong>World-class companies</strong> trust Datica
+//       .logo-cloud.group
+//         - data.views.home.customers.each do |logo|
+//           img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["file"]}.png" /
+//       = partial "partials/snippets/button", :locals => { :label => "Read Customer Success Stories", :title => "View Platform pricing", :url => "/platform/success", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "customers" }
+//   .row
+//     .columns.small-12
+//       h3.headline-3.group.text-center Build <strong>Breakthrough</strong> Compliant Apps
+//   .row
+//     .columns.small-12.medium-6
+//       <script src="https://fast.wistia.com/embed/medias/djywh7kkgd.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_djywh7kkgd seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+//     .columns.small-12.medium-6
+//       .group
+//         blockquote.quote--serif
+//           ruby:
+//             quote_id = "5fDbO1XJ1CAEWAEIoiO6mS"
+//             the_quote = data.site.quotes[quote_id]
+//           = Kramdown::Document.new(the_quote["quote_body"]).to_html
+//         = partial("partials/snippets/person", :locals => { :p => the_quote.customer, :company => the_quote.customer.company_name } )
 
-section#tech-hcms.section-article.container-color--dark-grad-blue
+section#setup.section-article.container-gray-12
   .row.align-center
     .columns.small-12
       .row.align-center
-        .columns.small-12.text-center.group
-          h3.headline-5.spaced-out How Customers Use the Datica Platform
-          h2.headline-2 Building On The Platform
-      .row.align-center.small-up-1.medium-large-up-3
-        - data.views.platform.platform_use.each do | step |
-          .column.group
-            img.pad.build-height alt="#{step.title}" src="#{step.image}?w=500"
-            h4.headline-5= step.title
-            p= step.desc
-            = partial "partials/snippets/button", :locals => { :label => step.button.label, :title => step.button.label, :url => step.button.url, :button_classes => "button small hollow-inverted", :icon => "icon-chevron-right", :icon_color => "white", :icon_align => "right" }
+        .columns.small-12.medium-10.large-8.group.text-center
+          h3.headline-5.spaced-out Leverage the power of Kubernetes
+          h2.headline-2 Compliant and HITRUST certified Kubernetes in 10 minutes
+          p.lead Datica automatically configures your underlying infrastructure, installs and configures a highly available Kubernetes cluster, and connects that cluster to Datica’s Cloud Compliance Management System — all in 10 minutes.
+      .row.align-center.small-up-1.medium-up-2.large-up-4.group
+        .column
+          img src="https://images.ctfassets.net/189dvqdsjh46/yc639CSDwka8aAs4Uo0kW/cb3458e6089ae9bd7312389acc374f9b/setup-1.png?w=450" alt="Setup"
+          p First we collect information about your cloud provider, required infrastructure to run your deployments, and how redundant you want the master cluster to be (HA by default).
+        .column
+          img src="https://images.ctfassets.net/189dvqdsjh46/4jQ7VNUSIMUIS2aIKQWEOO/bb83fc6ec264ddd12f3b29410fe784c0/setup-2.png?w=450" alt="Installation"
+          p With the required information, Datica installs a new Kubernetes cluster into your account (or into Datica’s account, your choice).
+        .column
+          img src="https://images.ctfassets.net/189dvqdsjh46/3MKy2SJ2dWUQIWy8yKEK4C/85c4531dfb35b5a9a6c008939ede8f74/setup-3.png?w=450" alt="Verification"
+          p Once the cluster is installed, and all system-level configurations are set, the Platform will begin continuously pulling the cluster’s running state and compare that to the required compliance state.
+        .column
+          img src="https://images.ctfassets.net/189dvqdsjh46/4GOXaSvKfu6SeaMmmw2k6i/241b016e86591f5b871a192c4583b48e/setup-4.png?w=450" alt="Done!"
+          p Start shipping! Your newly deployed Kubernetes cluster is ready for use. Scale and manage infrastructure at will. The Datica Compliance Management System has your back.
+      .row.align-center
+        .columns.small-12.medium-8.large-5
+          .card.drop
+            = partial("partials/ctas/card-schedule-demo")
 
-section.section-article.container-gray-10#platform-shared-responsibility
-  .row.group.align-center
-    .columns.small-12
-      h2.headline-4.group.text-center.spaced-out Understanding Shared Responsibility
-
-      <script src="https://fast.wistia.com/embed/medias/08ebxufc4q.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_08ebxufc4q seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
-
+section#setup.section-article
   .row.align-center
-    - data.views.platform.shared_responsibility.each do | block |
-      .columns.small-12.medium-4
-        = Kramdown::Document.new(block).to_html
+    .columns.small-12
+      .row.align-center
+        .columns.small-12.medium-10.large-9.group.text-center
+          / h3.headline-5.spaced-out Leverage the power of Kubernetes
+          h2.headline-2 Datica's shared responsibility model
+          p.lead With Datica’s Cloud Compliance Management System, we ensure both the cluster and the underlying infrastructure on your cloud account are secure and compliant to the highest standards across an ever-growing list of frameworks and regimes.
+      .row.align-center
+        .columns.small-12.large-8
+          img src="https://images.ctfassets.net/189dvqdsjh46/3I1RMHbhTiWi2cGYwoWusI/1faccfe27a55c511b84cd60a660080c7/shared-resp-1.svg" alt="Shared Responsibility"
+        .columns.small-12.large-12
+          img src="https://images.ctfassets.net/189dvqdsjh46/28YL53F8qMaumKQ0IA4sEW/bac9312c3dd67951702edb063bccdf49/shared-resp-2.svg" alt="Shared Responsibility Diagram"
 
-.container-image--fixed.container-gray-2
-  .container-image--center(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/qDYJLe7zyKsaU6OoGCSWg/55fed65d63a33a39b690697200a0d5b2/bg-rects-blue-dark.png?w=2400&h=1200&fit=thumb&fm=jpg&q=80, medium]")
-    section#platform-aws.section-article
-      .row.align-middle.align-center
-        .columns.small-12.medium-8
-          h2.headline-3.text-center.group
-            | You wouldn't build payment processing infrastructure to charge credit cards.
-            br/
-            | You'd use Stripe.
 
-      .row.align-center.align-middle
-        .columns.small-12.medium-6.medium-large-4
-          img.hide-for-medium.float-right.group width="150" alt=("apn tech") src="https://d1.awsstatic.com/partner-network/APN-Advanced-Technology-Badge.d737de9106285590a46875b8805247f22f8433ba.png"
-          p.lead.group <strong>So why waste money and take on unnecessary risk building your own compliance layer?</strong>
-          p Datica is an <strong>Amazon Web Services Advanced Tier Technology Partner</strong> with a <strong>Healthcare Competency</strong> focus.
-        .columns.small-12.medium-4.medium-large-4
-          img.logo-size--xlarge.group.show-for-medium alt=("apn tech") src="https://d1.awsstatic.com/partner-network/APN-Advanced-Technology-Badge.d737de9106285590a46875b8805247f22f8433ba.png"
-          .group
-            = partial "partials/snippets/button",  :locals => { :label => "Explore Datica on AWS", :title => "Explore Datica on AWS", :url => "/platform/aws", :button_classes => "button button--light group", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "aws" }
+  // .row.align-center
+  //   - data.views.platform.shared_responsibility.each do | block |
+  //     .columns.small-12.medium-4
+  //       = Kramdown::Document.new(block).to_html
 
-section.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
-  = partial "partials/section-promos/hcms-screenshot"
+// .container-image--fixed.container-gray-2
+//   .container-image--center(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/qDYJLe7zyKsaU6OoGCSWg/55fed65d63a33a39b690697200a0d5b2/bg-rects-blue-dark.png?w=2400&h=1200&fit=thumb&fm=jpg&q=80, medium]")
+//     section#platform-aws.section-article
+//       .row.align-middle.align-center
+//         .columns.small-12.medium-8
+//           h2.headline-3.text-center.group
+//             | You wouldn't build payment processing infrastructure to charge credit cards.
+//             br/
+//             | You'd use Stripe.
+// 
+//       .row.align-center.align-middle
+//         .columns.small-12.medium-6.medium-large-4
+//           img.hide-for-medium.float-right.group width="150" alt=("apn tech") src="https://d1.awsstatic.com/partner-network/APN-Advanced-Technology-Badge.d737de9106285590a46875b8805247f22f8433ba.png"
+//           p.lead.group <strong>So why waste money and take on unnecessary risk building your own compliance layer?</strong>
+//           p Datica is an <strong>Amazon Web Services Advanced Tier Technology Partner</strong> with a <strong>Healthcare Competency</strong> focus.
+//         .columns.small-12.medium-4.medium-large-4
+//           img.logo-size--xlarge.group.show-for-medium alt=("apn tech") src="https://d1.awsstatic.com/partner-network/APN-Advanced-Technology-Badge.d737de9106285590a46875b8805247f22f8433ba.png"
+//           .group
+//             = partial "partials/snippets/button",  :locals => { :label => "Explore Datica on AWS", :title => "Explore Datica on AWS", :url => "/platform/aws", :button_classes => "button button--light group", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "aws" }
+
+// section.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
+//   = partial "partials/section-promos/hcms-screenshot"
 
 aside#ctaBottom.container-color--dark-grad-blue
   .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
