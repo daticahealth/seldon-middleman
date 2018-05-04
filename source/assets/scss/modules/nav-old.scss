@@ -1,0 +1,530 @@
+// Main header - the anchor to all of Seldon
+$duration: $timing-default * 1.5; //settings.scss:281
+.dropdown-pip { // icon for dropdown, svg triangle usually
+    path {
+        @include transition (color $timing-default ease);
+        fill: $gray-7;
+    }
+}
+.menu-item--simple { // only menu items without dropdowns should have fade fx. default is "dark" nav (on white bg)
+    color: $gray-1;
+    @include transition (color $timing-default ease);
+    &:hover {
+        // @include easing($duration);
+        // opacity: 0.7;
+        color: $color_prime-alt;
+    }
+}
+.main-header {
+    // Could possibly opt for 2rem here
+    #topNavCTA{
+      padding: 0.5rem 1rem;
+    }
+    padding: 1.2rem 1.8rem;
+    position: relative;
+    // Not using flexbox on this nav (at least not right now)
+    @include clearfix;
+    // Define the mobile nav button
+    .mobile-menu {
+        position: absolute;
+        right: 1.875rem;
+        top: rem-calc(26px);
+        font-size: 2rem;
+        display: none;
+    }
+    // Logo uses an SVG background image
+    a.logo {
+        display: block;
+        float: left;
+        background: url('../img/logo.svg');
+        width: rem-calc(99px);
+        height: rem-calc(40px);
+        background-size: rem-calc(99px) rem-calc(40px);
+        margin: 0 rem-calc(50px) 0 0;
+    }
+    nav {
+        // .a class should mimic an `a` tag.
+        // I'm not using an `a` tag because Chrome and new versions of opera don't like block level elements nested inside an `a` tag
+        .a,
+        a {
+            font-weight: $font-weight-regular;
+            // color: $color_deep;
+            margin: 0 rem-calc(20px) 0 0;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            border: 0;
+        }
+        // Button requires some overrides here since we're not hitting a class on `nav > a`
+        // a.button {
+        //     color: $white;
+        //     font-size: $global-font-size;
+        //     padding: rem-calc(10px);
+        //     position: relative;
+        //     margin-right: 0;
+        // }
+    }
+    // Differences in content require differences in margin. Not sure how better to solve this.
+    .left {margin: rem-calc(8px) 0 0 0;}
+    .right{margin: rem-calc(4px) 0 0 0;}
+    // .right {margin: rem-calc(4px) 0 0 0;}
+    &--white {
+        // Overriding logo with just the background didn't work. There's a reason for the entire style block.
+        a.logo {
+            background: url('../img/logo-w.svg');
+            width: rem-calc(99px);
+            height: rem-calc(40px);
+            background-size: rem-calc(99px) rem-calc(40px);
+        }
+        .menu-item--simple {
+            color: white;
+            &:hover {
+                color: $gray-9;
+            }
+        }
+        // nav {
+        //     .a,
+        //     a {
+        //         color: $color_white;
+        //         &:hover {color: $gray-7;}
+        //     }
+        // }
+        // The new dropdown was getting written over from above
+        .dropdown {
+            a {
+                display: block;
+                color: $color_deep;
+                &:hover {
+                    color: $color_prime-alt;
+                    .dropdown-pip path {
+                        fill: white;
+                    }
+                }
+            }
+        }
+    }
+}
+// Dropdowns
+.dropdown {
+    // Initially set this to display none
+    display: none;
+    position: absolute;
+    background-color: $color_white;
+    width: auto;
+    margin: 1rem 0 0 0;
+    // Dropdowns should always be above everything
+    z-index: 99;
+    min-width: rem-calc(300px);
+    @include border-radius(rem-calc(5px));
+    // We want to target all containers in the dropdown menus
+    [class*='container-'] {padding: 1rem;@include border-radius(rem-calc(5px));}
+    // This gives us that little pyramid/caret at the top of the dropdown
+    &:after {
+        bottom: 100%;
+        // This left property will change depending on the lenght of the word
+        left: 16%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(255, 255, 255, 0);
+        border-bottom-color: #FFF;
+        border-width: rem-calc(10px);
+        margin-left: rem-calc(-10px);
+    }
+    // Our links behave slightly differently here than they do in the main header
+    a {
+        display: block;
+        padding: 0 0 0.5rem 0;
+        margin: 0;
+        &:hover {
+            @include transform(translate3D(3px, 0, 0));
+        }
+        &:last-child {
+            padding: 0;
+        }
+    }
+    // Set overrides for resources selector
+    &-resources {
+        &:after {left: 19%;}
+        [class*='container-'] {
+            @include border-radius(rem-calc(0px));
+            &:first-of-type {@include border-radius(rem-calc(5px));}
+            &:last-of-type {@include border-radius-bottom(rem-calc(5px));}
+        }
+    }
+    // Set overrides for company selector
+    &-company {
+        &:after {left: 17%;}
+    }
+    // The title should have a bit of padding to give it some distances from the summary
+    .title {
+        font-weight: $font-weight-mid;
+    }
+    // The summary is suplimental content and giving a reduced size works best in the dropdown
+    .summary {
+        color: $gray-7;
+        font-size: 90%;
+        line-height: 1.4;
+        @include breakpoint(large) {
+            font-size: 80%;
+            color: $color_talk;
+        }
+    }
+    // The list-title is an extra label above a list of links
+    .list-title {
+        font-weight: $font-weight-mid;
+        margin-bottom: rem-calc(8px);
+        color: $color_talk-alt;
+    }
+    // This is a custom horizontal rule
+    .hr {
+        margin: 1rem 0;
+        height: 1px;
+        background-color: $color_border;
+        border: 0;
+    }
+
+    .alt-nav {
+        a {
+            display: block;
+            color: $color_talk;
+            font-size: 85%;
+        }
+    }
+}
+.no-js .top-bar {display: none;}
+// .dropdown-container { // le sigh
+//     background-color: $color_deep-alt;
+//     @include breakpoint (medium-large) {
+//         background-color: white;
+//     }
+//     padding: 1rem;
+//     width: 100%;
+//     border-radius: $global-radius;
+// }
+// Responsive menu
+@media all and (max-width: rem-calc($custom_breakpoint-larger-nav)) {
+    .main-header {
+        // Show the mobile menu icon
+        .mobile-menu {display: block;}
+        // All floated elements collapse to full width
+        a.logo {float: none;}
+        .right, .left {float: none;margin: 0;}
+        .right {display: none;}
+        nav {
+            // Hide the nav!
+            display: none;
+            padding: 2rem;
+            background-color: $color_deep;
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            top: rem-calc(73px);
+            .a,
+            a {
+                float: none;
+                display: block;
+                margin: 0 0 1rem 0;
+                font-weight: $font-weight-bold;
+                color: $color_white;
+                &:hover {color: $color_blue-glow;}
+            }
+        }
+        // Cancel out drop shadows
+        .drop {@include shadow-anarchy(0 0 0 0 transparent);}
+        // This simply gives me the ability to grab the text within a dropdown selector
+        span.selector {margin: 0 0 1rem 0;display: block;}
+        // Instead of creating a new class we can just target these with the ID selectors we're using for JS
+        .dropdown-container {
+            background-color: $color_deep-alt;
+            padding: 1rem;
+            width: 100%;
+            @include border-radius(rem-calc(5px));
+        }
+        // Resetting the dropdown menu to be relative and shown inline as part of the mobile nav
+        .dropdown {
+            position: relative;
+            display: block;
+            margin: 0;
+            min-width: 100%;
+            width: 100%;
+            max-width: 100%;
+            &:after {
+                bottom: 0;
+                left: 0;
+                border: 0;
+                content: "";
+                height: 0;
+                width: 0;
+                position: relative;
+                pointer-events: none;
+                border-color: transparent;
+                border-bottom-color: transparent;
+                border-width: 0;
+                margin-left: 0;
+            }
+            &-resources {
+                [class*='container-'] {
+                    // We have to declare each of these because they're declared above
+                    @include border-radius(0);
+                    &:first-of-type {@include border-radius(0);}
+                    &:last-of-type {@include border-radius-bottom(0);}
+                }
+            }
+            // A tags within the dropdown are inheriting text styling from nav > a, so we override it here
+            a {font-weight: $font-weight-regular;}
+            // The hr style doesn't fit well with the mobile nav style
+            .hr {display: none;}
+            .title {color: $color_white;}
+            // Setting summary to max width 65% since it looks better that way
+            @include breakpoint (large up) {
+                .summary {max-width: 65%;}
+            }
+            .alt-nav {
+                margin: 0;
+                padding: 1rem 0 0 0;
+                a {color: $color_white;}
+            }
+        }
+        // Instead of removing the class with JS we can just override it to zero here
+        [class*='container-'] {
+            background-color: $color_deep-alt;
+            padding: 0;
+            width: auto;
+            @include border-radius(0);
+        }
+        // This is just a bad hack. Need to fix in the future
+        .last-a {margin: 0;}
+    }
+}
+@media all and (max-width: $custom_breakpoint-mid) {
+    .main-header {
+        border-bottom: rem-calc(1px) solid $color_border;
+        padding: 1rem 0.825rem;
+        .mobile-menu {
+            top: 0.7rem;
+            right: 0.825rem;
+        }
+        &--white {
+            // Different border color on white header
+            border-bottom: rem-calc(1px) solid $color_deep-alt;
+        }
+    }
+}
+@media screen and (min-width: 40em) {
+    .no-js .top-bar {
+        display: block;
+    }
+    .no-js .title-bar {
+        display: none;
+    }
+}
+// Custom Sticky nav
+.custom-sticky {
+    width: 100%;
+    background-color: $color_white;
+    color: $color_deep;
+    position: relative;
+    z-index: 2;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0;
+        li {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            a {
+                display: inline-block;
+                margin: 0;
+                padding: 1.5rem 1rem;
+                color: $color_prime-alt;
+                font-weight: $font-weight-mid;
+                border-bottom: rem-calc(2px) solid transparent;
+                border-left: rem-calc(1px) solid $color_light-alt;
+                font-size: rem-calc(14px);
+                @include easing($duration);
+                &:hover {
+                    color: $color_deep;
+                    border-bottom: rem-calc(2px) solid $color_light;
+                    @include easing($duration);
+                }
+            }
+            .active, [aria-current]:not([aria-current="false"]) {
+                color: $color_deep;
+                border-bottom: rem-calc(2px) solid $color_light;
+            }
+        }
+    }
+    &--dark {
+        background-color: darken($color_deep-alt, 5%);
+        color: $color_white;
+        ul {
+            li {
+                a {
+                    color: $color_talk-alt;
+                    border-bottom: rem-calc(2px) solid transparent;
+                    border-left: 0;
+                    font-size: rem-calc(14px);
+                    &:hover {
+                        color: $color_white;
+                        border-bottom: rem-calc(2px) solid $color_yellow-glow;
+                    }
+                }
+                .active, [aria-current]:not([aria-current="false"]) {
+                    color: $color_white;
+                    border-bottom: rem-calc(2px) solid $color_yellow-glow;
+                }
+            }
+        }
+    }
+    @media all and (max-width: $custom_breakpoint-larger-nav) {
+        .columns {padding-left: 0;padding-right: 0;}
+        &--dark {
+            ul {
+                li {
+                    a {
+                        color: $color_talk-alt;
+                        border-left: 0;
+                        border-bottom: rem-calc(1px) solid $color_yellow-glow;
+                        &:hover {
+                            border-bottom: rem-calc(1px) solid $color_yellow-glow;
+                            background-color: $color_deep;
+                        }
+                    }
+                    .active, [aria-current]:not([aria-current="false"]) {
+                        border-bottom: rem-calc(1px) solid $color_yellow-glow;
+                        background-color: $color_deep;
+                    }
+                }
+            }
+        }
+        ul {
+            li {
+                display: block;
+                a {
+                    display: block;
+                    padding: 1rem;
+                    color: $color_prime-alt;
+                    border-left: 0;
+                    border-bottom: rem-calc(1px) solid $color_border;
+                    &:hover {
+                        border-bottom: rem-calc(1px) solid $color_border;
+                        background-color: $color_light-alt;
+                    }
+                }
+                .active, [aria-current]:not([aria-current="false"]) {
+                    border-bottom: rem-calc(1px) solid $color_border;
+                    background-color: $color_light-alt;
+                }
+            }
+        }
+    }
+}
+// Tried nesting this in &--dark from above, but it wasn't working.
+@media all and (max-width: $custom_breakpoint-larger-nav) {
+    .custom-sticky--dark {
+        ul {
+            li {
+                a {
+                    color: $color_talk-alt;
+                    border-left: 0;
+                    border-bottom: rem-calc(1px) solid $color_deep;
+                    &:hover {
+                        border-bottom: rem-calc(1px) solid $color_yellow-glow;
+                        background-color: $color_deep;
+                    }
+                }
+                .active, [aria-current]:not([aria-current="false"]) {
+                    border-bottom: rem-calc(1px) solid $color_yellow-glow;
+                    background-color: $color_deep;
+                }
+            }
+        }
+    }
+}
+// over-specificity causing headaches
+nav {
+    .dropdown-group {
+        margin-bottom: 0;
+        &--item{
+            margin-bottom: rem-calc(3px);
+        }
+    }
+    a.dropdown-item--link {
+        margin-bottom: 0 !important; // argh!!
+        @include breakpoint (small) {
+            @include link-colors (white, $color_yellow-glow, false);
+            &:last-child { //grrrr
+                padding: 0.4rem 0 0.4rem 0; // larger tap-targets on mobile.
+            }
+        }
+        @include breakpoint (large) {
+            @include link-colors ($gray-2, $color_prime-alt, false);
+            &:last-child { //grrrr
+                padding: 0;
+            }
+        }
+    }
+    a.active, a[aria-current]:not([aria-current="false"]) {
+        font-weight: $font-weight-bold !important;
+    }
+}
+
+// foundation sticky nav basics
+.sticky {
+    // .is-[state] classes for control over its appearance and exit if needed. Desktop only
+    // @include breakpoint (large) {
+    //     transition: opacity 100ms linear;
+    //     opacity: 0;
+    //     &.is-anchored {
+    //         opacity: 0;
+    //     }
+    //     &.is-stuck {
+    //         opacity: 1;
+    //     }
+    // }
+    .menu {
+        &-item {
+            margin-bottom: 0;
+            padding: 0;
+            &--link {
+                transition-duration: $timing-default;
+                font-weight: $font-weight-mid;
+                padding: $pad * 0.5;
+                &:hover {
+                    background-color: $gray-11;
+                }
+                &.active, [aria-current]:not([aria-current="false"]) {
+                    background-color: $gray-2;
+                    color: white;
+                }
+            }
+            &--cta { // for cta button in sticky nav bar
+                padding: 0.5rem 0.7rem;
+                margin-left: 1rem;
+                &:focus,
+                &:hover { // clear 'nudge' behavior
+                    transform: initial;
+                }
+            }
+        }
+    }
+    &-nav--secondary { // secondary sticky nav... it happens
+        ul li a {
+            font: {
+                size: 90%;
+                weight: $font-weight-mid !important;
+            }
+        }
+    }
+}
+.nav-title--compact {
+    font-size: 90%;
+}

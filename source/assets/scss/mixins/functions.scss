@@ -183,13 +183,18 @@ $underline: false !default;
                 flex: $set;
 }
 @mixin fx-hover-nudge {
-    transition: all $timing-default * 0.8 ease-out;
+    transition: transform $timing-default * 0.8 ease, color $timing-default * 0.8 linear;
     &:focus,
     &:hover {
         transform: translate3d(3px, 0, 0);
     }
 }
-
+@mixin no-nudge {
+    &:focus,
+    &:hover {
+        transform: translate3d(0, 0, 0);
+    }
+}
 // Gradient mixins
 
 @mixin gradient($args...){ // pass whatever you want, as long as it's a valid gradient

@@ -1,9 +1,11 @@
 // Global link styles
 a {
     text-decoration: none;
-    font-weight: $font-weight-regular;
+    font-weight: $font-weight-mid;
+	transition-property: background-color, color;
+	transition-duration: $timing-default;
     &:hover, &:active, &:focus {text-decoration: none; }
-    @include easing($timing-default);
+    // @include easing($timing-default);
 }
 // for the link--[color] styles, these have moved to overrides.scss, because order-of-ops.
 section a {

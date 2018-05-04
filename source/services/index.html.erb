@@ -37,7 +37,7 @@ priority: "0.9"
                 </li>
             <% end %>
             <li class="menu-item menu-item--cta">
-                <a class="button button--primary small" href="#cta" title="Start today">Start free consultation <i class="fa fa-angle-down icon-after"></i></a>
+                <%= partial "partials/snippets/button", :locals => { :label => "Start free consultation", :title => "Start today", :url => "#cta", :button_classes => "button button--primary small", :item_id => "services", :icon => "icon-chevron-down" }  %>
             </li>
         </ul>
     </nav>

@@ -1,9 +1,10 @@
 ---
-header: "The Healthcare Innovators Podcast"
+header: "Datica HIPAA Academy"
 subheader: "How does healthcare innovate? Datica explores this topic in a new series of interviews with several of the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
 ogType: article
 layout: "basic"
-customJS: "/public/js/contents.js, /public/js/smooth-scroll.js, /public/js/article.js"
+sharer: true
+customJS: "/public/js/academy-article.js, /public/js/contents.js, /public/js/article.js"
 ---
 <% p = locals[:item]
 
@@ -109,22 +110,4 @@ end
         </div>
     </div>
 </section>
-<script type="text/javascript">
-    // create TOC from content scan
-    document.addEventListener('DOMContentLoaded', function () {
-        var link,
-            contents,
-            eventEmitter;        
-        var contents = gajus.Contents({
-            articles: $('#content').find('h2, h3').get()
-        });
-        eventEmitter = contents.eventEmitter();
-
-        $('#article-toc').append('<hr><p class="subheader-small">In This Article</p>');
-        $('#article-toc').append(contents.list());
-        $('#article-toc').append('<hr>');
-        // $('#article-toc').addClass('group');
-    });
-</script>
-
 <script async src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autorun=true&skin=desert"></script>

@@ -1,1 +1,3 @@
-<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><title>chevron-down</title><path d="M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <polygon points="5.29 1.375 3.625 3.02 9.033 8.375 3.625 13.73 5.29 15.375 12.375 8.375" transform="rotate(90 8 8.375)"/>
+</svg>

@@ -220,10 +220,10 @@ img.soft-border{
     .menu {
         $bar: rem-calc(2px);
         &-item {
-            &:first-child a {
-                padding-right: 0; // puts logo flush with next item.
-                padding-bottom: 0;
-            }
+            // &:first-child a { // removed this item in secondary nav on platform
+            //     padding-right: 0; // puts logo flush with next item.
+            //     padding-bottom: 0;
+            // }
             &--logo {
                 @include transition(opacity $timing-default);
                 opacity: 0;
