@@ -1,5 +1,5 @@
 ---
-layout: basic
+layout: company
 ogType: article
 ---
 <% p = locals[:item]
@@ -24,23 +24,7 @@ else
     current_page.data.date = "2017"
 end
 %>
-<div class="container-color--dark-alt">
-    <%= partial "partials/head/header", :locals => { :style => "light" } %>
-</div>
-<section class="custom-sticky custom-sticky--dark show-for-large">
-    <div class="row">
-        <div class="columns small-12 medium-12">
-            <ul>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/leadership">Leadership</a></li>
-                <li><a href="/press" class="active">Press</a></li>
-                <li><a href="/events">Events</a></li>
-                <li><a href="/open-source">Open Source</a></li>
-                <li><a href="/careers">Careers</a></li>
-            </ul>
-        </div>
-    </div>
-</section>
+
 <section class="section-article--med container-color--gray-light">
     <div class="row">
         <div class="columns small-12 large-9">

@@ -5,27 +5,10 @@ author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 date: "January 1, 2017"
 share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
-layout: basic
-customCSS: "blog"
+layout: company
+# customCSS: "blog"
 ---
 <div class="container-color--dark-alt">
-    <%= partial "partials/head/header", :locals => { :style => "light" } %>
-    <section class="custom-sticky custom-sticky--dark show-for-large">
-        <div class="row">
-            <div class="columns small-12 medium-12">
-                <ul>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/leadership">Leadership</a></li>
-                    <li><a href="/blog" class="active">Company Blog</a></li>
-                    <li><a href="https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog">Engineering Blog</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/press">Press</a></li>
-                    <li><a href="/events">Events</a></li>
-                    <li><a href="/open-source">Open Source</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
     <section class="section-article">
         <div class="row">
             <div class="columns small-12 medium-8">
@@ -36,43 +19,22 @@ customCSS: "blog"
         </div>
     </section>
 </div>
-<section class="section-article--med">
-    <div class="row">
-        <div class="columns small-12 medium-8">
-            
-        </div>
-    </div>
-</section>
 <section class="section-article">
     <div class="row">
         <div class="columns small-12 large-8">
-            <div class="callout callout--gray-light">
-                <h4 class="headline-4">Search the blog</h4>
-                <input type="text" class="eng-blog-search" placeholder="Search the blog by keyword...">
-            </div>
-                <% sorted_entries = data.site.blog.to_a.sort_by{ |id, entry| entry['pub_date'] }.reverse! %>
-                <% sorted_entries[0...-1].each do | id, entry | %>
-                    <div class="group">
-                        <p class="blog-date"><%= entry['pub_date'].strftime('%B %-d, %Y') %></p>
-                        <h4 class="headline-5"><a href="/blog/<%= entry["slug"] %>" title="Read this post"><%= entry["title"] %></a></h4>
-                        <% if entry.has_key?("summary") %>
-                            <%= Kramdown::Document.new(entry["summary"].to_s).to_html %>
-                        <% end %>
-                    </div>
-                <% end %>
+            <% sorted_entries = data.site.blog.to_a.sort_by{ |id, entry| entry['pub_date'] }.reverse! %>
+            <% sorted_entries[0...-1].each do | id, entry | %>
+                <div class="group">
+                    <p class="blog-date"><%= entry['pub_date'].strftime('%B %-d, %Y') %></p>
+                    <h4 class="headline-5"><a href="/blog/<%= entry["slug"] %>" title="Read this post"><%= entry["title"] %></a></h4>
+                    <% if entry.has_key?("summary") %>
+                        <%= Kramdown::Document.new(entry["summary"].to_s).to_html %>
+                    <% end %>
+                </div>
+            <% end %>
         </div>
         <aside class="columns small-12 large-4 section--sidebar">
             <%= partial "blog/partials/blog-subscription", :locals => { :color => "blue" } %>
         </aside>
     </div>
 </section>
-<!-- Swiftype Search -->
-<script type="text/javascript">
-    (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-    })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-    _st('install','x8sYWp6nzEKFRwdvEGCt','2.0.0');
-</script>
-<!-- END Swiftype Search -->

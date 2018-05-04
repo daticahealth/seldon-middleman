@@ -1,5 +1,5 @@
 ---
-layout: basic
+layout: company
 customCSS: "blog"
 ogType: article
 customJS: "/public/js/article.js"
@@ -43,24 +43,7 @@ else
 end
 %>
 <div class="container-color--dark-alt">
-    <%= partial "partials/head/header", :locals => { :style => "light" } %>
-    <section class="custom-sticky custom-sticky--dark show-for-large">
-        <div class="row">
-            <div class="columns small-12 medium-12">
-                <ul>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/leadership">Leadership</a></li>
-                    <li><a href="/blog" class="active">Company Blog</a></li>
-                    <li><a href="https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog">Engineering Blog</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/press">Press</a></li>
-                    <li><a href="/events">Events</a></li>
-                    <li><a href="/open-source">Open Source</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-        <div class="container-image--center" data-interchange="[<%= post_featured_image + image_featured_small %>, small], [<%= post_featured_image + image_featured_large %>, medium]">
+    <div class="container-image--center" data-interchange="[<%= post_featured_image + image_featured_small %>, small], [<%= post_featured_image + image_featured_large %>, medium]">
         <section class="section-article container-color--tint-50">
             <div class="row">
                 <div class="columns small-12 large-10 featured-post link--white-parent">

@@ -62,6 +62,19 @@
             </div>
             <hr class="divider">
             <ul class="menu vertical">
+              <% 
+                # Returns all pages under a certain directory. not working below 
+                def sub_pages(dir)
+                  sitemap.resources.select do |resource|
+                    resource.path.start_with?(dir)
+                  end
+                end
+               %>
+              <%# sitemap.where(:primary_navigation => true).order_by(:weight).all.each do |resource| %>
+                <%# seldon_pages = sitemap.resources.sort_by{ |page| page.data.navTitle } %>
+                <%# sub_pages('seldon').each do |resource| %>
+                  <%#= link_to resource.data.navTitle, resource.url %><%#= current_link_to resource.data.navTitle, resource.url, title: resource.summary, class: "link--white" %>
+                <%# end %>
                 <% sitemap.resources.each do |page| %>
                   <% if page.url =~ /^(\/seldon\/)/ && page.data.is_index != true %>
                       <li>
