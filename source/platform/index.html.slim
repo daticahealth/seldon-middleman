@@ -15,10 +15,12 @@ priority: "0.9"
 - current_page.data.share_image = image_share_platform
 
 .container-color--dark-grad-blue
-  section#platform-top.section-article.position-relative
-    .row.align-middle
-      .columns.small-12.medium-large-6
-        h1.headline-2 HITRUST + Kubernetes = Datica
+  section#platform-top.section-article.position-relative(style="overflow: hidden;")
+    .row
+      .columns.small-12
+        h1.headline-1 HITRUST + Kubernetes = Datica
+    .row.z-stack-10
+      .columns.small-12.medium-6.large-6.xlarge-6
         p.lead= current_page.data.summary
         p Customers use technologies like Kubernetes to deploy containerized workloads combined with Datica to guarantee a continuously compliant state. Additionally, Datica add-ons give users the option to deploy cloud native services and other 3rd party tools that are configured to be compliant by default against Datica’s Cloud Compliance Management System — the mechanism that powers all the Datica Platform.
 
@@ -29,10 +31,12 @@ priority: "0.9"
           li <strong>Ingestion Mechanism (IM):</strong> The running state of your technology is reported back to the Datica Continuous Compliance Engine (CCE) for processing. The CCE will then send certain compliance artifacts back to the CAS for storage.
           li <strong>Continuous Compliance Engine (CCE):</strong> The core value of the Datica Cloud Compliance Management System is that we are continuously ensuring the complete compliance of both your cluster, and the underlying infrastructure that it resides on. We do this by comparing the running state with the expected compliance state.
           li <strong>Cloud Compliance Management System Dashboard:</strong> As compliance artifact data, processing, and reporting becomes available, we provide that back to users via a dashboard. You can build reports for GDPR, HITRUST and more in the click of a button. Use the dashboard to pass audits and to continuously monitor the compliance of your environment.
-        .menu.button-cluster
+        .menu.button-cluster.align-center
           = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
           = partial "partials/snippets/button", :locals => { :label => "Explore The Platform", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/technology", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :item_id => "top-tech" }
-    img.position-bottom-rt(src="https://images.ctfassets.net/189dvqdsjh46/16drHKsNBa6qqEWGim0QmS/bb9f4e3afd2413111479541b85119d6a/platform-diagram-1.png" alt="Datica Platform illustration")
+    .platform-art-1.container-image--top(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/16drHKsNBa6qqEWGim0QmS/0811cf54417ac3aebbd1340835044b67/k8-arch-diagram-1-dark.svg, medium]")
+        / .columns.small-12.medium-6.large-4
+        / img(src="https://images.ctfassets.net/189dvqdsjh46/16drHKsNBa6qqEWGim0QmS/bb9f4e3afd2413111479541b85119d6a/platform-diagram-1.png" alt="Datica Platform illustration")
 
 section#platform-customers.section-article.container-gray-12
   #companies.row.align-center.group--2x

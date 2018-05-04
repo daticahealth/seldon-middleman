@@ -13,4 +13,8 @@ $("document").ready(function(){
     //     $.cookie('dismiss-ribbon-12-05', 'true', { expires: 30 });
     //     $('#alertTop').addClass("hide");
     // });
+    // not for prod!
+    $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+        console.log(newSize + ' breakpoint');
+    });
 });

@@ -266,3 +266,15 @@ div.st-ui-autocomplete div.st-query-present a.st-ui-result, section.st-ui-slide-
     color: darken($alert_color, 5%);
     margin-bottom: 1.2rem;
 }
+.z-stack {
+    &-back {
+        z-index: -10;
+    }
+    &-zero {
+        z-index: 0;
+    }
+    &-10 {
+        z-index: 10;
+    }
+}
+.overflow-hidden

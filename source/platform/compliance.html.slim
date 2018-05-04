@@ -26,16 +26,20 @@ section#compliance-top.container-color--dark-alt style=("background-color: #2327
             .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;")
               .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;"
                 span.wistia_embed.wistia_async_1o1udvaa6z class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"   
-      .row.group
-        - data.views.platform.compliance_header.each do | block |
-          .columns.small-12.medium-4
-            h3.headline-4= block.title
-            p= block.desc
-      .row.align-center
-        .columns.small-6.large-5.text-right
-          = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top-pricing" }
-        .columns.small-6.large-6.text-left
-          = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "cta_top-customers" }
+      .row.group.align-center
+        .columns.small-12.medium-6.large-4
+          h3.headline-4 If you are big…
+          p Large organizations are hesitant to migrate to AWS or Azure because they are concerned compliance requirements aren't being met. When they can't be sure, they stick with old infrastructure.
+          h3.headline-4 If you are new…
+          p Emerging digital products can't break through to their enterprise customers unless they demonstrate compliance and security credibility from Day 1. Compliance is central to the business model.
+        .columns.small-12.medium-6.large-4
+          = inline_svg_art("source/assets/img/art/k8-continuous-compliance.svg", class: "svg-color--white")
+          h3.headline-4 Datica solves your problem
+          p The Datica Platform allows development flexibility via Kubernetes while providing a prescriptive compliance and security layer on top.
+          p.lead With Datica, any technology team can manage compliance on the cloud, giving organizations the assurances they need to adopt the benefits of the cloud.
+      .menu.button-cluster.align-center
+        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top-pricing" }
+        = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "cta_top-customers" }
 
 section#compliance-shared-responsibility.section-article.container-color--dark-alt
   .row.group.align-center
