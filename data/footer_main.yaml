@@ -61,16 +61,6 @@
             url: "/whitepapers"
             desc: "A collection of our formal assessment of healthcare topics"
             has_divider: true
-        -
-            title: "Mock FHIR API"
-            url: "https://fhir.datica.com"
-            desc: "Experiment with the FHIR API for free"
-            show_on_mobile: false
-        -
-            title: "Mock HL7 API"
-            url: "https://hl7.datica.com"
-            desc: "Experiment with the HL7 API for free"
-            show_on_mobile: false
 -
     title: "Company"
     url:
