@@ -33,8 +33,8 @@ priority: "0.9"
           li <strong>Cloud Compliance Management System Dashboard:</strong> As compliance artifact data, processing, and reporting becomes available, we provide that back to users via a dashboard. You can build reports for GDPR, HITRUST and more in the click of a button. Use the dashboard to pass audits and to continuously monitor the compliance of your environment.
     .menu.button-cluster.align-center.z-stack-10
       = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
-      = partial "partials/snippets/button", :locals => { :label => "Explore The Platform", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/compliance", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :item_id => "top-tech" }
-    .platform-art-1.container-image--top(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/16drHKsNBa6qqEWGim0QmS/0811cf54417ac3aebbd1340835044b67/k8-arch-diagram-1-dark.svg, medium]")
+      = partial "partials/snippets/button", :locals => { :label => "Explore Compliance", :title => "Explore Compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :item_id => "top-tech" }
+    .platform-art-1.container-image--top(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/16drHKsNBa6qqEWGim0QmS/e3cdcd2ebc87a61824e9212473117344/k8-arch-diagram-1-dark.svg, medium]")
 
 // section#platform-customers.section-article.container-gray-12
 //   #companies.row.align-center.group--2x
@@ -69,16 +69,16 @@ section#setup.section-article.container-gray-12
           p.lead Datica automatically configures your underlying infrastructure, installs and configures a highly available Kubernetes cluster, and connects that cluster to Datica’s Cloud Compliance Management System — all in 10 minutes.
       .row.align-center.small-up-1.medium-up-2.large-up-4.group
         .column
-          img src="https://images.ctfassets.net/189dvqdsjh46/yc639CSDwka8aAs4Uo0kW/cb3458e6089ae9bd7312389acc374f9b/setup-1.png?w=450" alt="Setup"
+          img.pad src="https://images.ctfassets.net/189dvqdsjh46/yc639CSDwka8aAs4Uo0kW/cb3458e6089ae9bd7312389acc374f9b/setup-1.png?w=450" alt="Setup"
           p First we collect information about your cloud provider, required infrastructure to run your deployments, and how redundant you want the master cluster to be (HA by default).
         .column
-          img src="https://images.ctfassets.net/189dvqdsjh46/4jQ7VNUSIMUIS2aIKQWEOO/bb83fc6ec264ddd12f3b29410fe784c0/setup-2.png?w=450" alt="Installation"
+          img.pad src="https://images.ctfassets.net/189dvqdsjh46/4jQ7VNUSIMUIS2aIKQWEOO/bb83fc6ec264ddd12f3b29410fe784c0/setup-2.png?w=450" alt="Installation"
           p With the required information, Datica installs a new Kubernetes cluster into your account (or into Datica’s account, your choice).
         .column
-          img src="https://images.ctfassets.net/189dvqdsjh46/3MKy2SJ2dWUQIWy8yKEK4C/85c4531dfb35b5a9a6c008939ede8f74/setup-3.png?w=450" alt="Verification"
+          img.pad src="https://images.ctfassets.net/189dvqdsjh46/3MKy2SJ2dWUQIWy8yKEK4C/85c4531dfb35b5a9a6c008939ede8f74/setup-3.png?w=450" alt="Verification"
           p Once the cluster is installed, and all system-level configurations are set, the Platform will begin continuously pulling the cluster’s running state and compare that to the required compliance state.
         .column
-          img src="https://images.ctfassets.net/189dvqdsjh46/4GOXaSvKfu6SeaMmmw2k6i/241b016e86591f5b871a192c4583b48e/setup-4.png?w=450" alt="Done!"
+          img.pad src="https://images.ctfassets.net/189dvqdsjh46/4GOXaSvKfu6SeaMmmw2k6i/241b016e86591f5b871a192c4583b48e/setup-4.png?w=450" alt="Done!"
           p Start shipping! Your newly deployed Kubernetes cluster is ready for use. Scale and manage infrastructure at will. The Datica Compliance Management System has your back.
       .row.align-center
         .columns.small-12.medium-8.large-5

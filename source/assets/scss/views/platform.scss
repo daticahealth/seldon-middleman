@@ -33,19 +33,19 @@
         width: 62%;
     }
 }
-.icon-columns-left-group {
-    .column, .columns {
-        margin-bottom: 1.5rem;
-        @include breakpoint (medium) {
-        }
-    }
-}
-.icon-pull-left-medium {
-    @include breakpoint (medium) {
-        float: left;
-        margin-right: 1rem;
-    }
-}
+// .icon-columns-left-group {
+//     .column, .columns {
+//         margin-bottom: 1.5rem;
+//         @include breakpoint (medium) {
+//         }
+//     }
+// }
+// .icon-pull-left-medium {
+//     @include breakpoint (medium) {
+//         float: left;
+//         margin-right: 1rem;
+//     }
+// }
 $color: $color_blue;
 .solid {
   fill: $color;
@@ -82,7 +82,7 @@ ul.bullet-outside {
 .bullets-chevron {
     list-style: none;
     li {
-        margin-bottom: 1.5em;
+        margin-bottom: 1em;
         @include breakpoint (xlarge) {
             &:before {
                 content: '';
@@ -93,7 +93,7 @@ ul.bullet-outside {
                 background-image: url(/public/icons/inlined/chevron-right-circle-white.svg);
                 background-size: contain;
                 background-repeat: no-repeat;
-                margin: -2rem 0.5rem -0.5rem -2.5rem;
+                margin: -2rem 0.5rem -1rem -2.5rem;
             }
         }
     }
