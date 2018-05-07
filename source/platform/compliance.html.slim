@@ -14,6 +14,8 @@ priority: "0.9"
 ---
 - current_page.data.share_image = image_share_platform
 
+= partial "platform/platform-icons"
+
 section#compliance-top.container-color--dark-alt style=("background-color: #23272C")
   .container-image--center(data-interchange="[/public/img/art/compliance-bg.svg, small]")
     section.section-article
@@ -93,7 +95,8 @@ section#compliance-hitrust.section-article
       / p.lead Customers benefit from serious credibility and accelerated audits with customers like hospitals, payers, and pharma.
   .row.small-up-1.medium-up-2.icon-columns-left-group.group
     .column
-      = inline_svg("icon-state-box", :class => "icon-size--large icon-pull-left-medium")
+      svg.icon-tone.icon-size--large
+        use.solid xlink:href="#icon-keys"
       h3.headline-4 Key Infrastructure
       p Datica’s private key infrastructure ensures that your data is protected and can only be accessed by those with appropriate permission.
       ul
@@ -101,7 +104,8 @@ section#compliance-hitrust.section-article
         li Once the Root CA is established, Datica creates an intermediate CA.
         li This intermediate CA is used for generating all cluster specific certs. 
     .column
-      = inline_svg("icon-shield-half", :class => "icon-size--large icon-pull-left-medium")
+      svg.icon-tone.icon-size--large
+        use.solid xlink:href="#shield-half" 
       h3.headline-4 Compliance Artifact Storage
       p Once your Kubernetes cluster is installed and configured, Datica will store compliance artifact data.
       ul
@@ -109,14 +113,16 @@ section#compliance-hitrust.section-article
         li Certain compliance data must be relayed back to Datica’s centrally managed Healthcare Compliance Management System for processing.
         li The Compliance Artifact Storage mechanism is the lifeblood of the Healthcare Compliance Management System.
     .column
-      = inline_svg("icon-keys", :class => "icon-size--large icon-pull-left-medium")
+      svg.icon-tone.icon-size--large
+        use.solid xlink:href="#state-box" 
       h3.headline-4 Continuous Compliance Engine
       p The core value of the Datica Healthcare Compliance Management System is that we are continuously ensuring the complete compliance of both your cluster, and the underlying infrastructure that it resides on.
       ul
         li We do this by comparing the running state with the expected compliance state.
         li When anomalies and events are detected, a Datica Security and Compliance expert will review the logs and take necessary steps.
     .column
-      = inline_svg("icon-dashboard", :class => "icon-size--large icon-pull-left-medium")
+      svg.icon-tone.icon-size--large
+        use.solid xlink:href="#icon-dashboard" 
       h3.headline-4  Compliance Dashboard
       p The compliance dashboard is home to all of your compliance data and reporting. The dashboard gives compliance admins incredible insight into their organization’s cloud environments.
       ul

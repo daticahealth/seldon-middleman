@@ -46,6 +46,11 @@
         margin-right: 1rem;
     }
 }
+$color: $color_blue;
+.solid {
+  fill: $color;
+  color: adjust-color($color, $lightness: 20%, $hue: -5%, $saturation: 50%);
+}
 // .position-bottom-rt { // slap artwork to bottom right on medium-large and up; wrap under for small - med
 //     width: 100%;
 //     margin-bottom: -2rem; // offset the padding from .section-article at this viewport
