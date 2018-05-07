@@ -1,6 +1,6 @@
 # Seldon
 
-![seldon](https://s31.postimg.org/vno38fxnf/seldon.png)
+![seldon](https://i.kinja-img.com/gawker-media/image/upload/s--hQN2IHJ6--/c_scale,f_auto,fl_progressive,q_80,w_800/17t47p1qn6ex8jpg.jpg)
 
 Welcome to Seldon! We're building a cutting-edge app that blends the best of static-site generators with the best of content-management systems. Seldon is comprised of three primary components: Core, Content, and Deployment. Below we discuss each component in depth.
 
@@ -15,9 +15,6 @@ Welcome to Seldon! We're building a cutting-edge app that blends the best of sta
 **Note:** depending on your Ruby setup you may need to prepend `bundle exec` to your middleman commands.
 
 Navigate to [http://localhost:3000](http://localhost:3000)!
-
-## Development Server
-The development server is located at [development.datica.com](http://development.datica.com). When we merge code changes into development, [CodeShip](https://codeship.com/) fires off an automatic build. This way we always have a place where we can see the latest changes to `development`.
 
 ## Introduction
 While we loved Kirby CMS, we just never used many of the excellent features it provided — we didn't use the control panel at all. Because of our need for hand-crafted pages and experiences, the limitations of a control-panel based CMS with relatively fixed data models were just not used as much.
@@ -41,6 +38,8 @@ Beyond content configuration we're taking advantage of a modern continuous integ
 From a high level, Seldon is comprised of [Middleman](//middlemanapp.com) and [npm](//www.npmjs.com/). We manage dependencies, run the local web server and compile assets with npm. Everything else is driven through the Middleman config.
 
 Currently we are using [Contentful](contentful.com) for structured content, and parsing it with a very handy [Middleman extension](https://github.com/contentful/contentful_middleman). Developers run a command to pull down updated content, which populates the local `data` folder with structured Yaml data files.
+
+The front-end is a heavily customized build of [Zurb Foundation for Sites](foundation.zurb.com).
 
 ## Setup
 Because Middleman runs on ruby, you're going to want to make sure you have that setup and running at least version 2.3.x. The reason we need this version of ruby and not 2.0.x, which macOS ships with, is because we're using the latest version of middleman; `Middleman 4.x.x`. It's recommended you update Ruby with [homebrew](//brew.sh/) and not rvm. After you've installed Ruby with Homebrew, be sure you also have it linked `brew link ruby`.
