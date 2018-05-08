@@ -200,6 +200,7 @@ activate :contentful do |f|
         events: 'events',
         features: 'features',
         featureCategories: 'featureCategories',
+        forms: 'forms',
         guides: 'guides',
         leadershipGallery: 'leadershipGallery',
         person: 'person',
