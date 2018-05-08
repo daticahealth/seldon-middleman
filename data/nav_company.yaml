@@ -12,10 +12,6 @@ nav_items:
         url: "/blog"
         desc: "News and notes from the Datica team"
     -
-        title: "Engineering Blog"
-        url: "https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog"
-        desc: "Our engineering team shares bleeding-edge insight on what it takes to build a compliant platform"
-    -
         title: "Careers"
         url: "/careers"
         desc: "Job opportunities at Datica"
