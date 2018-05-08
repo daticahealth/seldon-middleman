@@ -31,7 +31,7 @@ section.section-article--med.container-gray-11
                     = Kramdown::Document.new(the_quote["quote_body"]).to_html
                 = partial("partials/snippets/person", :locals => { :p => the_quote.customer, :company => the_quote.customer.company_name } )
 
-        #guide-form.columns.small-12.medium-large-6.xlarge-4
+        #form.columns.small-12.medium-large-6.xlarge-4
             .callout.drop.form-embed
                 h3.headline-4.text-center.group Let's talk.
                 = Kramdown::Document.new(the_form["custom_form"]).to_html
