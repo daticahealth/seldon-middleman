@@ -628,6 +628,11 @@
   status = 301
 
 [[redirects]]
+  from = "/azure"
+  to = "/contact/azure"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/404/index.html"
   status = 404
