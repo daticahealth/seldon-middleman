@@ -1,0 +1,27 @@
+
+svg {
+	text {
+		font-family: GT-America, Roboto Light, sans-serif; 
+		font-weight: 400;
+	}
+	 // normalize with css var
+    fill: currentColor;
+    // stroke: currentColor;
+}
+
+// there are objects that are not paths that have fill =/ - only if all is not converted to fills first, which all *color-able* SVG must be! Already done for older icons, part of cleanup. -AW
+.svg {
+    &-color { // styling inlined SVG here
+        // Datica glowyness
+        @each $color-name, $color in $fill-color-list {
+            &--#{$color-name} path, &--#{$color-name} ellipse, &--#{$color-name} circle, &--#{$color-name} polygon, &--#{$color-name} rect {
+                fill: $color;
+            }
+        }
+    }
+    &-opacity{
+        &--half{
+            @include opacity(0.5);
+        }
+    }
+}

@@ -8,14 +8,14 @@
             url: "/platform"
             desc: "The Datica Platform is a cloud enablement layer for all healthcare applications"
             nav_main: true
-        -
-            title: "Technology Overview"
-            url: "/platform/technology"
-            desc: "The technology support and capabilities of the Datica platform"
-        -
-            title: "Data Integration"
-            url: "/platform/technology/#integration"
-            desc: "The full-stack integration toolset for developers"
+        # -
+        #     title: "Technology Overview"
+        #     url: "/platform/technology"
+        #     desc: "The technology support and capabilities of the Datica platform"
+        # -
+        #     title: "Data Integration"
+        #     url: "/platform/technology/#integration"
+        #     desc: "The full-stack integration toolset for developers"
         -
             title: "Compliance Story"
             url: "/platform/compliance"
@@ -60,17 +60,19 @@
             title: "White Papers"
             url: "/whitepapers"
             desc: "A collection of our formal assessment of healthcare topics"
+        -
+            title: "Open Source"
+            url: "/open-source"
+            desc: "We believe in the importance of open source."
             has_divider: true
         -
-            title: "Mock FHIR API"
-            url: "https://fhir.datica.com"
-            desc: "Experiment with the FHIR API for free"
-            show_on_mobile: false
+            title: "Engineering Blog"
+            url: "https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog"
+            desc: "Product news and updates."
         -
-            title: "Mock HL7 API"
-            url: "https://hl7.datica.com"
-            desc: "Experiment with the HL7 API for free"
-            show_on_mobile: false
+            title: "Company Blog"
+            url: "/blog"
+            desc: "News and insights from the Datica team."
 -
     title: "Company"
     url:
@@ -97,19 +99,6 @@
             title: "Events"
             url: "/events"
             desc: "Datica events, past and future."
-        -
-            title: "Open Source"
-            url: "/open-source"
-            desc: "We believe in the importance of open source."
-            has_divider: true
-        -
-            title: "Engineering Blog"
-            url: "https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog"
-            desc: "Our engineering team shares bleeding-edge insight on what it takes to build a compliant platform"
-        -
-            title: "Company Blog"
-            url: "/blog"
-            desc: "News and notes from the Datica team"
 -
     title: "Help"
     url:

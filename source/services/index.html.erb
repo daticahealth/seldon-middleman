@@ -121,8 +121,12 @@ priority: "0.9"
 
     </section>
 <% end %>
+<%  
+    the_form = data.site.forms['1JUlX2euRSEgu4KuamI6Gq']
+    the_quote = data.site.quotes['5fDbO1XJ1CAEWAEIoiO6mS']
+%>
 
-<section id="cta" class="section-article container-color--dark-alt">
+<section id="cta" class="section-article container-gray-12">
     <div class="row align-center">
         <div class="columns small-12 large-8 group text-center">
             <h2 class="headline-3">Start your free consultation today.</h2>
@@ -131,21 +135,18 @@ priority: "0.9"
     </div>
     <div class="row align-middle align-center">
         <div class="columns small-12 medium-6 large-5">
-                <blockquote class="quote--serif">The team at Datica understands the rapid changes affecting healthcare. They were able to help us identify data integration strategies to create efficiencies, cost savings, and foster our culture of innovation. They help me navigate the crowded digital health landscape.</blockquote>
-                <div class="media-object card-person">
-                    <div class="media-object-section">
-                        <img src="https://images.ctfassets.net/189dvqdsjh46/7rIGE2x6zSQqqK0CsKaoQ/4d5c4a23339417bd8052c0f3337b7372/010418d.jpg<%= image_thumb %>" class="avatar avatar--large circle" alt="Dr. Gregory Ator"/>
-                    </div>
-                    <div class="media-object-section main-section align-self-middle">
-                        <h4 class="person-name">Dr. Gregory Ator</h4>
-                        <p class="person-title">CMIO, The University of Kansas Hospital</p>
-                    </div>
-                </div>
+            <blockquote class="quote--serif">
+                <%= Kramdown::Document.new(the_quote["quote_body"]).to_html %>
+            </blockquote>
+            <%= partial("partials/snippets/person", :locals => { :p => the_quote. customer, :company => the_quote.customer.company_name } ) %>
         </div>
         <div class="columns small-12 medium-6 large-5">
             <div class="callout drop">
-                <%= partial("partials/snippets/form-hubspot", :locals => { :form_id => "77f68978-7ab3-475c-98ff-98735204deeb" }) %>
+                <h3 class="headline-4 text-center group"> Start Today</h3>
+                <%= Kramdown::Document.new(the_form["custom_form"]).to_html %>
             </div>
         </div>
     </div>
 </section>
+
+                

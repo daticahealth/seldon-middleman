@@ -19,8 +19,9 @@
 }
 .faded-max {
     @extend .faded;
+    transition-duration: $timing-slow;
     @include breakpoint (large) {
-        @include opacity(0.1);
+        @include opacity(0.2);
     }
 }
 .drop { // drop shadows. Tried to use mixin & had issues with sass functions.

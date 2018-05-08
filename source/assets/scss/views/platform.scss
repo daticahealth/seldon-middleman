@@ -11,32 +11,93 @@
 // @import '../modules/fonts-optional';
 // @include foundation-off-canvas;
 
-.position-bottom-rt { // slap artwork to bottom right on medium-large and up; wrap under for small - med
-    width: 100%;
-    margin-bottom: -2rem; // offset the padding from .section-article at this viewport
+// custom stuff
+.platform-art-1 { // pair with container-x bg image fill classes
+    position: absolute;
+    top: 12rem;
+    height: 100%;
     @include breakpoint (medium) {
-        margin-bottom: -2.5rem; // I'd rather tweak these than mess with .section-article for this ONE thing
+        right: -50%;
+        width: 90%;
     }
-    @include breakpoint (medium-large up) {
-        margin-bottom: 0;
-        position: absolute;
-        bottom: 0;
-        right: 1rem;
-        width: 58%;
-        max-height: 30rem;
+    @include breakpoint (large) {
+        right: -28%;
+        width: 76%;
+    }
+    @include breakpoint (xlarge) {
+        right: -10%;
+        width: 62%;
+    }
+    @include breakpoint (xlarge) {
+        right: -14%;
+        width: 62%;
     }
 }
+// .icon-columns-left-group {
+//     .column, .columns {
+//         margin-bottom: 1.5rem;
+//         @include breakpoint (medium) {
+//         }
+//     }
+// }
+// .icon-pull-left-medium {
+//     @include breakpoint (medium) {
+//         float: left;
+//         margin-right: 1rem;
+//     }
+// }
+$color: $color_blue;
+.solid {
+  fill: $color;
+  color: adjust-color($color, $lightness: 20%, $hue: -5%, $saturation: 50%);
+}
+// .position-bottom-rt { // slap artwork to bottom right on medium-large and up; wrap under for small - med
+//     width: 100%;
+//     margin-bottom: -2rem; // offset the padding from .section-article at this viewport
+//     @include breakpoint (medium) {
+//         margin-bottom: -2.5rem; // I'd rather tweak these than mess with .section-article for this ONE thing
+//     }
+//     @include breakpoint (medium-large up) {
+//         margin-bottom: 0;
+//         position: absolute;
+//         bottom: 0;
+//         right: 1rem;
+//         width: 58%;
+//         max-height: 30rem;
+//     }
+// }
 
 // Set max height on "building on the paltform" illustrations
-.build-height{
-  max-height: 155px;
-}
+// .build-height{
+//   max-height: 155px;
+// }
 
 // Add a border to the bottom of the "How the Platform Works" images
 img.soft-border{
   border-bottom: 1px solid $color_light;
 }
-
+ul.bullet-outside {
+    margin-left: 0;
+}
+.bullets-chevron {
+    list-style: none;
+    li {
+        margin-bottom: 1em;
+        @include breakpoint (xlarge) {
+            &:before {
+                content: '';
+                display: inline-block;
+                height: 2em;
+                width:  2em;
+                // background-image: url(http://placehold.it/32?text=fallback); // Fallback PNG
+                background-image: url(/public/icons/inlined/chevron-right-circle-white.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin: -2rem 0.5rem -1rem -2.5rem;
+            }
+        }
+    }
+}
 @include keyframes( expando ) {
     0% {
         // height: 0px;
@@ -51,9 +112,9 @@ img.soft-border{
     }
 }
 // Change headline weight to same as homepage
-.headline-1 {
-	font-weight: 100;
-}
+// .headline-1 {
+// 	font-weight: 100;
+// }
 // expand/toggle component
 .icon-toggle {
     opacity: 0.5;
