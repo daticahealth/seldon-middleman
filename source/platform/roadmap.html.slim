@@ -14,7 +14,6 @@ collectionOrder: 3
 ctaCustom: true
 ---
 - current_page.data.share_image = image_share_platform
-css:
 
 svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   defs
@@ -62,4 +61,11 @@ section#tech-features.section-article.container-gray-11
                     - feature["related_tags"].each do |tag|
                       - if tag.has_key?("tag_full")
                         span.label.info.round = tag["tag_full"]
+  .row.small-up-1.medium-up-3.large-up-3
+    .column
+      a.card.group.card-add-feature.container-gray-5
+        .card-section.text-center
+          h4.headline-4.text-light.text--white Request a feature
+          = inline_svg("small/icon-plus-disc", class: "icon icon-size--large text--gray-7")
+
 
