@@ -118,7 +118,7 @@ ul.bullet-outside {
 // expand/toggle component
 .icon-toggle {
     opacity: 0.5;
-    margin-bottom: 0.03em;
+    // margin-bottom: 0.03em;
     margin-left:   0.1em;
     @include transition(transform $timing-default, opacity $timing-default);
 }

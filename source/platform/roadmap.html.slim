@@ -1,0 +1,65 @@
+---
+title: "Datica Public Roadmap"
+summary: "Datica Public Roadmap."
+navTitle: "Roadmap"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "March 5, 2018"
+ogType: "product"
+customCSS: "platform"
+layout: platform
+priority: "0.9"
+collectionName: "platform"
+collectionOrder: 3
+ctaCustom: true
+---
+- current_page.data.share_image = image_share_platform
+css:
+
+svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  defs
+    symbol#icon-chevron-down viewbox=("0 0 18 18")
+      title chevron-down
+      path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
+
+/section#tech-features.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
+section#tech-features.section-article.container-gray-11
+  .row.align-center
+    .columns.small-12.text-center.group
+      .row.align-center
+        .columns.small-12.medium-8
+          h1.headline-2.text-center = current_page.data.title
+          p.text-center Here's what's coming.
+  ruby:
+    feature_list = data.site.features.to_a.sort_by{ |id, feature| feature['_meta']['updated_at'] }
+    feature_states = ["In Development", "On Deck", "Future"]
+  .row.align-center.small-up-1.medium-up-3.large-up-3
+    - feature_states.each do | state |
+      .column
+        h2.headline-4.spaced-out.text-center.group= state
+        - feature_list.each do | id, feature |
+          - if feature.has_key?("feature_status")
+            - if feature.feature_status == state
+              .card.drop.group
+                .card-section
+                  - if feature.has_key?('category')
+                    .pub-date.text--gray-9 = feature.category
+                  - if feature.has_key?('desc')
+                    h4.headline-5(id="feature-#{feature.slug}")
+                      a.is-toggle(data-toggle="feature-detail_#{feature.slug}" data-track="true" data-track-category="platform" data-track-id="feature-detail_#{feature.slug}")
+                        = feature.title
+                        svg.icon-inline.icon-toggle.svg-color--blue.icon.icon-plus-disc id="feature-icon-#{feature.slug}"
+                          use.symbol-icon xlink:href="#icon-chevron-down"
+                  - else
+                    h4.headline-6= feature.title
+                  - if feature.has_key?("summary")
+                    = Kramdown::Document.new(feature.summary).to_html
+                  - if feature.has_key?("desc")
+                    .show-more--container.text-smaller data-off-canvas="" data-toggler="" id="feature-detail_#{feature.slug}"
+                      = Kramdown::Document.new(feature.desc).to_html
+                - if feature.has_key?("related_tags")
+                  .card-divider.card-divider--flush
+                    - feature["related_tags"].each do |tag|
+                      - if tag.has_key?("tag_full")
+                        span.label.info.round = tag["tag_full"]
+
