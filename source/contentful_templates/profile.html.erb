@@ -1,5 +1,5 @@
 ---
-layout: basic
+layout: company
 ogType: article
 ---
 
@@ -37,23 +37,6 @@ end
 today = DateTime.now
 current_page.data.date = today.strftime('%B %-d, %Y')
 %>
-<div class="container-color--dark-alt">
-    <%= partial "partials/head/header", :locals => { :style => "light" } %>
-</div>
-<section class="custom-sticky custom-sticky--dark show-for-large">
-    <div class="row">
-        <div class="columns small-12 medium-12">
-            <ul>
-                <% data.nav_company.nav_items.each do |m| %>
-                    <li>
-                        <a href="<%= m.url %>" title="<%= m.desc %>"<% if m.url == "/leadership" %> aria-current="page"<% end %>><%= m.title %></a>
-                        <%#= link_to m.title, m.url, title: m.desc %>
-                    </li>
-                <% end %>
-            </ul>
-        </div>
-    </div>
-</section>
 
 <section class="section-article container-gray-12">
     <div class="row align-center">
