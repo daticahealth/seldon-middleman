@@ -68,12 +68,16 @@ $color: $color_blue;
 // }
 
 .card-add-feature { // special button on roadmap
+    $transition: color $timing-medium linear, background-color $timing-medium linear, transform $timing-medium ease;
+    @include transition ($transition);
+    .icon {
+        @include transition ($transition);
+    }
     &:hover {
-        .link-white {text-decoration: none;}
-        transition: color $timing-slow linear;
+        background-color: $color_prime-alt;
         .icon {
-            transition: color $timing-slow linear;
             color: white;
+            transform: scale3d(1.1, 1.1, 1.1);
         }
     }
 }

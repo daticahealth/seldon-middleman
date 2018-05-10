@@ -74,9 +74,14 @@ section#tech-features.section-article.container-gray-11
                         span.label.round class=tag_color = tag.slug
   .row.small-up-1.medium-up-3.large-up-3
     .column
-      a.card.group.card-add-feature.container-gray-5
+      a.card.group.card-add-feature.container-gray-8 data-toggle="requestFeature"
         .card-section.text-center
           h4.headline-4.text-light.text--white Request a feature
-          = inline_svg("small/icon-plus-disc", class: "icon icon-size--large text--gray-7")
+          = inline_svg("small/icon-plus-disc", class: "icon icon-size--large text--gray-9")
 
-
+.card.drop.medium.reveal#requestFeature data-options=("closeOnEsc: true; animationSpeed: 150; animationIn: bounce-in") data-reveal=""
+  .card-section
+    h2.headline-3 Request a feature
+    p We're always looking for new ideas or use cases.
+    button.close-button aria-label=("Close panel") data-close="" type="button"
+      span aria-hidden="true" ×
