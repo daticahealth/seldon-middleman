@@ -72,13 +72,37 @@ section#tech-features.section-article.container-gray-11
                         - when "baz" then "info"
                         - else "dark"
                         span.label.round class=tag_color = tag.slug
-  .row.small-up-1.medium-up-3.large-up-3
-    .column
-      a.card.group.card-add-feature.container-gray-8 data-toggle="requestFeature"
+
+section#productHelp.section-article.container-gray-11.container-image--center data-interchange="[https://images.ctfassets.net/189dvqdsjh46/6h7kOzKimkGoI40KASuu4Q/25b6bb4c6ce6a5c014bf16c906471baf/hiker_silhouette_-_julentto-photography-184055.jpg?fit=thumb&w=1600&h=500, medium]"
+  .row.align-center
+    .column.small-12.medium-4
+      h2.headline-2.text-center Get Help
+  .row.align-center.align-middle
+    .column.small-12.medium-8.large-4.large-order-2
+      aside.card.container-gray-12.drop
+        .card-section.text-center
+          - data.footer_main[3..3].each do |nav_dropdown|
+            - if nav_dropdown.has_key?("children")
+              / .headline-5 = nav_dropdown.title
+              ul.no-bullet
+                - nav_dropdown["children"].each do |menu_child|
+                  li
+                    = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: ""
+                    p.text-small = menu_child.desc
+    .column.small-12.medium-8.large-4.large-order-1
+      a.card.card-add-feature.container-gray-6 data-toggle="requestFeature"
         .card-section.text-center
           h4.headline-4.text-light.text--white Request a feature
-          = inline_svg("small/icon-plus-disc", class: "icon icon-size--large text--gray-9")
+          = inline_svg("small/icon-plus-disc", class: "icon icon-size--large text--gray-8")
+    .column.small-12.medium-8.large-4.large-order-3
+      aside.card.container-color--tint-20
+        .card-section.text-center
+          h2.headline-4.text-light.text--white <strong>End-to-end compliance</strong> with Kubernetes is here.
+          / p Schedule a demo to learn more.
+          = partial "partials/snippets/button", :locals => { :label => "Schedule a demo today", :url => "/demo", :button_classes => "button expanded group--sm", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
+          = partial "partials/snippets/button", :locals => { :label => "Questions? Let's talk.", :url => "/contact", :button_classes => "button expanded hollow hollow-inverted", :icon => "hubspot-chat-blue", :icon_align => "left" }
 
+/ modal for form, hidden
 .card.drop.medium.reveal#requestFeature data-options=("closeOnEsc: true; animationSpeed: 150; animationIn: bounce-in") data-reveal=""
   .card-section
     h2.headline-3 Request a feature
