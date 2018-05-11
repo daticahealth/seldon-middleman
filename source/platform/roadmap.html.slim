@@ -41,8 +41,8 @@ section#tech-features.section-article.container-gray-11
             - if feature.feature_status == state
               .card.drop.group
                 .card-section
-                  - if feature.has_key?('category')
-                    .pub-date.text--gray-9 = feature.category
+                  / - if feature.has_key?('category')
+                  /   .pub-date.text--gray-9 = feature.category
                   - if feature.has_key?('desc')
                     h4.headline-5(id="feature-#{feature.slug}")
                       a.is-toggle(data-toggle="feature-detail_#{feature.slug}" data-track="true" data-track-category="platform" data-track-id="feature-detail_#{feature.slug}")
