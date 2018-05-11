@@ -1,0 +1,192 @@
+---
+title: "Datica Features"
+summary: "Datica technology, features, capabilities, and support on the Datica Platform"
+navTitle: "Features"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
+date: "March 5, 2018"
+ogType: "product"
+customCSS: "platform"
+layout: platform
+priority: "0.9"
+collectionName: "platform"
+collectionOrder: 3
+ctaCustom: true
+---
+- current_page.data.share_image = image_share_platform
+
+svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  defs
+    symbol#icon-chevron-down viewbox=("0 0 18 18")
+      title chevron-down
+      path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
+
+section#tech-features.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
+  .row.align-center
+    .columns.small-12.text-center.group
+      .row.align-center
+        .columns.small-12.medium-8
+          h1.headline-2.text-center Datica Platform Features
+          p.text-center Features that not only show you how to be compliant, but actually <em>make you</em> compliant against the healthcare's most stringent security requirements.
+
+          .menu.button-cluster.align-center
+            = partial "partials/snippets/button", :locals => { :label => "See our Roadmap", :title => "View Platform pricing", :url => "roadmap", :button_classes => "button hollow", :item_id => "cta_top_pricing", :icon => "icon-map" }
+            = partial "partials/snippets/button", :locals => { :label => "Explore Compliance", :title => "Explore Compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :item_id => "top-tech" }
+
+  - ordered_feature_categories = data.site.featureCategories.to_a.sort_by{ |id, featureCat| featureCat['sort_order'] }
+  - ordered_feature_categories.each do | id, featureCat |
+    .row
+      .columns.small-12
+        .callout.callout--large.drop.group--2x
+          .row
+            .columns.small-12.medium-8
+              h3.headline-3(id="featureCat_#{featureCat.slug}") #{featureCat["title"]}
+              - if featureCat.has_key?("desc")
+                p = featureCat["desc"]
+          .row
+            .columns.small-12
+              hr.no-margin-top
+          .row.small-up-1.medium-up-2.large-up-3.xlarge-up-3.group--2x.no-margin-all-the-things
+            - if featureCat.has_key?("related_features")
+              - featureCat["related_features"].each do | feature |
+                .column.feature-item
+                  - if feature.has_key?('desc')
+                    h4.headline-5(id="feature-#{feature.slug}")
+                      a.is-toggle(data-toggle="feature-detail_#{feature.slug}" data-track="true" data-track-category="platform" data-track-id="feature-detail_#{feature.slug}")
+                        = feature.title
+                        svg.icon-inline.icon-toggle.svg-color--blue.icon.icon-plus-disc id="feature-icon-#{feature.slug}"
+                          use.symbol-icon xlink:href="#icon-chevron-down"
+                  - else
+                    h4.headline-6= feature.title
+                  - if feature.has_key?("summary")
+                    = Kramdown::Document.new(feature.summary).to_html
+                  - if feature.has_key?("desc")
+                    .show-more--container.text-smaller data-off-canvas="" data-toggler="" id="feature-detail_#{feature.slug}"
+                      = Kramdown::Document.new(feature.desc).to_html
+
+/ bright strip, good divider for containers that are similar in brightness
+.strip-bright
+section#integration.section-article
+  .row.align-center.text-center
+    .columns.small-12.large-6
+      h2.headline-3 Integrate with any EHR
+      p.lead Modern healthcare applications must integrate with Electronic Health Records, like Epic or Cerner, in order to improve their value. Datica helps you get that job done in a secure, compliant, and scalable way.
+  .row.align-center.text-center.collapse
+    .columns.small-12.large-10
+      .logo-cloud
+        - data.views.ehrs.ehr_list.each do |logo|
+          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+
+section#tech-mirth.section-article.container-color--gray-light
+  .row.align-center
+    .columns.small-12.medium-12.large-8
+      h1.headline-3.group.text-center EHR <strong>Integration</strong> With Mirth Connect
+      .video.drop--big.group
+        script async="" src="https://fast.wistia.com/embed/medias/33cjcahhmy.jsonp"
+        script async="" src="https://fast.wistia.com/assets/external/E-v1.js"
+        .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;")
+          .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;"
+            .wistia_embed.wistia_async_33cjcahhmy class=("seo=false videoFoam=true") style="height:100%;width:100%"   
+
+  .row.align-center
+    .columns.small-12.large-6
+      p.lead Add a new environment to your account with the click of a button. OCI Mirth Connect is a pre-packaged configuration of all the open source integration tooling you need to integrate with EHRs.
+
+  .row
+    .columns.small-12.large-6
+      .callout.drop
+        strong The add-on includes:
+        ul
+          li Mirth configured to be highly-available
+          li Load balancers
+          li Redundant Postgres for initial data ingestion
+          li Mirth alerting and monitoring
+          li VPN management
+    .columns.small-12.large-6
+      .callout.drop
+        p We open sourced our <a href="https://github.com/daticahealth/Mirth-Transforms">Mirth HL7 transformations</a> used over the past three years. With OCI Mirth, you can get started today using these tools. Or, should you require help integrating into a specific hospital, we offer professional services to project manage an integration to completion.
+        = partial "partials/snippets/button", :locals => { :label => "Test out your own version of Mirth today", :url => "/pricing", :button_classes => "button text-center", :icon => "icon-chevron-right", :icon_color => "white" }
+
+/ section.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
+  = partial "partials/section-promos/hcms-screenshot"
+
+
+aside#ctaBottom.container-color--dark-grad-blue
+  .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
+    .row.align-center
+      .columns.small-12.medium-10.large-10.text-center
+        h2.headline-3 <strong>End-to-end compliance</strong> with Kubernetes is here.
+    .row.align-center
+      .columns.small-6.large-4.text-right
+        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
+      .columns.small-6.large-6.text-left
+        = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
+
+section.section-article.container-color--gray-light
+  .row
+    .columns.small-12.large-8.group
+      h3.headline-3 Platform Technical Capabilities
+      markdown:
+        Datica supports two primary methods of getting your software running on the Platform: [Buildpacks](#) with `git push`, and [Container Services](#) with `datica deploy`. Between these two methods, Datica can support almost any technology imaginable on the application layer. When it comes to services with volumes, we're a bit more prescriptive, given how automatic backups and disaster recovery works.
+        {:.lead}
+  .row.align-center
+    .columns.small-12.medium-4.large-4
+      = inline_svg("icon-code", class: "icon-size--small svg-color--gray-3")
+      h5.headline-5 Common Languages
+      p Datica supports hundreds of languages and frameworks. Here are a few popular ones:
+      ul.no-bullet.multicol-2.group
+        li Ruby
+        li Node.js
+        li Clojure
+        li Python
+        li Java
+        li Gradle
+        li Grails 3.x
+        li Scala
+        li Play 2.x
+        li PHP
+        li Go
+    .columns.small-12.medium-4.large-2
+      = inline_svg("icon-database-hotswap", class: "icon-size--small svg-color--gray-3")
+      h5.headline-5 Database Support
+      ul.no-bullet.group
+        li Percona/MySQL
+        li PostgreSQL
+        li MongoDB
+      = inline_svg("icon-network", class: "icon-size--small svg-color--gray-3")
+      h5.headline-5 Other Services
+      ul.no-bullet.group
+        li Redis
+        li Memcached
+        li RabbitMQ
+    .columns.small-12.medium-4.large-6
+      = inline_svg("icon-windows", class: "icon-size--small svg-color--gray-3")
+      h5.headline-5 Windows architecture support
+      ul.no-bullet.group
+        li Windows VMs on dedicated accounts
+        li Microsoft SQL Server
+      .callout.drop-light
+        = inline_svg("icon-docker", class: "icon-size--large float-right svg-color--gray-3")
+        markdown:
+          Datica also supports Container Services with Docker; learn more [here](#feature-custom-docker-containers).
+
+          Don't see a listed technology you wish to use? [Contact sales](/contact) to see additional compatability.
+section#faq-tech.section-article
+  .row.align-center
+    .columns.small-12.medium-8.large-8
+      h3.headline-3.text-center.group Frequently asked questions about our platform
+  .row.align-center
+    .columns.small-12.medium-4.large-4
+      .callout.callout--gray-light
+        ol
+          - data.views.faqs.platform_tech.each_with_index do |item, index|
+            li
+              a href="#platform-tech-question-#{index}" = item["question"]
+    .columns.small-12.medium-8.large-8
+      dl
+        - data.views.faqs.platform_tech.each_with_index do |item, index|
+          dt id="platform-tech-question-#{index}" = item["question"]
+          dd= Kramdown::Document.new(item["answer"]).to_html
+      hr.divider/
+      p.lead Get started with the Datica platform today
+      = partial "partials/snippets/button", :locals => { :label => "Learn about integrations", :url => "/platform/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }

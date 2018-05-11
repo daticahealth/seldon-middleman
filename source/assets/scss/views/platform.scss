@@ -67,11 +67,20 @@ $color: $color_blue;
 //     }
 // }
 
-// Set max height on "building on the paltform" illustrations
-// .build-height{
-//   max-height: 155px;
-// }
-
+.card-add-feature { // special button on roadmap
+    $transition: color $timing-medium linear, background-color $timing-medium linear, transform $timing-medium ease;
+    @include transition ($transition);
+    .icon {
+        @include transition ($transition);
+    }
+    &:hover {
+        background-color: $color_prime-alt;
+        .icon {
+            color: white;
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+    }
+}
 // Add a border to the bottom of the "How the Platform Works" images
 img.soft-border{
   border-bottom: 1px solid $color_light;
@@ -118,7 +127,7 @@ ul.bullet-outside {
 // expand/toggle component
 .icon-toggle {
     opacity: 0.5;
-    margin-bottom: 0.03em;
+    // margin-bottom: 0.03em;
     margin-left:   0.1em;
     @include transition(transform $timing-default, opacity $timing-default);
 }

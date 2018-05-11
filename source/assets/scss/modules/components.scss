@@ -50,6 +50,9 @@ blockquote + .media-object, .blockquote-info { // line person/info up with quote
         background-color: $color_green;
     }
 }
+span.label + span.label { // when in a tag list
+    margin-left: 0.4em;
+}
 // Pills are functionally identical to "labels". We should unify these two someday. - AW
 .pill {
     display: inline-block;
