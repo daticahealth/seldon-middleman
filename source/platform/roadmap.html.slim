@@ -26,12 +26,16 @@ svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0;
       title chevron-down
       path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
 
-section#tech-features.section-article.container-gray-11
-  .row.align-center.group
-    .columns.small-12.medium-8.text-center
-      h1.headline-2 = current_page.data.title
-      p.text-center = current_page.data.summary
-          / p= the_form.title
+section.container-color--dark-grad-blue
+  .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
+    .row.align-center
+      .columns.small-12.text-center.group
+        .row.align-center
+          .columns.small-12.medium-7
+            h1.headline-2.text-center = current_page.data.title
+            p.lead.text-center Our public roadmap gives customers and prospects full transparency into what we’re building. Read more about our decision to publish our product roadmap <a href="https://datica.com/blog/what-were-building-daticas-public-product-roadmap" class="link--yellow">here</a>.
+            / p= the_form.title
+section.section-article.container-gray-11
   .row.align-center.small-up-1.medium-up-3.large-up-3
     - feature_states.each do | state |
       .column
