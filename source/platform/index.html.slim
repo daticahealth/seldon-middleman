@@ -22,15 +22,16 @@ priority: "0.9"
     .row.group
       .columns.small-12.medium-8.large-6.xlarge-6
         p.lead= current_page.data.summary
-        p Customers use technologies like Kubernetes to deploy containerized workloads combined with Datica to guarantee a continuously compliant state. Additionally, Datica add-ons give users the option to deploy cloud native services and other 3rd party tools that are configured to be compliant by default against Datica’s Cloud Compliance Management System — the mechanism that powers all the Datica Platform.
+        p Customers use technologies like Kubernetes to deploy containerized workloads combined with Datica to guarantee a continuously compliant state. Additionally, Datica add-ons give users the option to deploy cloud native services and other 3rd party tools that are configured to be compliant by default against Datica’s Cloud Compliance Management System — the mechanism that powers the Datica Platform.
 
         h2.headline-3 The Datica Cloud Compliance Management System (CCMS)
         p The CCMS is a complex set of components that give you visibility and control over the compliance of your technology:
         ul.bullet-outside.bullets-chevron
-          li <strong>Compliance Artifact Storage (CAS):</strong> Datica’s Compliance deployments(i) within the your technology stack will report and log compliance artifacts to the CAS. The CAS resides on your Cloud account as an encrypted block storage object.
-          li <strong>Ingestion Mechanism (IM):</strong> The running state of your technology is reported back to the Datica Continuous Compliance Engine (CCE) for processing. The CCE will then send certain compliance artifacts back to the CAS for storage.
-          li <strong>Continuous Compliance Engine (CCE):</strong> The core value of the Datica Cloud Compliance Management System is that we are continuously ensuring the complete compliance of both your cluster, and the underlying infrastructure that it resides on. We do this by comparing the running state with the expected compliance state.
-          li <strong>Cloud Compliance Management System Dashboard:</strong> As compliance artifact data, processing, and reporting becomes available, we provide that back to users via a dashboard. You can build reports for GDPR, HITRUST and more in the click of a button. Use the dashboard to pass audits and to continuously monitor the compliance of your environment.
+          li <strong>Compliance Artifact Storage (CAS):</strong> Datica’s compliance deployments (logging, monitoring, IDS, etc.) within the your technology stack will report and log compliance artifacts to the CAS. The CAS resides on your Cloud account as an encrypted block storage object.
+          li <strong>Ingestion:</strong> The running state of your technology is reported back to the Datica Compliance Engine (CE) for processing. The CE will then send certain compliance artifacts back to the CAS for storage.
+          li <strong>Compliance Engine:</strong> The core value of the Datica Cloud Compliance Management System is that we are continuously ensuring the complete compliance of both your cluster, and the underlying infrastructure that it resides on. We do this by comparing the running state with the expected compliance state.
+          li <strong>Management:</strong> Datica manages the compliance state of your cluster through intrusion detection review and remediation; vulnerability scanning management, remediation and proaction; and compliance reporting for HITRUST, SOC 2 and GDPR and more.
+          / li <strong>Management:</strong> As compliance artifact data, processing, and reporting becomes available, we provide that back to users via a dashboard. You can build reports for GDPR, HITRUST and more in the click of a button. Use the dashboard to pass audits and to continuously monitor the compliance of your environment.
     .menu.button-cluster.align-center
       = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
       = partial "partials/snippets/button", :locals => { :label => "Explore Compliance", :title => "Explore Compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :item_id => "top-tech" }
@@ -118,7 +119,7 @@ section#setup.section-article.container-gray-2
 //             | You wouldn't build payment processing infrastructure to charge credit cards.
 //             br/
 //             | You'd use Stripe.
-// 
+//
 //       .row.align-center.align-middle
 //         .columns.small-12.medium-6.medium-large-4
 //           img.hide-for-medium.float-right.group width="150" alt=("apn tech") src="https://d1.awsstatic.com/partner-network/APN-Advanced-Technology-Badge.d737de9106285590a46875b8805247f22f8433ba.png"
