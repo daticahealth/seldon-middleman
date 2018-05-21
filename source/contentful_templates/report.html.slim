@@ -75,6 +75,6 @@ section.section-article--med.container-gray-11
                     = Kramdown::Document.new(p["related_form"]["custom_form"]).to_html
 
 - if p.has_key?("bg_image")
-    section.section-article.container-image-fill data-interchange="[#{p.bg_image.url}?fit=thumb=1800=200=jpg=50, medium]"
+    section.show-for-medium.section-article.container-image-fill data-interchange="[#{p.bg_image.url}?fit=thumb&w=1800&h=400&fm=jpg&q=50, medium]"
 - else
-    section.container-gray-5.container-image--fixed data-interchange="[//images.ctfassets.net/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg?fit=thumb&w=1800&h=200&fm=jpg&q=50, large]" 
+    section.show-for-medium.container-gray-5.container-image--fixed data-interchange="[//images.ctfassets.net/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg?fit=thumb&w=1800&h=200&fm=jpg&q=50, large]" 

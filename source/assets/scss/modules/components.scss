@@ -79,6 +79,14 @@ span.label + span.label { // when in a tag list
 
 .alert {
     &-ribbon {
+        a img {
+            @include breakpoint (medium) {
+                max-height: 10vw;
+            }
+            @include breakpoint (large) {
+                max-height: 3rem;
+            }
+        }
         &--content {
             padding: 0.5rem 1.8rem; // approx. with site nav
             // height: 2rem;

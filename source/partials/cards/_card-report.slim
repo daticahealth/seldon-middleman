@@ -51,4 +51,4 @@ ruby:
                 = post.title
     - if post.has_key?("image_thumb")
         a.text-center href=related_post_path title=link_title
-            img alt="preview" data-interchange="[#{image_url}?fit=thumb&w=400&q=50, small], [#{image_url}?fit=thumb&w=600, large]" style="padding: 0 1rem 0 1rem;" /
+            img class="product-thumb" alt="preview" data-interchange="[#{image_url}?fit=thumb&w=400&q=50, small], [#{image_url}?fit=thumb&w=600, large]" style="padding: 0 1rem 0 1rem;" /

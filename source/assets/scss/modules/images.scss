@@ -87,6 +87,11 @@ figcaption{
 .html5-video-full-width{
   width: 100%;
 }
+.product-thumb {
+    @include breakpoint (large) {
+        max-width: 22rem;
+    }
+}
 
 // .container--image-fit {
 //     position: relative;

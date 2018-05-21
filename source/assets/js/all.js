@@ -4,13 +4,13 @@ $("document").ready(function(){
     
     // Cookie config for modal
     // If no cookie with our chosen class...
-    if($.cookie("dismiss-ribbon-build-18") == null){
+    if($.cookie("dismiss-ribbon-gdpr-webinar-2018-05-24") == null){
         $('#alertTop').removeClass("hide");
     }else{
         $('#alertTop').addClass("hide");
     }
     $(".dismiss").click(function(){
-        $.cookie('dismiss-ribbon-build-18', 'true', { expires: 30 });
+        $.cookie('dismiss-ribbon-gdpr-webinar-2018-05-24', 'true', { expires: 30 });
         $('#alertTop').addClass("hide");
     });
     // not for prod!
