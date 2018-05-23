@@ -1,0 +1,13 @@
+doctype html
+html lang="en-US" dir="ltr"
+  head
+    meta charset="UTF-8" /
+    meta name="keywords" content="heathcare, #{current_page.data.tags}" /
+    meta name="author" content="#{current_page.data.author}" /
+    meta property="date" content="#{current_page.data.date}" /
+    = stylesheet_link_tag "print"
+    - if current_page.data.has_key?("customCSS")
+      = stylesheet_link_tag "print/"+current_page.data.customCSS
+  body
+    //- if build?
+    = yield
