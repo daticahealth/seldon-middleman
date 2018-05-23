@@ -14,7 +14,7 @@
     "watch:js": "onchange 'source/assets/js/**/*.js' -- npm run uglify",
     "watch:images": "onchange 'source/assets/{img,icons}/**/*' -- npm run images",
     "watch:fonts": "onchange 'source/assets/fonts/**/*' -- npm run fonts",
-    "styles": "npm run styles:seldon & npm run styles:views & run styles:print",
+    "styles": "npm run styles:seldon & npm run styles:views & npm run styles:print",
     "styles:seldon": "node-sass --output-style compressed -o .tmp/public/css source/assets/scss/seldon.scss",
     "styles:views": "node-sass --output-style compressed -o .tmp/public/css/views source/assets/scss/views",
     "styles:print": "node-sass --output-style expanded -o .tmp/public/css/print source/assets/scss/print",
