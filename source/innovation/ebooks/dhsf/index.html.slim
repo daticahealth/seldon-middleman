@@ -5,6 +5,18 @@ summary: "DHSF in book form."
 layout: "ebook"
 hide_from_sitemap: true
 ---
+css:
+  @page:right{ 
+    @bottom-left {
+      content: "#{current_page.data.title}";
+    }
+  }
+  @page:left {
+    @bottom-right {
+      content: "#{current_page.data.title}";
+    }
+  }
+
 h1.title= current_page.data.title
 
 - data.views.dhsf.phases.each_with_index do |phase, id|
@@ -13,7 +25,8 @@ h1.title= current_page.data.title
   ul id="df-stage--timeline-#{id}" 
     - phase["stages"].each_with_index do |stage, index|
       li 
-        a href="##{phase["slug"]}-#{stage["slug"]}" title=("Month #{stage["time"]}: #{stage["title"]}") = stage["time"]
+        a href="##{phase["slug"]}-#{stage["slug"]}" title=("Month #{stage["time"]}: #{stage["title"]}")
+          | Month #{stage["time"]}: #{stage["title"]}
   section id="df-#{phase["slug"]}-stage-content" 
     - phase["stages"].each_with_index do |stage, index|
       div id="#{phase["slug"]}-#{stage["slug"]}" 

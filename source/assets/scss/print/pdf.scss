@@ -14,7 +14,7 @@ Bottom left we display the title of the book, bottom right the page using a CSS 
     @bottom-left {
        margin: 10pt 0 30pt 0;
        border-top: .25pt solid $gray-5;
-       content: "Productivity Essays";
+       // content: "Productivity Essays";
        font-size: 9pt;
        color: $gray-3;
     }
@@ -37,7 +37,7 @@ Bottom right book title, bottom left current page */
     @bottom-right {
         margin: 10pt 0 30pt 0;
         border-top: .25pt solid $gray-5;
-        content: "Productivity Essays";
+        // content: "Productivity Essays";
         font-size: 9pt;
         color: $gray-3;
     }
@@ -51,7 +51,7 @@ Bottom right book title, bottom left current page */
 /* reset chapter and figure counters on the body */
 body {
     counter-reset: chapternum figurenum;
-    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    // font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
     line-height: 1.5;
     font-size: 11pt;
 }

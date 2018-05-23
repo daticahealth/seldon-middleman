@@ -4,50 +4,58 @@
 @import '../mixins/functions';
 /* This defines styles and classes used in the EPUB and MOBI versions of the book */
 body { 
-	margin: 5%; 
-	text-align: justify; 
-	font-size: medium; 
+  margin: 5%; 
+  text-align: justify; 
+  font-size: medium; 
 }
 code { 
-	font-family: monospace; 
+  font-family: monospace; 
 }
 
 h1.title, h2.author, h3.date { 
-	text-align: center;
+  text-align: center;
 }
 ol.toc { 
-	padding: 0; 
-	margin:0; 
+  padding: 0; 
+  margin:0; 
 }
 ol.toc li { 
-	list-style-type: none; 
-	margin: 0; 
-	padding: 0; 
-	line-height: 1.5; 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+  line-height: 1.5; 
 }
 ol.toc ol {
-	padding-left: 1em;
-}
-h1 {
-	border-bottom: 1px solid $gray-9;
-	padding: 0 0 .6em 0;
-}
-h1.title {
-	border: 0;
+  padding-left: 1em;
 }
 /* page-break-before, page-break-after, page-break-inside are used to control where breaks occur as the content flows from page to page. */
 h1,h2,h3,h4,h5 {
-	font-weight: bold;
-	page-break-after: avoid;
-	page-break-inside:avoid;
-	text-align: left;
-}
-h1+p, h2+p, h3+p {
-	page-break-before: avoid;
-}
-table, figure {
-	page-break-inside: avoid;
+  font-family: sans-serif;
+  font-weight: bold;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+  text-align: left;
 }
 
+h3+p { // h1+p, h2+p, 
+  page-break-before: avoid;
+}
+h1 {
+  border-bottom: 1px solid $gray-9;
+  padding: 0 0 .6em 0;
+  .title {
+    border: 0;
+  }
+}
+h1, h2 { // chapter heads
+  page-break-before: always;
+}
+table, figure {
+  page-break-inside: avoid;
+  font-family: sans-serif;
+}
+@import 'node_modules/foundation-sites/scss/components/_table.scss';
+@include foundation-table;
+
 // keep this last
-@include "pdf.scss"
+// @include "pdf.scss"
