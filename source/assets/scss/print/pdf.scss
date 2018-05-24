@@ -70,54 +70,50 @@ h1.chapter:before {
     counter-increment: chapternum;
     content: counter(chapternum) ". ";
 }
-.lead {
-  font-family: $font_serif;
-}
+// .lead {
+//   font-family: $font_serif;
+// }
 /* increment and display figure counter */
 figcaption:before {
     counter-increment: figurenum;
     content: counter(chapternum) "-" counter(figurenum) ". ";
 }
-h1,h2,h3,h4,h5 {
-    font-weight: bold;
-    page-break-after: avoid;
-    page-break-inside:avoid;
-}
-h1+p, h2+p, h3+p {
-    page-break-before: avoid;
-}
-.headline-4 {
-  font-size: 12pt;
-}
-.spaced-out {
-  letter-spacing: 0.1pt;
-  text-transform: uppercase;
-}
-table, figure {
-    page-break-inside: avoid;
-    font-size: smaller;
-}
+// h1,h2,h3,h4,h5 {
+//     font-weight: bold;
+//     page-break-after: avoid;
+//     page-break-inside:avoid;
+// }
+// h1+p, h2+p, h3+p {
+//     page-break-before: avoid;
+// }
+// table, figure {
+//     page-break-inside: avoid;
+//     font-size: smaller;
+// }
 ul.toc {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    // list-style: none;
+    // margin: 0;
+    // padding: 0;
     /* create page numbers using target-counter in the TOC */
     a::after {
           content: leader('.') target-counter(attr(href), page);
     }
-    li {
-        line-height: 2;
-    }
+    // li {
+    //     line-height: 2;
+    // }
     li a {
         text-decoration: none;
     }
 }
 a {
-    color: #000;
+    color: $gray-2;
     /* add page number to cross references */
     &.xref:after {
         content: " (page " target-counter(attr(href, url), page) ")";
     }
+}
+p.lead { // adding this back for pdf renderers
+  font-family: serif;
 }
 chapter#cover {
   page: chapter-cover;
