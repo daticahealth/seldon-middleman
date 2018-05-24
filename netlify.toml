@@ -444,12 +444,12 @@
 
 [[redirects]]
   from = "/learn/whitepapers"
-  to = "/whitepapers"
+  to = "/academy"
   status = 301
 
 [[redirects]]
-  from = "/whitepapers/technology-driven-trends-in-healtchare"
-  to = "/whitepapers/technology-driven-trends-in-health/"
+  from = "/whitepapers/*"
+  to = "/academy"
   status = 301
 
 [[redirects]]
