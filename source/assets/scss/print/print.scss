@@ -6,7 +6,8 @@
 body { 
   margin: 5%; 
   text-align: justify; 
-  font-size: medium; 
+  font-size: medium;
+  font-family: sans-serif;
 }
 code { 
   font-family: monospace; 
@@ -15,19 +16,25 @@ code {
 h1.title, h2.author, h3.date { 
   text-align: center;
 }
+p.lead {
+  font-family: serif;
+  font-size: 110%;
+}
 ol.toc { 
   padding: 0; 
   margin:0; 
+  li { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    line-height: 1.5; 
+  }
+  ol {
+    padding-left: 1em;
+  }
 }
-ol.toc li { 
-  list-style-type: none; 
-  margin: 0; 
-  padding: 0; 
-  line-height: 1.5; 
-}
-ol.toc ol {
-  padding-left: 1em;
-}
+
+
 /* page-break-before, page-break-after, page-break-inside are used to control where breaks occur as the content flows from page to page. */
 h1,h2,h3,h4,h5 {
   font-family: sans-serif;
@@ -53,6 +60,7 @@ h1, h2 { // chapter heads
 table, figure {
   page-break-inside: avoid;
   font-family: sans-serif;
+  font-size: smaller;
 }
 @import 'node_modules/foundation-sites/scss/components/_table.scss';
 @include foundation-table;

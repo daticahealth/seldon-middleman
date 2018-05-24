@@ -4,7 +4,16 @@ navTitle: DHSF
 summary: "DHSF in book form."
 layout: "ebook"
 hide_from_sitemap: true
+relative_css: true
 ---
+ruby:
+  title = "Digital Health Success Framework"
+  today = DateTime.now
+  pub_date = today.strftime('%B %-d, %Y')
+  author = "Kris Gösser"
+  role = "Chief Marketing Officer"
+  company = "Datica Health, Inc."
+
 css:
   @page:right{ 
     @bottom-left {
@@ -17,7 +26,14 @@ css:
     }
   }
 
+chapter#cover
+
 h1.title= current_page.data.title
+ul.toc
+  - data.views.dhsf.phases.each_with_index do |phase, id|
+    li
+      a href="index.html#df-#{phase["slug"]}-strategy" title="#{phase["label"]}" 
+        = phase["label"]
 
 - data.views.dhsf.phases.each_with_index do |phase, id|
   h2 id="df-#{phase["slug"]}-strategy" = phase["label"]
@@ -30,7 +46,7 @@ h1.title= current_page.data.title
   section id="df-#{phase["slug"]}-stage-content" 
     - phase["stages"].each_with_index do |stage, index|
       div id="#{phase["slug"]}-#{stage["slug"]}" 
-        h4 Month #{stage["time"]}
+        h4.headline-4.spaced-out Month #{stage["time"]}
         h3 = stage.title
           a href="datica.com/dhsf/##{phase["slug"]}-#{stage["slug"]}" title=("A link to the DHSF entry at datica.com/dhsf.") #
         - if phase.has_key?("lead")
