@@ -5,31 +5,32 @@
 /* this stylesheet is used when generating a PDF with PrinceXML or any other tool that understands the CSS used. */
 /* define a page */
 @page {
-   size: 5.5in 8.5in;  
-   margin: 60pt 40pt 60pt;
+    size: 5.5in 8.5in;  
+    margin: 30pt 20pt 30pt;
+    font-family: $font_sans;
 }
 
 /* styles for the right hand spread
 Bottom left we display the title of the book, bottom right the page using a CSS counter, top right the content of the current chapter */
 @page:right{ 
     @bottom-left {
-       margin: 10pt 0 30pt 0;
-       border-top: .25pt solid $gray-5;
-       // content: "Productivity Essays";
-       font-size: 9pt;
-       color: $gray-3;
+        margin: 10pt 0 30pt 0;
+        border-top: .25pt solid $gray-5;
+        // content: "Productivity Essays";
+        font-size: 9pt;
+        color: $gray-3;
     }
     @bottom-right { 
-       margin: 10pt 0 30pt 0;
-       border-top: .25pt solid $gray-5;
-       content: counter(page);
-       font-size: 9pt;
+        margin: 10pt 0 30pt 0;
+        border-top: .25pt solid $gray-5;
+        content: counter(page);
+        font-size: 9pt;
     }
     @top-right {
-       content:  string(doctitle);
-       margin: 30pt 0 10pt 0;
-       font-size: 9pt;
-       color: $gray-3;
+        content:  string(doctitle);
+        margin: 30pt 0 10pt 0;
+        font-size: 9pt;
+        color: $gray-3;
     }
 }
 /* styles for the left hand spread 
@@ -52,10 +53,10 @@ Bottom right book title, bottom left current page */
 /* reset chapter and figure counters on the body */
 body {
     counter-reset: chapternum figurenum;
-    font-family: $font_sans;
+    // font-family: $font_sans;
     // font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-    line-height: 1.3;
-    font-size: 11pt;
+    // line-height: 1.3;
+    // font-size: 11pt;
 }
 /* get the title of the current chapter - this will be the content of the h1 
 reset figure counter as figures start from 1 in each chapter */
@@ -63,7 +64,7 @@ h1 {
     string-set: doctitle content();
     page-break-before: always;
     counter-reset: figurenum;
-    line-height: 1.3;
+    // line-height: 1.3;
 }
 /* increment chapter counter */
 h1.chapter:before {
@@ -96,7 +97,7 @@ ul.toc {
     // padding: 0;
     /* create page numbers using target-counter in the TOC */
     a::after {
-          content: leader('.') target-counter(attr(href), page);
+        content: leader('.') target-counter(attr(href), page);
     }
     // li {
     //     line-height: 2;
@@ -119,6 +120,8 @@ chapter#cover {
   page: chapter-cover;
 }
 @page chapter-cover:first {
+  width: 100%;
+  height: 100%;
   background: {
     image: url("dhsf-ebook-cover-2x.png");
     attachment: fixed;

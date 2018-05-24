@@ -48,13 +48,14 @@ chapter.page-break-after
           content: "#{current_page.data.title}: #{phase["label"]}";
         }
       }
-    h2 = phase["label"]
-    p.lead= phase["desc"]
-    ul id="df-stage--timeline-#{id}" 
-      - phase["stages"].each_with_index do |stage, index|
-        li 
-          a href="##{phase["slug"]}-#{stage["slug"]}" title=("Month #{stage["time"]}: #{stage["title"]}")
-            | Month #{stage["time"]}: #{stage["title"]}
+    header.section.page-break-after
+      h2 = phase["label"]
+      p.lead= phase["desc"]
+      ul id="df-stage--timeline-#{id}" 
+        - phase["stages"].each_with_index do |stage, index|
+          li 
+            a href="##{phase["slug"]}-#{stage["slug"]}" title=("Month #{stage["time"]}: #{stage["title"]}")
+              | Month #{stage["time"]}: #{stage["title"]}
     section.section id="df-#{phase["slug"]}-stage-content" 
       - phase["stages"].each_with_index do |stage, index|
         div.section id="#{phase["slug"]}-#{stage["slug"]}" 
@@ -81,8 +82,7 @@ chapter#background
     h2.headline-3 The Details Behind the Framework
     h3#living-document.headline-4 This is a living document
     p The guide will be constantly evolving. Developing new articles and strategies are an on-going effort as Datica continues to have rich conversations with the market.
-    p If you have any feedback, send an email to
-      a href="mailto:hello@datica.com" hello@datica.com.
+    p If you have any feedback, send an email to <a href="mailto:hello@datica.com" title="Contact Datica"> hello@datica.com.</a>
     h3#what-this-framework-is-not.headline-4 What this framework is not
     p Don’t mistake the DHSF as an all-encompassing guide to successful company-building. A successful business succeeds along innumerable dimensions, outside of compliance, infrastructure, or integration. This framework is not those ingredients:
     ul

@@ -7,7 +7,7 @@ body {
   margin: 4%; 
   text-align: justify; 
   font-size: medium;
-  font-family: sans-serif;
+  font-family: $font_sans;
 }
 code { 
   font-family: monospace; 
@@ -17,7 +17,7 @@ h1.title, h2.author, h3.date {
   text-align: center;
 }
 p.lead {
-  font-family: serif;
+  font-family: $font_serif;
   font-size: 130%;
 }
 
