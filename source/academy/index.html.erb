@@ -23,7 +23,7 @@ current_page.data.date = today.strftime('%B %-d, %Y')
         </div>
     </div>
 </section>
-<section class="section-article container-gray-3">
+<section class="section-article container-gray-11">
     <div class="row align-center">
         <div class="columns small-12 large-6 text-center group">
             <h2 class="headline-3">Datica Guides</h2>
@@ -33,21 +33,23 @@ current_page.data.date = today.strftime('%B %-d, %Y')
     <div class="masonry-group">
         <% sorted_entries = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] } %>
         <% sorted_entries.each do | id, guide_entry | %>
-            <div class="masonry-group--item">
-                <div class="card">
-                    <div class="card-section container-gray-11">
-                        <h3 class="headline-4"><a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>"><%= guide_entry["title"] %></a></h3>
-                    </div>
-                    <div class="card-section">
-                        <% if guide_entry.has_key?("image_thumb") %>
-                            <a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>">
-                                <img class="product-thumb float-right" data-interchange="[<%= guide_entry.image_thumb.url %>?fit=thumb&w=200, medium]" width="40%">
-                            </a>
-                        <% end %>
-                        <%= Kramdown::Document.new(guide_entry["summary"]).to_html %>
+            <% unless guide_entry.has_key?("list_view_hidden") %>
+                <div class="masonry-group--item">
+                    <div class="card drop">
+                        <div class="card-section">
+                            <h3 class="headline-5"><a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>"><%= guide_entry["title"] %></a></h3>
+                        </div>
+                        <div class="card-section card-section--flush">
+                            <% if guide_entry.has_key?("image_thumb") %>
+                                <a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>">
+                                    <img class="product-thumb float-right" data-interchange="[<%= guide_entry.image_thumb.url %>?fit=thumb&w=200, medium]" width="40%">
+                                </a>
+                            <% end %>
+                            <%= Kramdown::Document.new(guide_entry["summary"]).to_html %>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <% end %>
         <% end %>
     </div>
 </section>
