@@ -26,16 +26,24 @@ section.section-article.container-color--gray-light
             th role 
             th email
             th Category 
-            th phone
+            / th phone
         tbody
           - sorted_daticans.each do |id, member|
             - case member.person_type
               - when "Datica Executives", "Datica VP", "Datica Directors"
                 tr
-                  td = member.fullname + separator
-                  td = member.role + separator
-                  td = member.email + separator
-                  td = member.person_type + separator
+                  td 
+                    - if member.has_key?("fullname")
+                      = member.fullname + separator
+                  td 
+                    - if member.has_key?("role")
+                      = member.role + separator
+                  td 
+                    - if member.has_key?("email")
+                      = member.email + separator
+                  td 
+                    - if member.has_key?("person_type")
+                      = member.person_type + separator
                 / - if has_key?(member.phone)
                 /   tr
                 /     td = member.phone
