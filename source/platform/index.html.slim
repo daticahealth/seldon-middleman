@@ -1,6 +1,6 @@
 ---
 title: "Datica Platform for Compliance in the Cloud"
-summary: "Datica bridges security, compliance and your favorite technologies together to offer a complete, enterprise cloud solution for regulated industries."
+summary: "Datica's Platform bridges security and compliance with Kubernetes to offer a complete, enterprise cloud native solution for regulated industries."
 navTitle: "Platform Overview"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
@@ -18,19 +18,19 @@ priority: "0.9"
   section#platform-top.section-article.position-relative(style="overflow: hidden;")
     .row
       .columns.small-12
-        h1.headline-1 HITRUST + Kubernetes = Datica
+        h1.headline-1 Compliance + Kubernetes = Datica
     .row.group
       .columns.small-12.medium-8.large-6.xlarge-6
         p.lead= current_page.data.summary
-        p Customers use technologies like Kubernetes to deploy containerized workloads combined with Datica to guarantee a continuously compliant state. Additionally, Datica add-ons give users the option to deploy cloud native services and other 3rd party tools that are configured to be compliant by default against Datica’s Cloud Compliance Management System — the mechanism that powers the Datica Platform.
 
         h2.headline-3 The Datica Cloud Compliance Management System (CCMS)
-        p The CCMS is a complex set of components that give you visibility and control over the compliance of your technology:
+        p The CCMS gives uers visibility and control over the compliance of their Kubernetes cluster:
         ul.bullet-outside.bullets-chevron
-          li <strong>Compliance Artifact Storage (CAS):</strong> Datica’s compliance deployments (logging, monitoring, IDS, etc.) within the your technology stack will report and log compliance artifacts to the CAS. The CAS resides on your Cloud account as an encrypted block storage object.
-          li <strong>Ingestion:</strong> The running state of your technology is reported back to the Datica Compliance Engine (CE) for processing. The CE will then send certain compliance artifacts back to the CAS for storage.
-          li <strong>Compliance Engine:</strong> The core value of the Datica Cloud Compliance Management System is that we are continuously ensuring the complete compliance of both your cluster, and the underlying infrastructure that it resides on. We do this by comparing the running state with the expected compliance state.
-          li <strong>Management:</strong> Datica manages the compliance state of your cluster through intrusion detection review and remediation; vulnerability scanning management, remediation and proaction; and compliance reporting for HITRUST, SOC 2 and GDPR and more.
+        li <strong>Initial State:</strong> Compliance in the cloud is built on a foundation of secure, logical configurations. Without a proper foundation, the proverbial compliance house fails. When Datica deploys a Kubernetes cluster, we do so with configuration automation and security best practices.
+        li <strong>Compliance Artifacts:</strong> Once the proper compliance state is in place, the next step to ensuring continuous compliance is collecting data as compliance artifacts. Datica’s compliance deployments (logging, monitoring, IDS, etc.) report and log compliance artifacts to an encrypted block storage object. The CCMS then uses this data to ensure continuous compliance.
+        li <strong>Compliance Engine:</strong> The core value of the CCMS is that we are continuously ensuring the complete compliance of both your cluster, and the underlying infrastructure that it resides on. We do this by comparing the running state with the expected initial compliance state. The compliance engine checks state every 5 minutes.
+        li <strong>Management:</strong> Datica manages the compliance state of your cluster through intrusion detection review and remediation; vulnerability scanning management, remediation and proaction; and compliance reporting for HITRUST, SOC 2, GDPR and more.
+        li <strong>Key Infrastructure:</strong> Datica’s public key infrastructure ensures that your data is protected and can only be accessed by those with appropriate permission. You have the option to either provide your own Root CA, or rely on Datica to create and store one for you. Once the Root CA is established, Datica creates an intermediate CA. This intermediate CA is used for generating all cluster specific certs.
           / li <strong>Management:</strong> As compliance artifact data, processing, and reporting becomes available, we provide that back to users via a dashboard. You can build reports for GDPR, HITRUST and more in the click of a button. Use the dashboard to pass audits and to continuously monitor the compliance of your environment.
     .menu.button-cluster.align-center
       = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
