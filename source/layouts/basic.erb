@@ -8,7 +8,7 @@
         <%# Icons %>
         <%= partial "partials/head/icons" %>
         <%# Assets %>
-        <%#= stylesheet_link_tag "seldon" %>
+        <%= stylesheet_link_tag "seldon" %>
         <% if current_page.data.has_key?("customCSS") %>
             <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
         <% end %>
