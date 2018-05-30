@@ -12,6 +12,9 @@
         <% if current_page.data.has_key?("customCSS") %>
             <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
         <% end %>
+        <% if current_page.data.has_key?("asset_preload") %>
+        <%= current_page.data.asset_preload %>
+        <% end %>
     </head>
     <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
     <body class="<%= page_classes %>">
