@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <% if current_page.data.has_key?("asset_preload") %>
+            <%= current_page.data.asset_preload %>
+        <% end %>
         <% if build? %><%= partial "partials/scripts/google-tm-head" %><% end %>
         <%# Meta tags %>
         <%= partial "partials/head/tags" %>
@@ -11,9 +14,6 @@
         <%= stylesheet_link_tag "seldon" %>
         <% if current_page.data.has_key?("customCSS") %>
             <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
-        <% end %>
-        <% if current_page.data.has_key?("asset_preload") %>
-        <%= current_page.data.asset_preload %>
         <% end %>
     </head>
     <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
