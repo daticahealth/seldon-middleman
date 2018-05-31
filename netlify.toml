@@ -16,8 +16,6 @@
     # Content-Security-Policy-Report-Only = "default-src https: 'unsafe-inline' 'unsafe-eval'"
     Link = '''
     <//images.ctfassets.net>;rel=dns-prefetch, \
-    <fast.wistia.com>;rel=dns-prefetch, \
-    <fast.wistia.com>;rel=preconnect, \
     <//images.ctfassets.net>;rel=preconnect, \
     </public/css/seldon.css>;rel=preload;as=style, \
     </public/js/jquery.js>;rel=preload;as=script, \
