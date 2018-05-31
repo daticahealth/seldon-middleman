@@ -6,18 +6,18 @@ badges:
     -
         name: "HIPAA logo"
         fileUrl: "https://images.ctfassets.net/189dvqdsjh46/7twnCUuD72YGS4cusiS6mQ/fa43b0f1faaecb4e8865415add79e538/logo-hipaa-federal.png"
-        logoSize: "xlarge"
+        logoSize: "large"
     -
         name: "SOC2 AICPA"
-        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/1Tt54MVMgkqIW8OWaYKmoo/7cb2c9e5e3d4f54cbd7498cc7e001fec/logo-aicpa.png"
+        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/1db5oL4HFeKkSGGcCmQACW/22310ce8955be0da9b65addc7a46dbd9/AICPA_SOC_2_badge.svg"
         logoSize: "xlarge"
     -
         name: "GDPR"
-        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/2gXAIuikiQyWYMmU4QAoOe/0106b4a35cd09e120f0eca6ee6a15446/gdpr-ready-badge.png"
+        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/5AloABwvCwMuaYkYsuy4Ks/f1f34d278a97690e876ffd539896d46b/gdpr-ready-badge.svg"
         logoSize: "xlarge"
     -
         name: "GxP"
-        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/1MTvqDED4USkYYE8S2eSwU/3d8116969c0142abfc77f74e34594155/gxp-badge.png"
+        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/1QSK9ETDS0Iogq8QQgKK64/e75076a0f712ca9f710a5bef3ed40bab/gxp-badge.svg"
         logoSize: "xlarge"
 
 customers:
