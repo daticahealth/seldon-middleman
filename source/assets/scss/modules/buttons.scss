@@ -132,9 +132,10 @@
         }
     }
     &.success { // $color_green is a bit dark
-        // color: white;
+        color: white;
         &:hover, &:active, &:focus {
-            background-color: scale-color($success_color, $lightness: 15%);
+            background-color: scale-color($success_color, $lightness: -10%);
+            color: white;
         }
     }
     // &.icon-inline { // target svg icon

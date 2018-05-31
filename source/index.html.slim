@@ -9,12 +9,18 @@ layout: "basic"
 priority: "1.0"
 collectionName: "home"
 feed_url: "https://datica.com/blog/feed.xml"
+asset_preload: '<link href="/public/img/art/home-header-art-hexagons.svg" rel="preload" as="image" />
+<link href="https://images.ctfassets.net/189dvqdsjh46/tPI7wEI7zaSEQ2cu6MqOc/7f837591f0a7f85448180a4a1e61158d/logo-hitrust-certified.png" rel="preload" as="image" />
+<link href="https://images.ctfassets.net/189dvqdsjh46/7twnCUuD72YGS4cusiS6mQ/fa43b0f1faaecb4e8865415add79e538/logo-hipaa-federal.png" rel="preload" as="image" />
+<link href="https://images.ctfassets.net/189dvqdsjh46/1db5oL4HFeKkSGGcCmQACW/22310ce8955be0da9b65addc7a46dbd9/AICPA_SOC_2_badge.svg" rel="preload" as="image" />
+<link href="https://images.ctfassets.net/189dvqdsjh46/5AloABwvCwMuaYkYsuy4Ks/f1f34d278a97690e876ffd539896d46b/gdpr-ready-badge.svg" rel="preload" as="image" />
+<link href="https://images.ctfassets.net/189dvqdsjh46/1QSK9ETDS0Iogq8QQgKK64/e75076a0f712ca9f710a5bef3ed40bab/gxp-badge.svg rel="preload" as="image" />'
 ---
 - current_page.data.share_image = image_share_platform
 - current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
 
 .container-color--dark-grad-blue
-  .container-image--center(data-interchange="[/public/img/art/waves-dots-full.svg, small]")
+  .container-image--center(data-interchange="[/public/img/art/home-header-art-hexagons-anim.svg, small]")
     = partial "partials/head/header", :locals => { :style => "light" }
     section.section-article
       .row.align-middle
@@ -31,11 +37,13 @@ feed_url: "https://datica.com/blog/feed.xml"
 .strip-bright
 section.section-article
   .row.align-center.text-center
-    .columns.small-12.large-11
-      h2.headline-3 <strong>Healthcare's best compliance coverage</strong> <br>for teams large and small
-      .logo-cloud.group
+    .columns.small-12.large-9
+      h2.headline-3.group <strong>Healthcare's best compliance coverage</strong> <br>for teams large and small
+      .row.small-up-3.medium-up-5.align-middle.align-center.group
         - data.views.home.badges.each do |logo|
-          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") data-interchange="[#{logo["fileUrl"]}?w=128, small], [#{logo["fileUrl"]}?w=256, medium]" /
+          - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
+          .column
+            img alt="#{logo["name"]}" class=logopad src="#{logo["fileUrl"]}" /
       = partial "partials/snippets/button", :locals => { :label => "Platform Compliance Overview", :title => "Read more", :url => "/platform/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
 
 = partial "partials/section-promos/aws-mlh-video", :locals => { :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS", :container_color => "container-gray-11" }

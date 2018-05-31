@@ -19,7 +19,7 @@
         <%= yield %>
         <%= partial "partials/snippets/footer" %>
         <%#= partial "partials/scripts/footer" %>
-        <%= javascript_include_tag "svg-injector" %>
+        <%#= javascript_include_tag "svg-injector" %>
         <script>
             document.addEventListener("DOMContentLoaded", function(event) {
                 var mySVGsToInject = document.querySelectorAll('img.inject-me');
