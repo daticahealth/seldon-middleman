@@ -212,7 +212,12 @@
 
 [[redirects]]
   from = "/fhir"
-  to = "/guide/fhir"
+  to = "/discover/ehr-integrations"
+  status = 301
+
+[[redirects]]
+  from = "/guide/fhir"
+  to = "/discover/ehr-integrations"
   status = 301
 
 [[redirects]]
