@@ -631,6 +631,11 @@
   status = 301
 
 [[redirects]]
+  from = "/blog/why-there-is-no-up-front-pricing"
+  to = "/demo"
+  status = 301
+
+[[redirects]]
   from = "/learn/business-associates-agreements"
   to = "/academy/business-associate-agreements"
   status = 301
