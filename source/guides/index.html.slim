@@ -21,27 +21,33 @@ ruby:
                 h2.headline-3 Datica Guides
                 p.lead Authoritative Guides Written By Industry Experts
 
-        .row.align-center
-            .columns.small-12.large-8
-                - sorted_entries.each do | id, guide_entry |
-                    - if guide_entry.has_key?("image_thumb")
-                        - thumb = guide_entry.image_thumb.url
-                    - elsif guide_entry.has_key?("bg_image")
-                        - thumb = guide_entry.bg_image.url
-                    - else
-                        - thumb = nil
-                    .row.group.align-middle
+        .row.full-width.small-up-1.large-up-2
+            - sorted_entries.each do | id, guide_entry |
+                - if guide_entry.has_key?("image_thumb")
+                    - thumb = guide_entry.image_thumb.url
+                - elsif guide_entry.has_key?("bg_image")
+                    - thumb = guide_entry.bg_image.url
+                - else
+                    - thumb = nil
+                .column.group
+                    .row
                         - unless thumb == nil
                             .columns.small-4.medium-3.large-3
                                 a href="/guide/#{guide_entry["slug"]}" title=("Get your free guide")
                                     img.thumbnail(src="#{thumb}?fit=thumb&w=300&h=300" alt="Guide Preview")
                         .columns.small-12.medium-8.large-9
-                            .h2.headline-4
+                            .h2.headline-5
                                 a(href="/guide/#{guide_entry["slug"]}" title="Get your free guide") = guide_entry["title"]
-                                | &nbsp;
+                            .menu.simple
                                 - if guide_entry.has_key?("discovery_topic")
-                                    span.label.info.round = data.site.discover[guide_entry.discovery_topic.id].title
+                                    li
+                                        span.label.info.round = data.site.discover[guide_entry.discovery_topic.id].title
+                                - if guide_entry.has_key?("authors")
+                                    - guide_entry.authors.each do | author |
+                                        li
+                                            span
+                                                = partial("partials/snippets/person-avatar", :locals => { :p => author, :size => "small" })
                             .text-small
                                 = Kramdown::Document.new(guide_entry["summary"]).to_html
 
-                = partial "partials/snippets/button", :locals => { :label => "Learn more at the Datica Academy", :url => "/academy", :button_classes => "button", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "white" }
+        = partial "partials/snippets/button", :locals => { :label => "Learn more at the Datica Academy", :url => "/academy", :button_classes => "button", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "white" }
