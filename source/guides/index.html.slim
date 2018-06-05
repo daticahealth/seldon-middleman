@@ -26,10 +26,14 @@ ruby:
                 - sorted_entries.each do | id, guide_entry |
                     .row.group
                         .columns.small-8
-                            .h2.headline-4
+                            .h2.headline-4.nomargin
                                 a(href="/guide/#{guide_entry["slug"]}" title="Get your free guide") = guide_entry["title"]
-                            = Kramdown::Document.new(guide_entry["summary"]).to_html
-                            = partial "partials/snippets/button", :locals => { :label => "Get your free guide", :url => "/guide/#{guide_entry["slug"]}", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
+                                | &nbsp;
+                                - if guide_entry.has_key?("discovery_topic")
+                                    span.label.info.round = data.site.discover[guide_entry.discovery_topic.id].title
+                            .text-small
+                                = Kramdown::Document.new(guide_entry["summary"]).to_html
+                            / = partial "partials/snippets/button", :locals => { :label => "Get your free guide", :url => "/guide/#{guide_entry["slug"]}", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
                         - if guide_entry.has_key?("image_thumb")
                             .columns.small-4
                                 a href="/guide/#{guide_entry["slug"]}" title=("Get your free guide")

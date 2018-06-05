@@ -23,6 +23,7 @@ blockquote + .media-object, .blockquote-info { // line person/info up with quote
 .label {
     font-weight: $font-weight-mid;
     opacity: 0.7;
+    vertical-align: bottom;
     // font-weight: $font-weight-mid;
     &.round { // this is normally in Foundation, seems to be missing
         border-radius: 1000px;
@@ -31,11 +32,11 @@ blockquote + .media-object, .blockquote-info { // line person/info up with quote
         // background-color: $gray-6;
         opacity: 0.5;
     }
-    &-hollow {
+    &.hollow {
         background-color: transparent;
         border: 1px solid darken($label-background, 60%);
         color: darken($label-background, 60%);
-        &--inverted {
+        &-inverted {
             background-color: transparent;
             border: 1px solid white(0.7);
             color: white(0.7);
