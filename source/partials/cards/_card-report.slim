@@ -27,9 +27,11 @@ ruby:
         fit_classes = nil
     end
     if defined?(style) && style == "dark"
-        style_classes = "container-gray-3"
+        style_classes = "container-gray-4"
+        link_style = "link--white"
     else
-        style_classes = "drop"
+        style_classes = "container-gray-12 drop"
+        link_style = nil
     end
     # if post.has_key?("summary") && post.summary != ""
     #     entry_summary = post.summary
@@ -44,11 +46,13 @@ ruby:
 
 .card(class="#{style_classes} #{fit_classes}")
     .card-section
-        .subheader-small.color-white
+        .subheader-small
             = card_subhead
         h3.headline-4
-            a.link--white href=related_post_path title=link_title
+            a class=link_style href=related_post_path title=link_title
                 = post.title
+        - if defined?(desc) && desc == true
+            p.text-small = post.summary
     - if post.has_key?("image_thumb")
         a.text-center href=related_post_path title=link_title
             img class="product-thumb" alt="preview" data-interchange="[#{image_url}?fit=thumb&w=400&q=50, small], [#{image_url}?fit=thumb&w=600, large]" style="padding: 0 1rem 0 1rem;" /
