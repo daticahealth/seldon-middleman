@@ -20,12 +20,14 @@
         <%= partial "partials/snippets/footer" %>
         <%#= partial "partials/scripts/footer" %>
         <%#= javascript_include_tag "svg-injector" %>
+        <%#=
         <script>
             document.addEventListener("DOMContentLoaded", function(event) {
                 var mySVGsToInject = document.querySelectorAll('img.inject-me');
                 SVGInjector(mySVGsToInject);
             });
         </script>
+        %>
         <%= javascript_include_tag "jquery" %>
         <%= javascript_include_tag "foundation.min" %>
         <%= javascript_include_tag "cookie", "sharer", "all" %>

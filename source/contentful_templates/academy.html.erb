@@ -36,7 +36,8 @@ end
     <%= partial "partials/head/header", :locals => { :style => "dark" } %>
     <section class="section-article">
         <div class="row">
-            <div class="columns small-12 medium-8 featured-post">
+            <div class="columns small-12 large-8 featured-post">
+                <h4 class="subhead--spaced headline-6"><a class="link--dark faded" href="/academy" title="Explore the Datica Academy">Datica Academy</a></h4>
                 <h1 class="headline-2"><%= p["title"] %></h1>
                 <% if p.has_key?("author") %>
                     <%= partial("partials/snippets/person", :locals => { :p => p["author"] }) %>
@@ -50,64 +51,68 @@ end
                 </p>
             </div>
         </div>
+        <div class="row">
+            <div class="columns small-12 large-8">
+                <article id="content">
+                    <% if p.has_key?("lead") %>
+                        <div class="lead"> <%= Kramdown::Document.new(p["lead"]).to_html %></div>
+                    <% end %>
+                    <div id="toc-top" class="group article-toc hide-for-large"></div> 
+                    <div id="article-body" class="content-dynamic">
+                    <%= Kramdown::Document.new(p["post"]).to_html %>
+                    </div>
+                </article>
+                <%= partial "/partials/snippets/share", :locals => { :p => p, :classes => "group" }  %>
+                <% if p.has_key?("cta_ref") %>
+                    <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
+                <% end %>
+                <% if p.has_key?("related_entries") %>
+                    <h4 class="headline-5 text--spaced text-center">Related Academy Articles</h4>
+                    <aside class="row small-up-1 medium-up-2 group">
+                        <% p["related_entries"].each do | relatedPost | %>
+                        <% 
+                        # mapping content type to paths. How could this be a ruby helper or function?
+                        url_segment = case relatedPost._meta.content_type_id
+                            when "podcastEntry" then "innovation"
+                            when "pressRelease" then "press-release"
+                            else relatedPost._meta.content_type_id
+                        end
+                        related_post_path = "/" + url_segment + "/" + relatedPost.slug 
+                        %>
+                        <% if relatedPost.has_key?("title") %>
+                            <div class="column">
+                                <a href="<%= related_post_path %>" title="Read this post"><%= relatedPost["title"] %></a>
+                                <% if relatedPost.has_key?("summary") %>
+                                <div class="text-smaller"><%= Kramdown::Document.new(relatedPost["summary"]).to_html %></div>
+                                <% end %>
+                            </div>
+                        <% end %>
+                        <% end %>
+                        <div class="column">
+                            <%= partial "partials/snippets/button", :locals => { :label => "Datica Academy", :title => "Explore the Datica Academy", :url => "/academy", :button_classes => "button hollow", :icon => "icon-book-fill", :icon_align => "left" } %>
+                    </aside>  
+                <% end %>
+            </div>
+            <aside class="columns small-12 large-4 section--sidebar" data-sticky-container>
+                <div class="sticky" data-sticky data-sticky-on="large" data-options="anchor: content;">
+                <% if p.has_key?("related_guide") %>
+                    <div class="group">
+                    <%= partial "partials/cards/card-report", :locals => { :post => p.related_guide, :style => "white", :size => "small", :desc => true } %>
+                    </div>
+                <% else %>
+                    <% sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse! %>
+                    <% sorted_guides.take(1).each do | id, guide_entry | %>
+                        <div class="group">
+                        <%= partial "partials/cards/card-report", :locals => { :post => guide_entry, :style => "white", :size => "small", :desc => true } %>
+                        </div>
+                    <% end %>
+                <% end %>
+                <div class="text-center"><%= inline_svg("icon-book-academy", class: "icon-size--medium svg-color--gray-6") %></div>
+                <div id="toc-sidebar" class="group article-toc show-for-large"></div>                                  
+                </div>
+            </aside>
+        </div>
     </section>
 </div>
-<section class="section-article container-color--white">
-    <div class="row">
-        <div class="columns small-12 large-8">
-            <article id="content">
-                <% if p.has_key?("lead") %>
-                    <div class="lead"> <%= Kramdown::Document.new(p["lead"]).to_html %></div>
-                <% end %>
-                <div id="article-toc" class="group"></div>
-                <div id="article-body" class="content-dynamic">
-                <%= Kramdown::Document.new(p["post"]).to_html %>
-                </div>
-            </article>
-            <%= partial "/partials/snippets/share", :locals => { :p => p, :classes => "group" }  %>
-            <% if p.has_key?("cta_ref") %>
-                <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
-            <% end %>
-        </div>
-        <div class="columns small-12 large-4 section--sidebar" data-sticky-container>
-            <div class="sticky" data-sticky data-sticky-on="large" data-options="anchor: content;">
-                <%= partial "partials/ctas/resources-compact", :locals => { :classes => "group" } %>
-                <% if p.has_key?("discovery_topic") %>
-                    <%= partial "partials/cards/discover", :locals => { :post => p["discovery_topic"], :classes => "group" } %>
-                    <% if p.discovery_topic.slug == "ehr-integrations" %>
-                        <%= partial "partials/ctas/ad-webinar" %>
-                    <% end %>
-                <% end %>
-                <hr class="content">
-                <aside class="callout callout--gray-light group content-dynamic">
-                    <% if p.has_key?("related_entries") %>
-                        <h4 class="headline-5 text--spaced text-center">Related Articles</h4>
-                        <ul class="no-bullet">
-                            <% p["related_entries"].each do | relatedPost | %>
-                            <% 
-                            # mapping content type to paths. How could this be a ruby helper or function?
-                            url_segment = case relatedPost._meta.content_type_id
-                                when "podcastEntry" then "innovation"
-                                when "pressRelease" then "press-release"
-                                else relatedPost._meta.content_type_id
-                            end
-                            related_post_path = "/" + url_segment + "/" + relatedPost.slug 
-                            %>
-                            <% if relatedPost.has_key?("title") %>
-                                <li class="">
-                                    <a href="<%= related_post_path %>" title="Read this post"><%= relatedPost["title"] %></a>
-                                    <% if relatedPost.has_key?("summary") %>
-                                    <div class="text-smaller"><%= Kramdown::Document.new(relatedPost["summary"]).to_html %></div>
-                                    <% end %>
-                                </li>
-                            <% end %>
-                            <% end %>
-                        </ul>
-                    <% end %>
-                    <a class="button hollow" href="/academy" title="All Academy Articles"><i class="fa fa-angle-left"></i> See all Academy articles</a>
-                </aside>                
-            </div>
-        </div>
-    </div>
-</section>
+
 <script async src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autorun=true&skin=desert"></script>

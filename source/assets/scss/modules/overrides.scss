@@ -68,20 +68,6 @@
         }
     }
 }
-
-.nomargin, .no-margin {
-    margin-bottom: 0;
-}
-.no-margin-top{
-  margin-top: 0;
-}
-.no-margin-all-the-things{
-  margin: 0 !important;
-  @media screen and (min-width: 40em){ margin: 0 !important; }
-}
-.nopad, .no-pad {
-    padding: 0;
-}
 // .pad-1 {
 //     padding: 1rem;
 // }
@@ -277,4 +263,23 @@ div.st-ui-autocomplete div.st-query-present a.st-ui-result, section.st-ui-slide-
         z-index: 10;
     }
 }
+
+
+.nomargin, .no-margin {
+    margin-bottom: 0;
+}
+.no-margin-top{
+  margin-top: 0;
+}
+.no-margin-all-the-things{
+  margin: 0 !important;
+  @media screen and (min-width: 40em){ margin: 0 !important; }
+}
+.nopad, .no-pad {
+    padding: 0;
+}
+.margin-bottom-small { // for headlines and stuff
+    margin-bottom: 0.3em;
+}
+
 // .overflow-hidden {}

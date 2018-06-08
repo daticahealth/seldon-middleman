@@ -4,15 +4,19 @@ ruby:
             url_segment = "guide"
             card_subhead = "Datica Guides"
             link_title = "Get the guide, '#{post.title}'"
+            link_title_short = "Get your free Guide"
         when "reports"
             url_segment = "innovation"
             card_subhead = post.subhead
             link_title = "Get the latest report, '#{post.title}'"
+            link_title_short = "Get your free Report"
     end
     related_post_path = "/" + url_segment + "/" + post.slug
 
     if post.has_key?("image_thumb")
         image_url = post.image_thumb.url
+    elsif post.has_key?("bg_image")
+        image_url = post.bg_image.url
     else
         image_url = nil
     end
@@ -26,10 +30,18 @@ ruby:
     else
         fit_classes = nil
     end
-    if defined?(style) && style == "dark"
-        style_classes = "container-gray-3"
+    if defined?(style)
+        case style
+            when "dark"
+                style_classes = "container-gray-4"
+                link_style = "link--white"
+            when "white"
+                style_classes = "container-color--white drop"
+                link_style = nil
+        end
     else
-        style_classes = "drop"
+        style_classes = "container-gray-12 drop"
+        link_style = nil
     end
     # if post.has_key?("summary") && post.summary != ""
     #     entry_summary = post.summary
@@ -44,11 +56,17 @@ ruby:
 
 .card(class="#{style_classes} #{fit_classes}")
     .card-section
-        .subheader-small.color-white
+        .subheader-small
             = card_subhead
         h3.headline-4
-            a.link--white href=related_post_path title=link_title
+            a class=link_style href=related_post_path title=link_title
                 = post.title
-    - if post.has_key?("image_thumb")
-        a.text-center href=related_post_path title=link_title
-            img class="product-thumb" alt="preview" data-interchange="[#{image_url}?fit=thumb&w=400&q=50, small], [#{image_url}?fit=thumb&w=600, large]" style="padding: 0 1rem 0 1rem;" /
+        - unless image_url == nil
+            a.text-center href=related_post_path title=link_title
+                img.thumbnail.float-right(src="#{image_url}?fit=thumb&w=240&h=240" alt="preview" width="120")
+        - if defined?(desc) && desc == true
+            p.text-small = post.summary
+        = partial "partials/snippets/button", :locals => { :label => link_title_short, :url => related_post_path, :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right" }
+    / - if post.has_key?("image_thumb")
+    /     a.text-center href=related_post_path title=link_title
+    /         img class="product-thumb" alt="preview" data-interchange="[#{image_url}?fit=thumb&w=400&q=50, small], [#{image_url}?fit=thumb&w=600, large]" style="padding: 0 1rem 0 1rem;" /
