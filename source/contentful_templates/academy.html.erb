@@ -97,13 +97,13 @@ end
                 <div class="sticky" data-sticky data-sticky-on="large" data-options="anchor: content;">
                 <% if p.has_key?("related_guide") %>
                     <div class="group">
-                    <%= partial "partials/cards/card-report", :locals => { :post => p.related_guide, :style => "white", :size => "small", :desc => true } %>
+                    <%= partial "partials/cards/card-report", :locals => { :post => p.related_guide, :style => "white", :size => "small", :desc => true, :show_button => true } %>
                     </div>
                 <% else %>
                     <% sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse! %>
                     <% sorted_guides.take(1).each do | id, guide_entry | %>
                         <div class="group">
-                        <%= partial "partials/cards/card-report", :locals => { :post => guide_entry, :style => "white", :size => "small", :desc => true } %>
+                        <%= partial "partials/cards/card-report", :locals => { :post => guide_entry, :style => "white", :size => "small", :desc => true, :show_button => true } %>
                         </div>
                     <% end %>
                 <% end %>
