@@ -193,13 +193,13 @@ activate :contentful do |f|
     f.content_types = {
         academy: 'academy',
         blog: 'blog',
-        cta: 'cta',
         caseStudy: 'caseStudy',
+        cta: 'cta',
         customers: 'customers',
         discover: 'discover',
         events: 'events',
-        features: 'features',
         featureCategories: 'featureCategories',
+        features: 'features',
         forms: 'forms',
         guides: 'guides',
         leadershipGallery: 'leadershipGallery',
@@ -207,11 +207,12 @@ activate :contentful do |f|
         podcast: 'podcastEntry',
         pressReleases: 'pressReleases',
         # products: 'products',
+        quotes: 'quotes',
         reports: 'reports',
         services: 'services',
         spotlights: 'spotlights',
-        quotes: 'quotes',
-        tags: 'tags'
+        tags: 'tags',
+        webinars: 'webinars'
     }
 end
 
