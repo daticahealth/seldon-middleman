@@ -75,11 +75,11 @@ nav_company_b:
 nav_customers:
     -
         title: "Documentation"
-        url: "https://help.datica.com"
+        url: "https://help.datica.com/hc/en-us"
         desc: "Documentation across all Datica products"
     -
         title: "Support"
-        url: "https://help.datica.com"
+        url: "https://help.datica.com/hc/en-us"
         desc: "Support for Datica customers"
     -
         title: "System Status"
