@@ -26,10 +26,12 @@
 [[redirects]]
   from = "/platform/integration"
   to = "/blog/if-its-possible-we-can-integrate-it/"
+  status = 301
 
 [[redirects]]
   from = "/integration"
   to = "/blog/if-its-possible-we-can-integrate-it/"
+  status = 301
 
 [[redirects]]
   from = "support.catalyze.io"
