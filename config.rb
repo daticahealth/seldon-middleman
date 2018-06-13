@@ -170,13 +170,13 @@ if Dir.exist?(config.data_dir + "/site")
     else
         puts "\n\nreports data folder doesn't exist!\n"
     end
-    # if Dir.exist?(config.data_dir + "/site/whitepapers")
-        # data.site.whitepapers.each do |id, whitepaper|
-            # proxy "/whitepapers/#{whitepaper[:slug]}/index.html", "/contentful_templates/whitepaper.html", :locals => { :item => whitepaper }, :ignore => true
-        # end
-    # else
-        # puts "\n\nWhitepapers data folder doesn't exist!\n"
-    # end
+    if Dir.exist?(config.data_dir + "/site/webinars")
+        data.site.webinars.each do |id, webinar|
+            proxy "/webinars/#{webinar[:slug]}/index.html", "/contentful_templates/webinar.html", :locals => { :item => webinar }, :ignore => true
+        end
+    else
+        puts "\n\nwebinars data folder doesn't exist!\n"
+    end
 else
     puts "\n\nDon't forget to pull content with, 'bundle exec middleman contentful'!\n"
 end
