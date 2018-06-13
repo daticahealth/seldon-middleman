@@ -248,6 +248,11 @@
   status = 301
 
 [[redirects]]
+  from = "/jobs"
+  to = "/careers"
+  status = 301
+
+[[redirects]]
   from = "/legal"
   to = "https://legal.datica.com"
   status = 301
