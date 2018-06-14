@@ -19,7 +19,7 @@ $("document").ready(function(){
     }else{
         $('#gdpr-banner').addClass("hide");
     }
-    $("#dismiss-gdpr-notice").click(function(){
+    $(".dismiss-gdpr-notice").click(function(){
         $.cookie('gdpr-notice', 'true', { expires: 120 });
         $('#gdpr-banner').addClass("hide");
     });

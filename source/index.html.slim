@@ -35,6 +35,7 @@ asset_preload: '<link href="/public/img/art/home-header-art-hexagons.svg" rel="p
           .card.container-color--light-shimmer
             = partial("partials/ctas/card-schedule-demo")
 .strip-bright
+= partial "partials/snippets/alert-ribbon-gdpr"
 section.section-article
   .row.align-center.text-center
     .columns.small-12.large-9
@@ -46,7 +47,6 @@ section.section-article
             img alt="#{logo["name"]}" class=logopad src="#{logo["fileUrl"]}" /
       = partial "partials/snippets/button", :locals => { :label => "Platform Compliance Overview", :title => "Read more", :url => "/platform/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
 
-= partial "partials/snippets/alert-ribbon-gdpr"
 = partial "partials/section-promos/aws-mlh-video", :locals => { :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS", :container_color => "container-gray-11" }
 section.section-article
   .row.align-center
