@@ -11,7 +11,7 @@
     Referrer-Policy = "same-origin"
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Strict-Transport-Security = "max-age=31536000"
     Content-Security-Policy = "frame-ancestors 'self'"
     # Content-Security-Policy-Report-Only = "default-src https: 'unsafe-inline' 'unsafe-eval'"
     Link = '''
@@ -26,10 +26,12 @@
 [[redirects]]
   from = "/platform/integration"
   to = "/blog/if-its-possible-we-can-integrate-it/"
+  status = 301
 
 [[redirects]]
   from = "/integration"
   to = "/blog/if-its-possible-we-can-integrate-it/"
+  status = 301
 
 [[redirects]]
   from = "support.catalyze.io"
@@ -49,6 +51,11 @@
 [[redirects]]
   from = "/invalid.html"
   to = "/activate/invalid"
+  status = 301
+
+[[redirects]]
+  from = "/platform/technology"
+  to = "/platform/compliance"
   status = 301
 
 [[redirects]]
@@ -196,6 +203,11 @@
   status = 301
 
 [[redirects]]
+  from = "/guide/"
+  to = "/guides/"
+  status = 301
+
+[[redirects]]
   from = "/hipaa-compliance"
   to = "/guide/hipaa"
   status = 301
@@ -242,6 +254,11 @@
 
 [[redirects]]
   from = "/employees"
+  to = "/careers"
+  status = 301
+
+[[redirects]]
+  from = "/jobs"
   to = "/careers"
   status = 301
 
@@ -643,6 +660,11 @@
 [[redirects]]
   from = "/learn/risk-assessments-and-management"
   to = "/academy/hipaa-risk-assessment-and-management"
+  status = 301
+
+[[redirects]]
+  from = "/press/datica-launches-kubernetes-enabled-platform"
+  to = "/press-release/datica-launches-kubernetes-enabled-platform"
   status = 301
 
 [[redirects]]
