@@ -22,7 +22,8 @@ feed_url: "https://datica.com/press/feed.xml"
 <section class="section-article container-color--gray-light" id="companyStory">
     <div class="row align-center">
         <div class="columns small-12 medium-3 large-3">
-            <div class="media-object card-person">
+            <%= partial("partials/snippets/person", :locals => { :p => data.site.person["5kC0Y798vm6ag8sCq0O2CQ"], :classes => "block-width-medium", :use_headers => false }) %>
+            <!-- <div class="media-object card-person">
                 <div class="media-object-section">
                     <img src="//images.ctfassets.net/189dvqdsjh46/FV6bMibcoS6KucswgSCec/9b32170214c6c1f3b0c967183c6ac9e6/prof-marcia.jpg" class="avatar avatar--medium circle" alt="Marcia Noyes">
                 </div>
@@ -30,7 +31,7 @@ feed_url: "https://datica.com/press/feed.xml"
                     <h4 class="person-name">Marcia Noyes</h4>
                     <p class="person-title"><a href="mailto:press@datica.com">press@datica.com</a></p>
                 </div>
-            </div>
+            </div> -->
             <hr class="divider"/>
             <%= partial "partials/snippets/press-links" %>
         </div>
