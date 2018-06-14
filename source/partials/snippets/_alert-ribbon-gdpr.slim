@@ -1,0 +1,12 @@
+aside.hide.container-gray-10.alert-ribbon id="gdpr-banner" class="" data-closable=""
+  .row.align-center.pad--sm
+    .column.small-2.medium-2.large-1.text-center
+      = inline_svg("small/icon-info-circle", class: "icon-size--large svg-color--gray-8")
+    .column.small-10.medium-6.large-6
+      / a.link--white(href="/learn-more/azure" title="Learn more about Kubernetes on Azure")
+      h5.headline-5 We've updated our privacy policies.
+      p.text-small.nomargin Datica.com uses cookies and scripts to give you a better experience—but we'll never share or sell your data. Read more about our compliance with GDPR and website privacy policies.
+    .column.small-12.medium-4.large-2.relative
+      = partial "partials/snippets/button", :locals => { :label => "Learn more", :url => "https://privacy.datica.com/", :button_classes => "button small button--light nomargin" }
+      button id="dismiss-gdpr-notice" class="text--black alert-ribbon--action dismiss close-button button--inverted" aria-label="Dismiss alert" type="button" data-close="" title="I understand, dismiss this banner"
+        span aria-hidden="true" &times;

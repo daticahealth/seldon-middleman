@@ -9,9 +9,19 @@ $("document").ready(function(){
     }else{
         $('#alertTop').addClass("hide");
     }
-    $(".dismiss").click(function(){
+    $("#promo-dismiss").click(function(){
         $.cookie('dismiss-ribbon-gdpr-webinar-2018-05-24', 'true', { expires: 30 });
         $('#alertTop').addClass("hide");
+    });
+
+    if($.cookie("gdpr-notice") == null){
+        $('#gdpr-banner').removeClass("hide");
+    }else{
+        $('#gdpr-banner').addClass("hide");
+    }
+    $("#dismiss-gdpr-notice").click(function(){
+        $.cookie('gdpr-notice', 'true', { expires: 120 });
+        $('#gdpr-banner').addClass("hide");
     });
     // not for prod!
     // $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
