@@ -54,6 +54,11 @@
   status = 301
 
 [[redirects]]
+  from = "/platform/technology"
+  to = "/platform/compliance"
+  status = 301
+
+[[redirects]]
   from = "/products"
   to = "/platform"
   status = 301
@@ -655,6 +660,11 @@
 [[redirects]]
   from = "/learn/risk-assessments-and-management"
   to = "/academy/hipaa-risk-assessment-and-management"
+  status = 301
+
+[[redirects]]
+  from = "/press/datica-launches-kubernetes-enabled-platform"
+  to = "/press-release/datica-launches-kubernetes-enabled-platform"
   status = 301
 
 [[redirects]]
