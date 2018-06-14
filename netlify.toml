@@ -198,6 +198,11 @@
   status = 301
 
 [[redirects]]
+  from = "/guide/"
+  to = "/guides/"
+  status = 301
+
+[[redirects]]
   from = "/hipaa-compliance"
   to = "/guide/hipaa"
   status = 301
