@@ -4,15 +4,17 @@ $("document").ready(function(){
     
     // Cookie config for modal
     // If no cookie with our chosen class...
-    if($.cookie("dismiss-ribbon-gdpr-webinar-2018-05-24") == null){
+    if($.cookie("promo-gdpr-webinar-2018-06-20") == null){
         $('#alertTop').removeClass("hide");
     }else{
         $('#alertTop').addClass("hide");
     }
-    $(".dismiss").click(function(){
-        $.cookie('dismiss-ribbon-gdpr-webinar-2018-05-24', 'true', { expires: 30 });
+    // $(".dismiss").click(function(){
+    $(document).on("click touchend", ".dismiss", function() {
+        $.cookie('promo-gdpr-webinar-2018-06-20', 'true', { expires: 30 });
         $('#alertTop').addClass("hide");
     });
+
     // not for prod!
     // $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
     //     console.log(newSize + ' breakpoint');
