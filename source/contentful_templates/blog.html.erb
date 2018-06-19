@@ -86,7 +86,7 @@ end
                         <% previous_item = get_previous_item(data.site.blog, p, "pub_date") %>
                         <% if previous_item != nil %>
                             <p class="blog-date">Earlier</p>
-                            <h4 class="headline-5"><a href="/blog/<%= previous_item["slug"] %>" title="Read this post" rel="prev"><%= previous_item["title"] %></a></h4>
+                            <h4 class="headline-5"><a href="/blog/<%= previous_item["slug"] %>/" title="Read this post" rel="prev"><%= previous_item["title"] %></a></h4>
                             <% if previous_item.has_key?("summary") %>
                                 <div class="text-smaller">
                                     <%= Kramdown::Document.new(previous_item["summary"]).to_html %>
@@ -98,7 +98,7 @@ end
                         <% next_item = get_next_item(data.site.blog, p, "pub_date") %>
                         <% if next_item != nil %>
                             <p class="blog-date">Next Post</p>
-                            <h4 class="headline-5"><a href="/blog/<%= next_item["slug"] %>" title="Read this post" rel="next"><%= next_item["title"] %></a></h4>
+                            <h4 class="headline-5"><a href="/blog/<%= next_item["slug"] %>/" title="Read this post" rel="next"><%= next_item["title"] %></a></h4>
                             <% if next_item.has_key?("summary") %>
                                 <div class="text-smaller">
                                     <%= Kramdown::Document.new(next_item["summary"]).to_html %>

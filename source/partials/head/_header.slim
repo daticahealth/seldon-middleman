@@ -54,11 +54,11 @@ header.main-header
             h4.pub-date.faded Recently in the Blog
             - sorted_posts.take(1).each do | id, blog_entry |
               p
-                a.link--white.text-light(href="/blog/#{blog_entry.slug}" title=blog_entry.summary)= blog_entry.title
+                a.link--white.text-light(href="/blog/#{blog_entry.slug}/" title=blog_entry.summary)= blog_entry.title
             h4.pub-date.faded Latest Guide
             - sorted_guides.take(1).each do | id, guide_entry |
               p
-                a.link--white.text-light(href="/guide/#{guide_entry.slug}" title=guide_entry.summary)= guide_entry.title
+                a.link--white.text-light(href="/guide/#{guide_entry.slug}/" title=guide_entry.summary)= guide_entry.title
       .row.small-up-1.medium-up-2
         - data.footer_main[1...4].each do |nav_dropdown|
           - if nav_dropdown.has_key?("children")
