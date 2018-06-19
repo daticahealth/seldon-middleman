@@ -47,7 +47,7 @@ feed_url: "https://datica.com/press/feed.xml"
             <div class="column">
                 <div class="card drop">
                     <div class="card-section">
-                        <a href="/press-release/<%= post["slug"] %>" title="Read press release">
+                        <a href="/press-release/<%= post["slug"] %>/" title="Read press release">
                             <h3 class="headline-5"><%= post["title"] %></h3>
                         </a>
                             <p><span class="pub-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></span></p>
@@ -55,7 +55,7 @@ feed_url: "https://datica.com/press/feed.xml"
 
                     </div>
                     <div class="card-divider card-section--flush text-right">
-                        <a href="/press-release/<%= post["slug"] %>" title="Read press release">Read more <i class="fa fa-angle-right"></i></a>
+                        <a href="/press-release/<%= post["slug"] %>/" title="Read press release">Read more <%= inline_svg("small/icon-angle-right", class: "icon-inline") %></a>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@ feed_url: "https://datica.com/press/feed.xml"
     </div>
     <div class="row align-center">
         <div class="columns small-12 medium-6 text-center">
-            <a class="button button--primary" href="/press/all" title="View all">View all Press Releases <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="button button--primary" href="/press/all/" title="View all">View all Press Releases <%= inline_svg("small/icon-angle-right", class: "icon-inline") %></a>
         </div>
     </div>
 </section>

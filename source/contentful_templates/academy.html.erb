@@ -37,7 +37,7 @@ end
     <section class="section-article">
         <div class="row">
             <div class="columns small-12 large-8 featured-post">
-                <h4 class="subhead--spaced headline-6"><a class="link--dark faded" href="/academy" title="Explore the Datica Academy">Datica Academy</a></h4>
+                <h4 class="subhead--spaced headline-6"><a class="link--dark faded" href="/academy/" title="Explore the Datica Academy">Datica Academy</a></h4>
                 <h1 class="headline-2"><%= p["title"] %></h1>
                 <% if p.has_key?("author") %>
                     <%= partial("partials/snippets/person", :locals => { :p => p["author"] }) %>
@@ -89,7 +89,7 @@ end
                         <% end %>
                         <% end %>
                         <div class="column">
-                            <%= partial "partials/snippets/button", :locals => { :label => "Datica Academy", :title => "Explore the Datica Academy", :url => "/academy", :button_classes => "button hollow", :icon => "icon-book-fill", :icon_align => "left" } %>
+                            <%= partial "partials/snippets/button", :locals => { :label => "Datica Academy", :title => "Explore the Datica Academy", :url => "/academy/", :button_classes => "button hollow", :icon => "icon-book-fill", :icon_align => "left" } %>
                     </aside>  
                 <% end %>
             </div>

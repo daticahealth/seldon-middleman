@@ -1,8 +1,8 @@
 <div class="callout--article container-color--dark<% if defined?(classes) %> <%= classes %><% end %>">
-    <a class="callout--article-link" href="/discover/<%= post["slug"] %>" title="Discover <%= post["title"] %>">
+    <a class="callout--article-link" href="/discover/<%= post["slug"] %>/" title="Discover <%= post["title"] %>">
         <div class="callout--article-content">
             <div class="subheader-small">Discover</div>
-            <h3 class="headline-4"><%= post["title"] %> <i class="callout--article-action fa fa-arrow-circle-right"></i></h3>
+            <h3 class="headline-4" style="white-space: nowrap;"><%= post["title"] %><%= inline_svg("small/icon-arrow-forward", class: "callout--article-action icon-inline icon-right") %></h3>
             <% if post.has_key?("summary") %>
                 <div class="callout--article-body">
                     <%#= Kramdown::Document.new(post["summary"]).to_html %>

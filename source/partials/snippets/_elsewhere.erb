@@ -14,7 +14,7 @@
     </div>
     <div class="column">
         <aside class="cta cta--image" id="cta-podcast">
-            <a class="" href="/innovation" title="Datica Healthcare Innovators Podcast">
+            <a class="" href="/innovation/" title="Datica Healthcare Innovators Podcast">
                 <img src="https://images.ctfassets.net/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/bc7605c8d6702518cedcedf7cf0de3bb/podcast-art-share-2018.png" alt="">
             </a>
         </aside>
@@ -26,7 +26,7 @@
                 <h3 class="headline-3">Academy</h3>
             </div>
             <p class="">The Datica HIPAA and Interoperability Academy walks you through the intricacies of HIPAA, HL7, and FHIR—from the highest concepts to the deepest details.</p>
-            <a class="button button--primary expanded" href="/academy">Visit the Academy  <i class="fa fa-angle-right"></i></a>
+            <%= partial "partials/snippets/button", :locals => { :label => "Datica Academy", :title => "Explore the Datica Academy", :url => "/academy/", :button_classes => "button button--primary", :icon => "icon-book-fill", :icon_align => "left" } %>
         </aside>
     </div>
 </div>

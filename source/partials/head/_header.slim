@@ -37,7 +37,7 @@ header.main-header
     .title-bar#nav-mobile
       .row.align-center.align-middle
         .columns.small-12.medium-6.medium-order-2
-          = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact", :button_classes => "button", :icon => "icon-comment", :icon_align => "left" }
+          = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact/", :button_classes => "button", :icon => "icon-comment", :icon_align => "left" }
         / data-animate="hinge-in-from-top hinge-out-from-top"
         .columns.small-12.medium-6.medium-order-1
           .callout.callout--dark-alt
@@ -54,11 +54,11 @@ header.main-header
             h4.pub-date.faded Recently in the Blog
             - sorted_posts.take(1).each do | id, blog_entry |
               p
-                a.link--white.text-light(href="/blog/#{blog_entry.slug}" title=blog_entry.summary)= blog_entry.title
+                a.link--white.text-light(href="/blog/#{blog_entry.slug}/" title=blog_entry.summary)= blog_entry.title
             h4.pub-date.faded Latest Guide
             - sorted_guides.take(1).each do | id, guide_entry |
               p
-                a.link--white.text-light(href="/guide/#{guide_entry.slug}" title=guide_entry.summary)= guide_entry.title
+                a.link--white.text-light(href="/guide/#{guide_entry.slug}/" title=guide_entry.summary)= guide_entry.title
       .row.small-up-1.medium-up-2
         - data.footer_main[1...4].each do |nav_dropdown|
           - if nav_dropdown.has_key?("children")
@@ -71,7 +71,7 @@ header.main-header
                       = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: "link--white text-light"
       .row.small-up-1.medium-up-2
         .column
-          a.button.expanded href="/contact" title="Contact Us" Get in touch
+          a.button.expanded href="/contact/" title="Contact Us" Get in touch
         .column
           = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "button hollow-inverted expanded", :icon => "icon-phone" }
 
@@ -104,4 +104,4 @@ header.main-header
               sign_link = data.footer_main[3].children[0]
             = current_link_to sign_link.title, sign_link.url, title: sign_link.desc, class: "menu-header"
           li
-            a.button(href="/contact", title="Contact Us") Contact
+            a.button(href="/contact/", title="Contact Us") Contact

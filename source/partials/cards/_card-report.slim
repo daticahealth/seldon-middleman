@@ -11,7 +11,7 @@ ruby:
             link_title = "Get the latest report, '#{post.title}'"
             link_title_short = "Get your free Report"
     end
-    related_post_path = "/" + url_segment + "/" + post.slug
+    related_post_path = "/" + url_segment + "/" + post.slug + "/"
 
     if post.has_key?("image_thumb")
         image_url = post.image_thumb.url

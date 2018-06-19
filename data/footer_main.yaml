@@ -5,25 +5,25 @@
     children:
         -
             title: "Platform"
-            url: "/platform"
+            url: "/platform/"
             desc: "The Datica Platform is a cloud enablement layer for all healthcare applications"
             nav_main: true
         -
             title: "Compliance Story"
-            url: "/platform/compliance"
+            url: "/platform/compliance/"
             desc: "Datica is HITRUST CSF Certified"
         -
             title: "Customer Success"
-            url: "/platform/success"
+            url: "/platform/success/"
             desc: "Case studies and customer profiles of success"
         -
             title: "Services"
-            url: "/services"
+            url: "/services/"
             desc: "Professional services offered by Datica"
             nav_main: true
         -
             title: "Pricing"
-            url: "/pricing"
+            url: "/pricing/"
             desc: "Pricing for the Datica platform"
             nav_main: true
 -
@@ -33,29 +33,29 @@
     children:
         -
             title: "Digital Health Success Framework"
-            url: "/dhsf"
+            url: "/dhsf/"
             desc: "The framework for teams building digital health products"
         -
             title: "Innovation Hub"
-            url: "/innovation"
+            url: "/innovation/"
             desc: "Home of the Healthcare Innovators Podcast, In-depth Reports, and More"
         -
             title: "Datica Academy"
-            url: "/academy"
+            url: "/academy/"
             desc: "The definitive resource for those looking to learn about compliance and interoperability"
             has_divider: true
         -
             title: "Discover: Healthcare Topics"
-            url: "/discover"
+            url: "/discover/"
             desc: "A Curated Collection of Healthcare Technology Topics from Datica"
         -
             title: "Open Source"
-            url: "/open-source"
+            url: "/open-source/"
             desc: "We believe in the importance of open source."
             has_divider: true
         -
             title: "Company Blog"
-            url: "/blog"
+            url: "/blog/"
             desc: "News and insights from the Datica team."
 -
     title: "Company"
@@ -64,24 +64,24 @@
     children:
         -
             title: "About Us"
-            url: "/about"
+            url: "/about/"
             desc: "Background on the company"
         -
             title: "Leadership"
-            url: "/leadership"
+            url: "/leadership/"
             desc: "The team guiding Datica"
         -
             title: "Careers"
-            url: "/careers"
+            url: "/careers/"
             desc: "Job opportunities at Datica"
             has_divider: true
         -
             title: "Press"
-            url: "/press"
+            url: "/press/"
             desc: "Full press background, and information for media outlets"
         -
             title: "Events"
-            url: "/events"
+            url: "/events/"
             desc: "Datica events, past and future."
 -
     title: "Help"
@@ -90,15 +90,15 @@
     children:
         -
             title: "Sign in"
-            url: "https://product.datica.com"
+            url: "https://product.datica.com/"
             desc: "Sign in to your dashboard"
         -
             title: "Documentation & Support"
-            url: "https://help.datica.com/hc/en-us"
+            url: "https://help.datica.com/hc/en-us/"
             desc: "Documentation & Support across all Datica products"
         -
             title: "System Status"
-            url: "http://status.datica.com/"
+            url: "https://status.datica.com/"
             desc: "System up time and alerts"
 -
     title: "Legal"
@@ -107,15 +107,15 @@
     children:
         -
             title: "Company Policies"
-            url: "https://policy.datica.com"
+            url: "https://policy.datica.com/"
             desc: "Our company policies"
         -
             title: "Compliance Training"
-            url: "https://training.datica.com"
+            url: "https://training.datica.com/"
             desc: "Our training policies"
         -
             title: "HIPAA Mappings"
-            url: "https://hipaa.datica.com"
+            url: "https://hipaa.datica.com/"
             desc: "How we map to HIPAA's rules"
         -
             title: "Datica Privacy Policy"
