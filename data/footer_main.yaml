@@ -98,7 +98,7 @@
             desc: "Documentation & Support across all Datica products"
         -
             title: "System Status"
-            url: "http://status.datica.com/"
+            url: "https://status.datica.com/"
             desc: "System up time and alerts"
 -
     title: "Legal"

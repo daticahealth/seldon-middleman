@@ -28,7 +28,7 @@ url_segment = case post._meta.content_type_id
     when "pressRelease" then "press-release"
     else post._meta.content_type_id
 end
-related_post_path = "/" + url_segment + "/" + post.slug 
+related_post_path = "/" + url_segment + "/" + post.slug + "/"
 
 if post.has_key?("featured_image")
     image_url = data.site.blog[post.id].featured_image.url
@@ -117,7 +117,7 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
         <div class="<%= card_size %>">
         <p><%= card_summary %></p>
         <% if post.has_key?("pub_date") %>
-            <div class="float-left text-small faded"><i class="fa fa-calendar" aria-hidden="true"></i> <%= post['pub_date'].strftime('%B %-d, %Y') %></div>
+            <div class="float-left text-small faded"><%= inline_svg("small/icon-event-note", class: "icon-inline") %> <%= post['pub_date'].strftime('%B %-d, %Y') %></div>
         <% end %>
         </div>
     </div>

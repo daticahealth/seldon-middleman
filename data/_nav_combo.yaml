@@ -108,7 +108,7 @@ nav_primary:
                 desc: "Support for Datica customers"
             -
                 title: "System Status"
-                url: "http://status.catalyze.io/"
+                url: "https://status.catalyze.io/"
                 desc: "System up time and alerts"
     -
         title: "Legal"
@@ -136,4 +136,4 @@ nav_primary:
 #     url: //resources.datica.cotitle="Search our documentation for Datica solutions.">Documentation</a>
 #     url: //engineering.datica.cotitle="Read the latest from our technical team.">Engineering Blog</a>
 #     url: //datica.com/supportitle="Get help and the support you need.">Support</a>
-#     url: http://status.catalyze.ititle="Is it working? Find out here.">System Status</a>
+#     url: https://status.catalyze.ititle="Is it working? Find out here.">System Status</a>

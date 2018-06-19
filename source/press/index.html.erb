@@ -55,7 +55,7 @@ feed_url: "https://datica.com/press/feed.xml"
 
                     </div>
                     <div class="card-divider card-section--flush text-right">
-                        <a href="/press-release/<%= post["slug"] %>" title="Read press release">Read more <i class="fa fa-angle-right"></i></a>
+                        <a href="/press-release/<%= post["slug"] %>/" title="Read press release">Read more <%= inline_svg("small/icon-angle-right", class: "icon-inline") %></a>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@ feed_url: "https://datica.com/press/feed.xml"
     </div>
     <div class="row align-center">
         <div class="columns small-12 medium-6 text-center">
-            <a class="button button--primary" href="/press/all" title="View all">View all Press Releases <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="button button--primary" href="/press/all/" title="View all">View all Press Releases <%= inline_svg("small/icon-angle-right", class: "icon-inline") %></a>
         </div>
     </div>
 </section>

@@ -83,7 +83,7 @@ nav_customers:
         desc: "Support for Datica customers"
     -
         title: "System Status"
-        url: "http://status.datica.com/"
+        url: "https://status.datica.com/"
         desc: "System up time and alerts"
     -
         title: "Engineering Blog"
