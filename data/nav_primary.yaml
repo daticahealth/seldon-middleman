@@ -1,91 +1,91 @@
 nav_main:
     -
         title: "Platform"
-        url: "/platform"
+        url: "/platform/"
         desc: "Datica's Platform"
     -
         title: "Services"
-        url: "/services"
+        url: "/services/"
         desc: "Datica's Professional Services"
     -
         title: "Pricing"
-        url: "/pricing"
+        url: "/pricing/"
         desc: "Pricing Information"
 
 nav_resources_a:
     -
         title: "Digital Health Success Framework"
-        url: "/dhsf"
+        url: "/dhsf/"
         desc: "The framework for teams building digital health products"
     -
         title: "Innovation Hub"
-        url: "/innovation"
+        url: "/innovation/"
         desc: "Original articles and podcasts from leaders on digital transformation, trends, and innovation in the healthcare environment."
     -
         title: "HIPAA Academy"
-        url: "/academy"
+        url: "/academy/"
         desc: "The definitive resource for those looking to learn about Compliance and Interoperability."
 
 nav_resources_b:
     -
         title: "Company Blog"
-        url: "/blog"
+        url: "/blog/"
         desc: "News and notes from the Datica team"
 
 nav_company_a:
     -
         title: "About Us"
-        url: "/about"
+        url: "/about/"
         desc: "Background on the company"
     -
         title: "Leadership"
-        url: "/leadership"
+        url: "/leadership/"
         desc: "The team guiding Datica"
     -
         title: "Careers"
-        url: "/careers"
+        url: "/careers/"
         desc: "Job opportunities at Datica"
     -
         title: "Press"
-        url: "/press"
+        url: "/press/"
         desc: "Full press background, and information for media outlets"
     -
         title: "Events"
-        url: "/events"
+        url: "/events/"
         desc: "Datica events, past and future."
     -
         title: "Open Source"
-        url: "/open-source"
+        url: "/open-source/"
         desc: "We believe in the importance of open source."
 
 nav_company_b:
     -
         title: "Company Policies"
-        url: "https://policy.datica.com"
+        url: "https://policy.datica.com/"
         desc: "Our company policies"
     -
         title: "Our BAA"
-        url: "https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa"
+        url: "https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa/"
         desc: "Our training policies"
     -
         title: "HIPAA Mappings"
-        url: "https://hipaa.datica.com"
+        url: "https://hipaa.datica.com/"
         desc: "How we map to HIPAA's rules"
 
 nav_customers:
     -
         title: "Documentation"
-        url: "https://help.datica.com/hc/en-us"
+        url: "https://help.datica.com/hc/en-us/"
         desc: "Documentation across all Datica products"
     -
         title: "Support"
-        url: "https://help.datica.com/hc/en-us"
+        url: "https://help.datica.com/hc/en-us/"
         desc: "Support for Datica customers"
     -
         title: "System Status"
-        url: "http://status.datica.com"
+        url: "http://status.datica.com/"
         desc: "System up time and alerts"
     -
         title: "Engineering Blog"
-        url: "https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog"
+        url: "https://help.datica.com/hc/en-us/sections/115001646346-Engineering-Blog/"
         desc: "Our engineering team shares bleeding-edge insight on what it takes to build a compliant platform"

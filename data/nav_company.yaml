@@ -1,29 +1,29 @@
 nav_items:
     -
         title: "About Us"
-        url: "/about"
+        url: "/about/"
         desc: "Background on the company"
     -
         title: "Leadership"
-        url: "/leadership"
+        url: "/leadership/"
         desc: "The team guiding Datica"
     -
         title: "Company Blog"
-        url: "/blog"
+        url: "/blog/"
         desc: "News and notes from the Datica team"
     -
         title: "Careers"
-        url: "/careers"
+        url: "/careers/"
         desc: "Job opportunities at Datica"
     -
         title: "Press"
-        url: "/press"
+        url: "/press/"
         desc: "Full press background, and information for media outlets"
     -
         title: "Events"
-        url: "/events"
+        url: "/events/"
         desc: "Datica events, past and future."
     -
         title: "Open Source"
-        url: "/open-source"
+        url: "/open-source/"
         desc: "We believe in the importance of open source."
