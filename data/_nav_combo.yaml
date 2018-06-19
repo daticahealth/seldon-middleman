@@ -132,8 +132,8 @@ nav_primary:
                 url: "https://hipaa.datica.com/"
                 desc: "How we map to HIPAA's rules"
 
-nav_engineering:
-    url: //resources.datica.cotitle="Search our documentation for Datica solutions.">Documentation</a>
-    url: //engineering.datica.cotitle="Read the latest from our technical team.">Engineering Blog</a>
-    url: //datica.com/supportitle="Get help and the support you need.">Support</a>
-    url: http://status.catalyze.ititle="Is it working? Find out here.">System Status</a>
+# nav_engineering:
+#     url: //resources.datica.cotitle="Search our documentation for Datica solutions.">Documentation</a>
+#     url: //engineering.datica.cotitle="Read the latest from our technical team.">Engineering Blog</a>
+#     url: //datica.com/supportitle="Get help and the support you need.">Support</a>
+#     url: http://status.catalyze.ititle="Is it working? Find out here.">System Status</a>
