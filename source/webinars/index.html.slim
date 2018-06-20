@@ -8,7 +8,7 @@ layout: basic
 ruby:
     today = DateTime.now
     current_page.data.date = today.strftime('%B %-d, %Y')
-    sorted_entries = data.site.webinars.to_a.sort_by{ |id, webinar_entry| webinar_entry['event_date'] }
+    sorted_entries = data.site.webinars.to_a.sort_by{ |id, webinar_entry| webinar_entry['event_date'] }.reverse!
     current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/NL2SgI83KesMS86cWO44y/e908972bb9193eec594b639881e25e6f/academy-share-default.jpg" + image_size_small
 
 .container-gray-11
@@ -33,16 +33,19 @@ ruby:
                     - thumb = webinar_entry.bg_image.url
                 - else
                     - thumb = nil
-                .columns.small-12.large-8
+                .columns.small-12.large-10
                     .row.group
                         - unless thumb == nil
                             .columns.small-12.medium-6
-                                a href="/webinars/#{webinar_entry["slug"]}" title=("Get your free webinar")
+                                a href="/webinars/#{webinar_entry["slug"]}" title=("View webinar")
                                     img.thumbnail.float-left(src="#{thumb}?fit=scale&w=640" alt="webinar Preview")
                         .columns.small-12.medium-6
-                            .h2.headline-5.margin-bottom-small
-                                a(href="/webinars/#{webinar_entry["slug"]}" title="Get your free webinar") = webinar_entry["title"]
+                            .h3.headline-4.margin-bottom-small
+                                a(href="/webinars/#{webinar_entry["slug"]}" title="View webinar") = webinar_entry["title"]
                             .menu.simple.margin-bottom-small
+                                li
+                                    = inline_svg("small/icon-event-note", class: "icon-inline icon-left svg-color--gray-5")
+                                    span.text-small = webinar_entry['event_date'].strftime('%B %-d, %Y')
                                 - if webinar_entry.has_key?("discovery_topic")
                                     li
                                         span.label.info.round = data.site.discover[webinar_entry.discovery_topic.id].title
@@ -55,4 +58,4 @@ ruby:
 
         .row.align-center
             .columns.small-12.text-center.group
-                = partial "partials/snippets/button", :locals => { :label => "Learn more at the Datica Academy", :url => "/academy", :button_classes => "button", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "white" }
+                = partial "partials/snippets/button", :locals => { :label => "Learn more at the Datica Academy", :url => "/academy/", :button_classes => "button", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "white" }
