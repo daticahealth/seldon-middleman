@@ -54,27 +54,34 @@
     }
     &-icon {
         position: absolute;
-        transition: all $timing-default ease-out;
-        bottom: 33%;
-        right:  50%;
+        transition: all $timing-default * 1.5 ease;
+        bottom: 2rem;
+        right:  2rem;
         opacity: 0.3;
         color: $color_blue-glow;
     }
     &-cta {
         opacity: 0;
+        text-align: right;
+        position: absolute;
+        bottom: 3.9rem;
+        right: 9rem;
+        transition: all $timing-default ease-out;
     }
     &:hover {
         .preview-title {
-            transform: translate3d(3px, 0, 0);
-            color: $color_yellow-glow;
+            // transform: translate3d(3px, 0, 0);
+            color: $color_blue-glow;
         }
         .preview-icon {
             opacity: 1;
             color: white;
-            transform: translate3d(1rem, 0, 0);
+            // transform: translate3d(1rem, 0, 0);
+            transform: scale3d(1.1, 1.1, 1.1);
         }
         .preview-cta {
             opacity: 1;
+            color: white;
         }
     }
 

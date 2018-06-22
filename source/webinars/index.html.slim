@@ -35,9 +35,8 @@ ruby:
                         a.preview.container-gray-3.container-image-fill href="/webinars/#{webinar_entry["slug"]}" title=("View webinar") data-interchange="[#{thumb}?fit=scale&w=860, small]"
                             div.preview-subhead Datica Webinar
                             h2.headline-3.preview-title = webinar_entry["title"]
-                            .preview-icon
-                                = inline_svg("icon-arrow-right-circle-large", class: "icon-size--xlarge svg-color--white")
-                                .preview-cta.headline-5.spaced-out Register now
+                            .preview-cta.headline-5.spaced-out Register now
+                            = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
 
                             / img.thumbnail.float-left(src="#{thumb}?fit=scale&w=640" alt="webinar Preview")
                 .columns.small-12.medium-6.large-6
