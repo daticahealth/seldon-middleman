@@ -1,0 +1,11 @@
+/ generate metadata in li list (use .menu parent)
+li
+    = inline_svg("small/icon-event-note", class: "icon-inline icon-left svg-color--gray-5")
+    span.text-small = entry['event_date'].strftime('%B %-d, %Y')
+- if entry.has_key?("discovery_topic")
+    li
+        span.label.info.round = data.site.discover[entry.discovery_topic.id].title
+- if entry.has_key?("authors")
+    - entry.authors.each do | author |
+        li
+            = partial("partials/snippets/person-avatar", :locals => { :p => author, :size => "small" })

@@ -1,0 +1,81 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import '../mixins/colors';
+@import '../mixins/functions';
+// @import '../modules/masonry';
+// @import '../modules/fonts-optional';
+
+// video thumbnails
+.preview {
+    position: relative;
+    display: block;
+    color: white;
+    padding: 2rem;
+    min-height: 25rem;
+    @include breakpoint (medium) {
+        min-height: 15rem;
+    }
+    @include breakpoint (large) {
+        min-height: 20rem;
+    }
+    // transition: all $timing-default ease;
+    // &--hover {
+    //     transition: box-shadow $timing-default * 0.7 linear;
+    //     // box-shadow: 0 1px 1px 0 black(0);
+    //     &:hover {
+    //         box-shadow: 0 5px 15px 0 black(0.4);
+    //     }
+    // }
+    // featured image atop card, with title set at bottom
+    &-subhead {
+        // position: absolute;
+        // text-align: right;
+        // left: 0;
+        // top: 0;
+        // margin-top: 1rem;
+        color: $color_blue-glow;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font: {
+            weight: $font-weight-bold;
+            size: rem-calc(12);
+        }
+    }
+    &-title { // title hugs bottom
+        // position: absolute;
+        transition: all $timing-default ease-out;
+        // bottom: 0;
+        margin-bottom: 1rem;
+        // max-width: 75%;
+        min-width: 15rem; // prevents getting squished when cards are narrow at lower edge of large breakpoint. Waiting for container queries...
+        z-index: 5;
+    }
+    &-icon {
+        position: absolute;
+        transition: all $timing-default ease-out;
+        bottom: 33%;
+        right:  50%;
+        opacity: 0.3;
+        color: $color_blue-glow;
+    }
+    &-cta {
+        opacity: 0;
+    }
+    &:hover {
+        .preview-title {
+            transform: translate3d(3px, 0, 0);
+            color: $color_yellow-glow;
+        }
+        .preview-icon {
+            opacity: 1;
+            color: white;
+            transform: translate3d(1rem, 0, 0);
+        }
+        .preview-cta {
+            opacity: 1;
+        }
+    }
+
+}
