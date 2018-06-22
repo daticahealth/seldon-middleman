@@ -4,6 +4,7 @@ summary: "In-depth presenations on the latest compliance challenges"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, kubernetes"
 layout: basic
+customCSS: webinars
 ---
 ruby:
     today = DateTime.now
@@ -11,51 +12,76 @@ ruby:
     sorted_entries = data.site.webinars.to_a.sort_by{ |id, webinar_entry| webinar_entry['event_date'] }.reverse!
     current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/NL2SgI83KesMS86cWO44y/e908972bb9193eec594b639881e25e6f/academy-share-default.jpg" + image_size_small
 
-.container-gray-11
+.container-gray-10
     section#top
         / .faded-max.group
         = partial "partials/head/header", :locals => { :style => "dark" }
-    section.section-article
+    section.section-article--small
         .row.align-center
             .columns.small-12.large-6.text-center.group
                 = inline_svg("icon-book-academy", class: "icon-size--medium")
-                h3.headline-5.spaced-out
+                / h3.headline-5.spaced-out
                     / = inline_svg("small/icon-book-fill", class: "icon-inline icon-left")
                     | Datica Webinars
                 h2.headline-2 Datica Webinars
                 / p.lead Authoritative webinars Written By Industry Experts
+        - sorted_entries.take(1).each do | id, webinar_entry |
+            - if webinar_entry.has_key?("image_thumb")
+                - thumb = webinar_entry.image_thumb.url
+            - else thumb = nil
+            .row.align-center
+                - unless thumb == nil
+                    .columns.small-12.medium-6.large-6
+                        a.preview.container-gray-3.container-image-fill href="/webinars/#{webinar_entry["slug"]}" title=("View webinar") data-interchange="[#{thumb}?fit=scale&w=860, small]"
+                            div.preview-subhead Datica Webinar
+                            h2.headline-3.preview-title = webinar_entry["title"]
+                            .preview-icon
+                                = inline_svg("icon-arrow-right-circle-large", class: "icon-size--xlarge svg-color--white")
+                                .preview-cta.headline-5.spaced-out Register now
 
-        .row.align-center
-            - sorted_entries.each do | id, webinar_entry |
-                - if webinar_entry.has_key?("image_thumb")
-                    - thumb = webinar_entry.image_thumb.url
-                - elsif webinar_entry.has_key?("bg_image")
-                    - thumb = webinar_entry.bg_image.url
-                - else
-                    - thumb = nil
-                .columns.small-12.large-10
-                    .row.group
-                        - unless thumb == nil
-                            .columns.small-12.medium-6
-                                a href="/webinars/#{webinar_entry["slug"]}" title=("View webinar")
-                                    img.thumbnail.float-left(src="#{thumb}?fit=scale&w=640" alt="webinar Preview")
+                            / img.thumbnail.float-left(src="#{thumb}?fit=scale&w=640" alt="webinar Preview")
+                .columns.small-12.medium-6.large-6
+                    .h3.headline-3
+                        a(href="/webinars/#{webinar_entry["slug"]}" title="View webinar") = webinar_entry["title"]
+                    .menu.simple.margin-bottom-small
+                        li
+                            = inline_svg("small/icon-event-note", class: "icon-inline icon-left svg-color--gray-5")
+                            span = webinar_entry['event_date'].strftime('%B %-d, %Y')
+                        - if webinar_entry.has_key?("discovery_topic")
+                            li
+                                span.label.info.round = data.site.discover[webinar_entry.discovery_topic.id].title
+
+                    .lead
+                        = Kramdown::Document.new(webinar_entry["summary"]).to_html
+                    - if webinar_entry.has_key?("authors")
+                        aside.group
+                            .subhead--spaced.faded.headline-5.group--sm Presented by
+                            - webinar_entry["authors"].each do | author |
+                                p
+                                    = partial("partials/snippets/person", :locals => { :p => author })
+section.section-article
+    .row.align-center
+        - sorted_entries[1...4].each do | id, webinar_entry |
+            - if webinar_entry.has_key?("image_thumb")
+                - thumb = webinar_entry.image_thumb.url
+            - elsif webinar_entry.has_key?("bg_image")
+                - thumb = webinar_entry.bg_image.url
+            - else
+                - thumb = nil
+            .columns.small-12.large-10
+                .row.group
+                    - unless thumb == nil
                         .columns.small-12.medium-6
-                            .h3.headline-4.margin-bottom-small
-                                a(href="/webinars/#{webinar_entry["slug"]}" title="View webinar") = webinar_entry["title"]
-                            .menu.simple.margin-bottom-small
-                                li
-                                    = inline_svg("small/icon-event-note", class: "icon-inline icon-left svg-color--gray-5")
-                                    span.text-small = webinar_entry['event_date'].strftime('%B %-d, %Y')
-                                - if webinar_entry.has_key?("discovery_topic")
-                                    li
-                                        span.label.info.round = data.site.discover[webinar_entry.discovery_topic.id].title
-                                - if webinar_entry.has_key?("authors")
-                                    - webinar_entry.authors.each do | author |
-                                        li
-                                            = partial("partials/snippets/person-avatar", :locals => { :p => author, :size => "small" })
-                            .text-small
-                                = Kramdown::Document.new(webinar_entry["summary"]).to_html
+                            a href="/webinars/#{webinar_entry["slug"]}" title=("View webinar")
+                                img.thumbnail.float-left(src="#{thumb}?fit=scale&w=640" alt="webinar Preview")
+                    .columns.small-12.medium-6
+                        .h3.headline-4.margin-bottom-small
+                            a(href="/webinars/#{webinar_entry["slug"]}" title="View webinar") = webinar_entry["title"]
+                        .menu.simple.margin-bottom-small
+                            = partial "entry-meta", :locals => { :entry => webinar_entry }
+                        .text-small
+                            = Kramdown::Document.new(webinar_entry["summary"]).to_html
 
-        .row.align-center
-            .columns.small-12.text-center.group
-                = partial "partials/snippets/button", :locals => { :label => "Learn more at the Datica Academy", :url => "/academy/", :button_classes => "button", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "white" }
+    .row.align-center
+        .columns.small-12.text-center.group
+            = partial "partials/snippets/button", :locals => { :label => "Learn more at the Datica Academy", :url => "/academy/", :button_classes => "button", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "white" }
