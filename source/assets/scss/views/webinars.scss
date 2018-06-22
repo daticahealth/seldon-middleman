@@ -9,6 +9,7 @@
 
 // video thumbnails
 .preview {
+    border-radius: $global-radius;
     position: relative;
     display: block;
     color: white;
@@ -45,7 +46,7 @@
     }
     &-title { // title hugs bottom
         // position: absolute;
-        transition: all $timing-default ease-out;
+        transition: all $timing-default * 1.5 ease;
         // bottom: 0;
         margin-bottom: 1rem;
         // max-width: 75%;
@@ -62,16 +63,17 @@
     }
     &-cta {
         opacity: 0;
-        text-align: right;
+        color: white;
+        // text-align: right;
         position: absolute;
         bottom: 3.9rem;
         right: 9rem;
-        transition: all $timing-default ease-out;
+        transition: all $timing-default * 2 ease;
     }
     &:hover {
+        color: $color_blue-glow;
         .preview-title {
             // transform: translate3d(3px, 0, 0);
-            color: $color_blue-glow;
         }
         .preview-icon {
             opacity: 1;
@@ -82,6 +84,7 @@
         .preview-cta {
             opacity: 1;
             color: white;
+            transform: translate3d(-2px, 0, 0);
         }
     }
 
