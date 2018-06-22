@@ -18,17 +18,17 @@ nav_primary:
         children:
             -
                 title: "Academy"
-                url: "/academy"
+                url: "/academy/"
                 desc: "Industry leading educational materials."
 
             -
                 title: "Company Blog"
-                url: "/blog"
+                url: "/blog/"
                 desc: "Thoughts from the Datica team."
 
             -
                 title: "Innovators Podcast"
-                url: "/innovation"
+                url: "/innovation/"
                 desc: "Exploring innovation in healthcare through interviews with the industry's top thinkers and doers."
 
     -
@@ -38,23 +38,23 @@ nav_primary:
         children:
             -
                 title: "About Us"
-                url: "/about"
+                url: "/about/"
                 desc: "Background on the company"
             -
                 title: "Leadership"
-                url: "/leadership"
+                url: "/leadership/"
                 desc: "Datica's management team"
             -
                 title: "Press"
-                url: "/press"
+                url: "/press/"
                 desc: "Full press background, and information for media outlets"
             -
                 title: "Events"
-                url: "/events"
+                url: "/events/"
                 desc: "Our past and future event attendance"
             -
                 title: "Open Source Contributions"
-                url: "/open-source"
+                url: "/open-source/"
                 desc: "We believe in the importance of open source"
     -
         title: "Resources"
@@ -63,35 +63,35 @@ nav_primary:
         children:
             -
                 title: "DHSF"
-                url: "/dhsf"
+                url: "/dhsf/"
                 desc: "The Digital Health Success Framework (DHSF) is a simple guide for the makers of digital healthcare products."
             -
                 title: "The Academy"
-                url: "/academy"
+                url: "/academy/"
                 desc: "The definitive resource for those looking to learn about Compliance and Interoperability"
             -
                 title: "Company Blog"
-                url: "/blog"
+                url: "/blog/"
                 desc: "News and notes from team members at Datica"
             -
                 title: "Engineering Blog"
-                url: "https://engineering.datica.com"
+                url: "https://engineering.datica.com/"
                 desc: "Our engineering team shares bleeding-edge insight on what it takes to build a compliant platform"
             -
                 title: "Innovation Hub"
-                url: "/innovation"
+                url: "/innovation/"
                 desc: "Original articles and podcasts from healthcare leaders on digital transformation, trends, and innovation in the health care environment."
             -
                 title: "White Papers"
-                url: "/whitepapers"
+                url: "/whitepapers/"
                 desc: "A collection of our formal assessment of healthcare topics"
             -
                 title: "Mock FHIR API"
-                url: "https://fhir.datica.com"
+                url: "https://fhir.datica.com/"
                 desc: "Experiment with the FHIR API for free"
             -
                 title: "Mock HL7 API"
-                url: "https://hl7.datica.com"
+                url: "https://hl7.datica.com/"
                 desc: "Experiment with the HL7 API for free"
     -
         title: "Help"
@@ -100,15 +100,15 @@ nav_primary:
         children:
             -
                 title: "Documentation"
-                url: "https://help.datica.com/hc/en-us"
+                url: "https://help.datica.com/hc/en-us/"
                 desc: "Documentation across all Datica products"
             -
                 title: "Support"
-                url: "https://help.datica.com/hc/en-us"
+                url: "https://help.datica.com/hc/en-us/"
                 desc: "Support for Datica customers"
             -
                 title: "System Status"
-                url: "http://status.catalyze.io"
+                url: "https://status.catalyze.io/"
                 desc: "System up time and alerts"
     -
         title: "Legal"
@@ -117,23 +117,23 @@ nav_primary:
         children:
             -
                 title: "Company Policies"
-                url: "https://policy.datica.com"
+                url: "https://policy.datica.com/"
                 desc: "Our company policies"
             -
                 title: "Legal Documentation"
-                url: "https://legal.datica.com"
+                url: "https://legal.datica.com/"
                 desc: "Our legal policies"
             -
                 title: "Compliance Training"
-                url: "https://training.datica.com"
+                url: "https://training.datica.com/"
                 desc: "Our training policies"
             -
                 title: "HIPAA Mappings"
-                url: "https://hipaa.datica.com"
+                url: "https://hipaa.datica.com/"
                 desc: "How we map to HIPAA's rules"
 
-nav_engineering:
-    url: //resources.datica.cotitle="Search our documentation for Datica solutions.">Documentation</a>
-    url: //engineering.datica.cotitle="Read the latest from our technical team.">Engineering Blog</a>
-    url: //datica.com/supportitle="Get help and the support you need.">Support</a>
-    url: http://status.catalyze.ititle="Is it working? Find out here.">System Status</a>
+# nav_engineering:
+#     url: //resources.datica.cotitle="Search our documentation for Datica solutions.">Documentation</a>
+#     url: //engineering.datica.cotitle="Read the latest from our technical team.">Engineering Blog</a>
+#     url: //datica.com/supportitle="Get help and the support you need.">Support</a>
+#     url: https://status.catalyze.ititle="Is it working? Find out here.">System Status</a>

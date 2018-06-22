@@ -28,7 +28,7 @@ url_segment = case post._meta.content_type_id
     when "pressRelease" then "press-release"
     else post._meta.content_type_id
 end
-related_post_path = "/" + url_segment + "/" + post.slug 
+related_post_path = "/" + url_segment + "/" + post.slug + "/"
 
 if post.has_key?("featured_image")
     image_url = data.site.blog[post.id].featured_image.url
@@ -69,7 +69,7 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
         <%= inline_svg("icon-arrow-right-circle-large", class: "icon-size--xlarge card-header-icon svg-color--white") %>
     </a><% end %>
 
-    <% if url_segment == "innovation" %><a class="container-image-fill card-header-image card-header-image--compact container-gray-3" href="<%= related_post_path %>" title="Read '<%= post["title"] %>'" data-interchange="[/public/img/art/art-sound-bars-purple.svg, small]">
+    <% if url_segment == "innovation" %><a class="container-image-fill card-header-image card-header-image--compact container-gray-3" href="<%= related_post_path %>" title="Read '<%= post["title"] %>/'" data-interchange="[/public/img/art/art-sound-bars-purple.svg, small]">
         <span class="card-header-subhead">Healthcare Innovators Podcast</span>
         <h2 class="card-header-title headline-5 ribbon--gray-1"><%= post["title"] %></h2>
         <%= inline_svg("icon-video-play-circle", class: "icon-size--xlarge card-header-icon svg-color--white") %>
@@ -91,7 +91,7 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
             <div class="media-object card-person">
                 <% if post["guest"].has_key?("profile_pic") %>
                     <div class="media-object-section">
-                        <img src="<%= data.site.person[post.guest.id].profile_pic.url %>?fit=thumb&w=148&h=148&f=face&q=45" class="avatar avatar--medium circle"></div>
+                        <img src="<%= data.site.person[post.guest.id].profile_pic.url %>?f=face&fit=thumb&w=128&h=128&q=50" class="avatar avatar--medium circle"></div>
                 <% end %>
                 <div class="<%= card_size %> media-object-section main-section align-self-middle">
                     <h4 class="person-name"><%= post["guest"]["fullname"] %></h4>
@@ -104,7 +104,7 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
             <div class="media-object card-person">
                 <% if post["author"].has_key?("profile_pic") %>
                     <div class="media-object-section">
-                        <img src="<%= data.site.person[post.author.id].profile_pic.url %>?fit=thumb&w=148&h=148&f=face&q=45" class="avatar avatar--medium circle"></div>
+                        <img src="<%= data.site.person[post.author.id].profile_pic.url %>?f=face&fit=thumb&w=128&h=128&q=50" class="avatar avatar--medium circle"></div>
                 <% end %>
                 <div class="<%= card_size %> media-object-section main-section align-self-middle">
                     <h4 class="person-name"><%= post["author"]["fullname"] %></h4>
@@ -117,7 +117,7 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
         <div class="<%= card_size %>">
         <p><%= card_summary %></p>
         <% if post.has_key?("pub_date") %>
-            <div class="float-left text-small faded"><i class="fa fa-calendar" aria-hidden="true"></i> <%= post['pub_date'].strftime('%B %-d, %Y') %></div>
+            <div class="float-left text-small faded"><%= inline_svg("small/icon-event-note", class: "icon-inline") %> <%= post['pub_date'].strftime('%B %-d, %Y') %></div>
         <% end %>
         </div>
     </div>

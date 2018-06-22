@@ -109,10 +109,10 @@ section#productHelp.section-article.container-gray-11.container-image--center da
     .column.small-12.medium-8.large-4.large-order-3
       aside.card.container-color--tint-20
         .card-section.text-center
-          h2.headline-4.text-light.text--white <strong>End-to-end compliance</strong> with Kubernetes is here.
+          h2.headline-4.text-light.text--white <strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.
           / p Schedule a demo to learn more.
-          = partial "partials/snippets/button", :locals => { :label => "Schedule a demo today", :url => "/demo", :button_classes => "button expanded group--sm", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
-          = partial "partials/snippets/button", :locals => { :label => "Questions? Let's talk.", :url => "/contact", :button_classes => "button expanded hollow hollow-inverted", :icon => "hubspot-chat-blue", :icon_align => "left" }
+          = partial "partials/snippets/button", :locals => { :label => "Schedule a demo today", :url => "/demo/", :button_classes => "button expanded group--sm", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left" }
+          = partial "partials/snippets/button", :locals => { :label => "Questions? Let's talk.", :url => "/contact/", :button_classes => "button expanded hollow hollow-inverted", :icon => "hubspot-chat-blue", :icon_align => "left" }
 
 / modal for form, hidden. form_id at the top
 .card.drop.medium.reveal#requestFeature data-options=("closeOnEsc: true; animationSpeed: 150; animationIn: bounce-in") data-reveal=""

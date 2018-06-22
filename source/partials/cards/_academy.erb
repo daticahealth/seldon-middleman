@@ -7,7 +7,7 @@
     ">
     <div class="card-section">
         <p class="blog-date blog-date--small color-talk-alt"><%= entry['pub_date'].strftime('%B %-d, %Y') %></p>
-        <h4 class="card-body--title"><a class="card-body--link" title="Learn about this topic" href="/academy/<%= entry["slug"] %>"><%= entry["title"] %></a></h4>
+        <h4 class="card-body--title"><a class="card-body--link" title="Learn about this topic" href="/academy/<%= entry["slug"] %>/"><%= entry["title"] %></a></h4>
     </div>
     <div class="card-section card-section--flush">
         <!-- Academy articles lacked summaries; these need creation and then display here with entry["summary"]. - AW -->

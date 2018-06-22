@@ -5,6 +5,7 @@
         <% if current_page.data.has_key?("asset_preload") %>
             <%= current_page.data.asset_preload %>
         <% end %>
+        <%# testing this as Netlify injection %>
         <% if build? %><%= partial "partials/scripts/google-tm-head" %><% end %>
         <%# Meta tags %>
         <%= partial "partials/head/tags" %>
