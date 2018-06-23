@@ -55,7 +55,7 @@
     }
     &-icon {
         position: absolute;
-        transition: all $timing-default * 1.5 ease;
+        transition: all $timing-default * 2.25 ease;
         bottom: 2rem;
         right:  2rem;
         opacity: 0.3;
@@ -67,12 +67,13 @@
         // text-align: right;
         position: absolute;
         bottom: 3.9rem;
-        right: 9rem;
+        right: 10rem;
         transition: all $timing-default * 2 ease;
     }
     &:hover {
-        color: $color_blue-glow;
+        color: $white;
         .preview-title {
+            color: $color_blue-glow;
             // transform: translate3d(3px, 0, 0);
         }
         .preview-icon {
@@ -84,7 +85,7 @@
         .preview-cta {
             opacity: 1;
             color: white;
-            transform: translate3d(-2px, 0, 0);
+            transform: translate3d(5px, 0, 0);
         }
     }
 
