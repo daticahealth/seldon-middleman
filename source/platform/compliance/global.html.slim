@@ -25,46 +25,51 @@ section.container-color--dark-grad-blue
             p.lead.text-center Our <a class="link--yellow" href="/platform/roadmap" title="Datica public roadmap">public roadmap</a> gives customers and prospects full transparency into what we’re building. Read more about our decision to publish our product roadmap <a href="https://datica.com/blog/what-were-building-daticas-public-product-roadmap" class="link--yellow">here</a>.
 
 section.section-article--med.container-gray-10
-    h2.headline-4.spaced-out.text-center.group.text--gray-6 Legend
-    .row.small-up-1.large-up-3.group
-      - data.views.global_compliance_posture.overview.each do | item |
-        .column
-          .callout.nomargin.drop-light
-            h4.headline-5 = item.title
-            = Kramdown::Document.new(item.desc).to_html
-    table#tablehead data-sticky-container="" width="100%" border="0" style="max-width: 84rem; margin-left: auto; margin-right: auto;"
-      thead class="sticky sticky-nav sticky-nav--secondary" data-sticky="" data-options="marginTop:3; topAnchor:tableHead;"
-        tr.container-gray-3
-          th Geography
-          th Regime 
-          th Possible?
-          th Available?
-          th Planned
-          th Availability
-          th Description
-      tbody
-        - data.views.global_compliance_posture.table.each do | locale |
-          tr style="vertical-align: top;"
-            td
-              strong
-                = locale.geography
-            td
-              = locale.regime
-            td
-              - if locale.is_possible == true
-                = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
-            td
-              - if locale.is_available == true
-                = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
-            td
-              - if locale.is_planned == true
-                = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
-              - else
-                = inline_svg("small/icon-close", class: "icon-size--small svg-color--red")
-            td
-              = locale.when_available
-            td
-              = Kramdown::Document.new(locale.desc).to_html
-              / - if member.has_key?("regime_url")
+    / h2.headline-4.spaced-out.text-center.group.text--gray-6 Legend
+    / .row.small-up-1.large-up-3.group
+    /   - data.views.global_compliance_posture.overview.each do | item |
+    /     .column
+    /       .callout.nomargin.drop-light
+    /         h4.headline-5 = item.title
+    /         = Kramdown::Document.new(item.desc).to_html
+    .row.align-center
+      .columns.small-12.large-10
+        table#tablehead data-sticky-container="" width="100%" border="0"
+          thead class="sticky sticky-nav sticky-nav--secondary" data-sticky="" data-options="marginTop:3; topAnchor:tableHead;"
+            tr.container-gray-3
+              th Geography
+              th Regime 
+              / th 
+                span data-tooltip="" aria-haspopup="true" data-fade-in-duration="20" data-v-offset="0" title="No legal or technical obstacles" Possible?
+              th 
+                span data-tooltip="" aria-haspopup="true" data-fade-in-duration="20" data-v-offset="0" title="Compliant deploys are possible in this geography." Available Now?
+              th
+                span data-tooltip="" aria-haspopup="true" data-fade-in-duration="20" data-v-offset="0" title="See our roadmap for more details." Planned?
+              th Availability
+              / th Description
+          tbody
+            - data.views.global_compliance_posture.table.each do | locale |
+              tr style="vertical-align: top;"
+                td
+                  strong
+                    = locale.geography
+                td
+                  = locale.regime
+                / td
+                  - if locale.is_possible == true
+                    = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
+                td
+                  - if locale.is_available == true
+                    = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
+                td
+                  - if locale.is_planned == true
+                    = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
+                  - else
+                    = inline_svg("small/icon-close", class: "icon-size--small svg-color--red")
+                td
+                  = locale.when_available
+                / td
+                /   = Kramdown::Document.new(locale.desc).to_html
+                  / - if member.has_key?("regime_url")
 
 = partial "partials/snippets/product-req-bar", :locals => { :form_id => "6cpdQDL5S06YmySAKIamom" }
