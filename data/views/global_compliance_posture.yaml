@@ -35,9 +35,9 @@ table:
       is_planned: true
       when_available: 1Q19
       desc: |
-        Easly map HITRUST, which we plan to do early 2019.
+        Easily map HITRUST, which we plan to do early 2019.
   -
-      geography: 
+      geography: ""
       regime: PCI-DSS
       # regime_url:
       is_possible: true
@@ -45,29 +45,29 @@ table:
       is_planned: true
       when_available: 1Q19
       desc: |
-        Easly map HITRUST, which we plan to do early 2019.
+        Easily map HITRUST, which we plan to do early 2019.
   -
-      geography: 
+      geography: ""
       regime: SOC 1 Type 2
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
-      when_available: nil
+      when_available: ""
       desc: |
         Will re-up
   -
-      geography: 
+      geography: ""
       regime: SOC 2 Type 2
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
-      when_available: nil
+      when_available: ""
       desc: |
         Will re-up
   -
-      geography: 
+      geography: ""
       regime: SOC 3 Type 2
       # regime_url:
       is_possible: false
@@ -77,7 +77,7 @@ table:
       desc: |
         Depends on Demand
   -
-      geography: 
+      geography: ""
       regime: CSA Star
       # regime_url:
       is_possible: false
@@ -93,21 +93,21 @@ table:
       is_possible: true
       is_available: true
       is_planned: true
-      when_available: nil
+      when_available: ""
       desc: |
         Will re-up
   -
-      geography: 
+      geography: ""
       regime: HITRUST
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
-      when_available: nil
+      when_available: ""
       desc: |
         Will re-up
   -
-      geography: 
+      geography: ""
       regime: FERPA
       # regime_url:
       is_possible: true
@@ -117,7 +117,7 @@ table:
       desc: |
         Depends on Demand
   -
-      geography: 
+      geography: ""
       regime: FISMA
       # regime_url:
       is_possible: true
@@ -127,7 +127,7 @@ table:
       desc: |
         Depends on Demand
   -
-      geography: 
+      geography: ""
       regime: FedRAMP
       # regime_url:
       is_possible: false
@@ -137,27 +137,27 @@ table:
       desc: |
         Depends on Demand
   -
-      geography: 
+      geography: ""
       regime: GxP
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
-      when_available: nil
+      when_available: ""
       desc: |
         Will re-up
   -
-      geography: 
+      geography: ""
       regime: Shared Assessments
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: false
-      when_available: nil
+      when_available: ""
       desc: |
-        'We don''t plan to pursue any time soon'
+        We don't plan to pursue this in the near future.
   -
-      geography: 
+      geography: ""
       regime: SOX
       # regime_url:
       is_possible: true
@@ -167,15 +167,15 @@ table:
       desc: |
         Requires us to map HITRUST to it, which we can do if demand is right.
   -
-      geography: 
-      regime: falseIST SP800-53
+      geography: ""
+      regime: IST SP800-53
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: 1Q19
       desc: |
-        Easly map HITRUST, which we plan to do early 2019.
+        Easily map HITRUST, which we plan to do early 2019.
   -
       geography: Canada
       regime: PIPEDA
@@ -187,7 +187,7 @@ table:
       desc: |
         Depends on demand, but can easily extend HITRUST to cover. Looking to proactively do so in 4Q2018
   -
-      geography: 
+      geography: ""
       regime: PIPA
       # regime_url:
       is_possible: true
@@ -203,11 +203,11 @@ table:
       is_possible: true
       is_available: true
       is_planned: true
-      when_available: nil
+      when_available: ""
       desc: |
         We have finished our 3rd party audits. Will re-up next year in 2019.
   -
-      geography: 
+      geography: ""
       regime: Privacy Shield
       # regime_url:
       is_possible: true
@@ -215,30 +215,30 @@ table:
       is_planned: true
       when_available: TBD
       desc: |
-        'Only if requested - this is a "Pay a fee and you''re certified" certification. No real value unless it closes a sales deal.'
+        Only if requested - this is a, \"Pay a fee and you're certified\" certification. No real value unless it closes a sales deal.
   -
       geography: Germany
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
-      when_available: nil
+      when_available: ""
       desc: |
-        'Covered by GDPR because you can have a GDPR compliant environment hosted in US - doesn''t matter. Additional German compliance regimes not covered.  Technical capabilities available.'
+        Covered by GDPR because you can have a GDPR compliant environment hosted in US — doesn't matter. Additional German compliance regimes not covered.  Technical capabilities available.
   -
       geography: UK
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
-      when_available: nil
+      when_available: ""
       desc: |
-        'Covered by GDPR because you can have a GDPR compliant environment hosted in US - doesn''t matter. Additional UK compliance regimes not covered.  Technical capabilities available.'
+        Covered by GDPR because you can have a GDPR compliant environment hosted in US - doesn't matter. Additional UK compliance regimes not covered.  Technical capabilities available.
   -
       geography: Spain
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -248,17 +248,17 @@ table:
         GDPR covered, but no plans for technical deployment on AWS/Azure/GCP in 2018.
   -
       geography: Ireland
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
       when_available: 2018
       desc: |
-        'Covered by GDPR because you can have a GDPR compliant environment hosted in US - doesn''t matter. Additional Irish compliance regimes not covered. Technical capabilities available.'
+        Covered by GDPR because you can have a GDPR compliant environment hosted in US - doesn't matter. Additional Irish compliance regimes not covered. Technical capabilities available.
   -
-      geography: falseetherlands
-      regime: nil
+      geography: Netherlands
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -268,7 +268,7 @@ table:
         GDPR covered, but no plans for technical deployment on AWS/Azure/GCP in 2018.
   -
       geography: France
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -278,7 +278,7 @@ table:
         GDPR covered, but France has preference that French citizen data is hosted in France; this will have no change to compliance requirements. Technical availabability will be tied to J&J needs.
   -
       geography: Denmark
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -288,7 +288,7 @@ table:
         GDPR covered, but no plans for technical deployment on AWS/Azure/GCP in 2018.
   -
       geography: Sweden
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -297,8 +297,8 @@ table:
       desc: |
         GDPR covered, but no plans for technical deployment on AWS/Azure/GCP in 2018.
   -
-      geography: falseorway
-      regime: nil
+      geography: Norway
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -308,7 +308,7 @@ table:
         GDPR covered, but no plans for technical deployment on AWS/Azure/GCP in 2018.
   -
       geography: Finland
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -318,7 +318,7 @@ table:
         GDPR covered, but no plans for technical deployment on AWS/Azure/GCP in 2018.
   -
       geography: Italy
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -328,7 +328,7 @@ table:
         GDPR covered, but no plans for technical deployment on AWS/Azure/GCP in 2018.
   -
       geography: Brazil
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -338,7 +338,7 @@ table:
         Can map HITRUST to core Brazilian compliance regimes and deploy on AWS. No planned deployments in 2018.
   -
       geography: Argentina
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -348,7 +348,7 @@ table:
         Can map HITRUST to core Argentinian compliance regimes and deploy on AWS. No planned deployments in 2018.
   -
       geography: Mexico
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -358,7 +358,7 @@ table:
         Can map HITRUST to core Mexican compliance regimes and deploy on AWS. No planned deployments in 2018.
   -
       geography: Israel
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: false
       is_available: false
@@ -368,27 +368,27 @@ table:
         
   -
       geography: Saudi Arabia
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: false
-      when_available: nil
+      when_available: ""
       desc: |
         Would take legal review because of State department  and DHS restrictions on encryption tech. We have no intention to support this any time soon.
   -
       geography: UAE / M.E.
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: false
-      when_available: nil
+      when_available: ""
       desc: |
         Would take legal review because of State department  and DHS restrictions on encryption tech. We have no intention to support this any time soon.
   -
       geography: South Korea
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -398,7 +398,7 @@ table:
         Can map HITRUST to core South Korean compliance regimes and deploy on AWS. No planned deployments in 2018.
   -
       geography: China
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: false
       is_available: false
@@ -408,7 +408,7 @@ table:
         Would take legal review because of encryption mechanisms and the CUSTOMER would have to have a Chinese government license to operate in China. Our platform would run under THEIR license. It might be that our encryption would not be allowed
   -
       geography: Singapore
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: true
@@ -418,7 +418,7 @@ table:
         We have done the leg work to map HITRUST to Singamore compliance requirements in an effort to support J&J wanting to deploy there. We can deploy on AWS.
   -
       geography: Japan
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false
@@ -428,17 +428,17 @@ table:
         Can map HITRUST to core Japanese compliance regimes and deploy on AWS. No planned deployments in 2018.
   -
       geography: Russia
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: false
-      when_available: nil
+      when_available: ""
       desc: |
         Would take legal review because of State department and DHS restrictions on encryption tech. We have no intention to support this any time soon.
   -
       geography: Australia
-      regime: nil
+      regime: ""
       # regime_url:
       is_possible: true
       is_available: false

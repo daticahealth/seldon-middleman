@@ -13,6 +13,7 @@ ruby:
   current_page.data.share_image = image_share_platform
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   header_img = 'https://images.ctfassets.net/189dvqdsjh46/6Uz1DrsKEoiEY4seeUc6C/a3a8fac46d19f7255219f95dd9aa9c35/ISS_-_northern_europe_at_night__aurora_crop.jpg'
+  separator = %(<span style="opacity: 0;">, </span>)
 
 section.container-color--dark-grad-blue
   .section-article.container-image--center data-interchange="[#{header_img}?w=640, small], [#{header_img}?w=800, medium], [#{header_img}?w=1600, large]"
@@ -22,5 +23,48 @@ section.container-color--dark-grad-blue
           .columns.small-12.large-8
             h1.headline-2.text-center = current_page.data.title
             p.lead.text-center Our <a class="link--yellow" href="/platform/roadmap" title="Datica public roadmap">public roadmap</a> gives customers and prospects full transparency into what we’re building. Read more about our decision to publish our product roadmap <a href="https://datica.com/blog/what-were-building-daticas-public-product-roadmap" class="link--yellow">here</a>.
+
+section.section-article--med.container-gray-10
+    h2.headline-4.spaced-out.text-center.group.text--gray-6 Legend
+    .row.small-up-1.large-up-3.group
+      - data.views.global_compliance_posture.overview.each do | item |
+        .column
+          .callout.nomargin.drop-light
+            h4.headline-5 = item.title
+            = Kramdown::Document.new(item.desc).to_html
+    table#tablehead data-sticky-container="" width="100%" border="0" style="max-width: 84rem; margin-left: auto; margin-right: auto;"
+      thead class="sticky sticky-nav sticky-nav--secondary" data-sticky="" data-options="marginTop:3; topAnchor:tableHead;"
+        tr.container-gray-3
+          th Geography
+          th Regime 
+          th Possible?
+          th Available?
+          th Planned
+          th Availability
+          th Description
+      tbody
+        - data.views.global_compliance_posture.table.each do | locale |
+          tr style="vertical-align: top;"
+            td
+              strong
+                = locale.geography
+            td
+              = locale.regime
+            td
+              - if locale.is_possible == true
+                = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
+            td
+              - if locale.is_available == true
+                = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
+            td
+              - if locale.is_planned == true
+                = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
+              - else
+                = inline_svg("small/icon-close", class: "icon-size--small svg-color--red")
+            td
+              = locale.when_available
+            td
+              = Kramdown::Document.new(locale.desc).to_html
+              / - if member.has_key?("regime_url")
 
 = partial "partials/snippets/product-req-bar", :locals => { :form_id => "6cpdQDL5S06YmySAKIamom" }
