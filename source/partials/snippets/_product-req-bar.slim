@@ -8,7 +8,7 @@ section#productHelp.section-article.container-gray-11.container-image--center da
     .column.small-12.medium-8.large-4.large-order-2
       aside.card.container-gray-12.drop
         .card-section.text-center
-          - data.footer_main[3..3].each do |nav_dropdown|
+          - data.nav_all[3..3].each do |nav_dropdown|
             - if nav_dropdown.has_key?("children")
               / .headline-5 = nav_dropdown.title
               ul.no-bullet

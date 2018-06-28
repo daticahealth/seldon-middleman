@@ -13,6 +13,14 @@
             url: "/platform/compliance/"
             desc: "Datica is HITRUST CSF Certified"
         -
+            title: "Global Compliance Posture"
+            url: "/platform/compliance/global"
+            desc: "Need to go international? Here's a look at our compliance posture around the world."
+        -
+            title: "Public Roadmap"
+            url: "/platform/roadmap"
+            desc: "Here's what we're building."
+        -
             title: "Customer Success"
             url: "/platform/success/"
             desc: "Case studies and customer profiles of success"
