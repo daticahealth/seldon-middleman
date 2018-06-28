@@ -23,6 +23,17 @@
     </fonts/gt-america-regular.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
     </fonts/gt-america-light.woff>;rel=preload;as=font;type=font/woff;crossorigin'''
 
+# Redirect domain aliases to primary domain
+[[redirects]]
+  from = "https://catalyze.io/*"
+  to = "https://datica.com/:splat"
+  status = 301
+
+[[redirects]]
+  from = "https://www.catalyze.io/*"
+  to = "https://www.datica.com/:splat"
+  status = 301
+
 [[redirects]]
   from = "/platform/integration"
   to = "/blog/if-its-possible-we-can-integrate-it/"
