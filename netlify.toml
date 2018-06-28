@@ -27,12 +27,12 @@
 [[redirects]]
   from = "https://catalyze.io/*"
   to = "https://datica.com/:splat"
-  status = 301!
+  status = 301
 
 [[redirects]]
   from = "https://www.catalyze.io/*"
   to = "https://www.datica.com/:splat"
-  status = 301!
+  status = 301
 
 [[redirects]]
   from = "/platform/integration"
