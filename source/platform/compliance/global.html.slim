@@ -15,6 +15,15 @@ ruby:
   header_img = 'https://images.ctfassets.net/189dvqdsjh46/6Uz1DrsKEoiEY4seeUc6C/a3a8fac46d19f7255219f95dd9aa9c35/ISS_-_northern_europe_at_night__aurora_crop.jpg'
   separator = %(<span style="opacity: 0;">, </span>)
 
+svg aria-hidden="true" data-name="checks" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style=("position: absolute; width: 0; height: 0; overflow: hidden;")
+  defs
+    symbol.svg-color--green#icon-check viewbox=("0 0 18 18")
+      title yes
+      path d=("M6.61 11.89L3.5 8.78 2.44 9.84 6.61 14l8.95-8.95L14.5 4z")
+    symbol.svg-color--red#icon-x viewbox=("0 0 18 18")
+      title no
+      path d=("M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z")
+
 section.container-color--dark-grad-blue
   .section-article.container-image--center data-interchange="[#{header_img}?w=640, small], [#{header_img}?w=800, medium], [#{header_img}?w=1600, large]"
     .row.align-center
@@ -33,43 +42,107 @@ section.section-article--med.container-gray-10
     /         h4.headline-5 = item.title
     /         = Kramdown::Document.new(item.desc).to_html
     .row.align-center
-      .columns.small-12.large-10
-        table#tablehead data-sticky-container="" width="100%" border="0"
-          thead class="sticky sticky-nav sticky-nav--secondary" data-sticky="" data-options="marginTop:3; topAnchor:tableHead;"
+      #filter-table.columns.small-12.large-10
+        .group.filter-search.input-nav.input-nav--black
+          / span class="input-nav--icon"><i class="fa fa-search"></i></span
+          input.search type="search" id="searchInput" placeholder="Filter list"
+        table width="100%" border="0"
+          thead
             tr.container-gray-3
-              th Geography
-              th Regime 
+              th.sort data-sort="place" Geography
+              th.sort data-sort="regime" Regime 
               / th 
                 span data-tooltip="" aria-haspopup="true" data-fade-in-duration="20" data-v-offset="0" title="No legal or technical obstacles" Possible?
-              th 
+              th.sort data-sort="available"
                 span data-tooltip="" aria-haspopup="true" data-fade-in-duration="20" data-v-offset="0" title="Compliant deploys are possible in this geography." Available Now?
-              th
+              th.sort data-sort="planned"
                 span data-tooltip="" aria-haspopup="true" data-fade-in-duration="20" data-v-offset="0" title="See our roadmap for more details." Planned?
-              th Availability
+              th.sort data-sort="time" Availability
               / th Description
-          tbody
+          tbody.list
             - data.views.global_compliance_posture.table.each do | locale |
               tr style="vertical-align: top;"
-                td
+                td.place
                   strong
                     = locale.geography
-                td
+                td.regime
                   = locale.regime
-                / td
+                / td.possible
                   - if locale.is_possible == true
                     = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
-                td
+                td.available
                   - if locale.is_available == true
-                    = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
-                td
+                    svg.icon-size--small
+                      title yes
+                      use.symbol-icon xlink:href="#icon-check"
+                td.planned
                   - if locale.is_planned == true
-                    = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
+                    svg.icon-size--small
+                      title yes
+                      use.symbol-icon xlink:href="#icon-check"
                   - else
-                    = inline_svg("small/icon-close", class: "icon-size--small svg-color--red")
-                td
+                    svg.icon-size--small
+                      title no
+                      use.symbol-icon xlink:href="#icon-x"
+                td.time
                   = locale.when_available
-                / td
+                / td.desc
                 /   = Kramdown::Document.new(locale.desc).to_html
                   / - if member.has_key?("regime_url")
 
 = partial "partials/snippets/product-req-bar", :locals => { :form_id => "6cpdQDL5S06YmySAKIamom" }
+
+script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"
+javascript:
+  var options = {
+    valueNames: [ 'place', 'regime', 'available', 'planned', 'time' ]
+  };
+  var tableList = new List('filter-table', options);
+
+css:
+  .sort:focus {
+    outline:none;
+  }
+  .sort:hover {
+    cursor: row-resize;
+  }
+  .sort:after {
+    display:inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    content:"";
+    position: relative;
+    top:-10px;
+    right:-5px;
+  }
+  .sort.asc:hover {
+    cursor: n-resize;
+  }
+  .sort.asc:after {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    content:"";
+    position: relative;
+    top:4px;
+    right:-5px;
+  }
+  .sort.desc:hover {
+    cursor: s-resize;
+  }
+  .sort.desc:after {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    content:"";
+    position: relative;
+    top:-4px;
+    right:-5px;
+  }

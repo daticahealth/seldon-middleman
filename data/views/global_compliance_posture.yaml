@@ -3,7 +3,7 @@
 
 # Table Schema
 
-# geography: string
+# geography: "string"
 # regime: string
 # regime_url: url
 # is_possible: boolean
@@ -14,422 +14,380 @@
 
 table:
   -
-      geography: Global
+      geography: "Global"
       regime: ISO/IEC 27000 Series
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: 1Q19
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "Global"
       regime: PCI-DSS
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: 1Q19
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "Global"
       regime: SOC 1 Type 2
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "Global"
       regime: SOC 2 Type 2
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "Global"
       regime: SOC 3 Type 2
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: true
       when_available: 2020
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "Global"
       regime: CSA Star
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: true
       when_available: 2019
-      desc: |
-        
+      # desc:
   -
-      geography: USA
+      geography: "USA"
       regime: HIPAA
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "USA"
       regime: HITRUST
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "USA"
       regime: FERPA
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "USA"
       regime: FISMA
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "USA"
       regime: FedRAMP
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "USA"
       regime: GxP
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "USA"
       regime: Shared Assessments
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: false
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "USA"
       regime: SOX
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: 2019
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "USA"
       regime: IST SP800-53
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: 1Q19
-      desc: |
-        
+      # desc:
   -
-      geography: Canada
+      geography: "Canada"
       regime: PIPEDA
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: 4Q18
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "Canada"
       regime: PIPA
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: 4Q18
-      desc: |
-        
+      # desc:
   -
-      geography: EU
+      geography: "EU"
       regime: GDPR
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: ""
+      geography: "EU"
       regime: Privacy Shield
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Germany
+      geography: "Germany"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: UK
+      geography: "UK"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: Spain
+      geography: "Spain"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Ireland
+      geography: "Ireland"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
       when_available: 2018
-      desc: |
-        
+      # desc:
   -
-      geography: Netherlands
+      geography: "Netherlands"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: France
+      geography: "France"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: 2018
-      desc: |
-        
+      # desc:
   -
-      geography: Denmark
+      geography: "Denmark"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Sweden
+      geography: "Sweden"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Norway
+      geography: "Norway"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Finland
+      geography: "Finland"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Italy
+      geography: "Italy"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Brazil
+      geography: "Brazil"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Argentina
+      geography: "Argentina"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Mexico
+      geography: "Mexico"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Israel
+      geography: "Israel"
       regime: ""
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-
+      # desc:
   -
-      geography: Saudi Arabia
+      geography: "Saudi Arabia"
       regime: ""
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: false
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: UAE / M.E.
+      geography: "UAE / M.E."
       regime: ""
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: false
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: South Korea
+      geography: "South Korea"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: China
+      geography: "China"
       regime: ""
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Singapore
+      geography: "Singapore"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: true
       is_planned: true
       when_available: 2018
-      desc: |
-        
+      # desc:
   -
-      geography: Japan
+      geography: "Japan"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: TBD
-      desc: |
-        
+      # desc:
   -
-      geography: Russia
+      geography: "Russia"
       regime: ""
       # regime_url:
       is_possible: false
       is_available: false
       is_planned: false
       when_available: ""
-      desc: |
-        
+      # desc:
   -
-      geography: Australia
+      geography: "Australia"
       regime: ""
       # regime_url:
       is_possible: true
       is_available: false
       is_planned: true
       when_available: 2019
-      desc: |
-        
+      # desc:
