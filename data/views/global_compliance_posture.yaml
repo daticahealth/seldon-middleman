@@ -1,0 +1,393 @@
+---
+# "Product Marketing and Documentation: Global Compliance Posture"
+
+# Table Schema
+
+# geography: "string"
+# regime: string
+# regime_url: url
+# is_possible: boolean
+# is_available: boolean
+# is_planned: boolean
+# when_available: string, like 1Q19
+# desc: markdown
+
+table:
+  -
+      geography: "Global"
+      regime: ISO/IEC 27000 Series
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: 1Q19
+      # desc:
+  -
+      geography: "Global"
+      regime: PCI-DSS
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: 1Q19
+      # desc:
+  -
+      geography: "Global"
+      regime: SOC 1 Type 2
+      # regime_url:
+      is_possible: true
+      is_available: true
+      is_planned: true
+      when_available: ""
+      # desc:
+  -
+      geography: "Global"
+      regime: SOC 2 Type 2
+      # regime_url:
+      is_possible: true
+      is_available: true
+      is_planned: true
+      when_available: ""
+      # desc:
+  -
+      geography: "Global"
+      regime: SOC 3 Type 2
+      # regime_url:
+      is_possible: false
+      is_available: false
+      is_planned: true
+      when_available: 2020
+      # desc:
+  -
+      geography: "Global"
+      regime: CSA Star
+      # regime_url:
+      is_possible: false
+      is_available: false
+      is_planned: true
+      when_available: 2019
+      # desc:
+  -
+      geography: "USA"
+      regime: HIPAA
+      # regime_url:
+      is_possible: true
+      is_available: true
+      is_planned: true
+      when_available: ""
+      # desc:
+  -
+      geography: "USA"
+      regime: HITRUST
+      # regime_url:
+      is_possible: true
+      is_available: true
+      is_planned: true
+      when_available: ""
+      # desc:
+  -
+      geography: "USA"
+      regime: FERPA
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "USA"
+      regime: FISMA
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "USA"
+      regime: FedRAMP
+      # regime_url:
+      is_possible: false
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "USA"
+      regime: GxP
+      # regime_url:
+      is_possible: true
+      is_available: true
+      is_planned: true
+      when_available: ""
+      # desc:
+  -
+      geography: "USA"
+      regime: Shared Assessments
+      # regime_url:
+      is_possible: false
+      is_available: false
+      is_planned: false
+      when_available: ""
+      # desc:
+  -
+      geography: "USA"
+      regime: SOX
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: 2019
+      # desc:
+  -
+      geography: "USA"
+      regime: IST SP800-53
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: 1Q19
+      # desc:
+  -
+      geography: "Canada"
+      regime: PIPEDA
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: 4Q18
+      # desc:
+  -
+      geography: "Canada"
+      regime: PIPA
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: 4Q18
+      # desc:
+  -
+      geography: "EU"
+      regime: GDPR
+      # regime_url:
+      is_possible: true
+      is_available: true
+      is_planned: true
+      when_available: ""
+      # desc:
+  -
+      geography: "EU"
+      regime: Privacy Shield
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Germany"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: true
+      is_planned: true
+      when_available: ""
+      # desc:
+  -
+      geography: "UK"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: true
+      is_planned: true
+      when_available: ""
+      # desc:
+  -
+      geography: "Spain"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Ireland"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: true
+      is_planned: true
+      when_available: 2018
+      # desc:
+  -
+      geography: "Netherlands"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "France"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: 2018
+      # desc:
+  -
+      geography: "Denmark"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Sweden"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Norway"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Finland"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Italy"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Brazil"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Argentina"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Mexico"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Israel"
+      regime: ""
+      # regime_url:
+      is_possible: false
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Saudi Arabia"
+      regime: ""
+      # regime_url:
+      is_possible: false
+      is_available: false
+      is_planned: false
+      when_available: ""
+      # desc:
+  -
+      geography: "UAE / M.E."
+      regime: ""
+      # regime_url:
+      is_possible: false
+      is_available: false
+      is_planned: false
+      when_available: ""
+      # desc:
+  -
+      geography: "South Korea"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "China"
+      regime: ""
+      # regime_url:
+      is_possible: false
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Singapore"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: true
+      is_planned: true
+      when_available: 2018
+      # desc:
+  -
+      geography: "Japan"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: TBD
+      # desc:
+  -
+      geography: "Russia"
+      regime: ""
+      # regime_url:
+      is_possible: false
+      is_available: false
+      is_planned: false
+      when_available: ""
+      # desc:
+  -
+      geography: "Australia"
+      regime: ""
+      # regime_url:
+      is_possible: true
+      is_available: false
+      is_planned: true
+      when_available: 2019
+      # desc:

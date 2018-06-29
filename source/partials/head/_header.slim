@@ -42,7 +42,7 @@ header.main-header
         .columns.small-12.medium-6.medium-order-1
           .callout.callout--dark-alt
             ul.menu.vertical.full-width
-              - data.footer_main[0].children.each do |nav_list|
+              - data.nav_all[0].children.each do |nav_list|
                 - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
                   li.group--sm
                     a.link--white href=nav_list.url title=nav_list.desc
@@ -60,7 +60,7 @@ header.main-header
               p
                 a.link--white.text-light(href="/guide/#{guide_entry.slug}/" title=guide_entry.summary)= guide_entry.title
       .row.small-up-1.medium-up-2
-        - data.footer_main[1...4].each do |nav_dropdown|
+        - data.nav_all[1...4].each do |nav_dropdown|
           - if nav_dropdown.has_key?("children")
             .column.group
               .headline-5 = nav_dropdown.title
@@ -83,13 +83,13 @@ header.main-header
             a.nav-logo--link href="/" title="Datica Home"
               svg id="datica-logo-desktop" class="nav-logo"
                 use.symbol-icon xlink:href="#datica-logo-horiz"
-          - data.footer_main[0].children.each do |nav_list|
+          - data.nav_all[0].children.each do |nav_list|
             - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
               li
                 = current_link_to nav_list.title, nav_list.url, title: nav_list.desc, class: "menu-header"
       .top-bar-right
         ul.dropdown.menu(data-dropdown-menu)
-          - data.footer_main[1...4].each do |nav_dropdown|
+          - data.nav_all[1...4].each do |nav_dropdown|
             - if nav_dropdown.has_key?("children")
               li.has-submenu
                 a.menu-header = nav_dropdown.title
@@ -101,7 +101,7 @@ header.main-header
                       = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: ''
           li
             ruby:
-              sign_link = data.footer_main[3].children[0]
+              sign_link = data.nav_all[3].children[0]
             = current_link_to sign_link.title, sign_link.url, title: sign_link.desc, class: "menu-header"
           li
             a.button(href="/contact/", title="Contact Us") Contact
