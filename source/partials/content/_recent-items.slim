@@ -17,6 +17,7 @@ ruby:
   - sorted_webinars.take(1).each do | id, webinar_entry |
     .column
       = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry }
+  / hiding podcasts for now
   /- sorted_podcasts.take(1).each do | id, podcast_entry |
   /  .column.hide-for-large-only
   /    = partial "partials/cards/featured-blog", :locals => { :post => podcast_entry, :style => "light", :size => "small", :show_type => true }
