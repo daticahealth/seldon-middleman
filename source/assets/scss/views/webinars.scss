@@ -14,12 +14,15 @@
     display: block;
     color: white;
     padding: 2rem;
-    min-height: 25rem;
+    margin-bottom: 2rem;
+    // min-height: 25rem;
     @include breakpoint (medium) {
         min-height: 15rem;
+        margin-bottom: initial;
     }
     @include breakpoint (large) {
         min-height: 20rem;
+        margin-bottom: initial;
     }
     // transition: all $timing-default ease;
     // &--hover {

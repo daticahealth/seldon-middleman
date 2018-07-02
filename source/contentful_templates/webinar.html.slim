@@ -32,55 +32,53 @@ ruby:
     end
     bg_default = "https://images.ctfassets.net/189dvqdsjh46/42ucBFmGx2ek0C8IWU6CiC/2177ddcfa81da18bd83f49c4e1232f84/webinar-bg-default.svg"
     if p.has_key?("image_thumb")
-        row_align = "align-center"
-        col_offset = nil
         thumb = p["image_thumb"]["url"]
     else
-        row_align = "align-left"
-        col_offset = "large-offset-1"
         thumb = bg_default
     end
 
 / section#top.container-gray-2.container-image-fill data-interchange="[#{thumb}, small], [#{thumb}#{image_featured_large}, large]"
-section.container-gray-11.relative
-    .absolute.z-stack-zero.container-image-fill data-interchange="[#{thumb}, small], [#{thumb}#{image_featured_large}, large]" style=";"
+.strip-bright.strip-bright--small
+.container-gray-11
+    = partial "partials/head/header", :locals => { :style => "dark" }
+    section.section-article
+        .row.align-center
+            .columns.small-12.large-6.text-center.group
+                = inline_svg("icon-webinar", class: "icon-size--large")
+                h2.headline-5.spaced-out
+                    a.link--dark href="/webinars" Datica Webinars
+        .row.align-middle.group--2x
+            .columns.small-12.medium-6.xlarge-6
+                .preview.container-gray-3.container-image-fill href="/webinars/#{p["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
+                    div.preview-subhead Datica Webinar
+                    h2.headline-3.nomargin = p["title"]
+                    p.text-italic = (p.has_key?("subhead") ? p.subhead : nil)
+                    .menu.simple
+                        li
+                            = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
+                            span = p['event_date'].strftime('%B %-d, %Y')
+                        - if p.has_key?("discovery_topic")
+                            li
+                                span.label.info.round = data.site.discover[p.discovery_topic.id].title
+            .columns.small-12.medium-6
+                - if p.has_key?("authors")
+                    aside.group
+                        .subhead--spaced.faded.headline-5.group--sm Presented by
+                        - p["authors"].each do | author |
+                            p
+                                = partial("partials/snippets/person", :locals => { :p => author })
 
-    .container-color--tint-20.faded-max.group
-        = partial "partials/head/header", :locals => { :style => "light" }
-    .row.align-middle.align-center.relative
-        .columns.small-12.medium-6.xlarge-6
-            /= partial "partials/snippets/button", :locals => { :label => "Get your free report", :url => "#report-form", :button_classes => "button success hide-for-medium-large", :icon => "icon-download", :icon_color => "black" }
-            .headline-5.subhead--spaced.faded.show-for-large
-                = (p.has_key?("subhead") ? p.subhead : "Datica Webinars")
-            h1.headline-3.text-strong
-                = p.title
-        / - if p.has_key?("image_thumb")
-        /     .columns.small-12.medium-6.xlarge-6.text-center
-        /         img.video-preview(data-interchange="[#{p.image_thumb.url}?w=640, small], [#{p.image_thumb.url}?w=800, medium]" alt="Datica Guide: #{p.title}")
-section.section-article--med.container-gray-11
-    .row
-        .columns.small-12.medium-large-6.xlarge-6.group--2x
-            - if p.has_key?("lead")
-                .lead
-                    = Kramdown::Document.new(p["lead"]).to_html
-            - if p.has_key?("desc")
-                article.group.content-dynamic
-                    = Kramdown::Document.new(p["desc"]).to_html
-            - if p.has_key?("authors")
-                / ruby:
-                    author_hed=(p["authors"].count > 1 ? 'Presented by' : 'With Datica Expert')
-                aside.group
-                    .subhead--spaced.faded.headline-5.group--sm Presented by
-                    - p["authors"].each do | author |
-                        p
-                            = partial("partials/snippets/person", :locals => { :p => author })
-        #report-form.columns.small-12.medium-large-6.xlarge-4
-            .callout.drop
-                - if p.has_key?("related_form")
-                    h3.headline-4.text-center.group Get Your #{p.related_form.title}
-                    = Kramdown::Document.new(data.site.forms[p.related_form.id].custom_form).to_html
+        .row
+            #report-form.columns.small-12.large-4.large-offset-2
+                .callout.drop
+                    - if p.has_key?("related_form")
+                        h3.headline-4.text-center.group Get Your #{p.related_form.title}
+                        = Kramdown::Document.new(data.site.forms[p.related_form.id].custom_form).to_html
+            .columns.small-12.large-5
+                - if p.has_key?("lead")
+                    .lead
+                        = Kramdown::Document.new(p["lead"]).to_html
+                - if p.has_key?("desc")
+                    article.group.content-dynamic
+                        = Kramdown::Document.new(p["desc"]).to_html
 
-- if p.has_key?("bg_image")
-    section.show-for-medium.section-article.container-image-fill data-interchange="[#{p.bg_image.url}?fit=thumb&w=1800&h=400&fm=jpg&q=50, medium]"
-- else
-    section.show-for-medium.container-gray-5.container-image--fixed data-interchange="[//images.ctfassets.net/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg?fit=thumb&w=1800&h=200&fm=jpg&q=50, large]" 
