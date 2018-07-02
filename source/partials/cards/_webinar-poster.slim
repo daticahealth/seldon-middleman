@@ -1,21 +1,21 @@
 ruby:
     bg_default = "https://images.ctfassets.net/189dvqdsjh46/42ucBFmGx2ek0C8IWU6CiC/2177ddcfa81da18bd83f49c4e1232f84/webinar-bg-default.svg"
-    if webinar_entry.has_key?("image_thumb")
-        thumb = webinar_entry.image_thumb.url
+    if entry.has_key?("image_thumb")
+        thumb = entry.image_thumb.url
     else
         thumb = bg_default
+    end
 
-a.preview.container-gray-3.container-image-fill href="/webinars/#{webinar_entry["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
+a.preview.container-gray-3.container-image-fill href="/webinars/#{entry["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
     div.preview-subhead Datica Webinar
     .preview-title
-        h2.headline-3 = webinar_entry["title"]
+        h2.headline-3 = entry["title"]
     .menu.simple
         li
             = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
-            span = webinar_entry['event_date'].strftime('%B %-d, %Y')
-        - if webinar_entry.has_key?("discovery_topic")
+            span = entry['event_date'].strftime('%B %-d, %Y')
+        - if entry.has_key?("discovery_topic")
             li
-                span.label.info.round = data.site.discover[webinar_entry.discovery_topic.id].title
-
+                span.label.info.round = data.site.discover[entry.discovery_topic.id].title
     .preview-cta.headline-5.spaced-out.show-for-large Register now
     = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")

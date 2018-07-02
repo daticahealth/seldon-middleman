@@ -4,7 +4,6 @@ summary: "In-depth presenations on the latest compliance challenges"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, kubernetes"
 layout: basic
-customCSS: webinars
 ---
 ruby:
     today = DateTime.now
@@ -28,25 +27,9 @@ ruby:
                 h2.headline-2 Datica Webinars
                 / p.lead Authoritative webinars Written By Industry Experts
         - sorted_entries.take(1).each do | id, webinar_entry |
-            - if webinar_entry.has_key?("image_thumb") ? thumb = webinar_entry.image_thumb.url : thumb = bg_default
             .row.align-center
-                - unless thumb == nil
-                    .columns.small-12.large-6
-                        a.preview.group.container-gray-3.container-image-fill href="/webinars/#{webinar_entry["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
-                            div.preview-subhead Datica Webinar
-                            .preview-title
-                                h2.headline-3 = webinar_entry["title"]
-                            .menu.simple
-                                li
-                                    = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
-                                    span = webinar_entry['event_date'].strftime('%B %-d, %Y')
-                                - if webinar_entry.has_key?("discovery_topic")
-                                    li
-                                        span.label.info.round = data.site.discover[webinar_entry.discovery_topic.id].title
-
-                            .preview-cta.headline-5.spaced-out.show-for-large Register now
-                            = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
-                            / img.thumbnail.float-left(src="#{thumb}?fit=scale&w=640" alt="webinar Preview")
+                .columns.small-12.large-6
+                    = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry }
                 .columns.small-12.large-6
                     .lead
                         = Kramdown::Document.new(webinar_entry["summary"]).to_html
@@ -61,25 +44,10 @@ section.section-article.container-gray-11
         .columns.small-12.text-center
             h2.headline-5.spaced-out Archived Webinars
     - sorted_entries[1...5].each do | id, webinar_entry |
-        - if webinar_entry.has_key?("image_thumb") ? thumb = webinar_entry.image_thumb.url : thumb = bg_default
         .row.align-center.group
-            - unless thumb == nil
-                .columns.small-12.medium-8.large-5
-                    a.preview.container-gray-3.container-image-fill href="/webinars/#{webinar_entry["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
-                        div.preview-subhead Datica Webinar
-                        .preview-title
-                            h2.headline-3 = webinar_entry["title"]
-                        .menu.simple
-                            li
-                                = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
-                                span = webinar_entry['event_date'].strftime('%B %-d, %Y')
-                            - if webinar_entry.has_key?("discovery_topic")
-                                li
-                                    span.label.info.round = data.site.discover[webinar_entry.discovery_topic.id].title
+            .columns.small-12.medium-8.large-5
+                = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry }
 
-                        .preview-cta.headline-5.spaced-out.show-for-large Register now
-                        = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
-                        / img.thumbnail.float-left(src="#{thumb}?fit=scale&w=640" alt="webinar Preview")
             .columns.small-12.medium-4.large-5
                 = Kramdown::Document.new(webinar_entry["summary"]).to_html
                 - if webinar_entry.has_key?("authors")
@@ -89,9 +57,33 @@ section.section-article.container-gray-11
                             p
                                 = partial("partials/snippets/person-small", :locals => { :p => author })
 
-    .row
-        .columns.small-12.group
+    .row.pad
+        .columns.small-12.text-center
             = partial "partials/snippets/button", :locals => { :label => "Learn more at the Datica Academy", :url => "/academy/", :button_classes => "button", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "white" }
+
+/ spat this out manually, rather than 'recent' partial, because don't want webinars down here.
+ruby:
+  sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+  sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
+  sorted_academy = data.site.academy.to_a.sort_by{ |id, academy| academy['pub_date'] }.reverse!
+  sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse!
+  sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
+section.container-gray-10.section-article
+    .group.text-center.full-width
+        h3.headline-3 <strong>Recently</strong> at Datica
+    .row.full-width.align-center.small-up-1.medium-up-2.large-up-3.xlarge-up-4
+        - sorted_guides.take(1).each do | id, guide_entry |
+            .column
+                = partial "partials/cards/card-report", :locals => { :post => guide_entry, :style => "dark", :size => "small" }
+        - sorted_posts.take(1).each do | id, blog_entry |
+            .column
+                = partial "partials/cards/featured-blog", :locals => { :post => blog_entry, :style => "light", :size => "small", :show_type => true }
+        - sorted_podcasts.take(1).each do | id, podcast_entry |
+            .column.hide-for-large-only
+                = partial "partials/cards/featured-blog", :locals => { :post => podcast_entry, :style => "light", :size => "small", :show_type => true }
+        - sorted_reports.take(1).each do | id, report_entry |
+            .column
+                = partial "partials/cards/card-report", :locals => { :post => report_entry, :style => "dark", :size => "small" }
 
     /  == cards
     / section.section-article.container-gray-11
