@@ -69,9 +69,9 @@ ruby:
 
         .row
             #report-form.columns.small-12.large-4.large-offset-2
-                .callout.drop
-                    - if p.has_key?("related_form")
-                        h3.headline-4.text-center.group Get Your #{p.related_form.title}
+                - if p.has_key?("related_form")
+                    .callout.drop
+                        h3.headline-4.text-center.group Watch the webinar
                         = Kramdown::Document.new(data.site.forms[p.related_form.id].custom_form).to_html
             .columns.small-12.large-5
                 - if p.has_key?("lead")
