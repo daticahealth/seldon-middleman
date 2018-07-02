@@ -154,6 +154,9 @@
     &-serif {
         font-family: $font_serif;
     }
+    &-italic {
+        font-style: italic;
+    }
 }
 
 // normally containers set child colors, when possible; when not, use these link color overrides.
