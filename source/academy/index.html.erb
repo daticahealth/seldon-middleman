@@ -64,7 +64,7 @@ current_page.data.date = today.strftime('%B %-d, %Y')
         <div class="columns small-12 medium-6">
             <h3 class="headline-5">Search the Academy</h3>
             <div id="academySearch" class="group filter-search input-nav input-nav--black">
-                <span class="input-nav--icon"><i class="fa fa-search"></i></span>
+                <%= inline_svg("small/icon-filter-list", class: "input-nav--icon") %>
                 <input type="search" id="searchInput" onkeyup="filterList()" placeholder="Search in this list (hipaa, ehr, hitrust, etc.)">
             </div>
         </div>
