@@ -66,13 +66,15 @@ ruby:
                             - p["authors"].each do | author |
                                 p
                                     = partial("partials/snippets/person", :locals => { :p => author, :classes => "person-light" })
+                    .preview-cta.headline-5.spaced-out.show-for-large Register to watch
+                    = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
                 #webinar-play.hide
                     - if p.has_key?("video_embed")
                         = Kramdown::Document.new(data.site.forms[p.video_embed.id].custom_form).to_html
             / .columns.small-12.large-6
 
         .row.align-center
-            .columns.small-12.large-5
+            .columns.small-12.large-4
                 #webinar-title.hide
                     h2.headline-4 = p["title"]
                     - if p.has_key?("authors")
@@ -86,7 +88,7 @@ ruby:
                         .callout.drop
                             h3.headline-4.text-center.group Watch the webinar
                             = Kramdown::Document.new(data.site.forms[p.related_form.id].custom_form).to_html
-            .columns.small-12.large-5
+            .columns.small-12.large-6
                 - if p.has_key?("lead")
                     .lead
                         = Kramdown::Document.new(p["lead"]).to_html
