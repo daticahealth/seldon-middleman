@@ -172,6 +172,14 @@ blockquote + .media-object, .blockquote-info { // line person/info up with quote
         }
     }
 }
+.person-light {
+    & > * {
+        color: white;
+    }
+    a {
+        @extend .link--white;
+    }
+}
 
 .people-group { // a container for people, horiz by default, stacks on small
     @include flex;

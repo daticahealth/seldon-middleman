@@ -47,34 +47,40 @@ ruby:
                 = inline_svg("icon-webinar", class: "icon-size--large")
                 h2.headline-5.spaced-out
                     a.link--dark href="/webinars" Datica Webinars
-        .row.align-middle.group
-            .columns.small-12.large-6.group
+        .row.align-center.group
+            .columns.small-12.large-10.group
                 #webinar-preview.hide.preview.container-gray-3.container-image-fill href="/webinars/#{p["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
                     div.preview-subhead Datica Webinar
                     h2.headline-3.nomargin = p["title"]
-                    p.text-italic = (p.has_key?("subhead") ? p.subhead : nil)
-                    .menu.simple
+                    p.lead = (p.has_key?("subhead") ? p.subhead : nil)
+                    .menu.simple.group
                         li
                             = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
                             span = p['event_date'].strftime('%B %-d, %Y')
                         - if p.has_key?("discovery_topic")
                             li
                                 span.label.info.round = data.site.discover[p.discovery_topic.id].title
+                    - if p.has_key?("authors")
+                        aside.group
+                            .subhead--spaced.faded.headline-6.group--sm Presented by
+                            - p["authors"].each do | author |
+                                p
+                                    = partial("partials/snippets/person", :locals => { :p => author, :classes => "person-light" })
                 #webinar-play.hide
                     - if p.has_key?("video_embed")
                         = Kramdown::Document.new(data.site.forms[p.video_embed.id].custom_form).to_html
+            / .columns.small-12.large-6
 
-            .columns.small-12.large-6
-                - if p.has_key?("authors")
-                    aside.group
-                        h2#webinar-title.hide.headline-4 = p["title"]
-                        .subhead--spaced.faded.headline-6.group--sm Presented by
-                        - p["authors"].each do | author |
-                            p
-                                = partial("partials/snippets/person", :locals => { :p => author })
-
-        .row
-            .columns.small-12.large-4.large-offset-2
+        .row.align-center
+            .columns.small-12.large-5
+                #webinar-title.hide
+                    h2.headline-4 = p["title"]
+                    - if p.has_key?("authors")
+                        aside
+                            .subhead--spaced.faded.headline-6.group--sm Presented by
+                            - p["authors"].each do | author |
+                                p
+                                    = partial("partials/snippets/person", :locals => { :p => author, :classes => "" })
                 - if p.has_key?("related_form")
                     #report-form.hide
                         .callout.drop

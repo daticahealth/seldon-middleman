@@ -6,7 +6,7 @@ ruby:
         thumb = bg_default
     end
 
-a.preview.container-gray-3.container-image-fill href="/webinars/#{entry["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]" data-webinar = entry._meta.id
+a.preview.container-gray-3.container-image-fill href="/webinars/#{entry["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]" data-webinar-id = entry._meta.id
     div.preview-subhead Datica Webinar
     .preview-title
         h2.headline-3 = entry["title"]
@@ -17,5 +17,5 @@ a.preview.container-gray-3.container-image-fill href="/webinars/#{entry["slug"]}
         - if entry.has_key?("discovery_topic")
             li
                 span.label.info.round = data.site.discover[entry.discovery_topic.id].title
-    .preview-cta.headline-5.spaced-out.show-for-large Watch now
+    .preview-cta.headline-5.spaced-out.show-for-large Register now
     = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
