@@ -1,6 +1,7 @@
 ---
 layout: basic
 ogType: article
+customJS: "/public/js/webinar.js"
 ---
 ruby:
     p = locals[:item]
@@ -40,7 +41,7 @@ ruby:
 .strip-bright.strip-bright--small
 .container-gray-11
     = partial "partials/head/header", :locals => { :style => "dark" }
-    section.section-article
+    section#webinar.section-article data-webinar = p.related_form.id
         .row.align-center
             .columns.small-12.large-6.text-center.group
                 = inline_svg("icon-webinar", class: "icon-size--large")
@@ -80,4 +81,3 @@ ruby:
                 - if p.has_key?("desc")
                     article.group.content-dynamic
                         = Kramdown::Document.new(p["desc"]).to_html
-
