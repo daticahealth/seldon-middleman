@@ -47,9 +47,9 @@ ruby:
                 = inline_svg("icon-webinar", class: "icon-size--large")
                 h2.headline-5.spaced-out
                     a.link--dark href="/webinars" Datica Webinars
-        .row.align-middle.group--2x
-            .columns.small-12.medium-6.xlarge-6
-                #webinar-preview.preview.container-gray-3.container-image-fill href="/webinars/#{p["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
+        .row.align-middle.group
+            .columns.small-12.large-6.group
+                #webinar-preview.hide.preview.container-gray-3.container-image-fill href="/webinars/#{p["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
                     div.preview-subhead Datica Webinar
                     h2.headline-3.nomargin = p["title"]
                     p.text-italic = (p.has_key?("subhead") ? p.subhead : nil)
@@ -61,12 +61,14 @@ ruby:
                             li
                                 span.label.info.round = data.site.discover[p.discovery_topic.id].title
                 #webinar-play.hide
-                    h2 Play this thing
+                    - if p.has_key?("video_embed")
+                        = Kramdown::Document.new(data.site.forms[p.video_embed.id].custom_form).to_html
 
-            .columns.small-12.medium-6
+            .columns.small-12.large-6
                 - if p.has_key?("authors")
                     aside.group
-                        .subhead--spaced.faded.headline-5.group--sm Presented by
+                        h2#webinar-title.hide.headline-4 = p["title"]
+                        .subhead--spaced.faded.headline-6.group--sm Presented by
                         - p["authors"].each do | author |
                             p
                                 = partial("partials/snippets/person", :locals => { :p => author })
@@ -74,7 +76,7 @@ ruby:
         .row
             .columns.small-12.large-4.large-offset-2
                 - if p.has_key?("related_form")
-                    #report-form
+                    #report-form.hide
                         .callout.drop
                             h3.headline-4.text-center.group Watch the webinar
                             = Kramdown::Document.new(data.site.forms[p.related_form.id].custom_form).to_html
