@@ -53,7 +53,7 @@ end
             <% end %>
         </<%= tag_1 %>>
          <% if p.has_key?("role") %>
-            <<%= tag_2 %> class="person-title"><%= p["role"] %></<%= tag_2 %>>
+            <<%= tag_2 %> class="person-title"><% if p.person_type == "Datica Alumni" %>Datica Alumni — Former <% end %><%= p["role"] %></<%= tag_2 %>>
         <% end %>
     </div>
 </div>

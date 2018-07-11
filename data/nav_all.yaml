@@ -48,6 +48,10 @@
             url: "/innovation/"
             desc: "Home of the Healthcare Innovators Podcast, In-depth Reports, and More"
         -
+            title: "Webinars"
+            url: "/webinars/"
+            desc: "Datica webinars covering compliance topics in depth."
+        -
             title: "Datica Academy"
             url: "/academy/"
             desc: "The definitive resource for those looking to learn about compliance and interoperability"

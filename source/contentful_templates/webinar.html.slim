@@ -1,0 +1,97 @@
+---
+layout: basic
+ogType: article
+customJS: "/public/js/webinar.js"
+---
+ruby:
+    p = locals[:item]
+    current_page.data.title = p["title"] + " | Datica Webinars"
+    current_page.data.summary = safe_summary(p.summary)
+    if p.has_key?("tags")
+        current_page.data.tags = get_tag_list(p["tags"])
+    else
+        current_page.data.tags = "healthcare, blog, IT"
+    end
+    if p.has_key?("author")
+        current_page.data.author = p["author"]["fullname"]
+    else
+        current_page.data.author = "Datica, Inc."
+    end
+    if p.has_key?("event_date")
+        current_page.data.date = p['event_date'].strftime('%B %-d, %Y')
+    else
+        today = DateTime.now
+        current_page.data.date = today.strftime('%B %-d, %Y')
+    end
+    if p.has_key?("share_image")
+        current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_size_small
+    elsif p.has_key?("image_thumb")
+        current_page.data.share_image = cf_asset_protocol + p["image_thumb"]["url"] + image_size_small
+    else
+        current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/51Kf8PEelGioY6qsQmAkA4/53f2e5ccb00ec3f9a3e6458faded319b/webinar-share.jpg" + image_size_small
+    end
+    bg_default = "https://images.ctfassets.net/189dvqdsjh46/42ucBFmGx2ek0C8IWU6CiC/2177ddcfa81da18bd83f49c4e1232f84/webinar-bg-default.svg"
+    if p.has_key?("image_thumb")
+        thumb = p["image_thumb"]["url"]
+    else
+        thumb = bg_default
+    end
+
+/ section#top.container-gray-2.container-image-fill data-interchange="[#{thumb}, small], [#{thumb}#{image_featured_large}, large]"
+.strip-bright.strip-bright--small
+.container-gray-11
+    = partial "partials/head/header", :locals => { :style => "dark" }
+    section#webinar.section-article data-webinar = p._meta.id
+        .row.align-center
+            .columns.small-12.large-6.text-center.group
+                = inline_svg("icon-webinar", class: "icon-size--large")
+                h2.headline-5.spaced-out
+                    a.link--dark href="/webinars" Datica Webinars
+        .row.align-center.group
+            .columns.small-12.large-10.group
+                #webinar-preview.hide.preview.container-gray-3.container-image-fill href="/webinars/#{p["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
+                    div.preview-subhead Datica Webinar
+                    h2.headline-3.nomargin = p["title"]
+                    p.lead = (p.has_key?("subhead") ? p.subhead : nil)
+                    .menu.simple.group
+                        li
+                            = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
+                            span = p['event_date'].strftime('%B %-d, %Y')
+                        - if p.has_key?("discovery_topic")
+                            li
+                                span.label.info.round = data.site.discover[p.discovery_topic.id].title
+                    - if p.has_key?("authors")
+                        aside.group
+                            .subhead--spaced.faded.headline-6.group--sm Presented by
+                            - p["authors"].each do | author |
+                                p
+                                    = partial("partials/snippets/person", :locals => { :p => author, :classes => "person-light" })
+                    .preview-cta.headline-5.spaced-out.show-for-large Register to watch
+                    = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
+                #webinar-play.hide
+                    - if p.has_key?("video_embed")
+                        = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
+            / .columns.small-12.large-6
+
+        .row.align-center
+            .columns.small-12.large-4
+                #webinar-title.hide
+                    h2.headline-4 = p["title"]
+                    - if p.has_key?("authors")
+                        aside
+                            .subhead--spaced.faded.headline-6.group--sm Presented by
+                            - p["authors"].each do | author |
+                                p
+                                    = partial("partials/snippets/person", :locals => { :p => author, :classes => "" })
+                - if p.has_key?("related_form")
+                    #report-form.hide
+                        .callout.drop
+                            h3.headline-4.text-center.group Watch the webinar
+                            = Kramdown::Document.new(data.site.forms[p.related_form.id].custom_form).to_html
+            .columns.small-12.large-6
+                - if p.has_key?("lead")
+                    .lead
+                        = Kramdown::Document.new(p["lead"]).to_html
+                - if p.has_key?("desc")
+                    article.group.content-dynamic
+                        = Kramdown::Document.new(p["desc"]).to_html
