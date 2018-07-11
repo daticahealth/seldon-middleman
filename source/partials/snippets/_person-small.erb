@@ -6,6 +6,6 @@
         <h4 class="person-name">
             <%= p["fullname"] %>
         </h4>
-        <p class="person-title"><%= p["role"] %></p>
+        <p class="person-title"><% if p.person_type == "Datica Alumni" %>Datica Alumni — Former <% end %><%= p["role"] %></p>
     </div>
 </div>
