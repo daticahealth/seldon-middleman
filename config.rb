@@ -212,6 +212,7 @@ activate :contentful do |f|
         services: 'services',
         spotlights: 'spotlights',
         tags: 'tags',
+        videos: 'videos',
         webinars: 'webinars'
     }
 end
