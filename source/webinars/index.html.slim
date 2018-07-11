@@ -11,7 +11,6 @@ ruby:
     current_page.data.date = today.strftime('%B %-d, %Y')
     sorted_entries = data.site.webinars.to_a.sort_by{ |id, webinar_entry| webinar_entry['event_date'] }.reverse!
     current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/51Kf8PEelGioY6qsQmAkA4/53f2e5ccb00ec3f9a3e6458faded319b/webinar-share.jpg" + image_size_small
-    # bg_default = "https://images.ctfassets.net/189dvqdsjh46/6lqIxPcZY4yuAMaEA4GwE4/3599f800a33d3aaa8876ab7d0c6b1ec7/webinar-bg-default.png?w=1000&fm=jpg" + image_size_small
     bg_default = "https://images.ctfassets.net/189dvqdsjh46/42ucBFmGx2ek0C8IWU6CiC/2177ddcfa81da18bd83f49c4e1232f84/webinar-bg-default.svg"
 
 .container-gray-10
@@ -24,7 +23,6 @@ ruby:
                 = inline_svg("icon-webinar", class: "icon-size--large")
                 / h3.headline-5.spaced-out
                     / = inline_svg("small/icon-book-fill", class: "icon-inline icon-left")
-                    | Datica Webinars
                 h2.headline-2 Datica Webinars
                 / p.lead Authoritative webinars Written By Industry Experts
         - sorted_entries.take(1).each do | id, webinar_entry |
@@ -61,7 +59,6 @@ section.section-article.container-gray-11
     .row.pad
         .columns.small-12.text-center
             = partial "partials/snippets/button", :locals => { :label => "Learn more at the Datica Academy", :url => "/academy/", :button_classes => "button", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "white" }
-
 / spat this out manually, rather than 'recent' partial, because don't want webinars down here.
 ruby:
   sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
@@ -85,30 +82,4 @@ section.container-gray-10.section-article
         - sorted_reports.take(1).each do | id, report_entry |
             .column
                 = partial "partials/cards/card-report", :locals => { :post => report_entry, :style => "dark", :size => "small" }
-
-    /  == cards
-    / section.section-article.container-gray-11
-        .row.align-center.group
-            .columns.small-12.text-center
-                h2.headline-5.spaced-out Archived Webinars
-        .row.align-center.group.small-up-1.medium-up-2.xlarge-up-3
-            - sorted_entries[1...4].each do | id, webinar_entry |
-                - if webinar_entry.has_key?("image_thumb") ? thumb = webinar_entry.image_thumb.url : thumb = bg_default
-                .column
-                    .card.drop
-                        .card-section.container-gray-3.container-image-fill href="/webinars/#{webinar_entry["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
-                            .preview-title
-                                h3.headline-4.text-shadow = webinar_entry["title"]
-                                .menu.simple.margin-bottom-small.text--white.text-shadow
-                                    = partial "partials/cards/entry-meta", :locals => { :entry => webinar_entry }
-                        .card-section.text-small 
-                            = Kramdown::Document.new(webinar_entry["summary"]).to_html
-                            - if webinar_entry.has_key?("authors")
-                                aside.group
-                                    .pub-date.spaced-out Presented by
-                                    - webinar_entry["authors"].each do | author |
-                                        p
-                                            = partial("partials/snippets/person-small", :locals => { :p => author })
-                            = partial "partials/snippets/button", :locals => { :label => "Watch Webinar", :url => "/webinars/#{webinar_entry["slug"]}", :button_classes => "button hollow", :icon => "icon-webinar-sm", :icon_align => "left" }
-
 
