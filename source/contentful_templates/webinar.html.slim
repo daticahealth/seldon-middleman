@@ -37,7 +37,6 @@ ruby:
         thumb = bg_default
     end
 
-/ section#top.container-gray-2.container-image-fill data-interchange="[#{thumb}, small], [#{thumb}#{image_featured_large}, large]"
 .strip-bright.strip-bright--small
 .container-gray-11
     = partial "partials/head/header", :locals => { :style => "dark" }
@@ -71,7 +70,6 @@ ruby:
                 #webinar-play.hide
                     - if p.has_key?("video_embed")
                         = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
-            / .columns.small-12.large-6
 
         .row.align-center
             .columns.small-12.large-4
