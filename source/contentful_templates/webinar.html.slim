@@ -69,6 +69,8 @@ ruby:
                     = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
                 #webinar-play.hide
                     - if p.has_key?("video_embed")
+                        / extra check if needed
+                        / - if data.site.videos[p.video_embed.id].has_key?("custom_form")
                         = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
 
         .row.align-center
