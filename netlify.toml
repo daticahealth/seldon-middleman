@@ -36,15 +36,20 @@
   status = 301
   force = true
 
-# [[redirects]]
-#   from = "/platform/integration"
-#   to = "/blog/if-its-possible-we-can-integrate-it/"
-#   status = 301
+[[redirects]]
+  from = "/platform/*"
+  to = "/products/:splat"
+  status = 301
 
-# [[redirects]]
-#   from = "/integration"
-#   to = "/blog/if-its-possible-we-can-integrate-it/"
-#   status = 301
+[[redirects]]
+  from = "/integration/"
+  to = "/products/integration/"
+  status = 301
+
+[[redirects]]
+  from = "/managed-integration/"
+  to = "/products/integration/"
+  status = 301
 
 [[redirects]]
   from = "support.catalyze.io"
@@ -67,23 +72,23 @@
   status = 301
 
 [[redirects]]
-  from = "/platform/technology"
-  to = "/platform/compliance"
+  from = "/products/technology"
+  to = "/products/compliance"
   status = 301
 
 [[redirects]]
   from = "/products"
-  to = "/platform"
+  to = "/products"
   status = 301
 
 [[redirects]]
   from = "/product"
-  to = "/platform"
+  to = "/products"
   status = 301
 
 [[redirects]]
   from = "/customers/*"
-  to = "/platform/success"
+  to = "/products/success"
   status = 301
 
 [[redirects]]
@@ -103,7 +108,7 @@
 
 [[redirects]]
   from = "/why"
-  to = "/platform"
+  to = "/products"
   status = 301
 
 [[redirects]]
@@ -118,27 +123,22 @@
 
 [[redirects]]
   from = "/stratum"
-  to = "/platform"
+  to = "/products"
   status = 301
 
 [[redirects]]
   from = "/compliant-cloud"
-  to = "/platform"
-  status = 301
-
-[[redirects]]
-  from = "/managed-integration"
-  to = "/blog/if-its-possible-we-can-integrate-it/"
+  to = "/products"
   status = 301
 
 [[redirects]]
   from = "/proof"
-  to = "/platform/success"
+  to = "/products/success"
   status = 301
 
 [[redirects]]
   from = "/compliance"
-  to = "/platform/compliance"
+  to = "/products/compliance"
   status = 301
 
 [[redirects]]
@@ -232,7 +232,7 @@
 
 [[redirects]]
   from = "/compliance/hitrust"
-  to = "/platform/compliance/#compliance-hitrust"
+  to = "/products/compliance/#compliance-hitrust"
   status = 301
 
 [[redirects]]
