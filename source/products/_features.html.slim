@@ -31,7 +31,7 @@ section#tech-features.section-article.container-gray-11.container-image--fixed(d
 
           .menu.button-cluster.align-center
             = partial "partials/snippets/button", :locals => { :label => "See our Roadmap", :title => "View Platform pricing", :url => "roadmap", :button_classes => "button hollow", :item_id => "cta_top_pricing", :icon => "icon-map" }
-            = partial "partials/snippets/button", :locals => { :label => "Explore Compliance", :title => "Explore Compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :item_id => "top-tech" }
+            = partial "partials/snippets/button", :locals => { :label => "Explore Compliance", :title => "Explore Compliance", :url => "/products/compliance", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :item_id => "top-tech" }
 
   - ordered_feature_categories = data.site.featureCategories.to_a.sort_by{ |id, featureCat| featureCat['sort_order'] }
   - ordered_feature_categories.each do | id, featureCat |
@@ -120,7 +120,7 @@ aside#ctaBottom.container-color--dark-grad-blue
       .columns.small-6.large-4.text-right
         = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
       .columns.small-6.large-6.text-left
-        = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/platform/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
+        = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/products/success", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
 
 section.section-article.container-color--gray-light
   .row
@@ -189,4 +189,4 @@ section#faq-tech.section-article
           dd= Kramdown::Document.new(item["answer"]).to_html
       hr.divider/
       p.lead Get started with the Datica platform today
-      = partial "partials/snippets/button", :locals => { :label => "Learn about integrations", :url => "/platform/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }
+      = partial "partials/snippets/button", :locals => { :label => "Learn about integrations", :url => "/products/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }

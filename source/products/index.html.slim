@@ -33,7 +33,7 @@ priority: "0.9"
         li <strong>Key Infrastructure:</strong> Datica’s public key infrastructure ensures that your data is protected and can only be accessed by those with appropriate permission. You have the option to either provide your own Root CA, or rely on Datica to create and store one for you. Once the Root CA is established, Datica creates an intermediate CA. This intermediate CA is used for generating all cluster specific certs.
     .menu.button-cluster.align-center
       = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
-      = partial "partials/snippets/button", :locals => { :label => "Explore Compliance", :title => "Explore Compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :item_id => "top-tech" }
+      = partial "partials/snippets/button", :locals => { :label => "Explore Compliance", :title => "Explore Compliance", :url => "/products/compliance", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :item_id => "top-tech" }
     .platform-art-1.container-image--top(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/16drHKsNBa6qqEWGim0QmS/cc517223d26050d05659db9f5fab8785/k8-arch-diagram-1-dark.png, medium]")
 
 // section#platform-customers.section-article.container-gray-12
@@ -43,7 +43,7 @@ priority: "0.9"
 //       .logo-cloud.group
 //         - data.views.home.customers.each do |logo|
 //           img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["file"]}.png" /
-//       = partial "partials/snippets/button", :locals => { :label => "Read Customer Success Stories", :title => "View Platform pricing", :url => "/platform/success", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "customers" }
+//       = partial "partials/snippets/button", :locals => { :label => "Read Customer Success Stories", :title => "View Platform pricing", :url => "/products/success", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "customers" }
 //   .row
 //     .columns.small-12
 //       h3.headline-3.group.text-center Build <strong>Breakthrough</strong> Compliant Apps
@@ -127,7 +127,7 @@ section#setup.section-article.container-gray-2
 //         .columns.small-12.medium-4.medium-large-4
 //           img.logo-size--xlarge.group.show-for-medium alt=("apn tech") src="https://d1.awsstatic.com/partner-network/APN-Advanced-Technology-Badge.d737de9106285590a46875b8805247f22f8433ba.png"
 //           .group
-//             = partial "partials/snippets/button",  :locals => { :label => "Explore Datica on AWS", :title => "Explore Datica on AWS", :url => "/platform/aws", :button_classes => "button button--light group", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "aws" }
+//             = partial "partials/snippets/button",  :locals => { :label => "Explore Datica on AWS", :title => "Explore Datica on AWS", :url => "/products/aws", :button_classes => "button button--light group", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "aws" }
 
 // section.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
 //   = partial "partials/section-promos/hcms-screenshot"
@@ -141,4 +141,4 @@ aside#ctaBottom.container-color--dark-grad-blue
       .columns.small-6.large-4.text-right
         = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_bottom_pricing" }
       .columns.small-6.large-6.text-left
-        = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "cta_bottom_tech" }
+        = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/products/compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "cta_bottom_tech" }

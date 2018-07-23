@@ -61,7 +61,7 @@ section#tech-top.section-article.container-color--dark-grad-blue.container-image
           <script src="https://fast.wistia.com/embed/medias/kbhkf6h7u9.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_kbhkf6h7u9 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
       .row.align-center
         .columns.small-12.large-6.text-center
-          = partial "partials/snippets/button", :locals => { :label => "Next: see how Datica solves compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-compliance-checklist", :icon_color => "black", :icon_align => "left" }
+          = partial "partials/snippets/button", :locals => { :label => "Next: see how Datica solves compliance", :url => "/products/compliance", :button_classes => "button button--light", :icon => "icon-compliance-checklist", :icon_color => "black", :icon_align => "left" }
 
 section#tech-features.section-article.container-gray-12
   .row.align-center
@@ -157,7 +157,7 @@ aside#ctaBottom.container-color--dark-grad-blue
       .columns.small-12.large-4.text-right
         = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
       .columns.small-12.large-6
-        = partial "partials/snippets/button", :locals => { :label => "See how Datica solves Compliance", :title => "See how Datica solves Compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
+        = partial "partials/snippets/button", :locals => { :label => "See how Datica solves Compliance", :title => "See how Datica solves Compliance", :url => "/products/compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
 
 section.section-article.container-color--gray-light
   .row
@@ -226,4 +226,4 @@ section#faq-tech.section-article
           dd= Kramdown::Document.new(item["answer"]).to_html
       hr.divider/
       p.lead Get started with the Datica platform today
-      = partial "partials/snippets/button", :locals => { :label => "Learn about integrations", :url => "/platform/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }
+      = partial "partials/snippets/button", :locals => { :label => "Learn about integrations", :url => "/products/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }
