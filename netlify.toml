@@ -23,6 +23,24 @@
     </fonts/gt-america-regular.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
     </fonts/gt-america-light.woff>;rel=preload;as=font;type=font/woff;crossorigin'''
 
+[[redirects]]
+  from = "/products/cks/"
+  to = "/products/compliant-kubernetes-service/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/cmi/"
+  to = "/products/compliant-managed-integration/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/ccms/"
+  to = "/products/cloud-compliance-management-system/"
+  status = 301
+  force = true
+
 # Redirect domain aliases to primary domain
 [[redirects]]
   from = "https://catalyze.io/*"
