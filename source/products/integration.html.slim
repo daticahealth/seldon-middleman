@@ -1,6 +1,6 @@
 ---
-title: "Integration"
-summary: "Datica Data Integration accelerates the integration process to warp speed, while reducing costs."
+title: "Compliant Managed Integration (CMI)"
+summary: "The complete toolset to handle compliant, scalable, secure data exchange with any EHR or clinical system."
 navTitle: "Integration"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
@@ -16,14 +16,211 @@ ctaCustom: true
 ---
 - current_page.data.share_image = image_share_platform
 
-.container-color--dark-grad-blue
-  section#platform-top.section-article.position-relative(style="overflow: hidden;")
-    .row
-      .columns.small-12
-        h1.headline-1 Compliance + Kubernetes<sup>&reg;</sup> = Datica
-    .row.group
-      .columns.small-12.medium-8.large-6.xlarge-6
-        p.lead= current_page.data.summary
+aside.hide-for-large.pad--sm.container-color--blue-alt
+  .row.align-middle.align-center
+    .columns.small-6.medium-4
+      = partial "partials/snippets/button", :locals => { :label => "Compliance", :title => "View Platform pricing", :url => "/products/compliance", :button_classes => "button hollow-inverted expanded small nomargin", :item_id => "cta_top_compliance" }
+    .columns.small-6.medium-4
+      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button button--light expanded small nomargin", :item_id => "cta_top_pricing" }
+
+.container-color--gray-light
+  section.section-article
+    .row.align-center
+      .columns.small-12.medium-12.large-7.text-center.group
+        h1.headline-3
+          | The complete toolset to handle
+          strong compliant, scalable, secure data exchange
+          | with any EHR or clinical system
+    .row.align-middle
+      .columns.small-12.medium-12.large-5
+        .callout.drop
+          p
+            strong Full-Stack
+            | Data Integration
+          p The mature integration stack considers HIPAA compliance, data security, redundant backups, and no reliance on blackbox proprietary APIs as core ingredients to a successful integration strategy.
+          p Don't get caught with infrastructure gotchas as you go from zero-to-one or if you are preparing to scale to hundreds of integrations. Instead, get Datica CMI. Included in our data integration application:
+            strong Instead, get Datica.
+          p
+            strong Included in our data integration application:
+          ul
+            li Mirth interface engine
+            li Postgres database
+            li Highly Available and redundant configuration
+            li HITRUST CSF Certified cloud infrastructure
+            li Compliant logging and auditing of activity
+            li REST API endpoints mapped to all major data standards
+            li VPN setup for secure connectivity
+      .columns.small-12.medium-7
+        img alt=("Platform Integration") data-interchange="[/public/img/platform-integration-1x.png, small], [/public/img/platform-integration-2x.png, large]" /
+section.section-article.container-color--blue-bright-noise
+  .row.align-center.text-center
+    .columns.small-12.large-10
+      h2.headline-3 Integration Facts &amp; Figures
+      .row.small-up-1.medium-up-3.align-center
+        .column
+          span.headline-1 150+
+          p Total number of sites with live integrations on Datica's platform.
+        .column
+          span.headline-1 27+
+          p Total number of EHRs Datica has helped integrate successfully with customer products.
+        .column
+          span.headline-1 Millions
+          p Total number of mission-critical messages processed monthly on Datica's platform.
+section.section-article
+  #benefits.row.align-center
+    .columns.small-12.large-8.text-center.group
+      h3.headline-3 More than just an API
+      p The full suite of integration tooling you need to successfully complete an integration project with a clinical site.
+  .row.align-center.collapse
+    .columns.small-12.large-8
+      .row.small-up-2.align-center
+        .columns.small-12.medium-6
+          .callout.callout--stretch.callout--gray-light
+            h4.headline-5 Connect to any  EHR or system
+            p You'll never have to think twice about whether your project will be supported.
+        .columns.small-12.medium-6
+          .callout.callout--stretch.callout--gray-light
+            h4.headline-5 True scalability
+            p With a toolset on Datica's compliant cloud infrastructure, integrations scale as you scale.
+        .columns.small-12.medium-6
+          .callout.callout--stretch.callout--gray-light
+            h4.headline-5 HIPAA compliant infrastructure
+            p Compliance is a requirement for all data exchange. Never worry about it again.
+        .columns.small-12.medium-6
+          .callout.callout--stretch.callout--gray-light
+            h4.headline-5 Security baked-in from the start
+            p HL7, FHIR, APIs—security is inherently unavailable. We add a security layer to your integration.
+        .columns.small-12.medium-6
+          .callout.callout--stretch.callout--gray-light
+            h4.headline-5 FHIR-proof your app
+            p The future of healthcare data exchange is FHIR. You are ready for the switch when it happens.
+        .columns.small-12.medium-6
+          .callout.callout--stretch.callout--gray-light
+            h4.headline-5 24/7 monitoring
+            p Mission critical data has important uptime requirements. Datica monitors the connection for you.
+        .columns.small-12.medium-6
+          .callout.callout--stretch.callout--gray-light
+            h4.headline-5 Highly available
+            p The hard work to ensuring cloud-based infrastructure is highly available 24/7 is done for you.
+        .columns.small-12.medium-6
+          .callout.callout--stretch.callout--gray-light
+            h4.headline-5 Open source transformations
+            p You own your transformations because we use open source Mirth as the interface engine.
+  hr.narrow/
+  .row
+    .columns.small-12.text-center
+      .section--header-light-group
+        h1.color-blue A trusted partner with established healthcare organizations
+      .logo-cloud
+        - data.views.managed_integration.customer_healthsystems_list.each do |logo|
+          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+  hr.narrow/
+  .row
+    .columns.small-12.text-center
+      h2.white-background-header Successful, live integrations with all major EHRs
+      .logo-cloud
+        - data.views.ehrs.ehr_list.each do |logo|
+          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+section.section-article.container-color--blue-alt.text-center
+  .row.align-center
+    .columns.small-12.large-10
+      h3.headline-4 One REST API for all your connections
+      img.img-crisp alt=("One REST API for all your connections") data-interchange="[/public/img/platform-one-api-diagram.png, small]" /
+section.section-article
+  .row.align-center
+    .columns.small-12.medium-10.large-8.text-center
+      h3.headline-4 Datica's approach to integration has helped a wide range of solutions across the entire spectrum of healthcare
+      p.lead Live integrations with applications in the following industries:
+  .row.align-center.align-middle
+    .columns.small-12.multicol-3
+      ul
+        li Asynchronous Telehealth
+        li Synchronous Telehealth
+        li Oncology Care Management Solutions
+        li Genetic Testing Laboratories &amp; Analytics
+        li Provider Secure Messaging &amp; Alarm Management
+        li Population Health
+        li Patient Engagement
+        li Clinical Automation
+        li Patient Reported Outcomes (Bundled Payment Management)
+        li Medicare Advantage Solutions (HCC management w/patient outreach)
+        li Referral Management
+        li Patient Care Planning
+        li Post-Acute Discharge Placement (SNF and LTAC)
+        li Wait List Automation
+        li Patient Pre-Registration Urgent Care/ED Triage
+        li Clinical Documentation Improvement &amp; Physician Query
+        li Orthopedic Implant Providers for Supply Chain Optimization &amp; Instrument Tray Reconfiguration
+        li Claims Processing and Claim Audit Tracking Solutions
+section.section-article.section--cta-blue.container-image--center data-interchange="[https://images.ctfassets.net/189dvqdsjh46/24KaYDLfRW40mKMOuKEgsS/04a4779c83f98738cc15c9f37b636192/platform-integration-inverted-bg.png?w=1600&h=500&fit=crop, medium]" 
+  .row.align-center
+    .columns.small-12.large-8
+      aside.text-center
+        h3.headline-3 GUIDE: Total Cost of Ownership of Integrations
+        p.lead If you are scoping out an integration project, this simple free guide will help you understand the costs involved, both implicit and hidden.
+        a.button.button--light.cta-button href="/guide/total-cost-of-ownership-of-integrations/" title=("Learn about integrations") 
+          | Download the guide
+          i.fa.fa-angle-right
+section.section-article
+  .row.align-center
+    .columns.small-12.large-10.text-center
+      h3.headline-4
+        | Need help with your integration?
+        br/
+        | Datica Managed Integration Services takes on the burden.
+  .row.align-center.align-middle
+    .columns.small-12.medium-6.large-6
+      p.lead Integration is a process. If you need help managing the process of an integration through successful completion, and then continue with on-going management, Datica has your back.
+      p.lead Over 100 customers have benefited from our ability to take an average 6-month integration and routinely complete it in under 30 days.
+    .columns.small-12.medium-6.large-4
+      h3.headline-4 Managed Integration Services:
+      ul
+        li Workflow expertise consultation
+        li VPN management
+        li Project management
+        li Testing
+        li Go-live management
+section#cta.section-article.container-color--gray-dark-grad-noise
+  .row.align-center.align-middle
+    .columns.small-12.medium-6
+      h2.headline-3.group--2x Schedule a conversation to learn more about Datica's Managed Integration services
+      .callout.callout--dark-alpha
+        blockquote.quote--serif
+          | The Datica team is helping us solve critical infrastructure and scaling problems faster and more competently than we can in-house.
+        .media-object.card-person
+          .media-object-section
+            img.avatar.avatar--large.circle alt=("Jon Pearce") src="https://images.ctfassets.net/189dvqdsjh46/6IUA5I8suWEWI28YcIkMgm/134af76338fd572e45a9d4a716a8ddb7/headshot-zipnosis.jpg" /
+          .media-object-section.main-section.align-self-middle
+            h4.person-name Jon Pearce
+            p.person-title CEO, Zipnosis
+    .columns.small-12.medium-6
+      #absoluteForm.callout.callout--large.drop
+        p A compliance and integration expert from Datica will follow up to learn how we might be able to help
+        hr/
+        = partial("partials/snippets/form-hubspot", :locals => { :form_id => "2904bae4-9c64-4ed7-95a5-9af6ae6af302" })
+section#faq.section-article
+  .row.align-center
+    .columns.small-12.medium-8.large-8
+      h3.headline-3.text-center.group Frequently asked questions about integrations
+  .row.align-center
+    .columns.small-12.medium-4.large-4
+      .callout.callout--gray-light
+        ol
+          - data.views.faqs.platform_integration.each_with_index do |item, index|
+            li
+              a href="#platform-tech-question-#{index}" = item["question"]
+    .columns.small-12.medium-8.large-8
+      dl
+        - data.views.faqs.platform_integration.each_with_index do |item, index|
+          dt id="platform-tech-question-#{index}" = item["question"]
+          dd= Kramdown::Document.new(item["answer"]).to_html
+      hr.divider/
+      p.lead
+      a.button.hollow href="#cta" title=("Learn about integrations") 
+        | Schedule a conversation
+        i.fa.fa-angle-up
+
+
 
 aside#ctaBottom.container-color--dark-grad-blue
   .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
