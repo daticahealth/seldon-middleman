@@ -5,24 +5,24 @@
     children:
         -
             title: "Platform"
-            url: "/platform/"
+            url: "/products/"
             desc: "The Datica Platform is a cloud enablement layer for all healthcare applications"
             nav_main: true
         -
             title: "Compliance Story"
-            url: "/platform/compliance/"
+            url: "/products/compliance/"
             desc: "Datica is HITRUST CSF Certified"
         -
             title: "Global Compliance Posture"
-            url: "/platform/compliance/global"
+            url: "/products/compliance/global"
             desc: "Need to go international? Here's a look at our compliance posture around the world."
         -
             title: "Public Roadmap"
-            url: "/platform/roadmap"
+            url: "/products/roadmap"
             desc: "Here's what we're building."
         -
             title: "Customer Success"
-            url: "/platform/success/"
+            url: "/products/success/"
             desc: "Case studies and customer profiles of success"
         -
             title: "Services"
