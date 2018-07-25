@@ -11,8 +11,10 @@
             nav_main: true
         -
             title: "Compliance Story"
-            url: "/products/compliance/"
+            title_short: "Compliance"
+            url: "/compliance/"
             desc: "Datica is HITRUST CSF Certified"
+            nav_main: true
         -
             title: "Global Compliance Posture"
             url: "/products/compliance/global"

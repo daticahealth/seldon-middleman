@@ -24,6 +24,12 @@
     </fonts/gt-america-light.woff>;rel=preload;as=font;type=font/woff;crossorigin'''
 
 [[redirects]]
+  from = "/products/compliance/"
+  to = "/compliance/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/products/cks/"
   to = "/products/compliant-kubernetes-service/"
   status = 301
