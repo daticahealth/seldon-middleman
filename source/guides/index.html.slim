@@ -25,7 +25,7 @@ ruby:
                 h2.headline-2 Datica Guides
                 p.lead Authoritative Guides Written By Industry Experts
 
-        .row.full-width.small-up-1.large-up-2.xxlarge-up-3
+        .row.small-up-1.large-up-2.xxlarge-up-3
             - sorted_entries.each do | id, guide_entry |
                 - if guide_entry.has_key?("image_thumb")
                     - thumb = guide_entry.image_thumb.url
