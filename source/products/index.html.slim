@@ -31,7 +31,7 @@ priority: "0.9"
         li <strong>Compliance Engine:</strong> The core value of the CCMS is that we are continuously ensuring the complete compliance of both your cluster, and the underlying infrastructure that it resides on. We do this by comparing the running state with the expected initial compliance state. The compliance engine checks state every 5 minutes.
         li <strong>Management:</strong> Datica manages the compliance state of your cluster through intrusion detection review and remediation; vulnerability scanning management, remediation and proaction; and compliance reporting for HITRUST, SOC 2, GDPR and more.
         li <strong>Key Infrastructure:</strong> Datica’s public key infrastructure ensures that your data is protected and can only be accessed by those with appropriate permission. You have the option to either provide your own Root CA, or rely on Datica to create and store one for you. Once the Root CA is established, Datica creates an intermediate CA. This intermediate CA is used for generating all cluster specific certs.
-    .menu.button-cluster.align-center
+    .menu.button-cluster.align-center.z-stack-10
       = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
       = partial "partials/snippets/button", :locals => { :label => "Explore Compliance", :title => "Explore Compliance", :url => "/products/compliance", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :item_id => "top-tech" }
     .platform-art-1.container-image--top(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/16drHKsNBa6qqEWGim0QmS/cc517223d26050d05659db9f5fab8785/k8-arch-diagram-1-dark.png, medium]")
@@ -136,9 +136,8 @@ aside#ctaBottom.container-color--dark-grad-blue
   .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
     .row.align-center
       .columns.small-12.medium-10.large-10.text-center
-        h2.headline-3 <strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.
-    .row.align-center
-      .columns.small-6.large-4.text-right
-        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_bottom_pricing" }
-      .columns.small-6.large-6.text-left
-        = partial "partials/snippets/button", :locals => { :label => "Explore Datica CKS", :title => "Explore the capabilities of the Datica Platform", :url => "/products/compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "cta_bottom_tech" }
+        h2.headline-3.group <strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.
+        .menu.button-cluster.align-center
+          = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_bottom_pricing" }
+          = partial "partials/snippets/button", :locals => { :label => "Explore Datica CKS", :title => "Explore the capabilities of the Datica Platform", :url => "/products/compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "cta_bottom_tech" }
+
