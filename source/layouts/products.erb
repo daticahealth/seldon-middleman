@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<%# datica platform 2017 %>
+<%# datica CKS 2018 %>
     <head>
         <% if build? %><%= partial "partials/scripts/google-tm-head" %><% end %>
         <%= partial "partials/head/tags" %>
@@ -28,9 +28,9 @@
             <main>
             <%= yield %>
             </main>
-            <% if current_page.data.has_key?("ctaCustom") != true %>
+            <%# if current_page.data.has_key?("ctaCustom") != true %>
                 <%#= partial "partials/ctas/platform-cta" %>
-            <% end %>
+            <%# end %>
         </div>
         <%= partial "partials/snippets/footer" %>
         <%= partial "partials/scripts/footer" %>
