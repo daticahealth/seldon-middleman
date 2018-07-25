@@ -27,16 +27,11 @@ aside.hide-for-large.pad--sm.container-color--blue-alt
   section.section-article
     .row.align-center
       .columns.small-12.medium-12.large-7.text-center.group
-        h1.headline-3
-          | The complete toolset to handle
-          strong compliant, scalable, secure data exchange
-          | with any EHR or clinical system
+        h1.headline-3.text-light Datica CKS is the complete toolset to handle <strong>compliant, scalable, secure data exchange</strong> with any EHR or clinical system
     .row.align-middle
       .columns.small-12.medium-12.large-5
         .callout.drop
-          p
-            strong Full-Stack
-            | Data Integration
+          p <strong>Full-Stack</strong> Data Integration
           p The mature integration stack considers HIPAA compliance, data security, redundant backups, and no reliance on blackbox proprietary APIs as core ingredients to a successful integration strategy.
           p Don't get caught with infrastructure gotchas as you go from zero-to-one or if you are preparing to scale to hundreds of integrations. Instead, get Datica CMI. Included in our data integration application:
             strong Instead, get Datica.
@@ -68,9 +63,9 @@ section.section-article.container-color--blue-bright-noise
           p Total number of mission-critical messages processed monthly on Datica's platform.
 section.section-article
   #benefits.row.align-center
-    .columns.small-12.large-8.text-center.group
+    .columns.small-12.large-6.text-center.group
       h3.headline-3 More than just an API
-      p The full suite of integration tooling you need to successfully complete an integration project with a clinical site.
+      p.lead The full suite of integration tooling you need to successfully complete an integration project with a clinical site.
   .row.small-up-2.medium-up-3.large-up-4.align-center
     .columns
       .callout.callout--stretch.callout--gray-light
@@ -137,7 +132,7 @@ section.section-article
         li Orthopedic Implant Providers for Supply Chain Optimization &amp; Instrument Tray Reconfiguration
         li Claims Processing and Claim Audit Tracking Solutions
 
-= partial("/partials/section-promos/tco-guide-ribbon", :locals => { :style => "dark", :align => "right", :bgImage => "https://images.ctfassets.net/189dvqdsjh46/1iP2tqSCPKuIY6gIakoWcM/99abd9b73c0d8b3c029202f9c672b1f7/triangle_theme__darker__Dallas_Ball__-_ash-edmonds-636863-unsplash.jpeg" })
+= partial("/partials/section-promos/tco-guide-ribbon", :locals => { :style => "dark", :align => "right", :bgImage => "https://images.ctfassets.net/189dvqdsjh46/1iP2tqSCPKuIY6gIakoWcM/c954e6875e22448528da37b912f8aca4/triangle_theme__darker__Dallas_Ball__-_ash-edmonds-636863-unsplash.jpg" })
 
 section.section-article.container-gray-12
   .row.align-center
@@ -177,8 +172,11 @@ section.section-article.container-gray-12
   /       li Testing
   /       li Go-live management
 
-
 section.section-article
+  .row.align-center.group
+    .columns.small-12.medium-10.large-6
+      = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'] })
+
   .row.align-center.group
     .columns.small-12.large-10.text-center
       h3.headline-3 A trusted partner with established healthcare organizations
@@ -196,6 +194,7 @@ section#cta.section-article.container-color--gray-dark-grad
   .row.align-center.align-middle
     .columns.small-12.medium-6.large-5
       h2.headline-3.group--2x Schedule a conversation to learn more about Datica's Managed Integration services
+      / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
       .callout.callout--dark-alpha
         blockquote.quote--serif
           | The Datica team is helping us solve critical infrastructure and scaling problems faster and more competently than we can in-house.
@@ -227,12 +226,7 @@ section#faq.section-article.container-gray-12
         - data.views.faqs.platform_integration.each_with_index do |item, index|
           dt id="platform-tech-question-#{index}" = item["question"]
           dd= Kramdown::Document.new(item["answer"]).to_html
-      hr.divider/
-      p.lead
-      a.button.hollow href="#cta" title=("Learn about integrations") 
-        | Schedule a conversation
-        i.fa.fa-angle-up
-
+      = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button hollow", :icon => "icon-chevron-up" }
 
 aside#ctaBottom.container-color--dark-grad-blue
   .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"

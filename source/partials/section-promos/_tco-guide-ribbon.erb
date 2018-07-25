@@ -5,7 +5,7 @@ else
     grayValue = "11"
 end
 %>
-<section class="section-article--med container-image--center container-gray-<%= grayValue %>" <% if defined?(bgImage) ? bgImage : '' %> data-interchange="[<%= bgImage %><%= image_featured_medium %>, medium], [<%= bgImage %><%= image_featured_large %>, large]"<% end %>>
+<section class="section-article--med container-image--center container-gray-<%= grayValue %>" <% if defined?(bgImage) ? bgImage : '' %> data-interchange="[<%= bgImage %><%= image_featured_medium %>, medium], [<%= bgImage %>?fit=thumb&w=2400&h=500&fm=jpg&q=70, large]"<% end %>>
     <div class="row align-center">
         <div class="columns small-12 medium-1 large-1 text-center">
             <%= inline_svg("icon-dollar-circle", class: "svg-color--white icon-size--large") %>

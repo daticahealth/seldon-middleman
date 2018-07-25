@@ -65,30 +65,7 @@ priority: "0.9"
                     <% if service.has_key?("related_customer") %>
                         <% service.related_customer.take(1).each do | customer | %>
                             <div class="show-for-medium">
-                                <div class="callout--gray-light group">
-                                    <blockquote class="quote-callout">
-                                        <% if customer.has_key?("customer_quote") %>
-                                            <%= customer["customer_quote"]["quote_body"] %>
-                                        <% elsif customer.has_key?("customer_story_short") %>
-                                            <%= customer["customer_story_short"] %>
-                                        <% end %>
-                                    </blockquote>
-                                    <% if customer.has_key?("case_study") %>
-                                        <p><a class="text-small" href="/customer/<%= customer["slug"] %>" title="<%= customer["company_name"] %> profile">Read the Case Study <i class="fa fa-icon fa-angle-right"></i></a></p>
-                                    <% else %>
-                                        <br>
-                                    <% end %>
-                                    <% if customer.has_key?("profile_pic") %>
-                                        <div class="flex-container align-justify align-middle">
-                                            <div class="flex-child-shrink">
-                                                <%= partial("partials/snippets/person", :locals => { :p => customer, :classes => "nomargin" }) %>
-                                            </div>
-                                            <div class="flex-child-shrink">
-                                                <img class="logo-size--small-mid" src="/public/img/customer-logos/sm/<%= customer["slug"] %>-logo.png" alt="<%= customer["company_name"] %> Logo"/>
-                                            </div>
-                                        </div>
-                                    <% end %>
-                                </div>
+                                <%= partial("partials/cards/quote-customer", :locals => { :customer => customer }) %>
                             </div>
                         <% end %>
                     <% end %>
