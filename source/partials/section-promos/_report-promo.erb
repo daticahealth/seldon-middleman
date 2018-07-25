@@ -6,7 +6,7 @@ unless p.has_key?("container_color")
     p.container_color = "container-color--dark-alt"
 end
 if p.has_key?("bg_image")
-    # puts "warning: the report section promo at #{current_page.data.url} has no 'bg_image'. "
+    puts "warning: the report section promo at #{current_page.data.url} has no 'bg_image'. "
     # the_img = p.bg_image.url
     section_style = %(class="section-article container-color--dark-alt container-image--center #{p.container_color}" data-interchange="[#{p.bg_image.url}#{image_featured_large}, small]")
 else
