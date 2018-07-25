@@ -1,12 +1,13 @@
 -
-    title: "Platform"
+    title: "Product"
     url:
     desc:
     children:
         -
-            title: "Platform"
+            title: "Compliant Kubernetes Service"
+            title_short: "Datica CKS"
             url: "/products/"
-            desc: "The Datica Platform is a cloud enablement layer for all healthcare applications"
+            desc: "Datica is a cloud enablement layer for all healthcare applications"
             nav_main: true
         -
             title: "Compliance Story"
@@ -16,10 +17,10 @@
             title: "Global Compliance Posture"
             url: "/products/compliance/global"
             desc: "Need to go international? Here's a look at our compliance posture around the world."
-        -
-            title: "Public Roadmap"
-            url: "/products/roadmap"
-            desc: "Here's what we're building."
+        # -
+        #     title: "Public Roadmap"
+        #     url: "/products/roadmap"
+        #     desc: "Here's what we're building."
         -
             title: "Customer Success"
             url: "/products/success/"
@@ -32,7 +33,7 @@
         -
             title: "Pricing"
             url: "/pricing/"
-            desc: "Pricing for the Datica platform"
+            desc: "Talk to us for Datica pricing."
             nav_main: true
 -
     title: "Resources"
@@ -57,9 +58,9 @@
             desc: "The definitive resource for those looking to learn about compliance and interoperability"
             has_divider: true
         -
-            title: "Discover: Healthcare Topics"
+            title: "Discover: Compliance Topics"
             url: "/discover/"
-            desc: "A Curated Collection of Healthcare Technology Topics from Datica"
+            desc: "A curated collection of compliance topics from Datica"
         -
             title: "Open Source"
             url: "/open-source/"
