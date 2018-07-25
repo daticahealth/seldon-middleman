@@ -179,17 +179,15 @@ section.section-article.container-gray-12
 
 
 section.section-article
-  .row
-    .columns.small-12.text-center
-      .section--header-light-group
-        h1.color-blue A trusted partner with established healthcare organizations
+  .row.align-center.group
+    .columns.small-12.large-10.text-center
+      h3.headline-3 A trusted partner with established healthcare organizations
       .logo-cloud
         - data.views.managed_integration.customer_healthsystems_list.each do |logo|
           img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
-  hr.narrow/
-  .row
-    .columns.small-12.text-center
-      h2.white-background-header Successful, live integrations with all major EHRs
+  .row.align-center
+    .columns.small-12.large-10.text-center
+      h3.headline-3.nomargin Successful, live integrations with all major EHRs
       .logo-cloud
         - data.views.ehrs.ehr_list.each do |logo|
           img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
