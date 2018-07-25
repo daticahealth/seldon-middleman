@@ -113,10 +113,10 @@ section.section-article.container-gray-5.text-center
 section.section-article
   .row.align-center
     .columns.small-12.medium-10.large-8.text-center
-      h3.headline-4 Datica's approach to integration has helped a wide range of solutions across the entire spectrum of healthcare
-      p.lead Live integrations with applications in the following industries:
+      h3.headline-3 Datica Integration Solutions
+      p.lead Datica's approach to integration has helped a wide range of solutions across the entire spectrum of healthcare, with applications in the following industries:
   .row.align-center.align-middle
-    .columns.small-12.multicol-3
+    .columns.small-12.large-10.xlarge-8.multicol-3
       ul
         li Asynchronous Telehealth
         li Synchronous Telehealth
@@ -139,17 +139,46 @@ section.section-article
 
 = partial("/partials/section-promos/tco-guide-ribbon", :locals => { :style => "dark", :align => "right", :bgImage => "https://images.ctfassets.net/189dvqdsjh46/1iP2tqSCPKuIY6gIakoWcM/99abd9b73c0d8b3c029202f9c672b1f7/triangle_theme__darker__Dallas_Ball__-_ash-edmonds-636863-unsplash.jpeg" })
 
-section.section-article
+section.section-article.container-gray-12
   .row.align-center
-    .columns.small-12.large-10.text-center
-      h2.headline-3
+    .columns.small-12
+      h2.headline-3.text-center.group
         | Integration Services
-      .group
+  .row.align-center.align-middle.group
+    .columns.small-12.medium-6.large-5
+      .callout.drop.group
         blockquote.quote--serif
           - quote_services = data.site.quotes['4r9Bmb0l8QiMgKqCagOa0E']
           = Kramdown::Document.new(quote_services["quote_body"]).to_html
         - if quote_services.has_key?("related_person")
           = partial("partials/snippets/person", :locals => { :p => quote_services.related_person } )
+    .columns.small-12.medium-6.large-5
+      h3.headline-4 Project Management
+      p Our team of project managers provide an expert view into integrated with EHRs and health systems. They will help manage timelines, create project plans, and track deliverables.
+      h3.headline-4 Connection Setup and Maintenance
+      p Datica’s Integration Engineers will build, configure, test and maintain VPN connections to allow for transmission of HL7 messages.
+      h3.headline-4 Interface Build and Configuration
+      p We will transform HL7 messages into JSON or FHIR messages to help keep things standard for you across implementations. We have many predesigned channels ready to go.
+  .row.align-center
+    .columns.text-center
+      = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button hollow", :icon => "icon-chevron-down" }
+
+  / | Datica Managed Integration Services takes on the burden.
+  / .row.align-center.align-middle
+  /   .columns.small-12.medium-6.large-6
+  /     p.lead Integration is a process. If you need help managing the process of an integration through successful completion, and then continue with on-going management, Datica has your back.
+  /     p.lead Over 100 customers have benefited from our ability to take an average 6-month integration and routinely complete it in under 30 days.
+  /   .columns.small-12.medium-6.large-4
+  /     h3.headline-4 Managed Integration Services:
+  /     ul
+  /       li Workflow expertise consultation
+  /       li VPN management
+  /       li Project management
+  /       li Testing
+  /       li Go-live management
+
+
+section.section-article
   .row
     .columns.small-12.text-center
       .section--header-light-group
@@ -164,31 +193,6 @@ section.section-article
       .logo-cloud
         - data.views.ehrs.ehr_list.each do |logo|
           img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
-
-        / br/
-        / | Datica Managed Integration Services takes on the burden.
-  / .row.align-center.align-middle
-  /   .columns.small-12.medium-6.large-6
-  /     p.lead Integration is a process. If you need help managing the process of an integration through successful completion, and then continue with on-going management, Datica has your back.
-  /     p.lead Over 100 customers have benefited from our ability to take an average 6-month integration and routinely complete it in under 30 days.
-  /   .columns.small-12.medium-6.large-4
-  /     h3.headline-4 Managed Integration Services:
-  /     ul
-  /       li Workflow expertise consultation
-  /       li VPN management
-  /       li Project management
-  /       li Testing
-  /       li Go-live management
-  .row.align-center.small-up-1.large-up-3
-    .columns
-      h3.headline-4 Project Management
-      p Our team of project managers provide an expert view into integrated with EHRs and health systems. They will help manage timelines, create project plans, and track deliverables.
-    .columns
-      h3.headline-4 Connection Setup and Maintenance
-      p Datica’s Integration Engineers will build, configure, test and maintain VPN connections to allow for transmission of HL7 messages.
-    .columns
-      h3.headline-4 Interface Build and Configuration
-      p We will transform HL7 messages into JSON or FHIR messages to help keep things standard for you across implementations. We have many predesigned channels ready to go.
 
 section#cta.section-article.container-color--gray-dark-grad
   .row.align-center.align-middle
