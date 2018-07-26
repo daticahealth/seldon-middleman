@@ -1,0 +1,26 @@
+<section class="section-article" id="successSpotlights" data-magellan-target="successSpotlights">
+    <div class="row align-center">
+        <div class="columns small-12 large-8 text-center group">
+            <h2 class="headline-2 group">Customer Spotlights</h2>
+        </div>
+    </div>
+    <div class="row align-center">
+        <div class="columns small-12 large-8">
+            <% sorted_entries = data.site.spotlights.to_a.sort_by{ |id, entry| entry['title'] } %>
+            <% sorted_entries.each do | id, entry | %>
+                <article class="row item-list content-dynamic">
+                    <div class="columns small-4 medium-3 large-4">
+                        <a class="" href="/customer/<%= entry["customer"]["slug"] %>#spotlight">
+                            <img class="" src="/public/img/customer-logos/<%= entry["customer"]["slug"] %>-logo.png" alt="<%= entry["customer"]["company_name"] %> Spotlight"/>
+                        </a>
+                    </div>
+                    <div class="columns small-8 medium-9 large-8">
+                        <p class="text-left"><%= entry["summary"] %><br>
+                            <a title="Read more" href="/customer/<%= entry["customer"]["slug"] %>#spotlight">Read the <%= entry["customer"]["company_name"] %> Spotlight  <i class="fa fa-angle-right"></i></a>
+                        </p>
+                    </div>
+                </article>
+            <% end %>
+        </div>
+    </div>
+</section>

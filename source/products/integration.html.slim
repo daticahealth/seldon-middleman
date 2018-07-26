@@ -16,20 +16,19 @@ ctaCustom: true
 ---
 - current_page.data.share_image = image_share_platform
 
-aside.hide-for-large.pad--sm.container-color--blue-alt
-  .row.align-middle.align-center
-    .columns.small-6.medium-4
-      = partial "partials/snippets/button", :locals => { :label => "Compliance", :title => "View Platform pricing", :url => "/compliance", :button_classes => "button hollow-inverted expanded small nomargin", :item_id => "cta_top_compliance" }
-    .columns.small-6.medium-4
-      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button button--light expanded small nomargin", :item_id => "cta_top_pricing" }
+aside.hide-for-large.section-article.container-color--blue-alt.menu.button-cluster.align-center
+  /= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
+  = partial "partials/snippets/button", :locals => { :label => "Hear from our customers", :url => "/products/success", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :item_id => "cta_top_success" }
+  = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
 .container-color--gray-light
   section.section-article
     .row.align-center
       .columns.small-12.medium-12.large-7.text-center.group
+        = inline_svg("icon-integration", class: "icon-size--xlarge svg-color--gray-4")
         h1.headline-3.text-light Datica CKS is the complete toolset to handle <strong>compliant, scalable, secure data exchange</strong> with any EHR or clinical system
-    .row.align-middle
-      .columns.small-12.medium-12.large-5
+    .row.align-middle.group
+      .columns.small-12.large-5
         .callout.drop
           p <strong>Full-Stack</strong> Data Integration
           p The mature integration stack considers HIPAA compliance, data security, redundant backups, and no reliance on blackbox proprietary APIs as core ingredients to a successful integration strategy.
@@ -45,8 +44,12 @@ aside.hide-for-large.pad--sm.container-color--blue-alt
             li Compliant logging and auditing of activity
             li REST API endpoints mapped to all major data standards
             li VPN setup for secure connectivity
-      .columns.small-12.medium-7
+      .columns.small-12.large-7
         img alt=("Platform Integration") data-interchange="[/public/img/platform-integration-1x.png, small], [/public/img/platform-integration-2x.png, large]" /
+
+    aside.section-article--sm.menu.button-cluster.align-center.show-for-large
+      = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow", :item_id => "cta_top_pricing" }
+      = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button", :icon => "icon-chevron-down" }
 section.section-article.container-color--blue-bright-noise
   .row.align-center.text-center
     .columns.small-12.large-10

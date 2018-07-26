@@ -28,7 +28,7 @@
         right: -10%;
         width: 62%;
     }
-    @include breakpoint (xlarge) {
+    @include breakpoint (xxlarge) {
         right: -14%;
         width: 62%;
     }
@@ -231,7 +231,7 @@ ul.bullet-outside {
         @include breakpoint (large) {
             @include multicolumns (3, 15em, 2rem);
         }
-        @include breakpoint (xxlarge) {
+        @include breakpoint (1600px) {
             @include multicolumns (4, 15em, 2rem);
         }
         &__item {
