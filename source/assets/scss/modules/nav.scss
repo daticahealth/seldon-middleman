@@ -234,8 +234,8 @@ $duration: $timing-default * 1.5; //settings.scss:281
 }
 
 // // override for ZF alignment bug
-// .dropdown.menu .is-dropdown-submenu.first-sub {
-//     top: 100%;
-//     right: auto;
-//     left: 0;
-// }
+.dropdown.menu .is-dropdown-submenu.first-sub {
+    top: 100%;
+    right: auto;
+    left: 1.5rem;
+}
