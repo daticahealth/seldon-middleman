@@ -37,6 +37,12 @@
             url: "/pricing/"
             desc: "Talk to us for Datica pricing."
             nav_main: true
+# -
+#     title: "Compliance Story"
+#     title_short: "Compliance"
+#     url: "/compliance/"
+#     desc: "Datica is HITRUST CSF Certified"
+#     nav_main: true
 -
     title: "Resources"
     url:

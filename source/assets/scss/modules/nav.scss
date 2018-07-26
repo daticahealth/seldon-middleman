@@ -141,7 +141,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
             @include css-triangle(10px, white, up);
             position: absolute;
             top: -$tri-size;
-            right: $tri-size * 4;
+            left: $tri-size * 4;
         }
     }
     .is-submenu-item {
@@ -162,8 +162,8 @@ $duration: $timing-default * 1.5; //settings.scss:281
     }
 }
 .nav-logo { // pairing with svg use symbol, requires express dimensions. Aspect ratio is maintained, but spacing can be weird.
-    height: 2.3rem;
-    width: 5.6rem;
+    height: 3rem; //2.3rem;
+    width:  7rem; //5.6rem;
 }
 .nav-mobile {
     .nav-button {
@@ -232,3 +232,10 @@ $duration: $timing-default * 1.5; //settings.scss:281
 .nav-title--compact {
     font-size: 90%;
 }
+
+// // override for ZF alignment bug
+// .dropdown.menu .is-dropdown-submenu.first-sub {
+//     top: 100%;
+//     right: auto;
+//     left: 0;
+// }

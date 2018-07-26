@@ -4,10 +4,12 @@
             <div class="column group">
                 <h5 class="headline-6"><%= f["title"] %></h5>
                 <ul class="no-bullet">
-                    <% f["children"].each do |c| %>
-                    <%# inner loop here %>
-                        <li>
-                            <%= current_link_to c.title, c.url, title: c.desc, class: "link--dark faded" %>
+                    <% if f.has_key?("children") %>
+                        <% f["children"].each do |c| %>
+                        <%# inner loop here %>
+                            <li>
+                                <%= current_link_to c.title, c.url, title: c.desc, class: "link--dark faded" %>
+                        <% end %>
                     <% end %>
                 </ul>
             </div>
