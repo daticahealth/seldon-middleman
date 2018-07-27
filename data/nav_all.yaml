@@ -7,12 +7,12 @@
         -
             title: "Compliant Kubernetes Service"
             title_short: "Datica CKS"
-            url: "/products/"
+            url: "/compliant-kubernetes-service/"
             desc: "Datica is a cloud enablement layer for all healthcare applications"
             nav_main: true
         # -
         #     title: "Public Roadmap"
-        #     url: "/products/roadmap"
+        #     url: "/roadmap"
         #     desc: "Here's what we're building."
         # -
         #     title: "Customer Success"
