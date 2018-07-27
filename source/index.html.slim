@@ -23,14 +23,14 @@ asset_preload: '<link href="/public/img/art/home-header-art-hexagons-anim.svg" r
   .container-image--center(data-interchange="[/public/img/art/home-header-art-hexagons-anim.svg, small]")
     = partial "partials/head/header", :locals => { :style => "light" }
     section.section-article
-      .row.align-middle
-        .columns.small-12.medium-6.large-8
-          h1.headline-1 A security and compliance layer for Kubernetes<sup>&reg;</sup>
-          h2.headline-4 Datica manages the compliance of your favorite tools, technologies and Platforms.
-          p.lead
-            | The Datica Platform makes your cloud workloads compliant to the standards of HIPAA, HITRUST, GDPR, and GxP.
-          = partial "partials/snippets/button", :locals => { :label => "Explore the Platform", :url => "/compliant-kubernetes-service/", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right" }
-
+      .row.align-center.group
+        .columns.small-12.medium-10.large-10.text-center
+          h1.headline-1 The Industry Cloud For Digital Health
+      .row.align-center
+        .columns.small-12.medium-6.large-6
+          / <sup>&reg;</sup>
+          h2.headline-4.text-light.group--sm We provide you with <a class="link--yellow" href="/compliance" title="Datica Compliance Story">compliance</a> tools to <a class="link--yellow" href="/compliant-kubernetes-service" title="Datica Compliant Kubernetes® Service">deploy cloud-native workloads</a> and <a class="link--yellow" href="/compliant-managed-integration" title="Datica Compliant Managed Integration">integrate with EHRs</a>.
+          = partial "partials/snippets/button", :locals => { :label => "Learn About Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-top", :data_track_group => "cks" }
         .columns.small-12.medium-6.large-4
           .card.container-color--light-shimmer
             = partial("partials/ctas/card-schedule-demo")
@@ -38,13 +38,14 @@ asset_preload: '<link href="/public/img/art/home-header-art-hexagons-anim.svg" r
 section.section-article
   .row.align-center.text-center
     .columns.small-12.large-9
-      h2.headline-3.group <strong>Healthcare's best compliance coverage</strong> <br>for teams large and small
+      / p.lead
+      /   | The Datica Platform makes your cloud workloads compliant to the standards of HIPAA, HITRUST, GDPR, and GxP.      h2.headline-3.group <strong>Healthcare's best compliance coverage</strong> <br>for teams large and small
       .row.small-up-3.medium-up-5.align-middle.align-center.group
         - data.views.home.badges.each do |logo|
           - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
           .column
             img alt="#{logo["name"]}" class=logopad src="#{logo["fileUrl"]}" /
-      = partial "partials/snippets/button", :locals => { :label => "Platform Compliance Overview", :title => "Read more", :url => "/compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
+      = partial "partials/snippets/button", :locals => { :label => "Platform Compliance Overview", :title => "Read more", :url => "/compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "home", :data_track_group => "compliance" }
 
 = partial "partials/section-promos/aws-mlh-video", :locals => { :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS", :container_color => "container-gray-11" }
 section.section-article
