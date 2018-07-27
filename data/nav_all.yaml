@@ -2,6 +2,7 @@
     title: "Product"
     url:
     desc:
+    nav_main: true
     children:
         -
             title: "Compliant Kubernetes Service"
@@ -9,24 +10,14 @@
             url: "/products/"
             desc: "Datica is a cloud enablement layer for all healthcare applications"
             nav_main: true
-        -
-            title: "Compliance Story"
-            title_short: "Compliance"
-            url: "/compliance/"
-            desc: "Datica is HITRUST CSF Certified"
-            nav_main: true
-        -
-            title: "Global Compliance Posture"
-            url: "/products/compliance/global"
-            desc: "Need to go international? Here's a look at our compliance posture around the world."
         # -
         #     title: "Public Roadmap"
         #     url: "/products/roadmap"
         #     desc: "Here's what we're building."
-        -
-            title: "Customer Success"
-            url: "/products/success/"
-            desc: "Case studies and customer profiles of success"
+        # -
+        #     title: "Customer Success"
+        #     url: "/products/success/"
+        #     desc: "Case studies and customer profiles of success"
         -
             title: "Services"
             url: "/services/"
@@ -37,21 +28,36 @@
             url: "/pricing/"
             desc: "Talk to us for Datica pricing."
             nav_main: true
-# -
-#     title: "Compliance Story"
-#     title_short: "Compliance"
-#     url: "/compliance/"
-#     desc: "Datica is HITRUST CSF Certified"
-#     nav_main: true
 -
-    title: "Resources"
-    url:
-    desc:
+    title: "Compliance"
+    title_short: "Compliance"
+    url: 
+    desc: 
+    nav_main: true
     children:
+        -
+            title: "Datica Compliance Story"
+            url: "/compliance/"
+            desc: "Datica is HITRUST CSF Certified"
+        -
+            title: "Global Compliance Posture"
+            url: "/compliance/global"
+            desc: "Need to go international? Here's a look at our compliance posture around the world."
+            has_divider: true
+        -
+            title: "Discover: Compliance Topics"
+            url: "/discover/"
+            desc: "A curated collection of compliance topics from Datica"
         -
             title: "Digital Health Success Framework"
             url: "/dhsf/"
             desc: "The framework for teams building digital health products"
+-
+    title: "Resources"
+    url:
+    desc:
+    nav_main: true
+    children:
         -
             title: "Innovation Hub"
             url: "/innovation/"
@@ -66,10 +72,6 @@
             desc: "The definitive resource for those looking to learn about compliance and interoperability"
             has_divider: true
         -
-            title: "Discover: Compliance Topics"
-            url: "/discover/"
-            desc: "A curated collection of compliance topics from Datica"
-        -
             title: "Open Source"
             url: "/open-source/"
             desc: "We believe in the importance of open source."
@@ -82,6 +84,7 @@
     title: "Company"
     url:
     desc:
+    nav_main: true
     children:
         -
             title: "About Us"
@@ -108,6 +111,7 @@
     title: "Help"
     url:
     desc:
+    nav_main: true
     children:
         -
             title: "Sign in"
@@ -125,6 +129,7 @@
     title: "Legal"
     url:
     desc:
+    nav_main: false
     children:
         -
             title: "Company Policies"

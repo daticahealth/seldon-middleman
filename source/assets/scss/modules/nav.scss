@@ -141,7 +141,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
             @include css-triangle(10px, white, up);
             position: absolute;
             top: -$tri-size;
-            left: $tri-size * 4;
+            left: $tri-size * 6;
         }
     }
     .is-submenu-item {
@@ -234,8 +234,9 @@ $duration: $timing-default * 1.5; //settings.scss:281
 }
 
 // // override for ZF alignment bug
-.dropdown.menu .is-dropdown-submenu.first-sub {
-    top: 100%;
-    right: auto;
-    left: 1.5rem;
-}
+// .dropdown.menu .is-dropdown-submenu.first-sub {
+// .submenu.menu.vertical.is-dropdown-submenu.first-sub {
+//     top: 100%;
+//     right: auto;
+//     left: 1.5rem;
+// }

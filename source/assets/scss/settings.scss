@@ -584,22 +584,22 @@ $dropdown-padding: 1rem;
 $dropdown-background: $body-background;
 $dropdown-border: 1px solid $medium-gray;
 $dropdown-font-size: 1rem;
-$dropdown-width: 250px;
+$dropdown-width: 350px;
 $dropdown-radius: $global-radius;
 $dropdown-sizes: (
-  tiny: 100px,
-  small: 200px,
-  large: 400px,
+  tiny: 200px,
+  small: 300px,
+  large: 500px,
 );
 
 // 18. Dropdown Menu
 // -----------------
 
 $dropdownmenu-arrows: true;
-$dropdownmenu-arrow-color: $gray-5;
-$dropdownmenu-arrow-size: 6px;
+$dropdownmenu-arrow-color: transparentize($gray-6, 0.7);
+$dropdownmenu-arrow-size: 5px;
 $dropdownmenu-arrow-padding: 1.5rem;
-$dropdownmenu-min-width: 250px;
+$dropdownmenu-min-width: 300px;
 $dropdownmenu-background: $white;
 $dropdownmenu-submenu-background: $dropdownmenu-background;
 $dropdownmenu-padding: $global-menu-padding;
