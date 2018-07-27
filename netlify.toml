@@ -23,30 +23,6 @@
     </fonts/gt-america-regular.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
     </fonts/gt-america-light.woff>;rel=preload;as=font;type=font/woff;crossorigin'''
 
-[[redirects]]
-  from = "/products/compliance/"
-  to = "/compliance/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/products/cks/"
-  to = "/products/compliant-kubernetes-service/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/products/cmi/"
-  to = "/products/compliant-managed-integration/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/products/ccms/"
-  to = "/products/cloud-compliance-management-system/"
-  status = 301
-  force = true
-
 # Redirect domain aliases to primary domain
 [[redirects]]
   from = "https://catalyze.io/*"
@@ -61,18 +37,42 @@
   force = true
 
 [[redirects]]
-  from = "/platform/*"
-  to = "/products/:splat"
+  from = "/cks/"
+  to = "/compliant-kubernetes-service/"
   status = 301
+  force = true
+
+[[redirects]]
+  from = "/cmi/"
+  to = "/compliant-managed-integration/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/integration/"
-  to = "/products/integration/"
+  to = "/compliant-managed-integration/"
   status = 301
 
 [[redirects]]
   from = "/managed-integration/"
-  to = "/products/integration/"
+  to = "/compliant-managed-integration/"
+  status = 301
+
+# [[redirects]]
+#   from = "/ccms/"
+#   to = "/cloud-compliance-management-system/"
+#   status = 301
+#   force = true
+
+[[redirects]]
+  from = "/ccms/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/platform/*"
+  to = "/compliant-kubernetes-service/:splat"
   status = 301
 
 [[redirects]]
@@ -96,23 +96,13 @@
   status = 301
 
 [[redirects]]
-  from = "/products/technology"
-  to = "/products/compliance"
-  status = 301
-
-[[redirects]]
-  from = "/products"
-  to = "/products"
-  status = 301
-
-[[redirects]]
-  from = "/product"
-  to = "/products"
+  from = "/platform/technology"
+  to = "/compliance"
   status = 301
 
 [[redirects]]
   from = "/customers/*"
-  to = "/products/success"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
@@ -132,7 +122,7 @@
 
 [[redirects]]
   from = "/why"
-  to = "/products"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
@@ -147,22 +137,17 @@
 
 [[redirects]]
   from = "/stratum"
-  to = "/products"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
   from = "/compliant-cloud"
-  to = "/products"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
   from = "/proof"
-  to = "/products/success"
-  status = 301
-
-[[redirects]]
-  from = "/compliance"
-  to = "/products/compliance"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
@@ -256,7 +241,7 @@
 
 [[redirects]]
   from = "/compliance/hitrust"
-  to = "/products/compliance/#compliance-hitrust"
+  to = "/compliance/#compliance-hitrust"
   status = 301
 
 [[redirects]]
