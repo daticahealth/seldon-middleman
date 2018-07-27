@@ -25,66 +25,53 @@ css:
 
 header.main-header
   nav.nav.nav-mobile.hide-for-large
-    / .title-bar.align-middle data-responsive-toggle="nav-mobile" data-hide-for="large"
-    /   .columns.small-6
-    /     a.nav-logo--link.link--white
-    /       svg.nav-logo.svg-color--white id="datica-logo-mobile"
-    /         use.symbol-icon xlink:href="#datica-logo-horiz"
-    /   .columns.small-6.text-right
-    /     a.button.nav-button href="#" title="Main Menu" data-toggle="nav-mobile"
-    /       span.nav-button--label Menu
-    /       = inline_svg("small/icon-menu", class: "nav-button--icon svg-color--white")
-    / .title-bar#nav-mobile
-    /   .row.align-center.align-middle
-    /     .columns.small-12.medium-6.medium-order-2
-    /       = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact/", :button_classes => "button", :icon => "icon-comment", :icon_align => "left" }
-    /     .columns.small-12.medium-6.medium-order-1
-    /       .callout.callout--dark-alt
-    /         ul.menu.vertical.full-width
-    /           - data.nav_all[0].children.each do |nav_list|
-    /             - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
-    /               li.group--sm
-    /                 a.link--white href=nav_list.url title=nav_list.desc
-    /                   .headline-5 = nav_list.title
-    /                   .text-small.text-light = nav_list.desc
-    /   .row
-    /     .columns.small-12
-    /       .callout.callout--dark-alt.group
-    /         h4.pub-date.faded Recently in the Blog
-    /         - sorted_posts.take(1).each do | id, blog_entry |
-    /           p
-    /             a.link--white.text-light(href="/blog/#{blog_entry.slug}/" title=blog_entry.summary)= blog_entry.title
-    /         h4.pub-date.faded Latest Guide
-    /         - sorted_guides.take(1).each do | id, guide_entry |
-    /           p
-    /             a.link--white.text-light(href="/guide/#{guide_entry.slug}/" title=guide_entry.summary)= guide_entry.title
-    /   .row.small-up-1.medium-up-2
-    /     - data.nav_all[1...4].each do |nav_dropdown|
-    /       - if nav_dropdown.has_key?("children")
-    /         .column.group
-    /           .headline-5 = nav_dropdown.title
-    /           ul.menu.vertical
-    /             - nav_dropdown["children"].each do |menu_child|
-    /               - unless menu_child.has_key?("show_on_mobile") && menu_child.show_on_mobile == false
-    /                 li
-    /                   = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: "link--white text-light"
-    /   .row.small-up-1.medium-up-2
-    /     .column
-    /       a.button.expanded href="/contact/" title="Contact Us" Get in touch
-    /     .column
-    /       = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "button hollow-inverted expanded", :icon => "icon-phone" }
+    .title-bar.align-middle data-responsive-toggle="nav-mobile" data-hide-for="large"
+      .columns.small-6
+        a.nav-logo--link.link--white
+          svg.nav-logo.svg-color--white id="datica-logo-mobile"
+            use.symbol-icon xlink:href="#datica-logo-horiz"
+      .columns.small-6.text-right
+        a.button.nav-button href="#" title="Main Menu" data-toggle="nav-mobile"
+          span.nav-button--label Menu
+          = inline_svg("small/icon-menu", class: "nav-button--icon svg-color--white")
+    .title-bar#nav-mobile
+      .row.small-up-1.medium-up-2
+        .column
+          = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact/", :button_classes => "button expanded", :icon => "icon-comment", :icon_align => "left" }
+        .column
+          = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "button hollow-inverted expanded", :icon => "icon-phone", :icon_align => "left" }
+      .row.group
+        .columns.small-12.medium-6.medium-order-1
+          .callout.callout--dark-alt
+            ul.menu.vertical.full-width
+              - data.nav_all[0].children.each do |nav_list|
+                - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
+                  li.group--sm
+                    a.link--white href=nav_list.url title=nav_list.desc
+                      .headline-5 = nav_list.title
+                      .text-small.text-light = nav_list.desc
+        .columns.small-12.medium-6.medium-order-2
+          .callout.callout--dark-alt.group
+            h4.pub-date.faded Recently in the Blog
+            - sorted_posts.take(1).each do | id, blog_entry |
+              p
+                a.link--white.text-light(href="/blog/#{blog_entry.slug}/" title=blog_entry.summary)= blog_entry.title
+            h4.pub-date.faded Latest Guide
+            - sorted_guides.take(1).each do | id, guide_entry |
+              p
+                a.link--white.text-light(href="/guide/#{guide_entry.slug}/" title=guide_entry.summary)= guide_entry.title
+      .row.small-up-1.medium-up-3
+        - data.nav_all[1...4].each do |nav_dropdown|
+          - if nav_dropdown.has_key?("children")
+            .column.group
+              .headline-5 = nav_dropdown.title
+              ul.menu.vertical
+                - nav_dropdown["children"].each do |menu_child|
+                  - unless menu_child.has_key?("show_on_mobile") && menu_child.show_on_mobile == false
+                    li
+                      = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: "link--white text-light"
 
   nav.nav.nav-desktop.show-for-large.row.collapse data-theme=theme
-    / .top-bar.align-center#nav-desktop
-    /   ul.menu
-    /     li
-    /       a.nav-logo--link href="/" title="Datica Home"
-    /         svg id="datica-logo-desktop" class="nav-logo"
-    /           use.symbol-icon xlink:href="#datica-logo-horiz"
-        / - data.nav_all[0].children.each do |nav_list|
-        /   - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
-        /     li
-        /       = current_link_to nav_list.title, nav_list.url, title: nav_list.desc, class: "menu-header"
     .column.small-12
       ul.dropdown.menu.expanded.align-middle.align-center(data-dropdown-menu data-alignment="left")
         li
