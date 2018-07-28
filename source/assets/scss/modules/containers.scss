@@ -334,6 +334,12 @@
             //     background-image: linear-gradient(-135deg, #1B2044 0%, #17181D 52%, #17181D 100%);
             // }
         }
+        &--dark-grad-green {
+            // @include noisy;
+            color: $color_white; // optional, only spec if needed
+            background-color: #003630; // fallback
+            @include gradient(45deg, #1E504C 0%, #273536 20%, #273536 65%, #1A745A 100%);
+        }
         &--purple-grad-noise {
             @include noisy;
             color: $color_white; // optional, only spec if needed
