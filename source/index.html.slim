@@ -34,7 +34,7 @@ asset_preload: '<link href="/public/img/art/home-header-art-hexagons-anim.svg" r
           .card.container-color--light-shimmer.pad--sm
             = partial("partials/ctas/card-schedule-demo")
 .strip-bright
-section.section-article.container-gray-12
+section.section-article.container-gray-11
   .row.align-center.text-center
     .columns.small-12.large-10
       h2.headline-3 The burdens of compliance slow down your business
@@ -54,13 +54,13 @@ section.section-article.container-gray-12
         .columns.small-6
           p.text-small Modern health IT is an ecosystem of solutions, which means digital health products must have a strategy to integrate with existing EHRs or other systems of record like PACs. Integrating with legacy on-premises systems is not easy when your architecture is on the cloud. Compliance, security, privacy, VPNs, and 1980s protocols are requirements for true interoperability.
 
-section.section-article.container-color--dark-grad-green
+section.section-article.container-color--dark-grad-green.container-image--fixed
   .row.align-center
     .columns.small-12.text-center
       h2.headline-3.group Your playbook for digital health success
   .row.align-center.row--card-grid
     .columns.small-12.medium-6.large-5
-      .card.drop
+      .card.container-gray-2
         .card-section
           h3.headline-5 Compliant Kubernetes Service (CKS)
           p
@@ -73,7 +73,7 @@ section.section-article.container-color--dark-grad-green
         .card-divider.card-divider--flush
           = partial "partials/snippets/button", :locals => { :label => "Explore Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button-inline", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product-cks", :data_track_group => "cks" }
     .columns.small-12.medium-6.large-5
-      .card.drop
+      .card.container-gray-2
         .card-section
           h3.headline-5 Compliant Managed Integration (CMI)
           p
