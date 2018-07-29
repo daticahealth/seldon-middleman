@@ -8,7 +8,13 @@
             title: "Compliant Kubernetes Service"
             title_short: "Datica CKS"
             url: "/compliant-kubernetes-service/"
-            desc: "Datica is a cloud enablement layer for all healthcare applications"
+            desc: "Datica is a complete, enterprise cloud-native solution for regulated industries."
+            nav_main: true
+        -
+            title: "Compliant Managed Integration"
+            title_short: "Datica CMI"
+            url: "/compliant-managed-integration/"
+            desc: "The complete toolset to handle compliant, scalable, secure data exchange with any EHR or clinical system."
             nav_main: true
         # -
         #     title: "Public Roadmap"

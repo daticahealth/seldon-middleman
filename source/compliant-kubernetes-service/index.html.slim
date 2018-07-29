@@ -13,6 +13,11 @@ collectionOrder: 1
 priority: "0.9"
 ---
 - current_page.data.share_image = image_share_platform
+svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  defs
+    symbol#icon-chevron-down viewbox=("0 0 18 18")
+      title chevron-down
+      path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
 
 .container-color--dark-grad-blue
   section#platform-top.section-article.position-relative(style="overflow: hidden;")
@@ -32,26 +37,57 @@ priority: "0.9"
 
 section#setup.section-article.container-gray-12
   .row.align-center
-    .columns.small-12
-      .row.align-center
-        .columns.small-12.medium-10.large-8.group.text-center
-          h3.headline-5.spaced-out The Datica promise brought to a Kubernetes service
-          h2.headline-2 Datica bridges security and compliance with Kubernetes to offer an enterprise-grade cloud native solution.
-          p.lead If you're working within a regulated industry like healthcare, you have almost zero options when it comes to using Kubernetes — either you manage the control plane, the operating system and the underlying infrastructure to maintain the flexibility required for compliance, or you risk falling out of compliance by using an existing managed service. Datica changes all of that.
-      .row.align-center.small-up-1.medium-up-2.large-up-4.group
-        .column
-          / h4.headline-4.hide-for-medium 1. Setup
-          img.pad.show-for-medium src="https://images.ctfassets.net/189dvqdsjh46/yc639CSDwka8aAs4Uo0kW/cb3458e6089ae9bd7312389acc374f9b/setup-1.png?w=450" alt="Setup"
-          p CKS is a compliant managed Kubernetes service for regulated industries. In addition to managing the cluster control plane, CKS also configures the underlying operating system, configures the underlying instances — and installs, configures and manages a set of deployments required to achieve compliance.
-        .column
-          / h4.headline-4.hide-for-medium 2. Installation
-          img.pad.show-for-medium src="https://images.ctfassets.net/189dvqdsjh46/4jQ7VNUSIMUIS2aIKQWEOO/bb83fc6ec264ddd12f3b29410fe784c0/setup-2.png?w=450" alt="Installation"
-          p Deployments include logging, monitoring, intrusion detection, antivirus software, and more. In addition to the technical configuration, Datica assumes the liability for the complete stack within our BAA, something not available or possible with any other managed Kubernetes offering. CKS delivers a compliant managed Kubernetes service that functions like any other Kubernetes cluster, but one that comes pre-configured for compliance and security out of the box.
+    .columns.small-12.medium-10.large-8.group.text-center
+      h3.headline-5.spaced-out The Datica promise brought to a Kubernetes service
+      h2.headline-2 Datica bridges security and compliance with Kubernetes to offer an enterprise-grade cloud native solution.
+      p.lead If you're working within a regulated industry like healthcare, you have almost zero options when it comes to using Kubernetes — either you manage the control plane, the operating system and the underlying infrastructure to maintain the flexibility required for compliance, or you risk falling out of compliance by using an existing managed service. Datica changes all of that.
+  .row.align-center.small-up-1.medium-up-2.large-up-4.group
+    .column
+      / h4.headline-4.hide-for-medium 1. Setup
+      img.pad.show-for-medium src="https://images.ctfassets.net/189dvqdsjh46/yc639CSDwka8aAs4Uo0kW/cb3458e6089ae9bd7312389acc374f9b/setup-1.png?w=450" alt="Setup"
+      p CKS is a compliant managed Kubernetes service for regulated industries. In addition to managing the cluster control plane, CKS also configures the underlying operating system, configures the underlying instances — and installs, configures and manages a set of deployments required to achieve compliance.
+    .column
+      / h4.headline-4.hide-for-medium 2. Installation
+      img.pad.show-for-medium src="https://images.ctfassets.net/189dvqdsjh46/4jQ7VNUSIMUIS2aIKQWEOO/bb83fc6ec264ddd12f3b29410fe784c0/setup-2.png?w=450" alt="Installation"
+      p Deployments include logging, monitoring, intrusion detection, antivirus software, and more. In addition to the technical configuration, Datica assumes the liability for the complete stack within our BAA, something not available or possible with any other managed Kubernetes offering. CKS delivers a compliant managed Kubernetes service that functions like any other Kubernetes cluster, but one that comes pre-configured for compliance and security out of the box.
 
-      .row.align-center
-        .columns.small-12.medium-8.large-5.xlarge-4
-          .card.drop
-            = partial("partials/ctas/card-schedule-demo")
+  .row.align-center
+    .columns.small-12.medium-8.large-5.xlarge-4
+      .card.drop
+        = partial("partials/ctas/card-schedule-demo")
+
+section#features.section-article
+  - ordered_feature_categories = data.site.featureCategories.to_a.sort_by{ |id, featureCat| featureCat['sort_order'] }
+  - ordered_feature_categories.each do | id, featureCat |
+    .row
+      .columns.small-12
+        .callout.callout--large.drop.group--2x
+          .row
+            .columns.small-12.medium-8
+              h3.headline-3(id="featureCat_#{featureCat.slug}") #{featureCat["title"]}
+              - if featureCat.has_key?("desc")
+                p = featureCat["desc"]
+          .row
+            .columns.small-12
+              hr.no-margin-top
+          .row.small-up-1.medium-up-2.large-up-3.xlarge-up-3.group--2x.no-margin-all-the-things
+            - if featureCat.has_key?("related_features")
+              - featureCat["related_features"].each do | feature |
+                .column.feature-item
+                  - if feature.has_key?('desc')
+                    h4.headline-5(id="feature-#{feature.slug}")
+                      a.is-toggle(data-toggle="feature-detail_#{feature.slug}" data-track="true" data-track-category="platform" data-track-id="feature-detail_#{feature.slug}")
+                        = feature.title
+                        svg.icon-inline.icon-toggle.svg-color--blue.icon.icon-plus-disc id="feature-icon-#{feature.slug}"
+                          use.symbol-icon xlink:href="#icon-chevron-down"
+                  - else
+                    h4.headline-6= feature.title
+                  - if feature.has_key?("summary")
+                    = Kramdown::Document.new(feature.summary).to_html
+                  - if feature.has_key?("desc")
+                    .show-more--container.text-smaller data-off-canvas="" data-toggler="" id="feature-detail_#{feature.slug}"
+                      = Kramdown::Document.new(feature.desc).to_html
+
 
 section#setup.section-article.container-gray-2
   .row.align-center
