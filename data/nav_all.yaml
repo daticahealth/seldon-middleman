@@ -24,11 +24,11 @@
         #     title: "Customer Success"
         #     url: "/products/success/"
         #     desc: "Case studies and customer profiles of success"
-        -
-            title: "Services"
-            url: "/services/"
-            desc: "Professional services offered by Datica"
-            nav_main: true
+        # -
+        #     title: "Services"
+        #     url: "/services/"
+        #     desc: "Professional services offered by Datica"
+        #     nav_main: true
         -
             title: "Pricing"
             url: "/pricing/"
