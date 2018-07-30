@@ -1,0 +1,24 @@
+- filtered_reports = data.site.reports.to_a.select { |id, item| (item["slug"] == "2015" || item["slug"] == "2016" ) }
+- filtered_reports.each do | id, report_entry |
+    - if report_entry.has_key?("image_thumb")
+        - thumb = report_entry.image_thumb.url
+    - elsif report_entry.has_key?("bg_image")
+        - thumb = report_entry.bg_image.url
+    - else
+        - thumb = nil
+    .column.group
+        - unless thumb == nil
+            a href="/innovation/#{report_entry["slug"]}" title=("Get your free report")
+                img.thumbnail.float-left(src="#{thumb}?fit=thumb&w=360&h=360" alt="report Preview" width="180")
+        .h2.headline-5.margin-bottom-small
+            a(href="/innovation/#{report_entry["slug"]}" title="Get your free report") = report_entry["title"]
+        .menu.simple.margin-bottom-small
+            / - if report_entry.has_key?("discovery_topic")
+                li
+                    span.label.info.round = data.site.discover[report_entry.discovery_topic.id].title
+            - if report_entry.has_key?("authors")
+                - report_entry.authors.each do | author |
+                    li
+                        = partial("partials/snippets/person-avatar", :locals => { :p => author, :size => "small" })
+        .text-small
+            = Kramdown::Document.new(report_entry["summary"]).to_html

@@ -111,8 +111,13 @@
   status = 301
 
 [[redirects]]
-  from = "/solutions"
-  to = "/services"
+  from = "/solutions/"
+  to = "/compliant-managed-integration/"
+  status = 301
+
+[[redirects]]
+  from = "/services/"
+  to = "/compliant-managed-integration/"
   status = 301
 
 [[redirects]]

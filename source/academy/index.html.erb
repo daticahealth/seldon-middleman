@@ -156,8 +156,9 @@ current_page.data.date = today.strftime('%B %-d, %Y')
             <div class="columns small-12 medium-10 text-center">
                 <h2 class="headline-3 group"><strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.</h2>
                 <!-- <p class="lead">Start your free trial today.</p> -->
-                <%= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" } %>
+                <%= partial "partials/snippets/button", :locals => { :label => "Learn about Datica CKS", :url => "/compliant-kubernetes-service", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_align => "right" } %>
             </div>
         </div>
     </div>
 </aside>
+<%= partial "/partials/section-promos/dhsf-video", :locals => { :align => "left" } %>
