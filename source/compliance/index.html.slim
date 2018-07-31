@@ -20,8 +20,9 @@ section#compliance-top.container-color--dark-alt style=("background-color: #2327
   .container-image--center(data-interchange="[/public/img/art/compliance-bg.svg, small]")
     section.section-article
       .row.align-center.group
-        .columns.small-12.medium-12.large-8
-          h1.headline-2.group.text-center= current_page.data.summary
+        .columns.small-12.medium-12.large-8.text-center
+          h1.headline-2.group= current_page.data.summary
+          = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo/", :button_classes => "button button--light group", :item_id => "cta_top-demo", :icon => "icon-event-check", :icon_align => "left" }
           .video.drop--big
             script async="" src="//fast.wistia.com/embed/medias/1o1udvaa6z.jsonp"
             script async="" src="//fast.wistia.com/assets/external/E-v1.js"
@@ -38,8 +39,7 @@ section#compliance-top.container-color--dark-alt style=("background-color: #2327
           = inline_svg_art("source/assets/img/art/k8-continuous-compliance.svg", class: "svg-color--white")
           h3.headline-4 Datica solves your problem
           p Datica’s array of products and services allow development flexibility while providing prescriptive compliance and security built in. With Datica, any technology team can manage compliance on the cloud, giving organizations the assurances they need to adopt the benefits of the cloud.
-      .menu.button-cluster.align-center
-        = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo/", :button_classes => "button hollow-inverted", :item_id => "cta_top-demo", :icon => "icon-event-check", :icon_align => "left" }
+      / .menu.button-cluster.align-center
 
 section#compliance-shared-responsibility.section-article.container-gray-2
   .row.group.align-center
@@ -215,4 +215,4 @@ aside#ctaBottom.container-color--dark-grad-blue
       .columns.small-6.large-4.text-right
         = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
       .columns.small-6.large-6.text-left
-        = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
+       = partial "partials/snippets/button", :locals => { :label => "Learn About Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cks" }
