@@ -45,7 +45,7 @@ aside.hide-for-large.section-article.container-color--blue-alt.menu.button-clust
             li REST API endpoints mapped to all major data standards
             li VPN setup for secure connectivity
       .columns.small-12.large-7
-        img alt=("Platform Integration") data-interchange="[/public/img/platform-integration-1x.png, small], [/public/img/platform-integration-2x.png, large]" /
+        img.lozad alt=("Platform Integration") data-src="/public/img/platform-integration-2x.png" /
 
     aside.section-article--sm.menu.button-cluster.align-center.show-for-large
       = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow", :item_id => "cta_top_pricing" }
@@ -107,7 +107,7 @@ section.section-article.container-gray-5.text-center
   .row.align-center
     .columns.small-12.large-10
       h3.headline-4 One REST API for all your connections
-      img.img-crisp alt=("One REST API for all your connections") data-interchange="[/public/img/platform-one-api-diagram.png, small]" /
+      img.img-crisp.lozad alt=("One REST API for all your connections") data-background-image="/public/img/platform-one-api-diagram.png" /
 section.section-article
   .row.align-center
     .columns.small-12.medium-10.large-8.text-center
@@ -185,13 +185,13 @@ section.section-article
       h3.headline-3 A trusted partner with established healthcare organizations
       .logo-cloud
         - data.views.managed_integration.customer_healthsystems_list.each do |logo|
-          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
   .row.align-center
     .columns.small-12.large-10.text-center
       h3.headline-3.nomargin Successful, live integrations with all major EHRs
       .logo-cloud
         - data.views.ehrs.ehr_list.each do |logo|
-          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
 
 section#cta.section-article.container-color--gray-dark-grad
   .row.align-center.align-middle
