@@ -416,3 +416,14 @@ $underline: false !default;
         max-width: 33%;
     }
 }
+
+@mixin blend-multiply {
+    @supports (background-blend-mode: multiply) {
+        background-blend-mode: multiply;
+    }
+}
+@mixin blend-overlay {
+    @supports (background-blend-mode: overlay) {
+        background-blend-mode: overlay;
+    }
+}

@@ -49,15 +49,7 @@
             title: "Global Compliance Posture"
             url: "/compliance/global"
             desc: "Need to go international? Here's a look at our compliance posture around the world."
-            has_divider: true
-        -
-            title: "Discover: Compliance Topics"
-            url: "/discover/"
-            desc: "A curated collection of compliance topics from Datica"
-        -
-            title: "Digital Health Success Framework"
-            url: "/dhsf/"
-            desc: "The framework for teams building digital health products"
+            # has_divider: true
 -
     title: "Resources"
     url:
@@ -65,18 +57,26 @@
     nav_main: true
     children:
         -
-            title: "Innovation Hub"
-            url: "/innovation/"
-            desc: "Home of the Healthcare Innovators Podcast, In-depth Reports, and More"
-        -
-            title: "Webinars"
-            url: "/webinars/"
-            desc: "Datica webinars covering compliance topics in depth."
-        -
             title: "Datica Academy"
             url: "/academy/"
             desc: "The definitive resource for those looking to learn about compliance and interoperability"
             has_divider: true
+        -
+            title: "Digital Health Success Framework"
+            url: "/dhsf/"
+            desc: "The framework for teams building digital health products"
+        -
+            title: "Innovation Hub"
+            url: "/innovation/"
+            desc: "Home of the Healthcare Innovators Podcast, In-depth Reports, and More"
+        -
+            title: "Discover: Compliance Topics"
+            url: "/discover/"
+            desc: "A curated collection of compliance topics from Datica"
+        -
+            title: "Webinars"
+            url: "/webinars/"
+            desc: "Datica webinars covering compliance topics in depth."
         -
             title: "Open Source"
             url: "/open-source/"

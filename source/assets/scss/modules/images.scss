@@ -79,9 +79,7 @@ figcaption{
 //     background-blend-mode: multiply;
 // }
 .bg-blend-multiply {
-    @supports (background-blend-mode: multiply) {
-        background-blend-mode: multiply;
-    }
+    @include blend-multiply;
 }
 .html5-video-responsive {
     width: calc(100vw);
@@ -97,6 +95,13 @@ figcaption{
     }
 }
 
+.lozad {
+    transition: opacity $timing-default * 2 linear;
+    opacity: 0;
+}
+.lozad.loaded {
+    opacity: 1;
+}
 // .container--image-fit {
 //     position: relative;
 //     overflow: hidden;

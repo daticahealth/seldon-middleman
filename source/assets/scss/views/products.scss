@@ -12,44 +12,60 @@
 // @include foundation-off-canvas;
 
 // custom stuff
-.platform-art-1 { // pair with container-x bg image fill classes
-    position: absolute;
-    top: 1rem;
-    height: 50%; // fallback
-    height: calc(3rem + 40vw);
-    right: -28%;
-    width: 100%;
-    opacity: 0.2;
-    @include breakpoint (medium) {
-        opacity: 1;
-    }
-//     @include breakpoint (large) {
-//         right: -28%;
-//         width: 76%;
-//     }
-//     @include breakpoint (xlarge) {
-//         right: -10%;
-//         width: 62%;
-//     }
-//     @include breakpoint (xxlarge) {
-//         right: -14%;
-//         width: 62%;
-//     }
-// }
-// .icon-columns-left-group {
-//     .column, .columns {
-//         margin-bottom: 1.5rem;
-//         @include breakpoint (medium) {
-//         }
-//     }
-// }
-// .icon-pull-left-medium {
-//     @include breakpoint (medium) {
-//         float: left;
-//         margin-right: 1rem;
-//     }
-// }
+.product-cks-bg {
+    // position: absolute;
+    // top:  0;
+    // left: 0;
+    // width: 100%;
+    color: $color_white; // optional, only spec if needed
+    // background-image: url("https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg");
+    background-color: #1c4a6c; // fallback
+    // @include gradient(-155deg, #1B2044 0%, #17181D 52%, #1F4681 100%);
+    @include blend-overlay;
 }
+// .product-cks-2 {
+//     @include breakpoint(large) {
+//         margin-top: ;
+//     }
+// }
+// .platform-art-1 { // pair with container-x bg image fill classes
+//     position: absolute;
+//     top: 1rem;
+//     height: 50%; // fallback
+//     height: calc(3rem + 40vw);
+//     right: -28%;
+//     width: 100%;
+//     opacity: 0.2;
+//     @include breakpoint (medium) {
+//         opacity: 1;
+//     }
+// //     @include breakpoint (large) {
+// //         right: -28%;
+// //         width: 76%;
+// //     }
+// //     @include breakpoint (xlarge) {
+// //         right: -10%;
+// //         width: 62%;
+// //     }
+// //     @include breakpoint (xxlarge) {
+// //         right: -14%;
+// //         width: 62%;
+// //     }
+// // }
+// // .icon-columns-left-group {
+// //     .column, .columns {
+// //         margin-bottom: 1.5rem;
+// //         @include breakpoint (medium) {
+// //         }
+// //     }
+// // }
+// // .icon-pull-left-medium {
+// //     @include breakpoint (medium) {
+// //         float: left;
+// //         margin-right: 1rem;
+// //     }
+// // }
+// }
 $color: $color_blue;
 .solid {
   fill: $color;
