@@ -28,7 +28,7 @@ svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0;
         .group--2x
           h2.headline-2 Datica <strong>bridges security and compliance</strong> with Kubernetes to offer an enterprise-grade cloud native solution.
           = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "#cta", :button_classes => "button button--light", :icon => "icon-chevron-down", :item_id => "cta_top_success" }
-    .row.group.align-middle
+    .row.group--2x.align-middle
       .columns.small-12.medium-8.large-7
         = inline_svg("icon-datica", :class => "icon-size--large svg-color--white float-left")
         .group.content-indent
@@ -47,7 +47,7 @@ svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0;
           p Deployments include logging, monitoring, intrusion detection, antivirus software, and more. In addition to the technical configuration, Datica assumes the liability for the complete stack within our BAA, something not available or possible with any other managed Kubernetes offering. CKS functions like any other Kubernetes cluster—but one that comes pre-configured for compliance and security out of the box.
       .show-for-medium.columns.small-12.medium-4.large-4.large-offset-1
         img.img-crisp.product-cks-2.lozad(data-src="https://images.ctfassets.net/189dvqdsjh46/6ukoyjsk7e2CciYIG2Cueu/20999ad20f16115051f1c84bd448289c/cks-art.png")
-    section#features.section-article
+    section#features
     - ordered_feature_categories = data.site.featureCategories.to_a.sort_by{ |id, featureCat| featureCat['sort_order'] }
     - ordered_feature_categories.each do | id, featureCat |
       .row
@@ -85,7 +85,7 @@ svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0;
       .columns.small-6.text-right
         h3.headline-5.spaced-out Talk to our experts today
       .columns.small-6
-        = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "#cta", :button_classes => "button", :icon => "icon-chevron-down", :item_id => "cta_top_success" }
+        = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "#cta", :button_classes => "button button--light", :icon => "icon-chevron-down", :item_id => "cta_top_success" }
 
 section#setup.section-article.container-gray-2
   .row.align-center
