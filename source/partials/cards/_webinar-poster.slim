@@ -6,7 +6,7 @@ ruby:
         thumb = bg_default
     end
 
-a.preview.container-gray-3.container-image-fill href="/webinars/#{entry["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]" data-webinar-id = entry._meta.id
+a.lozad.preview.container-gray-3.container-image-fill href="/webinars/#{entry["slug"]}" title=("View webinar") data-background-image="#{thumb}" data-webinar-id = entry._meta.id
     div.preview-subhead Datica Webinar
     .preview-title
         h2.headline-3 = entry["title"]

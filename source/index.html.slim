@@ -95,7 +95,7 @@ section.section-article
         - data.views.home.badges.each do |logo|
           - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
           .column
-            img alt="#{logo["name"]}" class=logopad src="#{logo["fileUrl"]}" /
+            img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
       = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "logo-cloud", :data_track_group => "compliance" }
 
 = partial "partials/section-promos/aws-mlh-video", :locals => { :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS", :container_color => "container-gray-11" }
@@ -105,7 +105,7 @@ section.section-article
       h3.headline-3 <strong>World-class companies</strong> trust Datica
       .logo-cloud
         - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
-          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") data-interchange="[/public/img/customer-logos/sm/#{logo['file']}.png, small]" /
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
 
 .container-color--dark-grad-blue
   section.section-article

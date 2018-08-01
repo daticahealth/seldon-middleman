@@ -34,7 +34,7 @@ end
 <% if p.has_key?("cta_image") %>
     <aside class="cta cta--image group" id="cta">
         <a class="" href="<%= p["cta_url"] %>" title="<%= p["cta_label"] %>">
-            <img src="<%= p["cta_image"]["url"] %>" alt="<%= p["cta_label"] %>">
+            <img class="lozad" data-src="<%= p["cta_image"]["url"] %>" alt="<%= p["cta_label"] %>">
         </a>
     </aside>
 <% elsif p.has_key?("cta_widget") %>
@@ -46,7 +46,7 @@ end
 <% else %>
     <aside class="<%= style_classes %>" id="cta">
         <% if p.has_key?("cta_icon") %>
-            <img src="<%= p['cta_icon'] %>" alt="icon" class="cta--icon inject-me <%= svg_color %>">
+            <img data-src="<%= p['cta_icon'] %>" alt="icon" class="lozad cta--icon inject-me <%= svg_color %>">
         <% end %>
         <div class="cta--body<% if p.has_key?("cta_icon") %> cta--body-right<% end %>">
             <h3 class="headline-3 cta--header"><%= p["cta_title"] %></h3>

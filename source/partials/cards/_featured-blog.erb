@@ -63,13 +63,13 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
 %>
 <%# Renders a card inside a post loop. Post var must be injected - AW %>
 <div class="card <%= style_classes %> <%= fit_classes %>">
-    <% if image_url != nil %><a class="container-image-fill card-header-image container-gray-3" href="<%= related_post_path %>" title="Read '<%= post["title"] %>'" data-background-image="<%= image_url %>?fit=thumb&w=600&h=300">
+    <% if image_url != nil %><a class="container-image-fill card-header-image container-gray-3 lozad" href="<%= related_post_path %>" title="Read '<%= post["title"] %>'" data-background-image="<%= image_url %>?fit=thumb&w=600&h=300">
         <% if content_type != nil %><span class="card-header-subhead"><%= content_type %></span><% end %>
         <h2 class="headline-5 card-header-title ribbon--gray-1"><%= post["title"] %></h2>
         <%= inline_svg("icon-arrow-right-circle-large", class: "icon-size--xlarge card-header-icon svg-color--white") %>
     </a><% end %>
 
-    <% if url_segment == "innovation" %><a class="lozad container-image-fill card-header-image card-header-image--compact container-gray-3" href="<%= related_post_path %>" title="Read '<%= post["title"] %>/'" data-background-image="/public/img/art/art-sound-bars-purple.svg">
+    <% if url_segment == "innovation" %><a class="container-image-fill card-header-image card-header-image--compact container-gray-3 lozad" href="<%= related_post_path %>" title="Read '<%= post["title"] %>/'" data-background-image="/public/img/art/art-sound-bars-purple.svg">
         <span class="card-header-subhead">Healthcare Innovators Podcast</span>
         <h2 class="card-header-title headline-5 ribbon--gray-1"><%= post["title"] %></h2>
         <%= inline_svg("icon-video-play-circle", class: "icon-size--xlarge card-header-icon svg-color--white") %>
