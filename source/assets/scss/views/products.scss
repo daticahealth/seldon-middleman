@@ -19,9 +19,25 @@
     // width: 100%;
     color: $color_white; // optional, only spec if needed
     // background-image: url("https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg");
-    background-color: #1c4a6c; // fallback
-    // @include gradient(-155deg, #1B2044 0%, #17181D 52%, #1F4681 100%);
-    @include blend-overlay;
+    // background-color: #1c4a6c; // fallback. can't combine this with blend-mode, it will stack!
+    @include breakpoint (small only) {
+        @include gradient(to bottom, #234880 0%, #366090 60%, #3d7e9c 100%);
+    }
+    // Multiple backgrounds, blend modes, tablet up only :zap:
+    @include breakpoint (medium) {
+        @supports (background-blend-mode: overlay) and (background-blend-mode: screen) {
+            background-image: 
+                url('https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg?w=1200'),
+                url('/public/img/art/hexagon-bg-simple.svg'),
+                linear-gradient(to bottom, #234880 0%, #366090 60%, #3d7e9c 100%);
+            background-blend-mode: overlay, screen;
+            background-repeat: no-repeat;
+            background-position:
+                center top,
+                bottom right;
+            background-size: contain;
+        }
+    }
 }
 // .product-cks-2 {
 //     @include breakpoint(large) {
