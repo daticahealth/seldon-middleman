@@ -111,7 +111,7 @@
     }
     &--dark {
         @include color--tint;
-        label {
+        .label {
             color: white(0.7);
         }
     }
