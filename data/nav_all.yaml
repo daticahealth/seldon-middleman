@@ -1,44 +1,66 @@
 -
-    title: "Platform"
+    title: "Products"
     url:
     desc:
+    nav_main: true
     children:
         -
-            title: "Platform"
-            url: "/platform/"
-            desc: "The Datica Platform is a cloud enablement layer for all healthcare applications"
+            title: "Compliant Kubernetes Service"
+            title_short: "Datica CKS"
+            url: "/compliant-kubernetes-service/"
+            desc: "Datica is a complete, enterprise cloud-native solution for regulated industries."
             nav_main: true
         -
-            title: "Compliance Story"
-            url: "/platform/compliance/"
-            desc: "Datica is HITRUST CSF Certified"
-        -
-            title: "Global Compliance Posture"
-            url: "/platform/compliance/global"
-            desc: "Need to go international? Here's a look at our compliance posture around the world."
-        -
-            title: "Public Roadmap"
-            url: "/platform/roadmap"
-            desc: "Here's what we're building."
-        -
-            title: "Customer Success"
-            url: "/platform/success/"
-            desc: "Case studies and customer profiles of success"
-        -
-            title: "Services"
-            url: "/services/"
-            desc: "Professional services offered by Datica"
+            title: "Compliant Managed Integration"
+            title_short: "Datica CMI"
+            url: "/compliant-managed-integration/"
+            desc: "The complete toolset to handle compliant, scalable, secure data exchange with any EHR or clinical system."
             nav_main: true
+        # -
+        #     title: "Public Roadmap"
+        #     url: "/roadmap"
+        #     desc: "Here's what we're building."
+        # -
+        #     title: "Customer Success"
+        #     url: "/products/success/"
+        #     desc: "Case studies and customer profiles of success"
+        # -
+        #     title: "Services"
+        #     url: "/services/"
+        #     desc: "Professional services offered by Datica"
+        #     nav_main: true
         -
             title: "Pricing"
             url: "/pricing/"
-            desc: "Pricing for the Datica platform"
+            desc: "Talk to us for Datica pricing."
             nav_main: true
+-
+    title: "Compliance"
+    title_short: "Compliance"
+    url: 
+    desc: 
+    nav_main: true
+    children:
+        -
+            title: "Datica Compliance Story"
+            url: "/compliance/"
+            desc: "Datica is HITRUST CSF Certified"
+        -
+            title: "Global Compliance Posture"
+            url: "/compliance/global"
+            desc: "Need to go international? Here's a look at our compliance posture around the world."
+            # has_divider: true
 -
     title: "Resources"
     url:
     desc:
+    nav_main: true
     children:
+        -
+            title: "Datica Academy"
+            url: "/academy/"
+            desc: "The definitive resource for those looking to learn about compliance and interoperability"
+            has_divider: true
         -
             title: "Digital Health Success Framework"
             url: "/dhsf/"
@@ -48,18 +70,13 @@
             url: "/innovation/"
             desc: "Home of the Healthcare Innovators Podcast, In-depth Reports, and More"
         -
+            title: "Discover: Compliance Topics"
+            url: "/discover/"
+            desc: "A curated collection of compliance topics from Datica"
+        -
             title: "Webinars"
             url: "/webinars/"
             desc: "Datica webinars covering compliance topics in depth."
-        -
-            title: "Datica Academy"
-            url: "/academy/"
-            desc: "The definitive resource for those looking to learn about compliance and interoperability"
-            has_divider: true
-        -
-            title: "Discover: Healthcare Topics"
-            url: "/discover/"
-            desc: "A Curated Collection of Healthcare Technology Topics from Datica"
         -
             title: "Open Source"
             url: "/open-source/"
@@ -73,6 +90,7 @@
     title: "Company"
     url:
     desc:
+    nav_main: true
     children:
         -
             title: "About Us"
@@ -99,6 +117,7 @@
     title: "Help"
     url:
     desc:
+    nav_main: true
     children:
         -
             title: "Sign in"
@@ -116,6 +135,7 @@
     title: "Legal"
     url:
     desc:
+    nav_main: false
     children:
         -
             title: "Company Policies"

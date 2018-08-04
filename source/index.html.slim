@@ -23,28 +23,77 @@ asset_preload: '<link href="/public/img/art/home-header-art-hexagons-anim.svg" r
   .container-image--center(data-interchange="[/public/img/art/home-header-art-hexagons-anim.svg, small]")
     = partial "partials/head/header", :locals => { :style => "light" }
     section.section-article
-      .row.align-middle
-        .columns.small-12.medium-6.large-8
-          h1.headline-1 A security and compliance layer for Kubernetes<sup>&reg;</sup>
-          h2.headline-4 Datica manages the compliance of your favorite tools, technologies and Platforms.
-          p.lead
-            | The Datica Platform makes your cloud workloads compliant to the standards of HIPAA, HITRUST, GDPR, and GxP.
-          = partial "partials/snippets/button", :locals => { :label => "Explore the Platform", :url => "/platform/", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right" }
-
+      .row.align-center.group--sm
+        .columns.small-12.medium-10.large-10.text-center
+          h1.headline-1 The Industry Cloud For Digital Health
+      .row.align-center
+        .columns.small-12.medium-6.large-5
+          h2.headline-4.text-light.group--sm We provide you with <a class="link--yellow" href="/compliance" title="Datica Compliance Story">compliance</a> tools to <a class="link--yellow" href="/compliant-kubernetes-service" title="Datica Compliant Kubernetes® Service">deploy cloud-native workloads</a> and <a class="link--yellow" href="/compliant-managed-integration" title="Datica Compliant Managed Integration">integrate with EHRs</a>.
+          = partial "partials/snippets/button", :locals => { :label => "Learn About Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-top", :data_track_group => "cks" }
         .columns.small-12.medium-6.large-4
-          .card.container-color--light-shimmer
+          .card.container-color--light-shimmer.pad--sm
             = partial("partials/ctas/card-schedule-demo")
 .strip-bright
+section.section-article.container-gray-11
+  .row.align-center.text-center.group
+    .columns.small-12.large-8
+      h2.headline-2 The burdens of compliance slow down your business
+  .row.align-center.align-middle.group
+    .columns.small-12.medium-6.large-5
+      img.lozad data-src="https://images.ctfassets.net/189dvqdsjh46/6miPan23VmIGCkio4USq2i/73c7751e89d3d27bbd9b8f5c892c8762/home-shared-responsibility.png" alt="Shared Responsibility"
+    .columns.small-12.medium-6.large-5
+      h3.headline-4 Shared Responsibility is still your responsibility
+      p When you deploy your workloads onto cloud service providers like AWS, Microsoft Azure, and Google Cloud, you are always responsible for a major portion of the compliance burden, predominantly at the operating system level. Addressing the gap is not rocket science, but is tedious and expensive. More importantly, it gives a reason for compliance officers to say "No" to using the cloud.
+  .row.align-center.align-middle.group
+    .columns.small-12.medium-6.large-4.medium-order-2
+      img.lozad data-src="https://images.ctfassets.net/189dvqdsjh46/5N57zvAxrOKQuIUyWQEMeY/0a41e85ba434aa2403577eef7e561368/home-integration.png" alt="EHR integration"
+    .columns.small-12.medium-6.large-5.medium-order-1
+      h3.headline-4 Interoperable data requires interoperable infrastructure
+      p Modern health IT is an ecosystem of solutions, which means digital health products must have a strategy to integrate with existing EHRs or other systems of record like PACs. Integrating with legacy on-premises systems is not easy when your architecture is on the cloud. Compliance, security, privacy, VPNs, and 1980s-era protocols are requirements for true interoperability.
+
+section.section-article.bg-blend-multiply.container-image--fixed.lozad style="background-color: #578aaf;" data-background-image="https://images.ctfassets.net/189dvqdsjh46/6ivcMB8oHC8CiciwMMKOiK/aa6fa29c4e6a724f6864adef1f635cc3/bridge_beam__cables__sky__low-contrast_light__-_yuriy-trubitsyn-8714-unsplash.jpg?w=1800"
+  .row.align-center
+    .columns.small-12.text-center
+      h2.headline-3.group.text--white Your playbook for digital health success
+  .row.align-center.row--card-grid
+    .columns.small-12.medium-6.large-5
+      .card.container-gray-2
+        .card-section
+          h3.headline-5 Compliant Kubernetes Service (CKS)
+          p
+            | Datica CKS bridges security and compliance with Kubernetes<sup>&reg;</sup> to offer a complete, enterprise cloud-native solution for regulated industries. We deploy a managed Kubernetes cluster on your cloud account which is then configured to a perfectly compliant state every five minutes.
+          ul.list-check
+            li The only fully compliant Kubernetes service out there
+            li HITRUST CSF v9.1 Certified, GDPR Compliant
+            li Immediate AWS availability, Azure and GCP coming soon
+            li Compatible with managed services like AWS RDS
+        .card-divider.card-divider--flush
+          = partial "partials/snippets/button", :locals => { :label => "Explore Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button-inline", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product-cks", :data_track_group => "cks" }
+    .columns.small-12.medium-6.large-5
+      .card.container-gray-2
+        .card-section
+          h3.headline-5 Compliant Managed Integration (CMI)
+          p
+            | Datica CMI solves the entire process of integration, enabling real-time data exchange with EHRs. We do this by focusing on a required blend of expertise, services, open source, and addressing infrastructure compliance and security concerns.
+          ul.list-check
+            li Translates hard-to-use data standards to REST APIs
+            li You own the transformations, meaning zero lock-in
+            li Vendor app store compatible
+            li Predictable pricing
+        .card-divider.card-divider--flush
+          = partial "partials/snippets/button", :locals => { :label => "Explore Datica CMI", :url => "/compliant-managed-integration/", :button_classes => "button button-inline", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product-cmi", :data_track_group => "cmi" }
+
 section.section-article
   .row.align-center.text-center
     .columns.small-12.large-9
-      h2.headline-3.group <strong>Healthcare's best compliance coverage</strong> <br>for teams large and small
+      / p.lead
+      /   | The Datica Platform makes your cloud workloads compliant to the standards of HIPAA, HITRUST, GDPR, and GxP.      h2.headline-3.group <strong>Healthcare's best compliance coverage</strong> <br>for teams large and small
       .row.small-up-3.medium-up-5.align-middle.align-center.group
         - data.views.home.badges.each do |logo|
           - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
           .column
-            img alt="#{logo["name"]}" class=logopad src="#{logo["fileUrl"]}" /
-      = partial "partials/snippets/button", :locals => { :label => "Platform Compliance Overview", :title => "Read more", :url => "/platform/compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
+            img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
+      = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "logo-cloud", :data_track_group => "compliance" }
 
 = partial "partials/section-promos/aws-mlh-video", :locals => { :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS", :container_color => "container-gray-11" }
 section.section-article
@@ -53,7 +102,7 @@ section.section-article
       h3.headline-3 <strong>World-class companies</strong> trust Datica
       .logo-cloud
         - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
-          img alt="#{logo["name"]}" class=("logo-cloud--item logo-size--#{logo['logoSize']}") data-interchange="[/public/img/customer-logos/sm/#{logo['file']}.png, small]" /
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
 
 .container-color--dark-grad-blue
   section.section-article
@@ -76,12 +125,10 @@ section.container-gray-10.section-article
   = partial "partials/content/recent-items"
 
 aside#ctaBottom.container-color--dark-grad-blue
-  .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
+  .section-article.container-image--center.lozad data-background-image="/public/img/art/platform-iso-illustration-bg.svg"
     .row.align-center
       .columns.small-12.medium-10.large-10.text-center
-        h2.headline-3 <strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.
-    .row.align-center
-      .columns.small-6.large-4.text-right
+        h2.headline-3 The Industry Cloud for Digital Health is here.
+    .menu.button-group.align-center
         = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing/", :button_classes => "button hollow-inverted" }
-      .columns.small-6.large-6.text-left
-        = partial "partials/snippets/button", :locals => { :label => "Explore Platform Capabilities", :title => "Explore the capabilities of the Datica Platform", :url => "/platform/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black" }
+        = partial "partials/snippets/button", :locals => { :label => "Learn About Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cks" }

@@ -31,7 +31,7 @@
         <%= javascript_include_tag "jquery" %>
         <%= javascript_include_tag "foundation.min" %>
         <%= javascript_include_tag "cookie", "sharer", "all" %>
-
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.6.0/lozad.min.js"></script>
         <%# Custom JS files %>
         <% if current_page.data.has_key?("customJS") %>
             <% current_page.data.customJS.split(",").each do |filename| %>

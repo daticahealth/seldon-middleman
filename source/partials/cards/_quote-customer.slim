@@ -1,0 +1,25 @@
+ruby:
+  if defined?(classes)
+    style = " #{classes}"
+  else
+    style = " container-gray-12"
+  end
+
+.card.group.pad--sm(class=style)
+  .card-section
+    blockquote.quote-callout
+      - if customer.has_key?("customer_quote")
+        = customer["customer_quote"]["quote_body"]
+      - elsif customer.has_key?("customer_story_short")
+        = customer["customer_story_short"]
+    - if customer.has_key?("case_study")
+      p
+        a href="/customer/#{customer["slug"]}" title=("#{customer["company_name"]} profile") 
+          | Read the Case Study
+          = inline_svg("small/icon-chevron-right", class: "icon-inline")
+  - if customer.has_key?("profile_pic")
+    .card-section.card-section--flush.flex-container.align-justify.align-middle
+      .flex-child-shrink
+        = partial("partials/snippets/person", :locals => { :p => customer, :classes => "nomargin" })
+      .flex-child-shrink
+        img.logo-size--small-mid alt=("#{customer["company_name"]} Logo") src="/public/img/customer-logos/sm/#{customer["slug"]}-logo.png" /

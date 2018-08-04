@@ -1,13 +1,15 @@
 <footer class="section-article container-color--gray-gradient main-footer">
-    <div class="row small-up-2 medium-up-3 large-up-5">
+    <div class="row small-up-2 medium-up-3 large-up-6">
         <% data.nav_all.each do |f| %>
             <div class="column group">
                 <h5 class="headline-6"><%= f["title"] %></h5>
                 <ul class="no-bullet">
-                    <% f["children"].each do |c| %>
-                    <%# inner loop here %>
-                        <li>
-                            <%= current_link_to c.title, c.url, title: c.desc, class: "link--dark faded" %>
+                    <% if f.has_key?("children") %>
+                        <% f["children"].each do |c| %>
+                        <%# inner loop here %>
+                            <li>
+                                <%= current_link_to c.title, c.url, title: c.desc, class: "link--dark faded" %>
+                        <% end %>
                     <% end %>
                 </ul>
             </div>

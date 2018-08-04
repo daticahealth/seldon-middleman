@@ -11,7 +11,7 @@
             <% end %>
         </div>
         <% if post.has_key?("featured_image") %>
-            <div class="callout--article-image container-image--center" data-interchange="[<%= post["featured_image"]["url"] %>?fit=scale&w=400&h=200&q=35, small], [<%= post["featured_image"]["url"] %>?fit=scale&w=600&h=300&q=55, medium]"></div>
+            <div class="lozad container-gray-7 bg-blend-multiply callout--article-image container-image--center" data-background-image="<%= post["featured_image"]["url"] %>?fit=scale&w=400&h=250&q=55"></div>
         <% end %>
     </a>
 </div>

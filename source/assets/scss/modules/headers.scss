@@ -37,7 +37,7 @@
 // (based on Foundation header size list in settings, which drives all current headers)
 $headline-sizes: (
   small: (
-    '.headline-1': 42,
+    '.headline-1': 40,
     '.headline-2': 30,
     '.headline-3': 26,
     '.headline-4': 22,
@@ -53,10 +53,10 @@ $headline-sizes: (
     '.headline-6': 16,
   ),
   large: (
-    '.headline-1': 58,
-    '.headline-2': 46,
+    '.headline-1': 52,
+    '.headline-2': 44,
     '.headline-3': 32,
-    '.headline-4': 22,
+    '.headline-4': 24,
     '.headline-5': 18,
     '.headline-6': 16,
   )

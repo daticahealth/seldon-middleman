@@ -49,7 +49,7 @@ customCSS: "innovation"
                 <h3 class="subhead--spaced faded headline-5">Datica Innovation Reports</h3>
             </div>
         </div>
-        <div class="row row--card-grid full-width align-center small-up-1 medium-up-2 large-up-3">
+        <div class="row row--card-grid full-width align-center small-up-1 medium-up-2 large-up-4">
         <% sorted_reports[1...4].each do | id, report | %>
             <div class="column">
                 <div class="card drop">
@@ -71,7 +71,11 @@ customCSS: "innovation"
             </div>
         <% end %>
         </div>
+        <div class="row small-up-1 large-up-2 pad">
+            <%= partial "partials/content/reports-annual-list" %>
+        </div>
     </section>
+
     <%= partial "/partials/section-promos/leadership-gallery" %>
 
     <% sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse! %>

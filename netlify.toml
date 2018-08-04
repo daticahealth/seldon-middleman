@@ -37,13 +37,42 @@
   force = true
 
 [[redirects]]
-  from = "/platform/integration"
-  to = "/blog/if-its-possible-we-can-integrate-it/"
+  from = "/cks/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cmi/"
+  to = "/compliant-managed-integration/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/integration/"
+  to = "/compliant-managed-integration/"
   status = 301
 
 [[redirects]]
-  from = "/integration"
-  to = "/blog/if-its-possible-we-can-integrate-it/"
+  from = "/managed-integration/"
+  to = "/compliant-managed-integration/"
+  status = 301
+
+# [[redirects]]
+#   from = "/ccms/"
+#   to = "/cloud-compliance-management-system/"
+#   status = 301
+#   force = true
+
+[[redirects]]
+  from = "/ccms/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/platform/*"
+  to = "/compliant-kubernetes-service/:splat"
   status = 301
 
 [[redirects]]
@@ -68,22 +97,12 @@
 
 [[redirects]]
   from = "/platform/technology"
-  to = "/platform/compliance"
-  status = 301
-
-[[redirects]]
-  from = "/products"
-  to = "/platform"
-  status = 301
-
-[[redirects]]
-  from = "/product"
-  to = "/platform"
+  to = "/compliance"
   status = 301
 
 [[redirects]]
   from = "/customers/*"
-  to = "/platform/success"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
@@ -92,8 +111,13 @@
   status = 301
 
 [[redirects]]
-  from = "/solutions"
-  to = "/services"
+  from = "/solutions/"
+  to = "/compliant-managed-integration/"
+  status = 301
+
+[[redirects]]
+  from = "/services/"
+  to = "/compliant-managed-integration/"
   status = 301
 
 [[redirects]]
@@ -103,7 +127,7 @@
 
 [[redirects]]
   from = "/why"
-  to = "/platform"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
@@ -118,27 +142,17 @@
 
 [[redirects]]
   from = "/stratum"
-  to = "/platform"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
   from = "/compliant-cloud"
-  to = "/platform"
-  status = 301
-
-[[redirects]]
-  from = "/managed-integration"
-  to = "/blog/if-its-possible-we-can-integrate-it/"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
   from = "/proof"
-  to = "/platform/success"
-  status = 301
-
-[[redirects]]
-  from = "/compliance"
-  to = "/platform/compliance"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
@@ -232,7 +246,7 @@
 
 [[redirects]]
   from = "/compliance/hitrust"
-  to = "/platform/compliance/#compliance-hitrust"
+  to = "/compliance/#compliance-hitrust"
   status = 301
 
 [[redirects]]

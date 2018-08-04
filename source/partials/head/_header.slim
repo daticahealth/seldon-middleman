@@ -35,9 +35,12 @@ header.main-header
           span.nav-button--label Menu
           = inline_svg("small/icon-menu", class: "nav-button--icon svg-color--white")
     .title-bar#nav-mobile
-      .row.align-center.align-middle
-        .columns.small-12.medium-6.medium-order-2
-          = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact/", :button_classes => "button", :icon => "icon-comment", :icon_align => "left" }
+      .row.small-up-1.medium-up-2
+        .column
+          = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact/", :button_classes => "button expanded", :icon => "icon-comment", :icon_align => "left" }
+        .column
+          = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "button hollow-inverted expanded", :icon => "icon-phone", :icon_align => "left" }
+      .row.group
         .columns.small-12.medium-6.medium-order-1
           .callout.callout--dark-alt
             ul.menu.vertical.full-width
@@ -47,8 +50,7 @@ header.main-header
                     a.link--white href=nav_list.url title=nav_list.desc
                       .headline-5 = nav_list.title
                       .text-small.text-light = nav_list.desc
-      .row
-        .columns.small-12
+        .columns.small-12.medium-6.medium-order-2
           .callout.callout--dark-alt.group
             h4.pub-date.faded Recently in the Blog
             - sorted_posts.take(1).each do | id, blog_entry |
@@ -58,7 +60,7 @@ header.main-header
             - sorted_guides.take(1).each do | id, guide_entry |
               p
                 a.link--white.text-light(href="/guide/#{guide_entry.slug}/" title=guide_entry.summary)= guide_entry.title
-      .row.small-up-1.medium-up-2
+      .row.small-up-1.medium-up-3
         - data.nav_all[1...4].each do |nav_dropdown|
           - if nav_dropdown.has_key?("children")
             .column.group
@@ -68,39 +70,29 @@ header.main-header
                   - unless menu_child.has_key?("show_on_mobile") && menu_child.show_on_mobile == false
                     li
                       = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: "link--white text-light"
-      .row.small-up-1.medium-up-2
-        .column
-          a.button.expanded href="/contact/" title="Contact Us" Get in touch
-        .column
-          = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "button hollow-inverted expanded", :icon => "icon-phone" }
 
-  nav.nav.nav-desktop.show-for-large data-theme=theme
-    .top-bar#nav-desktop
-      .top-bar-left
-        ul.menu
-          li
-            a.nav-logo--link href="/" title="Datica Home"
-              svg id="datica-logo-desktop" class="nav-logo"
-                use.symbol-icon xlink:href="#datica-logo-horiz"
-          - data.nav_all[0].children.each do |nav_list|
-            - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
-              li
-                = current_link_to nav_list.title, nav_list.url, title: nav_list.desc, class: "menu-header"
-      .top-bar-right
-        ul.dropdown.menu(data-dropdown-menu)
-          - data.nav_all[1...4].each do |nav_dropdown|
-            - if nav_dropdown.has_key?("children")
-              li.has-submenu
-                a.menu-header = nav_dropdown.title
-                ul.submenu.menu.vertical(data-submenu)
-                  - nav_dropdown["children"].each do |menu_child|
-                    ruby:
-                      item_class = (menu_child.has_key?("has_divider") ? 'submenu-divider' : nil)
-                    li(class=item_class)
-                      = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: ''
-          li
-            ruby:
-              sign_link = data.nav_all[3].children[0]
-            = current_link_to sign_link.title, sign_link.url, title: sign_link.desc, class: "menu-header"
-          li
-            a.button(href="/contact/", title="Contact Us") Contact
+  nav.nav.nav-desktop.show-for-large.row.collapse data-theme=theme
+    .column.small-12
+      ul.dropdown.menu.expanded.align-middle.align-center(data-dropdown-menu data-alignment="left")
+        li
+          a.nav-logo--link href="/" title="Datica Home"
+            svg id="datica-logo-desktop" class="nav-logo"
+              use.symbol-icon xlink:href="#datica-logo-horiz"
+        - data.nav_all.each do |nav_dropdown|
+          - if nav_dropdown.has_key?("children") && nav_dropdown["nav_main"] == true
+            li.has-submenu
+              a.menu-header = nav_dropdown.title
+              ul.submenu.menu.vertical(data-submenu data-alignment="left")
+                - nav_dropdown["children"].each do |menu_child|
+                  - item_class = (menu_child.has_key?("has_divider") ? 'submenu-divider' : nil)
+                  li(class=item_class)
+                    = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: ''
+          / else
+          /   li = nav_dropdown.title
+              / = current_link_to nav_dropdown.title, nav_dropdown.url, title: nav_dropdown.desc, class: ''
+        li
+          ruby:
+            sign_link = data.nav_all[4].children[0]
+          = current_link_to sign_link.title, sign_link.url, title: sign_link.desc, class: "menu-header"
+        li
+          a.button(href="/contact/", title="Contact Us") Contact

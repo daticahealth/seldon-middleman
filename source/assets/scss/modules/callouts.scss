@@ -22,19 +22,6 @@
         border-radius: 0; // tighter radius on small ones
         margin-bottom: 0; // only callout style to do so
     }
-    &.callout--small {
-        @include callout-size(1rem);
-        border-radius: $global-radius * 0.6; // tighter radius on small ones
-        margin-bottom: 0; // only callout style to do so
-    }
-    &.callout--large {
-        border-radius: $global-radius * 2;
-        padding: 1.5rem;
-        @include breakpoint (medium-large) { // larger breakpoints
-            padding: 3.5rem 2.5rem 3.5rem 2.5rem;
-        }
-    }
-
     &--content{
         a.button{margin: 0;}
     }
@@ -124,7 +111,7 @@
     }
     &--dark {
         @include color--tint;
-        label {
+        .label {
             color: white(0.7);
         }
     }
@@ -237,6 +224,20 @@
         }
     }
 }
+// busted these loose so we can color them. WHYYYY did I make custom color versions above.. even needed??
+.callout--small {
+    @include callout-size(1rem);
+    border-radius: $global-radius * 0.6; // tighter radius on small ones
+    margin-bottom: 0; // only callout style to do so
+}
+.callout--large {
+    border-radius: $global-radius * 2;
+    padding: 1.5rem;
+    @include breakpoint (medium-large) { // larger breakpoints
+        padding: 3.5rem 2.5rem 3.5rem 2.5rem;
+    }
+}
+
 // .callout--thumb { // a callout with content wrapped around a thumbnail image (via interchg) aligned bottom right
 //     @include callout($gray-12);
 //     background-position: -900px; // default for small, it's hidden

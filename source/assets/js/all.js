@@ -1,4 +1,14 @@
 $("document").ready(function(){
+        // const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    const observer = lozad('.lozad', {
+        rootMargin: '100px 0px', // like css margin
+        // threshold: 0.1 // ratio of element convergence
+        loaded: function(el) {
+            // Custom implementation on a loaded element
+            el.classList.add('loaded');
+        }
+    });
+    observer.observe();
     // init foundation stuff - interchange, close box, etc.
     $(document).foundation();
     

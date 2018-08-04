@@ -15,38 +15,47 @@ priority: "1.0"
     = partial "partials/head/header", :locals => { :style => "dark" }
     section#pricing-tiers.section-article
       .row.align-center.group
-        .columns.small-12.large-9.text-center
-          h1.headline-2 Plans & Platform Options
-          p.lead Infrastructure at cost, with compliance built in. Our Datica Experts will help you find the features and services to fit your needs.
+        .columns.small-12
+          h1.headline-2.pricing-headline Datica Pricing
+          / p.lead 
       .row.align-center
-        .columns.small-12.medium-10.large-7
-          .card.pad.drop
-            .card-section
-              h4.headline-5 
-                = inline_svg("small/icon-ui-checkmark", class: "icon-inline icon-left svg-color--green")
-                | Datica Platform Subscription
-              p A Datica Platform subscription is comprised of a <em>Licensing</em> and a <em>Continuous Compliance Management</em> Fee.
-              h4.headline-5 
-                = inline_svg("small/icon-ui-checkmark", class: "icon-inline icon-left svg-color--green") 
-                | Deployment Models
-              p We can deploy a Kubernetes<sup>&reg;</sup> cluster into your cloud account, or Datica's cloud. We give you the flexibility to decide how much, or how little you want to manage.
-              h4.headline-5 
-                = inline_svg("small/icon-ui-checkmark", class: "icon-inline icon-left svg-color--green") 
-                | Support
-              p All customers receive basic ticket support with their Platform subscription. We also offer premium support to enterprise customers.
-              h4.headline-5 
-                = inline_svg("small/icon-plus-circle", class: "icon-inline icon-left svg-color--blue")
-                / span.text--blue + 
-                | Add-ons
-              p We're dedicated to giving you the flexibility you need, while still providing the highest level of compliance available on the market. With add-ons, Datica can make any cloud native service compliant. Additionally, our industry-leading approach to EHR integration includes an HA Mirth Connect Environment.
-              h4.headline-5 
-                = inline_svg("small/icon-plus-circle", class: "icon-inline icon-left svg-color--blue")
-                / span.text--blue + 
-                | Professional Services
-              p Rely on Datica experts for compliance, auditing, and technical developer operations needs. Datica offers <a href="/services" title="Professional Services">a wide range of professional services</a>.
-            #pricing-cta.text-center.card-divider
-              p.lead Choose a time to see a Platform demo, and our Datica Experts will help you get the features and support you need.
-              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo/", :button_classes => "button large button-inline", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "pricing-demo" }
+        .columns.small-12
+          .callout.callout--dark.callout--large.pricing-callout
+            .row.align-center
+              .columns.small-12.medium-large-6.pricing-content
+                .group
+                  h2.headline-4 Compliant Kubernetes Service Pricing
+                  h4.headline-5 
+                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                    | Product Subscription
+                  p CKS subscription is per production Kubernetes cluster. Currently available on AWS. You pay infrastructure costs, like EC2 and S3, directly to AWS because we install the cluster onto your existing AWS account.
+                  h4.headline-5 
+                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow") 
+                    | Optional Compliance Services (Optional)
+                  p Ask us about ad-hoc compliance services related to your infrastructure.
+                h2.headline-4 Compliant Managed Integration Pricing         
+                h4.headline-5
+                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                  | Product Subscription
+                p CMI product currently available on AWS or Azure. We deploy the stack for you onto Datica's existing cloud account. All infrastructure costs, like RAM and storage, are absorbed by Datica within the product subscription.
+                h4.headline-5
+                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                  | Managed Integration Service (Required)
+                p Ongoing management and maintenance is a critical component of integration. The CMI product provides 24/7 management of infrastructure, VPNs, and connections to sites.
+                h4.headline-5
+                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                  | Single-site Integration Service (Required)
+                p Integrating with sites is always point-to-point. We are here to provide project management of a site integration from start to finish over a 30-day project plan.
+              #cta.columns.small-12.medium-large-6
+                .callout.pad.drop.form-embed.nomargin.pricing-form
+                  h3.headline-4.text-center Request Pricing
+                  p Thank you for your interest in our suite of products built to help digital health succeed. One of our Datica experts will reach out to you shortly.
+                  - the_form = data.site.forms['pdrdbrjyUKoooYI8EUAYw']
+                  = Kramdown::Document.new(the_form["custom_form"]).to_html
+
+      / #pricing-cta.text-center.card-divider
+        p.lead Choose a time to see a Platform demo, and our Datica Experts will help you get the features and support you need.
+        = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo/", :button_classes => "button large button-inline", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "pricing-demo" }
 
 / .container-color--gray-light
 /   .container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")

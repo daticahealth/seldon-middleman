@@ -12,39 +12,75 @@
 // @include foundation-off-canvas;
 
 // custom stuff
-.platform-art-1 { // pair with container-x bg image fill classes
-    position: absolute;
-    top: 12rem;
-    height: 100%;
+.product-cks-bg {
+    // position: absolute;
+    // top:  0;
+    // left: 0;
+    // width: 100%;
+    color: $color_white; // optional, only spec if needed
+    // background-image: url("https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg");
+    // background-color: #1c4a6c; // fallback. can't combine this with blend-mode, it will stack!
+    @include breakpoint (small only) {
+        @include gradient(to bottom, #234880 0%, #366090 60%, #3d7e9c 100%);
+    }
+    // Multiple backgrounds, blend modes, tablet up only :zap:
     @include breakpoint (medium) {
-        right: -50%;
-        width: 90%;
-    }
-    @include breakpoint (large) {
-        right: -28%;
-        width: 76%;
-    }
-    @include breakpoint (xlarge) {
-        right: -10%;
-        width: 62%;
-    }
-    @include breakpoint (xlarge) {
-        right: -14%;
-        width: 62%;
+        @supports (background-blend-mode: overlay) and (background-blend-mode: screen) {
+            background-image: 
+                url('https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg?w=1200'),
+                url('/public/img/art/hexagon-bg-simple.svg'),
+                linear-gradient(to bottom, #234880 0%, #366090 60%, #3d7e9c 100%);
+            background-blend-mode: overlay, screen;
+            background-repeat: no-repeat;
+            background-position:
+                center top,
+                bottom right;
+            background-size: contain;
+        }
     }
 }
-// .icon-columns-left-group {
-//     .column, .columns {
-//         margin-bottom: 1.5rem;
-//         @include breakpoint (medium) {
-//         }
+// .product-cks-2 {
+//     @include breakpoint(large) {
+//         margin-top: ;
 //     }
 // }
-// .icon-pull-left-medium {
+// .platform-art-1 { // pair with container-x bg image fill classes
+//     position: absolute;
+//     top: 1rem;
+//     height: 50%; // fallback
+//     height: calc(3rem + 40vw);
+//     right: -28%;
+//     width: 100%;
+//     opacity: 0.2;
 //     @include breakpoint (medium) {
-//         float: left;
-//         margin-right: 1rem;
+//         opacity: 1;
 //     }
+// //     @include breakpoint (large) {
+// //         right: -28%;
+// //         width: 76%;
+// //     }
+// //     @include breakpoint (xlarge) {
+// //         right: -10%;
+// //         width: 62%;
+// //     }
+// //     @include breakpoint (xxlarge) {
+// //         right: -14%;
+// //         width: 62%;
+// //     }
+// // }
+// // .icon-columns-left-group {
+// //     .column, .columns {
+// //         margin-bottom: 1.5rem;
+// //         @include breakpoint (medium) {
+// //         }
+// //     }
+// // }
+// // .icon-pull-left-medium {
+// //     @include breakpoint (medium) {
+// //         float: left;
+// //         margin-right: 1rem;
+// //     }
+// // }
 // }
 $color: $color_blue;
 .solid {
@@ -231,7 +267,7 @@ ul.bullet-outside {
         @include breakpoint (large) {
             @include multicolumns (3, 15em, 2rem);
         }
-        @include breakpoint (xxlarge) {
+        @include breakpoint (1600px) {
             @include multicolumns (4, 15em, 2rem);
         }
         &__item {
@@ -336,7 +372,7 @@ ul.bullet-outside {
     opacity: 0.9;
     font: {
         family: $font_serif;
-        // size: larger;
+        size: larger;
         style: normal;
     }
     // padding: 0 0 0.5rem 0;

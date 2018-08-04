@@ -296,7 +296,13 @@ ul.large-list{
         }
     }
 }
-
+ul.list-check {
+    // list-style: none;
+    li {
+        margin-bottom: 0.5rem;
+        list-style-image: url("/public/icons/inlined/small/icon-check-green.svg");
+    }
+}
 
 // "magenta-glow": hsl(328, 100%, 69%),
 // "orange-glow":  hsl(37, 100%, 67%),

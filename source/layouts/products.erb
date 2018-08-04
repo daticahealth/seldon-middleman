@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<%# datica platform 2017 %>
+<%# datica CKS 2018 %>
     <head>
         <% if build? %><%= partial "partials/scripts/google-tm-head" %><% end %>
         <%= partial "partials/head/tags" %>
@@ -16,21 +16,22 @@
         <div class="container-gray-2">
             <%= partial "partials/head/header", :locals => { :style => "light" } %>
         </div>
+        <%#
         <div id="platformTop" class="show-for-large" data-sticky-container>
             <nav class="sticky sticky-nav container-color--white drop text-center full-width" data-sticky data-options="marginTop:0; topAnchor:platformTop">
                 <ul class="menu horizontal align-center">
-                    <%= partial "platform/nav-platform" %>
+                    <%#= partial "products/nav-platform" %><%#
                 </ul>
             </nav>
         </div>
-
+        #%>
         <div id="content" class="content">
             <main>
             <%= yield %>
             </main>
-            <% if current_page.data.has_key?("ctaCustom") != true %>
+            <%# if current_page.data.has_key?("ctaCustom") != true %>
                 <%#= partial "partials/ctas/platform-cta" %>
-            <% end %>
+            <%# end %>
         </div>
         <%= partial "partials/snippets/footer" %>
         <%= partial "partials/scripts/footer" %>

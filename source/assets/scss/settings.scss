@@ -87,7 +87,7 @@ $font-weight-black:             900; // black
 // ---------
 $global-left: left;
 $global-font-size: 100%; // this permits user to ± font size, foundation default
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1260);
 $global-lineheight: 1.5;
 
 // 1a. Colors
@@ -304,11 +304,11 @@ $breakpoints:(
   medium: 640px,
   medium-large: 840px,
   large: 1024px,
-  xlarge: 1200px,
-  xxlarge: 1440px
+  xlarge: 1400px,
+  xxlarge: 1600px
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small medium medium-large large xlarge xxlarge);
+$breakpoint-classes: (small medium medium-large large xlarge);
 
 // Custom breakpoints
 $custom_breakpoint-mid: 52.5rem; // 840px "medium-large"
@@ -584,22 +584,22 @@ $dropdown-padding: 1rem;
 $dropdown-background: $body-background;
 $dropdown-border: 1px solid $medium-gray;
 $dropdown-font-size: 1rem;
-$dropdown-width: 250px;
+$dropdown-width: 350px;
 $dropdown-radius: $global-radius;
 $dropdown-sizes: (
-  tiny: 100px,
-  small: 200px,
-  large: 400px,
+  tiny: 200px,
+  small: 300px,
+  large: 500px,
 );
 
 // 18. Dropdown Menu
 // -----------------
 
 $dropdownmenu-arrows: true;
-$dropdownmenu-arrow-color: $gray-5;
-$dropdownmenu-arrow-size: 6px;
+$dropdownmenu-arrow-color: transparentize($gray-6, 0.4);
+$dropdownmenu-arrow-size: 5px;
 $dropdownmenu-arrow-padding: 1.5rem;
-$dropdownmenu-min-width: 250px;
+$dropdownmenu-min-width: 300px;
 $dropdownmenu-background: $white;
 $dropdownmenu-submenu-background: $dropdownmenu-background;
 $dropdownmenu-padding: $global-menu-padding;

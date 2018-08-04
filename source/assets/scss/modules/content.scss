@@ -54,3 +54,7 @@ article.content-dynamic {
         }
     }
 }
+.content-indent { // used after/next to an .icon-lg.float-left to line up content
+    margin-left: 5rem; // approx width of icon-lg
+    //margin-top:  2.1rem; // pull content down to align w. icon. don't look güd
+}

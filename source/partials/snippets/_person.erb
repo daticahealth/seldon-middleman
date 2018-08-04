@@ -23,7 +23,7 @@ end
 %>
 <div class="media-object card-person<% if defined?(classes) %> <%= classes %><% end %>">
     <% if p.has_key?("profile_pic") %>
-        <div class="media-object-section media-object--avatar"><img src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=128&h=128&fm=jpg&q=60" class="avatar avatar--large circle" alt="<%= p["fullname"] %>"></div>
+        <div class="media-object-section media-object--avatar"><img data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=128&h=128&fm=jpg&q=60" class="lozad avatar avatar--large circle" alt="<%= p["fullname"] %>"></div>
     <% end %>
     <div class="media-object-section media-object--info main-section align-self-middle">
         <<%= tag_1 %> class="person-name">

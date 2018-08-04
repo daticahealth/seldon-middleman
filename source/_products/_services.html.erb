@@ -7,11 +7,11 @@ tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 date: "July 15, 2017"
 ogType: "product"
 share_image: "https://images.ctfassets.net/189dvqdsjh46/3sLvuskfFmYoAieKyCG644/d0b35a015189bad32c0ebc12053129e0/services-share.jpg"
-customCSS: "platform"
+customCSS: "products"
 customJS: "/public/js/svg-injector.js"
 layout: basic
 priority: "0.9"
-# collectionName: "platform"
+# collectionName: "products"
 # collectionOrder: 5
 ---
 <% sorted_services = data.site.services.to_a.sort_by{ |id, service| service['sort_order'] } %>
@@ -23,7 +23,7 @@ priority: "0.9"
         <div class="columns small-12 large-10 text-center">
             <h1 class="headline-2 text-center">Datica Services</h1>
             <h2 class="headline-3">Get to market faster, beat the competition, and meet compliance requirements&mdash;all with fewer engineering resources.</h2>
-            <p class="lead">Through the <a href="/platform" title="See how the Datica Platform can help">Datica Platform</a>, our team of cloud engineers, integration and compliance experts can help you <a href="#consulting" title="">assess</a> your business problems, ensure <a href="#compliance" title="">complete compliance</a> on the cloud, <a href="#integration" title="">integrate</a> with any system, and even <a href="#data_migration">migrate</a> your data to a new, efficient, and cost-effective cloud platform.</p>
+            <p class="lead">Through the <a href="/cks" title="See how Datica can help">Datica Compliant Kubernetes Service</a>, our team of cloud engineers, integration and compliance experts can help you <a href="#consulting" title="">assess</a> your business problems, ensure <a href="#compliance" title="">complete compliance</a> on the cloud, <a href="#integration" title="">integrate</a> with any system, and even <a href="#data_migration">migrate</a> your data to a new, efficient, and cost-effective cloud platform.</p>
         </div>
     </div>
 </section>
@@ -65,30 +65,7 @@ priority: "0.9"
                     <% if service.has_key?("related_customer") %>
                         <% service.related_customer.take(1).each do | customer | %>
                             <div class="show-for-medium">
-                                <div class="callout--gray-light group">
-                                    <blockquote class="quote-callout">
-                                        <% if customer.has_key?("customer_quote") %>
-                                            <%= customer["customer_quote"]["quote_body"] %>
-                                        <% elsif customer.has_key?("customer_story_short") %>
-                                            <%= customer["customer_story_short"] %>
-                                        <% end %>
-                                    </blockquote>
-                                    <% if customer.has_key?("case_study") %>
-                                        <p><a class="text-small" href="/customer/<%= customer["slug"] %>" title="<%= customer["company_name"] %> profile">Read the Case Study <i class="fa fa-icon fa-angle-right"></i></a></p>
-                                    <% else %>
-                                        <br>
-                                    <% end %>
-                                    <% if customer.has_key?("profile_pic") %>
-                                        <div class="flex-container align-justify align-middle">
-                                            <div class="flex-child-shrink">
-                                                <%= partial("partials/snippets/person", :locals => { :p => customer, :classes => "nomargin" }) %>
-                                            </div>
-                                            <div class="flex-child-shrink">
-                                                <img class="logo-size--small-mid" src="/public/img/customer-logos/sm/<%= customer["slug"] %>-logo.png" alt="<%= customer["company_name"] %> Logo"/>
-                                            </div>
-                                        </div>
-                                    <% end %>
-                                </div>
+                                <%= partial("partials/cards/quote-customer", :locals => { :customer => customer }) %>
                             </div>
                         <% end %>
                     <% end %>

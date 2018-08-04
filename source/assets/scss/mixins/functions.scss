@@ -202,6 +202,9 @@ $underline: false !default;
     background-image: -o-linear-gradient($args);
     background-image: linear-gradient($args);
 }
+// @function gradient-prefixes($args...){
+//     @return -webkit-linear-gradient($args), -o-linear-gradient($args), linear-gradient($args);
+// }
 
 @mixin clip-path($a, $b, $c, $d){
     -webkit-clip-path: polygon($a, $b, $c, $d);
@@ -414,5 +417,16 @@ $underline: false !default;
     }
     &-third {
         max-width: 33%;
+    }
+}
+
+@mixin blend-multiply {
+    @supports (background-blend-mode: multiply) {
+        background-blend-mode: multiply;
+    }
+}
+@mixin blend-overlay {
+    @supports (background-blend-mode: overlay) {
+        background-blend-mode: overlay;
     }
 }

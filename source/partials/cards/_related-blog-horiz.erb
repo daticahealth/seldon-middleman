@@ -12,7 +12,7 @@ end
     <% unless image_url == nil %>
     <div class="columns small-12 medium-8 large-8">
         <a class="" href="/blog/<%= post["slug"] %>" title="Read '<%= post["title"] %>'">
-            <img data-interchange="[<%= image_url %>?fit=thumb&w=800&h=400, small]" alt="Image: <%= post["title"] %>" />
+            <img class="lozad" data-src="<%= image_url %>?fit=thumb&w=800&h=400" alt="Image: <%= post["title"] %>" />
         </a>
     </div>
     <% end %>
@@ -25,7 +25,7 @@ end
             <div class="media-object card-person">
                 <% if post["author"].has_key?("profile_pic") %>
                     <div class="media-object-section">
-                        <img src="<%= data.site.person[post.author.id].profile_pic.url %>?fit=thumb&w=148&h=148&f=face&q=45" class="avatar avatar--medium circle"></div>
+                        <img data-src="<%= data.site.person[post.author.id].profile_pic.url %>?fit=thumb&w=148&h=148&f=face&q=45" class="lozad avatar avatar--medium circle"></div>
                 <% end %>
                 <div class="text-small media-object-section main-section align-self-middle">
                     <h4 class="person-name"><%= post["author"]["fullname"] %></h4>

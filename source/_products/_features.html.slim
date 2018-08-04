@@ -1,16 +1,16 @@
 ---
-title: "Datica Technology Platform"
-summary: "Technology capabilities and support on the Datica Platform"
-navTitle: "Technology"
+title: "Datica Features"
+summary: "Datica technology, features, capabilities, and support on the Datica Platform"
+navTitle: "Features"
 author: "Datica, Inc."
-tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
 date: "March 5, 2018"
 ogType: "product"
-customCSS: "platform"
-layout: platform
+customCSS: "products"
+layout: products
 priority: "0.9"
-collectionName: "platform"
-collectionOrder: 2
+collectionName: "products"
+collectionOrder: 3
 ctaCustom: true
 ---
 - current_page.data.share_image = image_share_platform
@@ -21,55 +21,18 @@ svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0;
       title chevron-down
       path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
 
-section#tech-top.section-article.container-color--dark-grad-blue.container-image--center(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/3X0hgoNCSs0Y4KuqEOIqCg/4817329d1d35ec44a08c8767c72fafc3/bg-circles-blue-dark.png?w=1600&h=1600&fit=crop, medium]")
-  .row.align-center
-    .columns.small-12
-      .row.align-center
-        .columns.small-12.medium-8
-          h1.headline-2.text-center Platform Technology
-          p.text-center.group See how the Platform works, the technology involved, and what it means to be HITRUST CSF certified on top of cloud providers like AWS and Azure.
-      .row.row--card-grid
-        .columns.small-12.medium-12.large-4
-          .card.drop.container-color--gray-light
-            img src="https://images.ctfassets.net/189dvqdsjh46/6ydXBtXKRU2Yu0mmsgYCcY/a16c46029da27d0b379fcc69fad5b05b/layer-infra.png" alt="Infrastructure Layer" class="soft-border"
-            .card-section
-              p.lead.text-center <strong>Infrastructure Layer</strong>
-              p AWS and Azure provide VPCs, which cover a portion of compliance and security requirements.
-              p Within a VPC, the Datica Platform is installed. Everything within the Platform is strictly managed in adherence to Datica policies. The Platform uses a combination of Kubernetes<sup>&reg;</sup> and proprietary technology to orchestrate all DevOps duties for customers.
-        .columns.small-12.medium-12.large-4
-          .card.drop.container-color--gray-light
-            img src="https://images.ctfassets.net/189dvqdsjh46/5cUz9cCIPSCag0CiQi44u4/b450448536c2d754573266b59bd8ea7d/layer-platform.png" alt="Platform Layer" class="soft-border"
-            .card-section
-              p.lead.text-center <strong>Platform Layer</strong>
-              p Customers create an account within the Datica Platform. It is through the account that they gain access to HIPAA-eligible AWS Primitives or Azure Services, which are strictly controlled by the Platform.
-              p Within a customer account, the Platform containerizes all technology required to meet compliance controls from HIPAA, HITRUST, GDPR, and GxP. Things like logging, intrusion detection, and penetration testing, to name a few.
-        .columns.small-12.medium-12.large-4
-          .card.drop.container-color--gray-light
-            img src="https://images.ctfassets.net/189dvqdsjh46/6bDMG7j3VYuoYkwEK4OkC2/5fcb3139b6401fbd1262f5f4285fc3a6/layer-app.png" alt="Application Layer" class="soft-border"
-            .card-section
-              p.lead.text-center <strong>Application Layer</strong>
-              p Customers deploy their applications to containerized environments. They can have multiple environments within their Datica account, managing any type of technical use case.
-              p Administration of AWS Primitives or Azure Services are no longer required. Instead, customers simply allocate RAM to individual containers. Datica takes care of the rest.
-              p Deployment is done either through a <code>git push</code> buildpack-based process or by pushing custom Docker containers.
-
-      .row.align-center
-        .columns.small-12.medium-8
-          h1.headline-2.text-center Platform Architecture
-          p.text-center.group See where each piece of the Platform fits, from logging and monitoring, to networking and load balancing. The animation below is a comprehensive architectural overview of the Platform.
-      .row.align-center.group--2x
-        .columns.small-12
-          <script src="https://fast.wistia.com/embed/medias/kbhkf6h7u9.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_kbhkf6h7u9 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
-      .row.align-center
-        .columns.small-12.large-6.text-center
-          = partial "partials/snippets/button", :locals => { :label => "Next: see how Datica solves compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-compliance-checklist", :icon_color => "black", :icon_align => "left" }
-
-section#tech-features.section-article.container-gray-12
+section#tech-features.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
   .row.align-center
     .columns.small-12.text-center.group
       .row.align-center
         .columns.small-12.medium-8
           h1.headline-2.text-center Datica Platform Features
-          p.text-center Features that not only show you how to be compliant, but actually make you compliant against the healthcare's most stringent security requirements.
+          p.text-center Features that not only show you how to be compliant, but actually <em>make you</em> compliant against the healthcare's most stringent security requirements.
+
+          .menu.button-cluster.align-center
+            = partial "partials/snippets/button", :locals => { :label => "See our Roadmap", :title => "View Platform pricing", :url => "roadmap", :button_classes => "button hollow", :item_id => "cta_top_pricing", :icon => "icon-map" }
+            = partial "partials/snippets/button", :locals => { :label => "Explore Compliance", :title => "Explore Compliance", :url => "/compliance", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :item_id => "top-tech" }
+
   - ordered_feature_categories = data.site.featureCategories.to_a.sort_by{ |id, featureCat| featureCat['sort_order'] }
   - ordered_feature_categories.each do | id, featureCat |
     .row
@@ -101,6 +64,8 @@ section#tech-features.section-article.container-gray-12
                     .show-more--container.text-smaller data-off-canvas="" data-toggler="" id="feature-detail_#{feature.slug}"
                       = Kramdown::Document.new(feature.desc).to_html
 
+/ bright strip, good divider for containers that are similar in brightness
+.strip-bright
 section#integration.section-article
   .row.align-center.text-center
     .columns.small-12.large-6
@@ -142,22 +107,20 @@ section#tech-mirth.section-article.container-color--gray-light
         p We open sourced our <a href="https://github.com/daticahealth/Mirth-Transforms">Mirth HL7 transformations</a> used over the past three years. With OCI Mirth, you can get started today using these tools. Or, should you require help integrating into a specific hospital, we offer professional services to project manage an integration to completion.
         = partial "partials/snippets/button", :locals => { :label => "Test out your own version of Mirth today", :url => "/pricing", :button_classes => "button text-center", :icon => "icon-chevron-right", :icon_color => "white" }
 
-/ bright strip, good divider for containers that are similar in brightness
-.strip-bright
-section.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
+/ section.section-article.container-gray-11.container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, medium]")
   = partial "partials/section-promos/hcms-screenshot"
 
-/! cta
+
 aside#ctaBottom.container-color--dark-grad-blue
   .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
     .row.align-center
-      .columns.small-12.medium-10.text-center
-        h2.headline-3.group <strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.
+      .columns.small-12.medium-10.large-10.text-center
+        h2.headline-3 <strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.
     .row.align-center
-      .columns.small-12.large-4.text-right
+      .columns.small-6.large-4.text-right
         = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
-      .columns.small-12.large-6
-        = partial "partials/snippets/button", :locals => { :label => "See how Datica solves Compliance", :title => "See how Datica solves Compliance", :url => "/platform/compliance", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" }
+      .columns.small-6.large-6.text-left
+        = partial "partials/snippets/button", :locals => { :label => "Hear from our Customers", :title => "Hear from our Customers", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right" }
 
 section.section-article.container-color--gray-light
   .row
@@ -226,4 +189,4 @@ section#faq-tech.section-article
           dd= Kramdown::Document.new(item["answer"]).to_html
       hr.divider/
       p.lead Get started with the Datica platform today
-      = partial "partials/snippets/button", :locals => { :label => "Learn about integrations", :url => "/platform/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }
+      = partial "partials/snippets/button", :locals => { :label => "Learn about integrations", :url => "/compliance", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue" }
