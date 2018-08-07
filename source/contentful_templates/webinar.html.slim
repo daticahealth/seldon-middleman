@@ -51,7 +51,7 @@ ruby:
             .columns.small-12.large-10.group
                 #webinar-preview.hide.preview.container-gray-3.container-image-fill href="/webinars/#{p["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
                     div.preview-subhead Datica Webinar
-                    h2.headline-3.nomargin = p["title"]
+                    h1.headline-3.nomargin = p["title"]
                     p.lead = (p.has_key?("subhead") ? p.subhead : nil)
                     .menu.simple.group
                         li
