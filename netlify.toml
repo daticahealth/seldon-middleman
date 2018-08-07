@@ -37,6 +37,38 @@
   force = true
 
 [[redirects]]
+  from = "/platform/*"
+  to = "/compliant-kubernetes-service/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/customers/*"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+
+[[redirects]]
+  from = "/team/*"
+  to = "/about/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/leadership/*"
+  to = "/about/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/learn/*"
+  to = "/academy/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/whitepapers/*"
+  to = "/academy"
+  status = 301
+
+# ==== All splats and * tokens above this line (EXCEPT main 404 at end). Exceptions below. 
+
+[[redirects]]
   from = "/cks/"
   to = "/compliant-kubernetes-service/"
   status = 301
@@ -71,8 +103,8 @@
   force = true
 
 [[redirects]]
-  from = "/platform/*"
-  to = "/compliant-kubernetes-service/:splat"
+  from = "/platform/compliance/"
+  to = "/compliance/"
   status = 301
 
 [[redirects]]
@@ -86,7 +118,12 @@
   status = 301
 
 [[redirects]]
-  from = "/success.html"
+  from = "/platform/success"
+  to = "/activate/success"
+  status = 301
+
+[[redirects]]
+  from = "/success"
   to = "/activate/success"
   status = 301
 
@@ -98,11 +135,6 @@
 [[redirects]]
   from = "/platform/technology"
   to = "/compliance"
-  status = 301
-
-[[redirects]]
-  from = "/customers/*"
-  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
@@ -166,15 +198,6 @@
   status = 301
 
 [[redirects]]
-  from = "/team/*"
-  to = "/about/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/leadership/*"
-  to = "/about/:splat"
-
-[[redirects]]
   from = "/about-us"
   to = "/about"
   status = 301
@@ -217,11 +240,6 @@
 [[redirects]]
   from = "/*/mark-braunstein"
   to = "/:splat/dr-mark-braunstein"
-  status = 301
-
-[[redirects]]
-  from = "/learn/*"
-  to = "/academy/:splat"
   status = 301
 
 [[redirects]]
@@ -505,11 +523,6 @@
   status = 301
 
 [[redirects]]
-  from = "/whitepapers/*"
-  to = "/academy"
-  status = 301
-
-[[redirects]]
   from = "/learn/hipaa"
   to = "/discover/hipaa-compliance"
   status = 301
@@ -692,6 +705,16 @@
 [[redirects]]
   from = "/press/datica-launches-kubernetes-enabled-platform"
   to = "/press-release/datica-launches-kubernetes-enabled-platform"
+  status = 301
+
+[[redirects]]
+  from = "/hipaa-compliant-hosting/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+
+[[redirects]]
+  from = "/hipaa-compliant-web-hosting/"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
