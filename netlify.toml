@@ -108,8 +108,8 @@
   force = true
 
 [[redirects]]
-  from = "/platform/compliance/*"
-  to = "/compliance/:splat"
+  from = "/platform/compliance/"
+  to = "/compliance/"
   status = 301
   force = true
 
