@@ -695,6 +695,16 @@
   status = 301
 
 [[redirects]]
+  from = "/hipaa-compliant-hosting/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+
+[[redirects]]
+  from = "/hipaa-compliant-web-hosting/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+
+[[redirects]]
   from = "/azure"
   to = "/contact/azure"
   status = 301
