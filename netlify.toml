@@ -36,10 +36,10 @@
   status = 301
   force = true
 
-# [[redirects]]
-#   from = "/platform/*"
-#   to = "/compliant-kubernetes-service/:splat"
-#   status = 301
+[[redirects]]
+  from = "/platform/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
 
 [[redirects]]
   from = "/customers/*"
