@@ -36,10 +36,10 @@
   status = 301
   force = true
 
-[[redirects]]
-  from = "/platform/*"
-  to = "/compliant-kubernetes-service/:splat"
-  status = 301
+# [[redirects]]
+#   from = "/platform/*"
+#   to = "/compliant-kubernetes-service/:splat"
+#   status = 301
 
 [[redirects]]
   from = "/customers/*"
@@ -82,6 +82,11 @@
 
 [[redirects]]
   from = "/integration/"
+  to = "/compliant-managed-integration/"
+  status = 301
+
+[[redirects]]
+  from = "/platform/integration/"
   to = "/compliant-managed-integration/"
   status = 301
 
