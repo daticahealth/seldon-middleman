@@ -31,18 +31,4 @@ ruby:
                         = Kramdown::Document.new(the_quote["quote_body"]).to_html
                     = partial("partials/snippets/person", :locals => { :p => the_quote. customer, :company => the_quote.customer.company_name, :classes => "text-white" })
 .strip-bright
-
-| <script type='application/ld+json'>
-    {
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "url": "#{site_url}",
-        "contactPoint": [
-            { "@type": "ContactPoint",
-                "telephone": "#{company_phone}",
-                "contactType": "sales",
-                "availableLanguage": "English"
-            }
-        ]
-    }
-</script>
+= partial "partials/snippets/json-ld-contact"

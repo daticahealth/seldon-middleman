@@ -15,23 +15,32 @@
             </div>
         <% end %>
     </div>
-    <div class="row align-justify">
-        <div class="columns small-12 medium-9 large-10 group">
+    <div class="row align-justify align-middle group">
+        <div class="columns">
             <ul class="list-horiz">
+                <li>
+                    <a class="nav-logo--link"><svg class="nav-logo" id=datica-logo-footer><use class=symbol-icon xlink:href="#datica-logo-horiz"></use></svg></a>
+                </li>
                 <% data.footer_misc.each do |m| %>
                     <li>
                         <%= current_link_to m.title, m.url, title: m.desc, class: "link--dark faded" %>
                 <% end %>
             </ul>
-            <hr class="content">
+        </div>
+<!--         <div class="columns small-12 medium-2">
+            
+        </div> -->
+    </div>
+    <div class="row">
+        <div class="columns">
             <ul class="list-horiz">
-                <li><img class="logo-size--large" data-interchange="[https://images.ctfassets.net/189dvqdsjh46/tPI7wEI7zaSEQ2cu6MqOc/7f837591f0a7f85448180a4a1e61158d/logo-hitrust-certified.png?w=200, small]" alt="HITRUST Certified" />&nbsp;
+                <li><img class="logo-size--large lozad" data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/6438fbb76abda83deac6b9c810745891/hitrust-logo.svg" alt="HITRUST Certified" />
                 </li>
-                <li><img class="logo-size--large img-crisp" data-interchange="[https://images.ctfassets.net/189dvqdsjh46/1Tt54MVMgkqIW8OWaYKmoo/7cb2c9e5e3d4f54cbd7498cc7e001fec/logo-aicpa.png?w=120, small]" alt="AICPA/SOC2 badge" />&nbsp;
+                <li><img class="logo-size--large lozad" data-src="https://images.ctfassets.net/189dvqdsjh46/1db5oL4HFeKkSGGcCmQACW/22310ce8955be0da9b65addc7a46dbd9/AICPA_SOC_2_badge.svg" alt="AICPA/SOC2 badge" />
                 </li>
                 <li><script defer type='text/javascript' src='https://www.coalfire.com/CMSPages/Coalfire/CertificateSealJS.aspx?cc=248fe0c0-6343-4785-9cb0-0602a6a82a6c'></script>
                 </li>
-                <li><img class="logo-size--large" src="https://images.ctfassets.net/189dvqdsjh46/2qNhrxRsmEGqUOuCq2qWgU/f67da4afefb727a699a679bdcac9d630/cncf-logo-horizontal.svg" width="146" height="31" alt="Cloud native computing foundation - horizontal logo"></li>
+                <li><img class="logo-size--large lozad" src="https://images.ctfassets.net/189dvqdsjh46/2qNhrxRsmEGqUOuCq2qWgU/f67da4afefb727a699a679bdcac9d630/cncf-logo-horizontal.svg" alt="Cloud native computing foundation"></li>
             </ul>
         </div>
     </div>
