@@ -42,7 +42,7 @@ module SiteHelpers
     end
     # For sharing metadata - if no key image on the page, fall back to this.
     def image_share_default
-        site_url + '/public/img/datica-social-twitter-2x.png'
+        data.site.cta["28kGtqwD2oym6k8cUgksiQ"].cta_image.url + image_size_small
     end
     def image_share_platform # get ID from CF
         data.site.cta["6KOQ7XhaJqCI00oYacessy"].cta_image.url + image_size_small

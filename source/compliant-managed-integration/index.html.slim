@@ -4,9 +4,7 @@ summary: "The complete toolset to handle compliant, scalable, secure data exchan
 navTitle: "Integration"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
-date: "July 15, 2017"
 ogType: "product"
-share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
 customCSS: "products"
 layout: products
 priority: "0.9"
@@ -14,7 +12,9 @@ collectionName: "products"
 collectionOrder: 3
 ctaCustom: true
 ---
-- current_page.data.share_image = image_share_platform
+ruby:
+  current_page.data.share_image = data.site.cta["5eA1ToAIEw4Qy20mkUmmcm"].cta_image.url + '?w=800'
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
 
 aside.hide-for-large.section-article.container-color--blue-alt.menu.button-cluster.align-center
   /= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
