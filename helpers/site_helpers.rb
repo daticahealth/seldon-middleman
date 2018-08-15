@@ -16,6 +16,9 @@ module SiteHelpers
     def twitter_handle
         "@daticahealth"
     end
+    def company_phone
+        "+1-888-377-3184"
+    end
     # responsive image strings for contentful images https://www.contentful.com/blog/2014/08/14/do-more-with-images-on-contentful-platform/
     def image_thumb
         # add q=[30-50] after; don't forget to set width & height for retina images

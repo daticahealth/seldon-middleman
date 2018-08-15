@@ -1,7 +1,9 @@
 $media-pad: $pad;
 article.content-dynamic {
     margin-bottom: $media-pad; // this will add space above CTAs, only in <article>, allowing most content stuff to be applicable anywhere
+    font-size: larger;
 }
+
 // these article-level overrides for unstyled content from CMS (contentful). Apply this class on <article> or other spots you need these styles.
 .content {
     &-dynamic {
