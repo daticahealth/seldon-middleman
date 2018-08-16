@@ -25,7 +25,7 @@ end
 if p.has_key?("pub_date")
     current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
 else
-    current_page.data.date = "2017"
+    current_page.data.date = "2018"
 end
 %>
 <style type="text/css">
@@ -45,14 +45,14 @@ end
                 <p class="lead">
                     <%= partial "/partials/snippets/pubdate", :locals => p %>
                     <% if p.has_key?("tags") %>
-                        &nbsp;|&nbsp;
+                        &nbsp;
                         <%= partial "/partials/content/tags", :locals => p %>
                     <% end %>
                 </p>
             </div>
         </div>
         <div class="row">
-            <div class="columns small-12 large-8">
+            <div class="columns small-12 large-7">
                 <article id="content">
                     <% if p.has_key?("lead") %>
                         <div class="lead"> <%= Kramdown::Document.new(p["lead"]).to_html %></div>
@@ -114,5 +114,5 @@ end
         </div>
     </section>
 </div>
-
+<%= partial "partials/snippets/json-ld-article" %>
 <script async src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autorun=true&skin=desert"></script>

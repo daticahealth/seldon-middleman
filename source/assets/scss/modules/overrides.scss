@@ -233,11 +233,19 @@
 }
 
 // === overrides third-party hubspot forms, widgets, etc. ===
+.form-embed { // positioning landing page forms, pulls it up 
+    @include breakpoint(large) {
+        margin-top: -4.5rem;
+    }
+    @include breakpoint(xlarge) {
+        margin-top: -7rem;
+    }
+}
 
 // Swiftype CSS.
-div.st-ui-autocomplete div.st-query-present a.st-ui-result, section.st-ui-slide-autocomplete div.st-query-present a.st-ui-result {
-    padding-left: rem-calc(15) !important;
-}
+// div.st-ui-autocomplete div.st-query-present a.st-ui-result, section.st-ui-slide-autocomplete div.st-query-present a.st-ui-result {
+//     padding-left: rem-calc(15) !important;
+// }
 // hubspot
 .hs-button {
     @include easing($timing-default);

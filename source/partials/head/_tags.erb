@@ -34,15 +34,15 @@
 <% if current_page.data.has_key?("share_image") %>
     <meta property="og:image" content="<%= current_page.data.share_image %>">
     <meta property="twitter:card" content="<%= current_page.data.share_image %>">
-    <meta property="twitter:image" content="<%= current_page.data.share_image %>">
+<%#
+<meta property="twitter:image" content="<%#= current_page.data.share_image
+%>
 <% elsif current_page.data.has_key?("featured_image") %>
     <meta property="og:image" content="<%= current_page.data.post_featured_image %>">
 	<meta property="twitter:card" content="<%= current_page.data.post_featured_image %>">
-    <meta property="twitter:image" content="<%= current_page.data.post_featured_image %>">
 <% else %>
     <meta property="og:image" content="<%= image_share_default %>">
 	<meta property="twitter:card" content="summary">
-    <meta property="twitter:image" content="<%= image_share_default %>">
 <% end %>
 <% if current_page.data.has_key?("feed_url") %>
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<%= current_page.data.feed_url %>">

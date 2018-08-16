@@ -24,6 +24,8 @@ form, input {
     margin: 0 0 1rem 0;
     border-bottom: rem-calc(1px) solid $color_border;
 }
+// .form-embed (pulls it up) is in overrides.scss
+
 label{
     // font-size: 100%;
     // font-weight: $font-weight-light;

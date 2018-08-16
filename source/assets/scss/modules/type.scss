@@ -242,7 +242,10 @@ footer {
         p{color: $color_talk-alt;}
         color: $color_talk-alt;
     }
-
+    &--light {
+        p {color: white;}
+        color: white;
+    }
     &--basic{
         font-size: 1.2rem;
         color: inherit;

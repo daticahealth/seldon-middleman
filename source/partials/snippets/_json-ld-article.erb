@@ -1,0 +1,27 @@
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "<%= site_url + current_page.url %>"
+    },
+    "headline": "<%= current_page.data.title %>",
+    "image": "<%= current_page.data.share_image %>",
+    "datePublished": "<%= current_page.data.date %>",
+    "dateModified": "<%= current_page.data.date %>",
+    "author": {
+        "@type": "Person",
+        "name": "<%= current_page.data.author %>"
+    },
+     "publisher": {
+        "@type": "Organization",
+        "name": "Datica Health, Inc.",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://images.ctfassets.net/189dvqdsjh46/4SwayIJ5AcCe4iCU820mQs/504b8e57eacc0d81032d01ace96bc622/datica_logo__black.png&h=60"
+        }
+    },
+    "description": "<%= current_page.data.summary %>"
+}
+</script>
