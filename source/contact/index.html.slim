@@ -10,19 +10,21 @@ ruby:
     current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
     the_form = data.site.forms['6REeio0W88ac0o0GOsMs8U']
     the_quote = data.site.quotes['566EA4HZFumwUQQ6asKQYw']
-
+    subhead = "A compliance and integration expert from Datica will follow up to learn how we might be able to help."
 .container-color--dark-grad-blue
     = partial "partials/head/header", :locals => { :style => "light" }
     section.section-article
         .row.align-center.align-middle
             #contact-form.columns.small-12.medium-large-6.large-4.medium-large-order-2
-                h2.headline-2.hide-for-medium-large.group.text-center Connect with Datica
+                .hide-for-medium-large
+                    h1.headline-2.group.text-center = current_page.data.title
+                    p.lead = subhead
                 .callout.drop
-                    p A compliance and integration expert from Datica will follow up to learn how we might be able to help.
-                    hr/
                     = Kramdown::Document.new(the_form["custom_form"]).to_html
             .columns.small-12.medium-large-6.large-5.group--2x.medium-large-order-1
-                h1.headline-2.show-for-medium-large Connect with Datica
+                .show-for-medium-large
+                    h2.headline-2 = current_page.data.title
+                    p.lead = subhead
                 .group
                     blockquote.quote--serif.quote--light
                         = Kramdown::Document.new(the_quote["quote_body"]).to_html
