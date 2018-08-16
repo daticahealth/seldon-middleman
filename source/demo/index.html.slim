@@ -1,19 +1,16 @@
 ---
-title: "Ask us about continous compliance with Kubernetes on Azure."
-summary: "Datica bridges security, compliance and your favorite technologies together to offer a complete, enterprise cloud solution for regulated industries."
+title: "Schedule a Demo"
+summary: "Connect with a compliance or integration expert at Datica"
 author: "Datica, Inc."
-tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, Azure, Kubernetes, Microsoft"
-ogType: "product"
-collectionName: "azure"
+tags: "HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
 layout: basic
 ---
-
 ruby:
     current_page.data.share_image = image_share_platform
     current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
-    the_form = data.site.forms['74dF6UYfkIegKgo2akQA2i']
-    the_quote = data.site.quotes['Y1SJiOGUaysQKC0qYE4cQ']
-    subhead = current_page.data.summary
+    the_form = data.site.forms['7bcj6s0e7mc0a2iowoOmIS']
+    the_quote = data.site.quotes['566EA4HZFumwUQQ6asKQYw']
+    subhead = "A compliance and integration expert from Datica will contact you to schedule a time for a demo."
 
 .container-color--dark-grad-blue
     = partial "partials/head/header", :locals => { :style => "light" }
@@ -25,7 +22,7 @@ ruby:
                     p.lead = subhead
                 .callout.drop
                     = Kramdown::Document.new(the_form["custom_form"]).to_html
-            .columns.small-12.medium-large-6.large-6.group--2x.medium-large-order-1
+            .columns.small-12.medium-large-6.large-5.group--2x.medium-large-order-1
                 .show-for-medium-large
                     h2.headline-2 = current_page.data.title
                     p.lead = subhead
