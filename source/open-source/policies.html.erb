@@ -13,11 +13,11 @@ layout: "company"
     <div class="row align-center">
         <div class="columns small-12 medium-8">
             <div class="text-center section--header-light-group">
-                <img class="icon-size--medium icon-with-margin--bottom inject-me svg-color--black" src="/public/icons/datica-icons/icons-technology/icon-git.svg" alt="icon git"/>
+                <%= inline_svg("icon-git", class: "icon-size--medium svg-color--black") %>
                 <h4>Open Source</h4>
                 <h1>Company Policies for HIPAA Compliance</h1>
                 <h2 class="margin-auto">Handle PHI? Adopt these free 25 policies and be one step closer to HIPAA compliance.</h2>
-                <a href="https://github.com/catalyzeio/policies/" class="button button--primary">View on GitHub</a>
+                <%= partial "partials/snippets/button", :locals => { :label => "View Policies on Github", :url => "https://github.com/catalyzeio/policies/", :button_classes => "button", :icon => "icon-github-octocat", :icon_align => "left" } %>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@ layout: "company"
 <section class="section-article container-color--dark-grad-blue">
     <div class="row align-center">
         <div class="columns small-12 medium-6">
-            <div class="callout callout--dark-alpha">
+            <div class="lead group">
                 <p>HIPAA compliance is complicated, but it doesn't have to be. In an effort to make compliance as easy as possible for companies working with PHI, we decided to open source our HIPAA policies.</p>
                 <p>Our policies have been written with modern, cloud-based technology vendors in mind. We looked far and wide for policy examples that fit our company, and couldn't find any. So we wrote our own. Importantly, these policies have been through three external audits&mdash;two HIPAA audits and one HITRUST audit.</p>
             </div>
@@ -45,6 +45,11 @@ layout: "company"
                 <h4 class="headline-5">No Markup Required</h4>
                 <p>All documents were written in markdown, which again likely aligns with you as a modern cloud company. It makes using git for version control and publishing to the web simple.</p>
             </div>
+            <div class="button-group text-center">
+                <%= partial "partials/snippets/button", :locals => { :label => "View Policies on Github", :url => "https://github.com/catalyzeio/policies/", :button_classes => "button button--light", :icon => "icon-github-octocat", :icon_align => "left" } %>
+            </div>
+        </div>
+        <div class="columns small-12 medium-6">
             <div class="callout callout--dark-alpha">
                 <h4 class="headline-5">Case Study: <a href="https://eligibleapi.com/" class="color-talk-alt">Eligible Inc.</a></h4>
                 <p><em>"Eligible makes it simple for healthcare engineers to pass and receive financial transactions with over 1,000 health insurance companies across the country.</p>
@@ -52,7 +57,7 @@ layout: "company"
                 <p>In the past we've spent an enormous amount of funds creating &amp; updating our policies. We have yearly evaluations of our policies in October and this past October (2014) we were able to update and implement a number of improvements to our existing policies all based off the information we gathered from Datica's policies. This cost us zero dollars in comparison to our expensive updating of policies in prior years.</p>
                 <p>This is definitely the first time we have seen policies open sourced and we applaud the use of tools like GitHub to manage version control of all policies.</p>
                 <p>I think this could be revolutionary in helping the industry as a whole collaborate to improve privacy and security practices by gathering information from the highest level security/privacy experts in the field and making it available via similar open source methods."</em></p>
-                <div class="column media-object card-person">
+                <div class="media-object card-person">
                     <div class="media-object-section">
                         <img src="https://images.ctfassets.net/189dvqdsjh46/2gYOoWVhOEYW4IMAOIeyS0/599f8ca6d3642c732f3f003769563781/headshot-eligible.jpg<%= image_thumb %>" class="avatar avatar--large circle" alt="Katelyn Gleason" />
                     </div>
