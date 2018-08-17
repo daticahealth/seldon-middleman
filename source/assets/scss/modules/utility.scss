@@ -80,22 +80,22 @@ hr {
     }
 }
 
-ul.list-horiz {
-    margin: 0;
-    list-style-type: none;
-    @include breakpoint(medium up) {
-        // width: 100%;
-        @include flex;
-        @include flex-align(left, middle);
-        flex-wrap: wrap;
-        // justify-content: space-between;
-        & > li {
-            flex: 0 0 auto;
-            flex-wrap: wrap;
-            margin-right: 1rem;
-        }
-    }
-}
+// ul.list-horiz {
+//     margin: 0;
+//     list-style-type: none;
+//     @include breakpoint(medium up) {
+//         // width: 100%;
+//         @include flex;
+//         @include flex-align(left, middle);
+//         flex-wrap: wrap;
+//         // justify-content: space-between;
+//         & > li {
+//             flex: 0 0 auto;
+//             flex-wrap: wrap;
+//             margin-right: 1rem;
+//         }
+//     }
+// }
 
 // issues with .callout - spacing different inside full row, vs. inside cols. hm
 .small-12-fix { //

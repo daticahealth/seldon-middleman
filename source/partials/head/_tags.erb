@@ -1,5 +1,9 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
+<%# use asset_preload to preload relevant assets %>
+<% if current_page.data.has_key?("asset_preload") %>
+    <%= current_page.data.asset_preload %>
+<% end %>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title><%= current_page.data.title %></title>
 <meta name="description" content="<%= current_page.data.summary %>">
@@ -7,6 +11,8 @@
     <meta name="robots" content="noindex,nofollow,noodp">
     <meta name="googlebot" content="noindex,nofollow">
 <% end %>
+<%# GTM tags need to be near top %>
+<% if build? %><%= partial "partials/scripts/google-tm-head" %><% end %>
 <meta name="topic" content="<%= current_page.data.title %>">
 <meta name="classification" content="website">
 <meta name="url" content="<%= site_url %>">
