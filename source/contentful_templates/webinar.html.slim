@@ -88,7 +88,8 @@ ruby:
                     #report-form.hide
                         .callout.drop
                             h3.headline-4.text-center.group Watch the webinar
-                            = Kramdown::Document.new(data.site.forms[p.related_form.id].custom_form).to_html
+                            = partial "partials/snippets/form", :locals => { :the_form => data.site.forms[p.related_form.id].custom_form }
+                            / = Kramdown::Document.new().to_html
             .columns.small-12.large-6
                 - if p.has_key?("lead")
                     .lead

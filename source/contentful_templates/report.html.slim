@@ -72,7 +72,7 @@ section.section-article--med.container-gray-11
             .callout.drop.form-embed
                 - if p.has_key?("related_form")
                     h3.headline-4.text-center.group Get Your #{p.related_form.title}
-                    = Kramdown::Document.new(p["related_form"]["custom_form"]).to_html
+                    = partial "partials/snippets/form", :locals => { :the_form => p["related_form"]["custom_form"] }
 
 - if p.has_key?("bg_image")
     section.show-for-medium.section-article.container-image-fill data-interchange="[#{p.bg_image.url}?fit=thumb&w=1800&h=400&fm=jpg&q=50, medium]"

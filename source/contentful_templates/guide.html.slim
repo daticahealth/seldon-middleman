@@ -71,4 +71,4 @@ section.section-article--med.container-gray-11
             .callout.drop.form-embed
                 - if p.has_key?("related_form")
                     h3.headline-4.text-center.group Get Your #{p.related_form.title}
-                    = Kramdown::Document.new(p["related_form"]["custom_form"]).to_html
+                    = partial "partials/snippets/form", :locals => { :the_form => p["related_form"]["custom_form"] }

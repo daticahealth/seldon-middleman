@@ -27,8 +27,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/catalyzeio/seldon.git",
-    "version": "0.1.0",
+    "url": "git://github.com/daticahealth/seldon-middleman.git",
+    "version": "1.0",
     "private": true
   },
   "dependencies": {

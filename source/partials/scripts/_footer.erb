@@ -1,3 +1,11 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk=" crossorigin="anonymous"></script>
+
+<%#= javascript_include_tag "jquery", "foundation.min" %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.6.0/lozad.min.js"></script>
+<%#= javascript_include_tag "nav", "smooth-scroll", "cookie", "sharer", "all" %>
+<%#= javascript_include_tag "all" %>
+<%#=<script defer src="/public/js/nav.js"></script> %>
 <% if current_page.data.has_key?("inject_svgs") %>
 	<%= javascript_include_tag "svg-injector" %>
 	<script>
@@ -7,20 +15,15 @@
 	});
 	</script>
 <% end %>
-<%= javascript_include_tag "jquery", "foundation.min" %>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.6.0/lozad.min.js"></script>
-<%#= javascript_include_tag "nav", "smooth-scroll", "cookie", "sharer", "all" %>
-<%#= javascript_include_tag "all" %>
-<%#=<script defer src="/public/js/nav.js"></script> %>
-<script defer src="/public/js/smooth-scroll.js"></script>
-<script async src="/public/js/cookie.js"></script>
+<script defer src="/public/js/cookie.js"></script>
 <% if current_page.data.sharer == true %>
 	<script async src="/public/js/sharer.js"></script>
 <% end %>
-<script src="/public/js/all.js"></script>
+<script defer src="/public/js/all.js"></script>
 <%# Custom JS files %>
 <% if current_page.data.has_key?("customJS") %>
     <% current_page.data.customJS.split(",").each do |filename| %>
-        <script src="<%= filename.strip %>"></script>
+        <script defer src="<%= filename.strip %>"></script>
     <% end %>
 <% end %>
+<!-- <script async src="/public/js/smooth-scroll.js"></script> -->
