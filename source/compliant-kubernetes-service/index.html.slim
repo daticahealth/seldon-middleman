@@ -13,6 +13,8 @@ collectionOrder: 1
 priority: "0.9"
 ---
 - current_page.data.share_image = image_share_platform
+- the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
+
 svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   defs
     symbol#icon-chevron-down viewbox=("0 0 18 18")
@@ -152,6 +154,5 @@ section#cta.section-article.container-color--gray-dark-grad
             p.person-title CEO, Zipnosis
     #form.columns.small-12.medium-large-6.large-4
       .callout.drop
-        - the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
         / h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
-        = Kramdown::Document.new(the_form["custom_form"]).to_html
+        = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }

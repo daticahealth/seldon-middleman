@@ -74,6 +74,9 @@ end
                                 <hr class="divider" />
                             <% end %>
                             <% if p["cta_ref"].has_key?("desc") %><%= Kramdown::Document.new(p["cta_ref"]["desc"]).to_html %><% end %>
+                            <%# TODO: this custom form call must be updated to use partial, like (slim)
+                             = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+                              %>
                             <%= p.cta_ref.custom_form %>
                         </div>
                     </div>
@@ -83,12 +86,5 @@ end
                 <% end %>
             <% end %>
         </div>
-        <!--
-        <% if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta") %>
-            <div class="columns small-12 large-4">
-            <%#= partial "partials/cards/discover", :locals => { :post => p["discovery_topic"], :classes => "group" } %>
-            </div>
-        <% end %>
-        -->
     </div>
 </section>

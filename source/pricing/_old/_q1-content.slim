@@ -1,0 +1,48 @@
+
+
+      / #pricing-cta.text-center.card-divider
+        p.lead Choose a time to see a Platform demo, and our Datica Experts will help you get the features and support you need.
+        = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo/", :button_classes => "button large button-inline", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "pricing-demo" }
+
+/ .container-color--gray-light
+/   .container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")
+/     section.section-article
+/       aside#pricing-tco.row.align-center
+/         .columns.small-12.medium-10.large-6
+/           .callout.drop
+/             = inline_svg("icon-dollar-circle", class: "icon-size--large svg-color--white float-right")
+/             h2.headline-3 Total Cost of Ownership of Compliance in the Cloud
+/             p In this guide are tested formulas and directional advice from the compliance and cloud experts at Datica on how to measure and manage the total cost of ownership to achieve compliance in the cloud.
+/             = partial "partials/snippets/button", :locals => { :label => "Get your free TCO Guide", :url => "/guide/total-cost-of-ownership-of-cloud-compliance", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :data_track_group => "platform", :item_id => "tco-guide" }
+/ /
+/  section#pricing-faq.section-article
+/    .row.align-center
+/      .columns.small-12.medium-8.large-8
+/        h3.headline-3.text-center.group Frequently asked questions about pricing
+/    .row.align-center
+/      .columns.small-12.medium-4.large-4
+/        .callout.callout--gray-light
+/          ol
+/            - data.views.faqs.pricing.each_with_index do |item, index|
+/              li
+/                a href="#platform-tech-question-#{index}" = item["question"]
+/      .columns.small-12.medium-8.large-8
+/        dl
+/          - data.views.faqs.pricing.each_with_index do |item, index|
+/            dt id="platform-tech-question-#{index}" = item["question"]
+/            dd= Kramdown::Document.new(item["answer"]).to_html
+/ - data.views.pricing.plan_details.each_with_index do |content, id|
+/   .medium.reveal data-options=("closeOnEsc: true; animationSpeed: 150; animationIn: bounce-in") data-reveal="" id="tier#{content['slug']}Modal"
+/     .card
+/       .card-divider.container-gray-11.text-center
+/         img.inject-me.svg-color--black.icon-size--xlarge src="#{content["icon"]}" /
+/         h3.headline-4.text-light
+/           | I want to
+/           strong= content["title"]
+/       .card-section.content-dynamic
+/         = Kramdown::Document.new(content["body"]).to_html
+/       .card-divider.container-gray-3.text-center
+/         h4.headline-4.text-light.nomargin= content["primary_label"]
+/         /! <a href="<haml_loud> content[&quot;primary_url&quot;] </haml_loud>" class="button button--neat nomargin"><haml_loud> content[&quot;primary_label&quot;] </haml_loud> <i class="fa fa-angle-right"></i></a
+/     button.close-button aria-label=("Close panel") data-close="" type="button"
+/       span aria-hidden="true"  ×

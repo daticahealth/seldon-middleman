@@ -82,7 +82,7 @@ end
             <% if p["case_study"].has_key?("related_form") %>
                 <div class="callout callout--large drop">
                     <h3 class="headline-4 text-center group">Read the Case Study</h3>
-                    <%= Kramdown::Document.new(p["case_study"]["related_form"]["custom_form"]).to_html %>
+                    <%= partial "partials/snippets/form", :locals => { :the_form => p["case_study"]["related_form"]["custom_form"] } %>
                 </div>
             <% elsif p["case_study"].has_key?("form_id") %>
                 <div class="callout callout--large drop">

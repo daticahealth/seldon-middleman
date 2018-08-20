@@ -39,6 +39,6 @@ section#productHelp.section-article.container-gray-11.container-image--center da
     p We're always looking for new ideas or use cases.
     - if defined?(form_id)
       - the_form = data.site.forms[form_id]
-      = Kramdown::Document.new(the_form["custom_form"]).to_html
+      = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
     button.close-button aria-label=("Close panel") data-close="" type="button"
       span aria-hidden="true" ×

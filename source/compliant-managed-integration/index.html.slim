@@ -15,6 +15,7 @@ ctaCustom: true
 ruby:
   current_page.data.share_image = data.site.cta["5eA1ToAIEw4Qy20mkUmmcm"].cta_image.url + '?w=800'
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  the_form = data.site.forms['328pNB4IvCaQWQMCWmgSCy']
 
 aside.hide-for-large.section-article.container-color--blue-alt.menu.button-cluster.align-center
   /= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
@@ -211,9 +212,8 @@ section#cta.section-article.container-color--gray-dark-grad
       /  = partial("partials/snippets/form-hubspot", :locals => { :form_id => "2904bae4-9c64-4ed7-95a5-9af6ae6af302" })
     #form.columns.small-12.medium-large-6.large-4
       .callout.drop
-        - the_form = data.site.forms['328pNB4IvCaQWQMCWmgSCy']
         h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
-        = Kramdown::Document.new(the_form["custom_form"]).to_html
+        = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
         
 section#faq.section-article.container-gray-12
   .row.align-center
