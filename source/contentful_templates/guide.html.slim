@@ -52,7 +52,7 @@ section.container-gray-2#top
             /     = Kramdown::Document.new(p["desc"]).to_html
         - if p.has_key?("image_thumb")
             .columns.small-12.medium-4.xlarge-4.text-center.medium-order-1
-                img.text-center.product-thumb(data-interchange="[#{p.image_thumb.url}?w=400, small], [#{p.image_thumb.url}?w=500, medium]" alt="Datica Guide: #{p.title}")
+                img.text-center.product-thumb.lozad data-src="#{p.image_thumb.url}?w=500" data-srcset="#{p.image_thumb.url}?w=250 800w, #{p.image_thumb.url}?w=500 1200w" alt="Datica Guide: #{p.title}"
 section.section-article--med.container-gray-11
     .row.align-center
         .columns.small-12.medium-large-6.large-4.group--2x
@@ -71,4 +71,4 @@ section.section-article--med.container-gray-11
             .callout.drop.form-embed
                 - if p.has_key?("related_form")
                     h3.headline-4.text-center.group Get Your #{p.related_form.title}
-                    = Kramdown::Document.new(p["related_form"]["custom_form"]).to_html
+                    = partial "partials/snippets/form", :locals => { :the_form => p["related_form"]["custom_form"] }

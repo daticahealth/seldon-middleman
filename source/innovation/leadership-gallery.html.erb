@@ -7,10 +7,11 @@ date: "August 1, 2017"
 share_image: "https://images.ctfassets.net/189dvqdsjh46/6narHoNofSE0WosSoisscK/a2269efd27d6083468dd995c92e1408f/Leadership_Gallery_Vol._1_Introduction_poster.jpg??w=640&q=60"
 header: "Datica Thought Leadership Gallery"
 subheader: "subheader"
-layout: sparse
+layout: basic
 sharer: true
 customCSS: "leadership-gallery"
 customJS: "/public/js/leadership-gallery.js"
+smoothScroll: false
 ---
 <%
 sorted_entries = data.site.leadershipGallery.to_a.sort_by{ |id, entry| entry['title'] }

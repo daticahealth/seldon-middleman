@@ -18,10 +18,11 @@
     <//images.ctfassets.net>;rel=dns-prefetch, \
     <//images.ctfassets.net>;rel=preconnect, \
     </public/css/seldon.css>;rel=preload;as=style, \
-    </public/js/jquery.js>;rel=preload;as=script, \
-    </public/js/foundation.min.js>;rel=preload;as=script, \
-    </fonts/gt-america-regular.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
+    <//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js>;rel=preload;as=script, \
+    <//cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js>;rel=preload;as=script, \
+    <//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.6.0/lozad.min.js>;rel=preload;as=script, \
     </fonts/gt-america-light.woff>;rel=preload;as=font;type=font/woff;crossorigin'''
+# </fonts/gt-america-regular.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
 
 # Redirect domain aliases to primary domain
 [[redirects]]
