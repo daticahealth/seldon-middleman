@@ -7,16 +7,16 @@ sharer: true
 p = locals[:item]
 current_page.data.title = p["title"] + " | Datica Events"
 current_page.data.summary = safe_summary(p.summary)
-if p.has_key?("featured_image")
+share_image_fallback = "https://images.ctfassets.net/189dvqdsjh46/2HzxmY3I4ESUU6ICM0ge0Y/f5ed3801dfe3328ec1ee09ea83434ba6/events-share-default.jpg"
+
+if p.has_key?("share_image")
+    current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_size_small
+elsif p.has_key?("featured_image")
     current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
 else
-    current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/2HzxmY3I4ESUU6ICM0ge0Y/f5ed3801dfe3328ec1ee09ea83434ba6/events-share-default.jpg" + image_size_small
+    current_page.data.share_image = share_image_fallback
 end
-# if p.has_key?("tags")
-#     current_page.data.tags = get_tag_list(p["tags"])
-# else
-#     current_page.data.tags = "events, conferences, presentations"
-# end
+
 current_page.data.tags = "events, conferences, presentations"
 if p.has_key?("author")
     current_page.data.author = p["event_related_people"]["fullname"]
@@ -74,10 +74,9 @@ end
                                 <hr class="divider" />
                             <% end %>
                             <% if p["cta_ref"].has_key?("desc") %><%= Kramdown::Document.new(p["cta_ref"]["desc"]).to_html %><% end %>
-                            <%# TODO: this custom form call must be updated to use partial, like (slim)
-                             = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+                            <%= partial "partials/snippets/form", :locals => { :the_form => p["cta_ref"]["custom_form"] }
                               %>
-                            <%= p.cta_ref.custom_form %>
+                            <%#= p.cta_ref.custom_form %>
                         </div>
                     </div>
                 </div>
