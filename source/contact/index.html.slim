@@ -20,7 +20,7 @@ ruby:
                     h1.headline-2.group.text-center = current_page.data.title
                     p.lead = subhead
                 .callout.drop
-                    = Kramdown::Document.new(the_form["custom_form"]).to_html
+                    = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
             .columns.small-12.medium-large-6.large-5.group--2x.medium-large-order-1
                 .show-for-medium-large
                     h2.headline-2 = current_page.data.title
