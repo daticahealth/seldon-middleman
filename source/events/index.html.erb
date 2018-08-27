@@ -14,7 +14,7 @@ current_page.data.date = today.strftime('%B %-d, %Y')
 sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }.reverse!
 %>
 
-<section class="section-article container-color--dark container-image--fixed" data-interchange="[https://images.ctfassets.net/189dvqdsjh46/XrCee61laEeWoWoS6CAcI/87fd440f962b520710059ad071b869cb/background-events.jpg, small]">
+<section class="section-article container-color--dark container-image--fixed lozad" data-background-image="https://images.ctfassets.net/189dvqdsjh46/XrCee61laEeWoWoS6CAcI/87fd440f962b520710059ad071b869cb/background-events.jpg">
     <div class="row align-center">
         <div class="columns small-12 large-8 text-center">
             <h1 class="headline-6 subheader--spaced-out text--yellow-glow">Events</h1>
@@ -25,7 +25,11 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
 <section class="section-article container-color--gray-light">
     <div class="row align-center">
         <div class="columns small-12 medium-10 large-8">
-            <h3 class="headline-3 text-center group">Upcoming Events</h3>
+            <% sorted_events.take(1).each do |id, event| %>
+                <% if today.strftime("%F") < event['date_start'].strftime("%F") %>
+                    <h3 class="headline-3 text-center group">Upcoming Events</h3>
+                <% end %>
+            <% end %>
             <% sorted_events.each do |id, event| %>
                 <% if today.strftime("%F") < event['date_start'].strftime("%F") %>
                     <div class="callout callout--large drop group--2x">
@@ -44,7 +48,7 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
                             </div>
                         <% end %>
                         <% if event.has_key?("event_logo") %>
-                            <p><img class="logo-size--medium" src="<%= event["event_logo"]["url"] %>?w=300" alt="Event logo"></p>
+                            <p><img class="logo-size--medium lozad" data-src="<%= event["event_logo"]["url"] %>?w=300" alt="Event logo"></p>
                         <% end %>
                         <div class="headline-5 spaced-out">
                         <%= inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5") %>
@@ -75,7 +79,7 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
         <div class="columns small-12 large-10">
             <div class="logo-cloud text-center">
                 <% data.views.events.speaking_list.each do |logo| %>
-                    <img src="<%= logo["logo_file"] %>?w=300" alt="<%= logo["name"] %>" class="logo-cloud--item logo-size--<%= logo['logoSize'] %>" />
+                    <img data-src="<%= logo["logo_file"] %>?w=300" alt="<%= logo["name"] %>" class="lozad logo-cloud--item logo-size--<%= logo['logoSize'] %>" />
                 <% end %>
             </div>
         </div>
@@ -95,10 +99,17 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
                             </div>
                             <span class="dot"></span>
                             <div class="content">
-                                <ul class="menu simple">
-                                    <% if event.has_key?("event_logo") %>
-                                        <li><img class="logo-size--small" src="<%= event["event_logo"]["url"] %>?w=300" alt="Event logo"></li>
-                                    <% end %>
+                                <% if event.has_key?("event_logo") %>
+                                    <img class="logo-size--medium lozad" style="margin-bottom: 0.4rem;" data-src="<%= event["event_logo"]["url"] %>?w=300" alt="Event logo">
+                                <% end %>
+                                <% if event.has_key?("title") %>
+                                    <h4 class="headline-5">
+                                        <a href="/events/<%= event["slug"]%>" title="event details">
+                                            <%= event["title"]%>
+                                        </a>
+                                    </h4>
+                                <% end %>
+                                <ul class="menu simple group--sm">
                                     <% if event.has_key?("event_related_people") %>
                                         <% event["event_related_people"].each do |person| %>
                                             <li>
@@ -114,15 +125,10 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
                                         <% end %>
                                     <% end %>
                                 </ul>
-                                <% if event.has_key?("title") %>
-                                    <h4 class="headline-5">
-                                        <a href="/events/<%= event["slug"]%>" title="event details">
-                                            <%= event["title"]%>
-                                        </a>
-                                    </h4>
-                                <% end %>
                                 <% if event.has_key?("event_desc") %>
-                                    <%= Kramdown::Document.new(event["event_desc"]).to_html %>
+                                    <div class="content-dynamic">
+                                        <%= Kramdown::Document.new(event["event_desc"]).to_html %>
+                                    </div>
                                 <% end %>
                                 <% if event.has_key?("event_image") %>
                                     <img class="thumbnail" src="<%= event['event_image']%>?w=600" width="350" alt="Conference Image">
@@ -138,32 +144,19 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
 <% sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
 <section class="section-article container-color--gray-light">
     <div class="row align-center">
-        <div class="columns small-12 large-9 text-center group--2x">
-            <h2 class="headline-4 spaced-out">Recently on the blog</h2>
-        </div>
-    </div>
-    <div class="row align-center">
-        <div class="columns small-12 large-9 group">
-            <% sorted_posts[0...3].each do | id, post | %>
-                <div class="row group row--gutter-small">
-                    <div class="columns medium-3 large-3 show-for-medium">
-                        <% if post.has_key?("featured_image") %>
-                            <a href="/blog/<%= post["slug"] %>" title="Read this post">
-                                <img class="thumbnail" data-interchange="[<%= post["featured_image"]["url"] + image_thumb %>, medium]"  alt="<%= post["featured_image"]["title"] %>">
-                            </a>
-                        <% end %>
+        <div class="columns small-12 large-10">
+            <h2 class="headline-4 spaced-out group text-center">Recently on the blog</h2>
+            <div class="row align-center small-up-1 medium-up-2">
+                <% sorted_posts[0...3].each do | id, blog_entry | %>
+                    <div class="column group">
+                        <%= partial "partials/cards/featured-blog", :locals => { :post => blog_entry, :style => "light", :size => "small", :show_type => true } %>
                     </div>
-                    <div class="columns small-12 medium-9 large-9">
-                        <p class="blog-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></p>
-                        <h3 class="headline-4"><a href="/blog/<%= post["slug"] %>" title="Read this post"><%= post["title"] %></a></h3>
-                        <% if post.has_key?("summary") %>
-                            <%= Kramdown::Document.new(post["summary"]).to_html %>
-                        <% end %>
-                        
-                    </div>
+
+                <% end %>
+                <div class="column">
+                <%= partial "blog/partials/blog-subscription", :locals => { :color => "white" } %>
                 </div>
-            <% end %>
-            <%= partial "blog/partials/blog-subscription", :locals => { :color => "dark" } %>
+            </div>
         </div>
     </div>
 </section>
