@@ -1,0 +1,45 @@
+// can accept discovery topic, css classes. e.g.
+// topic = data.site.discover[p.discovery_topic.id]
+// :locals => { :topic => topic, :classes => "group--2x" }
+ruby:
+  # coloring console output for messages
+  # class String
+  #   def colorize(color_code)
+  #     "\e[#{color_code}m#{self}\e[0m"
+  #   end
+  #   def alert
+  #     colorize("31")
+  #   end
+  #   def warning
+  #     colorize("33")
+  #   end
+  #   def success
+  #     colorize("32")
+  #   end
+  #   def italic
+  #     colorize("3")
+  #   end
+  # end
+
+  if defined?(classes)
+    container_styles = classes
+  else
+    container_styles = "group"
+  end
+  unless defined?(topic)
+    puts "⚠️ Error: the discover-lite partial at #{current_page.url} requires a Discover entry object."
+  end
+
+div class=container_styles
+  .subheader-small Discover
+  h4.headline-4
+    a href="/discover/#{topic.slug}" title=("A comprehensive overview of #{topic.title}")
+      = topic.title
+  - if topic.has_key?("media_object")
+    .group--sm
+      = Kramdown::Document.new(topic.media_object).to_html
+  - if topic.has_key?("summary")
+    p = topic.summary
+      br/
+      a href="/discover/#{topic.slug}" title=("A comprehensive overview of #{topic.title}") 
+        | Read more #{inline_svg("small/icon-chevron-right", class: "icon-inline")}

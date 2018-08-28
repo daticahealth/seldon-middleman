@@ -30,11 +30,11 @@
 
 # required elements
 unless defined?(label)
-	puts "The Button partial at #{current_page.url} requires a label!"
+	puts "⚠️ The Button partial at #{current_page.url} requires a label!"
 	label = "Click here"
 end
 unless defined?(url)
-	puts "The Button partial at #{current_page.url} requires an URL!"
+	puts "⚠️ The Button partial at #{current_page.url} requires an URL!"
 	url = "/"
 end
 

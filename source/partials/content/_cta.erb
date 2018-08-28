@@ -7,17 +7,17 @@
 if p.has_key?("cta_color")
     case p.cta_color
         when "white", "gray-light"
-            style_classes = "cta group callout callout--#{p.cta_color} drop-light"
+            style_classes = "cta callout callout--#{p.cta_color} drop-light"
             svg_color = "svg-color--blue"
             button_classes = "button button--cta"
             button_icon_color = "blue"
         when "dark", "dark-alt", "tint"
-            style_classes = "cta group callout callout--#{p.cta_color}"
+            style_classes = "cta callout callout--#{p.cta_color}"
             svg_color = "svg-color--white"
             button_classes = "button button--cta button--light"
             button_icon_color = "black"
         else
-            style_classes = "cta group callout callout--blue"
+            style_classes = "cta callout callout--blue"
             svg_color = "svg-color--white"
             button_classes = "button button--cta button--light"
             button_icon_color = "blue"
@@ -32,7 +32,7 @@ end
 
 %>
 <% if p.has_key?("cta_image") %>
-    <aside class="cta cta--image group" id="cta">
+    <aside class="cta cta--image" id="cta">
         <a class="" href="<%= p["cta_url"] %>" title="<%= p["cta_label"] %>">
             <img class="lozad" data-src="<%= p["cta_image"]["url"] %>" alt="<%= p["cta_label"] %>">
         </a>

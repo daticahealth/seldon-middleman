@@ -40,7 +40,7 @@ end
 if p.has_key?("pub_date")
     current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
 else
-    current_page.data.date = "2017"
+    current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
 end
 %>
 <div class="container-color--dark-alt">
@@ -77,50 +77,51 @@ end
                     <%= Kramdown::Document.new(p["post"]).to_html %>
                 </div>
             </article>
+            <aside id="nextPrev" class="row row--gutter-small small-up-1 large-up-2 group">
+                <div class="column">
+                    <% previous_item = get_previous_item(data.site.blog, p, "pub_date") %>
+                    <% if previous_item != nil %>
+                        <p class="blog-date">Earlier</p>
+                        <h4 class="headline-5"><a href="/blog/<%= previous_item["slug"] %>/" title="Read this post" rel="prev"><%= previous_item["title"] %></a></h4>
+                        <% if previous_item.has_key?("summary") %>
+                            <div class="text-smaller">
+                                <%= Kramdown::Document.new(previous_item["summary"]).to_html %>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+                <div class="column">
+                    <% next_item = get_next_item(data.site.blog, p, "pub_date") %>
+                    <% if next_item != nil %>
+                        <p class="blog-date">Next Post</p>
+                        <h4 class="headline-5"><a href="/blog/<%= next_item["slug"] %>/" title="Read this post" rel="next"><%= next_item["title"] %></a></h4>
+                        <% if next_item.has_key?("summary") %>
+                            <div class="text-smaller">
+                                <%= Kramdown::Document.new(next_item["summary"]).to_html %>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+            </aside>
             <% if p.has_key?("cta_ref") %>
                 <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
             <% end %>
-            <div class="callout callout--gray-light">
-                <div class="row row--gutter-small">
-                    <div class="columns small-12 medium-6 large-6">
-                        <% previous_item = get_previous_item(data.site.blog, p, "pub_date") %>
-                        <% if previous_item != nil %>
-                            <p class="blog-date">Earlier</p>
-                            <h4 class="headline-5"><a href="/blog/<%= previous_item["slug"] %>/" title="Read this post" rel="prev"><%= previous_item["title"] %></a></h4>
-                            <% if previous_item.has_key?("summary") %>
-                                <div class="text-smaller">
-                                    <%= Kramdown::Document.new(previous_item["summary"]).to_html %>
-                                </div>
-                            <% end %>
-                        <% end %>
-                    </div>
-                    <div class="columns small-12 medium-6 large-6">
-                        <% next_item = get_next_item(data.site.blog, p, "pub_date") %>
-                        <% if next_item != nil %>
-                            <p class="blog-date">Next Post</p>
-                            <h4 class="headline-5"><a href="/blog/<%= next_item["slug"] %>/" title="Read this post" rel="next"><%= next_item["title"] %></a></h4>
-                            <% if next_item.has_key?("summary") %>
-                                <div class="text-smaller">
-                                    <%= Kramdown::Document.new(next_item["summary"]).to_html %>
-                                </div>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
-            </div>
         </div>
         <aside class="columns small-12 large-4 section--sidebar" data-sticky-container>
             <div class="sticky" data-sticky data-options="anchor: blogPost; stickyOn: xlarge;">
                 <%= partial "/partials/snippets/share", :locals => { :p => p, :classes => "align-center hide-for-xlarge" }  %>
-
-                <%= partial "blog/partials/blog-subscription", :locals => { :color => "dark" } %>
+                <div class="group">
+                    <%= partial "blog/partials/blog-subscription", :locals => { :color => "gray" } %>
+                </div>
                 <% if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta") %>
-                    <%= partial "partials/cards/discover", :locals => { :post => p["discovery_topic"], :classes => "group" } %>
-                    <% if p.discovery_topic.slug == "ehr-integrations" %>
+                    <% topic = data.site.discover[p.discovery_topic.id] %>
+                    <%= partial "partials/cards/discover-lite", :locals => { :topic => topic, :classes => "group" } %>
+                    <% if topic.slug == "ehr-integrations" %>
                         <%= partial("/partials/content/cta", :locals => { :p => data.site.cta["1h6f0OBRqiiayM2cy28qey"] }) %>
                         <%#= partial "partials/ctas/ad-webinar" %>
                     <% end %>
-                <% end %>
+                <% end %>                
+
                 <% if p.has_key?("related_entries") && p["related_entries"].count == 1 %>
                     <%# <h4 class="headline-5 text--spaced text-center">Related</h4> %>
                     <% p["related_entries"].take(1).each do | relatedPost | %>

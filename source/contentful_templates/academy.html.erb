@@ -25,7 +25,7 @@ end
 if p.has_key?("pub_date")
     current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
 else
-    current_page.data.date = "2018"
+    current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
 end
 %>
 <style type="text/css">

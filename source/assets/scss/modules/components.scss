@@ -111,37 +111,48 @@ span.label + span.label { // when in a tag list
 // CTA containers
 .cta {
     text-align: center;
-    @include breakpoint(medium up){
+    @include breakpoint(medium up) {
         text-align: left;
-        padding: 2rem !important;
+        // padding: 2rem !important;
+    }
+    margin: 2rem 0 2.5rem 0;
+    overflow: hidden;
+    border-radius: $global-radius;
+    @include breakpoint(medium) {
+        margin: 2rem auto 3rem auto;
+        max-width: 75%;
+    }
+    @include breakpoint(large) {
+        max-width: 100%; // an exception, it's 2-col here but narrow. Need container queries!
+        margin: 3rem 0 4rem 0;
+    }
+    @include breakpoint(xlarge) {
+        max-width: 75%;
     }
     &--image{ // only used in full-image CTAs
-        margin-bottom: 2rem;
         padding: 0 !important;
-        overflow: hidden;
-        border-radius: $global-radius;
     }
     &--icon{
         max-width: $thing-l; // 4 rem/64px
         max-height: $thing-l;
-        @include breakpoint(medium up){
+        @include breakpoint(medium up) {
             margin-bottom: 1rem;
             float: left;
         }
     }
     &--medium {
         max-width: initial;
-        @include breakpoint(medium){
+        @include breakpoint(medium) {
             max-width: 50%;
         }
-        @include breakpoint(large){
+        @include breakpoint(large) {
             max-width: initial;
         }
     }
     &--body{
         &-right {
             // float: right;
-            @include breakpoint(medium up){
+            @include breakpoint(medium up) {
                 margin-left: 5.5rem;
             }
         }
@@ -152,7 +163,7 @@ span.label + span.label { // when in a tag list
         margin-bottom: 1.5rem;
     }
     &--button{
-        @include breakpoint(small only){
+        @include breakpoint(small only) {
             width: 100%;
         }
         margin-bottom: 0;
@@ -165,7 +176,7 @@ span.label + span.label { // when in a tag list
         padding-right: 0.3rem;
     }
     &-icons {
-        // @include breakpoint(xlarge up){
+        // @include breakpoint(xlarge up) {
         // }
         &.horizontal {
 
@@ -197,7 +208,7 @@ span.label + span.label { // when in a tag list
         padding-bottom: 0.8rem;
         &-top { // top item, just needs adjustment
             max-height: 2.2rem;
-            @include breakpoint(xlarge up){
+            @include breakpoint(xlarge up) {
                 max-height: 3rem;
                 padding-bottom: 0.8rem;
             }
