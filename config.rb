@@ -189,13 +189,14 @@ activate :contentful do |f|
     f.access_token = '9abdf5de79abc1e1cdc2cf25f3280641fd845a2f3fd5bad8222d1b457f20ba2d'
     f.use_preview_api = false
     f.all_entries = true
-    f.client_options = { max_include_resolution_depth: 2 }
+    f.client_options = { max_include_resolution_depth: 1 }
     f.content_types = {
         academy: 'academy',
         blog: 'blog',
         caseStudy: 'caseStudy',
         cta: 'cta',
         customers: 'customers',
+        collections: 'genericCollection',
         discover: 'discover',
         events: 'events',
         featureCategories: 'featureCategories',
