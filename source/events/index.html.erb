@@ -125,9 +125,9 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
                                         <% end %>
                                     <% end %>
                                 </ul>
-                                <% if event.has_key?("event_desc") %>
+                                <% if event.has_key?("summary") %>
                                     <div class="content-dynamic">
-                                        <%= Kramdown::Document.new(event["event_desc"]).to_html %>
+                                        <%= Kramdown::Document.new(event["summary"]).to_html %>
                                     </div>
                                 <% end %>
                                 <% if event.has_key?("event_image") %>
