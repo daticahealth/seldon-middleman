@@ -29,7 +29,7 @@ sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.revers
                         <% if post.has_key?("summary") %>
                             <p class="blog-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></p>
                             <div class="lead"><%= Kramdown::Document.new(plain_text(post.summary)).to_html %></div>
-                            <p><a class="link--yellow read-more" href="/blog/<%= post["slug"] %>" title="Read the post">Read the post <i class="fa fa-angle-right"></i></a></p>
+                            <p><a class="link--yellow read-more" href="/blog/<%= post["slug"] %>" title="Read the post">Read the post</a></p>
                         <% end %>
                     </div>
                 </div>
@@ -48,7 +48,7 @@ sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.revers
 </section>
 <section class="section-article">
     <div class="row">
-        <div class="columns small-12 large-9 group">
+        <div class="columns small-12 large-8 group">
             <% sorted_posts[4...10].each do | id, post | %>
                 <div class="row group row--gutter-small">
                     <div class="columns medium-3 large-3 show-for-medium">
@@ -64,13 +64,13 @@ sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.revers
                         <% if post.has_key?("summary") %>
                             <%= Kramdown::Document.new(post["summary"]).to_html %>
                         <% end %>
-                        <p><a class="read-more" href="/blog/<%= post["slug"] %>" title="Read this post">Read on <i class="fa fa-angle-right"></i></a></p>
+                        <a class="link-arrow" href="/blog/<%= post["slug"] %>" title="Read this post">Read on</a>
                     </div>
                 </div>
             <% end %>
         </div>
-        <aside class="columns small-12 large-3 section--sidebar">
-            <%= partial "blog/partials/blog-subscription" %>
+        <aside id="subscribe" class="columns small-12 large-4 section--sidebar">
+            <%= partial "blog/partials/blog-subscription", :locals => { :color => "gray" } %>
         </aside>
     </div>
 </section>
@@ -90,13 +90,11 @@ sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.revers
                 <% end %>
             </div>
         <% end %>
-    </div>
-    <div class="row">
-        <div class="column small-12 medium-6">
-            <%= partial "partials/snippets/button", :locals => { :label => "Browse the blog archives", :url => "/blog/archives/", :button_classes => "button", :icon => "icon-files", :icon_align => "left" } %>
-        </div>
-        <div class="column small-12 medium-6">
-            <%= partial "blog/partials/blog-subscription", :locals => {:color => "dark"} %>
+        <div class="column">
+            <div class="menu button-group align-justify">
+                <%= partial "partials/snippets/button", :locals => { :label => "Browse the blog archives", :url => "/blog/archives/", :button_classes => "button", :icon => "icon-files", :icon_align => "left" } %>
+                <%= partial "partials/snippets/button", :locals => { :label => "Get posts in your inbox", :url => "#subscribe", :button_classes => "button success", :icon => "icon-email-open-sm", :icon_align => "left" } %>
+            </div>
         </div>
     </div>
 </section>
