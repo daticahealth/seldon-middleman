@@ -11,14 +11,15 @@
         <a href="/customer/<%= cf_customer["slug"] %>" title="<%= cf_customer["company_name"] %> case study">
             <img class="logo-size--medium group--sm" src="/public/img/customer-logos/<%= cf_customer["slug"] %>-logo.png" alt="<%= cf_customer["company_name"] %> Logo"/>
         </a>
-        <h3 class="headline-5"><%= cf_customer["case_study"]["case_study_title"] %></h3>
+        <h3 class="lead"><%= cf_customer["case_study"]["case_study_title"] %></h3>
     </div>
     <div class="card-section card-section--flush text-left">
         <% if cf_customer["case_study"].has_key?("customer_quote") %>
                 <blockquote class="quote--serif">
-                    <%= cf_customer["case_study"]["customer_quote"]["quote_body"] %>
+                    <%= Kramdown::Document.new(cf_customer["case_study"]["customer_quote"]["quote_body"]).to_html %>
+
                 </blockquote>
-                <%= partial("partials/snippets/person", :locals => { :p => cf_customer }) %>
+                <%= partial("partials/snippets/person-vertical-simple", :locals => { :p => cf_customer }) %>
         <% else %>
             <% if cf_customer["case_study"].has_key?("value_prop") %>
                 <p class="lead"><%= cf_customer["case_study"]["value_prop"] %></p>
