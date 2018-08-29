@@ -54,7 +54,7 @@ sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.revers
                     <div class="columns medium-3 large-3 show-for-medium">
                         <% if post.has_key?("featured_image") %>
                             <a href="/blog/<%= post["slug"] %>" title="Read this post">
-                                <img class="thumbnail" data-interchange="[<%= post["featured_image"]["url"] + image_thumb %>, medium]"  alt="<%= post["featured_image"]["title"] %>">
+                                <img class="thumbnail lozad" data-src="<%= post["featured_image"]["url"] %>?fit=thumb&w=300&h=300" alt="<%= post["featured_image"]["title"] %>">
                             </a>
                         <% end %>
                     </div>
@@ -64,7 +64,7 @@ sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.revers
                         <% if post.has_key?("summary") %>
                             <%= Kramdown::Document.new(post["summary"]).to_html %>
                         <% end %>
-                        <a class="link-arrow" href="/blog/<%= post["slug"] %>" title="Read this post">Read on</a>
+                        <!-- <a class="link-arrow" href="/blog/<%= post["slug"] %>" title="Read this post">Read on</a> -->
                     </div>
                 </div>
             <% end %>
