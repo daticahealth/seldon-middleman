@@ -33,42 +33,7 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
             <% sorted_events.each do |id, event| %>
                 <% if today.strftime("%F") < event['date_start'].strftime("%F") %>
                     <div class="callout callout--large drop group--2x">
-                        <% if event.has_key?("title") %>
-                            <h4 class="headline-4 group">
-                                <a href="/events/<%= event["slug"]%>" title="event details">
-                                    <%= event["title"]%>
-                                </a>
-                            </h4>
-                        <% end %>
-                        <% if event.has_key?("event_related_people") %>
-                            <div class="float-right-on-medium">
-                                <% event["event_related_people"].each do |person| %>
-                                    <%= partial("partials/snippets/person", :locals => { :p => person, :classes => "block-width-medium", :use_headers => false }) %>
-                                <% end %>
-                            </div>
-                        <% end %>
-                        <% if event.has_key?("event_logo") %>
-                            <p><img class="logo-size--medium lozad" data-src="<%= event["event_logo"]["url"] %>?w=300" alt="Event logo"></p>
-                        <% end %>
-                        <div class="headline-5 spaced-out">
-                        <%= inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5") %>
-                        <%= partial("partials/snippets/date-range", :locals => { :p => event }) %>
-                        </div>
-                        <% if event.has_key?("event_desc") %>
-                            <%= Kramdown::Document.new(event["event_desc"]).to_html %>
-                        <% end %>
-                        <% if event.has_key?("event_photos") %>
-                            <% event["event_photos"].each do |photo| %>
-                                <img class="thumbnail" src="<%= photo.url %>?w=500" title="<%= photo.title %>" width="300"> 
-                            <% end %>
-                        <% end %>
-                        <% if event.has_key?("event_tags") %>
-                            <p class="">
-                                <% event["event_tags"].each do |tag| %>
-                                    <span class="label faded round<% if tag == "Sponsor" %> success<% else %> info<% end %>"><%= tag %></span>
-                                <% end %>
-                            </p>
-                        <% end %>
+                        <%= partial "partials/content/event", :locals => { :event => event } %>
                     </div>
                 <% end %>
             <% end %>
