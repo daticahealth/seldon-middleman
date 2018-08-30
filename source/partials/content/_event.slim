@@ -1,0 +1,29 @@
+.row
+  .columns
+    - if event.has_key?("title")
+      h3.headline-4
+        a href="/events/#{event["slug"]}" title=("event details") 
+          = event["title"]
+    h4.headline-6.spaced-out
+      = inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5")
+      | &nbsp;
+      = partial("partials/snippets/date-range", :locals => { :p => event })
+  - if event.has_key?("event_logo")
+    .columns.small-5.medium-large-4
+      img.logo-size--medium.lozad alt=("Event logo") data-src="#{event["event_logo"]["url"]}?fm=png&w=300" /
+.row
+  .column
+    - if event.has_key?("event_desc")
+      = Kramdown::Document.new(event["event_desc"]).to_html
+    - if event.has_key?("event_photos")
+      - event["event_photos"].each do |photo|
+        img.thumbnail src="#{photo.url}?w=500" title="#{photo.title}" width="300" /
+    - if event.has_key?("event_tags")
+      p
+        - event["event_tags"].each do |tag|
+          - if tag == 'Sponsor' ? tagstyle = 'success' : tagstyle = 'info'
+          span class=("label faded round #{tagstyle}") = tag
+  - if event.has_key?("event_related_people")
+    .columns.small-5.medium-large-4
+      - event["event_related_people"].each do |person|
+        = partial("partials/snippets/person-small", :locals => { :p => person, :classes => "block-width-medium", :use_headers => false })

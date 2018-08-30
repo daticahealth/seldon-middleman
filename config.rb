@@ -196,6 +196,7 @@ activate :contentful do |f|
         caseStudy: 'caseStudy',
         cta: 'cta',
         customers: 'customers',
+        collections: 'genericCollection',
         discover: 'discover',
         events: 'events',
         featureCategories: 'featureCategories',

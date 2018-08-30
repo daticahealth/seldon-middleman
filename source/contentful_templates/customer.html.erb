@@ -84,11 +84,6 @@ end
                     <h3 class="headline-4 text-center group">Read the Case Study</h3>
                     <%= partial "partials/snippets/form", :locals => { :the_form => p["case_study"]["related_form"]["custom_form"] } %>
                 </div>
-            <% elsif p["case_study"].has_key?("form_id") %>
-                <div class="callout callout--large drop">
-                    <h3 class="headline-4 text-center group">Download this case study for free</h3>
-                    <%= partial("partials/snippets/form-hubspot", :locals => { :form_id => p["case_study"]["form_id"] }) %>
-                </div>
             <% end %>
             </div>
         </div><!-- END row -->

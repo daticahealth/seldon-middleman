@@ -33,37 +33,7 @@ end
 <section class="section-article container-color--gray-light">
     <div class="row align-center">
         <div class="columns small-12 large-8">
-                <% if p.has_key?("event_logo") %>
-                    <p><img class="logo-size--medium" src="<%= p["event_logo"]["url"] %>?w=300" alt="Event Logo"></p>
-                <% end %>
-                <h1 class="headline-3"><%= p["title"] %></h1>
-                <h4 class="headline-5 spaced-out">
-                    <%= inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5") %>
-                    <%= partial("partials/snippets/date-range", :locals => { :p => p }) %>
-                </h4>
-                <div class="content-dynamic group">
-                    <% if p.has_key?("event_related_people") %>
-                        <div class="float-right-on-medium">
-                            <% p["event_related_people"].each do |person| %>
-                                <%= partial("partials/snippets/person", :locals => { :p => person, :classes => "block-width-medium", :use_headers => false }) %>
-                            <% end %>
-                        </div>
-                    <% end %>
-                    <%= Kramdown::Document.new(p["event_desc"]).to_html %>
-                    <% if p.has_key?("event_photos") %>
-                        <% p["event_photos"].each do |photo| %>
-                            <img class="thumbnail" src="<%= photo.url %>?w=500" title="<%= photo.title %>" width="300"> 
-                        <% end %>
-                    <% end %>
-                    <% if p.has_key?("event_tags") %>
-                        <p class="group">
-                            <% p["event_tags"].each do |tag| %>
-                                <span class="label faded round secondary"><%= tag %></span>
-                            <% end %>
-                        </p>
-                    <% end %>
-                    <%#= partial "/partials/snippets/share", :locals => { :p => p, :classes => "" }  %>
-                </div>
+            <%= partial "partials/content/event", :locals => { :event => p } %>
             <% if p.has_key?("cta_ref") %>
                 <% if p["cta_ref"].has_key?("custom_form") %>
                 <div class="row collapse">

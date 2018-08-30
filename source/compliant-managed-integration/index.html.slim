@@ -177,7 +177,6 @@ section.section-article
   .row.align-center.group
     .columns.small-12.medium-10.large-6
       = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'] })
-
   .row.align-center.group
     .columns.small-12.large-10.text-center
       h3.headline-3 A trusted partner with established healthcare organizations
@@ -190,6 +189,19 @@ section.section-article
       .logo-cloud
         - data.views.ehrs.ehr_list.each do |logo|
           img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+section.section-article.container-gray-12
+  - case_studies = data.site.collections.to_a.select { | id, cust | (id == "6wxpCFBxTy6aKEYQoEU4Y4") }
+  - case_studies.each do | id, cardgroup |
+    .row.align-center
+      .columns.small-12.text-center.group
+        h2.headline-3 = cardgroup.title
+    .row.full-width.align-center.small-up-1.medium-up-2.large-up-3.xlarge-up-4
+      - cardgroup["related_entries"].each do | card |
+        - carditem = data.site.caseStudy[card.id]
+        - cust = data.site.customers[carditem.customer.id]
+        .column
+          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
+
 
 section#cta.section-article.container-color--gray-dark-grad
   .row.align-center.align-middle

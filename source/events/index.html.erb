@@ -14,15 +14,20 @@ current_page.data.date = today.strftime('%B %-d, %Y')
 sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }.reverse!
 %>
 
-<section class="section-article container-color--dark container-image--fixed lozad" data-background-image="https://images.ctfassets.net/189dvqdsjh46/XrCee61laEeWoWoS6CAcI/87fd440f962b520710059ad071b869cb/background-events.jpg">
+<section class="section-article container-color--gray-light">
     <div class="row align-center">
-        <div class="columns small-12 large-8 text-center">
-            <h1 class="headline-6 subheader--spaced-out text--yellow-glow">Events</h1>
-            <h2 class="headline-2">Speaking engagements, conferences, and events</h2>
+        <div class="columns small-12 large-7 text-center">
+            <h1 class="headline-4 spaced-out">Datica Events</h1>
+            <h2 class="headline-4 text-light group">Nationally recognized speakers on compliance and healthcare</h2>
+        </div>
+        <div class="columns small-12 large-10 group">
+            <div class="logo-cloud text-center">
+                <% data.views.events.speaking_list.each do |logo| %>
+                    <img data-src="<%= logo["logo_file"] %>?w=300" alt="<%= logo["name"] %>" class="lozad logo-cloud--item logo-size--<%= logo['logoSize'] %>" />
+                <% end %>
+            </div>
         </div>
     </div>
-</section>
-<section class="section-article container-color--gray-light">
     <div class="row align-center">
         <div class="columns small-12 medium-10 large-8">
             <% sorted_events.take(1).each do |id, event| %>
@@ -30,58 +35,13 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
                     <h3 class="headline-3 text-center group">Upcoming Events</h3>
                 <% end %>
             <% end %>
-            <% sorted_events.each do |id, event| %>
+            <% sorted_events.reverse.each do |id, event| %>
                 <% if today.strftime("%F") < event['date_start'].strftime("%F") %>
                     <div class="callout callout--large drop group--2x">
-                        <% if event.has_key?("title") %>
-                            <h4 class="headline-4 group">
-                                <a href="/events/<%= event["slug"]%>" title="event details">
-                                    <%= event["title"]%>
-                                </a>
-                            </h4>
-                        <% end %>
-                        <% if event.has_key?("event_related_people") %>
-                            <div class="float-right-on-medium">
-                                <% event["event_related_people"].each do |person| %>
-                                    <%= partial("partials/snippets/person", :locals => { :p => person, :classes => "block-width-medium", :use_headers => false }) %>
-                                <% end %>
-                            </div>
-                        <% end %>
-                        <% if event.has_key?("event_logo") %>
-                            <p><img class="logo-size--medium lozad" data-src="<%= event["event_logo"]["url"] %>?w=300" alt="Event logo"></p>
-                        <% end %>
-                        <div class="headline-5 spaced-out">
-                        <%= inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5") %>
-                        <%= partial("partials/snippets/date-range", :locals => { :p => event }) %>
-                        </div>
-                        <% if event.has_key?("event_desc") %>
-                            <%= Kramdown::Document.new(event["event_desc"]).to_html %>
-                        <% end %>
-                        <% if event.has_key?("event_photos") %>
-                            <% event["event_photos"].each do |photo| %>
-                                <img class="thumbnail" src="<%= photo.url %>?w=500" title="<%= photo.title %>" width="300"> 
-                            <% end %>
-                        <% end %>
-                        <% if event.has_key?("event_tags") %>
-                            <p class="">
-                                <% event["event_tags"].each do |tag| %>
-                                    <span class="label faded round<% if tag == "Sponsor" %> success<% else %> info<% end %>"><%= tag %></span>
-                                <% end %>
-                            </p>
-                        <% end %>
+                        <%= partial "partials/content/event", :locals => { :event => event } %>
                     </div>
                 <% end %>
             <% end %>
-        </div>
-        <div class="columns small-12 large-7 text-center">
-            <h2 class="headline-3 group">Nationally recognized speakers on compliance and healthcare</h2>
-        </div>
-        <div class="columns small-12 large-10">
-            <div class="logo-cloud text-center">
-                <% data.views.events.speaking_list.each do |logo| %>
-                    <img data-src="<%= logo["logo_file"] %>?w=300" alt="<%= logo["name"] %>" class="lozad logo-cloud--item logo-size--<%= logo['logoSize'] %>" />
-                <% end %>
-            </div>
         </div>
     </div>
 </section>
@@ -125,9 +85,9 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
                                         <% end %>
                                     <% end %>
                                 </ul>
-                                <% if event.has_key?("event_desc") %>
+                                <% if event.has_key?("summary") %>
                                     <div class="content-dynamic">
-                                        <%= Kramdown::Document.new(event["event_desc"]).to_html %>
+                                        <%= Kramdown::Document.new(event["summary"]).to_html %>
                                     </div>
                                 <% end %>
                                 <% if event.has_key?("event_image") %>

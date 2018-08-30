@@ -127,16 +127,28 @@ section.section-article.container-gray-11
         = partial("partials/snippets/person", :locals => { :p => the_quote.customer, :company => the_quote.customer.company_name } )
   .group.text-center
     = partial "partials/snippets/button", :locals => { :label => "Get the Case Study", :url => "/customer/methodist-lebonheur-healthcare", :button_classes => "button secondary", :icon => "icon-download", :icon_align => "right", :data_track_group => "case-study" }
-  
-  .row.align-center
-    .columns.small-12.text-center.group
-      h2.headline-3 A shared vision for the future of healthcare
-  .row.align-center.small-up-1.medium-up-2.large-up-3
-    // search by customer slug, must match CF slug strings
-    - sorted_customers = data.site.customers.to_a.select { |id, cust| (cust["slug"] == "zipnosis" || cust["slug"] == "cordata" || cust["slug"] == "metabahn" ) }
-    - sorted_customers.each do |id, cf_customer|
-      .column
-        = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cf_customer } 
+
+  - case_studies = data.site.collections.to_a.select { | id, cust | (id == "3N9NeiDhwcKacuIo0E4iwu") }
+  - case_studies.each do | id, cardgroup |
+    .row.align-center
+      .columns.small-12.text-center.group
+        h2.headline-3 = cardgroup.title
+    .row.align-center.small-up-1.medium-up-2.large-up-3
+      - cardgroup["related_entries"].each do | card |
+        - carditem = data.site.caseStudy[card.id]
+        - cust = data.site.customers[carditem.customer.id]
+        .column
+          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
+
+  /.row.align-center
+  /  .columns.small-12.text-center.group
+  /    h2.headline-3 A shared vision for the future of healthcare
+  /.row.align-center.small-up-1.medium-up-2.large-up-3
+  /  // search by customer slug, must match CF slug strings
+  /  - sorted_customers = data.site.customers.to_a.select { |id, cust| (cust["slug"] == "zipnosis" || cust["slug"] == "cordata" || cust["slug"] == "metabahn" ) }
+  /  - sorted_customers.each do |id, cf_customer|
+  /    .column
+  /      = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cf_customer } 
 
 section#cta.section-article.container-color--gray-dark-grad
   .row.align-center.align-middle

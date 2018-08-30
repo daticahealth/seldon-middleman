@@ -10,6 +10,9 @@ $("document").ready(function(){
     });
     observer.observe();
     // init foundation stuff - interchange, close box, etc.
+    if (Foundation.MediaQuery.current == 'small' || Foundation.MediaQuery.current == 'medium') {
+      $('.sticky').removeAttr('data-sticky');
+    }
     $(document).foundation();
     
     // Cookie config for modal
@@ -30,3 +33,5 @@ $("document").ready(function(){
     //     console.log(newSize + ' breakpoint');
     // });
 });
+
+$(document).foundation();
