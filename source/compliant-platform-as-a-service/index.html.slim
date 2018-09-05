@@ -11,6 +11,23 @@ layout: products
 collectionName: "products"
 collectionOrder: 1
 priority: "0.9"
+block_tech:
+  -
+    title: "The latest open source languages"
+    body: "Use the language which best fits your application. Compliant Cloud doesn’t limit you to proprietary languages or a single option."
+    image: https://images.ctfassets.net/189dvqdsjh46/2Xobqxpydi888amgmq4cmM/16d678d421c6a4ca8ca5233bae9c8659/technology-langs.png
+  -
+    title: "The most popular databases in the world"
+    body: "Pick your preference. Compliant Cloud handles the latest leading database technologies, and automatically configures them to be compliant."
+    image: https://images.ctfassets.net/189dvqdsjh46/2pR1WKIz4cwi0iIemKWwyo/746da97d1e3de62098a23b879e6c3da4/technology-dbs.png
+  -
+    title: "Mature utilities"
+    body: "From workers to caching, Compliant Cloud gives you the flexibility to configure your environments your way with useful add-ons."
+    image: https://images.ctfassets.net/189dvqdsjh46/6zN11I8ri8KSk8quuEa6K2/471fc533868669f2d09bf624fc79836f/technology-utilities.png
+  -
+    title: "File storage and distribution"
+    body: "From workers to caching, Compliant Cloud gives you the flexibility to configure your environments your way with useful add-ons."
+    image: https://images.ctfassets.net/189dvqdsjh46/67qGlOMbMQ842E4WSgOIOS/15ed7de57be473dcfa6a8563306c2720/technology-deployments.png
 ---
 - current_page.data.share_image = image_share_platform
 - the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
@@ -20,20 +37,15 @@ section.section-article.container-color--gray-light
     .columns.small-12.medium-10.large-6.text-center
       h1.headline-3 The cloud enablement layer for <br><strong>all healthcare</strong> applications
       p The Datica platform makes hosting compliant healthcare applications and data integration tooling as simple as <code>git-push</code>.
-  .row.align-center
-    .columns.small-12.large-4
       hr/
   .row.align-center
     .columns.small-12.large-4
       p The Datica platform enables you to focus on building and securing your app by managing all compliance and security obligations on the cloud.
-      p
-        | This is what
-        strong complete HIPAA compliance in the cloud
-        | looks like.
+      p This is what <strong>complete HIPAA compliance in the cloud</strong> looks like.
     .columns.small-12.large-8
-      img.img-crisp alt: "Compliance Overview diagram", src: "/public/img/platform-overview-diagram-2x.png" /
+      img.img-crisp.lozad alt="Compliance Overview diagram" data-src="https://images.ctfassets.net/189dvqdsjh46/1zXwr2EWQoMkIskG68y8Qk/9b634cd5b8a778dc4fc7ae51d6a11239/platform-overview-diagram-2x.png" /
 
-section.section-article
+section#building.section-article
   .row.align-center
     .columns.small-12.text-center.group
       h2.headline-4.nomargin Building On The Platform
@@ -59,7 +71,56 @@ section.section-article
       p.lead Your app is now compliant on Datica.
       p Once you’re application is live on Datica you’ll enjoy a suite of tools and products to manage your application’s environment. From intrusion detection to backups and much much more.
 
-section.section-article.container-image--fixed.container-color--blue-bright-noise
+section#hitrust.section-article.container-gray-11
+  .row.align-center.group
+    .columns.small-12.medium-10.large-8.text-center
+      img.lozad.logo-size--large.group--sm data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/6438fbb76abda83deac6b9c810745891/hitrust-logo.svg?fm=png&w=480" alt="HITRUST Certified"
+      h2.headline-3.nomargin HITRUST CSF Infrastructure
+  .row.align-center.small-up-1.large-up-3.row--card-grid
+    .column
+      .card.drop
+        .card-section
+          h4.headline-5 HITRUST is how healthcare does business
+          p The HITRUST Common Security Framework (CSF) has become the preferred way to prove compliance in healthcare. HITRUST certification helps establish and accelerate partnerships. If you plan to do business in healthcare at the speed of change, you need to be HITRUST CSF Certified.
+    .column
+      .card.drop
+        .card-section
+          h4.headline-5 Datica’s HITRUST CSF Certification gives you industry credibility overnight
+          p Datica leads the industry with the first, most complete HIPAA compliant cloud infrastructure. Datica Managed Cloud is HITRUST CSF Certified on AWS, Microsoft Azure, IBM SoftLayer, and Rackspace, achieving the highest industry privacy and security standards across infrastructure providers.
+    .column
+      .card.drop
+        .card-section
+          h4.headline-5 You inherit Datica’s certification
+          p HITRUST allows for inheritance, which means if you are planning to obtain your own CSF certification, you can inherit Datica’s certificate to shortcut 40% of the time and costs of the process.
+
+section#tech.section-article
+  .row.align-center.group
+    .columns.small-12.large-10
+      h3.headline-3.group.text-center Making critical technologies compliant
+      .row.align-center.small-up-1.medium-up-2
+        - current_page.data.block_tech.each do | block |
+          .column.group
+            h4.headline-5 = block.title
+            p = block.body
+            img.lozad data-src = block.image
+
+section#capabilities.section-article.container-color--dark-alt
+  .row.align-center
+    .columns.small-12.medium-8.large-6
+      h2.heading-3.text-center.group Powerful capabilities and features under the hood
+      ul.list-check
+        li Quickly deploy IPSEC or TLS VPNs in minutes
+        li Nightly backups
+        li Proactive security patching.
+          em Remember WannaCry? We were patched 1 month prior to it hitting.
+        li Automation of network overlays across Docker containers
+        li Let’s Encrypt
+        li Self-service scaling of internal application and database services
+        li Proactive health checks
+        li Hot database swaps
+        li Enhanced service scheduling with zones
+
+/ section.section-article.container-image--fixed.container-color--blue-bright-noise
   .row.align-center
     .columns.small-12.medium-10.large-8.text-center
       h2.headline-4.nomargin Platform use cases
@@ -89,13 +150,11 @@ section.section-article.container-image--fixed.container-color--blue-bright-nois
 section.section-article
   #companies.row.align-center
     .columns.small-12.large-12.text-center
-      h3.headline-3
-        strong World-class companies
-        | trust Datica
+      h3.headline-3 World-class companies trust Datica
       .logo-cloud.group
         - data.views.home.customers.each do |logo|
-          img alt: "#{logo["name"]}", class: "logo-cloud--item logo-size--#{logo['logoSize']}", src: "/public/img/customer-logos/sm/#{logo["file"]}.png" /
-      a.button.hollow href: "/platform/success", title: "Customer Success Stories" 
+          img alt="#{logo["name"]}" class="lozad logo-cloud--item logo-size--#{logo['logoSize']}" data-src="/public/img/customer-logos/sm/#{logo["file"]}.png" /
+      a.button.hollow href="/platform/success" title="Customer Success Stories" 
         | View Customer Success Stories
         i.fa.fa-icon.fa-angle-right
 section.section-article.container-color--gray-dark-grad-mono-noise
