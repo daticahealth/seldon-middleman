@@ -1,0 +1,155 @@
+---
+title: "Datica Technology Platform"
+summary: "Technology capabilities and support on the Datica Platform"
+navTitle: "Technology"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "July 15, 2018"
+ogType: "product"
+customCSS: "products"
+layout: products
+collectionName: "products"
+collectionOrder: 1
+priority: "0.9"
+---
+- current_page.data.share_image = image_share_platform
+- the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
+
+section.section-article.container-color--gray-light
+  .row.align-center
+    .columns.small-12.medium-10.large-6.text-center
+      h1.headline-3 The cloud enablement layer for <br><strong>all healthcare</strong> applications
+      p The Datica platform makes hosting compliant healthcare applications and data integration tooling as simple as <code>git-push</code>.
+  .row.align-center
+    .columns.small-12.large-4
+      hr/
+  .row.align-center
+    .columns.small-12.large-4
+      p The Datica platform enables you to focus on building and securing your app by managing all compliance and security obligations on the cloud.
+      p
+        | This is what
+        strong complete HIPAA compliance in the cloud
+        | looks like.
+    .columns.small-12.large-8
+      img.img-crisp alt: "Compliance Overview diagram", src: "/public/img/platform-overview-diagram-2x.png" /
+
+section.section-article
+  .row.align-center
+    .columns.small-12.text-center.group
+      h2.headline-4.nomargin Building On The Platform
+      p.lead See how developers use the Datica platform to build compliant applications
+  .row.section-platform--technology-build
+    .columns.small-12.medium-4.align-center
+      img.group.lozad alt="Build" data-src="https://images.ctfassets.net/189dvqdsjh46/6p4qvRe42kM8mcAyGqiIwE/f713310dfcf586ba5251e15f958f92f8/build_flow_step_1.png?w=400" /
+    .columns.small-12.medium-4.align-center
+      img.group.lozad alt="Push" data-src="https://images.ctfassets.net/189dvqdsjh46/3Ijl0wpXiEmAk6iGwYA6gW/f1b6a04e20e3d5d9477473dd0d7114e2/build_flow_step_2.png?w=400" /
+    .columns.small-12.medium-4.align-center
+      img.group.lozad alt="Compliance" data-src="https://images.ctfassets.net/189dvqdsjh46/3McfWoQ9Vmm4iciuu4oYe4/64ef01a47e5a89d1b31c45b8942bb076/build_flow_step_3.png?w=400" /
+  .row.section-platform--technology-build
+    .columns.small-12.medium-4.align-center
+      h4.headline-4 Build
+      p.lead Do what you do best. Build your product.
+      p You’re building a product for healthcare. Be it for bettering patient outcomes through analytics or creating the next great telemedicine application.
+    .columns.small-12.medium-4.align-center
+      h4.headline-4 Push
+      p.lead Git based deployments via the Datica CLI.
+      p You’re ready to get your application live. Whether you’re launching your first application or making a routine product release. Being HIPAA compliant is as easy as “git push”.
+    .columns.small-12.medium-4.align-center
+      h4.headline-4 Compliance
+      p.lead Your app is now compliant on Datica.
+      p Once you’re application is live on Datica you’ll enjoy a suite of tools and products to manage your application’s environment. From intrusion detection to backups and much much more.
+
+section.section-article.container-image--fixed.container-color--blue-bright-noise
+  .row.align-center
+    .columns.small-12.medium-10.large-8.text-center
+      h2.headline-4.nomargin Platform use cases
+      p.lead How developers use the Datica platform
+  .row.align-center
+    .small-12.large-11
+      .row.align-justify.align-middle.platform-bg-bridge data-interchange="[/public/img/bg/datica-bridge-w.png, medium]" 
+        .columns.small-12.medium-5.large-5.text-center
+          .card.drop
+            .card-section
+              h3.headline-4 Your App
+              p
+                | Host your digital health application just like you would on any other cloud provider, except being fully HIPAA compliant. Deployment is as simple as a <code>git-push</code>.
+            .card-divider.card-divider--flush
+              a href: "/platform/technology", title: "View tech support and features" 
+                | View tech support and features
+                i.fa.fa-icon.fa-angle-right
+        .columns.small-12.medium-5.large-5.text-center
+          .card.drop
+            .card-section
+              h3.headline-4 Data Integration
+              p Instantly spin up the complete cloud toolset to conduct compliant, scalable data exchange with EHRs or other systems.
+            .card-divider.card-divider--flush
+              a href: "/platform/integration", title: "Learn more about integration capabilities" 
+                | Learn more about integration capabilities
+                i.fa.fa-icon.fa-angle-right
+section.section-article
+  #companies.row.align-center
+    .columns.small-12.large-12.text-center
+      h3.headline-3
+        strong World-class companies
+        | trust Datica
+      .logo-cloud.group
+        - data.views.home.customers.each do |logo|
+          img alt: "#{logo["name"]}", class: "logo-cloud--item logo-size--#{logo['logoSize']}", src: "/public/img/customer-logos/sm/#{logo["file"]}.png" /
+      a.button.hollow href: "/platform/success", title: "Customer Success Stories" 
+        | View Customer Success Stories
+        i.fa.fa-icon.fa-angle-right
+section.section-article.container-color--gray-dark-grad-mono-noise
+  .row.align-center
+    .columns.small-12.medium-8.text-center.section--header-dark-group
+      h3.headline-3 Compliance ownership is a liability, not an asset. Don't shoulder that risk by yourself.
+  .row.align-center
+    p.lead.text-center Those who choose the Datica Platform get the calculus right.
+    .columns.small-12.large-8
+      table.table.table--dark.table--chubby-cells
+        thead
+          tr
+            th 
+            th What we do...
+            th ...to your benefit
+        tbody
+          tr
+            td
+              i.fa.fa-check.green-check
+            td
+              | <strong>BAAs</strong><br/>Datica takes on all the risk via one smart Business Associate Agreement.
+            td You don't have to juggle multiple BAAs and align conflicting requirements—typically a huge headache!
+          tr
+            td
+              i.fa.fa-check.green-check
+            td
+              | <strong>Up-to-date</strong><br/>Datica is responsible for staying current with all regulation changes.
+            td You never have to spend time and money to stay current on government changes, which are hard to track.
+          tr
+            td
+              i.fa.fa-check.green-check
+            td
+              | <strong>Audits</strong><br/>Datica absorbs the cost of third-party audits and HITRUST certification.
+            td It all comes down to audits, which can cost $100,000s across technologies, and are reoccurring annual costs.
+          tr
+            td
+              i.fa.fa-check.green-check
+            td
+              | <strong>Maintenance Headaches</strong><br/>Datica shoulders the responsibility of maintenance, updates, and patches.
+            td Every single update or patch you would do to your infrastructure needs to be done in a compliant way. The time-cost requirements add up quickly.
+          tr
+            td
+              i.fa.fa-check.green-check
+            td
+              | <strong>Time-to-Market</strong><br/>Datica's tools immediately bring your organization to the starting line, enabling focus on business priorities.
+            td Do not waste precious months getting your infrastructure to a compliant state just to get started on your product or initiative.
+section.section-article.container-color--gray-light
+  .row.group
+    .column.text-center
+      .group
+        img.log-size--medium alt: "apn tech", src: "/public/img/apn-tech-small.png" /
+      p
+        | Datica is an
+        strong Amazon Web Services Advanced Tier Technology Partner
+        | with a
+        strong Healthcare Competency
+        | focus.
