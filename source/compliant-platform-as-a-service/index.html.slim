@@ -84,9 +84,9 @@ section#intro.section-article.container-gray-12
       h4.headline-4.text-center Compliance
       p.lead Your app is now compliant on Datica.
       p Once you’re application is live on Datica you’ll enjoy a suite of tools and products to manage your application’s environment. From intrusion detection to backups and much much more.
-
+/data-interchange="[, small]"
 section#hitrust.container-gray-11
-  .section-article.container-image--center.lozad data-background-image="/public/img/art/home-header-art-hexagons-anim.svg"
+  .section-article.container-image--center.lozad data-background-image="/public/img/art/hexagon-bg-simple-light.svg"
     .row.align-center.group
       .columns.small-12.medium-10.large-8.text-center
         img.lozad.logo-size--large.group--sm data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/6438fbb76abda83deac6b9c810745891/hitrust-logo.svg?fm=png&w=480" alt="HITRUST Certified"
@@ -193,10 +193,5 @@ aside#ctaBottom.container-color--dark-grad-blue
   .section-article.container-image--center.lozad data-background-image="/public/img/art/platform-iso-illustration-bg.svg"
     .row.align-center
       .columns.small-12.medium-10.large-10.text-center
-        h2.headline-3 <strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.
-    .row.align-center
-      .columns.small-6.large-4.text-right
-        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
-      .columns.small-6.large-6.text-left
-       = partial "partials/snippets/button", :locals => { :label => "Learn About Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cks" }
-
+        h2.headline-3.group Talk to a Datica Compliance Expert Today.
+        = partial "partials/snippets/button", :locals => { :label => "Let's get started", :url => "/contact", :button_classes => "button hollow-inverted" }
