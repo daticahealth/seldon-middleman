@@ -178,11 +178,14 @@ section#benefits.section-article.container-color--gray-dark-grad-mono-noise
       .columns.small-12.medium-5.text--green-glow = item.benefit
 
 section#customers.section-article.container-gray-12
+  .text-center.group
+    h2.headline-3.text-light Build <strong>Breakthrough</strong> Healthcare Solutions
+  = partial "partials/content/video-quote", :locals => { :classes => "group--2x" }
   - case_studies = data.site.collections.to_a.select { | id, cust | (id == "3HG3kERl1YaGiSoSiO6wEI") }
   - case_studies.each do | id, cardgroup |
-    .row.align-center
-      .columns.small-12.text-center.group
-        h2.headline-3 = cardgroup.title
+    / .row.align-center
+    /   .columns.small-12.text-center.group
+    /     h2.headline-3 = cardgroup.title
     .row.full-width.align-center.small-up-1.medium-up-2.large-up-3.xlarge-up-4
       - cardgroup["related_entries"].each do | card |
         - carditem = data.site.caseStudy[card.id]
@@ -200,122 +203,4 @@ aside#ctaBottom.container-color--dark-grad-blue
         = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
       .columns.small-6.large-6.text-left
        = partial "partials/snippets/button", :locals => { :label => "Learn About Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cks" }
-
-/section.section-article.container-color--gray-dark-grad-mono-noise
-  .row.align-center
-    .columns.small-12.medium-8.text-center.section--header-dark-group
-      h3.headline-3 Compliance ownership is a liability, not an asset. Don't shoulder that risk by yourself.
-  .row.align-center
-    p.lead.text-center Those who choose the Datica Platform get the calculus right.
-    .columns.small-12.large-8
-      table.table.table--none valign="top"
-        thead
-          tr
-            th 
-            th.strong What we do...
-            th.strong ...to your benefit
-        tbody
-          tr
-            td
-              = inline_svg("small/icon-ui-checkmark", class: "svg-color--green icon-size--small")
-            td
-              h4.headline-5.nomargin BAAs
-            td
-          tr
-            td
-            td
-              | Datica takes on all the risk via one smart Business Associate Agreement.
-            td You don't have to juggle multiple BAAs and align conflicting requirements—typically a huge headache!
-          tr
-            td
-              = inline_svg("small/icon-ui-checkmark", class: "svg-color--green icon-size--small")
-            td
-              h4.headline-5.nomargin Up-to-date
-            td
-          tr
-            td
-            td
-              | Datica is responsible for staying current with all regulation changes.
-            td You never have to spend time and money to stay current on government changes, which are hard to track.
-          tr
-            td
-              = inline_svg("small/icon-ui-checkmark", class: "svg-color--green icon-size--small")
-            td
-              h4.headline-5.nomargin Audits
-            td
-          tr
-            td
-            td
-              | Datica absorbs the cost of third-party audits and HITRUST certification.
-            td It all comes down to audits, which can cost $100,000s across technologies, and are reoccurring annual costs.
-          tr
-            td
-              = inline_svg("small/icon-ui-checkmark", class: "svg-color--green icon-size--small")
-            td
-              h4.headline-5.nomargin Maintenance Headaches
-            td
-          tr
-            td
-            td
-              | Datica shoulders the responsibility of maintenance, updates, and patches.
-            td Every single update or patch you would do to your infrastructure needs to be done in a compliant way. The time-cost requirements add up quickly.
-          tr
-            td
-              = inline_svg("small/icon-ui-checkmark", class: "svg-color--green icon-size--small")
-            td
-              h4.headline-5.nomargin Time-to-Market
-            td
-          tr
-            td
-            td
-              | Datica's tools immediately bring your organization to the starting line, enabling focus on business priorities.
-            td Do not waste precious months getting your infrastructure to a compliant state just to get started on your product or initiative.
-/section.section-article.container-color--gray-light
-  .row.group
-    .column.text-center
-      .group
-        img.log-size--medium alt: "apn tech", src: "/public/img/apn-tech-small.png" /
-      p
-        | Datica is an
-        strong Amazon Web Services Advanced Tier Technology Partner
-        | with a
-        strong Healthcare Competency
-        | focus.
-/ section.section-article.container-image--fixed.container-color--blue-bright-noise
-  .row.align-center
-    .columns.small-12.medium-10.large-8.text-center
-      h2.headline-4.nomargin Platform use cases
-      p.lead How developers use the Datica platform
-  .row.align-center
-    .small-12.large-11
-      .row.align-justify.align-middle.platform-bg-bridge data-interchange="[/public/img/bg/datica-bridge-w.png, medium]" 
-        .columns.small-12.medium-5.large-5.text-center
-          .card.drop
-            .card-section
-              h3.headline-4 Your App
-              p
-                | Host your digital health application just like you would on any other cloud provider, except being fully HIPAA compliant. Deployment is as simple as a <code>git-push</code>.
-            .card-divider.card-divider--flush
-              a href: "/platform/technology", title: "View tech support and features" 
-                | View tech support and features
-                i.fa.fa-icon.fa-angle-right
-        .columns.small-12.medium-5.large-5.text-center
-          .card.drop
-            .card-section
-              h3.headline-4 Data Integration
-              p Instantly spin up the complete cloud toolset to conduct compliant, scalable data exchange with EHRs or other systems.
-            .card-divider.card-divider--flush
-              a href: "/platform/integration", title: "Learn more about integration capabilities" 
-                | Learn more about integration capabilities
-                i.fa.fa-icon.fa-angle-right
-/section.section-article
-  #companies.row.align-center
-    .columns.small-12.large-12.text-center
-      h3.headline-3 World-class companies trust Datica
-      .logo-cloud.group
-        - data.views.home.customers.each do |logo|
-          img alt="#{logo["name"]}" class="lozad logo-cloud--item logo-size--#{logo['logoSize']}" data-src="/public/img/customer-logos/sm/#{logo["file"]}.png" /
-      a.button.hollow href="/platform/success" title="Customer Success Stories" 
-        | View Customer Success Stories
-        i.fa.fa-icon.fa-angle-right
 

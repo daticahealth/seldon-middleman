@@ -90,7 +90,10 @@ section.section-article
             img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
       = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "logo-cloud", :data_track_group => "compliance" }
 
-= partial "partials/section-promos/aws-mlh-video", :locals => { :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS", :container_color => "container-gray-11" }
+section.section-article.container-gray-11
+  h3.headline-3.text-light.text-center.group Build <strong>Breakthrough</strong> Compliant Apps
+  = partial "partials/content/video-quote"
+
 section.section-article
   .row.align-center
     .columns.small-12.large-11.text-center

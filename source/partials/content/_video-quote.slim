@@ -1,0 +1,31 @@
+ruby:
+  unless defined?(video)
+    video = "2VsW2uJckUKg0w4yUwYKMo" # fallback, AWS17 MLH
+    # puts "⚠️ Warning: the video-quote partial at #{current_page.url} requires a Video entry object ID; a default is shown."
+  end
+  unless defined?(quote)
+    quote = "5fDbO1XJ1CAEWAEIoiO6mS" # fallback, MLH
+    # puts "⚠️ Warning: the video-quote partial at #{current_page.url} requires a Quote entry object ID; a default is shown.."
+  end
+  the_quote = data.site.quotes[quote]
+  the_video = data.site.videos[video]
+  if the_quote.has_key?("customer")
+    customer = data.site.customers[the_quote.customer.id]
+  else
+    customer = nil
+  end
+  unless defined?(classes)
+    classes = nil
+  end
+
+.row.group.align-middle(class=classes)
+  .columns.small-12.medium-6.group
+    = Kramdown::Document.new(the_video["custom_form"]).to_html  
+  .columns.small-12.medium-6.group
+    blockquote.quote--serif
+      = Kramdown::Document.new(the_quote["quote_body"]).to_html
+    - if customer != nil
+      = partial("partials/snippets/person", :locals => { :p => customer, :company => customer.company_name } )
+  - if customer != nil
+    .text-center.full-width
+      = partial "partials/snippets/button", :locals => { :label => "Get the Case Study", :url => "/customer/#{customer.slug}", :button_classes => "button hollow", :icon => "icon-download", :icon_align => "right", :data_track_group => "case-study" }
