@@ -16,6 +16,12 @@
             url: "/compliant-managed-integration/"
             desc: "The complete toolset to handle compliant, scalable, secure data exchange with any EHR or clinical system."
             nav_main: true
+        -
+            title: "Compliant Platform-as-a-Service"
+            title_short: "Datica CPaaS"
+            url: "/compliant-platform-as-a-service/"
+            desc: "The Compliant Cloud Platform Perfectly Designed for Early-Stage Applications."
+            nav_main: true
         # -
         #     title: "Public Roadmap"
         #     url: "/roadmap"
