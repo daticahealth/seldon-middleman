@@ -21,15 +21,15 @@ asset_preload: '<link href="/public/img/art/home-header-art-hexagons-anim.svg" r
       .row.align-center.group--sm
         .columns.small-12.medium-10.large-10.text-center
           h1.headline-1 The Industry Cloud For Digital Health
-      .row.align-center
+      .row.align-center.align-middle
         .columns.small-12.medium-6.large-5
-          h2.headline-4.text-light.group--sm We provide you with <a class="link--yellow" href="/compliance" title="Datica Compliance Story">compliance</a> tools to <a class="link--yellow" href="/compliant-kubernetes-service" title="Datica Compliant Kubernetes® Service">deploy cloud-native workloads</a> and <a class="link--yellow" href="/compliant-managed-integration" title="Datica Compliant Managed Integration">integrate with EHRs</a>.
-          = partial "partials/snippets/button", :locals => { :label => "Learn About Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-top", :data_track_group => "cks" }
+          h2.headline-3.text-light We provide you with <a class="link--yellow" href="/compliance" title="Datica Compliance Story">compliance</a> tools to <a class="link--yellow" href="/compliant-kubernetes-service" title="Datica Compliant Kubernetes® Service">deploy cloud-native workloads</a> and <a class="link--yellow" href="/compliant-managed-integration" title="Datica Compliant Managed Integration">integrate with EHRs</a>.
+          /= partial "partials/snippets/button", :locals => { :label => "Learn About Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-top", :data_track_group => "cks" }
         .columns.small-12.medium-6.large-4
           .card.container-color--light-shimmer.pad--sm
             = partial("partials/ctas/card-schedule-demo")
 .strip-bright
-section.section-article.container-gray-11
+section#compliance.section-article.container-gray-11
   .row.align-center.text-center.group
     .columns.small-12.large-8
       h2.headline-2 The burdens of compliance slow down your business
@@ -46,37 +46,54 @@ section.section-article.container-gray-11
       h3.headline-4 Interoperable data requires interoperable infrastructure
       p Modern health IT is an ecosystem of solutions, which means digital health products must have a strategy to integrate with existing EHRs or other systems of record like PACs. Integrating with legacy on-premises systems is not easy when your architecture is on the cloud. Compliance, security, privacy, VPNs, and 1980s-era protocols are requirements for true interoperability.
 
-section.section-article.bg-blend-multiply.container-image--fixed.lozad style="background-color: #578aaf;" data-background-image="https://images.ctfassets.net/189dvqdsjh46/6ivcMB8oHC8CiciwMMKOiK/aa6fa29c4e6a724f6864adef1f635cc3/bridge_beam__cables__sky__low-contrast_light__-_yuriy-trubitsyn-8714-unsplash.jpg?w=1800"
-  .row.align-center
-    .columns.small-12.text-center
-      h2.headline-3.group.text--white Your playbook for digital health success
-  .row.align-center.row--card-grid
-    .columns.small-12.medium-6.large-5
-      .card.container-gray-2
-        .card-section
-          h3.headline-5 Compliant Kubernetes Service (CKS)
-          p
-            | Datica CKS bridges security and compliance with Kubernetes<sup>&reg;</sup> to offer a complete, enterprise cloud-native solution for regulated industries. We deploy a managed Kubernetes cluster on your cloud account which is then configured to a perfectly compliant state every five minutes.
-          ul.list-check
-            li The only fully compliant Kubernetes service out there
-            li HITRUST CSF v9.1 Certified, GDPR Compliant
-            li Immediate AWS availability, Azure and GCP coming soon
-            li Compatible with managed services like AWS RDS
-        .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Explore Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button-inline", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product-cks", :data_track_group => "cks" }
-    .columns.small-12.medium-6.large-5
-      .card.container-gray-2
-        .card-section
-          h3.headline-5 Compliant Managed Integration (CMI)
-          p
-            | Datica CMI solves the entire process of integration, enabling real-time data exchange with EHRs. We do this by focusing on a required blend of expertise, services, open source, and addressing infrastructure compliance and security concerns.
-          ul.list-check
-            li Translates hard-to-use data standards to REST APIs
-            li You own the transformations, meaning zero lock-in
-            li Vendor app store compatible
-            li Predictable pricing
-        .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Explore Datica CMI", :url => "/compliant-managed-integration/", :button_classes => "button button-inline", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product-cmi", :data_track_group => "cmi" }
+.container-color--dark-grad-blue
+  section#products.section-article.container-image--fixed data-interchange="[/public/img/art/hexagon-bg-simple-light.svg, small]"
+    .row.align-center
+      .columns.small-12.text-center
+        h2.headline-3.group.text--white Your playbook for digital health success
+    .row.row--card-grid.small-up-1.medium-up-2.large-up-3.align-center
+      .column
+        .card.container-gray-2
+          .card-section
+            .headline-5.spaced-out.text-center CKS
+            h3.headline-4.text-center Compliant Kubernetes Service
+            p
+              | Datica CKS bridges security and compliance with Kubernetes<sup>&reg;</sup> to offer a complete, enterprise cloud-native solution for regulated industries. We deploy a managed Kubernetes cluster on your cloud account which is then configured to a perfectly compliant state every five minutes.
+            ul.list-check
+              li The only fully compliant Kubernetes service out there
+              li HITRUST CSF v9.1 Certified, GDPR Compliant
+              li Immediate AWS availability, Azure and GCP coming soon
+              li Compatible with managed services like AWS RDS
+          .card-divider.card-divider--flush
+            = partial "partials/snippets/button", :locals => { :label => "Explore Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button-inline", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product-cks", :data_track_group => "cks" }
+      .column
+        .card.container-gray-2
+          .card-section
+            .headline-5.spaced-out.text-center CMI
+            h3.headline-4.text-center Compliant Managed Integration
+            p
+              | Datica CMI solves the entire process of integration, enabling real-time data exchange with EHRs. We do this by focusing on a required blend of expertise, services, open source, and addressing infrastructure compliance and security concerns.
+            ul.list-check
+              li Translates hard-to-use data standards to REST APIs
+              li You own the transformations, meaning zero lock-in
+              li Vendor app store compatible
+              li Predictable pricing
+          .card-divider.card-divider--flush
+            = partial "partials/snippets/button", :locals => { :label => "Explore Datica CMI", :url => "/compliant-managed-integration/", :button_classes => "button button-inline", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product-cmi", :data_track_group => "cmi" }
+      .column
+        .card.container-gray-2
+          .card-section
+            .headline-5.spaced-out.text-center style="text-transform: initial;" CPaaS
+            h3.headline-4.text-center Compliant<br/> Platform-as-a-Service
+            p
+              | Datica CPaaS is the fastest path to hosting compliant healthcare applications. As easy as <code>git-push</code>.
+            ul.list-check
+              li Quickly deploy IPSEC or TLS VPNs in minutes
+              li Nightly backups
+              li Self-service scaling of internal application and database services
+              li Proactive health checks
+          .card-divider.card-divider--flush
+            = partial "partials/snippets/button", :locals => { :label => "Explore Datica CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button-inline", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product-cpaas", :data_track_group => "cpaas" }
 
 section.section-article
   .row.align-center.text-center
@@ -90,7 +107,10 @@ section.section-article
             img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
       = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "logo-cloud", :data_track_group => "compliance" }
 
-= partial "partials/section-promos/aws-mlh-video", :locals => { :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS", :container_color => "container-gray-11" }
+section.section-article.container-gray-11
+  h3.headline-3.text-light.text-center.group Build <strong>Breakthrough</strong> Compliant Apps
+  = partial "partials/content/video-quote"
+
 section.section-article
   .row.align-center
     .columns.small-12.large-11.text-center

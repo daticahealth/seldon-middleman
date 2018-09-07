@@ -74,7 +74,7 @@ hr {
         max-width: 30rem;
         max-width: 30vw;
     }
-    &.content { // just an invisible spacer
+    &.content, &.spacer { // just an invisible spacer
         border: none;
         margin: 2rem 0;
     }

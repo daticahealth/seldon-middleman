@@ -45,6 +45,12 @@ table.table{
             }
         }
     }
+    &--none {
+        background-color: transparent;
+        tbody, thead, tr, td {
+            background-color: transparent;
+        }
+    }
     &--chubby-cells{
         td,th{
             padding: 1.2rem;

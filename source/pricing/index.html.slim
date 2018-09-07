@@ -24,28 +24,33 @@ priority: "1.0"
             .row.align-center
               .columns.small-12.medium-large-6.pricing-content
                 .group
-                  h2.headline-4 Compliant Kubernetes Service Pricing
+                  h2.headline-4.text--yellow-glow Compliant Kubernetes Service Pricing
                   h4.headline-5 
                     = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
                     | Product Subscription
                   p CKS subscription is per production Kubernetes cluster. Currently available on AWS. You pay infrastructure costs, like EC2 and S3, directly to AWS because we install the cluster onto your existing AWS account.
+                .group
+                  h2.headline-4.text--yellow-glow Compliant Managed Integration Pricing         
+                  h4.headline-5
+                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                    | Product Subscription
+                  p CMI product currently available on AWS or Azure. We deploy the stack for you onto Datica's existing cloud account. All infrastructure costs, like RAM and storage, are absorbed by Datica within the product subscription.
+                  h4.headline-5
+                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                    | Managed Integration Service (Required)
+                  p Ongoing management and maintenance is a critical component of integration. The CMI product provides 24/7 management of infrastructure, VPNs, and connections to sites.
+                  h4.headline-5
+                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                    | Single-site Integration Service (Required)
+                  p Integrating with sites is always point-to-point. We are here to provide project management of a site integration from start to finish over a 30-day project plan.
+                .group
+                  h2.headline-4.text--yellow-glow Compliant Platform as a Service
                   h4.headline-5 
-                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow") 
-                    | Optional Compliance Services (Optional)
-                  p Ask us about ad-hoc compliance services related to your infrastructure.
-                h2.headline-4 Compliant Managed Integration Pricing         
-                h4.headline-5
-                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
-                  | Product Subscription
-                p CMI product currently available on AWS or Azure. We deploy the stack for you onto Datica's existing cloud account. All infrastructure costs, like RAM and storage, are absorbed by Datica within the product subscription.
-                h4.headline-5
-                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
-                  | Managed Integration Service (Required)
-                p Ongoing management and maintenance is a critical component of integration. The CMI product provides 24/7 management of infrastructure, VPNs, and connections to sites.
-                h4.headline-5
-                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
-                  | Single-site Integration Service (Required)
-                p Integrating with sites is always point-to-point. We are here to provide project management of a site integration from start to finish over a 30-day project plan.
+                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                    | Environment Subscription
+                  p Customers purchase environments which they then deploy their applications into.
+                  p 
+                    em Ask us about ad-hoc compliance services related to your infrastructure.
               #cta.columns.small-12.medium-large-6
                 .callout.pad.drop.form-embed.nomargin.pricing-form
                   h3.headline-4.text-center Request Pricing
