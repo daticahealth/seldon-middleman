@@ -38,9 +38,12 @@ customCSS: "innovation"
         <%
             if report.has_key?("share_image")
                 current_page.data.share_image = cf_asset_protocol + report["share_image"]["url"] + image_size_small
-            end 
+            end
+            if report.has_key?("subhead")
+                hed = report["subhead"]
+            end
         %>
-        <%= partial "partials/section-promos/report-promo", :locals => { :p => report } %>
+        <%= partial "partials/section-promos/report-promo", :locals => { :p => report, :headline => hed } %>
     <% end %>
 
     <section class="container-gray-10 card-featured-section">
