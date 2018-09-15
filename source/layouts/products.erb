@@ -11,7 +11,7 @@
     </head>
     <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
     <body class="<%= page_classes %>">
-        <%#= partial "partials/snippets/alert-ribbon" %>
+        <%= partial "partials/snippets/alert-ribbon" %>
         <div class="container-gray-2">
             <%= partial "partials/head/header", :locals => { :style => "light" } %>
         </div>
