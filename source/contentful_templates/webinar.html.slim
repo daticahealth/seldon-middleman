@@ -5,6 +5,7 @@ asset_preload: '<link href="https://js.hsforms.net/forms/v2.js" rel="preload" as
 customJS: "/public/js/webinar.js"
 ---
 ruby:
+    today = DateTime.now
     p = locals[:item]
     current_page.data.title = p["title"] + " | Datica Webinars"
     current_page.data.summary = safe_summary(p.summary)
@@ -20,8 +21,12 @@ ruby:
     end
     if p.has_key?("event_date")
         current_page.data.date = p['event_date'].strftime('%B %-d, %Y')
+        if today.strftime("%F") > p['event_date'].strftime("%F")
+            puts "this already happened"
+        else
+            puts "this is a future entry"
+        end
     else
-        today = DateTime.now
         current_page.data.date = today.strftime('%B %-d, %Y')
     end
     if p.has_key?("share_image")
@@ -37,6 +42,7 @@ ruby:
     else
         thumb = bg_default
     end
+
 
 / section#top.container-gray-2.container-image-fill data-interchange="[#{thumb}, small], [#{thumb}#{image_featured_large}, large]"
 .strip-bright.strip-bright--small
