@@ -2,14 +2,16 @@ $("document").ready(function(){
     var webinarId = $('#webinar').data('webinar');
     function showWebinar(){
         $('#webinar-play').removeClass("hide");
-        $('#webinar-preview').addClass("hide");
+        $('#preview-register').addClass("hide");
+        $('#preview-registered').removeClass("hide");
         $('#webinar-title').removeClass("hide");
         $('#report-form').addClass("hide");
         console.log('show it');
     }
     function hideWebinar(){
         $('#webinar-play').addClass("hide");
-        $('#webinar-preview').removeClass("hide");
+        $('#preview-register').removeClass("hide");
+        $('#preview-registered').addClass("hide");
         $('#webinar-title').addClass("hide");
         $('#report-form').removeClass("hide");
         console.log('default');

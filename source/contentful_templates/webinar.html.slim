@@ -50,7 +50,7 @@ ruby:
                     a.link--dark href="/webinars" Datica Webinars
         .row.align-center.group
             .columns.small-12.large-10.group
-                #webinar-preview.hide.preview.container-gray-3.container-image-fill href="/webinars/#{p["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
+                #webinar-container.preview.container-gray-3.container-image-fill href="/webinars/#{p["slug"]}" title=("View webinar") data-interchange="[#{thumb}, small]"
                     div.preview-subhead Datica Webinar
                     h1.headline-3.nomargin = p["title"]
                     p.lead = (p.has_key?("subhead") ? p.subhead : nil)
@@ -67,8 +67,12 @@ ruby:
                             - p["authors"].each do | author |
                                 p
                                     = partial("partials/snippets/person", :locals => { :p => author, :classes => "person-light" })
-                    .preview-cta.headline-5.spaced-out.show-for-large Register to watch
-                    = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
+                    #preview-register.show
+                        .preview-cta.headline-5.spaced-out.show-for-large Register to watch
+                        = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
+                    #preview-registered.hide
+                        .preview-cta.headline-5.spaced-out.show-for-large.opacity-100 You're Registered
+                        = inline_svg("small/icon-check-circle", class: "opacity-100 preview-icon icon-size--xlarge svg-color--white")
                 #webinar-play.hide
                     - if p.has_key?("video_embed")
                         = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
