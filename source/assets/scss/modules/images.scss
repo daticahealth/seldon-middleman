@@ -68,6 +68,12 @@ figcaption{
     image-rendering: -webkit-optimize-contrast;  // Chrome (and eventually Safari)
     // image-rendering: crisp-edges;                // CSS3 Proposed
 }
+.img-cover {
+    object-fit: cover;
+}
+.img-multiply {
+    @include blend-multiply;
+}
 
 .image {
     // use these in conjunction with float classes, like .float-left, .float-right, .float-right-on-medium, etc.
@@ -78,9 +84,6 @@ figcaption{
 //     // filter: saturate(0);
 //     background-blend-mode: multiply;
 // }
-.bg-blend-multiply {
-    @include blend-multiply;
-}
 .html5-video-responsive {
     width: calc(100vw);
     text-align: center;

@@ -125,9 +125,9 @@ hr {
 }
 
 // Positioning helpers
-.position-relative {position: relative;}
-.position-fixed {position: fixed;}
-.position-absolute {position: absolute;}
+.relative {position: relative;}
+.fixed {position: fixed;}
+.absolute {position: absolute;}
 
 .text-center {
     &-for-small {// below desktop, align center. Good for headlines

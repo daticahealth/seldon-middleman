@@ -299,6 +299,9 @@
     &-10 {
         z-index: 10;
     }
+    &-auto {
+        z-index: auto;
+    }
 }
 .faded {
     @include breakpoint (large) {
