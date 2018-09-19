@@ -36,5 +36,12 @@ $("document").ready(function(){
         // var email = form.find('[name=email]').val();
         // $.cookie(webinarCookie, 'true', { expires: 30 });
         showWebinar();
+        Foundation.SmoothScroll.scrollToLoc('#report-form', {
+          threshold: 50,
+          offset: 0
+        }
+        // , function(){
+        //   console.log('scrolled');
+        // });
     });
 });

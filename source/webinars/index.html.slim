@@ -43,7 +43,7 @@ section.section-article.container-gray-11
         .columns.small-12.text-center
             h2.headline-5.spaced-out Archived Webinars
     - sorted_entries[1...20].each do | id, webinar_entry |
-        .row.align-center.group
+        .row.align-center.group--2x
             .columns.small-12.medium-8.large-5
                 = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry }
 
