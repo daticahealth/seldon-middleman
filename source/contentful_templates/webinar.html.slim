@@ -20,8 +20,8 @@ ruby:
         current_page.data.author = "Datica, Inc."
     end
     if p.has_key?("event_date")
-        current_page.data.date = p['event_date'].strftime('%B %-d, %Y')
-        if today.strftime("%F") > p['event_date'].strftime("%F")
+        event_date = p['event_date'].strftime('%A, %B %-d, %Y, %l %P') + ' CST'
+        if today.strftime("%F") >= p['event_date'].strftime("%F")
             is_future = false # puts "this already happened"
         else
             is_future = true # puts "this is a future entry"
@@ -54,15 +54,14 @@ ruby:
                 = inline_svg("icon-webinar", class: "icon-size--large")
                 h2.headline-5.spaced-out
                     a.link--dark href="/webinars" Datica Webinars
-        .row.align-center.group
+        .row.align-center
             .columns.small-12.large-10.group
-                #webinar-container.preview.container-gray-1.relative href="/webinars/#{p["slug"]}" title=("View webinar")
+                #webinar-container.preview.container-gray-2.relative href="/webinars/#{p["slug"]}" title=("View webinar")
                     .webinar-meta.z-stack-10.relative
                         #webinar-play.hide
                             - if p.has_key?("video_embed")
-                                = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
-
-                        div.preview-subhead Datica Webinar
+                                .group
+                                    = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
                         h1.headline-3.nomargin = p["title"]
                         p.lead = (p.has_key?("subhead") ? p.subhead : nil)
                         .menu.simple.group
@@ -78,19 +77,19 @@ ruby:
                                 - p["authors"].each do | author |
                                     p
                                         = partial("partials/snippets/person", :locals => { :p => author, :classes => "person-light" })
-                        #preview-register.show
-                            / .preview-cta.headline-5.spaced-out.show-for-large Register to watch
+                        #preview-register.show.show-for-large
+                            / .preview-cta.headline-5.spaced-out Register to watch
                             = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
                             
                     #webinar-bg.absolute.preview-bg.z-stack-0.group
-                        img.lozad.img-cover.img-multiply src=thumb data-src=thumb
+                        img.lozad.img-cover.img-multiply.blur-2 src="#{thumb}?w=250&fm=jpg&q=10" data-src="#{thumb}?w=840"
 
 
         .row.align-center
             .columns.small-12.large-4
                 - if is_future == true
                     .is-registered.callout.drop.hide
-                        = inline_svg("small/icon-event-note", class: "float-right icon-size--large svg-color--blue")
+                        = inline_svg("small/icon-check-circle", class: "float-right icon-size--large svg-color--green")
                         h3.headline-4 You're Registered!
                         p Join us <strong>#{p['event_date'].strftime('%A, %B %-d, %Y, %l %P')} CST</strong>
                 /#webinar-title.hide
@@ -107,6 +106,9 @@ ruby:
                             h3.headline-4.text-center.group Register to watch
                             = partial "partials/snippets/form", :locals => { :the_form => data.site.forms[p.related_form.id].custom_form }
             .columns.small-12.large-6
+                h4.headline-5
+                    = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
+                    span = event_date
                 - if p.has_key?("lead")
                     .lead
                         = Kramdown::Document.new(p["lead"]).to_html

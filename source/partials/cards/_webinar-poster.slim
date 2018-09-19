@@ -6,16 +6,19 @@ ruby:
         thumb = bg_default
     end
 
-a.lozad.preview.container-gray-3.container-image-fill href="/webinars/#{entry["slug"]}" title=("View webinar") data-background-image="#{thumb}" data-webinar-id = entry._meta.id
-    div.preview-subhead Datica Webinar
-    .preview-title
-        h2.headline-3 = entry["title"]
-    .menu.simple
-        li
-            = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
-            span = entry['event_date'].strftime('%B %-d, %Y')
-        - if entry.has_key?("discovery_topic")
+a.preview.container-gray-2.relative href="/webinars/#{entry["slug"]}" title=("View webinar") data-background-image="#{thumb}" data-webinar-id = entry._meta.id
+    .webinar-meta.z-stack-10.relative
+        .preview-subhead Datica Webinar
+        .preview-title
+            h2.headline-3 = entry["title"]
+        .menu.simple
             li
-                span.label.info.round = data.site.discover[entry.discovery_topic.id].title
-    /.preview-cta.headline-5.spaced-out.show-for-large Watch now
-    = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
+                = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
+                span = entry['event_date'].strftime('%B %-d, %Y')
+            - if entry.has_key?("discovery_topic")
+                li
+                    span.label.info.round = data.site.discover[entry.discovery_topic.id].title
+    .absolute.preview-bg.z-stack-0.group
+        img.lozad.img-cover.img-multiply.blur-1 src="#{thumb}?w=250&fm=jpg&q=10" data-src="#{thumb}?w=800"
+    .preview-cta.headline-5.spaced-out.show-for-large Watch
+    = inline_svg("icon-video-play-circle", class: "show-for-large preview-icon icon-size--xlarge svg-color--white")

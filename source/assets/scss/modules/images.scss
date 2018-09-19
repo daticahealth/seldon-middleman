@@ -74,7 +74,16 @@ figcaption{
 .img-multiply {
     @include blend-multiply;
 }
-
+.blur {
+    &-1 {
+        filter:         blur(1px);
+        -webkit-filter: blur(1px);
+    }
+    &-2 {
+        filter:         blur(2px);
+        -webkit-filter: blur(2px);
+    }
+}
 .image {
     // use these in conjunction with float classes, like .float-left, .float-right, .float-right-on-medium, etc.
     @include percentage-widths;

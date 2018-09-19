@@ -2,8 +2,8 @@ $("document").ready(function(){
     var webinarId = $('#webinar').data('webinar');
     function showWebinar(){
         $('#webinar-play').removeClass("hide");
-        $('#webinar-play').addClass("group");
-        // $('#preview-register').addClass("hide");
+        // $('#webinar-play').addClass("group");
+        $('#preview-register').addClass("hide");
         // $('#preview-registered').removeClass("hide");
         $('#webinar-title').removeClass("hide");
         $('.is-registered').removeClass("hide");
