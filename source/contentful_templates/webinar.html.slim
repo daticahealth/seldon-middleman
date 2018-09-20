@@ -20,7 +20,7 @@ ruby:
         current_page.data.author = "Datica, Inc."
     end
     if p.has_key?("event_date")
-        event_date = p['event_date'].strftime('%A, %B %-d, %Y, %l %P') + ' CST'
+        event_date = p['event_date'].strftime('%A, %B %-d, %Y, %l %P') + ' CDT'
         if today.strftime("%F") >= p['event_date'].strftime("%F")
             is_future = false # puts "this already happened"
         else
@@ -91,7 +91,7 @@ ruby:
                     .is-registered.callout.drop.hide
                         = inline_svg("small/icon-check-circle", class: "float-right icon-size--large svg-color--green")
                         h3.headline-4 You're Registered!
-                        p Join us <strong>#{p['event_date'].strftime('%A, %B %-d, %Y, %l %P')} CST</strong>
+                        p Join us <strong>#{p['event_date'].strftime('%A, %B %-d, %Y, %l %P')} CDT</strong>
                 /#webinar-title.hide
                     h2.headline-4 = p["title"]
                     - if p.has_key?("authors")
