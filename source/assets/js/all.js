@@ -16,7 +16,7 @@ $("document").ready(function(){
     $(document).foundation();
     
     // Cookie config for modal
-    const currPromoCookie = 'promo-c3-2018-09-14'
+    var currPromoCookie = 'promo-c3-2018-09-14';
     // If no cookie with our chosen class...
     if($.cookie(currPromoCookie) == null){
         $('#alertTop').removeClass("hide");
@@ -25,7 +25,7 @@ $("document").ready(function(){
     }
     // $(".dismiss").click(function(){
     $(document).on("click touchend", ".dismiss", function() {
-        $.cookie(currPromoCookie, 'true', { expires: 30 });
+        $.cookie(currPromoCookie, 'true', { expires: 14, path: '/' });
         $('#alertTop').addClass("hide");
     });
 
