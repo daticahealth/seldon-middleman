@@ -28,7 +28,7 @@ ruby:
                 - if today.strftime("%F") >= webinar_entry['event_date'].strftime("%F") ? is_future = false : is_future = true
             .row.align-center
                 .columns.small-12.large-6
-                    = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry }
+                    = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry, :is_future => is_future }
                 .columns.small-12.large-6
                     .lead
                         = Kramdown::Document.new(webinar_entry["summary"]).to_html

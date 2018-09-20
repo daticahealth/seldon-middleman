@@ -2,7 +2,7 @@ $("document").ready(function(){
     var webinarId = $('#webinar').data('webinar');
     function showWebinar(){
         $('#webinar-play').removeClass("hide");
-        $('.preview-bg').addClass("diffuse");
+        // $('.preview-bg').addClass("diffuse");
         // $('#webinar-play').addClass("group");
         $('#preview-register').addClass("hide");
         // $('#preview-registered').removeClass("hide");
