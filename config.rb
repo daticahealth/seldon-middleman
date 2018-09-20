@@ -10,7 +10,7 @@ helpers SiteHelpers
 helpers ImageHelpers
 # helpers AriaCurrent
 
-Time.zone = 'UTC'
+Time.zone = 'America/Chicago'
 
 # Files with no layout
 page '/*.xml', layout: false
