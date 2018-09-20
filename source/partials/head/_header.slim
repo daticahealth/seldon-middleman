@@ -82,7 +82,7 @@ header.main-header
           - if nav_dropdown.has_key?("children") && nav_dropdown["nav_main"] == true
             li.has-submenu
               a.menu-header = nav_dropdown.title
-              ul.submenu.menu.vertical(data-submenu data-alignment="left")
+              ul.submenu.menu.vertical(data-submenu data-alignment="left" id=nav_dropdown.title.downcase)
                 - nav_dropdown["children"].each do |menu_child|
                   - item_class = (menu_child.has_key?("has_divider") ? 'submenu-divider' : nil)
                   li(class=item_class)
