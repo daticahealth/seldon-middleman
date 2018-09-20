@@ -12,7 +12,7 @@ ruby:
     end
     today = DateTime.now
     if entry.has_key?("event_date")
-        event_date = entry['event_date'].strftime('%A, %B %-d, %Y, %l %P') + ' CST'
+        event_date = entry['event_date'].strftime('%A, %B %-d, %Y, %l %P') + ' CDT'
         if today.strftime("%F") >= entry['event_date'].strftime("%F")
             is_future = false # puts "this already happened"
         else
