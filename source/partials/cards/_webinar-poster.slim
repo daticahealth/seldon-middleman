@@ -10,12 +10,21 @@ ruby:
     else
         cta_label = "Watch"
     end
-    unless defined?(is_future)
+    today = DateTime.now
+    if entry.has_key?("event_date")
+        event_date = entry['event_date'].strftime('%A, %B %-d, %Y, %l %P') + ' CST'
+        if today.strftime("%F") >= entry['event_date'].strftime("%F")
+            is_future = false # puts "this already happened"
+        else
+            is_future = true # puts "this is a future entry"
+            cta_label = "Register Today"
+        end
+    else
         is_future = false
     end
-    if is_future == true
-        cta_label = "Register Today"
-    end
+    #if is_future == true
+    #    cta_label = "Register Today"
+    #end
 
 a.preview.container-gray-2.relative href="/webinars/#{entry["slug"]}" title=("View webinar") data-background-image="#{thumb}" data-webinar-id = entry._meta.id
     .webinar-meta.z-stack-10.relative
@@ -31,5 +40,5 @@ a.preview.container-gray-2.relative href="/webinars/#{entry["slug"]}" title=("Vi
                     span.label.info.round = data.site.discover[entry.discovery_topic.id].title
     .absolute.preview-bg.z-stack-0.group
         img.lozad.img-cover.img-multiply.blur-1 src="#{thumb}?w=250&fm=jpg&q=10" data-src="#{thumb}?w=800"
-    .preview-cta.headline-5.spaced-out.show-for-large = cta_label
+    .preview-cta.headline-5.spaced-out.show-for-large.text-right = cta_label
     = inline_svg("icon-video-play-circle", class: "show-for-large preview-icon icon-size--xlarge svg-color--white")
