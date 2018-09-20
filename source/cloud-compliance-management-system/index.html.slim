@@ -21,10 +21,20 @@ svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0;
       title chevron-down
       path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
 
+section#top.section-article.container-gray-12(style="padding-bottom: 0;")
+  .row.align-center
+    .columns.small-12.large-8.text-center
+      .group
+        h1.headline-2 Continuous Compliance Monitoring for Cloud Services
+        p.lead = current_page.data.summary
+      img.lozad src="https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg?fit=crop&w=1800&h=800&f=top_left&q=5" data-src="https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg?fit=crop&w=1800&h=800&f=top_left"
+
+
 section#cta.section-article.container-color--gray-dark-grad
   .row.align-center.align-middle
     .columns.small-12.medium-6.large-5
-      h2.headline-3.group--2x Schedule a conversation to learn more about Datica Compliant Kubernetes Service.
+      h2.headline-3 Datica CCMS is generally available October 29th, 2018.
+      p.lead.group--2x Sign up to be notified of the release and to help prioritize service configurations. Registrants have the chance to be included in a private preview.
       / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
       .callout.callout--dark-alpha
         blockquote.quote--serif
@@ -39,3 +49,4 @@ section#cta.section-article.container-color--gray-dark-grad
       .callout.drop
         / h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
         = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+
