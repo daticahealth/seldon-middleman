@@ -39,9 +39,8 @@ $("document").ready(function(){
         Foundation.SmoothScroll.scrollToLoc('#report-form', {
           threshold: 50,
           offset: 0
-        }
-        // , function(){
-        //   console.log('scrolled');
-        // });
+        }, function(){
+          console.log('scrolled');
+        });
     });
 });
