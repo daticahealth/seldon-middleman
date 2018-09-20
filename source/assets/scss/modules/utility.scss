@@ -8,22 +8,6 @@
     white-space: nowrap;
 }
 
-.faded {
-    @include breakpoint (large) {
-        @include opacity(0.6);
-        @include easing(150ms);
-        &:hover {
-            @include opacity(1);
-        }
-    }
-}
-.faded-max {
-    @extend .faded;
-    transition-duration: $timing-slow;
-    @include breakpoint (large) {
-        @include opacity(0.2);
-    }
-}
 .drop { // drop shadows. Tried to use mixin & had issues with sass functions.
     // default - fat bluesish shadow
     @include shadow-anarchy(0 rem-calc(6px) rem-calc(17px) 0 hsla(220, 90%, 13%, 0.2));
@@ -141,9 +125,9 @@ hr {
 }
 
 // Positioning helpers
-.position-relative {position: relative;}
-.position-fixed {position: fixed;}
-.position-absolute {position: absolute;}
+.relative {position: relative;}
+.fixed {position: fixed;}
+.absolute {position: absolute;}
 
 .text-center {
     &-for-small {// below desktop, align center. Good for headlines

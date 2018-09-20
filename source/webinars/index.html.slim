@@ -1,6 +1,6 @@
 ---
 title: "Datica Webinars"
-summary: "In-depth presentations on the latest compliance challenges"
+summary: "In-depth presentations on solving the latest compliance challenges"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, kubernetes, webinars, video"
 layout: basic
@@ -24,9 +24,11 @@ ruby:
                 h1.headline-2 Datica Webinars
                 / p.lead Authoritative webinars Written By Industry Experts
         - sorted_entries.take(1).each do | id, webinar_entry |
+            - if webinar_entry.has_key?("event_date")
+                - if today.strftime("%F") >= webinar_entry['event_date'].strftime("%F") ? is_future = false : is_future = true
             .row.align-center
                 .columns.small-12.large-6
-                    = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry }
+                    = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry, :is_future => is_future }
                 .columns.small-12.large-6
                     .lead
                         = Kramdown::Document.new(webinar_entry["summary"]).to_html
@@ -39,9 +41,9 @@ ruby:
 section.section-article.container-gray-11
     .row.align-center.group
         .columns.small-12.text-center
-            h2.headline-5.spaced-out Archived Webinars
+            h2.headline-5.spaced-out On-Demand Webinars
     - sorted_entries[1...20].each do | id, webinar_entry |
-        .row.align-center.group
+        .row.align-center.group--2x
             .columns.small-12.medium-8.large-5
                 = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry }
 
