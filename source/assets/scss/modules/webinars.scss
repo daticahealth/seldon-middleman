@@ -14,7 +14,8 @@
     display: block;
     color: white;
     padding: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: calc(0.4rem + 2vw);
+    overflow: hidden;
     // min-height: 25rem;
     @include breakpoint (medium) {
         min-height: 15rem;
@@ -23,6 +24,9 @@
     @include breakpoint (large) {
         min-height: 20rem;
         margin-bottom: initial;
+    }
+    &-meta { // child content below
+        max-width: 50em;
     }
     // transition: all $timing-default ease;
     // &--hover {
@@ -39,7 +43,7 @@
         // left: 0;
         // top: 0;
         // margin-top: 1rem;
-        color: $color_blue-glow;
+        color: white;
         letter-spacing: 0.2em;
         text-transform: uppercase;
         font: {
@@ -72,6 +76,22 @@
         bottom: 3.9rem;
         right: 10rem;
         transition: all $timing-default * 2 ease;
+    }
+    &-bg {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transition:         0.5s filter linear;
+        -webkit-transition: 0.5s -webkit-filter linear;
+        -ms-transition:     0.5s -ms-filter linear;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7 !important; // override lozad .loaded
+            // filter: blur(2px);
+        }
     }
     &:hover {
         color: $white;

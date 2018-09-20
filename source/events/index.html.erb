@@ -52,7 +52,7 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
             <div id="timeline" class="timeline--vertical">
                 <div class="line" id="line"></div>
                 <% sorted_events.each do |id, event| %>
-                    <% if today.strftime("%F") > event['date_start'].strftime("%F") %>
+                    <% if today.strftime("%F") >= event['date_start'].strftime("%F") %>
                         <div class="block">
                             <div class="date">
                                 <%= partial("partials/snippets/date-range", :locals => { :p => event }) %>

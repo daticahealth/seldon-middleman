@@ -299,8 +299,29 @@
     &-10 {
         z-index: 10;
     }
+    &-auto {
+        z-index: auto;
+    }
 }
-
+.faded {
+    @include breakpoint (large) {
+        @include opacity(0.6);
+        @include easing(150ms);
+        &:hover {
+            @include opacity(1);
+        }
+    }
+}
+.faded-max {
+    @extend .faded;
+    transition-duration: $timing-slow;
+    @include breakpoint (large) {
+        @include opacity(0.2);
+    }
+}
+.opacity-100 {
+    opacity: 100;
+}
 
 .nomargin, .no-margin {
     margin-bottom: 0;

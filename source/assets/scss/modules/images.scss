@@ -43,6 +43,10 @@ figcaption{
         //opacity: 1 !important;
     }
 }
+.desat {
+    filter:         saturate(0.3);
+    -webkit-filter: saturate(0.3);
+}
 .image-darker {
     filter:         brightness(50%);
     -webkit-filter: brightness(50%);
@@ -68,7 +72,27 @@ figcaption{
     image-rendering: -webkit-optimize-contrast;  // Chrome (and eventually Safari)
     // image-rendering: crisp-edges;                // CSS3 Proposed
 }
-
+.img-cover {
+    object-fit: cover;
+}
+.img-multiply {
+    @include blend-multiply;
+}
+.blur {
+    &-1 {
+        filter:         blur(1px);
+        -webkit-filter: blur(1px);
+    }
+    &-2 {
+        filter:         blur(2px);
+        -webkit-filter: blur(2px);
+    }
+}
+.diffuse { // combo
+    filter:         blur(2px) saturate(0.1);
+    -webkit-filter: blur(2px) saturate(0.1);
+    -ms-filter:     blur(2px) saturate(0.1);
+}
 .image {
     // use these in conjunction with float classes, like .float-left, .float-right, .float-right-on-medium, etc.
     @include percentage-widths;
@@ -78,9 +102,6 @@ figcaption{
 //     // filter: saturate(0);
 //     background-blend-mode: multiply;
 // }
-.bg-blend-multiply {
-    @include blend-multiply;
-}
 .html5-video-responsive {
     width: calc(100vw);
     text-align: center;

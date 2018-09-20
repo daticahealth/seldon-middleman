@@ -6,9 +6,14 @@
 /     button class="alert-ribbon--action dismiss close-button button--inverted" aria-label="Dismiss alert" type="button" data-close="" title="No thanks"
 /       span aria-hidden="true" &times;
 
-/ aside id="alertTop" style="background-color: #373D50;" class="hide dismiss full-width alert-ribbon text-center" data-closable=""
-  a.dismiss(href="https://content.datica.com/k8s-hitrust-2018-06-20" title="Webinar: HITRUST + Kubernetes<sup>&reg;</sup> - June 20, 1pm - Register today!")
-    img data-interchange="[https://images.ctfassets.net/189dvqdsjh46/q5Q9qWFMWsAe8AegsakQw/568bf51e8f15cf22f84d5f5a849692dc/webinar-k8-2-promo-banner.png?w=960, small], [https://images.ctfassets.net/189dvqdsjh46/4VhkDIZs8geUeG8MAYaW8A/e76c87b588e5f9c2c52c20559c194c7d/webinar-k8-2-promo-ribbon.png, medium]" alt="Webinar: HITRUST + Kubernetes<sup>&reg;</sup> - June 20, 1pm" /
+/ src="#{event_img}?h=48&fm=png&fl=png8"
+- event_title = 'Webinar: What Really is Compliance? - Sept. 26, 1pm - Register today!'
+- event_img = 'https://images.ctfassets.net/189dvqdsjh46/7cYrQDOpgcCksAUKIsQaSY/16c232603bc61794d7a408bc4223a159/webinar-c3-promo-ribbon-desktop.png'
+- event_url = '/webinars/what-really-is-compliance/'
+
+aside id="alertTop" style="background-color: #373D50; height: 3rem;" class="hide dismiss full-width alert-ribbon text-center" data-closable=""
+  a.dismiss(href=event_url title=event_title)
+    img.lozad data-src="#{event_img}" alt=event_title /
   .row.align-center
     button class="alert-ribbon--action dismiss close-button button--inverted" aria-label="Dismiss alert" type="button" data-close="" title="No thanks"
       span aria-hidden="true" &times;

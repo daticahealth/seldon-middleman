@@ -16,15 +16,16 @@ $("document").ready(function(){
     $(document).foundation();
     
     // Cookie config for modal
+    var currPromoCookie = 'promo-c3-2018-09-14';
     // If no cookie with our chosen class...
-    if($.cookie("promo-gdpr-webinar-2018-06-20") == null){
+    if($.cookie(currPromoCookie) == null){
         $('#alertTop').removeClass("hide");
     }else{
         $('#alertTop').addClass("hide");
     }
     // $(".dismiss").click(function(){
     $(document).on("click touchend", ".dismiss", function() {
-        $.cookie('promo-gdpr-webinar-2018-06-20', 'true', { expires: 30 });
+        $.cookie(currPromoCookie, 'true', { expires: 14, path: '/' });
         $('#alertTop').addClass("hide");
     });
 
@@ -34,4 +35,4 @@ $("document").ready(function(){
     // });
 });
 
-$(document).foundation();
+// $(document).foundation();

@@ -64,7 +64,7 @@ ruby:
                     = post.title
             - unless image_url == nil
                 a.text-center href=related_post_path title=link_title
-                    img.lozad.thumbnail.float-right data-src="#{image_url}?fit=thumb&w=240&h=240" alt="preview" width="120"
+                    img.lozad.thumbnail.float-right src="#{image_url}?fit=thumb&fm=jpg&w=240&h=240&q=10" data-src="#{image_url}?fit=thumb&w=240&h=240" alt="preview" width="120"
             p.text-small = post.summary
             - if defined?(show_button) && show_button == true
                 = partial "partials/snippets/button", :locals => { :label => link_title_short, :url => related_post_path, :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right" }
@@ -77,4 +77,4 @@ ruby:
                     = post.title
         - if post.has_key?("image_thumb")
             a.text-center href=related_post_path title=link_title
-                img.lozad.product-thumb alt="preview" data-src="#{image_url}?fit=thumb&w=450" style="padding: 0 1rem 0 1rem;" /
+                img.lozad.product-thumb alt="preview" src="#{image_url}?fit=thumb&w=200&fm=jpg&q=10" data-src="#{image_url}?fit=thumb&w=450" style="padding: 0 1rem 0 1rem;" /
