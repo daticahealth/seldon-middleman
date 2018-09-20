@@ -22,6 +22,12 @@
             url: "/compliant-platform-as-a-service/"
             desc: "The Compliant Cloud Platform Perfectly Designed for Early-Stage Applications."
             nav_main: true
+        -
+            title: "Cloud Compliance Management System"
+            title_short: "Datica CCMS"
+            url: "/cloud-compliance-management-system/"
+            desc: "The first-ever tool to guarantee compliance assurance of managed cloud-native services."
+            nav_main: true
         # -
         #     title: "Public Roadmap"
         #     url: "/roadmap"

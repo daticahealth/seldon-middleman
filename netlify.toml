@@ -82,6 +82,12 @@
   force = true
 
 [[redirects]]
+  from = "/ccms/"
+  to = "/cloud-compliance-management-system/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/integration/"
   to = "/compliant-managed-integration/"
   status = 301
