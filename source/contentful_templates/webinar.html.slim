@@ -115,3 +115,11 @@ ruby:
                 - if p.has_key?("desc")
                     article.group.content-dynamic
                         = Kramdown::Document.new(p["desc"]).to_html
+
+    section#all.section-article--small
+        .row.align-center
+            .columns.small-12.large-6.text-center.group
+                = partial "partials/snippets/button", :locals => { :label => "See All Datica Webinars", :url => "/webinars/", :button_classes => "button hollow", :item_id => "all_webinars", :icon => "icon-webinar-sm", :icon_align => "left" }
+                / = inline_svg("icon-webinar", class: "icon-size--medium")
+                / h2.headline-5.spaced-out
+                /     a.link--dark href="/webinars" See All Webinars
