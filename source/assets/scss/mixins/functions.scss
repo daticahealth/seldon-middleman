@@ -55,10 +55,12 @@ $underline: false !default;
     -o-transition: $args;
     transition: $args;
 }
-@mixin transform($t){
+@mixin transform($args...){
     // -ms-transform: $t;
-    -webkit-transform: $t;
-    transform: $t;
+    -moz-transform: $args;
+    -webkit-transform: $args;
+    -o-transform: $args;
+    transform: $args;
 }
 
 @mixin vertical-center-text(){

@@ -21,7 +21,7 @@ svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0;
       title chevron-down
       path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
 
-section#top.section-article.container-gray-12(style="padding-bottom: 0;")
+section#top.section-article(style="padding-bottom: 0;")
   .row.align-center
     .columns.small-12.large-8.text-center
       .group
@@ -29,6 +29,61 @@ section#top.section-article.container-gray-12(style="padding-bottom: 0;")
         p.lead = current_page.data.summary
       img.lozad src="https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg?fit=crop&w=1800&h=800&f=top_left&q=5" data-src="https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg?fit=crop&w=1800&h=800&f=top_left"
 
+section#api.section-article.container-gray-12.drop-taper
+  .row.align-center
+    .columns.small-12.large-8.text-center
+      h2.headline-2 API-Driven Compliance
+  .row.align-center.small-up-1.medium-up-3
+    .column
+      h3.headline-4 Real Time
+      p Datica CCMS checks configuration states every day and tracks the states in a historical data model. This is the missing piece for modern cloud compliance: Constant understanding of the precise state of your cloud environments.
+    .column
+      h3.headline-4 Audited
+      p Each configuration supported by Datica CCMS has been audited against HITRUST CSF v9.1, meaning a configuration is guaranteed to be compliant against the regimes of HIPAA, GDPR, and GxP. It tracks configuration changes with each CSF update.
+    .column
+      h3.headline-4 Uniquely Dynamic
+      p The cloud is a dynamic world and compliance struggles to keep up. Datica CCMS is the only tool available to assess assurance of managed and micro services against critical compliance controls. It gives customers a strategy for the future.
+section#cloud-info.container-gray-4
+  .section-article
+    .row.align-center
+      .columns.small-12.medium-8.large-6
+        h2.headline-2.text-center 2018 is a Post-Cloud World
+        p.lead The proliferation of abstracted cloud services has increased in an effort to improve developer experience (a good thing). As a result, most cloud environments are a constellation of managed services and micro services. The cloud is no longer simply an operating system on someone else's hard drive.
+        p.lead But increased abstraction has meant greater control has been taken away from the end user's ability to attest to compliance assurances (a bad thing). The entire layer of "Services" on top of traditional VMs has completely changed how compliance should be measured, monitored, and managed.
+  .row.align-center.full-width
+    .columns.small-12
+      p [ illustration ]
+  .section-article--small
+    .row.align-center
+      .columns.small-12.medium-8.large-6
+        p The problem explodes when multiple services are used—a common approach to modern cloud workloads. Developers must re-invent the wheel of mapping controls in totality over a new service.
+  .row.align-center.full-width
+    .columns.small-12
+      p [ illustration 2 ]
+  .section-article--small
+    .row.align-center
+      .columns.small-12.medium-8.large-6
+        p Datica CCMS fixes that. Simply plug available services into the CCMS and let us continuously monitor the compliance state of a service. Users can be assured the configurations map to the proper HITRUST CSF controls, thus generating a compliant posture against regimes such as HIPAA, GDPR, and GxP.
+section#hitrust.section-article.container-color--white
+  .row.align-center
+    .columns.small-12.large-8
+      h2.headline-2.text-center How to make any cloud service HITRUST certified
+  .row.align-center.align-middle
+    .columns.small-12.medium-7
+      p.lead The compliant configuration states of cloud services should not be proprietary. Transparency is fundamental to healthcare's transformation. Every service monitored by the CCMS will be publicly documented to help empower healthcare developers.
+      p In a post-cloud world, configuring a service in a continual state is the goal. The hard part is simply knowing the proper configuration state mapped to a specific control. Modern compliance extends way beyond simple security group management via IAM. Available today are configuration states of the three most popular managed database services across the three main cloud service providers. Each state has been mapped to appropriate HITRUST CSF controls and audited.
+    .columns.small-12.medium-5
+      ul.no-bullet
+        li AWS RDS
+        li Azure CosmosDB
+        li GCP Cloud SQL
+
+section#configs.section-article.container-gray-11
+  .row.align-center
+    .columns.small-12.large-8
+      h2.headline-2.text-center Coming soon—dozens more configurations on the way
+  .row.align-center
+    .columns.small-12.large-10
 
 section#cta.section-article.container-color--gray-dark-grad
   .row.align-center.align-middle
