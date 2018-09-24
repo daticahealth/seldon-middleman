@@ -12,8 +12,12 @@ collectionName: "products"
 collectionOrder: 3
 priority: "0.9"
 ---
-- current_page.data.share_image = image_share_platform
-- the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
+ruby:
+  current_page.data.share_image = image_share_platform
+  the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
+  img_1 = 'https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg'
+  img_2 = 'https://images.ctfassets.net/189dvqdsjh46/1KxUwvIiuE4gEaeqUSIgq4/616333c344aa57b5e0c853af3d5693ed/ccms-diagram.png'
+
 
 svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   defs
@@ -21,19 +25,19 @@ svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0;
       title chevron-down
       path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
 
-section#top.section-article(style="padding-bottom: 0;")
+section#top.section-article.pad-no-bottom
   .row.align-center
     .columns.small-12.large-8.text-center
       .group
         h1.headline-2 Continuous Compliance Monitoring for Cloud Services
         p.lead = current_page.data.summary
-      img.lozad src="https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg?fit=crop&w=1800&h=800&f=top_left&q=5" data-src="https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg?fit=crop&w=1800&h=800&f=top_left"
+      img.lozad.img-crisp src="#{img_1}?fit=crop&w=1800&h=800&f=top_left&q=5" data-src="#{img_1}?fit=crop&w=1800&h=800&f=top_left" alt="CCMS screenshot"
 
-section#api.section-article.container-gray-12.drop-taper
+section#api.section-article.pad-no-bottom.container-gray-11.drop-taper
   .row.align-center
     .columns.small-12.large-8.text-center
       h2.headline-2 API-Driven Compliance
-  .row.align-center.small-up-1.medium-up-3
+  .row.align-center.small-up-1.medium-up-3.group
     .column
       h3.headline-4 Real Time
       p Datica CCMS checks configuration states every day and tracks the states in a historical data model. This is the missing piece for modern cloud compliance: Constant understanding of the precise state of your cloud environments.
@@ -43,6 +47,10 @@ section#api.section-article.container-gray-12.drop-taper
     .column
       h3.headline-4 Uniquely Dynamic
       p The cloud is a dynamic world and compliance struggles to keep up. Datica CCMS is the only tool available to assess assurance of managed and micro services against critical compliance controls. It gives customers a strategy for the future.
+  .row.align-center
+    .columns.small-12.large-8.text-center
+      img.lozad.img-crisp src="#{img_2}?w=1800&fm=jpg&q=5" data-src="#{img_2}?w=1800" alt="CCMS features"
+
 section#cloud-info.container-gray-4
   .section-article
     .row.align-center
