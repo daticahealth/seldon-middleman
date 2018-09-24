@@ -20,11 +20,11 @@ ruby:
         current_page.data.author = "Datica, Inc."
     end
     if p.has_key?("event_date")
-        event_date = p["event_date"].to_s.in_time_zone("Central Time (US & Canada)").strftime('%A, %B %-d, %Y, %l:%M %p %Z')
+        event_date_full = p["event_date"].to_s.in_time_zone("Central Time (US & Canada)").strftime('%A, %B %-d, %Y, %l:%M %p %Z')
         # puts the_day
         # puts config.Time.zone
         #event_date = p['event_date'].strftime('%A, %B %-d, %Y, %l:%M %p') + ' CDT'
-        current_page.data.date = event_date
+        current_page.data.date = event_date_full
         if today.strftime("%F") >= p['event_date'].strftime("%F")
             is_future = false # puts "this already happened"
         else
@@ -71,7 +71,7 @@ ruby:
                         .menu.simple.group
                             li
                                 = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
-                                span = p['event_date'].strftime('%B %-d, %Y')
+                                span = event_date_full
                             - if p.has_key?("discovery_topic")
                                 li
                                     span.label.info.round = data.site.discover[p.discovery_topic.id].title
@@ -95,7 +95,7 @@ ruby:
                     .is-registered.callout.drop.hide
                         = inline_svg("small/icon-check-circle", class: "float-right icon-size--large svg-color--green")
                         h3.headline-4 You're Registered!
-                        p Join us <strong>#{p['event_date'].strftime('%A, %B %-d, %Y, %l %P')} CDT</strong>
+                        p Join us <strong>#{event_date_full}</strong>
                 /#webinar-title.hide
                     h2.headline-4 = p["title"]
                     - if p.has_key?("authors")
@@ -110,10 +110,10 @@ ruby:
                             h3.headline-4.text-center.group Register to attend
                             = partial "partials/snippets/form", :locals => { :the_form => data.site.forms[p.related_form.id].custom_form }
             .columns.small-12.large-6
-                h4.headline-5
+                /h4.headline-5
                     /p = today.in_time_zone("Central Time (US & Canada)").strftime('%A, %B %-d, %Y, %l:%M %p')
                     = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
-                    span = event_date
+                    span = event_date_full
                 - if p.has_key?("lead")
                     .lead
                         = Kramdown::Document.new(p["lead"]).to_html
