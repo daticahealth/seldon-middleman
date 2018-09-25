@@ -60,7 +60,7 @@
     }
     &-section {
         p, li {
-            @include hyphens (auto);
+            @include hyphens(auto);
         }
     }
     &-divider {

@@ -339,5 +339,11 @@
 .margin-bottom-small { // for headlines and stuff
     margin-bottom: 0.3em;
 }
+.hyphens {
+    @include hyphens(auto);
+    &-no {
+        @include hyphens(none);
+    }
+}
 
 // .overflow-hidden {}
