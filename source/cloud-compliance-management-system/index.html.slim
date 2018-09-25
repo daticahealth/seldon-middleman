@@ -16,8 +16,9 @@ ruby:
   current_page.data.share_image = image_share_platform
   the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
   img_1 = 'https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg'
-  img_2 = 'https://images.ctfassets.net/189dvqdsjh46/1KxUwvIiuE4gEaeqUSIgq4/616333c344aa57b5e0c853af3d5693ed/ccms-diagram.png'
-
+  img_2 = 'https://images.ctfassets.net/189dvqdsjh46/1KxUwvIiuE4gEaeqUSIgq4/a4b9c86fda34d160d94bdd55c766b2e5/ccms-diagram.png'
+  form_1 = data.site.forms['54agWFbPVYog62Ugg64ocW']
+  form_2 = data.site.forms['328pNB4IvCaQWQMCWmgSCy']
 
 svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   defs
@@ -48,8 +49,26 @@ section#api.section-article.pad-no-bottom.container-gray-11.drop-taper
       h3.headline-4 Uniquely Dynamic
       p The cloud is a dynamic world and compliance struggles to keep up. Datica CCMS is the only tool available to assess assurance of managed and micro services against critical compliance controls. It gives customers a strategy for the future.
   .row.align-center
+    .columns.small-12.large-10.text-center
+      img.lozad.img-crisp src="#{img_2}?w=792&fm=jpg&q=10&bg=rgb:e5e9eb" data-src="#{img_2}?w=1800" alt="CCMS features"
+
+/section#api.section-article.pad-no-bottom.container-gray-11.drop-taper
+  .row.align-center
     .columns.small-12.large-8.text-center
-      img.lozad.img-crisp src="#{img_2}?w=1800&fm=jpg&q=5" data-src="#{img_2}?w=1800" alt="CCMS features"
+      h2.headline-2 API-Driven Compliance
+  .row.align-center
+    .columns.small-12.medium-4.medium-order-2
+      .group
+        h3.headline-4 Real Time
+        p Datica CCMS checks configuration states every day and tracks the states in a historical data model. This is the missing piece for modern cloud compliance: Constant understanding of the precise state of your cloud environments.
+      .group
+        h3.headline-4 Audited
+        p Each configuration supported by Datica CCMS has been audited against HITRUST CSF v9.1, meaning a configuration is guaranteed to be compliant against the regimes of HIPAA, GDPR, and GxP. It tracks configuration changes with each CSF update.
+      .group
+        h3.headline-4 Uniquely Dynamic
+        p The cloud is a dynamic world and compliance struggles to keep up. Datica CCMS is the only tool available to assess assurance of managed and micro services against critical compliance controls. It gives customers a strategy for the future.
+    .columns.small-12.medium-8.medium-order-1
+      img.lozad.img-crisp src="#{img_2}?w=792&fm=jpg&q=10&bg=rgb:e5e9eb" data-src="#{img_2}?w=1800" alt="CCMS features"
 
 section#cloud-info.container-gray-4
   .section-article
@@ -79,7 +98,7 @@ section#hitrust.section-article.container-color--white
   .row.align-center.align-middle
     .columns.small-12.medium-7
       p.lead The compliant configuration states of cloud services should not be proprietary. Transparency is fundamental to healthcare's transformation. Every service monitored by the CCMS will be publicly documented to help empower healthcare developers.
-      p In a post-cloud world, configuring a service in a continual state is the goal. The hard part is simply knowing the proper configuration state mapped to a specific control. Modern compliance extends way beyond simple security group management via IAM. Available today are configuration states of the three most popular managed database services across the three main cloud service providers. Each state has been mapped to appropriate HITRUST CSF controls and audited.
+      p In a post-cloud world, configuring a service in a continual state is the goal. The hard part is simply knowing the proper configuration state mapped to a specific control. Modern compliance extends way beyond simple security group management via <a href="https://www.google.com/url?q=https://aws.amazon.com/iam/&sa=D&ust=1537824179083000&usg=AFQjCNG6t8fs_xlDJcwVN7VxZqj9-QcGFg" rel="external" title="Amazon IAM">IAM</a>. Available today are configuration states of the three most popular managed database services across the three main cloud service providers. Each state has been mapped to appropriate HITRUST CSF controls and audited.
     .columns.small-12.medium-5
       ul.no-bullet
         li AWS RDS
@@ -89,9 +108,49 @@ section#hitrust.section-article.container-color--white
 section#configs.section-article.container-gray-11
   .row.align-center
     .columns.small-12.large-8
-      h2.headline-2.text-center Coming soon—dozens more configurations on the way
+      h2.headline-3.group.text-center Coming soon—dozens more configurations on the way
   .row.align-center
-    .columns.small-12.large-10
+    .columns.small-12.medium-4.large-2
+      h4.headline-4 AWS
+      ul.no-bullet
+        li AWS Redshift
+        li AWS DynamoDB
+        li AWS API Gateway
+        li AWS Lambda
+        li AWS EKS
+        li AWS Fargate
+        li AWS EC2
+        li AWS S3
+    .columns.small-12.medium-4.large-2
+      h4.headline-4 Azure
+      ul.no-bullet
+        li Azure AKS
+        li Azure Active Directory
+        li Azure App Service
+        li Azure Database for PostgreSQL
+        li Azure Virtual Machines
+        li Azure Data Lake Analytics
+        li Azure IoT Hub
+        li Azure Storage
+    .columns.small-12.medium-4.large-2
+      h4.headline-4 GCP
+      ul.no-bullet
+        li GCP GKE
+        li GCP BigQuery
+        li GCP Bigtable
+        li GCP Dataflow
+        li GCP Storage
+        li GCP Compute Engine
+        li GCP Genomics
+        li GCP Dataproc
+    #form.columns.small-12.large-4
+      .card.text-center.container-color--blue-alt
+        .card-section
+          = inline_svg("icon-compliance-checklist", :class => "icon-size--large svg-color--white")
+          p.lead.group Tell us what configurations you would like to see in our quick survey.
+          = partial "partials/snippets/button", :locals => { :label => "Start the survey", :url => "survey", :button_classes => "button button--light", :icon => "icon-chevron-right", :item_id => "ccms_survey" }
+        / = partial "partials/snippets/form", :locals => { :the_form => form_1["custom_form"], :form_id => "configForm" }
+
 
 section#cta.section-article.container-color--gray-dark-grad
   .row.align-center.align-middle
@@ -111,5 +170,5 @@ section#cta.section-article.container-color--gray-dark-grad
     #form.columns.small-12.medium-large-6.large-4
       .callout.drop
         / h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
-        = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+        = partial "partials/snippets/form", :locals => { :the_form => form_2["custom_form"] }
 
