@@ -17,6 +17,8 @@ ruby:
   the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
   img_1 = 'https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg'
   img_2 = 'https://images.ctfassets.net/189dvqdsjh46/1KxUwvIiuE4gEaeqUSIgq4/a4b9c86fda34d160d94bdd55c766b2e5/ccms-diagram.png'
+  diagram_1 = "https://images.ctfassets.net/189dvqdsjh46/1DnnFdmBAYcWSyiGE2M6aK/1651ceeb1d2343007b09a5ce4c20ed38/c3-diagram-1.png"
+  diagram_2 = "https://images.ctfassets.net/189dvqdsjh46/iEhDz8im4wyCMCGk0Wcqk/79088104bd888bcb3e9867fb0ccb242a/c3-diagram-2.png"
   form_1 = data.site.forms['54agWFbPVYog62Ugg64ocW']
   form_2 = data.site.forms['328pNB4IvCaQWQMCWmgSCy']
 
@@ -70,29 +72,28 @@ section#api.section-article.pad-no-bottom.container-gray-11.drop-taper
     .columns.small-12.medium-8.medium-order-1
       img.lozad.img-crisp src="#{img_2}?w=792&fm=jpg&q=10&bg=rgb:e5e9eb" data-src="#{img_2}?w=1800" alt="CCMS features"
 
-section#cloud-info.container-gray-4
+section#cloud-info.container-color--white
   .section-article
     .row.align-center
       .columns.small-12.medium-8.large-6
         h2.headline-2.text-center 2018 is a Post-Cloud World
         p.lead The proliferation of abstracted cloud services has increased in an effort to improve developer experience (a good thing). As a result, most cloud environments are a constellation of managed services and micro services. The cloud is no longer simply an operating system on someone else's hard drive.
         p.lead But increased abstraction has meant greater control has been taken away from the end user's ability to attest to compliance assurances (a bad thing). The entire layer of "Services" on top of traditional VMs has completely changed how compliance should be measured, monitored, and managed.
-  .row.align-center.full-width
-    .columns.small-12
-      p [ illustration ]
-  .section-article--small
+  aside.full-width
+    h3.headline-4.text-center Multi-Dimensional Compliance on the Cloud
+    img.img-crisp.lozad src=diagram_1 data-src=diagram_1
+  .section-article
     .row.align-center
       .columns.small-12.medium-8.large-6
-        p The problem explodes when multiple services are used—a common approach to modern cloud workloads. Developers must re-invent the wheel of mapping controls in totality over a new service.
-  .row.align-center.full-width
-    .columns.small-12
-      p [ illustration 2 ]
-  .section-article--small
+        p.lead The problem explodes when multiple services are used—a common approach to modern cloud workloads. Developers must re-invent the wheel of mapping controls in totality over a new service.
+  aside.full-width
+    h3.headline-4.text-center Managing a Managed Service
+    img.img-crisp.lozad src=diagram_2 data-src=diagram_2
+  .section-article
     .row.align-center
       .columns.small-12.medium-8.large-6
-        p Datica CCMS fixes that. Simply plug available services into the CCMS and let us continuously monitor the compliance state of a service. Users can be assured the configurations map to the proper HITRUST CSF controls, thus generating a compliant posture against regimes such as HIPAA, GDPR, and GxP.
-section#hitrust.section-article.container-color--white
-  
+        p.lead Datica CCMS fixes that. Simply plug available services into the CCMS and let us continuously monitor the compliance state of a service. Users can be assured the configurations map to the proper HITRUST CSF controls, thus generating a compliant posture against regimes such as HIPAA, GDPR, and GxP.
+section#hitrust.section-article.container-gray-12
   .row.align-center.align-middle
     .columns.small-12.medium-7
       h2.headline-3 Make any cloud service HITRUST certified
@@ -101,21 +102,21 @@ section#hitrust.section-article.container-color--white
     .columns.small-12.medium-4
       ul.no-bullet
         li.group
-          a.media-object.align-middle.container-gray-12.drop.radius href="" title="AWS RDS Guide"
+          a.media-object.align-middle.container-color--white.drop.radius href="" title="AWS RDS Guide"
             .media-object-section
               - img_rds = "https://images.ctfassets.net/189dvqdsjh46/3Ml0plud3iWwgikOGEECi6/fe49398f8baeb5593ebb39bd10f637e9/guide-aws-rds.jpg"
               img.icon-size--xlarge.lozad src=img_rds data-src=img_rds alt="AWS RDS Guide"
             .media-object-section
               h4.headline-5 AWS RDS Guide
         li.group
-          a.media-object.align-middle.container-gray-12.drop.radius href="" title="Azure CosmosDB Guide"
+          a.media-object.align-middle.container-color--white.drop.radius href="" title="Azure CosmosDB Guide"
             .media-object-section
               - img_az = "https://images.ctfassets.net/189dvqdsjh46/3plStwctlKGM2Mg0sWIIMm/bfe93306bd50af4a08a19937882b3724/guide-azure-cosmos.jpg"
               img.icon-size--xlarge.lozad src=img_az data-src=img_az alt="Azure CosmosDB Guide"
             .media-object-section
               h4.headline-5 Azure CosmosDB Guide
         li.group
-          a.media-object.align-middle.container-gray-12.drop.radius href="" title="GCP Cloud SQL Guide"
+          a.media-object.align-middle.container-color--white.drop.radius href="" title="GCP Cloud SQL Guide"
             .media-object-section
               - img_gcp = "https://images.ctfassets.net/189dvqdsjh46/5Pwsy82W4g2i2AOKoGiMyO/ae8de7bf28cb3d28b1e65401ed4bb290/guide-gcp-sql.jpg"
               img.icon-size--xlarge.lozad src=img_gcp data-src=img_gcp alt="GCP Cloud SQL Guide"
