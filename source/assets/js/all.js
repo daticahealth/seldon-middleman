@@ -6,6 +6,7 @@ $("document").ready(function(){
         loaded: function(el) {
             // Custom implementation on a loaded element
             el.classList.add('loaded');
+            // el.classList.remove('loading-blur');
         }
     });
     observer.observe();

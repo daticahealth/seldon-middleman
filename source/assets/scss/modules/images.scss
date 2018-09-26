@@ -88,6 +88,10 @@ figcaption{
         -webkit-filter: blur(2px);
     }
 }
+.loading-blur {
+        filter:         blur(1vw);
+        -webkit-filter: blur(1vw);
+}
 .diffuse { // combo
     filter:         blur(2px) saturate(0.1);
     -webkit-filter: blur(2px) saturate(0.1);
