@@ -26,7 +26,7 @@
     // Multiple backgrounds, blend modes, tablet up only :zap:
     @include breakpoint (medium) {
         @supports (background-blend-mode: overlay) and (background-blend-mode: screen) {
-            background-image: 
+            background-image:
                 url('https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg?w=1200'),
                 url('/public/img/art/hexagon-bg-simple.svg'),
                 linear-gradient(to bottom, #234880 0%, #366090 60%, #3d7e9c 100%);
