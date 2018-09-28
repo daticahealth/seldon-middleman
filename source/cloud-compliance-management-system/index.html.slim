@@ -32,7 +32,7 @@ section#top.section-article.pad-no-bottom
   .row.align-center
     .columns.small-12.large-8.text-center
       .group
-        = inline_svg("small/icon-ccms-mag-solid", class: "icon-size--xlarge svg-color--gray-6")
+        = inline_svg("small/icon-ccms-mag", class: "icon-size--xlarge svg-color--gray-6")
         h3.headline-5.spaced-out Datica CCMS
         h1.headline-3 Continuous Compliance Monitoring for Cloud Services
         p.lead = current_page.data.summary
@@ -150,10 +150,10 @@ section#configs.section-article.container-gray-11
   .row.align-center
     .columns.small-12.large-8
       h2.headline-3.group.text-center Coming soon—dozens more configurations on the way
-  .row.align-center
-    .columns.small-12.medium-4.large-2.group
-      h4.headline-4 AWS
-      ul.no-bullet
+  .row.align-center.relative
+    .columns.small-12.medium-4.large-3.large-offset-2.group
+      h4.headline-5 AWS
+      ul.no-bullet.faded
         li AWS Redshift
         li AWS DynamoDB
         li AWS API Gateway
@@ -162,9 +162,9 @@ section#configs.section-article.container-gray-11
         li AWS Fargate
         li AWS EC2
         li AWS S3
-    .columns.small-12.medium-4.large-2.group
-      h4.headline-4 Azure
-      ul.no-bullet
+    .columns.small-12.medium-4.large-3.group
+      h4.headline-5 Azure
+      ul.no-bullet.faded
         li Azure AKS
         li Azure Active Directory
         li Azure App Service
@@ -173,9 +173,9 @@ section#configs.section-article.container-gray-11
         li Azure Data Lake Analytics
         li Azure IoT Hub
         li Azure Storage
-    .columns.small-12.medium-4.large-2.group
-      h4.headline-4 GCP
-      ul.no-bullet
+    .columns.small-12.medium-4.large-3.group
+      h4.headline-5 GCP
+      ul.no-bullet.faded
         li GCP GKE
         li GCP BigQuery
         li GCP Bigtable
@@ -184,13 +184,15 @@ section#configs.section-article.container-gray-11
         li GCP Compute Engine
         li GCP Genomics
         li GCP Dataproc
-    #form.columns.small-12.medium-7.large-4
-      .card.text-center.container-color--blue-alt
-        .card-section
-          = inline_svg("icon-compliance-checklist", :class => "icon-size--large svg-color--white")
-          p.lead.group.hyphens-no Tell us what configurations you would like to see in our quick survey.
-          = partial "partials/snippets/button", :locals => { :label => "Start the survey", :url => "survey", :button_classes => "button button--light", :icon => "icon-chevron-right", :item_id => "ccms_survey" }
-        / = partial "partials/snippets/form", :locals => { :the_form => form_1["custom_form"], :form_id => "configForm" }
+    / Here is a prototype disclosure component with some generic utility classes. 
+    #survey.disclosure-fade.gradient-gray-11-fade-up
+      /= inline_svg("icon-compliance-checklist", :class => "icon-size--large svg-color--white")
+      .margin-auto.small-12.medium-6.large-4
+        .card.container-color--white
+          .card-section.text-center
+            p.lead Tell us what configurations you would like to see in our quick survey.
+            = partial "partials/snippets/button", :locals => { :label => "Start the survey", :url => "survey", :button_classes => "button", :icon => "icon-chevron-right", :item_id => "ccms_survey" }
+            / = partial "partials/snippets/form", :locals => { :the_form => form_1["custom_form"], :form_id => "configForm" }
 
 
 section#cta.section-article.container-color--gray-dark-grad

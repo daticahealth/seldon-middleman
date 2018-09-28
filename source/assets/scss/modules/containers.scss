@@ -375,6 +375,20 @@
         }
     }
 }
+.gradient-gray-11-fade-up { // works with .disclosure-fade below, but also independent
+    $c: $gray-11;
+    @include gradient(bottom, transparentize($c, 0) 40%, transparentize($c, 0.7) 80%, transparentize($c, 1) 100%);
+}
+.gradient-gray-12-fade-up { // works with .disclosure-fade below, but also independent
+    $c: $gray-12;
+    @include gradient(bottom, transparentize($c, 0) 40%, transparentize($c, 0.7) 80%, transparentize($c, 1) 100%);
+}
+.disclosure-fade { // use with class above for gradient fade over elements
+    position: absolute;
+    bottom: 0;
+    padding-top: 8rem;
+    width: 100%;
+}
 // just background colors
 .bg {
     @each $name, $color in $fill-color-list { // this generates all grays 1-12 (dark to lightest), sets color
