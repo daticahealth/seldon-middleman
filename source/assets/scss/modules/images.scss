@@ -80,17 +80,17 @@ figcaption{
 }
 .blur {
     &-1 {
-        filter:         blur(1px);
-        -webkit-filter: blur(1px);
+        @include blur(1px);
     }
     &-2 {
-        filter:         blur(2px);
-        -webkit-filter: blur(2px);
+        @include blur(2px);
+    }
+    &-4 {
+        @include blur(4px);
     }
 }
 .loading-blur {
-        filter:         blur(1vw);
-        -webkit-filter: blur(1vw);
+    @include blur(1vw);
 }
 .diffuse { // combo
     filter:         blur(2px) saturate(0.1);
