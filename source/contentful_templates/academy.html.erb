@@ -53,7 +53,7 @@ end
         </div>
         <div class="row">
             <div class="columns small-12 large-8">
-                <article id="content">
+                <article id="content" class="group">
                     <% if p.has_key?("lead") %>
                         <div class="lead"> <%= Kramdown::Document.new(p["lead"]).to_html %></div>
                     <% end %>
