@@ -87,7 +87,7 @@ $font-weight-black:             900; // black
 // ---------
 $global-left: left;
 $global-font-size: 100%; // this permits user to ± font size, foundation default
-$global-width: rem-calc(1260);
+$global-width: rem-calc(1280);
 $global-lineheight: 1.5;
 
 // 1a. Colors
@@ -323,7 +323,8 @@ $grid-column-count: 12;
 $grid-column-gutter: (
   small:  24px,
   medium: 40px,
-  large:  48px
+  large:  54px,
+  xlarge: 64px
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
