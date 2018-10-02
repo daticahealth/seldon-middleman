@@ -85,12 +85,12 @@ header.main-header
               ul.submenu.menu.vertical(data-submenu data-alignment="left" id=nav_dropdown.title.downcase)
                 - nav_dropdown["children"].each do |menu_child|
                   - item_class = (menu_child.has_key?("has_divider") ? 'submenu-divider' : nil)
-                  li(class=item_class)
+                  li.no-wrap(class=item_class)
                     = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: ''
           / else
           /   li = nav_dropdown.title
               / = current_link_to nav_dropdown.title, nav_dropdown.url, title: nav_dropdown.desc, class: ''
-        li
+        /li
           ruby:
             sign_link = data.nav_all[4].children[0]
           = current_link_to sign_link.title, sign_link.url, title: sign_link.desc, class: "menu-header"
