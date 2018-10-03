@@ -5,9 +5,12 @@
 @import '../mixins/colors';
 @import '../mixins/functions';
 
-
+// these are often created by article.js
 figure {
-    margin: 0.5rem 0 1rem 0;
+    margin: 1rem 0 1.5rem 0;
+    img { // these are always images, inline in articles, should typically be full-width in body. 
+        display: block;
+    }
 }
 figcaption{
     font: {
@@ -17,12 +20,12 @@ figcaption{
     }
     color: black(0.6);
     margin: rem-calc(10px) 0 1rem 0;
-    padding: 0.5rem;
+    // padding: 0.5rem;
     &.caption { // for js-injected captions below images
         color: black;
         margin-top: 0;
-        padding: 0.6rem 1rem;
-        background-color: $gray-11;
+        padding: 0.6rem 0;
+        // background-color: $gray-11;
         display: inline-block;
     }
 }
@@ -80,13 +83,17 @@ figcaption{
 }
 .blur {
     &-1 {
-        filter:         blur(1px);
-        -webkit-filter: blur(1px);
+        @include blur(1px);
     }
     &-2 {
-        filter:         blur(2px);
-        -webkit-filter: blur(2px);
+        @include blur(2px);
     }
+    &-4 {
+        @include blur(4px);
+    }
+}
+.loading-blur {
+    @include blur(1vw);
 }
 .diffuse { // combo
     filter:         blur(2px) saturate(0.1);

@@ -79,7 +79,7 @@
                 color: $color_yellow-glow;
             }
             .callout--article-image {
-                // @include blur(4); // too much?
+                // @include blur(4px); // too much?
                 transition: opacity $timing-default * 2 ease;
                 opacity: 0.4;
             }

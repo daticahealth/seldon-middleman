@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         contents,
         eventEmitter;        
     var contents = gajus.Contents({
-        articles: $('#content').find('h2, h3').get()
+        articles: $('#content').find('h2').get()
     });
     eventEmitter = contents.eventEmitter();
 

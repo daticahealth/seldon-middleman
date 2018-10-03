@@ -24,13 +24,15 @@ priority: "1.0"
             .row.align-center
               .columns.small-12.medium-large-6.pricing-content
                 .group
-                  h2.headline-4.text--yellow-glow Compliant Kubernetes Service Pricing
+                  h2.headline-4.text--yellow-glow 
+                    a.link--yellow href="/compliant-kubernetes-service" title="Compliant Kubernetes Service" Compliant Kubernetes Service Pricing
                   h4.headline-5 
                     = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
                     | Product Subscription
                   p CKS subscription is per production Kubernetes cluster. Currently available on AWS. You pay infrastructure costs, like EC2 and S3, directly to AWS because we install the cluster onto your existing AWS account.
                 .group
-                  h2.headline-4.text--yellow-glow Compliant Managed Integration Pricing         
+                  h2.headline-4.text--yellow-glow 
+                    a.link--yellow href="/compliant-managed-integration" title="Compliant Managed Integration" Compliant Managed Integration Pricing
                   h4.headline-5
                     = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
                     | Product Subscription
@@ -44,16 +46,25 @@ priority: "1.0"
                     | Single-site Integration Service (Required)
                   p Integrating with sites is always point-to-point. We are here to provide project management of a site integration from start to finish over a 30-day project plan.
                 .group
-                  h2.headline-4.text--yellow-glow Compliant Platform as a Service
+                  h2.headline-4.text--yellow-glow 
+                    a.link--yellow href="/compliant-platform-as-a-service" title="Compliant Platform as a Service" Compliant Platform as a Service
                   h4.headline-5 
                     = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
                     | Environment Subscription
                   p Customers purchase environments which they then deploy their applications into.
-                  p 
-                    em Ask us about ad-hoc compliance services related to your infrastructure.
+
+                .group
+                  h2.headline-4.text--yellow-glow 
+                    a.link--yellow href="/cloud-compliance-management-system" title="Cloud Compliance Management" Cloud Compliance Management System
+                  h4.headline-5 
+                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                    | Resource Subscription
+                  p Starting early 2019, customers can use the CCMS by subscribing per cloud service being monitored.
               #cta.columns.small-12.medium-large-6
-                .callout.pad.drop.form-embed.nomargin.pricing-form
+                .callout.pad.drop.form-embed.nomargin.pricing-form.group
                   h3.headline-4.text-center Request Pricing
                   p Thank you for your interest in our suite of products built to help digital health succeed. One of our Datica experts will reach out to you shortly.
                   - the_form = data.site.forms['pdrdbrjyUKoooYI8EUAYw']
                   = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+                p 
+                  em Ask us about ad-hoc compliance services related to your infrastructure.

@@ -304,9 +304,9 @@
     }
 }
 .faded {
+    @include opacity(0.6);
     @include breakpoint (large) {
-        @include opacity(0.6);
-        @include easing(150ms);
+        @include easing(300ms);
         &:hover {
             @include opacity(1);
         }
@@ -322,7 +322,10 @@
 .opacity-100 {
     opacity: 100;
 }
-
+// .margin-auto {
+//     margin-right: auto;
+//     margin-left:  auto;
+// }
 .nomargin, .no-margin {
     margin-bottom: 0;
 }
@@ -338,6 +341,12 @@
 }
 .margin-bottom-small { // for headlines and stuff
     margin-bottom: 0.3em;
+}
+.hyphens {
+    @include hyphens(auto);
+    &-no {
+        @include hyphens(none);
+    }
 }
 
 // .overflow-hidden {}

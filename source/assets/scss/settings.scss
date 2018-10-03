@@ -87,7 +87,7 @@ $font-weight-black:             900; // black
 // ---------
 $global-left: left;
 $global-font-size: 100%; // this permits user to ± font size, foundation default
-$global-width: rem-calc(1260);
+$global-width: rem-calc(1280);
 $global-lineheight: 1.5;
 
 // 1a. Colors
@@ -169,6 +169,13 @@ $color-slugs: (
     gray-dark-grad,
     gray-dark-grad-noise,
     purple-grad
+);
+
+$product-colors: (
+    cks: #9A0BFF,
+    cmi: #6E52FF,
+    cpaas: #498CFF,
+    ccms: #25C6FF
 );
 
 // Art Directed Colors !! Use these sparingly and wisely
@@ -323,7 +330,8 @@ $grid-column-count: 12;
 $grid-column-gutter: (
   small:  24px,
   medium: 40px,
-  large:  48px
+  large:  54px,
+  xlarge: 64px
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
@@ -599,7 +607,7 @@ $dropdownmenu-arrows: true;
 $dropdownmenu-arrow-color: transparentize($gray-6, 0.4);
 $dropdownmenu-arrow-size: 5px;
 $dropdownmenu-arrow-padding: 1.5rem;
-$dropdownmenu-min-width: 300px;
+$dropdownmenu-min-width: 260px;
 $dropdownmenu-background: $white;
 $dropdownmenu-submenu-background: $dropdownmenu-background;
 $dropdownmenu-padding: $global-menu-padding;

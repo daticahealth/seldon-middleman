@@ -141,7 +141,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
             @include css-triangle(10px, white, up);
             position: absolute;
             top: -$tri-size;
-            left: $tri-size * 6;
+            left: $tri-size * 8;
         }
     }
     .is-submenu-item {

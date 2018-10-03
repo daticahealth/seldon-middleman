@@ -278,6 +278,31 @@ events_list:
 
 speaking_list:
     -
+        name: aws-reinvent
+        slug: aws-reinvent
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/1KjmEj6xUgaEi0oCUGgAmc/4e035c8a437e5eaa429865cf3bbac0ee/aws-reinvent-2018-logo.svg
+        logoSize: small-mid
+    -
+        name: ms-ignite
+        slug: ms-ignite
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/26qheiOIvqQUGaoOQACQIM/1377d2380fa2a91d25a3c36004c1d857/ms-ignite.png
+        logoSize: small-mid
+    -
+        name: techstars-startupweek
+        slug: techstars-startupweek
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/3ftTLbtklOWoYQmuqAUesa/c0034244dc95c03fad1cd3b9968a0f9e/techstars-startupweek-k.png
+        logoSize: small-mid
+    -
+        name: HLTH
+        slug: HLTH
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/4wa2tZh3qEauiquQIMUgCE/61e7f724024f1118203e1c44bb2e1df8/HLTH_Logo_Blue_Event_2017_sm.png
+        logoSize: small
+    -
+        name: PNRF
+        slug: PNRF
+        logo_file: https://images.ctfassets.net/189dvqdsjh46/4x7EFvIIxGcgiWEYGKm6ug/e28fdc57ddde2e4264820ffd518c5c0a/PNRF_logo.png
+        logoSize: small-mid
+    -
         name: HIMSS
         slug: himss
         logo_file: https://images.ctfassets.net/189dvqdsjh46/2WdaMH3TnW4ocsEUQy2s6a/172150c175e4caef69491b8ea3f201d3/himss-logo.png

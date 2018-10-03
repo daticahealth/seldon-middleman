@@ -5,6 +5,7 @@ author: "Datica, Inc."
 tags: "training, education, HIPAA, HL7, FHIR, interoperability, EHR, integration, resource"
 date: "January 1, 2017"
 customCSS: "home"
+customJS: "/public/js/products.js"
 layout: "basic"
 priority: "1.0"
 collectionName: "home"
@@ -46,12 +47,29 @@ section#compliance.section-article.container-gray-11
       h3.headline-4 Interoperable data requires interoperable infrastructure
       p Modern health IT is an ecosystem of solutions, which means digital health products must have a strategy to integrate with existing EHRs or other systems of record like PACs. Integrating with legacy on-premises systems is not easy when your architecture is on the cloud. Compliance, security, privacy, VPNs, and 1980s-era protocols are requirements for true interoperability.
 
-.container-color--dark-grad-blue
-  section#products.section-article.container-image--fixed data-interchange="[/public/img/art/hexagon-bg-simple-light.svg, small]"
+.container-color--white-to-gray-light
+  section#products.section-article data-interchange="[/public/img/art/hexagon-bg-simple.svg, small]"
     .row.align-center
       .columns.small-12.text-center
-        h2.headline-3.group.text--white Your playbook for digital health success
-    .row.row--card-grid.small-up-1.medium-up-2.large-up-3.align-center
+        h2.headline-3.group Your playbook for digital health success
+    .row.align-center.align-middle
+      .columns.small-12.medium-6.large-5
+        ul.menu.vertical.content-matrix
+          - data.views.product_list.products.each_with_index do | product, index |
+            li
+              - activeClass = "t#{index} trigger-current"
+              - baseClass = "t#{index}"
+              a.content-trigger class=(index == 0 ? activeClass : baseClass) id=baseClass href=product.url title=product.cta
+                .text-bold.spaced-out = product.abbr
+                h4.headline-5 = product.title
+      .columns.small-12.medium-6.large-4
+        - data.views.product_list.products.each_with_index do | product, index |
+          .content-item id="c#{index}" class=(index == 0 ? "current" : "hide")
+            .lead = Kramdown::Document.new(product.lead).to_html
+            ul.list-check
+              - product.features.each do | feature |
+                li = feature
+    /.row.row--card-grid.small-up-1.medium-up-2.large-up-3.align-center
       .column
         .card.container-gray-2
           .card-section

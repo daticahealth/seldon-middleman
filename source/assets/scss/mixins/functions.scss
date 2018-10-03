@@ -55,10 +55,12 @@ $underline: false !default;
     -o-transition: $args;
     transition: $args;
 }
-@mixin transform($t){
+@mixin transform($args...){
     // -ms-transform: $t;
-    -webkit-transform: $t;
-    transform: $t;
+    -moz-transform: $args;
+    -webkit-transform: $args;
+    -o-transform: $args;
+    transform: $args;
 }
 
 @mixin vertical-center-text(){
@@ -103,8 +105,8 @@ $underline: false !default;
     box-shadow: $s;
 }
 
-@mixin blur($radius){ // covers most browsers...FF needs JS for this I think. http://codepen.io/ebellempire/pen/rnvEK
-    $r: $radius * 1px;
+@mixin blur($r){ // covers most browsers...FF needs JS for this I think. http://codepen.io/ebellempire/pen/rnvEK
+    // $r: $radius * 1px;
     filter: blur($r); /* Someday, sigh ... */
     -webkit-filter: blur($r); /* Prefixed CSS3 blur filters */
     -moz-filter: blur($r);
