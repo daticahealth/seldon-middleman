@@ -65,12 +65,12 @@ end
 <section class="section-article">
     <div class="row">
         <div id="blogPost" class="columns small-12 large-8">
-            <article class="content-dynamic">
+            <article class="">
                 <%= partial "/partials/snippets/share", :locals => { :p => p, :classes => "show-for-xlarge vertical" }  %>
                 <% if p.has_key?("blog_lead") %>
                     <div class="lead"><%= Kramdown::Document.new(p["blog_lead"]).to_html %></div>
                 <% end %>
-                <div class="section--body blog-post-content group">
+                <div class="content-dynamic group">
                     <% if p.has_key?("featured_person") %>
                         <%= partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" }) %>
                     <% end %>
