@@ -132,21 +132,6 @@
         }
     }
 }
-.pad {
-    $gap: 1.5vw;
-    padding: $gap;
-    &--sm {
-        padding: $gap * 0.6;
-    }
-    &--lg { // moar spacing!
-        padding: $gap * 1.5 !important;
-    }
-}
-.block { // useful when you need to cap the width of a person widget, etc.
-    &-width-medium {
-        max-width: 14rem;
-    }
-}
 .strip-bright { // bright strip, supersat
     min-height: calc(3px + 0.5vw);
     @include grad-bright;
