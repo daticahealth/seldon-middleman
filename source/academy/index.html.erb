@@ -12,7 +12,7 @@ customJS: "/public/js/academy.js"
 <% 
 today = DateTime.now
 current_page.data.date = today.strftime('%B %-d, %Y')
-promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/4c6112793c0bbff072111b0f70fa9a17/cta-ccms-survey-ad-4x3.png"
+promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc82592dd23d3c78bfa0a47126608c/cta-ccms-survey-ad-4x3.png"
 %>
 <%= partial "partials/head/header", :locals => { :style => "dark" } %>
 <section class="section-article">
@@ -132,7 +132,7 @@ promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/4c611
         <aside class="column" data-sticky-container>
             <div class="sticky" data-sticky data-options="anchor: articles; stickyOn: large;">
                 <%= partial "partials/ctas/resources-compact", :locals => { :classes => "group" } %>
-                <a href="/cloud-compliance-management-system/survey/" title="take the cloud configuration survey"><img class="lozad thumbnail" src="<%= promo1 %>?fm=jpg&w=200&q=5" data-src="<%= promo1 %>?fm=png&fl=png8&w=400"></a>
+                <a href="/cloud-compliance-management-system/survey/" title="take the cloud configuration survey"><img class="lozad thumbnail" src="<%= promo1 %>?fm=jpg&w=400&q=5" data-src="<%= promo1 %>?fm=png&fl=png8&w=600"></a>
                 <%# to embed/pass a unique ID or specific entry, use this notation. %>
                 <%#= partial("/partials/content/cta", :locals => { :p => data.site.cta["1CKHNq6V7eG4W20ygCWmei"] }) %>
                 <%# sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse! %>
