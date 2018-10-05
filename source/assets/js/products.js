@@ -1,27 +1,28 @@
 function hideAll() {
-  $('.content-item').addClass('hide');
   $('.content-trigger').removeClass('trigger-current');
+  $('.content-trigger').attr('aria-selected','false');
+  $('.content-item').addClass('hide');
+  $('.content-item').attr('aria-expanded','false');
   // console.log('hideAll')
+}
+function currentItem(id) {
+  hideAll();
+  $('#t'+id).addClass('trigger-current');
+  $('#c'+id).removeClass('hide');
+  $('#t'+id).attr('aria-selected','true');
+  $('#c'+id).attr('aria-expanded','true');
 }
 $(function(){
   $('#t0').hover(function() {
-    hideAll();
-    $('#t0').addClass('trigger-current');
-    $('#c0').removeClass('hide');
+    currentItem(0);
   }),
   $('#t1').hover(function() {
-    hideAll();
-    $('#t1').addClass('trigger-current');
-    $('#c1').removeClass('hide');
+    currentItem(1);
   }),
   $('#t2').hover(function() {
-    hideAll();
-    $('#t2').addClass('trigger-current');
-    $('#c2').removeClass('hide');
+    currentItem(2);
   }),
   $('#t3').hover(function() {
-    hideAll();
-    $('#t3').addClass('trigger-current');
-    $('#c3').removeClass('hide');
+    currentItem(3);
   })
 })

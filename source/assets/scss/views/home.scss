@@ -34,15 +34,15 @@
 //     padding: 2rem 0.5rem;
 //     .card{margin-bottom: 0;}
 // }
-@font-face{
-    src: url('/public/fonts/gt-america-thin.woff') format('woff');
-    font-family: GT-America;
-    font-display: optional;
-    font-weight: 200;
-}
-.headline-1 {
-    font-weight: 200;
-}
+// @font-face{
+//     src: url('/public/fonts/gt-america-thin.woff') format('woff');
+//     font-family: GT-America;
+//     font-display: optional;
+//     font-weight: 200;
+// }
+// .headline-1 {
+//     font-weight: 200;
+// }
 // @font-face{
 //     src: url('/public/fonts/gt-america-thinitalic.woff') format('woff');
 //     font-family: GT-America;
@@ -50,21 +50,21 @@
 //     font-weight: 200;
 //     font-style: italic;
 // }
-    @each $name, $color in $fill-color-list { // this generates all grays 1-12 (dark to lightest), sets color
-        $color-hsl: hsl-str($color);
-        &--#{$name} {
-            $color-lightness: lightness($color);
-            @if $color-lightness >= 55% {
-                color: #000;
-            }
-            @else {
-                color: #fff;
-            }
-            background: $color;
-            // padding: 0.3em;
-            // display: inline-block;
-        }
-    }
+    // @each $name, $color in $fill-color-list { // this generates all grays 1-12 (dark to lightest), sets color
+    //     $color-hsl: hsl-str($color);
+    //     &--#{$name} {
+    //         $color-lightness: lightness($color);
+    //         @if $color-lightness >= 55% {
+    //             color: #000;
+    //         }
+    //         @else {
+    //             color: #fff;
+    //         }
+    //         background: $color;
+    //         // padding: 0.3em;
+    //         // display: inline-block;
+    //     }
+    // }
 $speed: 200ms;
 $c0: #9A0BFF;
 $c1: #6E52FF;
@@ -74,6 +74,7 @@ a.content-trigger {
     padding: 1.8rem;
     border-radius: 5px;
     background-color: white;
+    color: #090909;
     margin-bottom: 2rem;
     transition: background-color $speed linear, color $speed linear, box-shadow $speed linear;
 }

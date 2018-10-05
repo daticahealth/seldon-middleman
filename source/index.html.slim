@@ -52,19 +52,21 @@ section#compliance.section-article.container-gray-11
     .row.align-center
       .columns.small-12.text-center
         h2.headline-3.group Your playbook for digital health success
-    .row.align-center.align-middle
+    .row.align-center.align-middle aria-label="Datica Product List" role="region" tabindex="-1"
       .columns.small-12.medium-6.large-5
-        ul.menu.vertical.content-matrix
+        ul.menu.vertical.content-matrix role="tablist"
           - data.views.product_list.products.each_with_index do | product, index |
-            li
+            li role="presentation"
               - activeClass = "t#{index} trigger-current"
               - baseClass = "t#{index}"
-              a.content-trigger class=(index == 0 ? activeClass : baseClass) id=baseClass href=product.url title=product.cta
+              a.content-trigger role="button" class=(index == 0 ? activeClass : baseClass) aria-selected=(index == 0 ? "true" : "false") id=baseClass href=product.url title=product.cta
                 .text-bold.spaced-out = product.abbr
                 h4.headline-5 = product.title
-      .columns.small-12.medium-6.large-4
+                .hide-for-medium 
+                  = Kramdown::Document.new(product.lead).to_html
+      .columns.small-12.medium-6.large-4.show-for-medium
         - data.views.product_list.products.each_with_index do | product, index |
-          .content-item id="c#{index}" class=(index == 0 ? "current" : "hide")
+          .content-item role="tabpanel" aria-labelledby="t#{index}" id="c#{index}" class=(index == 0 ? "current" : "hide") aria-expanded=(index == 0 ? "true" : "false")
             .lead = Kramdown::Document.new(product.lead).to_html
             ul.list-check
               - product.features.each do | feature |
