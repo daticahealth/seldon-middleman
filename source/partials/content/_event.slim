@@ -1,9 +1,14 @@
 .row
   .columns
     - if event.has_key?("title")
-      h3.headline-4
-        a href="/events/#{event["slug"]}" title=("event details") 
-          = event["title"]
+      - if defined?(level) && level == 1
+        h1.headline-4
+          a href="/events/#{event["slug"]}" title=("event details") 
+              = event["title"]
+      - else
+        h2.headline-4
+          a href="/events/#{event["slug"]}" title=("event details") 
+            = event["title"]
     h4.headline-6.spaced-out
       = inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5")
       | &nbsp;
