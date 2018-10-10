@@ -1,0 +1,69 @@
+// styles the alert-ribbon at the top of the page
+@charset 'utf-8';
+@import '../settings';
+@import 'node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import '../mixins/colors';
+@import '../mixins/functions';
+// @import '../mixins/animation';
+.alert-ribbon {
+    height: auto;
+    @include breakpoint(large) {
+        height: 2.5rem;
+        padding: 0;
+    }
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    transition: opacity $timing-default linear;
+    &:hover {
+        cursor: pointer;
+        // .alert-content {
+        //     color: $color_blue-glow; 
+        // }
+        .alert-ribbon--bg {
+            opacity: 0.8;
+        }
+    }
+    .alert-content {
+        width: calc(100% - 50px);
+        color: white;
+        // transition: color $timing-default linear;
+        text-align: left;
+        padding: 1rem 1rem;
+        @include breakpoint(large) {
+            text-align: center;
+            padding: 0;
+        }
+    }
+    &--bg, & img {
+        width: 100%;
+        height: 100%;
+    }
+    &--bg {
+        opacity: 0.4;
+        transition: opacity $timing-default linear;
+    }
+} 
+.item-h {
+    display: block;
+    margin-bottom: 0.3rem;
+    margin-right: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.1;
+    @include breakpoint(large) {
+        display: inline-block;
+        padding: 0;
+    }
+}
+.item-category {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.8;
+}
+.close-button {
+    transition: color $timing-default linear;
+    &:hover {
+        color: $color_blue-glow;
+    }
+}

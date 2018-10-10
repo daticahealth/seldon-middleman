@@ -17,7 +17,8 @@ $("document").ready(function(){
     $(document).foundation();
     
     // Cookie config for modal
-    var currPromoCookie = 'promo-c3-2018-09-14';
+    // following string is now rendered in _alert-ribbon.slim
+    //var currPromoCookie = 'promo-c3-2018-09-14';
     // If no cookie with our chosen class...
     if($.cookie(currPromoCookie) == null){
         $('#alertTop').removeClass("hide");
