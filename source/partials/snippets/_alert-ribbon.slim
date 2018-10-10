@@ -14,7 +14,8 @@ ruby:
     end
     event_url = '/webinars/' + webinar_entry.slug
     cookie_name = webinar_entry.event_date.strftime('%Y-%m-%d')
-
+  javascript:
+    var currPromoCookie = null;
   / only render banner, styles, js if there's a current promo
   - if webinar_entry.has_key?("event_date")
     - if today.strftime("%F") <= webinar_entry['event_date'].strftime("%F")
