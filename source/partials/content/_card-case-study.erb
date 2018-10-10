@@ -27,8 +27,7 @@
         <% end %>
     </div>
     <div class="card-divider card-section--flush">
-        <a class="button hollow small" href="/customer/<%= cf_customer["slug"] %>" title="<%= cf_customer["company_name"] %> case study">
-            Read the <%= cf_customer["company_name"] %> case study <i class="fa fa-angle-right"></i>
-        </a>
+        <%= partial "partials/snippets/button", :locals => { :label => "Read the #{cf_customer.company_name} Case study", :url => "/customer/#{cf_customer["slug"]}", :button_classes => "button hollow small", :item_id => "customer", :icon => "icon-chevron-right", :icon_align => "right" } %>
     </div>
 </div>
+
