@@ -7,7 +7,7 @@ tags: "events, conferences, presentations, training, education"
 share_image: "https://images.ctfassets.net/189dvqdsjh46/2HzxmY3I4ESUU6ICM0ge0Y/f5ed3801dfe3328ec1ee09ea83434ba6/events-share-default.jpg"
 layout: company
 ---
-<% 
+<%
 today = DateTime.now
 current_page.data.date = today.strftime('%B %-d, %Y')
 # today = time.inspect
@@ -29,14 +29,14 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
         </div>
     </div>
     <div class="row align-center">
-        <div class="columns small-12 medium-10 large-8">
+        <div class="columns small-12 large-10">
             <% sorted_events.take(1).each do |id, event| %>
                 <% if today.strftime("%F") < event['date_start'].strftime("%F") %>
                     <h3 class="headline-3 text-center group">Upcoming Events</h3>
                 <% end %>
             <% end %>
             <% sorted_events.reverse.each do |id, event| %>
-                <% if today.strftime("%F") < event['date_start'].strftime("%F") %>
+                <% if today.strftime("%F") <= event['date_start'].strftime("%F") %>
                     <div class="callout callout--large drop group--2x">
                         <%= partial "partials/content/event", :locals => { :event => event } %>
                     </div>
@@ -47,12 +47,12 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
 </section>
 <section class="section-article">
     <div class="row align-center">
-        <div class="columns small-12 large-7 xlarge-8">
+        <div class="columns small-12 large-8 xlarge-7">
             <h2 class="headline-3 group text-center">Past Events</h2>
             <div id="timeline" class="timeline--vertical">
                 <div class="line" id="line"></div>
                 <% sorted_events.each do |id, event| %>
-                    <% if today.strftime("%F") >= event['date_start'].strftime("%F") %>
+                    <% if today.strftime("%F") > event['date_start'].strftime("%F") %>
                         <div class="block">
                             <div class="date">
                                 <%= partial("partials/snippets/date-range", :locals => { :p => event }) %>
