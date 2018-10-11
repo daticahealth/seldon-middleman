@@ -1,0 +1,11 @@
+ruby:
+	# === Date range or single event time - for events data model
+	# p = locals[:item]
+  if p.has_key?("date_start") && p.has_key?("date_end")
+		return p['date_start'].to_s.in_time_zone("Central Time (US & Canada)").strftime('%b. %-d') + "&ndash;" + p['date_end'].to_s.in_time_zone("Central Time (US & Canada)").strftime('%b. %-d, %Y')
+	elsif p.has_key?("date_start") == true && p.has_key?("date_end") == false
+  	return p['date_start'].to_s.in_time_zone("Central Time (US & Canada)").strftime('%b. %-d, %l:%M %p %Z')
+	else
+		return "<em>Date and time to be determined.</em>"
+		puts "/snippets/_date-range has no 'date_start' data!"
+	end

@@ -217,6 +217,10 @@
             }
             @else {
                 color: #fff;
+                a { // better defaults for dark containers
+                    color: white;
+                    &:hover, &:active, &:focus {color: $color_yellow-glow; }
+                }
             }
             background-color: $color;
             // &:after {
@@ -386,11 +390,14 @@
             @else {
                 color: #fff;
             }
-            background: $color;
+            background-color: $color;
             // padding: 0.3em;
             // display: inline-block;
         }
     }
+}
+[class*="container"], [class*="bg"] {
+    transition: background-color $timing-default linear, color $timing-default linear;
 }
 // Vertical align helper
 .vertical-align {
