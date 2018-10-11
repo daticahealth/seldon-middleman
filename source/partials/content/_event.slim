@@ -1,21 +1,21 @@
-.row
+.row.align-middle.group
   .columns
     - if event.has_key?("title")
       - if defined?(level) && level == 1
         h1.headline-4
-          a href="/events/#{event["slug"]}" title=("event details") 
+          a href="/events/#{event["slug"]}" title=("event details")
               = event["title"]
       - else
         h2.headline-4
-          a href="/events/#{event["slug"]}" title=("event details") 
+          a href="/events/#{event["slug"]}" title=("event details")
             = event["title"]
-    h4.headline-6.spaced-out
+    div
       = inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5")
       | &nbsp;
       = partial("partials/snippets/date-range", :locals => { :p => event })
   - if event.has_key?("event_logo")
-    .columns.small-5.medium-large-4
-      img.logo-size--medium.lozad alt=("Event logo") data-src="#{event["event_logo"]["url"]}?fm=png&w=300" /
+    .columns.small-12.medium-5.medium-large-4
+      img.logo-size--medium.lozad alt=("Event logo") data-src="#{event["event_logo"]["url"]}?fm=png&fit=scale&w=400" /
 .row
   .column
     - if event.has_key?("event_desc")
@@ -29,6 +29,6 @@
           - if tag == 'Sponsor' ? tagstyle = 'success' : tagstyle = 'info'
           span class=("label faded round #{tagstyle}") = tag
   - if event.has_key?("event_related_people")
-    .columns.small-5.medium-large-4
+    .columns.small-12.medium-5.medium-large-4
       - event["event_related_people"].each do |person|
         = partial("partials/snippets/person-small", :locals => { :p => person, :classes => "block-width-medium", :use_headers => false })

@@ -1,9 +1,0 @@
-<%
-# === Date range - for events data model 
-# p = locals[:item]
-unless p.has_key?("date_start")
-	puts "/snippets/_date-range has no 'date_start' data!"
-end
-%>
-<% if p.has_key?("date_start") %>
-<%= p['date_start'].strftime('%b. %-d') %><% end %><% if p.has_key?("date_end") %> &ndash; <%= p['date_end'].strftime('%b. %-d') %><% end %><% if p.has_key?("date_start") %>, <%= p['date_start'].strftime('%Y') %><% end %>
