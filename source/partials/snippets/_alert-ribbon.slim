@@ -19,8 +19,9 @@ ruby:
   / only render banner, styles, js if there's a current promo
   - if webinar_entry.has_key?("event_date")
     - if today.strftime("%F") <= webinar_entry['event_date'].strftime("%F")
-      link href="/public/css/views/ribbon.css" rel="stylesheet"
-      aside id="alertTop" class="hide dismiss full-width alert-ribbon relative container-gray-2 text-center align-middle" data-closable="" role="banner"
+      aside id="alertTop" style="min-height: 40px;" class="hide dismiss full-width alert-ribbon relative container-gray-2 text-center align-middle" data-closable="" role="banner"
+        link href="/public/css/views/ribbon.css" rel="stylesheet"
+          script
         a href=event_url class="alert-content no-border z-stack-10"
           span.item-h.item-category.spaced-out
             | Webinar 
