@@ -15,7 +15,7 @@
     <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
     <body class="<%= page_classes %>">
         <a name="top"></a>
-        <%= partial "partials/snippets/alert-ribbon" %>
+        <%#= partial "partials/snippets/alert-ribbon" %>
         <%= partial "partials/head/header", :locals => { :style => "dark" } %>
         <%= yield %>
         <%= partial "partials/snippets/footer" %>

@@ -1,19 +1,52 @@
-/ aside.row.collapse.align-center.hide.full-width.container-gray-1.alert-ribbon.text-center id="alertTop" class="" data-closable=""
-/   .column.small-10.medium-8
-/     a.link--white(href="/learn-more/azure" title="Learn more about Kubernetes<sup>&reg;</sup> on Azure")
-/       span.text-light Hear about Datica at <strong>Microsoft Build 2018?</strong> Learn more.
-/   .column.small-2.medium-4.container-image-fill(style="background-image: url('https://images.ctfassets.net/189dvqdsjh46/1X6QRrY9gYumsoIIsM6QSO/3563e2855131830d7a0622747044a934/build-18-bg-bright.svg');")
-/     button class="alert-ribbon--action dismiss close-button button--inverted" aria-label="Dismiss alert" type="button" data-close="" title="No thanks"
-/       span aria-hidden="true" &times;
+ruby:
+  today = DateTime.now.utc
+  sorted_webinars = data.site.webinars.to_a.sort_by{ |id, webinars| webinars['event_date'] }.reverse!
 
-/ src="#{event_img}?h=48&fm=png&fl=png8"
-- event_title = 'Webinar: What Really is Compliance? - Sept. 26, 1pm - Register today!'
-- event_img = 'https://images.ctfassets.net/189dvqdsjh46/7cYrQDOpgcCksAUKIsQaSY/16c232603bc61794d7a408bc4223a159/webinar-c3-promo-ribbon-desktop.png'
-- event_url = '/webinars/what-really-is-compliance/'
-
-/aside id="alertTop" style="background-color: #373D50; height: 3rem;" class="hide dismiss full-width alert-ribbon text-center" data-closable=""
-  a.dismiss(href=event_url title=event_title)
-    img.lozad data-src="#{event_img}" alt=event_title /
-  .row.align-center
-    button class="alert-ribbon--action dismiss close-button button--inverted" aria-label="Dismiss alert" type="button" data-close="" title="No thanks"
-      span aria-hidden="true" &times;
+- sorted_webinars.take(1).each do | id, webinar_entry |
+  ruby:
+    event_title = webinar_entry.title
+    event_date_full = webinar_entry["event_date"].to_s.in_time_zone("Central Time (US & Canada)").strftime('%A, %B %-d, %Y, %l:%M %p %Z')
+    event_date_slug = webinar_entry["event_date"].to_s.in_time_zone("Central Time (US & Canada)").strftime('%Y-%m-%d')
+    if webinar_entry.has_key?("image_thumb")
+      event_img = webinar_entry.image_thumb.url
+    else
+      event_img = 'https://images.ctfassets.net/189dvqdsjh46/6lqIxPcZY4yuAMaEA4GwE4/3599f800a33d3aaa8876ab7d0c6b1ec7/webinar-bg-default.png'
+    end
+    event_url = '/webinars/' + webinar_entry.slug
+    cookie_name = webinar_entry.event_date.strftime('%Y-%m-%d')
+  javascript:
+    var currPromoCookie = null;
+  / only render banner, styles, js if there's a current promo
+  - if webinar_entry.has_key?("event_date")
+    - if today.strftime("%F") <= webinar_entry['event_date'].strftime("%F")
+      aside id="alertTop" style="min-height: 40px;" class="hide dismiss full-width alert-ribbon relative container-gray-2 text-center align-middle" data-closable="" role="banner"
+        link href="/public/css/views/ribbon.css" rel="stylesheet"
+          script
+        a href=event_url class="alert-content no-border z-stack-10"
+          span.item-h.item-category.spaced-out
+            | Webinar 
+            = inline_svg("small/icon-webinar-sm", class: "icon-inline")
+          span.item-h.item-title.text-bold = event_title
+          span.item-h.show-for-large | 
+          span.item-h.text-light = event_date_full
+        button class="alert-ribbon--action dismiss close-button button--inverted z-stack-10" aria-label="Dismiss alert" type="button" data-close="" title="No thanks"
+          span aria-hidden="true" 
+            = inline_svg("small/icon-close", class: "nav-button--icon")
+          /&times;
+        .absolute.z-stack-zero.alert-ribbon--bg
+          img.lozad.relative.img-cover data-src="#{event_img}?fit=thumb&w=1200&h=48" data-srcset="#{event_img}?fit=thumb&w=800&h=200 640w, #{event_img}?fit=thumb&w=1000&h=48 1000w, #{event_img}?fit=thumb&w=1400&h=48&fm=png 1200w"
+      javascript:
+        var currPromoCookie = 'promo-#{cookie_name}';
+      /$("document").ready(function(){
+      /  
+      /  if($.cookie(currPromoCookie) == null){
+      /      $('#alertTop').removeClass("hide");
+      /  }else{
+      /      $('#alertTop').addClass("hide");
+      /  }
+      /  // $(".dismiss").click(function(){
+      /  $(document).on("click touchend", ".dismiss", function() {
+      /      $.cookie(currPromoCookie, 'true', { expires: 14, path: '/' });
+      /      $('#alertTop').addClass("hide");
+      /  });
+      /});

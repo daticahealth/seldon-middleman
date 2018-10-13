@@ -163,8 +163,8 @@
     &-light {
         font-weight: $font-weight-light !important;
     }
-    &-strong {
-        font-weight: bolder !important;
+    &-strong, &-bold {
+        font-weight: $font-weight-bold !important;
     }
     // &-italic {
     //     font-style: italic;
