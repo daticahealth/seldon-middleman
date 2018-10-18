@@ -9,25 +9,26 @@
 // @import '../modules/masonry';
 // @import '../modules/fonts-optional';
 
-.headline-bold {
-    font-weight: 500;
-}
-// Blocks
-.featured-post { // dark image up top
-    text-shadow: 1px 1px 3px black(0.5);
-    a, a:hover {
-        text-decoration: none;
-    }
-    .lead {
-        color: white;
-        @include breakpoint(medium down){font-size: 1rem;}
-    }
-    .pub-date {
-        color: white(0.8);
-    }
-    .label {
-        border: none; // rem-calc(1px) solid $color_white;
-        background-color: black(0.7);
-        color: $color_white;
-    }
-}
+// .headline-bold {
+//     font-weight: 500;
+// }
+// // Blocks
+// .featured-post { // dark image up top
+//     text-shadow: 1px 1px 3px black(0.5);
+//     a, a:hover {
+//         text-decoration: none;
+//     }
+//     .lead {
+//         color: white;
+//         @include breakpoint(medium down){font-size: 1rem;}
+//     }
+//     .pub-date {
+//         color: white(0.8);
+//     }
+//     .label {
+//         border: none; // rem-calc(1px) solid $color_white;
+//         background-color: black(0.7);
+//         color: $color_white;
+//     }
+// }
+

@@ -90,4 +90,18 @@ ruby:
           - if p.has_key?("cta_ref")
             = partial("/partials/content/cta", :locals => { :p => p["cta_ref"] })
 
-      aside.columns.small-12.large-4
+      aside.columns.small-12.large-4.section--sidebar data-sticky-container="" 
+        .sticky data-options=("anchor: blogPost; stickyOn: xlarge; marginTop: 5;") data-sticky="" 
+          = partial "/partials/snippets/share", :locals => { :p => p, :classes => "align-center hide-for-xlarge" }
+          .group
+            = partial "blog/partials/blog-subscription", :locals => { :color => "gray" }
+          - if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta")
+            - topic = data.site.discover[p.discovery_topic.id]
+            = partial "partials/cards/discover-lite", :locals => { :topic => topic, :classes => "group" }
+            - if topic.slug == "ehr-integrations"
+              = partial("/partials/content/cta", :locals => { :p => data.site.cta["1h6f0OBRqiiayM2cy28qey"] })
+          - if p.has_key?("related_entries") && p["related_entries"].count == 1
+            - p["related_entries"].take(1).each do | relatedPost |
+              = partial "partials/cards/featured-blog", :locals => { :post => relatedPost, :style => "light", :size => "small" }
+
+= partial "partials/content/tweet-styling"
