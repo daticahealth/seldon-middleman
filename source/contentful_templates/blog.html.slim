@@ -51,7 +51,7 @@ scss:
     img.lozad.img-cover src="#{post_featured_image}?w=250&fm=jpg&q=10" data-src="#{post_featured_image}?w=1800&h=600" height="315"
   section#blogPost.row.align-center
     .columns.small-12.large-8
-      article.article-pull.container-color--white.pad--xl.group.drop
+      article.article-pull.container-color--white.pad--xl.group--2x.drop
         header
           .subhead--spaced.headline-6
             = partial "/partials/snippets/pubdate", :locals => p
@@ -91,11 +91,11 @@ scss:
         - if p.has_key?("cta_ref")
           = partial("/partials/content/cta", :locals => { :p => p["cta_ref"] })
 
-    aside.columns.small-12.large-4.section--sidebar data-sticky-container="" 
+    aside.columns.small-12.large-4.pad style="margin-top: 1rem;" data-sticky-container="" 
       .sticky data-options=("anchor: blogPost; stickyOn: xlarge; marginTop: 5;") data-btm-anchor="nextPrev" data-sticky="" 
         = partial "/partials/snippets/share", :locals => { :p => p, :classes => "align-center hide-for-xlarge" }
         .group
-          = partial "blog/partials/blog-subscription", :locals => { :color => "gray" }
+          = partial "blog/partials/blog-subscription-simple", :locals => { :color => "gray" }
         - if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta")
           - topic = data.site.discover[p.discovery_topic.id]
           = partial "partials/cards/discover-lite", :locals => { :topic => topic, :classes => "group" }

@@ -34,7 +34,7 @@ end
 <% if p.has_key?("cta_image") %>
     <aside class="cta cta--image" id="cta">
         <a class="" href="<%= p["cta_url"] %>" title="<%= p["cta_label"] %>">
-            <img class="lozad" data-src="<%= p["cta_image"]["url"] %>" alt="<%= p["cta_label"] %>">
+            <img class="lozad" src="<%= p["cta_image"]["url"] %>?w=600&fm=jpg&q=10" data-src="<%= p["cta_image"]["url"] %>?w=1000" alt="<%= p["cta_label"] %>">
         </a>
     </aside>
 <% elsif p.has_key?("cta_widget") %>
