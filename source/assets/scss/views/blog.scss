@@ -32,3 +32,11 @@
 //     }
 // }
 
+.featured-image {
+    overflow: hidden;
+    height: calc((8rem + 12vw) + .49px);
+    img {
+        width:  100%;
+        height: 100%;
+    }
+}
