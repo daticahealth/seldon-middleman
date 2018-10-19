@@ -43,73 +43,107 @@ ruby:
       current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   end
 scss:
-  .featured-image .lozad.loaded {
-    transition: none;
+  $bg-height: calc(8rem + 15vw);
+  .featured-image {
+    overflow: hidden;
+    width:  100%;
+    height: $bg-height;
+    top: 0;
+    img {
+      width: 100%;
+    }
+    .lozad.loaded {
+      //transition: none;
+    }
   }
-.container-gray-11
-  .featured-image
-    img.lozad.img-cover src="#{post_featured_image}?w=250&fm=jpg&q=10" data-src="#{post_featured_image}?w=1800&h=600" height="315"
-  section#blogPost.row.align-center
-    .columns.small-12.large-8
-      article.article-pull.container-color--white.pad--xl.group--2x.drop
-        header
-          .subhead--spaced.headline-6
-            = partial "/partials/snippets/pubdate", :locals => p
-          h1.headline-3.headline-bold = p.title
-          - if p["author"].has_key?("profile_pic")
-            = partial("partials/snippets/person", :locals => { :p => p["author"] })
-        = partial "/partials/snippets/share", :locals => { :p => p, :classes => "show-for-xlarge vertical" }
-        - if p.has_key?("blog_lead")
-          .lead= Kramdown::Document.new(p["blog_lead"]).to_html
-        .content-dynamic.group
-          - if p.has_key?("featured_person")
-            = partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" })
-          = Kramdown::Document.new(p["post"]).to_html
-          hr.divider
-          - if p.has_key?("tags")
-            = partial "/partials/content/tags", :locals => p
+  // wtf with these conditions
+  .post-sidebar .sticky {
+    padding-top: 14rem;
+  }
+  .post-sidebar .sticky.is-stuck {
+    padding-top: initial;
+  }
+  .post-sidebar .sticky.is-anchored.is-at-bottom {
+    padding-top: 0;
+  }
+  .post-sidebar .sticky.is-at-top {
+    @media screen and (min-width: 1400px) {
+      padding-top: 0;
+    }
+  }
+  .post-frame {
+    padding-top: calc(5rem + 3vw);
+  }
+  .legal-consent-container {
+    display: none;
+  }
+.container-gray-11.relative.z-stack-back
+  .post-frame.z-stack-0
+    section#blogPost.row.collapse.align-center
+      .columns.small-12.large-8
+        article.container-color--white.pad--xl.group--2x.drop
+          header
+            .subhead--spaced.headline-6
+              = partial "/partials/snippets/pubdate", :locals => p
+            h1.headline-3.headline-bold = p.title
+            - if p["author"].has_key?("profile_pic")
+              = partial("partials/snippets/person", :locals => { :p => p["author"] })
+          = partial "/partials/snippets/share", :locals => { :p => p, :classes => "show-for-xlarge vertical" }
+          - if p.has_key?("blog_lead")
+            #postLead.lead= Kramdown::Document.new(p["blog_lead"]).to_html
+          .content-dynamic.group
+            - if p.has_key?("featured_person")
+              = partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" })
+            = Kramdown::Document.new(p["post"]).to_html
+            hr.divider
+            - if p.has_key?("tags")
+              = partial "/partials/content/tags", :locals => p
+          footer#nextPrev.row.row--gutter-small.small-up-1.large-up-2.group
+            .column
+              - previous_item = get_previous_item(data.site.blog, p, "pub_date")
+              - if previous_item != nil
+                p.blog-date Earlier
+                h4.headline-5
+                  a href="/blog/#{previous_item["slug"]}/" rel="prev" title=("Read this post") = previous_item["title"]
+                - if previous_item.has_key?("summary")
+                  .text-smaller
+                    = Kramdown::Document.new(previous_item["summary"]).to_html
+            .column
+              - next_item = get_next_item(data.site.blog, p, "pub_date")
+              - if next_item != nil
+                p.blog-date Next Post
+                h4.headline-5
+                  a href="/blog/#{next_item["slug"]}/" rel="next" title=("Read this post") = next_item["title"]
+                - if next_item.has_key?("summary")
+                  .text-smaller
+                    = Kramdown::Document.new(next_item["summary"]).to_html
+          - if p.has_key?("cta_ref")
+            = partial("/partials/content/cta", :locals => { :p => p["cta_ref"] })
 
-        aside#nextPrev.row.row--gutter-small.small-up-1.large-up-2.group
-          .column
-            - previous_item = get_previous_item(data.site.blog, p, "pub_date")
-            - if previous_item != nil
-              p.blog-date Earlier
-              h4.headline-5
-                a href="/blog/#{previous_item["slug"]}/" rel="prev" title=("Read this post") = previous_item["title"]
-              - if previous_item.has_key?("summary")
-                .text-smaller
-                  = Kramdown::Document.new(previous_item["summary"]).to_html
-          .column
-            - next_item = get_next_item(data.site.blog, p, "pub_date")
-            - if next_item != nil
-              p.blog-date Next Post
-              h4.headline-5
-                a href="/blog/#{next_item["slug"]}/" rel="next" title=("Read this post") = next_item["title"]
-              - if next_item.has_key?("summary")
-                .text-smaller
-                  = Kramdown::Document.new(next_item["summary"]).to_html
-        - if p.has_key?("cta_ref")
-          = partial("/partials/content/cta", :locals => { :p => p["cta_ref"] })
-
-    aside.columns.small-12.large-4.pad style="margin-top: 1rem;" data-sticky-container="" 
-      .sticky data-options=("anchor: blogPost; stickyOn: xlarge; marginTop: 5;") data-btm-anchor="nextPrev" data-sticky="" 
-        = partial "/partials/snippets/share", :locals => { :p => p, :classes => "align-center hide-for-xlarge" }
-        .group
-          = partial "blog/partials/blog-subscription-simple", :locals => { :color => "gray" }
-        - if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta")
-          - topic = data.site.discover[p.discovery_topic.id]
-          = partial "partials/cards/discover-lite", :locals => { :topic => topic, :classes => "group" }
-          - if topic.slug == "ehr-integrations"
-            = partial("/partials/content/cta", :locals => { :p => data.site.cta["1h6f0OBRqiiayM2cy28qey"] })
-        - if p.has_key?("related_entries") && p["related_entries"].count == 1
-          - p["related_entries"].take(1).each do | relatedPost |
+      aside.post-sidebar.columns.small-12.large-4 style="margin-top: 1rem;" data-sticky-container=""
+        .sticky data-options=("topAnchor: 525; stickyOn: xlarge; marginTop: 3;") data-btm-anchor="nextPrev" data-sticky=""
+          .pad--lg
+            = partial "/partials/snippets/share", :locals => { :p => p, :classes => "align-center hide-for-xlarge" }
+            .group
+              = partial "blog/partials/blog-subscription-simple", :locals => { :color => "gray" }
+            div
+              - if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta")
+                - topic = data.site.discover[p.discovery_topic.id]
+                = partial "partials/cards/discover-lite", :locals => { :topic => topic, :classes => "group" }
+                - if topic.slug == "ehr-integrations"
+                  = partial("/partials/content/cta", :locals => { :p => data.site.cta["1h6f0OBRqiiayM2cy28qey"] })
+              - if p.has_key?("related_entries") && p["related_entries"].count == 1
+                - p["related_entries"].take(1).each do | relatedPost |
+                  = partial "partials/cards/featured-blog", :locals => { :post => relatedPost, :style => "light", :size => "small" }
+  - if p.has_key?("related_entries") && p["related_entries"].count > 1
+    section.section-article--med.container-gray-10
+      h4.headline-5.text--spaced.text-center.group Related
+      .row.full-width.small-up-1.medium-up-2.large-up-3.xlarge-up-4.align-center
+        - p["related_entries"][0...4].each do | relatedPost |
+          .column.group
             = partial "partials/cards/featured-blog", :locals => { :post => relatedPost, :style => "light", :size => "small" }
-- if p.has_key?("related_entries") && p["related_entries"].count > 1
-  section.section-article--med.container-gray-10
-    h4.headline-5.text--spaced.text-center.group Related
-    .row.full-width.small-up-1.medium-up-2.large-up-3.xlarge-up-4.align-center
-      - p["related_entries"][0...4].each do | relatedPost |
-        .column.group
-          = partial "partials/cards/featured-blog", :locals => { :post => relatedPost, :style => "light", :size => "small" }
-
+  .absolute.z-stack-bg.featured-image
+    img.lozad.img-cover src="#{post_featured_image}?w=250&fm=jpg&q=10" data-src="#{post_featured_image}?fit=thumb&w=1800&h=600" height="315"
 = partial "partials/content/tweet-styling"
+
+/.lozad.container-image--fill data-background-image="#{post_featured_image}?w=1800&h=400"

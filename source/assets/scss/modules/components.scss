@@ -92,7 +92,7 @@ span.label + span.label { // when in a tag list
             padding: 0.5rem 1.8rem; // approx. with site nav
             // height: 2rem;
             // @include breakpoint (medium) {
-            //     height: 3vw;                
+            //     height: 3vw;
             // }
             // text-align: center;
             &.menu { // when using zf .menu elements as children. Useful for aligning across breakpoints.
@@ -170,7 +170,7 @@ span.label + span.label { // when in a tag list
     }
 }
 .share {
-    $offset: 5.5rem; // how far we're sticking this thing off the ledge
+    $offset: 8.5rem; // how far we're sticking this thing off the ledge
     &--item { // li's
         padding-left: 0.3rem;
         padding-right: 0.3rem;
@@ -256,4 +256,3 @@ span.label + span.label { // when in a tag list
         margin-bottom: 0;
     }
 }
-
