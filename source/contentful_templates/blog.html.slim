@@ -1,6 +1,5 @@
 ---
 layout: company
-customCSS: "blog"
 ogType: article
 sharer: true
 customJS: "/public/js/article.js"
@@ -49,13 +48,16 @@ scss:
     width:  100%;
     height: 450px; // fallback
     height: $bg-height;
-    top: 0;
     img {
       width:  100%;
       height: 100%;
     }
     .lozad {
       filter:         blur(2vw);
+      -webkit-filter: blur(2vw); /* Prefixed CSS3 blur filters */
+      -moz-filter:    blur(2vw);
+      -o-filter:      blur(2vw);
+      -ms-filter:     blur(2vw);
       transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
       -webkit-transition-delay: 1s;
       transition-delay:         1s;
@@ -78,24 +80,6 @@ scss:
       margin-bottom: 0;
     }
   }
-  // wtf with these conditions
-  //.post-sidebar .sticky {
-  //  padding-top: 14rem;
-  //}
-  //.post-sidebar .sticky.is-stuck {
-  //  padding-top: initial;
-  //}
-  //.post-sidebar .sticky.is-anchored.is-at-bottom {
-  //  padding-top: 0;
-  //}
-  ////.post-sidebar .sticky.is-at-top {
-  ////  @media screen and (min-width: 1400px) {
-  ////    padding-top: 0;
-  ////  }
-  ////}
-  //.post-frame {
-  //  padding-top: calc(5rem + 3vw);
-  //}
   .legal-consent-container {
     display: none;
   }
@@ -118,10 +102,14 @@ scss:
           - if p.has_key?("featured_person")
             = partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" })
           = Kramdown::Document.new(p["post"]).to_html
+          / hr.divider
+        .row.row--gutter-small.align-justify.align-middle
           - if p.has_key?("tags")
+            .columns.shrink
+              = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
               = partial "/partials/content/tags", :locals => p
-          hr.divider
-        = partial "/partials/snippets/share", :locals => { :p => p, :classes => "" }
+          .columns.shrink.text-right
+            = partial "/partials/snippets/share", :locals => { :p => p, :classes => "" }
         - if p.has_key?("cta_ref")
           = partial("/partials/content/cta", :locals => { :p => p["cta_ref"] })
       aside#nextPrev.row.small-up-1.medium-up-2.group
