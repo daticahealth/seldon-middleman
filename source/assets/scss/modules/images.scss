@@ -82,6 +82,9 @@ figcaption{
     @include blend-multiply;
 }
 .blur {
+    &-0 {
+        @include blur(0);
+    }
     &-1 {
         @include blur(1px);
     }
@@ -93,6 +96,7 @@ figcaption{
     }
 }
 .loading-blur {
+    transition: filter 0.3s;
     @include blur(1vw);
 }
 .diffuse { // combo
