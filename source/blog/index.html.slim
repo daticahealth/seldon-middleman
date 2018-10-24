@@ -69,16 +69,17 @@ section.group
               a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
             - if post.has_key?("summary")
               = Kramdown::Document.new(plain_text(post.summary)).to_html
-            .row.collapse.align-justify.align-middle
-              - if post.has_key?("author") && i == 0
-                .column.shrink
-                  = partial("partials/snippets/person", :locals => { :p => post.author })
-               - if post.has_key?("tags")
-                .column.shrink
-                  = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
-                  | &nbsp;
-                  - post["tags"].each do |tag|
-                    span.label.info.round= tag["tag_full"]
+            - if i == 0
+              .row.collapse.align-justify.align-middle
+                - if post.has_key?("author")
+                  .column.shrink
+                    = partial("partials/snippets/person", :locals => { :p => post.author })
+                - if post.has_key?("tags")
+                  .column.shrink
+                    = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
+                    | &nbsp;
+                    - post["tags"].each do |tag|
+                      span.label.info.round= tag["tag_full"]
 
         /= partial("partials/content/tags", :locals => { :p => post })
 /section#blogPost.row.collapse.align-center style="opacity: 1;"
