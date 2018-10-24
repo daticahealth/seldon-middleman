@@ -16,69 +16,24 @@ ruby:
 scss:
   $bg-height: calc(8rem + 16vw);
   .featured-image {
-    overflow: hidden;
     position: absolute;
     top:  0;
     left: 0;
-    width:  100%;
-    height: 100%;
-    img {
-      width:  100%;
-      height: 100%;
-    }
-    .lozad {
-      filter:         blur(2vw);
-      -webkit-filter: blur(2vw); /* Prefixed CSS3 blur filters */
-      -moz-filter:    blur(2vw);
-      -o-filter:      blur(2vw);
-      -ms-filter:     blur(2vw);
-      transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
-      -webkit-transition-delay: 1s;
-      transition-delay:         1s;
-    }
-    .lozad.loaded {
-      //transition: none;
-      filter:         blur(0);
-      -webkit-filter: blur(0); /* Prefixed CSS3 blur filters */
-      -moz-filter:    blur(0);
-      -o-filter:      blur(0);
-      -ms-filter:     blur(0);
-    }
   }
-  .post-item {
-    padding-top: calc(3rem + 5vw);
-    .post-card {
-      //position: absolute;
-      //bottom: 0;
-      //right: 1rem;
-    }
-    &--large {
-      .featured-image {
-        //height: calc(12rem + 16vw);
-      }
-      .post-card {
-        margin-left: 1rem;
-        padding: calc(1rem + 1.5vw);
-        max-width: 50%;
-      }
-    }
-  }
-  .legal-consent-container {
-    display: none;
-  }
-div
-  .post-item.post-item--large.relative
-    - sorted_posts.take(1).each do | id, post |
+
+section.group
+  - sorted_posts.take(1).each do | id, post |
+    .post-item.post-item--large.relative
       - if post.has_key?("featured_image")
-        .featured-image.container-gray-3.z-stack-back
-          img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1600&h=800 1200w" /
+        img.featured-image.lozad.img-cover.z-stack-back src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1600&h=800 1200w" /
       .post-card.pad.container-color--white
         .subhead--spaced.headline-6
           = post.pub_date.strftime('%B %-d, %Y')
         h2.headline-3
           a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
         - if post.has_key?("summary")
-          = Kramdown::Document.new(plain_text(post.summary)).to_html
+          .text-larger
+            = Kramdown::Document.new(post.summary).to_html
         .row.collapse.align-justify.align-middle
           - if post.has_key?("author")
             .column.shrink
@@ -90,67 +45,102 @@ div
               - post["tags"].each do |tag|
                 span.label.info.round= tag["tag_full"]
 
-          /= partial("partials/content/tags", :locals => { :p => post })
-  /section#blogPost.row.collapse.align-center style="opacity: 1;"
-    .columns.small-12.large-8
-      article.post-body.blur-0.container-color--white.pad--xl.group--2x.drop
-        header
-          .subhead--spaced.headline-6
-            = partial "/partials/snippets/pubdate", :locals => p
-          h1.headline-3.headline-bold = p.title
-          - if p["author"].has_key?("profile_pic")
-            = partial("partials/snippets/person", :locals => { :p => p["author"] })
-        = partial "/partials/snippets/share", :locals => { :p => p, :classes => "show-for-xlarge vertical" }
-        - if p.has_key?("blog_lead")
-          #postLead.lead= Kramdown::Document.new(p["blog_lead"]).to_html
-        .content-dynamic.group
-          - if p.has_key?("featured_person")
-            = partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" })
-          = Kramdown::Document.new(p["post"]).to_html
-          / hr.divider
-        .row.row--gutter-small.align-justify.align-middle
-          - if p.has_key?("tags")
-            .columns.shrink
-              = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
-              = partial "/partials/content/tags", :locals => p
-          .columns.shrink.text-right
-            = partial "/partials/snippets/share", :locals => { :p => p, :classes => "" }
-        - if p.has_key?("cta_ref")
-          = partial("/partials/content/cta", :locals => { :p => p["cta_ref"] })
-      aside#nextPrev.row.small-up-1.medium-up-2.group
-        .column
-          - previous_item = get_previous_item(data.site.blog, p, "pub_date")
-          - if previous_item != nil
-            p.blog-date Earlier
-            h4.headline-5
-              a href="/blog/#{previous_item["slug"]}/" rel="prev" title=("Read this post") = previous_item["title"]
-            - if previous_item.has_key?("summary")
-              .text-smaller
-                = Kramdown::Document.new(previous_item["summary"]).to_html
-        .column
-          - next_item = get_next_item(data.site.blog, p, "pub_date")
-          - if next_item != nil
-            p.blog-date Next Post
-            h4.headline-5
-              a href="/blog/#{next_item["slug"]}/" rel="next" title=("Read this post") = next_item["title"]
-            - if next_item.has_key?("summary")
-              .text-smaller
-                = Kramdown::Document.new(next_item["summary"]).to_html
+section.group
+  .row.full-width
+    - sorted_posts[2...4].each_with_index do | (id, post), i |
+      - case i
+      - when 0
+        - card_size = "medium"
+        - card_width = "large-8"
+        - headline = "headline-4"
+      - when 1
+        - card_size = "small"
+        - card_width = "large-4"
+        - headline = "headline-5"
 
-    aside.post-sidebar.columns.small-12.large-4 style="margin-top: 1rem; opacity: 1;" data-sticky-container=""
-      .sticky data-options=("topAnchor: 525; stickyOn: xlarge; marginTop: 3;") data-btm-anchor="cta" data-sticky=""
-        .pad--lg
-          .group
-            = partial "blog/partials/blog-subscription-simple", :locals => { :color => "gray" }
-          div
-            - if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta")
-              - topic = data.site.discover[p.discovery_topic.id]
-              = partial "partials/cards/discover-lite", :locals => { :topic => topic, :classes => "group" }
-              - if topic.slug == "ehr-integrations"
-                = partial("/partials/content/cta", :locals => { :p => data.site.cta["1h6f0OBRqiiayM2cy28qey"] })
-            - if p.has_key?("related_entries") && p["related_entries"].count == 1
-              - p["related_entries"].take(1).each do | relatedPost |
-                = partial "partials/cards/featured-blog", :locals => { :post => relatedPost, :style => "light", :size => "small" }
+      .columns.small-12 class=card_width
+        .post-item.relative class="post-item--#{card_size}"
+          - if post.has_key?("featured_image")
+            img.featured-image.lozad.img-cover.z-stack-back src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1600&h=800 1200w" /
+          .post-card.pad.container-color--white
+            .subhead--spaced.headline-6
+              = post.pub_date.strftime('%B %-d, %Y')
+            h2 class = headline
+              a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
+            - if post.has_key?("summary")
+              = Kramdown::Document.new(plain_text(post.summary)).to_html
+            .row.collapse.align-justify.align-middle
+              - if post.has_key?("author") && i == 0
+                .column.shrink
+                  = partial("partials/snippets/person", :locals => { :p => post.author })
+               - if post.has_key?("tags")
+                .column.shrink
+                  = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
+                  | &nbsp;
+                  - post["tags"].each do |tag|
+                    span.label.info.round= tag["tag_full"]
+
+        /= partial("partials/content/tags", :locals => { :p => post })
+/section#blogPost.row.collapse.align-center style="opacity: 1;"
+  .columns.small-12.large-8
+    article.post-body.blur-0.container-color--white.pad--xl.group--2x.drop
+      header
+        .subhead--spaced.headline-6
+          = partial "/partials/snippets/pubdate", :locals => p
+        h1.headline-3.headline-bold = p.title
+        - if p["author"].has_key?("profile_pic")
+          = partial("partials/snippets/person", :locals => { :p => p["author"] })
+      = partial "/partials/snippets/share", :locals => { :p => p, :classes => "show-for-xlarge vertical" }
+      - if p.has_key?("blog_lead")
+        #postLead.lead= Kramdown::Document.new(p["blog_lead"]).to_html
+      .content-dynamic.group
+        - if p.has_key?("featured_person")
+          = partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" })
+        = Kramdown::Document.new(p["post"]).to_html
+        / hr.divider
+      .row.row--gutter-small.align-justify.align-middle
+        - if p.has_key?("tags")
+          .columns.shrink
+            = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
+            = partial "/partials/content/tags", :locals => p
+        .columns.shrink.text-right
+          = partial "/partials/snippets/share", :locals => { :p => p, :classes => "" }
+      - if p.has_key?("cta_ref")
+        = partial("/partials/content/cta", :locals => { :p => p["cta_ref"] })
+    aside#nextPrev.row.small-up-1.medium-up-2.group
+      .column
+        - previous_item = get_previous_item(data.site.blog, p, "pub_date")
+        - if previous_item != nil
+          p.blog-date Earlier
+          h4.headline-5
+            a href="/blog/#{previous_item["slug"]}/" rel="prev" title=("Read this post") = previous_item["title"]
+          - if previous_item.has_key?("summary")
+            .text-smaller
+              = Kramdown::Document.new(previous_item["summary"]).to_html
+      .column
+        - next_item = get_next_item(data.site.blog, p, "pub_date")
+        - if next_item != nil
+          p.blog-date Next Post
+          h4.headline-5
+            a href="/blog/#{next_item["slug"]}/" rel="next" title=("Read this post") = next_item["title"]
+          - if next_item.has_key?("summary")
+            .text-smaller
+              = Kramdown::Document.new(next_item["summary"]).to_html
+
+  aside.post-sidebar.columns.small-12.large-4 style="margin-top: 1rem; opacity: 1;" data-sticky-container=""
+    .sticky data-options=("topAnchor: 525; stickyOn: xlarge; marginTop: 3;") data-btm-anchor="cta" data-sticky=""
+      .pad--lg
+        .group
+          = partial "blog/partials/blog-subscription-simple", :locals => { :color => "gray" }
+        div
+          - if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta")
+            - topic = data.site.discover[p.discovery_topic.id]
+            = partial "partials/cards/discover-lite", :locals => { :topic => topic, :classes => "group" }
+            - if topic.slug == "ehr-integrations"
+              = partial("/partials/content/cta", :locals => { :p => data.site.cta["1h6f0OBRqiiayM2cy28qey"] })
+          - if p.has_key?("related_entries") && p["related_entries"].count == 1
+            - p["related_entries"].take(1).each do | relatedPost |
+              = partial "partials/cards/featured-blog", :locals => { :post => relatedPost, :style => "light", :size => "small" }
 /- if p.has_key?("related_entries") && p["related_entries"].count > 1
   section.section-article--med.container-gray-10
     h4.headline-5.text--spaced.text-center.group Related

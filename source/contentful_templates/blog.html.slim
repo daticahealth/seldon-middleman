@@ -2,6 +2,7 @@
 layout: company
 ogType: article
 sharer: true
+customCSS: "blog"
 customJS: "/public/js/article.js"
 ---
 ruby:
@@ -41,51 +42,11 @@ ruby:
   else
       current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   end
-scss:
-  $bg-height: calc(8rem + 16vw);
-  .featured-image {
-    overflow: hidden;
-    width:  100%;
-    height: 450px; // fallback
-    height: $bg-height;
-    img {
-      width:  100%;
-      height: 100%;
-    }
-    .lozad {
-      filter:         blur(2vw);
-      -webkit-filter: blur(2vw); /* Prefixed CSS3 blur filters */
-      -moz-filter:    blur(2vw);
-      -o-filter:      blur(2vw);
-      -ms-filter:     blur(2vw);
-      transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
-      -webkit-transition-delay: 1s;
-      transition-delay:         1s;
-    }
-    .lozad.loaded {
-      //transition: none;
-      filter:         blur(0);
-      -webkit-filter: blur(0); /* Prefixed CSS3 blur filters */
-      -moz-filter:    blur(0);
-      -o-filter:      blur(0);
-      -ms-filter:     blur(0);
-    }
-  }
-  .post-body {// pull up over image for desktop only
-    @media screen and (min-width: 1024px) {
-      margin-top: -120px; // fallback
-      margin-top: calc(-4rem - 6vw);
-    }
-    #cta {
-      margin-bottom: 0;
-    }
-  }
-  .legal-consent-container {
-    display: none;
-  }
+/ scss:
+
 .container-gray-11
-  .featured-image.container-gray-3
-    img.lozad.img-cover src="#{post_featured_image}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post_featured_image}?fit=thumb&w=640&h=360&q=50 640w, #{post_featured_image}?fit=thumb&w=800&h=400&q=40 800w, #{post_featured_image}?fit=thumb&w=1800&h=400 1200w" /
+  .container-gray-3
+    img.featured-image.lozad.img-cover src="#{post_featured_image}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post_featured_image}?fit=thumb&w=640&h=360&q=50 640w, #{post_featured_image}?fit=thumb&w=800&h=400&q=40 800w, #{post_featured_image}?fit=thumb&w=1800&h=400 1200w" /
   section#blogPost.row.collapse.align-center style="opacity: 1;"
     .columns.small-12.large-8
       article.post-body.blur-0.container-color--white.pad--xl.group--2x.drop
