@@ -132,13 +132,13 @@
 
 [[redirects]]
   from = "/platform/success"
-  to = "/activate/success"
+  to = "/compliant-kubernetes-service/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/success"
-  to = "/activate/success"
+  to = "/compliant-kubernetes-service/"
   status = 301
 
 [[redirects]]
