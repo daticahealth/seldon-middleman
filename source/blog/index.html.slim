@@ -28,7 +28,7 @@ section.featured-posts
             a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
           - if post.has_key?("summary")
             = Kramdown::Document.new(plain_text(post.summary)).to_html
-            .row.collapse.align-justify.align-middle
+            .row.collapse.align-justify.align-middle.show-for-medium
               - if i <= 2 && post.has_key?("author")
                 .column.shrink
                   = partial("partials/snippets/person", :locals => { :p => post.author })
