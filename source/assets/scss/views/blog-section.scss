@@ -1,0 +1,178 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+// @import '../mixins/colors';
+@import '../mixins/functions';
+// @import '../mixins/animation';
+// @import '../vendor/slick';
+// @import '../modules/masonry';
+// @import '../modules/fonts-optional';
+
+$gap: calc(1rem + 2vw);
+body.blog {
+    background-color: $gray-10;
+}
+// .item {
+//     // background-color: $gray-5;
+// }
+.post-card {
+    padding: 1rem 1.5rem;
+}
+.item {
+    transition: box-shadow $timing-default;
+    @include shadow-anarchy(0 .2rem .5rem 0 hsla(220, 90%, 13%, 0.2));
+    &:hover {
+        @include shadow-anarchy(.3rem .3rem 1rem 0 hsla(220, 90%, 13%, 0.4));
+    }
+}
+.featured-posts {
+    margin: $gap;
+}
+@supports not (display: grid) { // fallback for older browsers. https://caniuse.com/#search=grid
+    .grid-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .item {
+        margin-bottom: 2rem;
+    }
+    .post-card {
+        @include breakpoint (medium) {
+            min-width: 20rem;
+            max-width: 45rem;
+        }
+    }
+}
+@supports (display: grid) {
+    .grid-wrapper {
+        display: grid;
+        grid-gap: $gap;
+        grid-template-columns: 6;
+    }
+    .item {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: row;
+        grid-column: 1 / span 3;
+        min-height: calc(20rem + 14vw);
+        // padding-top: 20vw; // creates gap above tab, for an image or whatever
+        &:nth-child(n+3){ // adjust things as they go down
+            font-size: 95%;
+            min-height: calc(10rem + 14vw);
+            .headline-4 {
+                font-size: 1.3rem;
+            }
+            .avatar--large {
+                width: 3rem;
+            }
+        }
+    }
+    // tablet or medium
+    @include breakpoint(medium) {
+        .post-card {
+            min-width: 10em;
+            max-width: 45em;    
+        }
+        .item-0 {
+            grid-column: 1 / span 2;
+            grid-row: 1;
+        }
+        .item-1 {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        .item-2 {
+            grid-row: 2 / span 1;
+        }
+        .item-3 {
+            grid-column: 1 / span 2;
+            grid-row: 3 ;
+        }
+        .item-4 {
+            grid-column: 3 ;
+            grid-row: 3 ;
+        }
+    }
+    // typical desktop
+    @include breakpoint(large) {
+        .item-0 {
+            // padding-top: 30vw;
+            grid-column: 1 / span 3;
+            grid-row: 1;
+        }
+        .item-1 {
+            // padding-top: 20vw;
+            grid-column: 1 / span 2;
+            grid-row: 2;
+        }
+        .item-2 {
+            // align-items: start;
+            // padding-top: 0;
+            grid-column: 3 ;
+            grid-row: 2 / span 2;
+        }
+        .item-3 {
+            grid-column: 1 ;
+            grid-row: 3 ;
+        }
+        .item-4 {
+            grid-column: 2 ;
+            grid-row: 3 ;
+        }
+        .item-3, .item-4 {
+            // padding-top: 10vw;
+        }
+    }
+    // ultra-wide
+    @include breakpoint(xxlarge) {
+        .item-0 {
+            // padding-top: 20vw;
+            grid-column: 1 / span 2;
+            grid-row: 1;
+        }
+        .item-1 {
+            grid-column: 3 / span 1;
+            grid-row: 1;
+        }
+        .item-2 {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        .item-3 {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        .item-4 {
+            grid-column: 3;
+            grid-row: 2 ;
+        }
+    }
+}
+
+$bg-height: calc(8rem + 16vw);
+.featured-image {
+    position: absolute;
+    top:  0;
+    left: 0;
+    height: 100%;
+    width:  100%;
+    background-color: $gray-4;
+    overflow: hidden;
+    .lozad {
+        @include blur(3vw);
+        transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
+    }
+    .lozad.loaded {
+        @include blur(0);
+        -webkit-transition-delay: 1s;
+        transition-delay:         1s;
+    }
+}
+
+
+// hubspot disclaimer, I do not want thee
+.legal-consent-container {
+    display: none;
+}

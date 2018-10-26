@@ -54,16 +54,16 @@ $bg-height: calc(8rem + 16vw);
             margin-bottom: 0;
         }
     }
+    .featured-image {
+        height: 100%;
+    }
     &--medium {
-        padding: calc(1rem + 1vw);
+        // padding: calc(1rem + 1vw);
     }
     &--small {
-        padding: 0.8rem;
+        // padding: 0.8rem;
     }
     &--large {
-        .featured-image {
-            height: 100%;
-        }
         .post-card {
             @include breakpoint (medium) {
                 max-width: 75%;

@@ -516,9 +516,10 @@ ul.list-check {
 .read-more,
 .blog-date, .pub-date{
     text-transform: uppercase;
-    font-size: rem-calc(12px);
+    font-size: rem-calc(14px);
     font-weight: $font-weight-bold;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.1em;
 }
 .card-title{
     color: $color_deep;

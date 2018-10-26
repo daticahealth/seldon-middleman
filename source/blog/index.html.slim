@@ -5,7 +5,7 @@ author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
 layout: company
-customCSS: "blog"
+customCSS: "blog-section"
 feed_url: "https://datica.com/blog/feed.xml"
 ---
 ruby:
@@ -14,72 +14,68 @@ ruby:
   # today = time.inspect
   sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
 scss:
-  $bg-height: calc(8rem + 16vw);
-  .featured-image {
-    position: absolute;
-    top:  0;
-    left: 0;
-  }
 
-section.group
-  - sorted_posts.take(1).each do | id, post |
-    .post-item.post-item--large.relative
+section.featured-posts
+  .grid-wrapper
+    - sorted_posts[0...5].each_with_index do | (id, post), i |
+      .item.relative class="item-#{i}"
+        .post-card.z-stack-0.container-color--white
+          .pub-date = post.pub_date.strftime('%B %-d, %Y')
+          h2.headline-4
+            a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
+          - if post.has_key?("summary")
+            = Kramdown::Document.new(plain_text(post.summary)).to_html
+          - if i <= 2
+            .row.collapse.align-justify.align-middle
+              - if post.has_key?("author")
+                .column.shrink
+                  = partial("partials/snippets/person", :locals => { :p => post.author })
+              .column.shrink
+                - if post.has_key?("tags")
+                  /= inline_svg("small/icon-tag", class: "icon-inline icon-left svg-color--gray-8")
+                  - post["tags"].each do |tag|
+                    span.label.info.round= tag["tag_full"]
+                a href="/blog/#{post.slug}" title="Permalink"
+                  = inline_svg("small/icon-ui-links", class: "icon-inline icon-right svg-color--gray-5")
+        - if post.has_key?("featured_image")
+          .featured-image.z-stack-back
+            img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1600&h=800 1200w" /
+/section.featured-posts
+  - sorted_posts[0...3].each_with_index do | (id, post), i |
+    - case i
+    - when 0
+      - card_size = "large"
+      /- card_width = "large-8"
+      - headline = "headline-3"
+    - when 1
+      - card_size = "medium"
+      /- card_width = "large-8"
+      - headline = "headline-4"
+    - when 2
+      - card_size = "small"
+      /- card_width = "large-4"
+      - headline = "headline-5"
+    .post-item.relative class="post-item--#{card_size}"
       - if post.has_key?("featured_image")
         img.featured-image.lozad.img-cover.z-stack-back src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1600&h=800 1200w" /
       .post-card.pad.container-color--white
         .subhead--spaced.headline-6
           = post.pub_date.strftime('%B %-d, %Y')
-        h2.headline-3
+        h2 class = headline
           a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
         - if post.has_key?("summary")
-          .text-larger
-            = Kramdown::Document.new(post.summary).to_html
-        .row.collapse.align-justify.align-middle
-          - if post.has_key?("author")
-            .column.shrink
-              = partial("partials/snippets/person", :locals => { :p => post.author })
-          - if post.has_key?("tags")
-            .column.shrink
-              = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
-              | &nbsp;
-              - post["tags"].each do |tag|
-                span.label.info.round= tag["tag_full"]
-
-section.group
-  .row.full-width
-    - sorted_posts[2...4].each_with_index do | (id, post), i |
-      - case i
-      - when 0
-        - card_size = "medium"
-        - card_width = "large-8"
-        - headline = "headline-4"
-      - when 1
-        - card_size = "small"
-        - card_width = "large-4"
-        - headline = "headline-5"
-
-      .columns.small-12 class=card_width
-        .post-item.relative class="post-item--#{card_size}"
-          - if post.has_key?("featured_image")
-            img.featured-image.lozad.img-cover.z-stack-back src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1600&h=800 1200w" /
-          .post-card.pad.container-color--white
-            .subhead--spaced.headline-6
-              = post.pub_date.strftime('%B %-d, %Y')
-            h2 class = headline
-              a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
-            - if post.has_key?("summary")
-              = Kramdown::Document.new(plain_text(post.summary)).to_html
-            - if i == 0
-              .row.collapse.align-justify.align-middle
-                - if post.has_key?("author")
-                  .column.shrink
-                    = partial("partials/snippets/person", :locals => { :p => post.author })
-                - if post.has_key?("tags")
-                  .column.shrink
-                    = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
-                    | &nbsp;
-                    - post["tags"].each do |tag|
-                      span.label.info.round= tag["tag_full"]
+          = Kramdown::Document.new(plain_text(post.summary)).to_html
+        - if i == 0
+          .row.collapse.align-justify.align-middle
+            - if post.has_key?("author")
+              .column.shrink
+                = partial("partials/snippets/person", :locals => { :p => post.author })
+            - if post.has_key?("tags")
+              .column.shrink
+                = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
+                | &nbsp;
+                - post["tags"].each do |tag|
+                  span.label.info.round= tag["tag_full"]
 
         /= partial("partials/content/tags", :locals => { :p => post })
 /section#blogPost.row.collapse.align-center style="opacity: 1;"
