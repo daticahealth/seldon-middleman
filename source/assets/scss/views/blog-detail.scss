@@ -6,7 +6,7 @@
 @import '../mixins/functions';
 // @import '../mixins/animation';
 // @import '../vendor/slick';
-// @import '../modules/masonry';
+@import '../modules/blog';
 // @import '../modules/fonts-optional';
 
 body.blog {
@@ -76,8 +76,4 @@ $bg-height: calc(8rem + 16vw);
             }
         }
     }
-}
-// hubspot disclaimer, I do not want thee
-.legal-consent-container {
-    display: none;
 }

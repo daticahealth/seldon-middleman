@@ -1,0 +1,41 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+// @import '../mixins/colors';
+@import '../mixins/functions';
+// @import '../mixins/animation';
+// @import '../vendor/slick';
+// @import '../modules/masonry';
+// @import '../modules/fonts-optional';
+
+body.blog {
+    background-color: $gray-10;
+}
+.legal-consent-container { // hubspot disclaimer, I do not want thee
+    display: none;
+}
+.post-permalink {
+    // position: absolute;
+    // bottom:   0;
+    // right: 0;
+    display: inline-block;
+    // padding: 0.5rem;
+    transition: color $timing-default, opacity $timing-default;
+    &[data-theme="light"] {
+        color: white;
+        opacity: 0.5;
+        &:hover {
+            color: #fffa5e;
+            opacity: 1;
+        }
+    }
+    &[data-theme="dark"] {
+        color: black;
+        opacity: 0.5;
+        &:hover {
+            color: $color_blue;
+            opacity: 1;
+        }
+    }
+}

@@ -13,6 +13,9 @@ ruby:
   current_page.data.date = today.strftime('%B %-d, %Y')
   # today = time.inspect
   sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+  def permalink
+    '<svg class="icon-size--small" viewBox="0 0 37 32" width="37" height="32"><use xlink:href="/public/icons/util-icons-sprite.svg#icon-links"></use></svg>'
+  end
 scss:
 
 section.featured-posts
@@ -25,18 +28,18 @@ section.featured-posts
             a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
           - if post.has_key?("summary")
             = Kramdown::Document.new(plain_text(post.summary)).to_html
-          - if i <= 2
             .row.collapse.align-justify.align-middle
-              - if post.has_key?("author")
+              - if i <= 2 && post.has_key?("author")
                 .column.shrink
                   = partial("partials/snippets/person", :locals => { :p => post.author })
-              .column.shrink
-                - if post.has_key?("tags")
-                  /= inline_svg("small/icon-tag", class: "icon-inline icon-left svg-color--gray-8")
-                  - post["tags"].each do |tag|
-                    span.label.info.round= tag["tag_full"]
-                a href="/blog/#{post.slug}" title="Permalink"
-                  = inline_svg("small/icon-ui-links", class: "icon-inline icon-right svg-color--gray-5")
+              - if post.has_key?("tags")
+                .column.shrink.align-self-bottom
+                  div style="display: inline-block; margin: 0 1rem 0.3rem 0;"
+                    - post["tags"][0...3].each do |tag|
+                      span.label.info.round= tag["tag_full"]
+                  a.post-permalink data-theme="dark" href="/blog/#{post.slug}" title="Permalink"
+                    = permalink
+
         - if post.has_key?("featured_image")
           .featured-image.z-stack-back
             img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1600&h=800 1200w" /
