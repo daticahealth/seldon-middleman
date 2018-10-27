@@ -24,6 +24,14 @@
       @include shadow-anarchy(0 rem-calc(10px) rem-calc(30px) 0 rgba(0,0,0,0.4));
     }
 }
+.drop-hover {
+    transition: box-shadow $timing-default;
+    @include shadow-anarchy(0 .2rem .5rem 0 hsla(220, 90%, 13%, 0.2));
+    &:hover {
+        @include shadow-anarchy(.3rem .3rem 1rem 0 hsla(220, 90%, 13%, 0.4));
+    }
+}
+
 .text-shadow {
     text-shadow: 1px 2px 4px black(0.4);
 }

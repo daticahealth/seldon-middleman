@@ -15,15 +15,18 @@ body.blog {
 }
 // .post-card {
 // }
-.item {
-    transition: box-shadow $timing-default;
-    @include shadow-anarchy(0 .2rem .5rem 0 hsla(220, 90%, 13%, 0.2));
-    &:hover {
-        @include shadow-anarchy(.3rem .3rem 1rem 0 hsla(220, 90%, 13%, 0.4));
-    }
-}
+// .item {
+// }
 .featured-posts {
     margin: $gap;
+}
+.post-card {
+    .media-object { // person-card component overrides
+        margin-bottom: 0;
+    }
+    .avatar--large {
+        width: 3rem;
+    }
 }
 @supports not (display: grid) { // fallback for older browsers. https://caniuse.com/#search=grid
     .grid-wrapper {
@@ -57,12 +60,6 @@ body.blog {
         flex-direction: row;
         grid-column: 1 / span 3;
         min-height: calc(20rem + 14vw); // key here for opening space for images
-        .media-object { // person-card component overrides
-            margin-bottom: 0;
-        }
-        .avatar--large {
-            width: 3rem;
-        }
         &:nth-child(n+3){ // adjust things as they go down
             font-size: 95%;
             min-height: calc(10rem + 14vw);
@@ -124,28 +121,28 @@ body.blog {
         }
     }
     // ultra-wide
-    @include breakpoint(xxlarge) {
-        .item-0 {
-            grid-column: 1 / span 2;
-            grid-row: 1;
-        }
-        .item-1 {
-            grid-column: 3 / span 1;
-            grid-row: 1;
-        }
-        .item-2 {
-            grid-column: 1;
-            grid-row: 2;
-        }
-        .item-3 {
-            grid-column: 2;
-            grid-row: 2;
-        }
-        .item-4 {
-            grid-column: 3;
-            grid-row: 2 ;
-        }
-    }
+    // @include breakpoint(xxlarge) {
+    //     .item-0 {
+    //         grid-column: 1 / span 2;
+    //         grid-row: 1;
+    //     }
+    //     .item-1 {
+    //         grid-column: 3 / span 1;
+    //         grid-row: 1;
+    //     }
+    //     .item-2 {
+    //         grid-column: 1;
+    //         grid-row: 2;
+    //     }
+    //     .item-3 {
+    //         grid-column: 2;
+    //         grid-row: 2;
+    //     }
+    //     .item-4 {
+    //         grid-column: 3;
+    //         grid-row: 2 ;
+    //     }
+    // }
 }
 
 $bg-height: calc(8rem + 16vw);

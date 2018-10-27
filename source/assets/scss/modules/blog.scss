@@ -15,31 +15,39 @@ body.blog {
 .legal-consent-container { // hubspot disclaimer, I do not want thee
     display: none;
 }
+.blog-subscription {
+    max-width: 38rem;
+    label {
+        display: none;
+    }
+    .button {
+        margin-bottom: 0;
+    }
+}
 .post-meta { // group for tags, permalink, etc.
     line-height: 1;
 }
-.post-permalink {
-    $speed: 300ms;
-    // position: absolute;
-    // bottom:   0;
-    // right: 0;
+.post-tags {
     display: inline-block;
-    // padding: 0.5rem;
-    transition: color $speed, opacity $speed;
-    &[data-theme="light"] {
-        color: white;
-        opacity: 0.5;
-        &:hover {
-            color: #fffa5e;
-            opacity: 1;
-        }
+    margin: 0 1rem 0 0;
+    .icon {
+        margin-right: 0.5rem;
     }
-    &[data-theme="dark"] {
-        color: black;
-        opacity: 0.3;
-        &:hover {
-            color: $color_blue;
-            opacity: 1;
+}
+.post-author + .post-meta { // when both are present, and parent is narrow, this adds some space above tags
+    margin-top: 1rem;
+}
+.post-card--horiz {
+    .feature-thumb {
+        width: 6rem;
+        @include breakpoint (medium) {
+            width: 8rem;
+        }
+        @include breakpoint (large) {
+            width: 12rem;
+        }
+        @include breakpoint (xlarge) {
+            width: 15rem;
         }
     }
 }

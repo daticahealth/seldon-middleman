@@ -176,6 +176,7 @@
         //     background-position: -900px;
         //     @include breakpoint(large up) {
         //         background-position: bottom right; // have a mixin for this
+        //         background-position: bottom right; // have a mixin for this
         //     }
         //     background:{
         //         repeat: no-repeat;
@@ -217,10 +218,10 @@
             }
             @else {
                 color: #fff;
-                a { // better defaults for dark containers
-                    color: white;
-                    &:hover, &:active, &:focus {color: $color_yellow-glow; }
-                }
+                // a { // better defaults for dark containers
+                //     color: white;
+                //     &:hover, &:active, &:focus {color: $color_yellow-glow; }
+                // }
             }
             background-color: $color;
             // &:after {
@@ -382,7 +383,7 @@
 .bg {
     @each $name, $color in $fill-color-list { // this generates all grays 1-12 (dark to lightest), sets color
         $color-hsl: hsl-str($color);
-        &--#{$name} {
+        &-#{$name} {
             $color-lightness: lightness($color);
             @if $color-lightness >= 55% {
                 color: #000;
@@ -397,7 +398,7 @@
     }
 }
 [class*="container"], [class*="bg"] {
-    transition: background-color $timing-default linear, color $timing-default linear;
+    transition: background-color $timing-default, color $timing-default, box-shadow $timing-default;
 }
 // Vertical align helper
 .vertical-align {

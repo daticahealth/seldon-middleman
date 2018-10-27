@@ -1,0 +1,91 @@
+ruby:
+  # if post.has_key?("share_image")
+  #   image_url = data.site.blog[post.id].share_image.url
+  # elsif post.has_key?("featured_image")
+  #   image_url = data.site.blog[post.id].featured_image.url
+  # else
+  #   image_url = nil
+  # end
+  # :_meta:
+  #   :content_type_id: podcastEntry
+  # :_meta:
+  #   :content_type_id: blog
+  # :_meta:
+  #   :content_type_id: academy
+  if defined?(show_type) && show_type == true
+    content_type = case post._meta.content_type_id
+      when "podcastEntry" then "Podcast"
+      when "blog" then "Datica Blog"
+      when "academy" then "HIPAA Academy"
+      else post._meta.content_type_id
+    end
+  else
+    content_type = nil
+  end
+
+  url_segment = case post._meta.content_type_id
+    when "podcastEntry" then "innovation"
+    when "pressRelease" then "press-release"
+    else post._meta.content_type_id
+  end
+  related_post_path = "/" + url_segment + "/" + post.slug + "/"
+
+  if post.has_key?("featured_image")
+    image_url = data.site.blog[post.id].featured_image.url
+  else
+    # puts "The featured-blog partial at #{current_page.url} has no featured_image!"
+    image_url = nil
+  end
+  if defined?(size) && size == "large"
+    card_size = ""
+  else
+    card_size = "text-small"
+  end
+  if defined?(fit) && fit == "edge"
+    fit_classes = "no-radius"
+  else
+    fit_classes = nil
+  end
+  if defined?(style) && style == "dark"
+    style_classes = "container-gray-1"
+  else
+    style_classes = "drop"
+  end
+  if defined?(classes)
+    classes = classes
+  else
+    classes = nil
+  end
+
+  if post.has_key?("summary") && post.summary != ""
+    entry_summary = post.summary
+  elsif post.has_key?("lead") && post.lead != ""
+    entry_summary = post.lead
+  else
+    card_summary = nil
+  end
+  card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
+
+.post-card--horiz.row.collapse class=classes
+  - if image_url != nil
+    .column.shrink
+      / a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
+      img.feature-thumb.lozad.img-cover src="#{image_url}?fit=thumb&w=100&h=100&fm=jpg&q=5" data-srcset="#{image_url}?fit=thumb&w=200&h=200&q=50 640w, #{image_url}?fit=thumb&w=400&h=400&q=40 1000w" /
+  .column
+    .post-card
+      .pub-date = post.pub_date.strftime('%B %-d, %Y')
+      h2.headline-5
+        a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
+      - if post.has_key?("summary")
+        = Kramdown::Document.new(plain_text(post.summary)).to_html
+        .row.collapse.align-justify.align-middle.show-for-medium
+          .post-author.column.shrink
+            = partial("partials/snippets/person", :locals => { :p => post.author })
+          .post-meta.column.align-self-bottom.text-right.shrink
+            - if post.has_key?("tags")
+              .post-tags.text-tiny.text-bold
+                /= icon_tag
+                - post["tags"][0...3].each do |tag|
+                  span.label.info.round= tag["tag_full"]
+            a.post-permalink data-theme="dark" href="/blog/#{post.slug}" title="Permalink"
+              = icon_permalink

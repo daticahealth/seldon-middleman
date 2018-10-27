@@ -147,4 +147,11 @@ module SiteHelpers
         source_text = Kramdown::Document.new(item).to_html
         return truncate_words(strip_tags(source_text), :length => 45)
     end
+    # some common SVG sprites
+    def icon_permalink
+        '<svg class="icon icon-size--small" viewBox="0 0 37 34" width="37" height="34"><use xlink:href="/public/icons/util-icons-sprite.svg#icon-links"></use></svg>'
+    end
+    def icon_tag
+        '<svg class="icon icon-size--small" width="27" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 32"><use xlink:href="/public/icons/util-icons-sprite.svg#icon-tag"></use></svg>'
+    end
 end

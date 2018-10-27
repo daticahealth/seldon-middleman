@@ -55,28 +55,28 @@ span.label + span.label { // when in a tag list
     margin-left: 0.4em;
 }
 // Pills are functionally identical to "labels". We should unify these two someday. - AW
-.pill {
-    display: inline-block;
-    padding: rem-calc(3px) rem-calc(6px);
-    @include border-radius(5px);
-    text-transform: uppercase;
-    font-size: rem-calc(12px);
-    font-weight: $font-weight-mid;
-    &--yellow{
-        color: darken(#CEBA65, 30%);
-        background-image: -webkit-linear-gradient(#FFFDAA 0%, #FFF871 100%);
-        background-image: -o-linear-gradient(#FFFDAA 0%, #FFF871 100%);
-        background-image: linear-gradient(#FFFDAA 0%, #FFF871 100%);
-        @include shadow-anarchy(inset 0 -1px 1px 0 #CEBA65);
-    }
-    &--green{
-        color: darken($color_aqua-glow, 45%);
-        background-image: -webkit-linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
-        background-image: -o-linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
-        background-image: linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
-        @include shadow-anarchy(inset 0 -1px 1px 0 darken($color_aqua-glow, 30%));
-    }
-}
+// .pill {
+//     display: inline-block;
+//     padding: rem-calc(3px) rem-calc(6px);
+//     @include border-radius(5px);
+//     text-transform: uppercase;
+//     font-size: rem-calc(12px);
+//     font-weight: $font-weight-mid;
+//     &--yellow{
+//         color: darken(#CEBA65, 30%);
+//         background-image: -webkit-linear-gradient(#FFFDAA 0%, #FFF871 100%);
+//         background-image: -o-linear-gradient(#FFFDAA 0%, #FFF871 100%);
+//         background-image: linear-gradient(#FFFDAA 0%, #FFF871 100%);
+//         @include shadow-anarchy(inset 0 -1px 1px 0 #CEBA65);
+//     }
+//     &--green{
+//         color: darken($color_aqua-glow, 45%);
+//         background-image: -webkit-linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
+//         background-image: -o-linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
+//         background-image: linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
+//         @include shadow-anarchy(inset 0 -1px 1px 0 darken($color_aqua-glow, 30%));
+//     }
+// }
 
 .alert {
     &-ribbon {
@@ -215,6 +215,31 @@ span.label + span.label { // when in a tag list
         }
     }
 }
+.post-permalink { // link icon 
+    $speed: 300ms;
+    // position: absolute;
+    // bottom:   0;
+    // right: 0;
+    display: inline-block;
+    // padding: 0.5rem;
+    transition: color $speed, opacity $speed;
+    &[data-theme="light"] {
+        color: white;
+        opacity: 0.5;
+        &:hover {
+            color: #fffa5e;
+            opacity: 1;
+        }
+    }
+    &[data-theme="dark"] {
+        color: black;
+        opacity: 0.3;
+        &:hover {
+            color: $color_blue;
+            opacity: 1;
+        }
+    }
+}
 // .share-icons {
 //     li {
 //         padding: 0.8rem;
@@ -247,12 +272,4 @@ span.label + span.label { // when in a tag list
 
     }
 }
-.blog-subscription {
-    max-width: 38rem;
-    label {
-        display: none;
-    }
-    .button {
-        margin-bottom: 0;
-    }
-}
+
