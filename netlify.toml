@@ -708,6 +708,11 @@
   status = 301
 
 [[redirects]]
+  from = "/blog/introducing-container-services-deploy-custom-docker-images"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
   from = "/learn/business-associates-agreements"
   to = "/academy/business-associate-agreements"
   status = 301
