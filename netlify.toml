@@ -338,6 +338,11 @@
   status = 301
 
 [[redirects]]
+  from = "/blog/getting-to-know-daticas-cto-and-cso-chris-gerg"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
   from = "/blog/ebook-release-innovation-doesnt-follow-rules"
   to = "/blog"
   status = 301
