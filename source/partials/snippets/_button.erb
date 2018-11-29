@@ -11,16 +11,16 @@
 # rel: for rel="" attributes. Suggested:  canonical|external|prev|next     https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types
 
 # Example call:
-# <%= 
-#     partial "partials/snippets/button", 
+# <%=
+#     partial "partials/snippets/button",
 #         :locals => {
-#             :label => "Join us on Github", 
-#             :title => "Explore Datica git repos", 
-#             :url => "https://github.com/daticahealth", 
-#             :rel => "external", 
-#             :button_classes => "button button--primary button--large", 
-#             :icon => "icon-github-octocat", 
-#             :icon_color => "white", 
+#             :label => "Join us on Github",
+#             :title => "Explore Datica git repos",
+#             :url => "https://github.com/daticahealth",
+#             :rel => "external",
+#             :button_classes => "button button--primary button--large",
+#             :icon => "icon-github-octocat",
+#             :icon_color => "white",
 #             :icon_align => "right",
 #             :tracking => "false", # optional, don't track this button in GTM. Negates the following
 #             :data_track_group => "funnelName" # optional, for GTM tracking group/funnel
@@ -107,6 +107,6 @@ end
 			<%= label %>
 		<% end %>
 	<% else %>
-		<%= label %> 
+		<%= label %>
 	<% end %>
 </a>

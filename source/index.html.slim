@@ -59,10 +59,10 @@ section#compliance.section-article.container-gray-11
             li role="presentation"
               - activeClass = "t#{index} trigger-current"
               - baseClass = "t#{index}"
-              a.content-trigger role="button" class=(index == 0 ? activeClass : baseClass) aria-selected=(index == 0 ? "true" : "false") id=baseClass href=product.url title=product.cta
+              a.content-trigger role="button" class=(index == 0 ? activeClass : baseClass) aria-selected=(index == 0 ? "true" : "false") id=baseClass href=product.url title=product.cta data-track="true" data-track-category="home" data-track-id="product-group-#{(product.abbr).downcase}"
                 .text-bold.spaced-out = product.abbr
                 h4.headline-5 = product.title
-                .hide-for-medium 
+                .hide-for-medium
                   = Kramdown::Document.new(product.lead).to_html
       .columns.small-12.medium-6.large-4.show-for-medium
         - data.views.product_list.products.each_with_index do | product, index |
