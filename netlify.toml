@@ -67,7 +67,7 @@
   to = "/academy"
   status = 301
 
-# ==== All splats and * tokens above this line (EXCEPT main 404 at end). Exceptions below. 
+# ==== All splats and * tokens above this line (EXCEPT main 404 at end). Exceptions below.
 
 [[redirects]]
   from = "/cks/"
@@ -102,15 +102,15 @@
   to = "/compliant-managed-integration/"
   status = 301
 
-# [[redirects]]
-#   from = "/ccms/"
-#   to = "/cloud-compliance-management-system/"
-#   status = 301
-#   force = true
-
 [[redirects]]
   from = "/ccms/"
   to = "/compliant-kubernetes-service/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cpaas/"
+  to = "/compliant-platform-as-a-service/"
   status = 301
   force = true
 
