@@ -16,9 +16,15 @@ ruby:
 
 section.featured-posts
   .grid-wrapper
-    - sorted_posts[0...5].each_with_index do | (id, post), i |
+    - sorted_posts[0...4].each_with_index do | (id, post), i |
       .item.drop-hover.relative class="item-#{i}"
-        .post-card.z-stack-0.bg-white
+        - if post.has_key?("featured_image")
+          .featured-image.z-stack-back.large-order-2
+            - if i == 0
+              img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1600&h=800 1200w" /
+            - else
+              img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=1000&h=600&q=40 1000w" /
+        .post-card.z-stack-0.bg-white.large-order-1
           .pub-date = post.pub_date.strftime('%B %-d, %Y')
           h2.headline-4
             a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
@@ -37,12 +43,8 @@ section.featured-posts
                 a.post-permalink data-theme="dark" href="/blog/#{post.slug}" title="Permalink"
                   = icon_permalink
 
-        - if post.has_key?("featured_image")
-          .featured-image.z-stack-back
-            - if i == 0
-              img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1600&h=800 1200w" /
-            - else
-              img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=1000&h=600&q=40 1000w" /
+    .item.relative.item-5.align-middle.align-center.post-card style="flex-direction: column; align-items: center;"
+      = partial "blog/partials/blog-subscription-simple"
 
 section#blog-archives-1.section-article
   .row.align-spaced.align-middle.full-width

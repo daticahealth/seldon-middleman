@@ -1,7 +1,7 @@
 <%
 # :color theme options: blue|white|gray|dark
 
-color_default = 'container-gray-3'
+color_default = 'container-gray-3' 
 if defined?(color)
     case color
     when 'blue', 'blue-alt', 'brand'
@@ -26,7 +26,7 @@ if defined?(color)
         iconcolor = 'gray-5'
     end
 else
-    colorclass = color_default
+    colorclass = ''
     buttonstyle = 'button--primary'
     iconcolor = 'gray-5'
 end

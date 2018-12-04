@@ -1,17 +1,4 @@
 ruby:
-  # if post.has_key?("share_image")
-  #   image_url = data.site.blog[post.id].share_image.url
-  # elsif post.has_key?("featured_image")
-  #   image_url = data.site.blog[post.id].featured_image.url
-  # else
-  #   image_url = nil
-  # end
-  # :_meta:
-  #   :content_type_id: podcastEntry
-  # :_meta:
-  #   :content_type_id: blog
-  # :_meta:
-  #   :content_type_id: academy
   if defined?(show_type) && show_type == true
     content_type = case post._meta.content_type_id
       when "podcastEntry" then "Podcast"
@@ -89,3 +76,18 @@ ruby:
                   span.label.info.round= tag["tag_full"]
             a.post-permalink data-theme="dark" href="/blog/#{post.slug}" title="Permalink"
               = icon_permalink
+
+ruby:
+  # if post.has_key?("share_image")
+  #   image_url = data.site.blog[post.id].share_image.url
+  # elsif post.has_key?("featured_image")
+  #   image_url = data.site.blog[post.id].featured_image.url
+  # else
+  #   image_url = nil
+  # end
+  # :_meta:
+  #   :content_type_id: podcastEntry
+  # :_meta:
+  #   :content_type_id: blog
+  # :_meta:
+  #   :content_type_id: academy
