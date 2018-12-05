@@ -33,7 +33,12 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
             # else
             #     post_cta = nil
             # end
-            post_all = post_image + Kramdown::Document.new(post["blog_lead"]).to_html + Kramdown::Document.new(post["post"]).to_html + '<p><a href="' + site_url + post.slug + '"> Continue reading, &quot;' + post.title + '&quot;</a></p>'
+            if post.has_key?("blog_lead")
+                post_body = Kramdown::Document.new(post["blog_lead"]).to_html + Kramdown::Document.new(post["post"]).to_html
+            else
+                post_body = Kramdown::Document.new(post["post"]).to_html
+            end
+            post_all = post_image + post_body + '<p><a href="' + site_url + post.slug + '"> Continue reading, &quot;' + post.title + '&quot;</a></p>'
             xml.tag!("content", "type" => "html") { xml.cdata!(post_all) }
         end
     end
