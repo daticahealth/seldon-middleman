@@ -17,13 +17,13 @@ ruby:
 section.featured-posts
   .grid-wrapper
     - sorted_posts[0...4].each_with_index do | (id, post), i |
-      .item.drop-hover.relative class="item-#{i}"
+      .item.drop-hover.relative.align-justify class="item-#{i}"
         - if post.has_key?("featured_image")
           .featured-image.z-stack-back.large-order-2
             - if i == 0
-              img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1600&h=800 1200w" /
+              img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1800&h=600 1200w" /
             - else
-              img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=1000&h=600&q=40 1000w" /
+              img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=1200&h=600&q=40 1000w" /
         .post-card.z-stack-0.bg-white.large-order-1
           .pub-date = post.pub_date.strftime('%B %-d, %Y')
           h2.headline-4
@@ -54,16 +54,16 @@ section#blog-archives-1.section-article
     aside.columns.small-12.large-4.xlarge-3
       = partial "blog/partials/blog-subscription", :locals => { :color => "dark" }
 
-section#blog-featured.section-article.container-gray-4
+section#blog-featured.section-article.container-gray-12
   - featured_posts = data.site.collections.to_a.select { | id, collection | (id == "6u8cxfSJyg2eEAG0YCW2a6") }
   - featured_posts.each do | id, posts |
     .text-center.group
       h2.headline-3 = posts.title
-    .row.full-width.small-up-1.medium-up-2.xxlarge-up-3.align-center
+    .row.full-width.small-up-1.xlarge-up-2.xxlarge-up-3
       - posts["related_entries"].each do | entry |
         - post = data.site.blog[entry.id]
         .column
-          = partial "partials/cards/blog-card-horiz", :locals => { :post => post, :size => "large", :classes => "drop-hover bg-white group" }
+          = partial "partials/cards/blog-card-horiz", :locals => { :post => post, :size => "large", :classes => "group" }
           /= partial "partials/cards/featured-blog", :locals => { :post => post, :style => "light", :size => "large" } 
 section#blog-archives-2.section-article
   .row.align-spaced.align-middle.full-width

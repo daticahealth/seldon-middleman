@@ -161,6 +161,7 @@ body.blog {
 
 $bg-height: calc(8rem + 16vw);
 .featured-image {
+    height: 100%;
     @include breakpoint(large) {
         position: absolute;
         top:  0;
