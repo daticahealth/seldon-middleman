@@ -74,7 +74,7 @@ ruby:
                 /= icon_tag
                 - post["tags"][0...3].each do |tag|
                   span.label.info.round= tag["tag_full"]
-            a.post-permalink data-theme="dark" href="/blog/#{post.slug}" title="Permalink"
+            / a.post-permalink data-theme="dark" href="/blog/#{post.slug}" title="Permalink"
               = icon_permalink
 
 ruby:

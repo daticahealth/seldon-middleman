@@ -32,11 +32,11 @@ section.featured-posts
         .post-card.z-stack-0.bg-white.large-order-1
           .pub-date = post.pub_date.strftime('%B %-d, %Y')
           h2.headline-4
-            a href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
+            a. href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
           - if post.has_key?("summary")
             = Kramdown::Document.new(plain_text(post.summary)).to_html
             .row.collapse.align-justify.align-middle.show-for-medium
-              - if i <= 2 && post.has_key?("author")
+              - if post.has_key?("author")
                 .post-author.column.shrink
                   = partial("partials/snippets/person", :locals => { :p => post.author })
               .post-meta.column.align-self-bottom.text-right class=(if i <= 2 then 'shrink' else '' end)
@@ -45,30 +45,31 @@ section.featured-posts
                     /= icon_tag
                     - post["tags"][0...3].each do |tag|
                       span.label.info.round= tag["tag_full"]
-                a.post-permalink data-theme="dark" href="/blog/#{post.slug}" title="Permalink"
+                / a.post-permalink data-theme="dark" href="/blog/#{post.slug}" title="Permalink"
                   = icon_permalink
 
-    .item.relative.item-5.align-middle.align-center.post-card style="flex-direction: column; align-items: center;"
+    .item.relative.item-5.align-middle.align-center.post-card.bg-gray-4 style="flex-direction: column; align-items: center;"
       = partial "blog/partials/blog-subscription-simple"
+      / = partial "blog/partials/blog-subscription", :locals => { :color => "dark" }
 
 section#blog-archives-1.section-article
   .row.align-spaced.align-middle
-    .columns.small-12.large-8.xlarge-6
+    .columns.small-12.large-8.xlarge-8
       - sorted_posts[5...8].each do | id, post |
         = partial "partials/cards/blog-card-horiz", :locals => { :post => post, :size => "large", :classes => "drop-hover bg-white group--2x" }
-    aside.columns.small-12.large-4.xlarge-3
-      = partial "blog/partials/blog-subscription", :locals => { :color => "dark" }
+    aside.columns.small-12.large-4.xlarge-4
+      
 
-section#blog-featured.section-article.container-gray-12
+section#blog-featured.section-article.container-gray-11
   - featured_posts = data.site.collections.to_a.select { | id, collection | (id == "6u8cxfSJyg2eEAG0YCW2a6") }
   - featured_posts.each do | id, posts |
     .text-center.group
       h2.headline-3 = posts.title
-    .row.full-width.small-up-1.xlarge-up-2.xxlarge-up-3.width-xl
+    .row.row--card-grid.full-width.small-up-1.xlarge-up-2.xxlarge-up-3.width-xl
       - posts["related_entries"].each do | entry |
         - post = data.site.blog[entry.id]
         .column
-          = partial "partials/cards/blog-card-horiz", :locals => { :post => post, :size => "large", :classes => "group" }
+          = partial "partials/cards/blog-card-horiz", :locals => { :post => post, :size => "large", :classes => "drop-hover bg-white group" }
           /= partial "partials/cards/featured-blog", :locals => { :post => post, :style => "light", :size => "large" } 
 section#blog-archives-2.section-article
   .row.align-spaced.align-middle.full-width

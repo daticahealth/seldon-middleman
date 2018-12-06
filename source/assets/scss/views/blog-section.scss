@@ -65,7 +65,7 @@ body.blog {
         flex-direction: column;
         grid-column: 1 / span 3;
         min-height: calc(20rem + 14vw); // key here for opening space for images
-        &:nth-child(n+3){ // adjust things as they go down
+        &:nth-child(n+2){ // adjust things as they go down
             font-size: 95%;
             .headline-4 {
                 font-size: 1.3rem;
@@ -125,25 +125,14 @@ body.blog {
                 grid-row: 3;
             }
         }
-        // .item-0 {
-        //     grid-column: 1 / span 6;
-        //     grid-row: 1;
-        // }
-        // .item-1 {
-        //     grid-column: 1 / span 3;
-        //     grid-row: 2;
-        // }
-        // .item-2 {
-        //     // align-items: start;
-        //     grid-column: 4 / span 2 ;
-        //     grid-row: 2 / span 1;
-        // }
-        // // .item-4 {
-        // //     grid-column: 3 / span 3 ;
-        // //     grid-row: 3;
-        // // }
-        // .item-3, .item-4 {
-        // }
+    }
+    @include breakpoint(xlarge) {
+        .item {
+            &:nth-child(n+2) { // don't let rows after top get too big
+                min-height: calc(20rem + 10vw);
+                max-height: calc(25rem + 10vw);
+            }
+        }
     }
     // ultra-wide
     // @include breakpoint(xxlarge) {
@@ -192,4 +181,14 @@ $bg-height: calc(8rem + 16vw);
         transition-delay:         1s;
     }
 }
-
+.row--card-grid {
+    @include breakpoint (large) {
+        // .column:first-child, .columns:first-child { // adds bottom margin for equal height cards
+        //     margin-bottom: 3rem;
+        // }
+        .post-card--horiz { // only create equal height cards in here. Cards can live fine outside this parent class, just won't be full-height.
+            height: 100%;
+            margin-bottom: 0; // I *think* this is what we want...
+        }
+    }
+}
