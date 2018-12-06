@@ -15,7 +15,12 @@ ruby:
   sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
 
 section.featured-posts
-  .grid-wrapper
+  .row.align-center.group
+    .columns.small-12.medium-10.large-8.text-center.group
+      = inline_svg("icon-book-academy", class: "icon-size--xlarge")
+      h1.headline-2 The Datica Blog
+      p.lead Insights from the healthcare cloud experts
+  .grid-wrapper.width-xl
     - sorted_posts[0...4].each_with_index do | (id, post), i |
       .item.drop-hover.relative.align-justify class="item-#{i}"
         - if post.has_key?("featured_image")
@@ -47,7 +52,7 @@ section.featured-posts
       = partial "blog/partials/blog-subscription-simple"
 
 section#blog-archives-1.section-article
-  .row.align-spaced.align-middle.full-width
+  .row.align-spaced.align-middle
     .columns.small-12.large-8.xlarge-6
       - sorted_posts[5...8].each do | id, post |
         = partial "partials/cards/blog-card-horiz", :locals => { :post => post, :size => "large", :classes => "drop-hover bg-white group--2x" }
@@ -59,7 +64,7 @@ section#blog-featured.section-article.container-gray-12
   - featured_posts.each do | id, posts |
     .text-center.group
       h2.headline-3 = posts.title
-    .row.full-width.small-up-1.xlarge-up-2.xxlarge-up-3
+    .row.full-width.small-up-1.xlarge-up-2.xxlarge-up-3.width-xl
       - posts["related_entries"].each do | entry |
         - post = data.site.blog[entry.id]
         .column

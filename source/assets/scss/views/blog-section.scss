@@ -13,6 +13,11 @@ $gap: calc(1rem + 2vw);
 body.blog {
     background-color: $gray-10;
 }
+.width-xl {
+    max-width: map-get($breakpoints, xxlarge);
+    margin-right: auto;
+    margin-left: auto;
+}
 // .post-card {
 // }
 // .item {
