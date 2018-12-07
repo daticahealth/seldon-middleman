@@ -12,6 +12,7 @@
 body.blog {
     background-color: $gray-11;
 }
+// $bg-height: calc(8rem + 16vw);
 $bg-height: calc(8rem + 16vw);
 .featured-image {
     background-color: $gray-4;
@@ -23,14 +24,14 @@ $bg-height: calc(8rem + 16vw);
         width:  100%;
         height: 100% !important;
     }
-    .lozad {
+    &.lozad {
         @include blur(2vw);
         transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
+    }
+    &.lozad.loaded {
+        @include blur(0);
         -webkit-transition-delay: 1s;
         transition-delay:         1s;
-    }
-    .lozad.loaded {
-        @include blur(0);
     }
 }
 .post-body {// pull up over image for desktop only

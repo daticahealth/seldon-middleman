@@ -43,10 +43,33 @@ ruby:
       current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   end
 / scss:
+  $bg-height: calc(8rem + 16vw);
+  @media screen and (min-width: 64em) {
+    .post-body { // pull up over image for desktop only
+      margin-top: -120px; // fallback
+      margin-top: calc(-4rem - 6vw);
+    }
+  }
+  .post-item { // featured blog post containers
+    padding-top: calc(3rem + 5vw);
+    //.post-card { // contains post info, content varies
+    //    $pad: calc(1rem + 1.5vw);
+    //    margin-left: $pad;
+    //    margin-right: $pad;
+    //    padding: $pad;
+    //    .media-object { // overrides people in card
+    //        margin-bottom: 0;
+    //    }
+    //}
+  }
+  .featured-image {
+    min-height: $bg-height;
+  }
+
 
 .container-gray-11
   .container-gray-3
-    img.featured-image.lozad.img-cover src="#{post_featured_image}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post_featured_image}?fit=thumb&w=640&h=360&q=50 640w, #{post_featured_image}?fit=thumb&w=800&h=400&q=40 800w, #{post_featured_image}?fit=thumb&w=1800&h=400 1200w" /
+    img.featured-image.lozad.img-cover data-srcset="#{post_featured_image}?fit=thumb&w=640&h=360&q=50 640w, #{post_featured_image}?fit=thumb&w=800&h=400&q=40 800w, #{post_featured_image}?fit=thumb&w=1800&h=400 1200w" /
   section#blogPost.row.collapse.align-center style="opacity: 1;"
     .columns.small-12.large-8
       article.post-body.blur-0.container-color--white.pad--xl.group--2x.drop
