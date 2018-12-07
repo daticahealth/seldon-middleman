@@ -4,6 +4,7 @@
 # else
 #     pad_class = nil
 # end
+p = data.site.cta[p.id]
 if p.has_key?("cta_color")
     case p.cta_color
         when "white", "gray-light"
@@ -34,7 +35,7 @@ end
 <% if p.has_key?("cta_image") %>
     <aside class="cta cta--image" id="cta">
         <a class="" href="<%= p["cta_url"] %>" title="<%= p["cta_label"] %>">
-            <img class="lozad" data-src="<%= p["cta_image"]["url"] %>" alt="<%= p["cta_label"] %>">
+            <img class="lozad" src="<%= p["cta_image"]["url"] %>?w=600&fm=jpg&q=10" data-src="<%= p["cta_image"]["url"] %>?w=1000" alt="<%= p["cta_label"] %>">
         </a>
     </aside>
 <% elsif p.has_key?("cta_widget") %>
@@ -51,16 +52,16 @@ end
         <div class="cta--body<% if p.has_key?("cta_icon") %> cta--body-right<% end %>">
             <h3 class="headline-3 cta--header"><%= p["cta_title"] %></h3>
             <p class="cta--desc"><%= p["cta_desc"] %></p>
-            <%= 
-            partial "partials/snippets/button", 
+            <%=
+            partial "partials/snippets/button",
                 :locals => {
-                    :label => p.cta_label, 
-                    :title => p.cta_title, 
-                    :url => p.cta_url, 
-                    # :rel => "external", 
-                    :button_classes => button_classes, 
-                    :icon => "icon-chevron-right", 
-                    :icon_color => button_icon_color, 
+                    :label => p.cta_label,
+                    :title => p.cta_title,
+                    :url => p.cta_url,
+                    # :rel => "external",
+                    :button_classes => button_classes,
+                    :icon => "icon-chevron-right",
+                    :icon_color => button_icon_color,
                     :icon_align => "right"
                 }
             %>

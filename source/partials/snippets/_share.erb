@@ -1,28 +1,33 @@
-<ul class="share-icons menu<% if defined?(classes) %> <%= classes %><% end %>">
+<ul class="share-icons menu<% if defined?(classes) %> <%= classes %><% end %> align-middle">
     <%# <li class="share--item">
-    	<svg class="share--icon-top" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet">
-			<use xlink:href="/public/icons/util-icons-sprite.svg#icon-share"></use>
-		</svg>
+        <svg class="share--icon-top" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+            <use xlink:href="/public/icons/util-icons-sprite.svg#icon-share"></use>
+        </svg>
     </li>
     %>
     <li class="share--item">
-    	<svg class="share--icon icon-size--medium sharer" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet" data-sharer="twitter" data-title="<%= current_page.data.title %>" data-hashtags="healthcare" data-url="<%= site_url + current_page.url %>" data-image="<%= current_page.data.share_image %>">
-			<use xlink:href="/public/icons/util-icons-sprite.svg#icon-twitter"></use>
-		</svg>
-	</li>
+        <svg class="share--icon icon-size--medium sharer" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet" data-sharer="twitter" data-title="<%= current_page.data.title %>" data-hashtags="healthcare" data-url="<%= site_url + current_page.url %>" data-image="<%= current_page.data.share_image %>">
+            <use xlink:href="/public/icons/util-icons-sprite.svg#icon-twitter"></use>
+        </svg>
+    </li>
     <li class="share--item">
-    	<svg class="share--icon icon-size--medium sharer" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet" data-sharer="linkedin" data-url="<%= site_url + current_page.url %>">
-			<use xlink:href="/public/icons/util-icons-sprite.svg#icon-linkedin"></use>
-		</svg>
-	</li>
+        <svg class="share--icon icon-size--medium sharer" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet" data-sharer="linkedin" data-url="<%= site_url + current_page.url %>">
+            <use xlink:href="/public/icons/util-icons-sprite.svg#icon-linkedin"></use>
+        </svg>
+    </li>
     <li class="share--item">
-    	<svg class="share--icon icon-size--medium sharer" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet" data-sharer="facebook" data-url="<%= site_url + current_page.url %>">
-			<use xlink:href="/public/icons/util-icons-sprite.svg#icon-facebook"></use>
-		</svg>
-	</li>
+        <svg class="share--icon icon-size--medium sharer" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet" data-sharer="facebook" data-url="<%= site_url + current_page.url %>">
+            <use xlink:href="/public/icons/util-icons-sprite.svg#icon-facebook"></use>
+        </svg>
+    </li>
     <li class="share--item">
-    	<svg class="share--icon icon-size--medium sharer" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet" data-sharer="email" data-title="<%= current_page.data.title %>" data-subject="<%= current_page.data.title %>" data-url="<%= site_url + current_page.url %>">
-			<use xlink:href="/public/icons/util-icons-sprite.svg#icon-email"></use>
-		</svg>
-	</li>
+        <svg class="share--icon icon-size--medium sharer" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet" data-sharer="email" data-title="<%= current_page.data.title %>" data-subject="<%= current_page.data.title %>" data-url="<%= site_url + current_page.url %>">
+            <use xlink:href="/public/icons/util-icons-sprite.svg#icon-email"></use>
+        </svg>
+    </li>
+    <li class="share--item">
+        <a href="<%= site_url + current_page.url %>" title="Permalink for <%= current_page.data.title %>" style="padding:0;">
+            <svg class="post-permalink share--icon icon-size--small-med sharer" viewBox="0 0 37 36" width="37" height="36"><use xlink:href="/public/icons/util-icons-sprite.svg#icon-links"></use></svg>
+        </a>
+    </li>
 </ul>

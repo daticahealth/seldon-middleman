@@ -1,0 +1,143 @@
+---
+layout: company
+ogType: article
+sharer: true
+customCSS: "blog-detail"
+customJS: "/public/js/article.js"
+---
+ruby:
+  p = locals[:item]
+  current_page.data.title = p["title"] + " | Datica Blog"
+  current_page.data.summary = safe_summary(p.summary)
+
+  share_image_fallback = "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+
+  if p.has_key?("featured_image")
+      post_featured_image = cf_asset_protocol + p["featured_image"]["url"]
+      post_featured_image_title = p["featured_image"]["title"]
+  else
+      post_featured_image = "https://images.ctfassets.net/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg"
+      post_featured_image_title = "Datica Blog"
+  end
+  if p.has_key?("share_image")
+      current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_size_small
+  elsif p.has_key?("featured_image")
+      current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
+  else
+      current_page.data.share_image = share_image_fallback
+  end
+
+  if p.has_key?("tags")
+      current_page.data.tags = get_tag_list(p["tags"])
+  else
+      current_page.data.tags = "healthcare, blog, IT"
+  end
+  if p.has_key?("author")
+      current_page.data.author = p["author"]["fullname"]
+  else
+      current_page.data.author = "Datica, Inc."
+  end
+  if p.has_key?("pub_date")
+      current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
+  else
+      current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  end
+/ scss:
+  $bg-height: calc(8rem + 16vw);
+  @media screen and (min-width: 64em) {
+    .post-body { // pull up over image for desktop only
+      margin-top: -120px; // fallback
+      margin-top: calc(-4rem - 6vw);
+    }
+  }
+  .post-item { // featured blog post containers
+    padding-top: calc(3rem + 5vw);
+    //.post-card { // contains post info, content varies
+    //    $pad: calc(1rem + 1.5vw);
+    //    margin-left: $pad;
+    //    margin-right: $pad;
+    //    padding: $pad;
+    //    .media-object { // overrides people in card
+    //        margin-bottom: 0;
+    //    }
+    //}
+  }
+  .featured-image {
+    min-height: $bg-height;
+  }
+
+
+.container-gray-11
+  .container-gray-3
+    img.featured-image.lozad.img-cover data-srcset="#{post_featured_image}?fit=thumb&w=640&h=360&q=50 640w, #{post_featured_image}?fit=thumb&w=800&h=400&q=40 800w, #{post_featured_image}?fit=thumb&w=1800&h=400 1200w" /
+  section#blogPost.row.collapse.align-center style="opacity: 1;"
+    .columns.small-12.large-8
+      article.post-body.blur-0.container-color--white.pad--xl.group--2x.drop
+        header
+          .subhead--spaced.headline-6
+            = partial "/partials/snippets/pubdate", :locals => p
+          h1.headline-3.headline-bold = p.title
+          - if p["author"].has_key?("profile_pic")
+            = partial("partials/snippets/person", :locals => { :p => p["author"] })
+        = partial "/partials/snippets/share", :locals => { :p => p, :classes => "show-for-xlarge vertical" }
+        - if p.has_key?("blog_lead")
+          #postLead.lead= Kramdown::Document.new(p["blog_lead"]).to_html
+        .content-dynamic.group
+          - if p.has_key?("featured_person")
+            = partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" })
+          = Kramdown::Document.new(p["post"]).to_html
+          / hr.divider
+        .row.row--gutter-small.align-justify.align-middle
+          - if p.has_key?("tags")
+            .columns.shrink
+              = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
+              = partial "/partials/content/tags", :locals => p
+          .columns.shrink.text-right
+            = partial "/partials/snippets/share", :locals => { :p => p, :classes => "" }
+        - if p.has_key?("cta_ref")
+          = partial("/partials/content/cta", :locals => { :p => p["cta_ref"] })
+      aside#nextPrev.row.small-up-1.medium-up-2.group
+        .column
+          - previous_item = get_previous_item(data.site.blog, p, "pub_date")
+          - if previous_item != nil
+            p.blog-date Earlier
+            h4.headline-5
+              a href="/blog/#{previous_item["slug"]}/" rel="prev" title=("Read this post") = previous_item["title"]
+            - if previous_item.has_key?("summary")
+              .text-smaller
+                = Kramdown::Document.new(previous_item["summary"]).to_html
+        .column
+          - next_item = get_next_item(data.site.blog, p, "pub_date")
+          - if next_item != nil
+            p.blog-date Next Post
+            h4.headline-5
+              a href="/blog/#{next_item["slug"]}/" rel="next" title=("Read this post") = next_item["title"]
+            - if next_item.has_key?("summary")
+              .text-smaller
+                = Kramdown::Document.new(next_item["summary"]).to_html
+
+    aside.post-sidebar.columns.small-12.large-4 style="margin-top: 1rem; opacity: 1;" data-sticky-container=""
+      .sticky data-options=("topAnchor: 525; stickyOn: xlarge; marginTop: 3;") data-btm-anchor="cta" data-sticky=""
+        .pad--lg
+          .group
+            = partial "blog/partials/blog-subscription-simple", :locals => { :color => "gray" }
+          div
+            - if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta")
+              - topic = data.site.discover[p.discovery_topic.id]
+              = partial "partials/cards/discover-lite", :locals => { :topic => topic, :classes => "group" }
+              - if topic.slug == "ehr-integrations"
+                = partial("/partials/content/cta", :locals => { :p => data.site.cta["1h6f0OBRqiiayM2cy28qey"] })
+            - if p.has_key?("related_entries") && p["related_entries"].count == 1
+              - p["related_entries"].take(1).each do | relatedPost |
+                = partial "partials/cards/featured-blog", :locals => { :post => relatedPost, :style => "light", :size => "small" }
+- if p.has_key?("related_entries") && p["related_entries"].count > 1
+  section.section-article--med.container-gray-10
+    h4.headline-5.text--spaced.text-center.group Related
+    .row.full-width.small-up-1.medium-up-2.large-up-3.xlarge-up-4.align-center
+      - p["related_entries"][0...4].each do | relatedPost |
+        .column.group
+          = partial "partials/cards/featured-blog", :locals => { :post => relatedPost, :style => "light", :size => "small" }
+
+= partial "partials/content/tweet-styling"
+
+/.lozad.container-image--fill data-background-image="#{post_featured_image}?w=1800&h=400"

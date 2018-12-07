@@ -95,7 +95,7 @@
             desc: "We believe in the importance of open source."
             has_divider: true
         -
-            title: "Company Blog"
+            title: "Datica Blog"
             url: "/blog/"
             desc: "News and insights from the Datica team."
 -
