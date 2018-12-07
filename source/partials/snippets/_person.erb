@@ -18,8 +18,11 @@ if p.has_key?("bio_short")
 else
     person_summary = "Learn more about " + p.fullname
 end
-# if defined?(style) && style == "light"
-# end
+if defined?(style) && style == "light"
+    link_style = "link--yellow"
+else
+    link_style = nil
+end
 %>
 <div class="media-object card-person<% if defined?(classes) %> <%= classes %><% end %>">
     <% if p.has_key?("profile_pic") %>
@@ -28,7 +31,7 @@ end
     <div class="media-object-section media-object--info main-section align-self-middle">
         <<%= tag_1 %> class="person-name">
             <% if datican == true %>
-                <a href="/about/<%= p["slug"] %>/" title="Learn more about <%= p["fullname"] %>">
+                <a class="<%= link_style %>" href="/about/<%= p["slug"] %>/" title="Learn more about <%= p["fullname"] %>">
                     <%= p["fullname"] %>
                 </a>
             <% else %>

@@ -13,6 +13,7 @@ today = DateTime.now
 current_page.data.date = today.strftime('%B %-d, %Y')
 # today = time.inspect
 sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+current_cta = data.site.cta.to_a.sort_by{ |id, cta| cta['_meta']['updated_at'] }.reverse!
 %>
 
 <div class="container-color--dark-alt">
@@ -24,13 +25,15 @@ sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.revers
         <% end %>
             <section class="section-article container-color--tint-70">
                 <div class="row">
-                    <div class="columns small-12 large-10 featured-post">
+                    <div class="columns small-12 medium-10 large-9 featured-post">
                         <div class="subhead--spaced headline-6">Datica Blog</div>
                         <h1 class="headline-2"><a class="link--yellow" href="/blog/<%= post["slug"] %>" title="Read this post"><%= post["title"] %></a></h1>
                         <% if post.has_key?("summary") %>
                             <p class="blog-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></p>
                             <div class="lead"><%= Kramdown::Document.new(plain_text(post.summary)).to_html %></div>
-                            <p><a class="link--yellow read-more" href="/blog/<%= post["slug"] %>" title="Read the post">Read the post</a></p>
+                        <% end %>
+                        <% if post.has_key?("author") %>
+                        <%= partial("partials/snippets/person", :locals => { :p => post.author, :style => "light" }) %>
                         <% end %>
                     </div>
                 </div>
@@ -38,16 +41,19 @@ sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.revers
         </div>
     <% end %>
 </div>
-<section class="container-gray-10 card-featured-section">
-    <div class="row row--card-grid full-width align-center small-up-1 medium-up-2 large-up-3">
+<section id="blog-featured" class="container-gray-10 card-featured-section">
+    <div class="row full-width align-center small-up-1 medium-up-2 xlarge-up-4">
     <% sorted_posts[1...4].each do | id, post | %>
         <div class="column">
             <%= partial "partials/cards/featured-blog", :locals => { :post => post, :style => "light", :size => "large" } %>
         </div>
     <% end %>
+        <div class="column">
+            <%= partial "blog/partials/blog-subscription", :locals => { :color => "dark" } %>
+        </div>
     </div>
 </section>
-<section class="section-article">
+<section class="section-article bg-gray-12">
     <div class="row">
         <div class="columns small-12 large-8 group">
             <% sorted_posts[4...10].each do | id, post | %>
@@ -65,17 +71,14 @@ sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.revers
                         <% if post.has_key?("summary") %>
                             <%= Kramdown::Document.new(post["summary"]).to_html %>
                         <% end %>
-                        <!-- <a class="link-arrow" href="/blog/<%= post["slug"] %>" title="Read this post">Read on</a> -->
                     </div>
                 </div>
             <% end %>
+            <% current_cta.take(1).each do | id, cta | %>
+            <%= partial "/partials/content/cta", :locals => { :p => cta } %>
+            <% end %>
         </div>
-        <aside id="subscribe" class="columns small-12 large-4 section--sidebar">
-            <%= partial "blog/partials/blog-subscription", :locals => { :color => "gray" } %>
-        </aside>
     </div>
-</section>
-<section class="section-article container-color--gray-light">
     <div class="row small-up-1 medium-up-2">
             <% sorted_posts[10...20].each do | id, post | %>
             <div class="column group">
@@ -94,7 +97,7 @@ sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.revers
         <div class="column">
             <div class="menu button-group align-justify">
                 <%= partial "partials/snippets/button", :locals => { :label => "Browse the blog archives", :url => "/blog/archives/", :button_classes => "button", :icon => "icon-files", :icon_align => "left" } %>
-                <%= partial "partials/snippets/button", :locals => { :label => "Get posts in your inbox", :url => "#subscribe", :button_classes => "button success", :icon => "icon-email-open-sm", :icon_align => "left" } %>
+                <%= partial "partials/snippets/button", :locals => { :label => "Get posts in your inbox", :url => "#blog-featured", :button_classes => "button success", :icon => "icon-email-open-sm", :icon_align => "left" } %>
             </div>
         </div>
     </div>
