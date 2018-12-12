@@ -17,24 +17,62 @@ priority: "0.9"
 = partial "partials/snippets/platform-icons"
 
 section#compliance-top.section-article
-  .row.align-center.group
+  .row.align-center
     .columns.small-12.medium-12.large-8.text-center
       h1.headline-2.group= current_page.data.title
       p.lead= current_page.data.summary
       = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo/", :button_classes => "button success", :item_id => "cta_top-demo", :icon => "icon-event-check", :icon_align => "left" }
 section#compliance-who
-  .row.align-center.full-width
+  .row.align-center.full-width.collapse
     .columns.flex-container.align-middle.small-12.medium-6.large-6.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/UxwNUvgCQwOgCYEKea6sS/f261741ae95584c903a4d8d69ef3c528/developers__team_workspace_-_annie-spratt-608001-unsplash.jpg?fit=crop&w=1200&h=800"
       h2.headline-1.text-bold.nomargin.pad--xl.text-center The challenges of compliance are slowing you down
-    .columns.small-12.medium-6.large-6.pad--xl
-      .line-length.margin-auto
-        h3.headline-3 (identifying attributes)
+    .columns.small-12.medium-6.large-6.bg-gray-10
+      .line-length.pad--xl
+        h3.headline-3
+          | (identifying attributes)
         h4.headline-4 If you are big…
         p Large organizations are hesitant to migrate to AWS or Azure because they are concerned compliance requirements aren't being met. When they can't be sure, they stick with old infrastructure.
         h4.headline-4 If you are new…
         p Emerging digital products can't break through to their enterprise customers unless they demonstrate compliance and security credibility from Day One. Compliance is central to the business model.
+.strip-bright
+section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
+  .row.align-center
+    .columns.small-12.medium-12.large-8.text-center
+      h2.headline-2 Compliance Solutions
+  .row.align-center.small-up-1.medium-up-2.large-up-3.row--card-grid
+    .column.text-center
+      .card.container-color--trans
+        .card-section
+          = inline_svg("cks-logo-w", class: "icon-size--xlarge")
+          .subhead--spaced CKS
+          h3.headline-4 Compliant  Kubernetes<br /> Service
+          p.lead Get the scalable power of Kubernetes in a secure cluster
+        .card-section
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/demo/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
+    .column.text-center
+      .card.container-color--trans
+        .card-section
+          = inline_svg("cpaas-logo-w", class: "icon-size--xlarge")
+          .subhead--spaced CPaaS
+          h3.headline-4 Compliant Platform  as a Service
+          p.lead Build & deploy digital health apps on a compliant, hosted platform
+        .card-section
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/demo/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
+    .column.text-center
+      .card.container-color--trans
+        .card-section
+          = inline_svg("ccms-logo-w", class: "icon-size--xlarge")
+          .subhead--spaced CCMS
+          h3.headline-4 Cloud Compliance Management System
+          p.lead Know the precise compliance state of your cloud environments
+        .card-section
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/demo/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
+.strip-bright
 
-section#compliance-video.section-article.bg-gray-3
+section#compliance-video.section-article.bg-gray-11
+  .row.group.align-center
+    .columns.small-12.text-center
+      h2.headline-2 Understanding Cloud Compliance
   .row.align-center.group
     .columns.small-12.medium-12.large-8.text-center
       .video.drop--big
@@ -43,7 +81,7 @@ section#compliance-video.section-article.bg-gray-3
         .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;")
           .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;"
             span.wistia_embed.wistia_async_1o1udvaa6z class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"   
-  .row.group.align-center
+  /.row.group.align-center
     .columns.small-12.medium-6.large-4
 
     .columns.small-12.medium-6.large-4
