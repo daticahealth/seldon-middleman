@@ -22,18 +22,18 @@ ruby:
       aside id="alertTop" style="min-height: 40px;" class="hide dismiss full-width alert-ribbon relative container-gray-2 text-center align-middle" data-closable="" role="banner"
         link href="/public/css/views/ribbon.css" rel="stylesheet"
           script
-        a href=event_url class="alert-content no-border z-stack-10"
+        a href=event_url class="alert-content no-border z-10"
           span.item-h.item-category.spaced-out
             | Webinar 
             = inline_svg("small/icon-webinar-sm", class: "icon-inline")
           span.item-h.item-title.text-bold = event_title
           span.item-h.show-for-large | 
           span.item-h.text-light = event_date_full
-        button class="alert-ribbon--action dismiss close-button button--inverted z-stack-10" aria-label="Dismiss alert" type="button" data-close="" title="No thanks"
+        button class="alert-ribbon--action dismiss close-button button--inverted z-10" aria-label="Dismiss alert" type="button" data-close="" title="No thanks"
           span aria-hidden="true" 
             = inline_svg("small/icon-close", class: "nav-button--icon")
           /&times;
-        .absolute.z-stack-0.alert-ribbon--bg
+        .absolute.z-0.alert-ribbon--bg
           img.lozad.relative.img-cover data-src="#{event_img}?fit=thumb&w=1200&h=48" data-srcset="#{event_img}?fit=thumb&w=800&h=200 640w, #{event_img}?fit=thumb&w=1000&h=48 1000w, #{event_img}?fit=thumb&w=1400&h=48&fm=png 1200w"
       javascript:
         var currPromoCookie = 'promo-#{cookie_name}';

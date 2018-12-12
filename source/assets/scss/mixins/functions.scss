@@ -432,3 +432,19 @@ $underline: false !default;
         background-blend-mode: overlay;
     }
 }
+@mixin gradient-cks {
+    background: linear-gradient(194deg, #4C56F1 23%, #9829D1 107%);
+    color: white;
+}
+@mixin gradient-cpaas {
+    background: linear-gradient(165deg, #007FDF 7%, #00E3C3 92%);
+    color: white;
+}
+@mixin gradient-ccms {
+    background: linear-gradient(186deg, #6A4CF1 9%, #B629D1 72%);
+    color: white;
+}
+@mixin gradient-cmi {
+    background: linear-gradient(186deg, #6A4CF1 9%, #B629D1 72%);
+    color: white;
+}

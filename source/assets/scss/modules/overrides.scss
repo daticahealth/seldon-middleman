@@ -310,7 +310,7 @@
     color: darken($alert_color, 5%);
     margin-bottom: 1.2rem;
 }
-.z-stack {
+.z {
     &-back {
         z-index: -10;
     }
@@ -320,7 +320,10 @@
     &-0 {
         z-index: 0;
     }
-    &-10 {
+    &-5 {
+        z-index: 5;
+    }
+    &-10 { // navs should exist here
         z-index: 10;
     }
     &-auto {
@@ -344,7 +347,7 @@
     }
 }
 .opacity-0 {
-  transition: opacity $timing-default linear;
+  // transition: opacity $timing-default linear;
   opacity: 0;
 }
 .opacity-100 {

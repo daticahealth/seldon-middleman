@@ -40,33 +40,36 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
     .columns.small-12.medium-12.large-8.text-center
       h2.headline-2 Compliance Solutions
   .row.align-center.small-up-1.medium-up-2.large-up-3.row--card-grid
-    .column.text-center
-      .card.container-color--trans
+    .column.text-center.relative.has-blob
+      .card.container-color--trans.relative.z-5
         .card-section
           = inline_svg("cks-logo-w", class: "icon-size--xlarge")
           .subhead--spaced CKS
           h3.headline-4 Compliant  Kubernetes<br /> Service
           p.lead Get the scalable power of Kubernetes in a secure cluster
-        .card-section
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/demo/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
-    .column.text-center
-      .card.container-color--trans
+        .card-section.card-section--flush
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/cks/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
+      .blob-color.blob-cks.z-auto data-glow="false"
+    .column.text-center.relative.has-blob
+      .card.container-color--trans.relative.z-5
         .card-section
           = inline_svg("cpaas-logo-w", class: "icon-size--xlarge")
           .subhead--spaced CPaaS
           h3.headline-4 Compliant Platform  as a Service
           p.lead Build & deploy digital health apps on a compliant, hosted platform
-        .card-section
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/demo/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
-    .column.text-center
-      .card.container-color--trans
+        .card-section.card-section--flush
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/cpaas/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
+      .blob-color.blob-cpaas.z-auto data-glow="false"
+    .column.text-center.relative.has-blob
+      .card.container-color--trans.relative.z-5
         .card-section
           = inline_svg("ccms-logo-w", class: "icon-size--xlarge")
           .subhead--spaced CCMS
           h3.headline-4 Cloud Compliance Management System
           p.lead Know the precise compliance state of your cloud environments
-        .card-section
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/demo/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
+        .card-section.card-section--flush
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/ccms/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
+      .blob-color.blob-ccms.z-auto data-glow="false"
 .strip-bright
 
 section#compliance-video.section-article.bg-gray-11
