@@ -120,13 +120,13 @@ if Dir.exist?(config.data_dir + "/site")
     else
         puts "\n\nDiscover data folder doesn't exist!\n"
     end
-    if Dir.exist?(config.data_dir + "/site/events")
-        data.site.events.each do |id, event|
-            proxy "/events/#{event[:slug]}/index.html", "/contentful_templates/event.html", :locals => { :item => event }, :ignore => true
-        end
-    else
-        puts "\n\nevents data folder doesn't exist!\n"
-    end
+    # if Dir.exist?(config.data_dir + "/site/events")
+    #     data.site.events.each do |id, event|
+    #         proxy "/events/#{event[:slug]}/index.html", "/contentful_templates/event.html", :locals => { :item => event }, :ignore => true
+    #     end
+    # else
+    #     puts "\n\nevents data folder doesn't exist!\n"
+    # end
     if Dir.exist?(config.data_dir + "/site/person")
         data.site.person.each do |id, person|
             case person.person_type
@@ -148,21 +148,21 @@ if Dir.exist?(config.data_dir + "/site")
         puts "\n\nguide data folder doesn't exist!\n"
     end
 
-    if Dir.exist?(config.data_dir + "/site/pressReleases")
-        data.site.pressReleases.each do |id, pressRelease|
-            proxy "/press-release/#{pressRelease[:slug]}/index.html", "/contentful_templates/press_release.html", :locals => { :item => pressRelease }, :ignore => true
-        end
-    else
-        puts "\n\npressReleases data folder doesn't exist!\n"
-    end
+    # if Dir.exist?(config.data_dir + "/site/pressReleases")
+    #     data.site.pressReleases.each do |id, pressRelease|
+    #         proxy "/press-release/#{pressRelease[:slug]}/index.html", "/contentful_templates/press_release.html", :locals => { :item => pressRelease }, :ignore => true
+    #     end
+    # else
+    #     puts "\n\npressReleases data folder doesn't exist!\n"
+    # end
 
-    if Dir.exist?(config.data_dir + "/site/podcast")
-        data.site.podcast.each do |id, podcast|
-            proxy "/innovation/#{podcast[:slug]}/index.html", "/contentful_templates/podcast.html", :locals => { :item => podcast }, :ignore => true
-        end
-    else
-        puts "\n\npodcast data folder doesn't exist!\n"
-    end
+    # if Dir.exist?(config.data_dir + "/site/podcast")
+    #     data.site.podcast.each do |id, podcast|
+    #         proxy "/innovation/#{podcast[:slug]}/index.html", "/contentful_templates/podcast.html", :locals => { :item => podcast }, :ignore => true
+    #     end
+    # else
+    #     puts "\n\npodcast data folder doesn't exist!\n"
+    # end
     if Dir.exist?(config.data_dir + "/site/reports")
         data.site.reports.each do |id, report|
             proxy "/innovation/#{report[:slug]}/index.html", "/contentful_templates/report.html", :locals => { :item => report }, :ignore => true
@@ -203,15 +203,15 @@ activate :contentful do |f|
         features: 'features',
         forms: 'forms',
         guides: 'guides',
-        leadershipGallery: 'leadershipGallery',
+        # leadershipGallery: 'leadershipGallery',
         person: 'person',
-        podcast: 'podcastEntry',
-        pressReleases: 'pressReleases',
+        # podcast: 'podcastEntry',
+        # pressReleases: 'pressReleases',
         # products: 'products',
         quotes: 'quotes',
         reports: 'reports',
         services: 'services',
-        spotlights: 'spotlights',
+        # spotlights: 'spotlights',
         tags: 'tags',
         videos: 'videos',
         webinars: 'webinars'

@@ -1,6 +1,6 @@
 ---
-title: "Compliance for the Datica Platform"
-summary: "Prescriptive Compliance is how Healthcare Adopts the Cloud"
+title: "Complete Cloud Compliance"
+summary: "Datica takes on the burdens of compliance in the cloud—letting you focus on what you do best."
 navTitle: "Compliance"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
@@ -8,7 +8,7 @@ date: "March 5, 2018"
 ogType: "product"
 customCSS: "products"
 layout: products
-# collectionName: "products"
+collectionName: "compliance"
 # collectionOrder: 2
 priority: "0.9"
 ---
@@ -16,30 +16,41 @@ priority: "0.9"
 
 = partial "partials/snippets/platform-icons"
 
-section#compliance-top.container-color--dark-alt style=("background-color: #23272C")
-  .container-image--center(data-interchange="[/public/img/art/compliance-bg.svg, small]")
-    section.section-article
-      .row.align-center.group
-        .columns.small-12.medium-12.large-8.text-center
-          h1.headline-2.group= current_page.data.summary
-          = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo/", :button_classes => "button button--light group", :item_id => "cta_top-demo", :icon => "icon-event-check", :icon_align => "left" }
-          .video.drop--big
-            script async="" src="//fast.wistia.com/embed/medias/1o1udvaa6z.jsonp"
-            script async="" src="//fast.wistia.com/assets/external/E-v1.js"
-            .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;")
-              .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;"
-                span.wistia_embed.wistia_async_1o1udvaa6z class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"   
-      .row.group.align-center
-        .columns.small-12.medium-6.large-4
-          h3.headline-4 If you are big…
-          p Large organizations are hesitant to migrate to AWS or Azure because they are concerned compliance requirements aren't being met. When they can't be sure, they stick with old infrastructure.
-          h3.headline-4 If you are new…
-          p Emerging digital products can't break through to their enterprise customers unless they demonstrate compliance and security credibility from Day One. Compliance is central to the business model.
-        .columns.small-12.medium-6.large-4
-          = inline_svg_art("source/assets/img/art/k8-continuous-compliance.svg", class: "svg-color--white")
-          h3.headline-4 Datica solves your problem
-          p Datica’s array of products and services allow development flexibility while providing prescriptive compliance and security built in. With Datica, any technology team can manage compliance on the cloud, giving organizations the assurances they need to adopt the benefits of the cloud.
-      / .menu.button-cluster.align-center
+section#compliance-top.section-article
+  .row.align-center.group
+    .columns.small-12.medium-12.large-8.text-center
+      h1.headline-2.group= current_page.data.title
+      p.lead= current_page.data.summary
+      = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo/", :button_classes => "button success", :item_id => "cta_top-demo", :icon => "icon-event-check", :icon_align => "left" }
+section#compliance-who
+  .row.align-center.full-width
+    .columns.flex-container.align-middle.small-12.medium-6.large-6.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/UxwNUvgCQwOgCYEKea6sS/f261741ae95584c903a4d8d69ef3c528/developers__team_workspace_-_annie-spratt-608001-unsplash.jpg?fit=crop&w=1200&h=800"
+      h2.headline-1.text-bold.nomargin.pad--xl.text-center The challenges of compliance are slowing you down
+    .columns.small-12.medium-6.large-6.pad--xl
+      .line-length.margin-auto
+        h3.headline-3 (identifying attributes)
+        h4.headline-4 If you are big…
+        p Large organizations are hesitant to migrate to AWS or Azure because they are concerned compliance requirements aren't being met. When they can't be sure, they stick with old infrastructure.
+        h4.headline-4 If you are new…
+        p Emerging digital products can't break through to their enterprise customers unless they demonstrate compliance and security credibility from Day One. Compliance is central to the business model.
+
+section#compliance-video.section-article.bg-gray-3
+  .row.align-center.group
+    .columns.small-12.medium-12.large-8.text-center
+      .video.drop--big
+        script async="" src="//fast.wistia.com/embed/medias/1o1udvaa6z.jsonp"
+        script async="" src="//fast.wistia.com/assets/external/E-v1.js"
+        .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;")
+          .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;"
+            span.wistia_embed.wistia_async_1o1udvaa6z class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"   
+  .row.group.align-center
+    .columns.small-12.medium-6.large-4
+
+    .columns.small-12.medium-6.large-4
+      = inline_svg_art("source/assets/img/art/k8-continuous-compliance.svg", class: "svg-color--white")
+      h3.headline-4 Datica solves your problem
+      p Datica’s array of products and services allow development flexibility while providing prescriptive compliance and security built in. With Datica, any technology team can manage compliance on the cloud, giving organizations the assurances they need to adopt the benefits of the cloud.
+  / .menu.button-cluster.align-center
 
 section#compliance-shared-responsibility.section-article.container-gray-2
   .row.group.align-center

@@ -50,6 +50,9 @@
     max-width: none;
     max-width: initial;
 }
+.line-length {
+    max-width: 45em;
+}
 // .material-icons { // overrides from default google settings
 //     vertical-align: middle;
 //     font-size: 140% !important;
@@ -114,7 +117,10 @@ hr {
 }
 
 // Random site helpers - potential to reorganize in the future - RR
-.margin-auto{margin: 0 auto;}
+.margin-auto{
+    margin-right: auto;
+    margin-left: auto;
+}
 // .pad-h {
 //     padding-left:  1rem;
 //     padding-right: 1rem;

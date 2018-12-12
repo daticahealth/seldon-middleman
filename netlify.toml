@@ -89,7 +89,7 @@
 
 [[redirects]]
   from = "/integration/"
-  to = "/compliant-managed-integration/"
+  to = "/integrations/"
   status = 301
 
 [[redirects]]
@@ -159,12 +159,12 @@
 
 [[redirects]]
   from = "/solutions/"
-  to = "/compliant-managed-integration/"
+  to = "/integrations/"
   status = 301
 
 [[redirects]]
   from = "/services/"
-  to = "/compliant-managed-integration/"
+  to = "/integrations/"
   status = 301
 
 [[redirects]]
