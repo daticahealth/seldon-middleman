@@ -1,0 +1,147 @@
+---
+title: "Integration"
+summary: "Datica handles the risk and complexity of EHR integrations, so you can focus on building solutions."
+navTitle: "Integration"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "March 5, 2018"
+ogType: "product"
+customCSS: "products"
+layout: products
+collectionName: "product"
+# collectionOrder: 2
+priority: "0.9"
+---
+- current_page.data.share_image = image_share_platform
+
+= partial "partials/snippets/platform-icons"
+
+section#compliance-top.section-article.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/50WC8N3lz2k0K4o0WQYE4A/96d25d0d7f385f8cfc82950e78285a8a/hex-pattern-light-bg.svg"
+  .row.align-center
+    .columns.small-12.medium-10.large-9.text-center
+      h1.headline-2.group= current_page.data.title
+      p.lead= current_page.data.summary
+      / = partial "partials/snippets/button", :locals => { :label => "Get solutions to your compliance challenges", :url => "/demo/", :button_classes => "button success", :item_id => "cta_top-demo", :icon => "icon-angle-down", :icon_align => "right" }
+section#compliance-who
+  .row.align-center.full-width.collapse
+    .columns.flex-container.align-middle.small-12.medium-6.large-6.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/UxwNUvgCQwOgCYEKea6sS/f261741ae95584c903a4d8d69ef3c528/developers__team_workspace_-_annie-spratt-608001-unsplash.jpg?fit=crop&w=1200&h=800"
+      h2.headline-1.text-bold.nomargin.pad--xl.text-center The challenges of compliance are slowing you down
+    .columns.small-12.medium-6.large-6.bg-gray-10
+      .line-length.pad--xl
+        h3.headline-3
+          | (identifying attributes)
+        h4.headline-4 If you are big…
+        p Large organizations are hesitant to migrate to AWS or Azure because they are concerned compliance requirements aren't being met. When they can't be sure, they stick with old infrastructure.
+        h4.headline-4 If you are new…
+        p Emerging digital products can't break through to their enterprise customers unless they demonstrate compliance and security credibility from Day One. Compliance is central to the business model.
+.strip-bright
+
+section#integration-video.section-article.bg-gray-11
+  .row.group.align-center
+    .columns.small-12.text-center
+      h2.headline-2 Understanding EHR Integration
+      p.lead (paragraph on the problems of compliance.) Here are some resources to get you started.
+section.section-article.container-gray-11
+  .row.align-middle
+    .columns.small-12.medium-8
+      .video.drop.group
+        <script src="https://fast.wistia.com/embed/medias/0rr2p8xca5.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_0rr2p8xca5 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+    .columns.small-12.medium-4
+      h3.headline-4 What is EHR Integration?
+      p EHR integration is the partnership between providers, payers, vendors, and other players that brings the data or function from one application or program to that of another. Because of the sheer quantity and diversity of data, healthcare providers face major obstacles in integrating and effectively analyzing healthcare information.
+      = partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/discover/ehr-integrations/", :button_classes => "button hollow", :item_id => "integration" }
+section#services.section-article.container-gray-12
+  .row.align-center
+    .columns.small-12
+      h2.headline-3.text-center.group
+        | Integration Services
+  .row.align-center.align-middle.group
+    .columns.small-12.medium-6.large-5
+      h3.headline-4 Project Management
+      p Our team of project managers provide an expert view into integrated with EHRs and health systems. They will help manage timelines, create project plans, and track deliverables.
+      h3.headline-4 Connection Setup and Maintenance
+      p Datica’s Integration Engineers will build, configure, test and maintain VPN connections to allow for transmission of HL7 messages.
+      h3.headline-4 Interface Build and Configuration
+      p We will transform HL7 messages into JSON or FHIR messages to help keep things standard for you across implementations. We have many predesigned channels ready to go.
+    .columns.small-12.medium-6.large-5
+      .callout.drop.group
+        blockquote.quote--serif
+          - quote_services = data.site.quotes['4r9Bmb0l8QiMgKqCagOa0E']
+          = Kramdown::Document.new(quote_services["quote_body"]).to_html
+        - if quote_services.has_key?("related_person")
+          = partial("partials/snippets/person", :locals => { :p => quote_services.related_person } )
+  .row.align-center
+    .columns.small-12.medium-10.large-6.text-center
+      = inline_svg("icon-integration", class: "icon-size--large svg-color--gray-7 group")
+      h3.headline-3 Datica Integration Solutions
+      p.lead Datica's approach to integration has helped a wide range of solutions across the entire spectrum of healthcare:
+  .row.align-center.align-middle.group
+    .columns.small-12.large-10.multicol-3
+      ul
+        li Asynchronous Telehealth
+        li Synchronous Telehealth
+        li Oncology Care Management Solutions
+        li Genetic Testing Laboratories &amp; Analytics
+        li Provider Secure Messaging &amp; Alarm Management
+        li Population Health
+        li Patient Engagement
+        li Clinical Automation
+        li Patient Reported Outcomes (Bundled Payment Management)
+        li Medicare Advantage Solutions (HCC management w/patient outreach)
+        li Referral Management
+        li Patient Care Planning
+        li Post-Acute Discharge Placement (SNF and LTAC)
+        li Wait List Automation
+        li Patient Pre-Registration Urgent Care/ED Triage
+        li Clinical Documentation Improvement &amp; Physician Query
+        li Orthopedic Implant Providers for Supply Chain Optimization &amp; Instrument Tray Reconfiguration
+        li Claims Processing and Claim Audit Tracking Solutions
+
+
+  .row.align-center.align-middle
+    .columns.flex-container.align-middle.align-center.small-12.medium-6.large-4.text-center.pad--xl
+      img.lozad data-src="http://images.ctfassets.net/189dvqdsjh46/2yyrhvg12wySaoSgyQ6C6G/0ec44a3443d3e89690e511f8f85d44fe/guide-tco-compliance-2018-thumb.png?fit=thumb&w=500&h=500" alt="Guide" width="250"
+    .columns.small-12.medium-6.large-6
+      .line-length
+        h3.headline-3.text-bold.nomargin Datica Guides
+        p.lead Datica Guides are written by experts in healthcare technology, compliance, and security.
+        
+section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
+  .row.align-center
+    .columns.small-12.medium-12.large-8.text-center
+      h2.headline-2 Integration Solutions
+  .row.align-center.small-up-1.medium-up-2.large-up-3.row--card-grid
+    .column.text-center.relative.has-blob
+      .card.container-color--trans.relative.z-5
+        .card-section
+          = inline_svg("cmi-logo-w", class: "icon-size--xlarge")
+          .subhead--spaced CMI
+          h3.headline-4 Compliant Managed Integration
+          p.lead Scalable, secure data exchange with any EHR
+        .card-divider.card-divider--flush
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CMI", :url => "/compliant-managed-integration/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
+      .blob-color.blob-cmi.z-auto data-glow="false"
+    .column.text-center.relative.has-blob
+      .card.container-color--trans.relative.z-5
+        .card-section
+          = inline_svg("icon-consulting-compass", class: "icon-size--xlarge")
+          .subhead--spaced
+            | &nbsp;
+          h3.headline-4 Integration Services
+          p.lead Expert guidance and project services
+        .card-divider.card-divider--flush
+          = partial "partials/snippets/button", :locals => { :label => "Ask about Datica Services", :url => "/compliant-managed-integration#services", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
+      .blob-color.blob-services.z-auto data-glow="false"
+
+.strip-bright
+
+/ aside#ctaBottom.container-color--dark-grad-blue
+  .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
+    .row.align-center
+      .columns.small-12.medium-10.large-10.text-center
+        h2.headline-3 <strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.
+    .row.align-center
+      .columns.small-6.large-4.text-right
+        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
+      .columns.small-6.large-6.text-left
+       = partial "partials/snippets/button", :locals => { :label => "Learn About Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cks" }

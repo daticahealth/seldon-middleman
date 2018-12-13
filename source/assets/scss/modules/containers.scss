@@ -400,43 +400,48 @@
 [class*="container"], [class*="bg"] {
     transition: background-color $timing-default, color $timing-default, box-shadow $timing-default;
 }
-.blob-color {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    transform: scale3d(0.5, 0.6, 0.5); // scales it down so it's more blob-ish. 
-    // z-index: 0;
-    // background-blend-mode: lighten;
-    @include blur(4rem);
-    border-radius: 35%;
-    transition: background $timing-default * 2.5, color $timing-default * 2.5, opacity $timing-default * 2.5;
-    &[data-glow='true'] {
-        opacity: 1;
-    }
-    &[data-glow='false'] {
-        opacity: 0;
-    }
-}
-.has-blob {
-    &:hover {
-        .blob-color {
+@supports (display: grid) { // a check for filter: blur does not work in FF; grid check is close support-wise. Test: https://codepen.io/allanwhite/pen/yGeXXz
+    .blob-color {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: scale3d(0.5, 0.6, 0.5); // scales it down so it's more blob-ish. 
+        // z-index: 0;
+        // background-blend-mode: lighten;
+        @include blur(4rem);
+        border-radius: 35%;
+        transition: background $timing-default * 2.5, color $timing-default * 2.5, opacity $timing-default * 2.5;
+        &[data-glow='true'] {
             opacity: 1;
         }
+        &[data-glow='false'] {
+            opacity: 0;
+        }
     }
-}
-.blob-cks {
-    @include gradient-cks;
-}
-.blob-cpaas {
-    @include gradient-cpaas;
-}
-.blob-ccms {
-    @include gradient-ccms;
-}
-.blob-cmi {
-    @include gradient-cmi;
+    .has-blob {
+        &:hover {
+            .blob-color {
+                opacity: 1;
+            }
+        }
+    }
+    .blob-cks {
+        @include gradient-cks(to left top);
+    }
+    .blob-cpaas {
+        @include gradient-cpaas(to left top);
+    }
+    .blob-ccms {
+        @include gradient-ccms(to left top);
+    }
+    .blob-cmi {
+        @include gradient-cmi(to left top);
+    }
+    .blob-services {
+        @include gradient-services(to left top);
+    }
 }
 // Vertical align helper
 .vertical-align {
