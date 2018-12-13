@@ -433,18 +433,22 @@ $underline: false !default;
     }
 }
 @mixin gradient-cks {
-    background: linear-gradient(194deg, #4C56F1 23%, #9829D1 107%);
+    /* blue to blue-purple */
+    background: linear-gradient(182.16deg, #4CC0F1 6.72%, #6929D1 96.96%);
     color: white;
 }
 @mixin gradient-cpaas {
-    background: linear-gradient(165deg, #007FDF 7%, #00E3C3 92%);
+    /* blue-green */
+    background: linear-gradient(160.12deg, #008FDF -5.71%, #00E3BA 82.93%);
     color: white;
 }
 @mixin gradient-ccms {
-    background: linear-gradient(186deg, #6A4CF1 9%, #B629D1 72%);
+    /* blue-purple */
+    background: linear-gradient(186.37deg, #4C66F1 2.29%, #D129C3 98.71%);
     color: white;
 }
 @mixin gradient-cmi {
-    background: linear-gradient(186deg, #6A4CF1 9%, #B629D1 72%);
+    /* red-purple to yellow */
+    background: linear-gradient(211.62deg, #CE2F98 16.59%, #FEA869 73.44%, #FFE76A 99.57%);
     color: white;
 }
