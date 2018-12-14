@@ -16,24 +16,20 @@ priority: "0.9"
 
 = partial "partials/snippets/platform-icons"
 
-section#compliance-top.section-article.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/50WC8N3lz2k0K4o0WQYE4A/96d25d0d7f385f8cfc82950e78285a8a/hex-pattern-light-bg.svg"
+/ section#compliance-top.section-article.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/50WC8N3lz2k0K4o0WQYE4A/96d25d0d7f385f8cfc82950e78285a8a/hex-pattern-light-bg.svg"
   .row.align-center
     .columns.small-12.medium-10.large-9.text-center
       h1.headline-2.group= current_page.data.title
       p.lead= current_page.data.summary
       / = partial "partials/snippets/button", :locals => { :label => "Get solutions to your compliance challenges", :url => "/demo/", :button_classes => "button success", :item_id => "cta_top-demo", :icon => "icon-angle-down", :icon_align => "right" }
-section#compliance-who
-  .row.align-center.full-width.collapse
-    .columns.flex-container.align-middle.small-12.medium-6.large-6.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/UxwNUvgCQwOgCYEKea6sS/f261741ae95584c903a4d8d69ef3c528/developers__team_workspace_-_annie-spratt-608001-unsplash.jpg?fit=crop&w=1200&h=800"
-      h2.headline-1.text-bold.nomargin.pad--xl.text-center The challenges of compliance are slowing you down
-    .columns.small-12.medium-6.large-6.bg-gray-10
-      .line-length.pad--xl
-        h3.headline-3
-          | (identifying attributes)
-        h4.headline-4 If you are big…
-        p Large organizations are hesitant to migrate to AWS or Azure because they are concerned compliance requirements aren't being met. When they can't be sure, they stick with old infrastructure.
-        h4.headline-4 If you are new…
-        p Emerging digital products can't break through to their enterprise customers unless they demonstrate compliance and security credibility from Day One. Compliance is central to the business model.
+section#top.section-article.bg-gray-12.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/3KxcDNobAsuWyMUswWCyYE/cfd3f8b90c96a7658620d0817c072231/doctor__pleased_edit__draft_.jpg?fit=crop&w=1600&h=800"
+  .row.align-left.full-width
+    .columns.small-12.medium-10.large-8.line-length
+      h2.headline-1.text-bold Get back to solving problems for heathcare
+      h3.headline-4 Imagine being free to focus on solving problems again—instead of the worry and cost of EHR integrations.
+      p In the past, EHR integration projects have been frustrating obstacles for innovation teams, preventing them from creating breakthrough solutions for overwhelmed medical professionals.
+      p Integrating with EHRs is an ongoing challenge for digital health solutions. 
+        strong EHR integration is not just a technology problem, it’s also a people and process problem.
 .strip-bright
 
 section#integration.section-article.bg-gray-11
@@ -47,15 +43,7 @@ section#integration.section-article.bg-gray-11
             p.lead.line-length.margin-auto = collection.desc
       = partial "/partials/content/collection-list", :locals => { :collection => collection }
 
-
-section.section-article.container-gray-11
-  .row.align-middle
-    .columns.small-12.medium-8
-      = Kramdown::Document.new(data.site.videos["4j00TFuRUkOUm6w22cUUog"].custom_form).to_html  
-    .columns.small-12.medium-4
-      h3.headline-4 What is EHR Integration?
-      p EHR integration is the partnership between providers, payers, vendors, and other players that brings the data or function from one application or program to that of another. Because of the sheer quantity and diversity of data, healthcare providers face major obstacles in integrating and effectively analyzing healthcare information.
-      = partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/discover/ehr-integrations/", :button_classes => "button hollow", :item_id => "integration" }
+      /= partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/discover/ehr-integrations/", :button_classes => "button hollow", :item_id => "integration" }
 section#services.section-article.container-gray-12
   .row.align-center
     .columns.small-12
