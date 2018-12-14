@@ -20,6 +20,8 @@
           img.lozad.thumbnail src="#{entry.bg_image.url}?fm=jpg&h=600&q=10" data-src="#{entry.bg_image.url}?&h=600"
       - when "webinars"
         = partial "partials/cards/webinar-poster", :locals => { :entry => entry }
+      - when "discover"
+        = partial "partials/cards/discover", :locals => { :post => entry, :classes => "" }
     .columns.small-12.medium-6.large-5.xlarge-5
       h5.subhead--spaced = type.capitalize
       h3.headline-4
