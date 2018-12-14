@@ -59,23 +59,56 @@ section#compliance-video.section-article.bg-gray-11
       .line-length
         h4.headline-4 Travis Good, MD on Compliance in Healthcare
         p Dr. Good gives an overview of some of the compliance challenges in healthcare. 
+  .collection
+    - related_entries = data.site.collections.to_a.select { |id, entry | (id == "2xAKQVZSKIsygICqimW0qA") }
+    - related_entries.each do | id, collection |
+      .row.align-center
+        .columns.small-12.text-center
+          h2.headline-2 = collection.subhead
+          - if collection.has_key?("desc")
+            p.lead.line-length.margin-auto = collection.desc
+      - collection["related_entries"].each do | entry |
+        - type = entry._meta.content_type_id
+        - folder = case type
+        - when "guides" then "guide"
+        - else type
+        - url = "/#{folder}/#{entry.slug}/"
+        .row.align-center.align-middle.section-article--med
+          / class=(type == "webinars" ? nil : "shrink")
+          .columns.small-12.medium-6.large-5.xlarge-7
+            - case type
+            - when "academy"
+              a href=url title=entry.title
+                img.lozad.thumbnail src="https://images.ctfassets.net/189dvqdsjh46/n9pqHc4Xp62uUSwciEe4C/ead1ba4e14e45c06639c5dea3d47b8ac/datica-academy-notebook-share.jpg?w=800&h=400&q=10" data-src="https://images.ctfassets.net/189dvqdsjh46/n9pqHc4Xp62uUSwciEe4C/ead1ba4e14e45c06639c5dea3d47b8ac/datica-academy-notebook-share.jpg?w=800&h=400"
+            - when "blog"
+              a href=url title=entry.title
+                img.lozad.thumbnail src="#{entry.featured_image.url}?fit=thumb&w=800&h=400&q=10" data-src="#{entry.featured_image.url}?fit=thumb&w=800&h=400"
+            - when "guides"
+              a href=url title=entry.title
+                img.lozad.thumbnail src="#{entry.bg_image.url}?fm=jpg&h=600&q=10" data-src="#{entry.bg_image.url}?&h=600"
+            - when "webinars"
+              = partial "partials/cards/webinar-poster", :locals => { :entry => entry }
+          .columns.small-12.medium-6.large-5.xlarge-5
+            h5.subhead--spaced = type.capitalize
+            h3.headline-4
+              a href=url title=entry.title
+                = entry.title
+            p = entry.summary
 
-  .row.align-spaced.align-middle.collapse.group
-    - book_thumb = "https://images.ctfassets.net/frc0x3twtm4f/4NsK3lp2NGGCYCm0uC0i0S/e1b7ade9c1344896efeb6db3cf6056d1/compliance_book__3d_front_and_back_mockup.png"
-    .columns.small-12.medium-8.large-6
-      h4.headline-4
-        a class="text-bold" href="https://completecloudcompliance.com/" rel="external" title="Complete Cloud Compliance Book" Complete Cloud Compliance: 
-        | The Book
-      h5.headline-5 Regulated companies have a hard problem to solve.
-      p They run the risk of becoming obsolete due to an inability to adopt new technology fast enough. Incumbent business models will be out-flanked by shifting customer expectations brought on by improved digital experiences. Market conditions are out of their control. Even healthcare, the most regulated industry with the heartiest entrenchment and uniquely perverse economic incentives, is remarkably close to complete upheaval due to a litany of world-changing ideas, like mobile devices, Internet of Things, big data, and artificial intelligence. It all stems from the mother of all recent innovations, the cloud. The root challenge is the adoption of cloud computing in order to remain relevant. If achieved, compliant cloud computing becomes an organizational differentiator.
-      
-      p Compliance contributes to this existential threat because it prompts the cloud to be viewed as a liable cost center by most regulated companies. But that’s wrong. It’s actually a leverageable asset that is at the foundation of modern business transformation. 
-      
-      p Complete Cloud Compliance is a program developed after years of managing high-stakes compliance requirements across mission critical healthcare workloads. It is a chance to control destiny. The program is written for healthcare organizations, but all while under the principle that best practices are best practices, meaning the insights shared can be applied across global regimes and any industry.
-    .columns.small-12.medium-4.large-4
-      a class="text-italic" href="https://completecloudcompliance.com/" rel="external" title="Complete Cloud Compliance Book"
-        img.lozad alt="Complete Cloud Compliance" src=book_thumb+'?w=150&fm=png&fl=png8' data-src=book_thumb+'?w=600'
-  .row.align-center.align-middle
+  / - case_studies = data.site.collections.to_a.select { | id, cust | (id == "6wxpCFBxTy6aKEYQoEU4Y4") }
+  / - case_studies.each do | id, cardgroup |
+  /   .row.align-center
+      .columns.small-12.text-center.group
+        h2.headline-3 = cardgroup.title
+    .row.full-width.align-center.small-up-1.medium-up-2.large-up-3.xlarge-up-4
+      - cardgroup["related_entries"].each do | card |
+        - carditem = data.site.caseStudy[card.id]
+        - cust = data.site.customers[carditem.customer.id]
+        .column
+          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
+
+
+  / .row.align-center.align-middle
     .columns.flex-container.align-middle.align-center.small-12.medium-6.large-4.text-center.pad--xl
       img.lozad data-src="http://images.ctfassets.net/189dvqdsjh46/2yyrhvg12wySaoSgyQ6C6G/0ec44a3443d3e89690e511f8f85d44fe/guide-tco-compliance-2018-thumb.png?fit=thumb&w=500&h=500" alt="Guide" width="250"
     .columns.small-12.medium-6.large-6

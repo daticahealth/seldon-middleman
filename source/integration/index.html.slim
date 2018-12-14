@@ -36,11 +36,44 @@ section#compliance-who
         p Emerging digital products can't break through to their enterprise customers unless they demonstrate compliance and security credibility from Day One. Compliance is central to the business model.
 .strip-bright
 
-section#integration-video.section-article.bg-gray-11
-  .row.group.align-center
-    .columns.small-12.text-center
-      h2.headline-2 Understanding EHR Integration
-      p.lead (paragraph on the problems of compliance.) Here are some resources to get you started.
+section#integration.section-article.bg-gray-11
+  .collection
+    - related_entries = data.site.collections.to_a.select { |id, entry | (id == "6B0TGVhf560Q8YsMem8Omu") }
+    - related_entries.each do | id, collection |
+      .row.align-center
+        .columns.small-12.text-center
+          h2.headline-2 = collection.subhead
+          - if collection.has_key?("desc")
+            p.lead.line-length.margin-auto = collection.desc
+      - collection["related_entries"].each do | entry |
+        - type = entry._meta.content_type_id
+        - folder = case type
+        - when "guides" then "guide"
+        - else type
+        - url = "/#{folder}/#{entry.slug}/"
+        .row.align-center.align-middle.section-article--med
+          / class=(type == "webinars" ? nil : "shrink")
+          .columns.small-12.medium-6.large-5.xlarge-7
+            - case type
+            - when "academy"
+              / a href=url title=entry.title
+                img.lozad.thumbnail src="https://images.ctfassets.net/189dvqdsjh46/n9pqHc4Xp62uUSwciEe4C/ead1ba4e14e45c06639c5dea3d47b8ac/datica-academy-notebook-share.jpg?w=800&h=400&q=10" data-src="https://images.ctfassets.net/189dvqdsjh46/n9pqHc4Xp62uUSwciEe4C/ead1ba4e14e45c06639c5dea3d47b8ac/datica-academy-notebook-share.jpg?w=800&h=400"
+            - when "blog"
+              a href=url title=entry.title
+                img.lozad.thumbnail src="#{entry.featured_image.url}?fit=thumb&w=800&h=400&q=10" data-src="#{entry.featured_image.url}?fit=thumb&w=800&h=400"
+            - when "guides"
+              a href=url title=entry.title
+                img.lozad.thumbnail src="#{entry.bg_image.url}?fm=jpg&h=600&q=10" data-src="#{entry.bg_image.url}?&h=600"
+            - when "webinars"
+              = partial "partials/cards/webinar-poster", :locals => { :entry => entry }
+          .columns.small-12.medium-6.large-5.xlarge-5
+            h5.subhead--spaced = type.capitalize
+            h3.headline-4
+              a href=url title=entry.title
+                = entry.title
+            p = entry.summary
+
+
 section.section-article.container-gray-11
   .row.align-middle
     .columns.small-12.medium-8

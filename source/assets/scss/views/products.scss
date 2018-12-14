@@ -382,3 +382,10 @@ ul.bullet-outside {
         @include transform(skew(8deg) rotate(3deg));
     }
 }
+
+// for content collections
+.collection .row:nth-child(odd) {
+    @include breakpoint (medium) {
+        flex-direction: row-reverse;
+    }
+}
