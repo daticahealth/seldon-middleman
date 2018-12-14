@@ -16,7 +16,7 @@ priority: "0.9"
 
 = partial "partials/snippets/platform-icons"
 
-section#compliance-top.section-article.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/50WC8N3lz2k0K4o0WQYE4A/96d25d0d7f385f8cfc82950e78285a8a/hex-pattern-light-bg.svg"
+/ section#compliance-top.section-article.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/50WC8N3lz2k0K4o0WQYE4A/96d25d0d7f385f8cfc82950e78285a8a/hex-pattern-light-bg.svg"
   .row.align-center
     .columns.small-12.medium-10.large-9.text-center
       h1.headline-2.group= current_page.data.title
@@ -25,7 +25,7 @@ section#compliance-top.section-article.container-image-fill.lozad data-backgroun
 section#compliance-who
   .row.align-center.full-width.collapse
     .columns.flex-container.align-middle.small-12.medium-6.large-6.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/UxwNUvgCQwOgCYEKea6sS/f261741ae95584c903a4d8d69ef3c528/developers__team_workspace_-_annie-spratt-608001-unsplash.jpg?fit=crop&w=1200&h=800"
-      h2.headline-1.text-bold.nomargin.pad--xl.text-center The challenges of compliance are slowing you down
+      h1.headline-1.text-bold.nomargin.pad--xl.text-center The challenges of compliance are slowing you down
     .columns.small-12.medium-6.large-6.bg-gray-10
       .line-length.pad--xl
         h3.headline-3
@@ -34,66 +34,36 @@ section#compliance-who
         p Large organizations are hesitant to migrate to AWS or Azure because they are concerned compliance requirements aren't being met. When they can't be sure, they stick with old infrastructure.
         h4.headline-4 If you are new…
         p Emerging digital products can't break through to their enterprise customers unless they demonstrate compliance and security credibility from Day One. Compliance is central to the business model.
-.strip-bright
+        .logo-cloud
+          - data.views.home.badges.each do |logo|
+            - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
+            img alt="#{logo["name"]}" class="logo-cloud--item logo-size--#{logo['logoSize']} lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
+/ .strip-bright
 
-section#compliance-video.section-article.bg-gray-11
+section#compliance.section-article.bg-gray-11
   .row.group.align-center
     .columns.small-12.text-center
       h2.headline-2 Understanding Compliance in the Cloud
       p.lead (paragraph on the problems of compliance.) Here are some resources to get you started.
-  .row.small-up-3.medium-up-5.large-up-7.align-middle.align-center.group
-    - data.views.home.badges.each do |logo|
-      - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
-      .column.shrink
-        img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
 
-  .row.align-center.align-middle.group--2x
+section#video.section-article.bg-gray-3
+  .row.align-center.align-middle
     .columns.small-12.medium-6.large-8.text-center
-      .video
-        script async="" src="//fast.wistia.com/embed/medias/1o1udvaa6z.jsonp"
-        script async="" src="//fast.wistia.com/assets/external/E-v1.js"
-        .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;")
-          .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;"
-            span.wistia_embed.wistia_async_1o1udvaa6z class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"
+      = Kramdown::Document.new(data.site.videos["4phTVRUAMMwk4o46qQuSQi"].custom_form).to_html  
     .columns.small-12.medium-6.large-4
       .line-length
         h4.headline-4 Travis Good, MD on Compliance in Healthcare
         p Dr. Good gives an overview of some of the compliance challenges in healthcare. 
-  .collection
-    - related_entries = data.site.collections.to_a.select { |id, entry | (id == "2xAKQVZSKIsygICqimW0qA") }
-    - related_entries.each do | id, collection |
-      .row.align-center
-        .columns.small-12.text-center
-          h2.headline-2 = collection.subhead
-          - if collection.has_key?("desc")
-            p.lead.line-length.margin-auto = collection.desc
-      - collection["related_entries"].each do | entry |
-        - type = entry._meta.content_type_id
-        - folder = case type
-        - when "guides" then "guide"
-        - else type
-        - url = "/#{folder}/#{entry.slug}/"
-        .row.align-center.align-middle.section-article--med
-          / class=(type == "webinars" ? nil : "shrink")
-          .columns.small-12.medium-6.large-5.xlarge-7
-            - case type
-            - when "academy"
-              a href=url title=entry.title
-                img.lozad.thumbnail src="https://images.ctfassets.net/189dvqdsjh46/n9pqHc4Xp62uUSwciEe4C/ead1ba4e14e45c06639c5dea3d47b8ac/datica-academy-notebook-share.jpg?w=800&h=400&q=10" data-src="https://images.ctfassets.net/189dvqdsjh46/n9pqHc4Xp62uUSwciEe4C/ead1ba4e14e45c06639c5dea3d47b8ac/datica-academy-notebook-share.jpg?w=800&h=400"
-            - when "blog"
-              a href=url title=entry.title
-                img.lozad.thumbnail src="#{entry.featured_image.url}?fit=thumb&w=800&h=400&q=10" data-src="#{entry.featured_image.url}?fit=thumb&w=800&h=400"
-            - when "guides"
-              a href=url title=entry.title
-                img.lozad.thumbnail src="#{entry.bg_image.url}?fm=jpg&h=600&q=10" data-src="#{entry.bg_image.url}?&h=600"
-            - when "webinars"
-              = partial "partials/cards/webinar-poster", :locals => { :entry => entry }
-          .columns.small-12.medium-6.large-5.xlarge-5
-            h5.subhead--spaced = type.capitalize
-            h3.headline-4
-              a href=url title=entry.title
-                = entry.title
-            p = entry.summary
+section#resources.section-article.collection.bg-gray-11
+  - related_entries = data.site.collections.to_a.select { |id, entry | (id == "2xAKQVZSKIsygICqimW0qA") }
+  - related_entries.each do | id, collection |
+    .row.align-center
+      .columns.small-12.text-center
+        h2.headline-2 = collection.subhead
+        - if collection.has_key?("desc")
+          p.lead.line-length.margin-auto = collection.desc
+    = partial "/partials/content/collection-list", :locals => { :collection => collection }
+
 
   / - case_studies = data.site.collections.to_a.select { | id, cust | (id == "6wxpCFBxTy6aKEYQoEU4Y4") }
   / - case_studies.each do | id, cardgroup |
@@ -106,16 +76,7 @@ section#compliance-video.section-article.bg-gray-11
         - cust = data.site.customers[carditem.customer.id]
         .column
           = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
-
-
-  / .row.align-center.align-middle
-    .columns.flex-container.align-middle.align-center.small-12.medium-6.large-4.text-center.pad--xl
-      img.lozad data-src="http://images.ctfassets.net/189dvqdsjh46/2yyrhvg12wySaoSgyQ6C6G/0ec44a3443d3e89690e511f8f85d44fe/guide-tco-compliance-2018-thumb.png?fit=thumb&w=500&h=500" alt="Guide" width="250"
-    .columns.small-12.medium-6.large-6
-      .line-length
-        h3.headline-3.text-bold.nomargin Datica Guides
-        p.lead Datica Guides are written by experts in healthcare technology, compliance, and security.
-        
+ 
 section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
   .row.align-center
     .columns.small-12.medium-12.large-8.text-center

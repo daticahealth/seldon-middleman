@@ -45,40 +45,13 @@ section#integration.section-article.bg-gray-11
           h2.headline-2 = collection.subhead
           - if collection.has_key?("desc")
             p.lead.line-length.margin-auto = collection.desc
-      - collection["related_entries"].each do | entry |
-        - type = entry._meta.content_type_id
-        - folder = case type
-        - when "guides" then "guide"
-        - else type
-        - url = "/#{folder}/#{entry.slug}/"
-        .row.align-center.align-middle.section-article--med
-          / class=(type == "webinars" ? nil : "shrink")
-          .columns.small-12.medium-6.large-5.xlarge-7
-            - case type
-            - when "academy"
-              / a href=url title=entry.title
-                img.lozad.thumbnail src="https://images.ctfassets.net/189dvqdsjh46/n9pqHc4Xp62uUSwciEe4C/ead1ba4e14e45c06639c5dea3d47b8ac/datica-academy-notebook-share.jpg?w=800&h=400&q=10" data-src="https://images.ctfassets.net/189dvqdsjh46/n9pqHc4Xp62uUSwciEe4C/ead1ba4e14e45c06639c5dea3d47b8ac/datica-academy-notebook-share.jpg?w=800&h=400"
-            - when "blog"
-              a href=url title=entry.title
-                img.lozad.thumbnail src="#{entry.featured_image.url}?fit=thumb&w=800&h=400&q=10" data-src="#{entry.featured_image.url}?fit=thumb&w=800&h=400"
-            - when "guides"
-              a href=url title=entry.title
-                img.lozad.thumbnail src="#{entry.bg_image.url}?fm=jpg&h=600&q=10" data-src="#{entry.bg_image.url}?&h=600"
-            - when "webinars"
-              = partial "partials/cards/webinar-poster", :locals => { :entry => entry }
-          .columns.small-12.medium-6.large-5.xlarge-5
-            h5.subhead--spaced = type.capitalize
-            h3.headline-4
-              a href=url title=entry.title
-                = entry.title
-            p = entry.summary
+      = partial "/partials/content/collection-list", :locals => { :collection => collection }
 
 
 section.section-article.container-gray-11
   .row.align-middle
     .columns.small-12.medium-8
-      .video.drop.group
-        <script src="https://fast.wistia.com/embed/medias/0rr2p8xca5.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_0rr2p8xca5 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+      = Kramdown::Document.new(data.site.videos["4j00TFuRUkOUm6w22cUUog"].custom_form).to_html  
     .columns.small-12.medium-4
       h3.headline-4 What is EHR Integration?
       p EHR integration is the partnership between providers, payers, vendors, and other players that brings the data or function from one application or program to that of another. Because of the sheer quantity and diversity of data, healthcare providers face major obstacles in integrating and effectively analyzing healthcare information.
