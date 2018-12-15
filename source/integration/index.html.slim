@@ -46,9 +46,9 @@ section#integration.section-article.bg-gray-11
       /= partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/discover/ehr-integrations/", :button_classes => "button hollow", :item_id => "integration" }
 section#services.section-article.container-gray-12
   .row.align-center
-    .columns.small-12
-      h2.headline-3.text-center.group
-        | Integration Services
+    .columns.small-12.text-center.group
+      = inline_svg("icon-consulting-compass", class: "icon-size--large svg-color--gray-7 group")
+      h2.headline-3 Integration Services
   .row.align-center.align-middle.group
     .columns.small-12.medium-6.large-5
       h3.headline-4 Project Management
@@ -92,7 +92,7 @@ section#services.section-article.container-gray-12
         li Claims Processing and Claim Audit Tracking Solutions
 
 
-  .row.align-center.align-middle
+  / .row.align-center.align-middle
     .columns.flex-container.align-middle.align-center.small-12.medium-6.large-4.text-center.pad--xl
       img.lozad data-src="http://images.ctfassets.net/189dvqdsjh46/2yyrhvg12wySaoSgyQ6C6G/0ec44a3443d3e89690e511f8f85d44fe/guide-tco-compliance-2018-thumb.png?fit=thumb&w=500&h=500" alt="Guide" width="250"
     .columns.small-12.medium-6.large-6

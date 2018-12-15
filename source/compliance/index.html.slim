@@ -26,58 +26,30 @@ section#top.section-article.bg-gray-3.container-image-fill.lozad data-background
     .columns.small-12.large-6
       h1.headline-1.text-bold.nomargin.pad--xl.text-center Are you ready for your HITRUST audit?
 section.section-article.bg-gray-12
+  .row.medium-up-5.large-up-7.align-middle.align-center.group
+    - data.views.home.badges.each do |logo|
+      - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
+      .column
+        img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
   .row.align-center.align-middle
-    .columns.small-12.large-4.xlarge-5
+    .columns.small-12.large-8.text-center
       h2.headline-4 The burdens of compliance in the cloud are slowing you down.
       p If you build solutions for healthcare in the cloud, you'll need to pass a HITRUST audit.
       p HITRUST is the industry standard for achieving HIPAA compliance in the cloud. 
-      = partial "partials/snippets/button", :locals => { :label => "Compliance Solutions", :url => "/compliance#products", :button_classes => "button success", :item_id => "cta_top-products", :icon => "icon-angle-down", :icon_align => "right" }
-    .columns.small-12.large-8.xlarge-7
-      .row.medium-up-5.align-middle.align-center
-        - data.views.home.badges.each do |logo|
-          / - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
-          .column
-            img alt="#{logo["name"]}" class="lozad" data-src="#{logo["fileUrl"]}" /
+      = partial "partials/snippets/button", :locals => { :label => "Compliance Solutions", :url => "/compliance#compliance-products", :button_classes => "button success", :item_id => "cta_top-products", :icon => "icon-angle-down", :icon_align => "right" }
 / .strip-bright
 
-/ section#compliance.section-article.bg-gray-11
-  .row.group.align-center
-    .columns.small-12.text-center
-      h2.headline-2 Understanding Compliance in the Cloud
-      p.lead (paragraph on the problems of compliance.) Here are some resources to get you started.
-
-/ section#video.section-article.bg-gray-3
-  .row.align-center.align-middle
-    .columns.small-12.medium-6.large-8.text-center
-      = Kramdown::Document.new(data.site.videos["4phTVRUAMMwk4o46qQuSQi"].custom_form).to_html  
-    .columns.small-12.medium-6.large-4
-      .line-length
-        h4.headline-4 Travis Good, MD on Compliance in Healthcare
-        p Dr. Good gives an overview of some of the compliance challenges in healthcare. 
 section#resources.section-article.collection.bg-gray-11
   - related_entries = data.site.collections.to_a.select { |id, entry | (id == "2xAKQVZSKIsygICqimW0qA") }
   - related_entries.each do | id, collection |
     .row.align-center
       .columns.small-12.text-center
-        h2.headline-2 = collection.subhead
+        h2.headline-3 = collection.subhead
         - if collection.has_key?("desc")
           p.lead.line-length.margin-auto = collection.desc
     = partial "/partials/content/collection-list", :locals => { :collection => collection }
 
-
-  / - case_studies = data.site.collections.to_a.select { | id, cust | (id == "6wxpCFBxTy6aKEYQoEU4Y4") }
-  / - case_studies.each do | id, cardgroup |
-  /   .row.align-center
-      .columns.small-12.text-center.group
-        h2.headline-3 = cardgroup.title
-    .row.full-width.align-center.small-up-1.medium-up-2.large-up-3.xlarge-up-4
-      - cardgroup["related_entries"].each do | card |
-        - carditem = data.site.caseStudy[card.id]
-        - cust = data.site.customers[carditem.customer.id]
-        .column
-          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
- 
-section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
+section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
   .row.align-center
     .columns.small-12.medium-12.large-8.text-center
       h2.headline-2 Compliance Solutions
@@ -95,26 +67,26 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
     .column.text-center.relative.has-blob
       .card.container-color--trans.relative.z-5
         .card-section
-          = inline_svg("cpaas-logo-w", class: "icon-size--xlarge")
-          .subhead--spaced CPaaS
-          h3.headline-4 Compliant Platform  as a Service
-          p.lead Build & deploy digital health apps on a compliant, hosted platform
-        .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button success", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
-      .blob-color.blob-cpaas.z-auto data-glow="false"
-    .column.text-center.relative.has-blob
-      .card.container-color--trans.relative.z-5
-        .card-section
           = inline_svg("ccms-logo-w", class: "icon-size--xlarge")
           .subhead--spaced CCMS
           h3.headline-4 Cloud Compliance Management System
           p.lead Know the precise compliance state of your cloud environments
         .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button success", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
       .blob-color.blob-ccms.z-auto data-glow="false"
+    .column.text-center.relative.has-blob
+      .card.container-color--trans.relative.z-5
+        .card-section
+          = inline_svg("cpaas-logo-w", class: "icon-size--xlarge")
+          .subhead--spaced CPaaS
+          h3.headline-4 Compliant Platform  as a Service
+          p.lead Build & deploy digital health apps on a compliant, hosted platform
+        .card-divider.card-divider--flush
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button hollow hollow-inverted", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
+      .blob-color.blob-cpaas.z-auto data-glow="false"
 .strip-bright
 
-aside#ctaBottom.container-color--dark-grad-blue
+/ aside#ctaBottom.container-color--dark-grad-blue
   .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
     .row.align-center
       .columns.small-12.medium-10.large-10.text-center
