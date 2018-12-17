@@ -87,10 +87,10 @@
   status = 301
   force = true
 
-[[redirects]]
-  from = "/integration/"
-  to = "/integrations/"
-  status = 301
+# [[redirects]]
+#   from = "/integration/"
+#   to = "/integrations/"
+#   status = 301
 
 [[redirects]]
   from = "/platform/integration/"
