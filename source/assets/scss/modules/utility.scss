@@ -143,8 +143,9 @@ hr {
 .fixed {position: fixed;}
 .absolute {position: absolute;}
 .pull-down {
-    @include breakpoint (medium) {
+    @include breakpoint (large) {
         margin-bottom: -2rem;
+        margin-bottom: calc(-2rem - 1vw);
     }
 }
 

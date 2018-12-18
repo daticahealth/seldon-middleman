@@ -13,17 +13,17 @@
         - if entry.has_key?("featured_image")
           - image = data.site.academy[entry.id].featured_image.url
           a href=url title=entry.title
-            img.lozad.thumbnail src="#{image}?fit=thumb&w=800&h=400&q=10" data-src="#{image}?fit=thumb&w=800&h=400"
+            img.lozad.thumbnail.blur-in src="#{image}?fit=thumb&w=800&h=400&q=10" data-src="#{image}?fit=thumb&w=800&h=400"
       - when "blog"
         - if entry.has_key?("featured_image")
           - image = data.site.blog[entry.id].featured_image.url
           a href=url title=entry.title
-            img.lozad.thumbnail src="#{image}?fit=thumb&w=800&h=400&q=10" data-src="#{image}?fit=thumb&w=800&h=400"
+            img.lozad.thumbnail.blur-in src="#{image}?fit=thumb&w=800&h=400&q=10" data-src="#{image}?fit=thumb&w=800&h=400"
       - when "guides"
         - if entry.has_key?("bg_image")
           - image = data.site.guides[entry.id].bg_image.url
           a href=url title=entry.title
-            img.lozad.thumbnail src="#{image}?fit=thumb&w=800&h=400&q=10" data-src="#{image}?fit=thumb&w=800&h=400"
+            img.lozad.thumbnail.blur-in src="#{image}?fit=thumb&w=800&h=400&q=10" data-src="#{image}?fit=thumb&w=800&h=400"
       - when "webinars"
         = partial "partials/cards/webinar-poster", :locals => { :entry => data.site.webinars[entry.id] }
       - when "discover"

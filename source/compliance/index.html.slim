@@ -16,17 +16,17 @@ priority: "0.9"
 - featured_img = "https://images.ctfassets.net/189dvqdsjh46/4GKMkqZcNGCySO6EAaYAIU/a7116a7de2da363b678930224e79d8b7/thoughtful-businesswoman-by-glass-window-gm555250401-555250401.jpg"
 
 /= partial "partials/snippets/platform-icons"
-section.hide-for-medium
+section.hide-for-large
   .row.collapse
     .columns.small-12
-      img.lozad.object-fit data-src="#{featured_img}?fit=thumb&w=800&h=400" alt="Woman looking out of a window"
+      img.lozad.blur-in data-src="#{featured_img}?fit=thumb&w=800&h=400" alt="Woman looking out of a window"
       .bg-white.pad--lg
         h1.headline-1 Can your app pass a HITRUST audit?
-        h2.headline-3.text-bold.group--2x With CCMS, the answer is yes.
+        h2.headline-3.text-bold.group With CCMS, the answer is yes.
         p.lead <strong>Get back to solving problems for healthcare.</strong> Let Datica take on the burden of compliance. We're the experts at understanding the exact policies and procedures required to turn HIPAA-eligible services on the public cloud into architectures that can pass a HITRUST CSF assessment. That expertise is passed on to you through our products and rock-solid BAA.
         .text-right
           = partial "partials/snippets/button", :locals => { :label => "See how it works", :url => "/cloud-compliance-management-system#cta", :button_classes => "button nomargin", :item_id => "cta_top-products", :icon => "icon-angle-right", :icon_align => "right" }
-section#top.show-for-medium.section-article.pad-no-bottom.bg-gray-3.container-image--center.lozad data-background-image=featured_img
+section#top.show-for-large.section-article.pad-no-bottom.bg-gray-3.container-image--center.lozad data-background-image=featured_img
   .row.align-left.align-middle
     .columns.small-12.medium-6
       h1.headline-1 Can your app pass a HITRUST audit?
@@ -40,7 +40,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
   .row
     .columns.small-12.medium-12.large-8
       h2.headline-2.card-section Compliance Solutions
-  .row.align-center.small-up-1.medium-up-1.large-up-3.row--card-grid
+  .row.align-center.small-up-1.medium-large-up-2.large-up-3.row--card-grid
     .column.relative.has-blob
       .card.container-color--trans.relative.z-5
         .card-section
@@ -51,7 +51,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           p.lead Get enterprise scalability for your complex digital health application on a compliant Kubernetes cluster
           p Datica Compliant Kubernetes Service gives you the orchestration and scalable power of Kubernetes with compliance built in.
         .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
       .blob-color.blob-cks.z-auto data-glow="false"
     .column.relative.has-blob
       .card.container-color--trans.relative.z-5
@@ -63,7 +63,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           p.lead Build and deploy a digital health application on a compliant hosted platform
           p Datica Compliant Platform as a Service gives startups pre-packaged compliance and security. CPaaS makes hosting your compliant healthcare applications as simple as git push.
         .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
       .blob-color.blob-cpaas.z-auto data-glow="false"
     .column.relative.has-blob
       .card.container-color--trans.relative.z-5
@@ -75,7 +75,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           p.lead Know the precise compliance state of your cloud environments
           p Datica Cloud Compliance Management System is the first-ever tool to guarantee compliance assurance of managed cloud-native services. Our dashboard and reports enable you to continuously monitor compliance, react quickly to risks and incidents, and attest to compliance for audits.
         .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light button-inline", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
       .blob-color.blob-ccms.z-auto data-glow="false"
 
 
@@ -95,7 +95,7 @@ section.section-article.pad-no-bottom.bg-gray-12
       = partial "partials/snippets/button", :locals => { :label => "Explore global compliance", :url => "/compliance/global/", :button_classes => "button hollow group", :item_id => "compliance-global", :icon => "icon-angle-right", :icon_align => "right" }
       a href="/compliance/global/" title="Global Compliance Table"
         - preview = "https://images.ctfassets.net/189dvqdsjh46/4KtjQwGLOo6UGoAY82qe6k/dd058456a0fef3d725cd5fc8a1713840/global_compliance_stance_table.png"
-        img.lozad.drop alt="Global Compliance Table" src="#{preview}?w=1200&fm=jpg&q=5" data-src="#{preview}?w=1200&fm=png&fl=png8"
+        img.lozad.drop.blur-in alt="Global Compliance Table" src="#{preview}?w=1200&fm=jpg&q=5" data-src="#{preview}?w=1200&fm=png&fl=png8"
 
 section#resources.section-article.collection.bg-gray-11
   - related_entries = data.site.collections.to_a.select { |id, entry | (id == "2xAKQVZSKIsygICqimW0qA") }
@@ -106,14 +106,3 @@ section#resources.section-article.collection.bg-gray-11
         - if collection.has_key?("desc")
           p.lead.line-length.margin-auto = collection.desc
     = partial "/partials/content/collection-list", :locals => { :collection => collection }
-
-/ aside#ctaBottom.container-color--dark-grad-blue
-  .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
-    .row.align-center
-      .columns.small-12.medium-10.large-10.text-center
-        h2.headline-3 <strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.
-    .row.align-center
-      .columns.small-6.large-4.text-right
-        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted" }
-      .columns.small-6.large-6.text-left
-       = partial "partials/snippets/button", :locals => { :label => "Learn About Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cks" }
