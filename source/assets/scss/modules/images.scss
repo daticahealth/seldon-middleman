@@ -129,11 +129,11 @@ figcaption{
     }
 }
 
-.lozad {
+img.lozad {
     transition: opacity $timing-default * 2 linear;
     opacity: 0;
 }
-.lozad.loaded {
+img.lozad.loaded {
     opacity: 1;
 }
 .blur-in {
@@ -143,8 +143,8 @@ figcaption{
     }
     &.lozad.loaded {
         @include blur(0);
-        -webkit-transition-delay: 1s;
-        transition-delay:         1s;
+        -webkit-transition-delay: .3s;
+        transition-delay:         .3s;
     }
 }
 // .container--image-fit {
