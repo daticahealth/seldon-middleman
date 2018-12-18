@@ -47,20 +47,20 @@
             desc: "Talk to us for Datica pricing."
             nav_main: true
 -
-    title: "Compliance"
-    title_short: "Compliance"
+    title: "Solutions"
+    title_short: "Solutions"
     url: 
     desc: 
     nav_main: true
     children:
         -
-            title: "Datica Compliance Story"
+            title: "Compliance"
             url: "/compliance/"
             desc: "Datica is HITRUST CSF Certified"
         -
-            title: "Global Compliance Posture"
-            url: "/compliance/global"
-            desc: "Need to go international? Here's a look at our compliance posture around the world."
+            title: "EHR Integration"
+            url: "/integration/"
+            desc: "Datica handles the risk and complexity of EHR integrations, so you can focus on building solutions."
             # has_divider: true
 -
     title: "Resources"
