@@ -142,6 +142,11 @@ hr {
 .relative {position: relative;}
 .fixed {position: fixed;}
 .absolute {position: absolute;}
+.pull-down {
+    @include breakpoint (medium) {
+        margin-bottom: -2rem;
+    }
+}
 
 .text-center {
     &-for-small {// below desktop, align center. Good for headlines

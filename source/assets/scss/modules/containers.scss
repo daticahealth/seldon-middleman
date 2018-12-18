@@ -132,11 +132,7 @@
         }
     }
 }
-.strip-bright { // bright strip, supersat
-    min-height: calc(3px + 0.5vw);
-    @include grad-bright;
-    &--small{min-height: rem-calc(5px);}
-}
+
 .container { // this is generally only for color & image settings on containers
     &-image {
         &-fill {
@@ -442,6 +438,33 @@
     .blob-services {
         @include gradient-services(to left top);
     }
+}
+.strip {
+    min-height: calc(3px + 0.5vw);
+    &-small {
+        min-height: rem-calc(5px);
+    }
+    &--small{min-height: rem-calc(5px);}
+    &-cks {
+        @include gradient-cks(to right);
+    }
+    &-cpaas {
+        @include gradient-cpaas(to right);
+    }
+    &-ccms {
+        @include gradient-ccms(to right);
+    }
+    &-cmi {
+        @include gradient-cmi(to right);
+    }
+    &-services {
+        @include gradient-services(to right);
+    }
+}
+.strip-bright { // bright strip, supersat
+    // min-height: calc(3px + 0.5vw);
+    @extend .strip;
+    @include grad-bright;
 }
 // Vertical align helper
 .vertical-align {

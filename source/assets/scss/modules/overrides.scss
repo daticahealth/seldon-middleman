@@ -94,14 +94,16 @@
     $gap: 1.5vw;
     padding: $gap;
     &--sm {
-        padding: $gap * 0.6;
+        padding: $gap * 0.5;
+        padding: calc(0.5rem + 1vw);
     }
-    &--lg { // moar spacing!
-        padding: $gap * 1.5 !important;
+    &--lg { // spacing!
+        padding: $gap;
+        padding: calc(1rem + 1.2vw);
     }
     &--xl { // moar spacing!
         padding: $gap * 2;
-        padding: calc(0.5rem + 3vw);
+        padding: calc(1rem + 3vw);
     }
 }
 
