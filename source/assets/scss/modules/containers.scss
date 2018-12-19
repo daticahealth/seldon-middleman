@@ -423,21 +423,23 @@
             }
         }
     }
-    .blob-cks {
-        @include gradient-cks(to left top);
-    }
-    .blob-cpaas {
-        @include gradient-cpaas(to left top);
-    }
-    .blob-ccms {
-        @include gradient-ccms(to left top);
-    }
-    .blob-cmi {
-        @include gradient-cmi(to left top);
-    }
-    .blob-services {
-        @include gradient-services(to left top);
-    }
+
+}
+// these are the same as strip, just diff angle /shrug
+.blob-cks {
+    @include gradient-cks(to left top);
+}
+.blob-cpaas {
+    @include gradient-cpaas(to left top);
+}
+.blob-ccms {
+    @include gradient-ccms(to left top);
+}
+.blob-cmi {
+    @include gradient-cmi(to left top);
+}
+.blob-services {
+    @include gradient-services(to left top);
 }
 .strip {
     min-height: calc(3px + 0.5vw);
