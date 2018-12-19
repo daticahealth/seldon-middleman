@@ -13,29 +13,26 @@ collectionName: "product"
 priority: "0.9"
 ---
 - current_page.data.share_image = image_share_platform
-- featured_img = "https://images.ctfassets.net/189dvqdsjh46/3KxcDNobAsuWyMUswWCyYE/cfd3f8b90c96a7658620d0817c072231/doctor__pleased_edit__draft_.jpg"
-= partial "partials/snippets/platform-icons"
-
+- featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/470d9a7b58ffede77ae3d064cf86b655/office_-_istockphoto-626637134_edit.jpg"
+/ = partial "partials/snippets/platform-icons"
 
 section.hide-for-large
   .row.collapse
     .columns.small-12
       img.lozad.blur-in data-src="#{featured_img}?fit=thumb&w=800&h=400" alt="Woman looking out of a window"
       .bg-white.pad--lg
-        h2.headline-2 Is the stress and complexity of EHR integrations holding you back?
+        h2.headline-2 Is the stress of EHR integrations holding your business back?
         h2.headline-3.text-bold.group Activate your digital health product with data from any EHR
         p.lead You've created an amazing healthcare application, now it's time to grow by exchanging data with more EHRs. Datica enables EHR integrations at scale.
-        .text-right
-          = partial "partials/snippets/button", :locals => { :label => "Get started with CMI", :url => "/compliant-managed-integration#cta", :button_classes => "button nomargin", :item_id => "cta_top-products", :icon => "icon-chevron-right", :icon_align => "right" }
+        = partial "partials/snippets/button", :locals => { :label => "Get started with CMI", :url => "/compliant-managed-integration#cta", :button_classes => "button nomargin success", :item_id => "cta_top-products", :icon => "icon-chevron-right", :icon_align => "right" }
 section#top.show-for-large.section-article.pad-no-bottom.bg-gray-12.container-image--center.lozad data-background-image=featured_img
-  .row.align-left.align-middle
+  .row.align-right.align-middle
     .columns.small-12.medium-6
-      h1.headline-2 Is the stress and complexity of EHR integrations holding you back?
-      h2.headline-3.text-bold.group--2x Activate your digital health product with data from any EHR
+      h1.headline-2.text-bold.group--2x Is the stress of EHR integrations holding your business back?
       .bg-white.pad--lg.drop.pull-down
+        h2.headline-3.text-bold Activate your digital health product with data from any EHR
         p.lead You've created an amazing healthcare application, now it's time to grow by exchanging data with more EHRs. Datica enables EHR integrations at scale.
-        .text-right
-          = partial "partials/snippets/button", :locals => { :label => "Get started with CMI", :url => "/compliant-managed-integration#cta", :button_classes => "button nomargin", :item_id => "cta_top-products", :icon => "icon-chevron-right", :icon_align => "right" }
+        = partial "partials/snippets/button", :locals => { :label => "Get started with CMI", :url => "/compliant-managed-integration#cta", :button_classes => "button nomargin success", :item_id => "cta_top-products", :icon => "icon-chevron-right", :icon_align => "right" }
 .strip-bright
 
 / section#top.section-article.bg-gray-11.container-image-fill.lozad data-background-image="?fit=crop&w=1600&h=800"
@@ -83,18 +80,14 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
   .row
     .columns.small-12.medium-6.large-6
       p.lead.group Our team of cloud engineers, integration and compliance experts can help you assessyour business challenges, ensure complete compliance on the cloud, integrate with any system, and even migrate your data to a new, efficient, and cost-effective cloud platform.
+      = partial "partials/snippets/button", :locals => { :label => "Ask about Datica Services", :url => "/compliant-managed-integration#services", :button_classes => "button button--light button-inline", :item_id => "product-group-cpaas", :icon => "icon-chevron-right", :icon_align => "right" }
+    .columns.small-12.medium-6.large-4
       h4.headline-5 Project Management
       p Our team of project managers provide an expert view into integrated with EHRs and health systems. They will help manage timelines, create project plans, and track deliverables.
       h4.headline-5 Connection Setup and Maintenance
       p Datica’s Integration Engineers will build, configure, test and maintain VPN connections to allow for transmission of HL7 messages.
       h4.headline-5 Interface Build and Configuration
       p We will transform HL7 messages into JSON or FHIR messages to help keep things standard for you across implementations. We have many predesigned channels ready to go.
-      / = partial "partials/snippets/button", :locals => { :label => "Ask about Datica Services", :url => "/compliant-managed-integration#services", :button_classes => "button button--light button-inline", :item_id => "product-group-cpaas", :icon => "icon-chevron-down", :icon_align => "right" }
-    #form-services.columns.small-12.medium-6.large-4
-      - the_form = data.site.forms['1JUlX2euRSEgu4KuamI6Gq']
-      .card.pad.bg-gray-12.drop
-        h3.headline-5 Start your free consultation today.
-        = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
 
 .strip-bright
 / .row.align-center.align-middle.group
