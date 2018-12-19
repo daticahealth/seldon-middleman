@@ -100,7 +100,46 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
       h4.headline-5 Interface Build and Configuration
       p We will transform HL7 messages into JSON or FHIR messages to help keep things standard for you across implementations. We have many predesigned channels ready to go.
 
-.strip-bright
+.strip.strip-cmi
+section.section-article.bg-white
+  .row.align-center.text-center
+    .columns.small-12.large-10
+      h2.headline-3 Datica's Proven Integration Track Record
+  .row.small-up-2.medium-up-4.large-up-5.xlarge-up-6.align-center.text-center.text-small.group--2x
+    .column
+      span.headline-3.text-bold 200+
+      p Live integrations completed
+    / .column
+    /   span.headline-1.text-bold 32+
+    /   p Total number of EHRs Datica has helped integrate successfully with customer products.
+    .column
+      span.headline-3.text-bold Millions
+      p Total number of mission-critical messages processed monthly with Datica's products
+    .column
+      span.headline-3.text-bold 1,000+
+      p Security and risk assessments passed
+    .column
+      span.headline-3.text-bold Zero
+      p Unexpected downtime three years in a row
+    .column
+      span.headline-3.text-bold 100%
+      p Built with open-source tech
+
+  /.row.align-center.group
+    .columns.small-12.medium-10.large-6
+      = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => 'bg-gray-12' })
+  / .row.align-center.group
+    .columns.small-12.large-10.text-center
+      h3.headline-3 A trusted partner with established healthcare organizations
+      .logo-cloud
+        - data.views.managed_integration.customer_healthsystems_list.each do |logo|
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+  .row.align-center
+    .columns.small-12.large-10.text-center
+      h3.headline-3.nomargin Successful, live integrations with all major EHRs
+      .logo-cloud
+        - data.views.ehrs.ehr_list.each do |logo|
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
 / .row.align-center.align-middle.group
 /   .columns.small-12.medium-6.large-5
 /     .callout.drop.group
