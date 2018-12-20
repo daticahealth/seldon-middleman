@@ -448,8 +448,10 @@ $underline: false !default;
     color: white;
 }
 @mixin gradient-cmi($dir: to right) {
+    /* orange-red */
+    background: linear-gradient($dir, #E85C86 16.59%, #EC7474 59.68%, #FFC177 99.57%);
     /* red-purple - orange */
-    background: linear-gradient($dir, #DD48AA 16.59%, #FFE177 99.57%);
+    // background: linear-gradient($dir, #DD48AA 16.59%, #FFE177 99.57%);
     color: white;
 }
 @mixin gradient-services($dir: to right) {
@@ -457,3 +459,4 @@ $underline: false !default;
     background: linear-gradient($dir, #E6699E 13.96%, #7AB2E9 57.53%, #08E1D4 96.11%);
     color: white;
 }
+
