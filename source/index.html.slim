@@ -12,26 +12,33 @@ collectionName: "home"
 feed_url: "https://datica.com/blog/feed.xml"
 asset_preload: '<link href="/public/img/art/home-header-art-hexagons-anim.svg" rel="preload" as="image" />'
 ---
-- current_page.data.share_image = image_share_platform
-- current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+ruby:
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  # current_page.data.share_image = image_share_platform
+  featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/470d9a7b58ffede77ae3d064cf86b655/office_-_istockphoto-626637134_edit.jpg"
+  current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" />'
+  current_page.data.share_image = featured_img
 
-section#top.section-article.bg-gray-12.container-image-fill.lozad data-background-image=bg_product_light
-  .row.align-center
-    .columns.small-12.medium-12.large-8.text-center
-      h1 Datica brings healthcare to the cloud. 
-      p.lead Get through the maze of compliance and onto the cloud faster with Datica.
-      ul.menu.align-center
-        li
-          a.headline-4.spaced-out href="/compliance/" Compliance
-        li
-          a.headline-4.spaced-out href="/integrations/" Integration
-        li
-          a.headline-4.spaced-out href="/about/" About Datica
-  .row.align-center
-    .columns.shrink
-      = partial "partials/snippets/button", :locals => { :label => "Ask a Datica Expert", :url => "/compliance/", :icon_align => "right", :button_classes => "button hollow", :icon => "icon-chat" }
-    .columns.shrink
-      = partial "partials/snippets/button", :locals => { :label => "Get a demo", :url => "/integration/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cmi" }
+/ section.bg-gray-1
+section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_product_light
+  = partial "partials/head/header", :locals => { :style => "dark" }
+  .section-article
+    .row.align-center.group
+      .columns.small-12.medium-12.large-10.text-center
+        h1.headline-2.text-bold Datica brings healthcare to the cloud. 
+        p.lead Get through the maze of compliance and onto the cloud faster with Datica.
+        ul.menu.align-center
+          li
+            a.text-bold.spaced-out href="/compliance/" Compliance
+          li
+            a.text-bold.spaced-out href="/integrations/" Integration
+          li
+            a.text-bold.spaced-out href="/about/" About Datica
+    .row.align-center
+      .columns.shrink
+        = partial "partials/snippets/button", :locals => { :label => "Ask a Datica Expert", :url => "/compliance/", :icon_align => "right", :button_classes => "button hollow", :icon => "icon-chat" }
+      .columns.shrink
+        = partial "partials/snippets/button", :locals => { :label => "Get a demo", :url => "/integration/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cmi" }
 .strip-bright
 section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
   .row.align-center
@@ -39,14 +46,14 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
       h2.headline-1.text-bold What's your biggest challenge?
   .row.align-center
     .columns.shrink
-      = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/compliance/", :icon_align => "left", :button_classes => "button success", :icon => "icon-chevron-left" }
+      = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/compliance/", :icon_align => "left", :button_classes => "button button--light", :icon => "icon-chevron-left" }
     .columns.shrink
-      = partial "partials/snippets/button", :locals => { :label => "I need to integrate with a hospital", :url => "/integration/", :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cmi" }
+      = partial "partials/snippets/button", :locals => { :label => "I need to integrate with a hospital", :url => "/integration/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cmi" }
   .row.align-center
-    .columns.small-12.large-6.text-center
+    .columns.small-12.large-8.text-center
       p.lead <strong>You have complex problems.</strong> Datica has a family of powerful solutions. Powerful when used on their own but meant to work together, our products and solutions address your most pressing challenges.
   .row.align-center
-    .columns.small-12.large-10
+    .columns.small-12.large-9
       .row.align-center.small-up-1.medium-large-up-2.row--card-grid.text-center
         .column.relative.has-blob
           .card.container-color--trans.relative.z-5
@@ -56,9 +63,9 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
               h3.headline-4 Cloud Compliance Management System 
               p.strip.strip-small.strip-ccms
               p.lead Know the precise compliance state of your cloud environments
-              p Datica Cloud Compliance Management System is the first-ever tool to guarantee compliance assurance of managed cloud-native services. Our dashboard and reports enable you to continuously monitor compliance, react quickly to risks and incidents, and attest to compliance for audits.
+              / p Datica Cloud Compliance Management System is the first-ever tool to guarantee compliance assurance of managed cloud-native services. Our dashboard and reports enable you to continuously monitor compliance, react quickly to risks and incidents, and attest to compliance for audits.
             .card-divider.card-divider--flush
-              = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light button-inline", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
+              /= partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light button-inline", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
           .blob-color.blob-ccms.z-auto data-glow="false"
         .column.relative.has-blob
           .card.container-color--trans.relative.z-5
@@ -68,9 +75,9 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
               h3.headline-4 Compliant Managed Integration
               p.strip.strip-small.strip-cmi
               p.lead Scalable, secure data exchange with any EHR
-              p We combine cutting-edge automation of cloud infrastructure security, devOps processes, and interface engines, with our extensive experience in solving healthcare integration problems. All built on a solid foundation of <strong>continuous HIPAA compliance</strong>.
+              / p We combine cutting-edge automation of cloud infrastructure security, devOps processes, and interface engines, with our extensive experience in solving healthcare integration problems. All built on a solid foundation of <strong>continuous HIPAA compliance</strong>.
             .card-divider.card-divider--flush
-              = partial "partials/snippets/button", :locals => { :label => "Learn more about CMI", :url => "/compliant-managed-integration/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-chevron-right", :icon_align => "right" }
+              /= partial "partials/snippets/button", :locals => { :label => "Learn more about CMI", :url => "/compliant-managed-integration/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-chevron-right", :icon_align => "right" }
           .blob-color.blob-cmi.z-auto data-glow="false"
         .column.relative.has-blob
           .card.container-color--trans.relative.z-5
@@ -80,9 +87,9 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
               h3.headline-4 Compliant Kubernetes Service
               p.strip.strip-small.strip-cks
               p.lead Get enterprise scalability for your complex digital health application on a compliant Kubernetes cluster
-              p Datica Compliant Kubernetes Service gives you the orchestration and scalable power of Kubernetes with compliance built in.
+              / p Datica Compliant Kubernetes Service gives you the orchestration and scalable power of Kubernetes with compliance built in.
             .card-divider.card-divider--flush
-              = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
+              /= partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
           .blob-color.blob-cks.z-auto data-glow="false"
         .column.relative.has-blob
           .card.container-color--trans.relative.z-5
@@ -92,37 +99,14 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
               h3.headline-4 Compliant Platform <br />as a Service
               p.strip.strip-small.strip-cpaas
               p.lead Build and deploy a digital health application on a compliant hosted platform
-              p Datica Compliant Platform as a Service gives startups pre-packaged compliance and security. CPaaS makes hosting your compliant healthcare applications as simple as git push.
+              / p Datica Compliant Platform as a Service gives startups pre-packaged compliance and security. CPaaS makes hosting your compliant healthcare applications as simple as git push.
             .card-divider.card-divider--flush
-              = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
+              /= partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
           .blob-color.blob-cpaas.z-auto data-glow="false"
-
 .strip.strip-cmi
-section.section-article
-  .row.align-center.text-center
-    .columns.small-12.large-9
-      h4.headline-4 Datica helps you comply with multiple compliance frameworks.
-      .row.small-up-3.medium-up-5.align-middle.align-center.group
-        - data.views.home.badges.each do |logo|
-          - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
-          .column
-            img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
-      = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "logo-cloud", :data_track_group => "compliance" }
-
-section.section-article.container-gray-11
-  h3.headline-3.text-light.text-center.group Build <strong>Breakthrough</strong> Compliant Apps
-  = partial "partials/content/video-quote"
-
-section.section-article
-  .row.align-center
-    .columns.small-12.large-11.text-center
-      h3.headline-3 <strong>World-class companies</strong> trust Datica
-      .logo-cloud
-        - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
-          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
 
 
-section.container-gray-10.section-article
+section.container-gray-11.section-article
   .row.align-center
     .columns.small-12.large-6
       h2.headline-3.text-center <strong>Grow</strong> with us
@@ -148,11 +132,39 @@ section.container-gray-10.section-article
       p Hear from the brightest minds in healthcare technology through interviews, podcasts, reports, and more.
   = partial "partials/content/recent-items"
 
-aside#ctaBottom.container-color--dark-grad-blue
-  .section-article.container-image--center.lozad data-background-image="/public/img/art/platform-iso-illustration-bg.svg"
-    .row.align-center
-      .columns.small-12.medium-10.large-10.text-center
-        h2.headline-3 The Industry Cloud for Digital Health is here.
-    .menu.button-group.align-center
-        = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing/", :button_classes => "button hollow-inverted" }
-        = partial "partials/snippets/button", :locals => { :label => "Learn About Datica CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cks" }
+section.section-article
+  .row.align-center.text-center
+    .columns.small-12.large-9
+      h4.headline-4 Datica helps you comply with multiple compliance frameworks.
+      .row.small-up-3.medium-up-5.align-middle.align-center.group
+        - data.views.home.badges.each do |logo|
+          - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
+          .column
+            img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
+      = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "logo-cloud", :data_track_group => "compliance" }
+
+section.section-article.container-gray-11
+  .row.align-center
+    .columns.small-12.large-11.text-center
+      h3.headline-3 <strong>World-class companies</strong> trust Datica
+      .logo-cloud
+        - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
+
+
+section.section-article
+  h3.headline-3.text-light.text-center.group Build <strong>Breakthrough</strong> Compliant Apps
+  = partial "partials/content/video-quote"
+.strip.strip-ccms
+aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-background-image=bg_product_dark
+  .relative.has-blob
+    .relative.z-5
+      .row.align-center.group--sm
+        .columns.small-12.medium-10.large-10.text-center
+          h2.headline-3 HITRUST audit? No problem.
+      .row.align-center
+        .columns.shrink
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about HITRUST compliance", :url => "/discover/hitrust/", :button_classes => "button hollow-inverted" }
+        .columns.shrink
+          = partial "partials/snippets/button", :locals => { :label => "Get started with CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "ccms" }
+    .blob-color.blob-ccms.z-auto data-glow="false"
