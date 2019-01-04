@@ -38,11 +38,55 @@ section#top.show-for-large.section-article.pad-no-bottom.bg-gray-3.container-ima
         = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/cloud-compliance-management-system#cta", :button_classes => "button nomargin success", :item_id => "cta_top-products", :icon => "icon-chevron-right", :icon_align => "right" }
 
 .strip-bright
+scss:
+  .border-dash-line {
+    margin: 1rem 0;
+    height: 2px;
+    position: relative;
+    background: repeating-linear-gradient(to right,white 0,white 8px,transparent 8px,transparent 15px);
+    &::before, &::after {
+      content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='18' viewBox='0 2 16 14'%3E%3Cpolygon fill='%23fff' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin: -7px;
+      transform-origin: 48%;
+      position: absolute;
+      margin: 5px;
+    }
+    &::before {
+      transform: rotate(180deg);
+    }
+    &::after {
+      right: 0;
+    }
+  }
+
 section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
+  .row.align-center
+    .columns.small-12.medium-10.large-8.text-center
+      h2.headline-2 Compliance Solutions
+      p.lead <strong>You have complex problems.</strong> Datica has a family of powerful solutions. Powerful when used on their own but meant to work together, our products and solutions address your most complex challenges.
+  .row.align-justify
+    .columns.small-12.medium-4 
+      h3.headline-3.text-italic.text-serif.nomargin Simplicity & speed
+    .columns.small-12.medium-4 
+      h3.headline-3.text-italic.text-serif.nomargin Developer Control
   .row
-    .columns.small-12.medium-12.large-8
-      h2.headline-2.card-section Compliance Solutions
-  .row.align-center.small-up-1.medium-large-up-2.large-up-3.row--card-grid
+    .column
+      .border-dash-line
+  .row.align-justify
+    .columns.small-12.medium-4
+      p.small Quickly deploy compliant apps on a hosted platform with a robust BAA.
+      p.small You gain speed, at the cost of control and flexibility.
+    .columns.small-12.medium-4
+      p.small Apps and services need to scale and grow, with more orchestration and management needs.
+      p.small You gain more control & scalability, and take on more responsbility for compliance.
+    .columns.small-12.medium-4
+      p.small Complete control and visibility into your compliance state. 
+      p.small You gain control, but are responsible for maintaining compliance.
+
+  .row.collapse.align-center.small-up-1.medium-large-up-2.large-up-3.row--card-grid
     .column.relative.has-blob
       .card.container-color--trans.relative.z-5
         .card-section
@@ -51,7 +95,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           h3.headline-4 Compliant Kubernetes Service
           p.strip.strip-small.strip-cks
           p.lead Get enterprise scalability for your complex digital health application on a compliant Kubernetes cluster
-          p Datica Compliant Kubernetes Service gives you the orchestration and scalable power of Kubernetes with compliance built in.
+          / p Datica Compliant Kubernetes Service gives you the orchestration and scalable power of Kubernetes with compliance built in.
         .card-divider.card-divider--flush
           = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
       .blob-color.blob-cks.z-auto data-glow="false"
@@ -63,7 +107,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           h3.headline-4 Compliant Platform <br />as a Service
           p.strip.strip-small.strip-cpaas
           p.lead Build and deploy a digital health application on a compliant hosted platform
-          p Datica Compliant Platform as a Service gives startups pre-packaged compliance and security. CPaaS makes hosting your compliant healthcare applications as simple as git push.
+          / p Datica Compliant Platform as a Service gives startups pre-packaged compliance and security. CPaaS makes hosting your compliant healthcare applications as simple as git push.
         .card-divider.card-divider--flush
           = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
       .blob-color.blob-cpaas.z-auto data-glow="false"
@@ -75,7 +119,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           h3.headline-4 Cloud Compliance Management System 
           p.strip.strip-small.strip-ccms
           p.lead Know the precise compliance state of your cloud environments
-          p Datica Cloud Compliance Management System is the first-ever tool to guarantee compliance assurance of managed cloud-native services. Our dashboard and reports enable you to continuously monitor compliance, react quickly to risks and incidents, and attest to compliance for audits.
+          / p Datica Cloud Compliance Management System is the first-ever tool to guarantee compliance assurance of managed cloud-native services. Our dashboard and reports enable you to continuously monitor compliance, react quickly to risks and incidents, and attest to compliance for audits.
         .card-divider.card-divider--flush
           = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light button-inline", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
       .blob-color.blob-ccms.z-auto data-glow="false"
