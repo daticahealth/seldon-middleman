@@ -46,9 +46,9 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
       h2.headline-1.text-bold What's your biggest challenge?
   .row.align-center.group
     .columns.shrink
-      = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/compliance/", :icon_align => "left", :button_classes => "button button--light", :icon => "icon-chevron-left" }
+      = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/compliance/", :icon_align => "left", :button_classes => "button button--light button--hover-integration no-nudge", :icon => "icon-chevron-left", :item_id => "product", :data_track_group => "cat_integration" }
     .columns.shrink
-      = partial "partials/snippets/button", :locals => { :label => "I need to integrate with a hospital", :url => "/integration/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cmi" }
+      = partial "partials/snippets/button", :locals => { :label => "I need to integrate with a hospital", :url => "/integration/", :button_classes => "button button--light button--hover-compliance no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product", :data_track_group => "cat_compliance" }
   .row.align-center
     .columns.small-12.large-8.text-center
       p.lead <strong>You have complex problems.</strong> Datica has a family of powerful solutions. Powerful when used on their own but meant to work together, our products and solutions address your most pressing challenges.
@@ -56,7 +56,7 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
     .columns.small-12.large-9
       .row.align-center.small-up-1.medium-large-up-2.row--card-grid.text-center
         .column.relative.has-blob
-          .card.container-color--trans.relative.z-5
+          a.link-light-plain.card.container-color--trans.relative.z-5 title="Cloud Compliance Management System " href="/cloud-compliance-management-system/"
             .card-section
               = inline_svg("ccms-logo-w", class: "icon-size--xlarge")
               .subhead--spaced CCMS
@@ -68,19 +68,19 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
               /= partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light button-inline", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
           .blob-color.blob-ccms.z-auto data-glow="false"
         .column.relative.has-blob
-          .card.container-color--trans.relative.z-5
+          a.link-light-plain.card.container-color--trans.relative.z-5 title="Compliant Managed Integration" href="/compliant-managed-integration/"
             .card-section
               = inline_svg("cmi-logo-w", class: "icon-size--xlarge")
               .subhead--spaced CMI
               h3.headline-4 Compliant Managed Integration
               p.strip.strip-small.strip-cmi
               p.lead Scalable, secure data exchange with any EHR
-              / p We combine cutting-edge automation of cloud infrastructure security, devOps processes, and interface engines, with our extensive experience in solving healthcare integration problems. All built on a solid foundation of <strong>continuous HIPAA compliance</strong>.
+              / p We combine cutting-edge automation of cloud infrastructure security, DevOps processes, and interface engines, with our extensive experience in solving healthcare integration problems. All built on a solid foundation of <strong>continuous HIPAA compliance</strong>.
             .card-divider.card-divider--flush
               /= partial "partials/snippets/button", :locals => { :label => "Learn more about CMI", :url => "/compliant-managed-integration/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-chevron-right", :icon_align => "right" }
           .blob-color.blob-cmi.z-auto data-glow="false"
         .column.relative.has-blob
-          .card.container-color--trans.relative.z-5
+          a.link-light-plain.card.container-color--trans.relative.z-5 title="Compliant Kubernetes Service" href="/compliant-kubernetes-service/"
             .card-section
               = inline_svg("cks-logo-w", class: "icon-size--xlarge")
               .subhead--spaced CKS
@@ -92,7 +92,7 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
               /= partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
           .blob-color.blob-cks.z-auto data-glow="false"
         .column.relative.has-blob
-          .card.container-color--trans.relative.z-5
+          a.link-light-plain.card.container-color--trans.relative.z-5 title="Compliant Platform as a Service" href="/compliant-platform-as-a-service/"
             .card-section
               = inline_svg("cpaas-logo-w", class: "icon-size--xlarge")
               .subhead--spaced CPaaS
@@ -113,22 +113,28 @@ section.container-gray-11.section-article
       p.text-center We exist to help healthcare developers succeed and have many open resources to share our expertise with you.
   .row.small-up-2.medium-up-3.group
     .column
-      h4.headline-4 Blog
+      h4.headline-4
+        a href="/blog/" title="Blog" Blog
       p News and insights from the Datica Experts behind Healthcare's trusted cloud.
     .column
-      h4.headline-4 Academy
+      h4.headline-4
+        a href="/academy/" title="Academy" Academy
       p The Datica HIPAA and Interoperability Academy walks you through the intricacies of HIPAA, HL7, and FIR—from the highest concepts to the deepest details.
     .column
-      h4.headline-4 Discover: Compliance Topics
-      p In-depth overviews of healthcare compliance & integration subjects.
+      h4.headline-4
+        a href="/discover/" title="Discover: Compliance Topics" Discover: Compliance Topics
+      p Resource hubs for popular topics on integration and compliance.
     .column
-      h4.headline-4 Open Source
+      h4.headline-4
+        a href="/open-source/" title="Open Source" Open Source
       p We build our products with open-source technologies—and freely share useful tools like Policies and data tansforms. 
     .column
-      h4.headline-4 Webinars
+      h4.headline-4
+        a href="/webinars/" title="Webinars" Webinars
       p In-depth presentations from Datica Experts on solving the latest compliance challenges.
     .column
-      h4.headline-4 Innovation Center
+      h4.headline-4
+        a href="/innovation/" title="Innovation Center" Innovation Center
       p Hear from the brightest minds in healthcare technology through interviews, podcasts, reports, and more.
   = partial "partials/content/recent-items"
 

@@ -67,24 +67,25 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
     .columns.small-12.medium-10.large-8.text-center
       h2.headline-2 Compliance Solutions
       p.lead <strong>You have complex problems.</strong> Datica has a family of powerful solutions. Powerful when used on their own but meant to work together, our products and solutions address your most complex challenges.
-  .row.align-justify.text-center
-    .columns.small-12.medium-4 
-      h3.headline-3.text-italic.text-serif.nomargin Simplicity & speed
-    .columns.small-12.medium-4 
-      h3.headline-3.text-italic.text-serif.nomargin Developer Control
-  .row
-    .column
-      .border-dash-line
-  .row.align-justify.text-small
-    .columns.small-12.medium-4
-      p Quickly deploy compliant apps on a hosted platform with a robust BAA.
-      p You gain speed, at the cost of control and flexibility.
-    .columns.small-12.medium-4
-      p Apps and services need to scale and grow, with more orchestration and management needs.
-      p You gain more control & scalability, and take on more responsbility for compliance.
-    .columns.small-12.medium-4
-      p Complete control and visibility into your compliance state. 
-      p You gain control, but are responsible for maintaining compliance.
+  #product-lens.show-for-medium
+    .row.align-justify.text-center
+      .columns.small-12.medium-4 
+        h3.headline-3.text-italic.text-serif.nomargin Simplicity & speed
+      .columns.small-12.medium-4 
+        h3.headline-3.text-italic.text-serif.nomargin Developer Control
+    .row
+      .column
+        .border-dash-line
+    .row.align-justify.text-small
+      .columns.small-12.medium-4
+        p Quickly deploy compliant apps on a hosted platform with a robust BAA.
+        p You gain speed, at the cost of control and flexibility.
+      .columns.small-12.medium-4
+        p Apps and services need to scale and grow, with more orchestration and management needs.
+        p You gain more control & scalability, and take on more responsbility for compliance.
+      .columns.small-12.medium-4
+        p Complete control and visibility into your compliance state. 
+        p You gain control, but are responsible for maintaining compliance.
 
   .row.collapse.align-center.small-up-1.medium-large-up-2.large-up-3.row--card-grid
     .column.relative.has-blob
@@ -139,7 +140,7 @@ section.section-article.pad-no-bottom.bg-gray-12
       h2.headline-4 Datica Global Compliance Posture
       p.lead.text-center Datica's stringent compliance posture makes us compliant with many global standards.
       = partial "partials/snippets/button", :locals => { :label => "Explore global compliance", :url => "/compliance/global/", :button_classes => "button hollow group", :item_id => "compliance-global", :icon => "icon-angle-right", :icon_align => "right" }
-      a href="/compliance/global/" title="Global Compliance Table"
+      / a href="/compliance/global/" title="Global Compliance Table"
         - preview = "https://images.ctfassets.net/189dvqdsjh46/4KtjQwGLOo6UGoAY82qe6k/dd058456a0fef3d725cd5fc8a1713840/global_compliance_stance_table.png"
         img.lozad.drop.blur-in alt="Global Compliance Table" src="#{preview}?w=1200&fm=jpg&q=5" data-src="#{preview}?w=1200&fm=png&fl=png8"
 
