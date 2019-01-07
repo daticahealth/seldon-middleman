@@ -184,6 +184,11 @@
 
 // normally containers set child colors, when possible; when not, use these link color overrides.
 .link {
+    &--white, &-light, &-light-plain, &-light-underline, &--yellow {
+        &:visited, &:active {
+            color: inherit;
+        }
+    }
     &--white, &-light {
         font-weight: $font-weight-bold;
         color: $white !important;
@@ -200,6 +205,17 @@
             border: none;
         }
     }
+    &-light-underline {
+        color: inherit; // if another style is combined, text color follows. Line color still independent
+        text-decoration: none;
+        transition: border-bottom .15s linear,color .15s linear;
+        border-bottom: 3px solid white(0.2);
+        padding-bottom: 0.1em;
+        &:hover {
+            color: inherit;
+            border-color: white(1);
+        }
+    }
     &--yellow {
         font-weight: $font-weight-bold;
         color: $color_yellow-glow !important;
@@ -209,6 +225,7 @@
             border-bottom: 1px solid $white;
         }
     }
+
     &--blue-bright {
         font-weight: $font-weight-bold;
         color: $color_aqua-glow !important;
