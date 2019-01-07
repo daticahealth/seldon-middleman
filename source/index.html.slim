@@ -44,11 +44,9 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
   .row.align-center
     .columns.small-12.medium-12.large-8.text-center
       h2.headline-1.text-bold What's your biggest challenge?
-  .row.align-center.group
-    .columns.shrink
-      = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/compliance/", :icon_align => "left", :button_classes => "button button--light button--hover-integration no-nudge", :icon => "icon-chevron-left", :item_id => "product", :data_track_group => "cat_integration" }
-    .columns.shrink
-      = partial "partials/snippets/button", :locals => { :label => "I need to integrate with a hospital", :url => "/integration/", :button_classes => "button button--light button--hover-compliance no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product", :data_track_group => "cat_compliance" }
+  .button-group.align-center.group
+    = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/compliance/", :icon_align => "left", :button_classes => "button button--light button--hover-integration no-nudge", :icon => "icon-chevron-left", :item_id => "product", :data_track_group => "cat_integration" }
+    = partial "partials/snippets/button", :locals => { :label => "I need to integrate with a hospital", :url => "/integration/", :button_classes => "button button--light button--hover-compliance no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product", :data_track_group => "cat_compliance" }
   .row.align-center
     .columns.small-12.large-8.text-center
       p.lead <strong>You have complex problems.</strong> Datica has a family of powerful solutions. Powerful when used on their own but meant to work together, our products and solutions address your most pressing challenges.
