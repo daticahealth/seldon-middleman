@@ -17,7 +17,7 @@ ruby:
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   the_form = data.site.forms['328pNB4IvCaQWQMCWmgSCy']
 
-aside.hide-for-large.section-article.container-color--blue-alt.menu.button-cluster.align-center
+aside.hide-for-large.section-article.container-color--blue-alt.menu.button-group.align-center
   /= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
   = partial "partials/snippets/button", :locals => { :label => "Hear from our customers", :url => "/compliant-kubernetes-service/", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :item_id => "cta_top_success" }
   = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button button--light", :icon => "icon-chevron-down" }
@@ -47,7 +47,7 @@ aside.hide-for-large.section-article.container-color--blue-alt.menu.button-clust
       .columns.small-12.large-7
         img.lozad alt=("Platform Integration") data-src="/public/img/platform-integration-2x.png" /
 
-    aside.section-article--sm.menu.button-cluster.align-center.show-for-large
+    aside.section-article--sm.menu.button-group.align-center.show-for-large
       = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow", :item_id => "cta_top_pricing" }
       = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button", :icon => "icon-chevron-down" }
 
