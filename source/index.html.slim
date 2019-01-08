@@ -11,6 +11,37 @@ priority: "1.0"
 collectionName: "home"
 feed_url: "https://datica.com/blog/feed.xml"
 asset_preload: '<link href="/public/img/art/home-header-art-hexagons-anim.svg" rel="preload" as="image" />'
+list_resources:
+  -
+    slug: "blog"
+    url: "/blog/"
+    title: "Blog"
+    desc: "News and insights from the Datica experts behind Healthcare's trusted cloud."
+  -
+    slug: "academy"
+    url: "/academy/"
+    title: "Academy"
+    desc: "Your place to learn the intricacies of interoperability, compliance, and cloud technologies."
+  -
+    slug: "discover"
+    url: "/discover/"
+    title: "Discover: Compliance Topics"
+    desc: "Resource hubs for popular topics on integration and compliance."
+  -
+    slug: "open-source"
+    url: "/open-source/"
+    title: "Open Source"
+    desc: "We build our products with open source technologies—and freely share useful tools like Policies and data tansforms. "
+  -
+    slug: "webinars"
+    url: "/webinars/"
+    title: "Webinars"
+    desc: "In-depth presentations from Datica experts on solving the latest compliance challenges."
+  -
+    slug: "innovation"
+    url: "/innovation/"
+    title: "Innovation Center"
+    desc: "Hear from the brightest minds in healthcare technology through interviews, podcasts, reports, and more."
 ---
 ruby:
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
@@ -34,19 +65,17 @@ section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_produ
             a.text-bold.spaced-out href="/integration/" Integration
           li
             a.text-bold.spaced-out href="/about/" About Datica
-    .row.align-center
-      .columns.shrink
-        = partial "partials/snippets/button", :locals => { :label => "Ask a Datica Expert", :url => "/contact/", :icon_align => "right", :button_classes => "button hollow", :icon => "icon-chat" }
-      .columns.shrink
-        = partial "partials/snippets/button", :locals => { :label => "Get a demo", :url => "/integration/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cmi" }
+    .button-group.menu.align-center
+      /= partial "partials/snippets/button", :locals => { :label => "Ask a Datica Expert", :url => "/contact/", :icon_align => "right", :button_classes => "button hollow", :icon => "icon-chat" }
+      = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/demo/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "cmi" }
 .strip-bright
 section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
   .row.align-center
     .columns.small-12.medium-12.large-8.text-center
       h2.headline-1.text-bold What's your biggest challenge?
-  .button-group.align-center.group
+  .button-group.menu.align-center.group
     = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/compliance/", :icon_align => "left", :button_classes => "button button--light button--hover-integration no-nudge", :icon => "icon-chevron-left", :item_id => "product", :data_track_group => "cat_integration" }
-    = partial "partials/snippets/button", :locals => { :label => "I need to integrate with a hospital", :url => "/integration/", :button_classes => "button button--light button--hover-compliance no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product", :data_track_group => "cat_compliance" }
+    = partial "partials/snippets/button", :locals => { :label => "I need to integrate with an EHR", :url => "/integration/", :button_classes => "button button--light button--hover-compliance no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product", :data_track_group => "cat_compliance" }
   .row.align-center
     .columns.small-12.large-8.text-center
       p.lead <strong>You have complex problems.</strong> Datica has a family of powerful solutions. Powerful when used on their own but meant to work together, our products and solutions address your most pressing challenges.
@@ -110,30 +139,11 @@ section.container-gray-11.section-article
       h2.headline-3.text-center <strong>Grow</strong> with us
       p.text-center We exist to help healthcare developers succeed and have many open resources to share our expertise with you.
   .row.small-up-2.medium-up-3.group
-    .column
-      h4.headline-4
-        a href="/blog/" title="Blog" Blog
-      p News and insights from the Datica Experts behind Healthcare's trusted cloud.
-    .column
-      h4.headline-4
-        a href="/academy/" title="Academy" Academy
-      p The Datica HIPAA and Interoperability Academy walks you through the intricacies of HIPAA, HL7, and FIR—from the highest concepts to the deepest details.
-    .column
-      h4.headline-4
-        a href="/discover/" title="Discover: Compliance Topics" Discover: Compliance Topics
-      p Resource hubs for popular topics on integration and compliance.
-    .column
-      h4.headline-4
-        a href="/open-source/" title="Open Source" Open Source
-      p We build our products with open-source technologies—and freely share useful tools like Policies and data tansforms. 
-    .column
-      h4.headline-4
-        a href="/webinars/" title="Webinars" Webinars
-      p In-depth presentations from Datica Experts on solving the latest compliance challenges.
-    .column
-      h4.headline-4
-        a href="/innovation/" title="Innovation Center" Innovation Center
-      p Hear from the brightest minds in healthcare technology through interviews, podcasts, reports, and more.
+    - current_page.data.list_resources.each do | item |
+      .column.group--sm
+        h4.headline-4.margin-bottom-small
+          a href=item.url title=item.title data-track-category="education" data-track-id="resources_#{item.slug}" = item.title
+        p = item.desc
   = partial "partials/content/recent-items"
 
 section.section-article
@@ -166,9 +176,7 @@ aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-bac
       .row.align-center.group--sm
         .columns.small-12.medium-10.large-10.text-center
           h2.headline-3 HITRUST audit? No problem.
-      .row.align-center
-        .columns.shrink
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about HITRUST compliance", :url => "/discover/hitrust/", :button_classes => "button hollow-inverted" }
-        .columns.shrink
-          = partial "partials/snippets/button", :locals => { :label => "Get started with CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "ccms" }
+      .button-group.menu.align-center
+        = partial "partials/snippets/button", :locals => { :label => "Learn more about HITRUST compliance", :url => "/compliance/", :button_classes => "button hollow-inverted", :data_track_group => "product", :item_id => "cta_compliance_category" }
+        = partial "partials/snippets/button", :locals => { :label => "Get started with CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :data_track_group => "product", :item_id => "cta_ccms" }
     .blob-color.blob-ccms.z-auto data-glow="false"

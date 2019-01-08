@@ -28,4 +28,4 @@ ruby:
       = partial("partials/snippets/person", :locals => { :p => customer, :company => customer.company_name } )
   - if customer != nil
     .text-center.full-width
-      = partial "partials/snippets/button", :locals => { :label => "Get the Case Study", :url => "/customer/#{customer.slug}", :button_classes => "button hollow", :icon => "icon-download", :icon_align => "right", :data_track_group => "case-study" }
+      = partial "partials/snippets/button", :locals => { :label => "Get the Case Study", :url => "/customer/#{customer.slug}", :button_classes => "button hollow", :icon => "icon-download", :icon_align => "right", :data_track_group => "product", :item_id => "cta_casestudy_aws" }
