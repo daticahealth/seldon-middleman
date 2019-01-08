@@ -383,9 +383,3 @@ ul.bullet-outside {
     }
 }
 
-// for content collections
-.collection .row:nth-child(odd) {
-    @include breakpoint (medium) {
-        flex-direction: row-reverse;
-    }
-}
