@@ -16,7 +16,6 @@ ruby:
   current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" />'
   current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/Qh24iUaLW6Saoe4QKAAu6/3c1d9922a320aa39808f5b55e1a2583f/cta-integrations-share.jpg"
   featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/0715bdb8ca051eb4e3e69085fc78c443/Computer_programmers_working_together.jpg"
-  current_page.data.share_image = featured_img
 / = partial "partials/snippets/platform-icons"
 scss:
   .pull-down { // adjust top margin to open up image, this page only
@@ -28,12 +27,12 @@ scss:
 section.hide-for-large
   .row.collapse
     .columns.small-12
-      img.lozad.blur-in data-src="#{featured_img}?fit=thumb&w=800&h=400" alt="Woman looking out of a window"
+      img.lozad.blur-in src="#{featured_img}?fit=thumb&w=800&h=400?q=10" data-src="#{featured_img}?fit=thumb&w=800&h=600&q=30" data-srcset="#{featured_img}?fit=thumb&w=800&h=600&q=50 800w, #{featured_img}?fit=thumb&w=1600&h=600 1200w" alt="Working together"
       .bg-white.pad--lg
         h2.headline-2 Is the stress of hospital integrations holding your business back?
         h2.headline-3.text-bold.group Activate your digital health product with data from any EHR enables EHR integrations at scale.
         = partial "partials/snippets/button", :locals => { :label => "Get started with CMI", :url => "/compliant-managed-integration#cta", :button_classes => "button nomargin", :item_id => "cta_top-products", :icon => "icon-chevron-right", :icon_align => "right" }
-section#top.show-for-large.section-article.pad-no-bottom.bg-gray-12.container-image--center.lozad data-background-image=featured_img
+section#top.show-for-large.section-article.pad-no-bottom.bg-gray-12.container-image--center.lozad data-background-image="#{featured_img}?fit=thumb&w=1800&h=900&q=65"
   .row.align-right.align-middle
     .columns.small-12.medium-6
       .drop.pull-down
@@ -73,7 +72,7 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
       p.lead Scalable, secure data exchange with any EHR
       / .blob-color.blob-cmi.z-auto data-glow="false"
   .row
-    .columns.small-12.medium-6.large-6
+    .columns.small-12.medium-6.large-6.group
       p.lead We combine cutting-edge automation of cloud infrastructure security, DevOps processes, and interface engines, with our extensive experience in solving healthcare integration problems. All built on a solid foundation of <strong>continuous HIPAA compliance</strong>.
       = partial "partials/snippets/button", :locals => { :label => "Learn more about CMI", :url => "/compliant-managed-integration/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-chevron-right", :icon_align => "right" }
     .columns.small-12.medium-6.large-6
@@ -89,7 +88,7 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
       p.lead Expert guidance and project services
       / .blob-color.blob-services.z-auto data-glow="false"
   .row
-    .columns.small-12.medium-6.large-6
+    .columns.small-12.medium-6.large-6.group
       p.lead.group Our team of cloud engineers, integration and compliance experts can help you assessyour business challenges, ensure complete compliance on the cloud, integrate with any system, and even migrate your data to a new, efficient, and cost-effective cloud platform.
       = partial "partials/snippets/button", :locals => { :label => "Ask about Datica Services", :url => "/compliant-managed-integration#services", :button_classes => "button button--light button-inline", :item_id => "product-group-cpaas", :icon => "icon-chevron-right", :icon_align => "right" }
     .columns.small-12.medium-6.large-6
