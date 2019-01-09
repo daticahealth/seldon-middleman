@@ -27,7 +27,7 @@ header.main-header
   nav.nav.nav-mobile.hide-for-large
     .title-bar.align-middle data-responsive-toggle="nav-mobile" data-hide-for="large"
       .columns.small-6
-        a.nav-logo--link.link--white
+        a.nav-logo--link.link--white href="/" title="Datica Home"
           svg.nav-logo.svg-color--white id="datica-logo-mobile"
             use.symbol-icon xlink:href="#datica-logo-horiz"
       .columns.small-6.text-right
@@ -42,7 +42,12 @@ header.main-header
           = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "button hollow-inverted expanded", :icon => "icon-phone", :icon_align => "left" }
       .row.group
         .columns.small-12.medium-6.medium-order-1
-          .callout.callout--dark-alt
+          hr
+          / .h2.headline-2.text-bold What's your biggest challenge?
+          .button-group.menu.align-center.group
+            = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/cloud-compliance/", :button_classes => "button button--light button--hover-compliance no-nudge", :item_id => "get-compliance-mobile", :data_track_group => "compliance" }
+            = partial "partials/snippets/button", :locals => { :label => "I need to integrate with an EHR", :url => "/ehr-integration/", :button_classes => "button button--light button--hover-integration no-nudge", :item_id => "get-integration-mobile", :data_track_group => "integration" }
+          / .callout.callout--dark-alt
             ul.menu.vertical.full-width
               - data.nav_all[0].children.each do |nav_list|
                 - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
@@ -61,7 +66,7 @@ header.main-header
               p
                 a.link--white.text-light(href="/guide/#{guide_entry.slug}/" title=guide_entry.summary)= guide_entry.title
       .row.small-up-1.medium-up-3
-        - data.nav_all[1...4].each do |nav_dropdown|
+        - data.nav_all[0...4].each do |nav_dropdown|
           - if nav_dropdown.has_key?("children")
             .column.group
               .headline-5 = nav_dropdown.title

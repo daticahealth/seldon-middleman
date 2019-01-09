@@ -163,6 +163,11 @@
   status = 301
 
 [[redirects]]
+  from = "/integration/"
+  to = "/ehr-integration/"
+  status = 301
+
+[[redirects]]
   from = "/integrations/"
   to = "/ehr-integration/"
   status = 301
@@ -275,6 +280,11 @@
 [[redirects]]
   from = "/hitrust"
   to = "/guide/hitrust"
+  status = 301
+
+[[redirects]]
+  from = "/compliance/"
+  to = "/cloud-compliance/"
   status = 301
 
 [[redirects]]

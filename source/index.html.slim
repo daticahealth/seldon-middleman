@@ -45,7 +45,7 @@ ruby:
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   # current_page.data.share_image = image_share_platform
   featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/470d9a7b58ffede77ae3d064cf86b655/office_-_istockphoto-626637134_edit.jpg"
-  current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" />, <link href="' + bg_product_light + '" rel="preload" as="image" />'
+  current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" /><link href="' + bg_product_light + '" rel="preload" as="image" />'
   current_page.data.share_image = featured_img
 
 / section.bg-gray-1
@@ -56,7 +56,7 @@ section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_produ
       .columns.small-12.medium-12.large-10.text-center
         h1.headline-2.text-bold Datica brings healthcare to the cloud. 
         p.lead Get through the maze of compliance and onto the cloud faster with Datica.
-        ul.menu.align-center
+        ul.menu.align-center.show-for-medium
           li
             a.text-bold.spaced-out href="/cloud-compliance/" Compliance
           li
@@ -65,7 +65,7 @@ section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_produ
             a.text-bold.spaced-out href="/about/" About Datica
     .button-group.menu.align-center
       /= partial "partials/snippets/button", :locals => { :label => "Ask a Datica Expert", :url => "/contact/", :icon_align => "right", :button_classes => "button hollow", :icon => "icon-chat" }
-      = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/demo/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get_demo", :data_track_group => "products" }
+      = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/demo/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get_demo", :data_track_group => "products", :expand => false }
 .strip-bright
 section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
   .row.align-center
