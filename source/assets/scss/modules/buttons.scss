@@ -152,7 +152,6 @@
 }
 .button--hover-compliance {
     // font-weight: $font-weight-bold;
-    transition: box-shadow $timing-default linear;
     &:hover {
         @include shadow-anarchy(0 0 0 5px #2e8dff)
     }
@@ -160,7 +159,6 @@
 }
 .button--hover-integration {
     // font-weight: $font-weight-bold;
-    transition: box-shadow $timing-default linear;
     &:hover {
         @include shadow-anarchy(0 0 0 5px #e85c86)
     }

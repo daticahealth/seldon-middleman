@@ -14,6 +14,7 @@
     </head>
     <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
     <body class="<%= page_classes %>">
+        <div class="strip-bright strip-small"></div>
         <%#= partial "partials/snippets/alert-ribbon" %>
         <div class="container-color--dark-alt">
             <%= partial "partials/head/header", :locals => { :style => "light" } %>
