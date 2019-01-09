@@ -1,6 +1,6 @@
 ---
-title: "Compliant Innovation | Datica"
-summary: "Datica makes your cloud workloads compliant and secure to the standards of HIPAA, HITRUST, GDPR, and GxP on AWS and Azure."
+title: "Datica brings healthcare to the cloud"
+summary: "Datica provides HIPAA compliance solutions to deploy cloud native workloads and integrate with any hospital EHR."
 author: "Datica, Inc."
 tags: "compliance, HITRUST, integration, EHR, healthcare, education, HIPAA, HL7, FHIR, interoperability"
 customCSS: "home"
@@ -58,9 +58,9 @@ section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_produ
         p.lead Get through the maze of compliance and onto the cloud faster with Datica.
         ul.menu.align-center
           li
-            a.text-bold.spaced-out href="/compliance/" Compliance
+            a.text-bold.spaced-out href="/cloud-compliance/" Compliance
           li
-            a.text-bold.spaced-out href="/integration/" Integration
+            a.text-bold.spaced-out href="/ehr-integration/" Integration
           li
             a.text-bold.spaced-out href="/about/" About Datica
     .button-group.menu.align-center
@@ -72,8 +72,8 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
     .columns.small-12.medium-12.large-8.text-center
       h2.headline-1.text-bold What's your biggest challenge?
   .button-group.menu.align-center.group
-    = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/compliance/", :icon_align => "left", :button_classes => "button button--light button--hover-compliance no-nudge", :icon => "icon-chevron-left", :item_id => "get-compliance", :data_track_group => "compliance" }
-    = partial "partials/snippets/button", :locals => { :label => "I need to integrate with an EHR", :url => "/integration/", :button_classes => "button button--light button--hover-integration no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get-integration", :data_track_group => "integration" }
+    = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/cloud-compliance/", :icon_align => "left", :button_classes => "button button--light button--hover-compliance no-nudge", :icon => "icon-chevron-left", :item_id => "get-compliance", :data_track_group => "compliance" }
+    = partial "partials/snippets/button", :locals => { :label => "I need to integrate with an EHR", :url => "/ehr-integration/", :button_classes => "button button--light button--hover-integration no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get-integration", :data_track_group => "integration" }
   .row.align-center
     .columns.small-12.large-8.text-center
       p.lead <strong>You have complex problems.</strong> Datica has a family of powerful solutions. Powerful when used on their own but meant to work together, our products and solutions address your most pressing challenges.
@@ -153,7 +153,7 @@ section.section-article
           - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
           .column
             img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
-      = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "compliance-story", :data_track_group => "compliance" }
+      = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/cloud-compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "compliance-story", :data_track_group => "compliance" }
 
 section.section-article.container-gray-11
   .row.align-center
@@ -175,6 +175,6 @@ aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-bac
         .columns.small-12.medium-10.large-10.text-center
           h2.headline-3 HITRUST audit? No problem.
       .button-group.menu.align-center
-        = partial "partials/snippets/button", :locals => { :label => "Learn more about HITRUST compliance", :url => "/compliance/", :button_classes => "button hollow-inverted", :data_track_group => "compliance", :item_id => "get-compliance-bottom" }
+        = partial "partials/snippets/button", :locals => { :label => "Learn more about HITRUST compliance", :url => "/cloud-compliance/", :button_classes => "button hollow-inverted", :data_track_group => "compliance", :item_id => "get-compliance-bottom" }
         = partial "partials/snippets/button", :locals => { :label => "Get started with CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :data_track_group => "compliance", :item_id => "get-ccms-bottom" }
     .blob-color.blob-ccms.z-auto data-glow="false"

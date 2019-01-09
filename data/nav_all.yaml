@@ -6,7 +6,7 @@
     children:
         -
             title: "Compliance"
-            url: "/compliance/"
+            url: "/cloud-compliance/"
             desc: "Datica helps you become HITRUST CSF Certified"
             nav_main: true
             has_divider: true
@@ -55,7 +55,7 @@
     children:
         -
             title: "EHR Integration"
-            url: "/integration/"
+            url: "/ehr-integration/"
             desc: "Datica handles the risk and complexity of EHR integrations, so you can focus on building solutions."
             has_divider: true
         -

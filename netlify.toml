@@ -87,11 +87,6 @@
   status = 301
   force = true
 
-# [[redirects]]
-#   from = "/integration/"
-#   to = "/integration/"
-#   status = 301
-
 [[redirects]]
   from = "/platform/integration/"
   to = "/compliant-managed-integration/"
@@ -116,7 +111,7 @@
 
 [[redirects]]
   from = "/platform/compliance/"
-  to = "/compliance/"
+  to = "/cloud-compliance/"
   status = 301
   force = true
 
@@ -147,8 +142,8 @@
   status = 301
 
 [[redirects]]
-  from = "/platform/technology"
-  to = "/compliance"
+  from = "/platform/technology/"
+  to = "/cloud-compliance/"
   status = 301
   force = true
 
@@ -159,17 +154,17 @@
 
 [[redirects]]
   from = "/solutions/"
-  to = "/integration/"
+  to = "/ehr-integration/"
   status = 301
 
 [[redirects]]
   from = "/services/"
-  to = "/integration/"
+  to = "/ehr-integration/"
   status = 301
 
 [[redirects]]
   from = "/integrations/"
-  to = "/integration/"
+  to = "/ehr-integration/"
   status = 301
 
 [[redirects]]
@@ -283,8 +278,8 @@
   status = 301
 
 [[redirects]]
-  from = "/compliance/hitrust"
-  to = "/compliance/#compliance-hitrust"
+  from = "/compliance/hitrust/"
+  to = "/cloud-compliance/"
   status = 301
 
 [[redirects]]
