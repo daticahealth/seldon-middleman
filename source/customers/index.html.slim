@@ -16,6 +16,54 @@ ruby:
   current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" />'
   current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/2aPhdyH76MiQwqQq4KiGMg/186518b5a3896994d54ae3cef4fbac8d/cta-compliance-share.jpg"
   featured_img = "https://images.ctfassets.net/189dvqdsjh46/40nTU46iGkIsck8qEa0qcm/4822d250b4eb05924aa530dbd1ccf73f/working_together__looking_at_screen.jpg"
+scss:
+  $gap: calc(1.5rem + 2vw);
+  .masonry-group {
+    column-gap: $gap;
+  }
+  .masonry-group--item {
+    margin-bottom: $gap;
+  }
+/ section#resources.section-article.bg-gray-11
+  - case_studies = data.site.collections.to_a.select { | id, cust | (id == "5Lty4ePvawI0SKMa8S4aIc") }
+  - case_studies.each do | id, cardgroup |
+    .row.align-center
+      .columns.small-12.text-center.group
+        h2.headline-3 = cardgroup.title
+    .masonry-group
+      - cardgroup["related_entries"].each_with_index do | card, index |
+        - carditem = data.site.caseStudy[card.id]
+        - cust = data.site.customers[carditem.customer.id]
+        - if index == 1
+          .masonry-group--item.text-center
+            h3.headline-3 <strong>World-class companies</strong> trust Datica
+            .logo-cloud.nopad
+              - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
+                img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--small") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
+        - if index == 4
+          .masonry-group--item.text-center
+            h4.headline-5 Datica's Proven Integration Track Record
+            .row.collapse.small-up-2.align-center.text-center.text-small
+              .column
+                span.headline-3.text-bold.text--gray-6 200+
+                p Live integrations completed
+              / .column
+              /   span.headline-1.text-bold 32+
+              /   p Total number of EHRs Datica has helped integrate successfully with customer products.
+              .column
+                span.headline-3.text-bold.text--gray-6 Millions
+                p Total number of mission-critical messages processed monthly with Datica's products
+              .column
+                span.headline-3.text-bold.text--gray-6 1,000+
+                p Security and risk assessments passed
+              .column
+                span.headline-3.text-bold.text--gray-6 Zero
+                p Unexpected downtime three years in a row
+              .column
+                span.headline-3.text-bold.text--gray-6 100%
+                p Built with open-source tech
+        .masonry-group--item
+          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
 
 section#resources.section-article.bg-gray-11
   - related_entries = data.site.collections.to_a.select { |id, entry | (id == "5Lty4ePvawI0SKMa8S4aIc") }
@@ -33,8 +81,8 @@ section#resources.section-article.bg-gray-11
       - when "caseStudy" then "customer"
       - else type
       - url = "/#{folder}/#{entry.customer.slug}/"
-      - title = entry.case_study_title
       - company = entry.customer.company_name
+      - title = (entry.has_key?("case_study_title") ? entry.case_study_title : company )
 
       - if index == 3
         section.section-article.container-gray-11
@@ -42,16 +90,21 @@ section#resources.section-article.bg-gray-11
             .columns.small-12.large-11.text-center
               h3.headline-3 <strong>World-class companies</strong> trust Datica
               .logo-cloud
-                - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
+                - data.views.home.customers.each do |logo|
                   img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
 
       .row.align-center.align-middle.section-article--med
         .columns.small-12.medium-6.large-6.xlarge-5
-          p
-            a href=url
+          .logo-header-group
+            a.logo-header-image href=url title='Read Case study'
               img.logo-size--medium alt=("#{company} Logo") src="/public/img/customer-logos/#{entry.customer.slug}-logo.png" /
+            .logo-header-title.logo-header-title--combo Case Study
+          h4.headline-4
+            a href=url title="Read case study"
+              = title
           - if entry.has_key?("value_prop")
-            h3.headline-4 = entry["value_prop"]
+            p.lead = entry["value_prop"]
+          / = partial "partials/snippets/button", :locals => { :label => "Read the #{company} Case Study", :url => url, :icon_align => "left", :button_classes => "button secondary button--hover-compliance no-nudge", :icon => "icon-files", :item_id => "casestudy_#{entry.slug}", :data_track_group => "" }
           - if entry.has_key?("customer_quote")
             blockquote.quote--serif
               = entry["customer_quote"]["quote_body"]
@@ -63,10 +116,10 @@ section#resources.section-article.bg-gray-11
           - if entry.has_key?("media_object")
             .group
               = entry["media_object"]
-          h3.headline-4
+          / h3.headline-4
             a href=url title=entry.title
               = entry.title
-          = partial "partials/snippets/button", :locals => { :label => "Read the #{company} Case Study", :url => url, :icon_align => "left", :button_classes => "button secondary button--hover-compliance no-nudge", :icon => "icon-files", :item_id => "casestudy_#{entry.slug}", :data_track_group => "" }
+
 
 section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
   .row.align-center
