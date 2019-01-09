@@ -168,6 +168,11 @@
   status = 301
 
 [[redirects]]
+  from = "/integrations/"
+  to = "/integration/"
+  status = 301
+
+[[redirects]]
   from = "/signup"
   to = "/contact"
   status = 301

@@ -42,10 +42,10 @@ module SiteHelpers
     end
     # For sharing metadata - if no key image on the page, fall back to this.
     def image_share_default
-        data.site.cta["28kGtqwD2oym6k8cUgksiQ"].cta_image.url + image_size_small
+        "https://images.ctfassets.net/189dvqdsjh46/3IyRP3gK64W4MaqMwWmSgU/d2c4ee3f02cbceda200b8b444fd67f26/cta-generic.jpg" + image_size_small
     end
     def image_share_platform # get ID from CF
-        data.site.cta["6KOQ7XhaJqCI00oYacessy"].cta_image.url + image_size_small
+        "https://images.ctfassets.net/189dvqdsjh46/2aPhdyH76MiQwqQq4KiGMg/186518b5a3896994d54ae3cef4fbac8d/cta-compliance-share.jpg" + image_size_small
     end
     def cf_asset_protocol
         'https:'
