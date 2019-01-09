@@ -20,7 +20,7 @@
     </public/css/seldon.css>;rel=preload;as=style, \
     <//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js>;rel=preload;as=script, \
     <//cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js>;rel=preload;as=script, \
-    <//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.6.0/lozad.min.js>;rel=preload;as=script, \
+    <//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.7.0/lozad.min.js>;rel=preload;as=script, \
     </fonts/gt-america-light.woff>;rel=preload;as=font;type=font/woff;crossorigin'''
 # </fonts/gt-america-regular.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
 
@@ -43,8 +43,8 @@
   status = 301
 
 [[redirects]]
-  from = "/customers/*"
-  to = "/compliant-kubernetes-service/"
+  from = "/customer/"
+  to = "/customers/"
   status = 301
 
 [[redirects]]
