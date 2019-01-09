@@ -29,47 +29,47 @@ customers:
     -
         name: 'Zipnosis'
         file: 'zipnosis-logo'
-        url: 'http://zipnosis.com'
+        url: 'https://zipnosis.com'
         logoSize: 'medium'
     -
         name: 'Healthloop'
         file: 'healthloop-logo'
-        url: 'http://healthloop.com'
+        url: 'https://healthloop.com'
         logoSize: 'small-mid'
     -
         name: 'BSC'
         file: 'bsc-logo-wide'
-        url: 'http://blueshieldca.com'
+        url: 'https://blueshieldca.com'
         logoSize: 'small'
     -
         name: 'healthfinch'
         file: 'healthfinch-logo'
-        url: 'http://healthfinch.com'
+        url: 'https://healthfinch.com'
         logoSize: 'medium'
     -
         name: 'BCGDV'
         file: 'bcgdv-logo'
-        url: 'http://bcgdv.com'
+        url: 'https://bcgdv.com'
         logoSize: 'medium'
     -
         name: 'Propeller Health'
         file: 'propeller-logo'
-        url:  'propellerhealth.com'
+        url:  'https://propellerhealth.com'
         logoSize: 'small-mid'
     -
         name: 'Hennepin County Medical Center'
         file: 'hcmc-logo'
-        url: 'http://hcmc.org'
+        url: 'https://hcmc.org'
         logoSize: 'medium'
     -
         name: 'COTA'
         file: 'cota-logo'
-        url: 'http://oncota.com'
+        url: 'https://oncota.com'
         logoSize: 'small-mid'
     -
         name: 'CirrusMD'
         file: 'cirrusmd-logo'
-        url: 'http://cirrusmd.com'
+        url: 'https://cirrusmd.com'
         logoSize: 'medium'
     -
         name: 'Stony Brook'
@@ -79,17 +79,17 @@ customers:
     -
         name: 'Optum'
         file: 'optum-logo'
-        url: 'http://optum.com'
+        url: 'https://optum.com'
         logoSize: 'medium'
     -
         name: 'University of Kansas Hospital'
         file: 'university-of-kansas-hospital-logo'
-        url: 'http://www.kumed.com/'
+        url: 'https://www.kumed.com/'
         logoSize: 'small-mid'
     -
         name: 'Hurley Medical Center'
         file: 'hurley-medical-center-logo'
-        url: 'http://www.hurleymc.com/'
+        url: 'https://www.hurleymc.com/'
         logoSize: 'medium'
     -
         name: 'The VA'
@@ -104,7 +104,12 @@ customers:
     -
         name: 'Methodist Lebonheur Hospital'
         file: 'mlh-logo'
-        url: 'http://www.methodisthealth.org'
+        url: 'https://www.methodisthealth.org'
+        logoSize: 'small-mid'
+    -
+        name: 'Emory Healthcare'
+        file: 'emory-healthcare-logo'
+        url: 'https://www.emoryhealthcare.org/'
         logoSize: 'medium'
 
 # block_hero_1:
