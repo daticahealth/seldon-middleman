@@ -26,7 +26,7 @@ section.hide-for-large
         h2.headline-1 Can your business pass a HITRUST assessment?
         h2.headline-3.text-bold.group With CCMS, the answer is yes.
         p.lead <strong>Get back to solving problems for healthcare.</strong> Let Datica take on the burden of compliance. We're the experts at understanding the exact policies and procedures required to turn HIPAA-eligible services on the public cloud into architectures that can pass a HITRUST CSF assessment. That expertise is passed on to you through our products and rock-solid BAA.
-        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/cloud-compliance-management-system#cta", :button_classes => "button nomargin", :item_id => "cta_top-products", :icon => "icon-chevron-right", :icon_align => "right" }
+        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/cloud-compliance-management-system#cta", :button_classes => "button nomargin", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-right", :icon_align => "right" }
 section#top.show-for-large.section-article.pad-no-bottom.bg-gray-3.container-image--center.lozad data-background-image="#{featured_img}?fit=thumb&w=1800&h=900&q=65"
   .row.align-right.align-middle
     .columns.small-12.medium-6
@@ -34,7 +34,7 @@ section#top.show-for-large.section-article.pad-no-bottom.bg-gray-3.container-ima
       .bg-white.pad--lg.drop.pull-down
         h2.headline-3.text-bold With CCMS, the answer is yes.
         p.lead <strong>Get back to solving problems for healthcare.</strong> Let Datica take on the burden of compliance. We're the experts at understanding the exact policies and procedures required to turn HIPAA-eligible services on the public cloud into architectures that can pass a HITRUST CSF assessment. That expertise is passed on to you through our products and rock-solid BAA.
-        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/cloud-compliance-management-system#cta", :button_classes => "button nomargin success", :item_id => "cta_top-products", :icon => "icon-chevron-right", :icon_align => "right" }
+        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/cloud-compliance-management-system#cta", :button_classes => "button nomargin success", :data_track_group => "compliance", :item_id => "get-ccms-desktop", :icon => "icon-chevron-right", :icon_align => "right" }
 
 .strip-bright
 scss:
@@ -95,7 +95,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           p.lead Build and deploy a digital health application on a compliant hosted platform
           / p Datica Compliant Platform as a Service gives startups pre-packaged compliance and security. CPaaS makes hosting your compliant healthcare applications as simple as git push.
         .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
       .blob-color.blob-cpaas.z-auto data-glow="false"
     .column.relative.has-blob
       .card.container-color--trans.relative.z-5
@@ -107,7 +107,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           p.lead Get enterprise scalability for your complex digital health application on a compliant Kubernetes cluster
           / p Datica Compliant Kubernetes Service gives you the orchestration and scalable power of Kubernetes with compliance built in.
         .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-cks", :icon => "icon-angle-right", :icon_align => "right" }
       .blob-color.blob-cks.z-auto data-glow="false"
     .column.relative.has-blob
       .card.container-color--trans.relative.z-5
@@ -119,7 +119,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           p.lead Know the precise compliance state of your cloud environments
           / p Datica Cloud Compliance Management System is the first-ever tool to guarantee compliance assurance of managed cloud-native services. Our dashboard and reports enable you to continuously monitor compliance, react quickly to risks and incidents, and attest to compliance for audits.
         .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light button-inline", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-ccms", :icon => "icon-angle-right", :icon_align => "right" }
       .blob-color.blob-ccms.z-auto data-glow="false"
 
 
@@ -136,7 +136,7 @@ section.section-article.pad-no-bottom.bg-gray-12
     .columns.small-12.large-8.text-center
       h2.headline-4 Datica Global Compliance Posture
       p.lead.text-center Datica's stringent compliance posture makes us compliant with many global standards.
-      = partial "partials/snippets/button", :locals => { :label => "Explore global compliance", :url => "/compliance/global/", :button_classes => "button hollow group", :item_id => "compliance-global", :icon => "icon-angle-right", :icon_align => "right" }
+      = partial "partials/snippets/button", :locals => { :label => "Explore global compliance", :url => "/compliance/global/", :button_classes => "button hollow group", :data_track_group => "compliance", :item_id => "compliance-global", :icon => "icon-angle-right", :icon_align => "right" }
       / a href="/compliance/global/" title="Global Compliance Table"
         - preview = "https://images.ctfassets.net/189dvqdsjh46/4KtjQwGLOo6UGoAY82qe6k/dd058456a0fef3d725cd5fc8a1713840/global_compliance_stance_table.png"
         img.lozad.drop.blur-in alt="Global Compliance Table" src="#{preview}?w=1200&fm=jpg&q=5" data-src="#{preview}?w=1200&fm=png&fl=png8"
@@ -162,5 +162,5 @@ aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-bac
         .columns.shrink
           = partial "partials/snippets/button", :locals => { :label => "Learn more about HITRUST compliance", :url => "/discover/hitrust/", :button_classes => "button hollow-inverted" }
         .columns.shrink
-          = partial "partials/snippets/button", :locals => { :label => "Get started with CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "ccms" }
+          = partial "partials/snippets/button", :locals => { :label => "Get started with CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :data_track_group => "compliance", :item_id => "get-ccms-bottom" }
     .blob-color.blob-ccms.z-auto data-glow="false"
