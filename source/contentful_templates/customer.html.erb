@@ -96,7 +96,7 @@ end
                 <% if p.has_key?("case_study") %>
                     <h3 class="headline-5 subhead--spaced" id="spotlight">Datica Customer Spotlight</h3>
                 <% end %>
-                <h1 class="headline-2"><%= p["customer_spotlight"]["title"] %></h1>
+                <h2 class="headline-2"><%= p["customer_spotlight"]["title"] %></h2>
                 <div class="lead spotlight--lead">
                     <%= Kramdown::Document.new(p["customer_spotlight"]["lead"]).to_html %>
                 </div>

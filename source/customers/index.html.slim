@@ -16,7 +16,90 @@ ruby:
   current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" />'
   current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/2aPhdyH76MiQwqQq4KiGMg/186518b5a3896994d54ae3cef4fbac8d/cta-compliance-share.jpg"
   featured_img = "https://images.ctfassets.net/189dvqdsjh46/40nTU46iGkIsck8qEa0qcm/4822d250b4eb05924aa530dbd1ccf73f/working_together__looking_at_screen.jpg"
-scss:
+
+section#resources.section-article.bg-gray-12
+  - related_entries = data.site.collections.to_a.select { |id, entry | (id == "5Lty4ePvawI0SKMa8S4aIc") }
+  - related_entries.each do | id, collection |
+    .row.align-center
+      .columns.small-12.medium-10.large-7.text-center
+        h1.headline-4.spaced-out = collection.title
+        h2.headline-2 = collection.subhead
+        - if collection.has_key?("desc")
+          p.lead.line-length.margin-auto = collection.desc
+    / This partial iterates through a CF collection datatype (itself just a basic entry type, that references others). 
+    - collection["related_entries"].each_with_index do | entry, index |
+      - type = entry._meta.content_type_id
+      - folder = case type
+      - when "caseStudy" then "customer"
+      - else type
+      - url = "/#{folder}/#{entry.customer.slug}/"
+      - company = entry.customer.company_name
+      - title = (entry.has_key?("case_study_title") ? entry.case_study_title : company )
+
+      - if index == 3
+        section.section-article.container-gray-11
+          .row.align-center
+            .columns.small-12.large-11.text-center
+              h3.headline-3 <strong>World-class companies</strong> trust Datica
+              .logo-cloud
+                - data.views.home.customers.each do |logo|
+                  img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
+
+      .row.align-center.align-middle.section-article--med
+        .columns.small-12.medium-6.large-6.xlarge-5
+          .logo-header-group
+            a.logo-header-image href=url title='Read Case study'
+              img.logo-size--medium alt=("#{company} Logo") src="/public/img/customer-logos/#{entry.customer.slug}-logo.png" /
+            .logo-header-title.logo-header-title--combo Case Study
+          h4
+            a.headline-5 href=url title="Read case study"
+              = title
+          - if entry.has_key?("value_prop")
+            p.lead = entry["value_prop"]
+          / = partial "partials/snippets/button", :locals => { :label => "Read the #{company} Case Study", :url => url, :icon_align => "left", :button_classes => "button secondary button--hover-compliance no-nudge", :icon => "icon-files", :item_id => "casestudy_#{entry.slug}", :data_track_group => "" }
+          - if entry.has_key?("customer_quote")
+            blockquote.quote--serif
+              = entry["customer_quote"]["quote_body"]
+          - if entry["customer"].has_key?("profile_pic")
+            = partial("partials/snippets/person", :locals => { :p => data.site.customers[entry.customer.id] })
+          / h5.subhead--spaced = type.capitalize
+          / p = (entry["customer"].has_key?("customer_story_short") ? entry.customer.customer_story_short : nil)
+        .columns.small-12.medium-6.large-6.xlarge-7
+          - if entry.has_key?("media_object")
+            .group
+              = entry["media_object"]
+          / h3.headline-4
+            a href=url title=entry.title
+              = entry.title
+
+
+section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
+  .row.align-center
+    .columns.small-12.medium-12.large-8.text-center
+      h2.headline-1.text-bold What's your biggest challenge?
+  .row.align-center
+    .columns.small-12.large-8.text-center
+      p.lead <strong>You have complex problems.</strong> Datica has a family of powerful solutions. Powerful when used on their own but meant to work together, our products and solutions address your most pressing challenges.
+  .button-group.menu.align-center.group
+    = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST assessment", :url => "/compliance/", :icon_align => "left", :button_classes => "button button--light button--hover-compliance no-nudge", :icon => "icon-chevron-left", :item_id => "product", :data_track_group => "cat_integration" }
+    = partial "partials/snippets/button", :locals => { :label => "I need to integrate with an EHR", :url => "/integration/", :button_classes => "button button--light button--hover-integration no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product", :data_track_group => "cat_compliance" }
+
+.strip.strip-ccms
+/ aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-background-image=bg_product_dark
+  .relative.has-blob
+    .relative.z-5
+      .row.align-center.group--sm
+        .columns.small-12.medium-10.large-10.text-center
+          h2.headline-3 HITRUST assessment? No problem.
+      .row.align-center
+        .columns.shrink
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about HITRUST compliance", :url => "/discover/hitrust/", :button_classes => "button hollow-inverted" }
+        .columns.shrink
+          = partial "partials/snippets/button", :locals => { :label => "Get started with CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "ccms" }
+    .blob-color.blob-ccms.z-auto data-glow="false"
+
+/ ==== this version uses cards & mixed interstitals ===
+/scss:
   $gap: calc(1.5rem + 2vw);
   .masonry-group {
     column-gap: $gap;
@@ -24,6 +107,7 @@ scss:
   .masonry-group--item {
     margin-bottom: $gap;
   }
+
 / section#resources.section-article.bg-gray-11
   - case_studies = data.site.collections.to_a.select { | id, cust | (id == "5Lty4ePvawI0SKMa8S4aIc") }
   - case_studies.each do | id, cardgroup |
@@ -64,84 +148,3 @@ scss:
                 p Built with open-source tech
         .masonry-group--item
           = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
-
-section#resources.section-article.bg-gray-11
-  - related_entries = data.site.collections.to_a.select { |id, entry | (id == "5Lty4ePvawI0SKMa8S4aIc") }
-  - related_entries.each do | id, collection |
-    .row.align-center
-      .columns.small-12.medium-10.large-7.text-center
-        h1.headline-4.spaced-out = collection.title
-        h2.headline-2 = collection.subhead
-        - if collection.has_key?("desc")
-          p.lead.line-length.margin-auto = collection.desc
-    / This partial iterates through a CF collection datatype (itself just a basic entry type, that references others). 
-    - collection["related_entries"].each_with_index do | entry, index |
-      - type = entry._meta.content_type_id
-      - folder = case type
-      - when "caseStudy" then "customer"
-      - else type
-      - url = "/#{folder}/#{entry.customer.slug}/"
-      - company = entry.customer.company_name
-      - title = (entry.has_key?("case_study_title") ? entry.case_study_title : company )
-
-      - if index == 3
-        section.section-article.container-gray-11
-          .row.align-center
-            .columns.small-12.large-11.text-center
-              h3.headline-3 <strong>World-class companies</strong> trust Datica
-              .logo-cloud
-                - data.views.home.customers.each do |logo|
-                  img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
-
-      .row.align-center.align-middle.section-article--med
-        .columns.small-12.medium-6.large-6.xlarge-5
-          .logo-header-group
-            a.logo-header-image href=url title='Read Case study'
-              img.logo-size--medium alt=("#{company} Logo") src="/public/img/customer-logos/#{entry.customer.slug}-logo.png" /
-            .logo-header-title.logo-header-title--combo Case Study
-          h4.headline-4
-            a href=url title="Read case study"
-              = title
-          - if entry.has_key?("value_prop")
-            p.lead = entry["value_prop"]
-          / = partial "partials/snippets/button", :locals => { :label => "Read the #{company} Case Study", :url => url, :icon_align => "left", :button_classes => "button secondary button--hover-compliance no-nudge", :icon => "icon-files", :item_id => "casestudy_#{entry.slug}", :data_track_group => "" }
-          - if entry.has_key?("customer_quote")
-            blockquote.quote--serif
-              = entry["customer_quote"]["quote_body"]
-          - if entry["customer"].has_key?("profile_pic")
-            = partial("partials/snippets/person", :locals => { :p => data.site.customers[entry.customer.id] })
-          / h5.subhead--spaced = type.capitalize
-          / p = (entry["customer"].has_key?("customer_story_short") ? entry.customer.customer_story_short : nil)
-        .columns.small-12.medium-6.large-6.xlarge-7
-          - if entry.has_key?("media_object")
-            .group
-              = entry["media_object"]
-          / h3.headline-4
-            a href=url title=entry.title
-              = entry.title
-
-
-section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
-  .row.align-center
-    .columns.small-12.medium-12.large-8.text-center
-      h2.headline-1.text-bold What's your biggest challenge?
-  .row.align-center
-    .columns.small-12.large-8.text-center
-      p.lead <strong>You have complex problems.</strong> Datica has a family of powerful solutions. Powerful when used on their own but meant to work together, our products and solutions address your most pressing challenges.
-  .button-group.menu.align-center.group
-    = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/compliance/", :icon_align => "left", :button_classes => "button button--light button--hover-compliance no-nudge", :icon => "icon-chevron-left", :item_id => "product", :data_track_group => "cat_integration" }
-    = partial "partials/snippets/button", :locals => { :label => "I need to integrate with an EHR", :url => "/integration/", :button_classes => "button button--light button--hover-integration no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "product", :data_track_group => "cat_compliance" }
-
-.strip.strip-ccms
-/ aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-background-image=bg_product_dark
-  .relative.has-blob
-    .relative.z-5
-      .row.align-center.group--sm
-        .columns.small-12.medium-10.large-10.text-center
-          h2.headline-3 HITRUST audit? No problem.
-      .row.align-center
-        .columns.shrink
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about HITRUST compliance", :url => "/discover/hitrust/", :button_classes => "button hollow-inverted" }
-        .columns.shrink
-          = partial "partials/snippets/button", :locals => { :label => "Get started with CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :item_id => "page-bottom", :data_track_group => "ccms" }
-    .blob-color.blob-ccms.z-auto data-glow="false"
