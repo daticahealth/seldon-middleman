@@ -61,6 +61,54 @@ scss:
       right: -5px;
     }
   }
+  // product lens animations
+  .anim-group-1.fancy {
+    animation: anim1 .7s ease-out;
+  }
+  .anim-group-2.fancy {
+    animation: anim2 .7s ease-out;
+  }
+
+  @keyframes anim1 {
+    0% {
+      opacity: 0;
+      transform: translateX(-30rem);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes anim2 {
+    0% {
+      opacity: 0;
+      transform: translateX(30rem);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+javascript:
+  const items = document.querySelectorAll('.animate-me');
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.intersectionRatio > 0) {
+        entry.target.classList.add('fancy');
+        console.log('in the view');
+      } else {
+        entry.target.classList.remove('fancy');
+        console.log('out of view');
+      }
+    });
+  });
+
+  items.forEach(item => {
+    observer.observe(item);
+  });
 
 section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
   .row
@@ -69,14 +117,14 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
       p.lead Compliance on the cloud isn’t a one-size-fits-all kind of challenge. Maybe you don’t have the expertise, time, and resources to build your own compliant infrastructure and want a solution that picks up where your cloud provider leaves off.  Or, maybe you do and just need help with compliance monitoring and reporting for your complex environments.
       p.lead Wherever you are on the road to healthcare compliance, we can help.
   #product-lens.show-for-medium
-    .row.align-justify.text-center
+    .row.align-justify.text-center.animate-me.anim-group-1
       .columns.small-12.medium-4 
-        h3.headline-3.text-italic.text-serif.nomargin Simplicity & speed
+        h3.headline-3.text-italic.text-serif.nomargin Simplicity & Speed
       .columns.small-12.medium-4 
         h3.headline-3.text-italic.text-serif.nomargin Developer Control
     .row
       .column
-        .border-dash-line
+        .border-dash-line.animate-me.anim-group-1
     .row.align-justify.text-small
       .columns.small-12.medium-4
         p Emerging digital health products need to demonstrate compliance and security credibility from day one and need a fast and simple way to start without taking on the burden of compliance.
@@ -142,7 +190,7 @@ section.section-article.pad-no-bottom.bg-gray-12
         - preview = "https://images.ctfassets.net/189dvqdsjh46/4KtjQwGLOo6UGoAY82qe6k/dd058456a0fef3d725cd5fc8a1713840/global_compliance_stance_table.png"
         img.lozad.drop.blur-in alt="Global Compliance Table" src="#{preview}?w=1200&fm=jpg&q=5" data-src="#{preview}?w=1200&fm=png&fl=png8"
 
-section#resources.section-article.collection.bg-gray-11
+/ section#resources.section-article.collection.bg-gray-11
   - related_entries = data.site.collections.to_a.select { |id, entry | (id == "2xAKQVZSKIsygICqimW0qA") }
   - related_entries.each do | id, collection |
     .row.align-center
