@@ -7,7 +7,6 @@ customCSS: "home"
 customJS: "/public/js/products.js"
 layout: "basic"
 priority: "1.0"
-collectionName: "home"
 feed_url: "https://datica.com/blog/feed.xml"
 list_resources:
   -
@@ -56,16 +55,18 @@ section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_produ
       .columns.small-12.medium-12.large-10.text-center
         h1.headline-2.text-bold Datica brings healthcare to the cloud. 
         p.lead Get through the maze of compliance and onto the cloud faster with Datica.
-        ul.menu.align-center.show-for-medium
+        ul.menu.align-center.show-for-medium.text-small
           li
-            a.text-bold.spaced-out href="/cloud-compliance/" Compliance
+            a.text-bold.spaced-out title="Cloud Compliance" href="/cloud-compliance/" Compliance
           li
-            a.text-bold.spaced-out href="/ehr-integration/" Integration
+            a.text-bold.spaced-out title="EHR Integration" href="/ehr-integration/" Integration
           li
-            a.text-bold.spaced-out href="/about/" About Datica
+            a.text-bold.spaced-out title="About Datica Health" href="/about/" About Datica
+          li
+            a.text-bold.spaced-out title="Careers at Datica" href="/careers/" Careers
     .button-group.menu.align-center
       /= partial "partials/snippets/button", :locals => { :label => "Ask a Datica Expert", :url => "/contact/", :icon_align => "right", :button_classes => "button hollow", :icon => "icon-chat" }
-      = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/demo/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get_demo", :data_track_group => "products", :expand => false }
+      = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/demo/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get_demo", :data_track_group => "compliance", :expand => false }
 .strip-bright
 section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
   .row.align-center
