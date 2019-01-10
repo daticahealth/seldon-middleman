@@ -42,10 +42,10 @@ module SiteHelpers
     end
     # For sharing metadata - if no key image on the page, fall back to this.
     def image_share_default
-        data.site.cta["28kGtqwD2oym6k8cUgksiQ"].cta_image.url + image_size_small
+        "https://images.ctfassets.net/189dvqdsjh46/3IyRP3gK64W4MaqMwWmSgU/d2c4ee3f02cbceda200b8b444fd67f26/cta-generic.jpg" + image_size_small
     end
     def image_share_platform # get ID from CF
-        data.site.cta["6KOQ7XhaJqCI00oYacessy"].cta_image.url + image_size_small
+        "https://images.ctfassets.net/189dvqdsjh46/2aPhdyH76MiQwqQq4KiGMg/186518b5a3896994d54ae3cef4fbac8d/cta-compliance-share.jpg" + image_size_small
     end
     def cf_asset_protocol
         'https:'
@@ -153,5 +153,12 @@ module SiteHelpers
     end
     def icon_tag
         '<svg class="icon icon-size--small" width="27" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 32"><use xlink:href="/public/icons/util-icons-sprite.svg#icon-tag"></use></svg>'
+    end
+    # product backgrounds, light & dark
+    def bg_product_light 
+        "https://images.ctfassets.net/189dvqdsjh46/50WC8N3lz2k0K4o0WQYE4A/96d25d0d7f385f8cfc82950e78285a8a/hex-pattern-light-bg.svg"
+    end
+    def bg_product_dark 
+        "https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
     end
 end

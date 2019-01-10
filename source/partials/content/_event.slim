@@ -22,7 +22,7 @@
       = Kramdown::Document.new(event["event_desc"]).to_html
     - if event.has_key?("event_photos")
       - event["event_photos"].each do |photo|
-        img.thumbnail src="#{photo.url}?w=500" title="#{photo.title}" width="300" /
+        img.thumbnail style="margin-right: 1rem; max-width: 45%" src="#{photo.url}?w=500" title="#{photo.title}" /
     - if event.has_key?("event_tags")
       p
         - event["event_tags"].each do |tag|

@@ -17,8 +17,7 @@ ruby:
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   the_form = data.site.forms['328pNB4IvCaQWQMCWmgSCy']
 
-aside.hide-for-large.section-article.container-color--blue-alt.menu.button-cluster.align-center
-  /= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_top_pricing" }
+aside.hide-for-large.section-article.container-color--blue-alt.menu.button-group.align-center
   = partial "partials/snippets/button", :locals => { :label => "Hear from our customers", :url => "/compliant-kubernetes-service/", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :item_id => "cta_top_success" }
   = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
@@ -47,7 +46,7 @@ aside.hide-for-large.section-article.container-color--blue-alt.menu.button-clust
       .columns.small-12.large-7
         img.lozad alt=("Platform Integration") data-src="/public/img/platform-integration-2x.png" /
 
-    aside.section-article--sm.menu.button-cluster.align-center.show-for-large
+    aside.section-article--sm.menu.button-group.align-center.show-for-large
       = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow", :item_id => "cta_top_pricing" }
       = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button", :icon => "icon-chevron-down" }
 
@@ -128,7 +127,7 @@ section.section-article.container-gray-5.text-center
       h3.headline-4 One REST API for all your connections
       img.img-crisp.lozad alt=("One REST API for all your connections") data-src="/public/img/platform-one-api-diagram.png" /
 
-section.section-article.container-gray-12
+section#services.section-article.container-gray-12
   .row.align-center
     .columns.small-12
       h2.headline-3.text-center.group
@@ -252,15 +251,4 @@ section#faq.section-article.container-gray-12
           dt id="platform-tech-question-#{index}" = item["question"]
           dd= Kramdown::Document.new(item["answer"]).to_html
       = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button hollow", :icon => "icon-chevron-up" }
-
-/ aside#ctaBottom.container-color--dark-grad-blue
-/   .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
-/     .row.align-center
-/       .columns.small-12.medium-10.large-10.text-center
-/         h2.headline-3 <strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.
-/     .row.align-center
-/       .columns.small-6.large-4.text-right
-/         = partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :item_id => "cta_bottom_pricing" }
-/       .columns.small-6.large-6.text-left
-/         = partial "partials/snippets/button", :locals => { :label => "Hear from our customers", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right", :item_id => "cta_bottom_tech" }
 

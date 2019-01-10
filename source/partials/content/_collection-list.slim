@@ -1,0 +1,37 @@
+/ This partial iterates through a CF collection datatype (itself just a basic entry type, that references others). 
+- collection["related_entries"].each do | entry |
+  - type = entry._meta.content_type_id
+  - folder = case type
+  - when "guides" then "guide"
+  - else type
+  - url = "/#{folder}/#{entry.slug}/"
+  .row.align-center.align-middle.section-article--med
+    / class=(type == "webinars" ? nil : "shrink")
+    .columns.small-12.medium-6.large-5.xlarge-7
+      - case type
+      - when "academy"
+        - if entry.has_key?("featured_image")
+          - image = data.site.academy[entry.id].featured_image.url
+          a href=url title=entry.title
+            img.lozad.thumbnail.blur-in src="#{image}?fit=thumb&w=800&h=400&q=10" data-src="#{image}?fit=thumb&w=800&h=400"
+      - when "blog"
+        - if entry.has_key?("featured_image")
+          - image = data.site.blog[entry.id].featured_image.url
+          a href=url title=entry.title
+            img.lozad.thumbnail.blur-in src="#{image}?fit=thumb&w=800&h=400&q=10" data-src="#{image}?fit=thumb&w=800&h=400"
+      - when "guides"
+        - if entry.has_key?("bg_image")
+          - image = data.site.guides[entry.id].bg_image.url
+          a href=url title=entry.title
+            img.lozad.thumbnail.blur-in src="#{image}?fit=thumb&w=800&h=400&q=10" data-src="#{image}?fit=thumb&w=800&h=400"
+      - when "webinars"
+        = partial "partials/cards/webinar-poster", :locals => { :entry => data.site.webinars[entry.id] }
+      - when "discover"
+        - if entry.has_key?("topic_video")
+          = Kramdown::Document.new(data.site.videos[entry.topic_video.id].custom_form).to_html
+    .columns.small-12.medium-6.large-5.xlarge-5
+      h5.subhead--spaced = type.capitalize
+      h3.headline-4
+        a href=url title=entry.title
+          = entry.title
+      p = (entry.has_key?("summary") ? entry.summary : nil)

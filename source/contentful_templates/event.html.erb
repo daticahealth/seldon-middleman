@@ -36,11 +36,11 @@ end
             <%= partial "partials/content/event", :locals => { :event => p, :level => 1 } %>
             <% if p.has_key?("cta_ref") %>
                 <% if p["cta_ref"].has_key?("custom_form") %>
-                <div class="row collapse">
-                    <div class="columns small-12 medium-10 large-10">
+                <div class="row collapse" style="margin-top: 1.5rem;">
+                    <div class="columns small-12 medium-10 large-7">
                         <div class="callout callout--large drop">
                             <% if p["cta_ref"].has_key?("title") %>
-                                <h1 class="headline-4"><%= p.cta_ref.title %></h1>
+                                <h2 class="headline-4"><%= p.cta_ref.title %></h2>
                                 <hr class="divider" />
                             <% end %>
                             <% if p["cta_ref"].has_key?("desc") %><%= Kramdown::Document.new(p["cta_ref"]["desc"]).to_html %><% end %>

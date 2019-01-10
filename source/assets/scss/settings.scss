@@ -514,13 +514,13 @@ $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
 $button-hollow-hover-lightness: -50%;
-$button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+$button-transition: transform $timing-default ease, box-shadow $timing-default ease-out, background-color $timing-default ease-out, color $timing-default ease-out;
 
 // 12. Button Group
 // ----------------
 
-$buttongroup-margin: 1rem;
-$buttongroup-spacing: 1rem;
+$buttongroup-margin: 0;
+$buttongroup-spacing: 1.5rem;
 $buttongroup-child-selector: '.button';
 $buttongroup-expand-max: 6;
 $buttongroup-radius-on-each: true;

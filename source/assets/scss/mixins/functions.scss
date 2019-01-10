@@ -185,10 +185,17 @@ $underline: false !default;
                 flex: $set;
 }
 @mixin fx-hover-nudge {
-    transition: transform $timing-default * 0.8 ease, color $timing-default * 0.8 linear, background-color $timing-default * 0.8 linear;
+    transition: $button-transition;
     &:focus,
     &:hover {
         transform: translate3d(3px, 0, 0);
+    }
+}
+@mixin fx-hover-nudge-left {
+    transition: $button-transition;
+    &:focus,
+    &:hover {
+        transform: translate3d(-3px, 0, 0);
     }
 }
 @mixin no-nudge {
@@ -432,3 +439,4 @@ $underline: false !default;
         background-blend-mode: overlay;
     }
 }
+

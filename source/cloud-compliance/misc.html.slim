@@ -1,6 +1,6 @@
 ---
-title: "Compliance for the Datica Platform"
-summary: "Prescriptive Compliance is how Healthcare Adopts the Cloud"
+title: "Complete Cloud Compliance"
+summary: "Datica takes on the burdens of compliance in the cloud—letting you focus on what you do best."
 navTitle: "Compliance"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
@@ -8,7 +8,7 @@ date: "March 5, 2018"
 ogType: "product"
 customCSS: "products"
 layout: products
-# collectionName: "products"
+collectionName: "compliance"
 # collectionOrder: 2
 priority: "0.9"
 ---
@@ -16,30 +16,81 @@ priority: "0.9"
 
 = partial "partials/snippets/platform-icons"
 
-section#compliance-top.container-color--dark-alt style=("background-color: #23272C")
-  .container-image--center(data-interchange="[/public/img/art/compliance-bg.svg, small]")
-    section.section-article
-      .row.align-center.group
-        .columns.small-12.medium-12.large-8.text-center
-          h1.headline-2.group= current_page.data.summary
-          = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo/", :button_classes => "button button--light group", :item_id => "cta_top-demo", :icon => "icon-event-check", :icon_align => "left" }
-          .video.drop--big
-            script async="" src="//fast.wistia.com/embed/medias/1o1udvaa6z.jsonp"
-            script async="" src="//fast.wistia.com/assets/external/E-v1.js"
-            .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;")
-              .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;"
-                span.wistia_embed.wistia_async_1o1udvaa6z class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"   
-      .row.group.align-center
-        .columns.small-12.medium-6.large-4
-          h3.headline-4 If you are big…
-          p Large organizations are hesitant to migrate to AWS or Azure because they are concerned compliance requirements aren't being met. When they can't be sure, they stick with old infrastructure.
-          h3.headline-4 If you are new…
-          p Emerging digital products can't break through to their enterprise customers unless they demonstrate compliance and security credibility from Day One. Compliance is central to the business model.
-        .columns.small-12.medium-6.large-4
-          = inline_svg_art("source/assets/img/art/k8-continuous-compliance.svg", class: "svg-color--white")
-          h3.headline-4 Datica solves your problem
-          p Datica’s array of products and services allow development flexibility while providing prescriptive compliance and security built in. With Datica, any technology team can manage compliance on the cloud, giving organizations the assurances they need to adopt the benefits of the cloud.
-      / .menu.button-cluster.align-center
+section#compliance-top.section-article.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/50WC8N3lz2k0K4o0WQYE4A/96d25d0d7f385f8cfc82950e78285a8a/hex-pattern-light-bg.svg"
+  .row.align-center
+    .columns.small-12.medium-10.large-9.text-center
+      h1.headline-2.group= current_page.data.title
+      p.lead= current_page.data.summary
+      / = partial "partials/snippets/button", :locals => { :label => "Get solutions to your compliance challenges", :url => "/demo/", :button_classes => "button success", :item_id => "cta_top-demo", :icon => "icon-angle-down", :icon_align => "right" }
+section#compliance-who
+  .row.align-center.full-width.collapse
+    .columns.flex-container.align-middle.small-12.medium-6.large-6.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/UxwNUvgCQwOgCYEKea6sS/f261741ae95584c903a4d8d69ef3c528/developers__team_workspace_-_annie-spratt-608001-unsplash.jpg?fit=crop&w=1200&h=800"
+      h2.headline-1.text-bold.nomargin.pad--xl.text-center The challenges of compliance are slowing you down
+    .columns.small-12.medium-6.large-6.bg-gray-10
+      .line-length.pad--xl
+        h3.headline-3
+          | (identifying attributes)
+        h4.headline-4 If you are big…
+        p Large organizations are hesitant to migrate to AWS or Azure because they are concerned compliance requirements aren't being met. When they can't be sure, they stick with old infrastructure.
+        h4.headline-4 If you are new…
+        p Emerging digital products can't break through to their enterprise customers unless they demonstrate compliance and security credibility from Day One. Compliance is central to the business model.
+.strip-bright
+
+section#compliance-video.section-article.bg-gray-11
+  .row.group.align-center
+    .columns.small-12.text-center
+      h2.headline-2 Understanding Compliance in the Cloud
+      p.lead (paragraph on the problems of compliance.) Here are some resources to get you started.
+  .row.small-up-3.medium-up-5.large-up-7.align-middle.align-center.group
+    - data.views.home.badges.each do |logo|
+      - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
+      .column.shrink
+        img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
+
+  .row.align-center.align-middle.group--2x
+    .columns.small-12.medium-6.large-8.text-center
+      .video
+        script async="" src="//fast.wistia.com/embed/medias/1o1udvaa6z.jsonp"
+        script async="" src="//fast.wistia.com/assets/external/E-v1.js"
+        .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;")
+          .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;"
+            span.wistia_embed.wistia_async_1o1udvaa6z class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"
+    .columns.small-12.medium-6.large-4
+      .line-length
+        h4.headline-4 Travis Good, MD on Compliance in Healthcare
+        p Dr. Good gives an overview of some of the compliance challenges in healthcare. 
+
+  .row.align-spaced.align-middle.collapse.group
+    - book_thumb = "https://images.ctfassets.net/frc0x3twtm4f/4NsK3lp2NGGCYCm0uC0i0S/e1b7ade9c1344896efeb6db3cf6056d1/compliance_book__3d_front_and_back_mockup.png"
+    .columns.small-12.medium-8.large-6
+      h4.headline-4
+        a class="text-bold" href="https://completecloudcompliance.com/" rel="external" title="Complete Cloud Compliance Book" Complete Cloud Compliance: 
+        | The Book
+      h5.headline-5 Regulated companies have a hard problem to solve.
+      p They run the risk of becoming obsolete due to an inability to adopt new technology fast enough. Incumbent business models will be out-flanked by shifting customer expectations brought on by improved digital experiences. Market conditions are out of their control. Even healthcare, the most regulated industry with the heartiest entrenchment and uniquely perverse economic incentives, is remarkably close to complete upheaval due to a litany of world-changing ideas, like mobile devices, Internet of Things, big data, and artificial intelligence. It all stems from the mother of all recent innovations, the cloud. The root challenge is the adoption of cloud computing in order to remain relevant. If achieved, compliant cloud computing becomes an organizational differentiator.
+      
+      p Compliance contributes to this existential threat because it prompts the cloud to be viewed as a liable cost center by most regulated companies. But that’s wrong. It’s actually a leverageable asset that is at the foundation of modern business transformation. 
+      
+      p Complete Cloud Compliance is a program developed after years of managing high-stakes compliance requirements across mission critical healthcare workloads. It is a chance to control destiny. The program is written for healthcare organizations, but all while under the principle that best practices are best practices, meaning the insights shared can be applied across global regimes and any industry.
+    .columns.small-12.medium-4.large-4
+      a class="text-italic" href="https://completecloudcompliance.com/" rel="external" title="Complete Cloud Compliance Book"
+        img.lozad alt="Complete Cloud Compliance" src=book_thumb+'?w=150&fm=png&fl=png8' data-src=book_thumb+'?w=600'
+  .row.align-center.align-middle
+    .columns.flex-container.align-middle.align-center.small-12.medium-6.large-4.text-center.pad--xl
+      img.lozad data-src="http://images.ctfassets.net/189dvqdsjh46/2yyrhvg12wySaoSgyQ6C6G/0ec44a3443d3e89690e511f8f85d44fe/guide-tco-compliance-2018-thumb.png?fit=thumb&w=500&h=500" alt="Guide" width="250"
+    .columns.small-12.medium-6.large-6
+      .line-length
+        h3.headline-3.text-bold.nomargin Datica Guides
+        p.lead Datica Guides are written by experts in healthcare technology, compliance, and security.
+        
+  /.row.group.align-center
+    .columns.small-12.medium-6.large-4
+
+    .columns.small-12.medium-6.large-4
+      = inline_svg_art("source/assets/img/art/k8-continuous-compliance.svg", class: "svg-color--white")
+      h3.headline-4 Datica solves your problem
+      p Datica’s array of products and services allow development flexibility while providing prescriptive compliance and security built in. With Datica, any technology team can manage compliance on the cloud, giving organizations the assurances they need to adopt the benefits of the cloud.
+  / .menu.button-group.align-center
 
 section#compliance-shared-responsibility.section-article.container-gray-2
   .row.group.align-center

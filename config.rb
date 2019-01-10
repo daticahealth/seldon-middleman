@@ -207,7 +207,7 @@ activate :contentful do |f|
         person: 'person',
         podcast: 'podcastEntry',
         pressReleases: 'pressReleases',
-        # products: 'products',
+        products: 'products',
         quotes: 'quotes',
         reports: 'reports',
         services: 'services',

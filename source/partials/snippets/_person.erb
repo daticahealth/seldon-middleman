@@ -23,6 +23,12 @@ if defined?(style) && style == "light"
 else
     link_style = nil
 end
+# This can work, once customer/person data model is redesigned. 
+# if p.has_key?("profile_pic")
+#     photo = data.site.person[p.id].profile_pic.url
+# else
+#     photo = nil
+# end
 %>
 <div class="media-object card-person<% if defined?(classes) %> <%= classes %><% end %>">
     <% if p.has_key?("profile_pic") %>

@@ -49,7 +49,7 @@ ruby:
 
 
 / section#top.container-gray-2.container-image-fill data-interchange="[#{thumb}, small], [#{thumb}#{image_featured_large}, large]"
-.strip-bright.strip-bright--small
+.strip-bright.strip-small
 .container-gray-11
     = partial "partials/head/header", :locals => { :style => "dark" }
     section#webinar.section-article--med data-webinar = p._meta.id
@@ -61,11 +61,11 @@ ruby:
         .row.align-center
             .columns.small-12.large-10.group
                 #webinar-container.preview.container-gray-3.relative href="/webinars/#{p["slug"]}" title=("View webinar")
-                    #webinar-play.hide.z-stack-10.relative
+                    #webinar-play.hide.z-10.relative
                         - if p.has_key?("video_embed")
                             .group
                                 = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
-                    .preview-meta.z-stack-10.relative
+                    .preview-meta.z-10.relative
                         h1.headline-3.nomargin = p["title"]
                         p.lead = (p.has_key?("subhead") ? p.subhead : nil)
                         .menu.simple.group
@@ -85,7 +85,7 @@ ruby:
                         / .preview-cta.headline-5.spaced-out Register to watch
                         = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
                             
-                    #webinar-bg.absolute.preview-bg.z-stack-0.group.img-multiply.blur-2
+                    #webinar-bg.absolute.preview-bg.z-0.group.img-multiply.blur-2
                         img.lozad.img-cover src="#{thumb}?w=250&fm=jpg&q=10" data-src="#{thumb}?w=840"
     section#description.section-article--med
         .row.align-center

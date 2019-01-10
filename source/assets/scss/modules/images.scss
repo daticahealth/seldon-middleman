@@ -129,12 +129,23 @@ figcaption{
     }
 }
 
-.lozad {
+img.lozad {
     transition: opacity $timing-default * 2 linear;
     opacity: 0;
 }
-.lozad.loaded {
+img.lozad.loaded {
     opacity: 1;
+}
+.blur-in {
+    &.lozad {
+        @include blur(1vw);
+        transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
+    }
+    &.lozad.loaded {
+        @include blur(0);
+        -webkit-transition-delay: .3s;
+        transition-delay:         .3s;
+    }
 }
 // .container--image-fit {
 //     position: relative;

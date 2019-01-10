@@ -1,0 +1,173 @@
+---
+title: "EHR Integration Solutions"
+summary: "Datica handles the risk and complexity of EHR integrations, so you can focus on building solutions."
+navTitle: "Integration"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "March 5, 2018"
+ogType: "product"
+customCSS: "products"
+layout: products
+collectionName: "product"
+# collectionOrder: 2
+priority: "0.9"
+---
+ruby:
+  current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" />'
+  current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/Qh24iUaLW6Saoe4QKAAu6/3c1d9922a320aa39808f5b55e1a2583f/cta-integrations-share.jpg"
+  featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/0715bdb8ca051eb4e3e69085fc78c443/Computer_programmers_working_together.jpg"
+/ = partial "partials/snippets/platform-icons"
+scss:
+  .pull-down { // adjust top margin to open up image, this page only
+    @media screen and (min-width: 64em) {
+      margin-top: 10vw;
+    }
+  }
+
+section.hide-for-large
+  .row.collapse
+    .columns.small-12
+      img.lozad.blur-in src="#{featured_img}?fit=thumb&w=800&h=400&q=10" data-src="#{featured_img}?fit=thumb&w=800&h=600&q=30" data-srcset="#{featured_img}?fit=thumb&w=800&h=600&q=50 800w, #{featured_img}?fit=thumb&w=1600&h=600 1200w" alt="Working together"
+      .bg-white.pad--lg
+        h2.headline-2 Is the stress of hospital integrations holding your business back?
+        h2.headline-3.text-bold.group Activate your digital health product with data from any EHR enables EHR integrations at scale.
+        = partial "partials/snippets/button", :locals => { :label => "Get started with CMI", :url => "/compliant-managed-integration#cta", :button_classes => "button nomargin", :data_track_group => "integration", :item_id => "get-integration-mobile", :icon => "icon-chevron-right", :icon_align => "right" }
+section#top.show-for-large.section-article.pad-no-bottom.bg-gray-12.container-image--center.lozad data-background-image="#{featured_img}?fit=thumb&w=1800&h=900&q=65"
+  .row.align-right.align-middle
+    .columns.small-12.medium-6
+      .drop.pull-down
+        .blob-cmi.pad--lg
+          h1.headline-2.text-bold.nomargin Is the stress of EHR integrations holding your business back?
+        .bg-white.pad--lg
+          h2.headline-3.text-bold Activate your digital health product with data from any EHR
+          p.lead You've created an amazing healthcare application, now it's time to grow by exchanging data with more EHRs. Datica enables EHR integrations at scale.
+          = partial "partials/snippets/button", :locals => { :label => "Get started with CMI", :url => "/compliant-managed-integration#cta", :button_classes => "button nomargin", :data_track_group => "integration", :item_id => "get-integration-desktop", :icon => "icon-chevron-right", :icon_align => "right" }
+.strip.strip-cmi
+
+/ section#top.section-article.bg-gray-11.container-image-fill.lozad data-background-image="?fit=crop&w=1600&h=800"
+
+section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
+  / .row
+  /   .columns.small-12.medium-12.large-8
+  /     h2.headline-2.text-bold Get back to solving problems for heathcare
+  / .row.align-left
+  /   .columns.small-12.medium-10.large-8.line-length
+  /     h3.headline-4 Imagine being free to focus on solving problems again—instead of the worry and cost of EHR integrations.
+  /     p In the past, EHR integration projects have been frustrating obstacles for innovation teams, preventing them from creating breakthrough solutions for overwhelmed medical professionals.
+  /     p Integrating with EHRs is an ongoing challenge for digital health solutions. 
+  /       strong EHR integration is not just a technology problem, it’s also a people and process problem.
+
+  .row
+    .columns.small-12.large-7
+      h2.headline-1 Datica Integration Solutions
+      p.lead.group Datica's approach to integration has helped a wide range of solutions across the entire spectrum of healthcare.
+  .row
+    .columns.shrink
+      = inline_svg("cmi-logo-w", class: "icon-size--xlarge")
+    .columns.small-12.medium-6.shrink.relative.has-blob
+      / .subhead--spaced CMI
+      h3.headline-4 Compliant Managed Integration
+      p.strip.strip-small.strip-cmi
+      p.lead Scalable, secure data exchange with any EHR
+      / .blob-color.blob-cmi.z-auto data-glow="false"
+  .row
+    .columns.small-12.medium-6.large-6.group
+      p.lead We combine cutting-edge automation of cloud infrastructure security, DevOps processes, and interface engines, with our extensive experience in solving healthcare integration problems. All built on a solid foundation of <strong>continuous HIPAA compliance</strong>.
+      = partial "partials/snippets/button", :locals => { :label => "Learn more about CMI", :url => "/compliant-managed-integration/", :button_classes => "button button--light button-inline", :data_track_group => "integration", :item_id => "get-cmi", :icon => "icon-chevron-right", :icon_align => "right" }
+    .columns.small-12.medium-6.large-6
+      = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => 'nopad bg-gray-11' })
+            / <h2 class="headline-3">Get to market faster, beat the competition, and meet compliance requirements&mdash;all with fewer engineering resources.</h2>
+  .row
+    .columns.shrink
+      = inline_svg("icon-consulting-compass", class: "icon-size--xlarge")
+    .columns.small-12.medium-6.shrink.relative.has-blob
+      / .subhead--spaced Services
+      h3.headline-4 Integration Services
+      p.strip.strip-small.strip-services
+      p.lead Expert guidance and project services
+      / .blob-color.blob-services.z-auto data-glow="false"
+  .row
+    .columns.small-12.medium-6.large-6.group
+      p.lead.group Our team of cloud engineers, integration and compliance experts can help you assessyour business challenges, ensure complete compliance on the cloud, integrate with any system, and even migrate your data to a new, efficient, and cost-effective cloud platform.
+      = partial "partials/snippets/button", :locals => { :label => "Ask about Datica Services", :url => "/compliant-managed-integration#services", :button_classes => "button button--light button-inline", :data_track_group => "integration", :item_id => "get-services", :icon => "icon-chevron-right", :icon_align => "right" }
+    .columns.small-12.medium-6.large-6
+      h4.headline-5 Project Management
+      p Our team of project managers provides an expert view into integrated with EHRs and health systems. They will help manage timelines, create project plans, and track deliverables.
+      h4.headline-5 Connection Setup and Maintenance
+      p Datica’s Integration Engineers will build, configure, test and maintain VPN connections to allow for transmission of HL7 messages.
+      h4.headline-5 Interface Build and Configuration
+      p We will transform HL7 messages into JSON or FHIR messages to help keep things standard for you across implementations. We have many predesigned channels ready to go.
+
+.strip.strip-cmi
+section.section-article.bg-white
+  .row.align-center.text-center
+    .columns.small-12.large-10
+      h2.headline-3 Datica's Proven Integration Track Record
+  .row.small-up-2.medium-up-4.large-up-5.xlarge-up-6.align-center.text-center.text-small.group--2x
+    .column
+      span.headline-3.text-bold 200+
+      p Live integrations completed
+    / .column
+    /   span.headline-1.text-bold 32+
+    /   p Total number of EHRs Datica has helped integrate successfully with customer products.
+    .column
+      span.headline-3.text-bold Millions
+      p Total number of mission-critical messages processed monthly with Datica's products
+    .column
+      span.headline-3.text-bold 1,000+
+      p Security and risk assessments passed
+    .column
+      span.headline-3.text-bold Zero
+      p Unexpected downtime three years in a row
+    .column
+      span.headline-3.text-bold 100%
+      p Built with open-source tech
+
+  /.row.align-center.group
+    .columns.small-12.medium-10.large-6
+      = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => 'bg-gray-12' })
+  / .row.align-center.group
+    .columns.small-12.large-10.text-center
+      h3.headline-3 A trusted partner with established healthcare organizations
+      .logo-cloud
+        - data.views.managed_integration.customer_healthsystems_list.each do |logo|
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+  .row.align-center
+    .columns.small-12.large-10.text-center
+      h3.headline-3.nomargin Successful, live integrations with all major EHRs
+      .logo-cloud
+        - data.views.ehrs.ehr_list.each do |logo|
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/#{logo["slug"]}-logo.png" /
+/ .row.align-center.align-middle.group
+/   .columns.small-12.medium-6.large-5
+/     .callout.drop.group
+/       blockquote.quote--serif
+/         - quote_services = data.site.quotes['4r9Bmb0l8QiMgKqCagOa0E']
+/         = Kramdown::Document.new(quote_services["quote_body"]).to_html
+/       - if quote_services.has_key?("related_person")
+/         = partial("partials/snippets/person", :locals => { :p => quote_services.related_person } )
+
+section#integration.section-article.bg-gray-11
+  .collection
+    - related_entries = data.site.collections.to_a.select { |id, entry | (id == "6B0TGVhf560Q8YsMem8Omu") }
+    - related_entries.each do | id, collection |
+      .row.align-center
+        .columns.small-12.text-center
+          h2.headline-2 = collection.subhead
+          - if collection.has_key?("desc")
+            p.lead.line-length.margin-auto = collection.desc
+      = partial "/partials/content/collection-list", :locals => { :collection => collection }
+
+.strip.strip-cmi
+aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-background-image=bg_product_dark
+  .relative.has-blob
+    .relative.z-5
+      .row.align-center.group--sm
+        .columns.small-12.medium-10.large-10.text-center
+          h2.headline-3 Don't let the stress of EHR integrations hold you back.
+      .row.align-center
+        .columns.shrink
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/discover/ehr-integrations", :button_classes => "button hollow-inverted" }
+        .columns.shrink
+          = partial "partials/snippets/button", :locals => { :label => "Start your integration project today", :url => "/compliant-managed-integration/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :data_track_group => "integration", :item_id => "get-integration-bottom" }
+    .blob-color.blob-cmi.z-auto data-glow="false"

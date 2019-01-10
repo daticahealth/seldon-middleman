@@ -24,12 +24,12 @@ section.featured-posts
     - sorted_posts[0...4].each_with_index do | (id, post), i |
       .item.drop-hover.relative.align-justify class="item-#{i}"
         - if post.has_key?("featured_image")
-          .featured-image.z-stack-back.large-order-2
+          .featured-image.z-back.large-order-2
             - if i == 0
               img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1800&h=600 1200w" /
             - else
               img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=1200&h=600&q=40 1000w" /
-        .post-card.z-stack-0.bg-white.large-order-1
+        .post-card.z-0.bg-white.large-order-1
           .pub-date = post.pub_date.strftime('%B %-d, %Y')
           h2.headline-4
             a. href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
