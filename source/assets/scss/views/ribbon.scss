@@ -6,6 +6,9 @@
 @import '../mixins/colors';
 @import '../mixins/functions';
 // @import '../mixins/animation';
+
+// NOTE: experimenting with manually inlining the minified styles in the _alert-ribbon.slim. Pasting the contents of /public/css/views/ribbon.css. 
+// SO: changes made here will not automatically appear. 
 .alert-ribbon {
     height: auto;
     @include breakpoint(large) {

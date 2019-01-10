@@ -20,7 +20,10 @@ ruby:
   - if webinar_entry.has_key?("event_date")
     - if today.strftime("%F") <= webinar_entry['event_date'].strftime("%F")
       aside id="alertTop" style="min-height: 40px;" class="hide dismiss full-width alert-ribbon relative container-gray-2 text-center align-middle" data-closable="" role="banner"
-        link href="/public/css/views/ribbon.css" rel="stylesheet"
+        style
+          | .alert-ribbon{height:auto;width:100%;display:flex;overflow:hidden;transition:opacity 175ms linear}@media print, screen and (min-width: 64em){.alert-ribbon{height:2.5rem;padding:0}}.alert-ribbon:hover{cursor:pointer}.alert-ribbon:hover .alert-ribbon--bg{opacity:0.8}.alert-ribbon .alert-content{width:calc(100% - 50px);color:white;text-align:left;padding:1rem 1rem}@media print, screen and (min-width: 64em){.alert-ribbon .alert-content{text-align:center;padding:0}}.alert-ribbon--bg,.alert-ribbon img{width:100%;height:100%}.alert-ribbon--bg{opacity:0.4;transition:opacity 175ms linear}.item-h{display:block;margin-bottom:0.3rem;margin-right:1rem;font-size:1.1rem;line-height:1.1}@media print, screen and (min-width: 64em){.item-h{display:inline-block;padding:0}}.item-category{text-transform:uppercase;letter-spacing:0.15em;opacity:0.8}.close-button{transition:color 175ms linear}.close-button:hover{color:#29d4ff}
+
+        / link href="/public/css/views/ribbon.css" rel="stylesheet"
           script
         a href=event_url class="alert-content no-border z-10"
           span.item-h.item-category.spaced-out
@@ -34,7 +37,7 @@ ruby:
             = inline_svg("small/icon-close", class: "nav-button--icon")
           /&times;
         .absolute.z-0.alert-ribbon--bg
-          img.lozad.relative.img-cover data-src="#{event_img}?fit=thumb&w=1200&h=48" data-srcset="#{event_img}?fit=thumb&w=800&h=200 640w, #{event_img}?fit=thumb&w=1000&h=48 1000w, #{event_img}?fit=thumb&w=1400&h=48&fm=png 1200w"
+          img.lozad.relative.img-cover data-src="#{event_img}?fit=thumb&w=1200&h=48" data-srcset="#{event_img}?fit=thumb&w=800&h=200 640w, #{event_img}?fit=thumb&w=1000&h=48 1000w, #{event_img}?fit=thumb&w=1400&h=48 1200w"
       javascript:
         var currPromoCookie = 'promo-#{cookie_name}';
       /$("document").ready(function(){
