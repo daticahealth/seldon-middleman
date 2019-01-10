@@ -43,9 +43,9 @@ list_resources:
 ruby:
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   # current_page.data.share_image = image_share_platform
-  featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/470d9a7b58ffede77ae3d064cf86b655/office_-_istockphoto-626637134_edit.jpg"
+  # featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/470d9a7b58ffede77ae3d064cf86b655/office_-_istockphoto-626637134_edit.jpg"
   current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" /><link href="' + bg_product_light + '" rel="preload" as="image" />'
-  current_page.data.share_image = featured_img
+  current_page.data.share_image = image_share_default
 
 / section.bg-gray-1
 section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_product_light
@@ -53,7 +53,7 @@ section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_produ
   .section-article
     .row.align-center.group
       .columns.small-12.medium-12.large-10.text-center
-        h1.headline-2.text-bold Datica brings healthcare to the cloud. 
+        h1.headline-2.text-bold Datica brings healthcare to the cloud.
         p.lead Get through the maze of compliance and onto the cloud faster with Datica.
         ul.menu.align-center.show-for-medium.text-small
           li
@@ -86,7 +86,7 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
             .card-section
               = inline_svg("ccms-logo-w", class: "icon-size--xlarge")
               .subhead--spaced CCMS
-              h3.headline-4 Cloud Compliance Management System 
+              h3.headline-4 Cloud Compliance Management System
               p.strip.strip-small.strip-ccms
               p.lead Know the precise compliance state of your cloud environments
               / p Datica Cloud Compliance Management System is the first-ever tool to guarantee compliance assurance of managed cloud-native services. Our dashboard and reports enable you to continuously monitor compliance, react quickly to risks and incidents, and attest to compliance for audits.
