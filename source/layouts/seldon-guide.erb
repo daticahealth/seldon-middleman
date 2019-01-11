@@ -1,61 +1,21 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <meta name="viewport" content="width=device-width,initial-scale=1.0">
-      <title><%= current_page.data.title %></title>
-      <meta name="description" content="<%= current_page.data.summary %>">
-      <% if current_page.data.has_key?("hide_from_sitemap") %>
-          <meta name="robots" content="noindex,nofollow,noodp">
-          <meta name="googlebot" content="noindex,nofollow">
-      <% end %>
-      <meta name="topic" content="<%= current_page.data.title %>">
-      <meta name="classification" content="website">
-      <meta name="url" content="<%= site_url %>">
-      <meta name="keywords" content="heathcare, <%= current_page.data.tags %>">
-      <meta name="coverage" content="Worldwide">
-      <meta name="distribution" content="Global">
-      <meta name="author" content="<%= current_page.data.author %>">
-      <meta property="article:published_time" content="<%= current_page.data.date %>">
-      <meta property="og:description" content="<%= current_page.data.summary %>">
-      <meta property="og:title" content="<%= current_page.data.title %>">
-      <meta itemprop="og:headline" content="<%= current_page.data.title %>" />
-      <% if current_page.data.has_key?("ogType")%>
-          <meta property="og:type" content="<%= current_page.data.ogType %>">
-      <% else %>
-          <meta property="og:type" content="website">
-      <% end %>
-      <meta property="og:url" content="<%= site_url + current_page.url %>">
-      <meta property="og:locale" content="en_US">
-      <meta property="twitter:site" content="<%= twitter_handle %>">
-      <meta property="twitter:creator" content="<%= twitter_handle %>">
-      <meta property="twitter:title" content="<%= current_page.data.title %>">
-      <meta property="twitter:description" content="<%= current_page.data.summary %>">
-      <link rel="canonical" href="<%= site_url + current_page.url %>">
-      <% if current_page.data.has_key?("share_image") %>
-          <meta property="og:image" content="<%= current_page.data.share_image %>">
-          <meta property="twitter:card" content="<%= current_page.data.post_featured_image %>">
-          <meta property="twitter:image" content="<%= current_page.data.share_image %>">
-      <% elsif current_page.data.has_key?("featured_image") %>
-          <meta property="og:image" content="<%= current_page.data.post_featured_image %>">
-        <meta property="twitter:card" content="<%= current_page.data.post_featured_image %>">
-          <meta property="twitter:image" content="<%= current_page.data.post_featured_image %>">
-      <% else %>
-          <meta property="og:image" content="<%= image_share_default %>">
-        <meta property="twitter:card" content="summary">
-          <meta property="twitter:image" content="<%= image_share_default %>">
-      <% end %>
-      <link rel="canonical" href="<%= site_url + current_page.url %>">
-      <!-- Icons -->
+      <%# Meta tags %>
+      <%= partial "partials/head/tags" %>
+      <%# Icons %>
       <%= partial "partials/head/icons" %>
-      <!-- Assets -->
-      <%= stylesheet_link_tag "seldon", "views/styleguide" %>
+      <%# Assets %>
+      <%= stylesheet_link_tag "seldon" %>
       <% if current_page.data.has_key?("customCSS") %>
           <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
       <% end %>
+      <%= stylesheet_link_tag "seldon", "views/styleguide" %>
     </head>
     <body class="<%= page_classes %>">
+        <%= partial "assets/icons/inlined/datica-logo-horiz-symbol.svg" %>
+        <%= partial "partials/snippets/alert-ribbon" %>
+
         <div class="off-canvas position-right container-gray-2" id="offCanvasRight" data-off-canvas>
             <div class="callout--trans">
                 <h3 class="headline-4">Seldon Style Guide</h3>
@@ -128,27 +88,8 @@
                 </div>
             <% end %>
         </div>
-        <%#= partial "partials/snippets/footer" %>
-        <!-- Please leave these commented bits in place; when JS compiling is working properly we'll use them. -AW -->
-
-        <%= javascript_include_tag "svg-injector" %>
-        <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
-            // console.log("DOM fully loaded and parsed");
-            // SVG Injector: turns linked SVGs into inline ones, where they can be styled with CSS> https://www.npmjs.com/package/svg-injector
-            // Elements to inject - needs to happen as early as possible in ops
-            var mySVGsToInject = document.querySelectorAll('img.inject-me');
-            SVGInjector(mySVGsToInject);
-            // console.log("SVG injected");
-        });
-
-        </script>
-        <%= javascript_include_tag "jquery", "foundation.min" %>
-        <%#= javascript_include_tag "nav", "smooth-scroll", "cookie", "sharer", "all" %>
-        <%#= javascript_include_tag "all" %>
-        <script src="/public/js/all.js"></script>
-
-        <!-- Custom JS files -->
+        <%= partial "partials/snippets/footer" %>
+        <%= partial "partials/scripts/footer" %>
         <% if current_page.data.has_key?("customJS") %>
             <% current_page.data.customJS.split(",").each do |filename| %>
                 <script src="<%= filename.strip %>"></script>

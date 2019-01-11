@@ -4,52 +4,57 @@ navTitle: "Navigation"
 summary: "Navigation Patterns"
 author: "Datica, Inc."
 hide_from_sitemap: true
+# layout: basic
 ---
-section#resources.section-article.collection.bg-gray-11
-  - nav_collection = data.site.collections.to_a.select { |id, entry | (id == "HkskHrVGykqSqOKGiqkaW") }
-  nav.nav
-    .menu-aim
-      ul.menu.horizontal.align-center.align-middle
-        - nav_collection.each do | id, nav_section |
-          - nav_section["related_entries"].each do | nav_item |
-            - unless nav_item.has_key?("show_in_top_nav") && nav_item.show_in_top_nav == false
-              li.menu-aim__item
-                a.menu-aim__item-name href = (nav_item.has_key?("section_link_uri") ? nav_item.section_link_uri : nil ) = nav_item.title_short
-                .menu-aim__item-submenu.bg-gray-3
-                  .row.align-center
-                    .columns.small-12.medium-4.pad--xl
-                      h3.headline-4 = nav_item.title
-                      p.text-small = nav_item.summary
-                      - if nav_item.has_key?("section_link_label")
-                        = current_link_to nav_item.title, nav_item.section_link_uri, title: nav_item.title, class: "link-arrow"
-                    - if nav_item.has_key?("child_data")
-                      .columns.small-12.medium-4.pad--xl
-                        ul.menu.menu-nav-list
-                          - nav_item.child_data.each do | child |
-                            li
-                              = current_link_to child.title, child.url, title: child.desc, class: ""
-                    - if nav_item.has_key?("section_promo")
-                      - path = case nav_item.section_promo._meta.content_type_id
-                      - when "academy" then "academy"
-                      - when "blog" then "blog"
-                      - when "cta" then "cta"
-                      - when "caseStudy" then "customer"
-                      - when "events" then "event"
-                      - when "guides" then "guide"
-                      - when "pressReleases" then "press-release"
-                      - when "reports" then "innovation"
-                      - when "webinars" then "webinar"
-                      - promo_url = "/#{path}/#{nav_item.section_promo.slug}"
-                      - case nav_item.section_promo._meta.content_type_id
-                      - when "webinars"
-                        .columns.small-12.medium-4.bg-gray-2.pad--xl
-                          = partial "partials/cards/webinar-poster", :locals => { :entry => data.site.webinars[nav_item.section_promo.id] }
-                      - else
-                        .columns.small-12.medium-4.bg-gray-2.pad--xl
-                          h4.headline-5.menu-aim--promo = nav_item.section_promo.title
-                          p.text-small = nav_item.section_promo.summary
-                          = partial "partials/snippets/button", :locals => { :label => "Learn More", :url => promo_url, :button_classes => "button small success", :data_track_group => "nav", :item_id => "nav-promo-#{path}", :icon => "icon-angle-right", :icon_align => "right" }
 
+- nav_collection = data.site.collections.to_a.select { |id, entry | (id == "HkskHrVGykqSqOKGiqkaW") }
+nav.nav
+  .menu-aim
+    ul.menu.horizontal.align-center.align-middle
+      li.menu-aim__item
+        a.nav-logo--link.no-child href="/" title="Datica Home"
+          svg id="datica-logo-desktop" class="nav-logo"
+            use.symbol-icon xlink:href="#datica-logo-horiz"
+        .menu-aim__item-submenu
+      - nav_collection.each do | id, nav_section |
+        - nav_section["related_entries"].each do | nav_item |
+          - unless nav_item.has_key?("show_in_top_nav") && nav_item.show_in_top_nav == false
+            li.menu-aim__item
+              a.menu-aim__item-name href = (nav_item.has_key?("section_link_uri") ? nav_item.section_link_uri : nil ) = nav_item.title_short
+              .menu-aim__item-submenu.bg-gray-3.z-10
+                .row.align-center
+                  .columns.small-12.medium-4.pad--xl
+                    h3.headline-4 = nav_item.title
+                    p.text-small = nav_item.summary
+                    - if nav_item.has_key?("section_link_label")
+                      = current_link_to nav_item.title, nav_item.section_link_uri, title: nav_item.title, class: "link-arrow"
+                  - if nav_item.has_key?("child_data")
+                    .columns.small-12.medium-4.pad--xl
+                      ul.menu.menu-nav-list
+                        - nav_item.child_data.each do | child |
+                          li
+                            = current_link_to child.title, child.url, title: child.desc, class: ""
+                  - if nav_item.has_key?("section_promo")
+                    - path = case nav_item.section_promo._meta.content_type_id
+                    - when "academy" then "academy"
+                    - when "blog" then "blog"
+                    - when "cta" then "cta"
+                    - when "caseStudy" then "customer"
+                    - when "events" then "event"
+                    - when "guides" then "guide"
+                    - when "pressReleases" then "press-release"
+                    - when "reports" then "innovation"
+                    - when "webinars" then "webinar"
+                    - promo_url = "/#{path}/#{nav_item.section_promo.slug}"
+                    - case nav_item.section_promo._meta.content_type_id
+                    - when "webinars"
+                      .columns.small-12.medium-4.bg-gray-2.pad--lg
+                        = partial "partials/cards/webinar-poster", :locals => { :entry => data.site.webinars[nav_item.section_promo.id] }
+                    - else
+                      .columns.small-12.medium-4.bg-gray-2.pad--lg
+                        h4.headline-5.menu-aim--promo = nav_item.section_promo.title
+                        p.text-small = nav_item.section_promo.summary
+                        = partial "partials/snippets/button", :locals => { :label => "Learn More", :url => promo_url, :button_classes => "button small success", :data_track_group => "nav", :item_id => "nav-promo-#{path}", :icon => "icon-angle-right", :icon_align => "right" }
 
   / - case_studies = data.site.collections.to_a.select { | id, cust | (id == "3N9NeiDhwcKacuIo0E4iwu") }
   / - case_studies.each do | id, cardgroup |
