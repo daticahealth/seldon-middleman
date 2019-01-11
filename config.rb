@@ -204,6 +204,7 @@ activate :contentful do |f|
         forms: 'forms',
         guides: 'guides',
         leadershipGallery: 'leadershipGallery',
+        navSections: 'navSections',
         person: 'person',
         podcast: 'podcastEntry',
         pressReleases: 'pressReleases',
