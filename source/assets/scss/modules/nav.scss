@@ -326,7 +326,12 @@ $duration: $timing-default * 1.5; //settings.scss:281
         padding: initial;
     }
     .preview { // webinar or custom cards
-        border: none;
+        border-radius: 0;
+        min-height: initial;
+        height: 100%;
+        .preview-bg {
+            transform: scale3D(1.1,1.1,1);
+        }
     }
 }
 .menu-aim__item--active .menu-aim__item-submenu {
