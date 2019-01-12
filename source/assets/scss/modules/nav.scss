@@ -166,10 +166,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
 //         @include animation (fadeIn 0.3s ease);
 //     }
 // }
-.nav-logo { // pairing with svg use symbol, requires express dimensions. Aspect ratio is maintained, but spacing can be weird.
-    height: 3rem; //2.3rem;
-    width:  7rem; //5.6rem;
-}
+
 // .nav-mobile {
 //     .nav-button {
 //         @include no-nudge;
@@ -246,26 +243,27 @@ $duration: $timing-default * 1.5; //settings.scss:281
 //     left: 1.5rem;
 // }
 // =================== new nav ==============
-.link-light {
+@mixin link-light {
   border: none;
   color: $color_yellow-glow;
   &:hover {
     color: white;
+    border: none;
   }
 }
-.link-arrow {
-  @extend .link-light;
-  &::after { // svg data-URI of chevron shape
-    content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 14'%3E%3Cpolygon fill='%23fff' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
-    display: inline-block;
-    opacity: 0.3;
-    // width:  0.8em;
-    // height: 0.8em;
-    // margin-top: -2px;
-    // transform-origin: 48%;
-    // position: absolute;
-  }
-}
+// .link-arrow {
+//   @include link-light;
+//   &::after { // svg data-URI of chevron shape
+//     content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 14'%3E%3Cpolygon fill='%23fff' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
+//     display: inline-block;
+//     opacity: 0.3;
+//     // width:  0.8em;
+//     // height: 0.8em;
+//     // margin-top: -2px;
+//     // transform-origin: 48%;
+//     // position: absolute;
+//   }
+// }
 // .menu-aim {
 //   ul {
 //     max-width: 1200px;
@@ -274,6 +272,12 @@ $duration: $timing-default * 1.5; //settings.scss:281
 //     // overflow: visible;
 //   }
 // }
+
+.nav-logo { // pairing with svg use symbol, requires express dimensions. Aspect ratio is maintained, but spacing can be weird.
+    height: 2.3rem;
+    width: 5.7rem;
+}
+
 .menu-aim__item a {
     padding: 1.5rem;
 }
@@ -317,12 +321,12 @@ $duration: $timing-default * 1.5; //settings.scss:281
         display: inline-block;
         width: auto;
     }
-    a:not(.button) {
+    a:not(.button):not(.preview) {
         text-align: initial;
         padding: initial;
     }
-    .menu li a {
-        padding: 0.5rem;
+    .preview { // webinar or custom cards
+        border: none;
     }
 }
 .menu-aim__item--active .menu-aim__item-submenu {
@@ -344,6 +348,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
     li a {
-        @extend .link-light;
+        @include link-light;
+        padding: 0.5rem !important;
     }
 }
