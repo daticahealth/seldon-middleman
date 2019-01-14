@@ -189,43 +189,56 @@ $duration: $timing-default * 1.5; //settings.scss:281
 //         }
 //     }
 // }
-// // ==== desktop nav theming; see .menu stuff at top of this file for defaults.
-// .nav-logo--link { // data-theme = dark default
-//     color: $gray-1;
-// }   
-// .nav[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
-//     .nav-logo--link, .menu-header, .is-active .menu-header {
-//         color: white(0.8);
-//         // font-weight: $font-weight-regular;
-//         transition-property: background-color, color;
-//         transition-duration: $timing-default;
-//         &:hover, &:active {
-//             color: $color_yellow-glow;
-//         }
-//     }
-//     .menu {
-//         &-secondary { // this is now preferred solution for secondary stacked navs
-//             li a {
-//                 color: white(0.6);
-//                 padding: 1rem;
-//                 transition-property: background-color, color;
-//                 transition-duration: $timing-default;
-//                 &:hover {
-//                     color: white;
-//                     background-color: transparentize($gray-5, 0.5);
-//                 }
-//                 &[aria-current="page"] {
-//                     color: white;
-//                     border-bottom: 3px solid $color_yellow-glow;
-//                 }
-//             }
-//         }
-//     }
-//     // // fix pip color 
-//     // .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
-//     //     border-color: white(0.3);
-//     // }
-// }
+// ==== desktop nav theming; see .menu stuff at top of this file for defaults.
+.nav-logo--link { // data-theme = dark default
+    color: $gray-1;
+}
+.nav {
+    .menu-aim {
+        background-color: white;
+    }
+    &[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
+        .menu-aim { // change bg container 
+            background-color: $gray-1;
+        }
+        .nav-logo--link, .menu-aim__item-name {
+            color: white(0.8);
+            // font-weight: $font-weight-regular;
+            transition-property: background-color, color;
+            transition-duration: $timing-default;
+            &:hover, &:active {
+                color: $color_yellow-glow;
+            }
+        }
+        .menu {
+            &-secondary { // this is now preferred solution for secondary stacked navs
+                li a {
+                    color: white(0.6);
+                    padding: 1rem;
+                    transition-property: background-color, color;
+                    transition-duration: $timing-default;
+                    &:hover {
+                        color: white;
+                        background-color: transparentize($gray-5, 0.5);
+                    }
+                    &[aria-current="page"] {
+                        color: white;
+                        border-bottom: 3px solid $color_yellow-glow;
+                    }
+                }
+            }
+        }
+        // // fix pip color 
+        // .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+        //     border-color: white(0.3);
+        // }
+    }
+    &[data-bar-theme="none"] { // combine with data-theme above for no bg color
+        .menu-aim {
+            background-color: transparent;
+        }
+    }
+}
 .nav-desktop {
     .nav-logo--link {
         padding: 0.2rem 1rem 0.2rem 0.2rem;

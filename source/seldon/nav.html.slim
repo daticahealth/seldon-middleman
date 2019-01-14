@@ -4,11 +4,12 @@ navTitle: "Navigation"
 summary: "Navigation Patterns"
 author: "Datica, Inc."
 hide_from_sitemap: true
-# layout: basic
+layout: basic
 ---
-
+= partial "assets/icons/inlined/datica-logo-horiz-symbol.svg"
+= partial "partials/snippets/alert-ribbon"
 - nav_collection = data.site.collections.to_a.select { |id, entry | (id == "HkskHrVGykqSqOKGiqkaW") }
-nav.nav
+nav.nav data-theme="dark"
   .menu-aim
     ul.menu.horizontal.align-center.align-middle
       li.menu-aim__item
