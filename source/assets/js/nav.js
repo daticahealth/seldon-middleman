@@ -60,7 +60,9 @@ const options = {
   menuItemActiveClassName: 'menu-aim__item--active',
   delayingClassName: 'menu-aim--delaying'
 }
-menuAim(element, options)
+if (Foundation.MediaQuery.current == 'large' || Foundation.MediaQuery.current == 'xlarge') {
+    menuAim(element, options)
+}
 
 // Responsive bits
 var menuButton = $('.mobile-menu');

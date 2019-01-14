@@ -1,4 +1,20 @@
-$("document").ready(function(){
+$("document").ready(function(){ 
+    // if (Foundation.MediaQuery.atLeast('medium-large')) {
+    //     const element = document.querySelector('.menu-aim')
+    //     const options = {
+    //         menuItemSelector: '.menu-aim__item',
+    //         menuItemActiveClassName: 'menu-aim__item--active',
+    //         delayingClassName: 'menu-aim--delaying'
+    //     };
+    //     menuAim(element, options);
+    // }
+    const element = document.querySelector('.menu-aim')
+    const options = {
+        menuItemSelector: '.menu-aim__item',
+        menuItemActiveClassName: 'menu-aim__item--active',
+        delayingClassName: 'menu-aim--delaying'
+    }
+    menuAim(element, options);
         // const observer = lozad(); // lazy loads elements with default selector as '.lozad'
     const observer = lozad('.lozad', {
         rootMargin: '100px 0px', // like css margin

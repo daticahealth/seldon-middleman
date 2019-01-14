@@ -11,17 +11,20 @@ layout: basic
 - nav_collection = data.site.collections.to_a.select { |id, entry | (id == "HkskHrVGykqSqOKGiqkaW") }
 nav.nav data-theme="dark"
   .menu-aim
-    ul.menu.horizontal.align-center.align-middle
-      li.menu-aim__item
+    ul.menu.menu-aim__container
+      li.menu-aim__item.menu-aim__logo
         a.nav-logo--link.no-child href="/" title="Datica Home" style="padding: 0 1rem;"
           svg id="datica-logo-desktop" class="nav-logo"
             use.symbol-icon xlink:href="#datica-logo-horiz"
         .menu-aim__item-submenu
       - nav_collection.each do | id, nav_section |
+        /p.lead.hide-for-medium = (nav_section.has_key?("subhead") ? nav_section.subhead : nil)
         - nav_section["related_entries"].each do | nav_item |
           - unless nav_item.has_key?("show_in_top_nav") && nav_item.show_in_top_nav == false
             li.menu-aim__item id=nav_item.title_short.parameterize
-              a.menu-aim__item-name href = (nav_item.has_key?("section_link_uri") ? nav_item.section_link_uri : nil ) = nav_item.title_short
+              a.menu-aim__item-name href=(nav_item.has_key?("section_link_uri") ? nav_item.section_link_uri : nil )
+                span = nav_item.title_short 
+                .menu-aim__item-summary.hide-for-medium-large = nav_item.summary
               .menu-aim__item-submenu.bg-gray-3.z-10
                 .row.align-center
                   .columns.small-12.medium-4.pad--lg
@@ -56,8 +59,10 @@ nav.nav data-theme="dark"
                         h4.headline-5.menu-aim--promo = nav_item.section_promo.title
                         p.text-small = nav_item.section_promo.summary
                         = partial "partials/snippets/button", :locals => { :label => "Learn More", :url => promo_url, :button_classes => "button small success", :data_track_group => "nav", :item_id => "nav-promo-#{path}", :icon => "icon-angle-right", :icon_align => "right" }
-      li.menu-aim__item
-        = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact/", :button_classes => "button small", :item_id => "contact", :data_track_group => "nav" }
+      li.menu-aim__item.menu-aim__contact.button-group.stacked-for-small
+        = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact/", :button_classes => "button", :item_id => "contact", :data_track_group => "nav", :expand => "false" }
+        /| &nbsp;
+        = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "call-button hide-for-medium-large button", :icon => "icon-phone", :icon_align => "left", :item_id => "phone", :data_track_group => "nav", :expand => "false" }
         .menu-aim__item-submenu
   / - case_studies = data.site.collections.to_a.select { | id, cust | (id == "3N9NeiDhwcKacuIo0E4iwu") }
   / - case_studies.each do | id, cardgroup |

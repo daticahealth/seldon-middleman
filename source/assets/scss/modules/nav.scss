@@ -102,6 +102,230 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
+
+// ==== desktop nav theming; see .menu stuff at top of this file for defaults.
+.nav-logo--link { // data-theme = dark default
+    color: $gray-1;
+}
+.nav {
+    .menu-aim .menu.menu-aim__container {
+        padding: 1rem;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        @include breakpoint (medium-large) {
+            padding: 0;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    // theming
+    .menu-aim {
+        background-color: white;
+    }
+    .menu-aim__item-name {
+        color: black;
+    }
+    &[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
+        .menu-aim { // change bg container 
+            background-color: $gray-1;
+        }
+        .nav-logo--link, .menu-aim__item-name {
+            color: white(0.8);
+            // font-weight: $font-weight-regular;
+            transition-property: background-color, color;
+            transition-duration: $timing-default;
+            &:hover, &:active {
+                color: $color_yellow-glow;
+            }
+        }
+        .menu {
+            &-secondary { // this is now preferred solution for secondary stacked navs
+                li a {
+                    color: white(0.6);
+                    padding: 1rem;
+                    transition-property: background-color, color;
+                    transition-duration: $timing-default;
+                    &:hover {
+                        color: white;
+                        background-color: transparentize($gray-5, 0.5);
+                    }
+                    &[aria-current="page"] {
+                        color: white;
+                        border-bottom: 3px solid $color_yellow-glow;
+                    }
+                }
+            }
+        }
+        // // fix pip color 
+        // .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+        //     border-color: white(0.3);
+        // }
+    }
+    &[data-bar-theme="none"] { // combine with data-theme above for no bg color
+        .menu-aim {
+            background-color: transparent;
+        }
+    }
+}
+// .nav-desktop {
+//     .nav-logo--link {
+//         padding: 0.2rem 1rem 0.2rem 0.2rem;
+//     }
+// }
+.nav-title--compact {
+    font-size: 90%;
+}
+
+// // override for ZF alignment bug
+// .dropdown.menu .is-dropdown-submenu.first-sub {
+// .submenu.menu.vertical.is-dropdown-submenu.first-sub {
+//     top: 100%;
+//     right: auto;
+//     left: 1.5rem;
+// }
+// =================== new nav ==============
+@mixin link-light {
+  border: none;
+  color: $color_yellow-glow;
+  &:hover {
+    color: white;
+    border: none;
+  }
+}
+// .link-arrow {
+//   @include link-light;
+//   &::after { // svg data-URI of chevron shape
+//     content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 14'%3E%3Cpolygon fill='%23fff' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
+//     display: inline-block;
+//     opacity: 0.3;
+//     // width:  0.8em;
+//     // height: 0.8em;
+//     // margin-top: -2px;
+//     // transform-origin: 48%;
+//     // position: absolute;
+//   }
+// }
+// .menu-aim {
+//   ul {
+//     max-width: 1200px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     // overflow: visible;
+//   }
+// }
+
+.nav-logo { // pairing with svg use symbol, requires express dimensions. Aspect ratio is maintained, but spacing can be weird.
+    height: 2.3rem;
+    width: 5.7rem;
+}
+
+// .menu-aim a {
+//     display: block;
+//     color: blue;
+// }
+
+.menu-aim__item-submenu { // hide below medium-large
+    display: none; // overriden below for desktop
+}
+@include breakpoint (medium down) {
+    .menu-aim__logo {
+        margin-bottom: 1.5rem;
+    }
+    .menu-aim__contact {
+        margin-top: 2rem;
+    }
+    .menu-aim__item-name {
+        font-weight: $font-weight-bold;
+        font-size: 1.1rem;
+    }
+    .menu-aim__item-summary {
+        margin-top: 0.5rem;
+        font-weight: $font-weight-regular;
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+}
+// ======== DESKTOP ONLY STYLES / megamenu ==========
+@include breakpoint (medium-large) {
+    .menu-aim__item a {
+        padding: 1.5rem;
+    }
+    //.menu-aim a.menu-aim__item:hover,
+    .menu-aim__item--active .menu-aim__item-name {
+        color: #1055ff;
+        // background: blue;
+        background: {
+            image: url("data:image/svg+xml;charset=utf8,%3Csvg width='25' height='17' viewBox='0 0 25 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 0L25 17H0L12.5 0z' fill='%233B4145'/%3E%3C/svg%3E");
+            repeat: no-repeat;
+            position: center bottom;
+            size: 14px;
+        }
+    }
+    .menu-aim .no-child {
+        background: none;
+    }
+    // .menu-aim--delaying .menu-aim__item-name:hover {
+    //     color: blue;
+    //     background: none;
+    // }
+    .menu-aim__item-submenu {
+        display: block;
+        // transition: visibility 0s, opacity 0.2s linear;
+        visibility: hidden;
+        opacity: 0;
+        // transition: opacity 200ms;
+        transition-delay: .2s;
+        position: absolute;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        .button {
+            display: inline-block;
+            width: auto;
+        }
+        a:not(.button):not(.preview) {
+            text-align: initial;
+            padding: initial;
+        }
+        .preview { // webinar or custom cards
+            border-radius: 0;
+            min-height: initial;
+            height: 100%;
+            .preview-bg {
+                transform: scale3D(1.1,1.1,1);
+            }
+        }
+    }
+    .menu-aim__item--active .menu-aim__item-submenu {
+        visibility: visible;
+        transition-delay: 0ms;
+        // @include animation (fadeIn 0.3s ease);
+        opacity: 1;
+    }
+
+} // end desktop stuff
+.menu-nav-list {
+    // flex-wrap: wrap;
+    flex-direction: column;
+    li { // not sure why .menu.align-center is trickling down here, setting classes in this nav have no effect...
+        justify-content: left !important;
+        border-radius: 3px;
+        transition: background-color 100ms linear;
+        &:hover {
+            background-color: black;
+        }
+    }
+    li a {
+        @include link-light;
+        padding: 0.5rem !important;
+    }
+}
+
+
+
+// old desktop nav
 // .nav {
 //     a.link--white {
 //         border-bottom: none !important;
@@ -189,184 +413,3 @@ $duration: $timing-default * 1.5; //settings.scss:281
 //         }
 //     }
 // }
-// ==== desktop nav theming; see .menu stuff at top of this file for defaults.
-.nav-logo--link { // data-theme = dark default
-    color: $gray-1;
-}
-.nav {
-    .menu-aim {
-        background-color: white;
-    }
-    &[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
-        .menu-aim { // change bg container 
-            background-color: $gray-1;
-        }
-        .nav-logo--link, .menu-aim__item-name {
-            color: white(0.8);
-            // font-weight: $font-weight-regular;
-            transition-property: background-color, color;
-            transition-duration: $timing-default;
-            &:hover, &:active {
-                color: $color_yellow-glow;
-            }
-        }
-        .menu {
-            &-secondary { // this is now preferred solution for secondary stacked navs
-                li a {
-                    color: white(0.6);
-                    padding: 1rem;
-                    transition-property: background-color, color;
-                    transition-duration: $timing-default;
-                    &:hover {
-                        color: white;
-                        background-color: transparentize($gray-5, 0.5);
-                    }
-                    &[aria-current="page"] {
-                        color: white;
-                        border-bottom: 3px solid $color_yellow-glow;
-                    }
-                }
-            }
-        }
-        // // fix pip color 
-        // .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
-        //     border-color: white(0.3);
-        // }
-    }
-    &[data-bar-theme="none"] { // combine with data-theme above for no bg color
-        .menu-aim {
-            background-color: transparent;
-        }
-    }
-}
-.nav-desktop {
-    .nav-logo--link {
-        padding: 0.2rem 1rem 0.2rem 0.2rem;
-    }
-}
-.nav-title--compact {
-    font-size: 90%;
-}
-
-// // override for ZF alignment bug
-// .dropdown.menu .is-dropdown-submenu.first-sub {
-// .submenu.menu.vertical.is-dropdown-submenu.first-sub {
-//     top: 100%;
-//     right: auto;
-//     left: 1.5rem;
-// }
-// =================== new nav ==============
-@mixin link-light {
-  border: none;
-  color: $color_yellow-glow;
-  &:hover {
-    color: white;
-    border: none;
-  }
-}
-// .link-arrow {
-//   @include link-light;
-//   &::after { // svg data-URI of chevron shape
-//     content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 14'%3E%3Cpolygon fill='%23fff' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
-//     display: inline-block;
-//     opacity: 0.3;
-//     // width:  0.8em;
-//     // height: 0.8em;
-//     // margin-top: -2px;
-//     // transform-origin: 48%;
-//     // position: absolute;
-//   }
-// }
-// .menu-aim {
-//   ul {
-//     max-width: 1200px;
-//     margin-left: auto;
-//     margin-right: auto;
-//     // overflow: visible;
-//   }
-// }
-
-.nav-logo { // pairing with svg use symbol, requires express dimensions. Aspect ratio is maintained, but spacing can be weird.
-    height: 2.3rem;
-    width: 5.7rem;
-}
-
-.menu-aim__item a {
-    padding: 1.5rem;
-}
-// .menu-aim a {
-//     display: block;
-//     color: blue;
-// }
-.menu-aim__item-name {
-    color: black;
-}
-//.menu-aim a.menu-aim__item:hover,
-.menu-aim__item--active .menu-aim__item-name {
-    color: #1055ff;
-    // background: blue;
-    background: {
-        image: url("data:image/svg+xml;charset=utf8,%3Csvg width='25' height='17' viewBox='0 0 25 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 0L25 17H0L12.5 0z' fill='%233B4145'/%3E%3C/svg%3E");
-        repeat: no-repeat;
-        position: center bottom;
-        size: 14px;
-    }
-}
-.menu-aim .no-child {
-    background: none;
-}
-// .menu-aim--delaying .menu-aim__item-name:hover {
-//     color: blue;
-//     background: none;
-// }
-.menu-aim__item-submenu {
-    display: block;
-    // transition: visibility 0s, opacity 0.2s linear;
-    visibility: hidden;
-    opacity: 0;
-    // transition: opacity 200ms;
-    transition-delay: .2s;
-    position: absolute;
-    top: 62px;
-    left: 0;
-    width: 100%;
-    .button {
-        display: inline-block;
-        width: auto;
-    }
-    a:not(.button):not(.preview) {
-        text-align: initial;
-        padding: initial;
-    }
-    .preview { // webinar or custom cards
-        border-radius: 0;
-        min-height: initial;
-        height: 100%;
-        .preview-bg {
-            transform: scale3D(1.1,1.1,1);
-        }
-    }
-}
-.menu-aim__item--active .menu-aim__item-submenu {
-    visibility: visible;
-    transition-delay: 0ms;
-    // @include animation (fadeIn 0.3s ease);
-    opacity: 1;
-}
-
-.menu-nav-list {
-    // flex-wrap: wrap;
-    flex-direction: column;
-    li { // not sure why .menu.align-center is trickling down here, setting classes in this nav have no effect...
-        justify-content: left !important;
-        border-radius: 3px;
-        transition: background-color 100ms linear;
-        &:hover {
-            background-color: black;
-        }
-    }
-    li a {
-        @include link-light;
-        padding: 0.5rem !important;
-    }
-}
