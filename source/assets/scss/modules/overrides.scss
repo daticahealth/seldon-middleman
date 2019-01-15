@@ -351,8 +351,11 @@
     &-5 {
         z-index: 5;
     }
-    &-10 { // navs should exist here
+    &-10 {
         z-index: 10;
+    }
+    &-20 { // navs should exist here
+        z-index: 20;
     }
     &-auto {
         z-index: auto;

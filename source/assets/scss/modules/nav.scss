@@ -124,7 +124,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
         background-color: white;
     }
     .menu-aim__item-name {
-        color: black;
+        color: $gray-1;
     }
     &[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
         .menu-aim { // change bg container 
@@ -239,6 +239,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
         transition: color $timing-default linear, border-color $timing-default linear;
         padding: 0;
         display: none; // hidden until active
+        @include shadow-anarchy(0 3px 5px black(0.2));
         &.is-active {
             display: block;
         }
@@ -357,7 +358,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
     // }
     //.menu-aim a.menu-aim__item:hover,
     .menu-aim__item--active .menu-aim__item-name {
-        color: #1055ff;
+        color: $color_blue;
         // background: blue;
         background: {
             image: url("data:image/svg+xml;charset=utf8,%3Csvg width='25' height='17' viewBox='0 0 25 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 0L25 17H0L12.5 0z' fill='%233B4145'/%3E%3C/svg%3E");
@@ -419,6 +420,12 @@ $duration: $timing-default * 1.5; //settings.scss:281
         &:hover {
             background-color: black;
         }
+        // &.item-divider:after { // adds space and divider below items that has_divider: true in data
+        //     content: "";
+        //     border-bottom:  1.5px solid black(1);
+        //     // padding-bottom: 0.5rem;
+        //     margin-bottom:  0.5rem;
+        // }
     }
     li a {
         @include link-light;
@@ -426,7 +433,10 @@ $duration: $timing-default * 1.5; //settings.scss:281
     }
 }
 
-
+hr.menu-divider { // used to separate child menu items 
+    margin: 0.5rem;
+    border-bottom: 1px solid $gray-5;
+}
 
 // old desktop nav
 // .nav {

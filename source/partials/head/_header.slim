@@ -6,98 +6,80 @@ ruby:
   end
   if defined?(style) && style == "light"
     theme = "light"
-    header_class = " main-header--white"
+    # header_class = " main-header--white"
     element_color = "white"
   else
     theme = "dark"
-    header_class = nil
+    # header_class = nil
     element_color = "black"
   end
-  sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
-  sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
+  # sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+  # sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
 
-css:
-  .submenu, #nav-mobile {
-    display: none;
-  }
 = partial "assets/icons/inlined/datica-logo-horiz-symbol.svg"
 = partial "partials/snippets/alert-ribbon"
-
-header.main-header
-  nav.nav.nav-mobile.hide-for-large
-    .title-bar.align-middle data-responsive-toggle="nav-mobile" data-hide-for="large"
-      .columns.small-6
-        a.nav-logo--link.link--white href="/" title="Datica Home"
-          svg.nav-logo.svg-color--white id="datica-logo-mobile"
+- nav_collection = data.site.collections.to_a.select { |id, entry | (id == "HkskHrVGykqSqOKGiqkaW") }
+nav.nav data-theme=theme
+  .menu-aim
+    .mobile-toggle.hide-for-large
+      a.nav-logo--link href="/" title="Datica Home"
+        svg id="datica-logo-mobile" class="nav-logo"
+          use.symbol-icon xlink:href="#datica-logo-horiz"
+      a.toggle-me#nav-toggle href="#"
+        span
+        span
+    ul.menu.menu-aim__container.mobile-toggle-target
+      li.menu-aim__item.menu-aim__logo.show-for-large
+        a.nav-logo--link.no-child href="/" title="Datica Home" style="padding: 0 1rem;"
+          svg id="datica-logo-desktop" class="nav-logo"
             use.symbol-icon xlink:href="#datica-logo-horiz"
-      .columns.small-6.text-right
-        a.button.nav-button href="#" title="Main Menu" data-toggle="nav-mobile"
-          span.nav-button--label Menu
-          = inline_svg("small/icon-menu", class: "nav-button--icon svg-color--white")
-    .title-bar#nav-mobile
-      .row.small-up-1.medium-up-2
-        .column
-          = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact/", :button_classes => "button expanded", :icon => "icon-comment", :icon_align => "left" }
-        .column
-          = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "button hollow-inverted expanded", :icon => "icon-phone", :icon_align => "left" }
-      .row.group
-        .columns.small-12.medium-6.medium-order-1
-          hr
-          / .h2.headline-2.text-bold What's your biggest challenge?
-          .button-group.menu.align-center.group
-            = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST audit", :url => "/cloud-compliance/", :button_classes => "button button--light button--hover-compliance no-nudge", :item_id => "get-compliance-mobile", :data_track_group => "compliance" }
-            = partial "partials/snippets/button", :locals => { :label => "I need to integrate with an EHR", :url => "/ehr-integration/", :button_classes => "button button--light button--hover-integration no-nudge", :item_id => "get-integration-mobile", :data_track_group => "integration" }
-          / .callout.callout--dark-alt
-            ul.menu.vertical.full-width
-              - data.nav_all[0].children.each do |nav_list|
-                - if nav_list.has_key?("nav_main") && nav_list.nav_main == true
-                  li.group--sm
-                    a.link--white href=nav_list.url title=nav_list.desc
-                      .headline-5 = nav_list.title
-                      .text-small.text-light = nav_list.desc
-        .columns.small-12.medium-6.medium-order-2
-          .callout.callout--dark-alt.group
-            h4.pub-date.faded Recently in the Blog
-            - sorted_posts.take(1).each do | id, blog_entry |
-              p
-                a.link--white.text-light(href="/blog/#{blog_entry.slug}/" title=blog_entry.summary)= blog_entry.title
-            h4.pub-date.faded Latest Guide
-            - sorted_guides.take(1).each do | id, guide_entry |
-              p
-                a.link--white.text-light(href="/guide/#{guide_entry.slug}/" title=guide_entry.summary)= guide_entry.title
-      .row.small-up-1.medium-up-3
-        - data.nav_all[0...4].each do |nav_dropdown|
-          - if nav_dropdown.has_key?("children")
-            .column.group
-              .headline-5 = nav_dropdown.title
-              ul.menu.vertical
-                - nav_dropdown["children"].each do |menu_child|
-                  - unless menu_child.has_key?("show_on_mobile") && menu_child.show_on_mobile == false
-                    li
-                      = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: "link--white text-light"
-
-  nav.nav.nav-desktop.show-for-large.row.collapse data-theme=theme
-    .column.small-12
-      ul.dropdown.menu.expanded.align-middle.align-center(data-dropdown-menu data-alignment="left")
-        li
-          a.nav-logo--link href="/" title="Datica Home"
-            svg id="datica-logo-desktop" class="nav-logo"
-              use.symbol-icon xlink:href="#datica-logo-horiz"
-        - data.nav_all.each do |nav_dropdown|
-          - if nav_dropdown.has_key?("children") && nav_dropdown["nav_main"] == true
-            li.has-submenu
-              a.menu-header = nav_dropdown.title
-              ul.submenu.menu.vertical(data-submenu data-alignment="left" id=nav_dropdown.title.downcase)
-                - nav_dropdown["children"].each do |menu_child|
-                  - item_class = (menu_child.has_key?("has_divider") ? 'submenu-divider' : nil)
-                  li.no-wrap(class=item_class)
-                    = current_link_to menu_child.title, menu_child.url, title: menu_child.desc, class: ''
-          / else
-          /   li = nav_dropdown.title
-              / = current_link_to nav_dropdown.title, nav_dropdown.url, title: nav_dropdown.desc, class: ''
-        /li
-          ruby:
-            sign_link = data.nav_all[4].children[0]
-          = current_link_to sign_link.title, sign_link.url, title: sign_link.desc, class: "menu-header"
-        li
-          a.button(href="/contact/", title="Contact Us") Contact
+        .menu-aim__item-submenu
+      - nav_collection.each do | id, nav_section |
+        /p.lead.hide-for-medium = (nav_section.has_key?("subhead") ? nav_section.subhead : nil)
+        - nav_section["related_entries"].each do | nav_item |
+          - unless nav_item.has_key?("show_in_top_nav") && nav_item.show_in_top_nav == false
+            li.menu-aim__item id=nav_item.title_short.parameterize
+              a.menu-aim__item-name href=(nav_item.has_key?("section_link_uri") ? nav_item.section_link_uri : nil )
+                span = nav_item.title_short 
+                .menu-aim__item-summary.hide-for-large = nav_item.summary
+              .menu-aim__item-submenu.bg-gray-3.z-20
+                .row.align-center
+                  .columns.small-12.medium-4.large-3.pad--lg
+                    h3.headline-4 = nav_item.title
+                    p.text-small = nav_item.summary
+                    - if nav_item.has_key?("section_link_label")
+                      = current_link_to nav_item.title, nav_item.section_link_uri, title: nav_item.title, class: "link-arrow link-arrow--yellow"
+                  - if nav_item.has_key?("child_data")
+                    .columns.small-12.shrink.pad--lg
+                      ul.menu.menu-nav-list
+                        - nav_item.child_data.each do | child |
+                          li
+                            = current_link_to child.title, child.url, title: child.desc
+                          - if child.has_key?("has_divider") && child.has_divider == true
+                            hr.menu-divider
+                  - if nav_item.has_key?("section_promo")
+                    - path = case nav_item.section_promo._meta.content_type_id
+                    - when "academy" then "academy"
+                    - when "blog" then "blog"
+                    - when "cta" then "cta"
+                    - when "caseStudy" then "customer"
+                    - when "events" then "event"
+                    - when "guides" then "guide"
+                    - when "pressReleases" then "press-release"
+                    - when "reports" then "innovation"
+                    - when "webinars" then "webinar"
+                    - promo_url = "/#{path}/#{nav_item.section_promo.slug}"
+                    - case nav_item.section_promo._meta.content_type_id
+                    - when "webinars"
+                      .columns.small-12.medium-4.bg-gray-2.nopad
+                        = partial "partials/cards/webinar-poster", :locals => { :entry => data.site.webinars[nav_item.section_promo.id] }
+                    - else
+                      .columns.small-12.medium-4.bg-gray-2.pad--lg
+                        h4.headline-5.menu-aim--promo = nav_item.section_promo.title
+                        p.text-small = nav_item.section_promo.summary
+                        = partial "partials/snippets/button", :locals => { :label => "Learn More", :url => promo_url, :button_classes => "button small success", :data_track_group => "nav", :item_id => "nav-promo-#{path}", :icon => "icon-angle-right", :icon_align => "right" }
+      li.menu-aim__item.menu-aim__contact.button-group.stacked-for-small
+        = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact/", :button_classes => "contact-button button small", :item_id => "contact", :data_track_group => "nav", :expand => "false" }
+        /| &nbsp;
+        = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "call-button hide-for-large button small", :icon => "icon-phone", :icon_align => "left", :item_id => "phone", :data_track_group => "nav", :expand => "false" }
+        .menu-aim__item-submenu
