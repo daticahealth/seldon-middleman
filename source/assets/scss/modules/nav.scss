@@ -365,6 +365,18 @@ $duration: $timing-default * 1.5; //settings.scss:281
         // @include animation (fadeIn 0.3s ease);
         opacity: 1;
     }
+    .product { // a .media-object with an icon, a little adjustment needed
+        color: white;
+        .product-title {
+            font-weight: $font-weight-regular;
+            margin-bottom: 0.3em;
+            font-size: 1rem;
+        }
+        .product-description { // pair with text-small
+            line-height: 1.2;
+            font-weight: $font-weight-light;
+        }
+    }
 
 } // end desktop stuff
 .menu-nav-list {
@@ -373,10 +385,10 @@ $duration: $timing-default * 1.5; //settings.scss:281
     margin-left: -0.5rem; // pulls list left to line up/use space better
     li { // not sure why .menu.align-center is trickling down here, setting classes in this nav have no effect...
         justify-content: left !important;
-        border-radius: 3px;
+        border-radius: 6px;
         transition: background-color 100ms linear;
         &:hover {
-            background-color: black;
+            background-color: black(0.6);
         }
         // &.item-divider:after { // adds space and divider below items that has_divider: true in data
         //     content: "";
