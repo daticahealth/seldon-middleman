@@ -53,10 +53,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
-    // &-nav--secondary { // secondary sticky nav... it happens
-    //     ul li a {
-    //     }
-    // }
+
 .sticky {
     $active-border-height: 4px;
     // .is-[state] classes for control over its appearance and exit if needed. Desktop only
@@ -168,22 +165,10 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
-// .nav-desktop {
-//     .nav-logo--link {
-//         padding: 0.2rem 1rem 0.2rem 0.2rem;
-//     }
-// }
 .nav-title--compact {
     font-size: 90%;
 }
 
-// // override for ZF alignment bug
-// .dropdown.menu .is-dropdown-submenu.first-sub {
-// .submenu.menu.vertical.is-dropdown-submenu.first-sub {
-//     top: 100%;
-//     right: auto;
-//     left: 1.5rem;
-// }
 // =================== new nav ==============
 
 @mixin link-light {
@@ -198,34 +183,6 @@ $duration: $timing-default * 1.5; //settings.scss:281
     height: 2.3rem;
     width: 5.7rem;
 }
-// .link-arrow {
-//   @include link-light;
-//   &::after { // svg data-URI of chevron shape
-//     content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 14'%3E%3Cpolygon fill='%23fff' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
-//     display: inline-block;
-//     opacity: 0.3;
-//     // width:  0.8em;
-//     // height: 0.8em;
-//     // margin-top: -2px;
-//     // transform-origin: 48%;
-//     // position: absolute;
-//   }
-// }
-// .menu-aim {
-//   ul {
-//     max-width: 1200px;
-//     margin-left: auto;
-//     margin-right: auto;
-//     // overflow: visible;
-//   }
-// }
-
-
-// .menu-aim a {
-//     display: block;
-//     color: blue;
-// }
-
 
 // mobile menu toggle
 .mobile-toggle { // container, mobile only
@@ -413,6 +370,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
 .menu-nav-list {
     // flex-wrap: wrap;
     flex-direction: column;
+    margin-left: -0.5rem; // pulls list left to line up/use space better
     li { // not sure why .menu.align-center is trickling down here, setting classes in this nav have no effect...
         justify-content: left !important;
         border-radius: 3px;
@@ -437,92 +395,3 @@ hr.menu-divider { // used to separate child menu items
     margin: 0.5rem;
     border-bottom: 1px solid $gray-5;
 }
-
-// old desktop nav
-// .nav {
-//     a.link--white {
-//         border-bottom: none !important;
-//         &:hover {
-//             border-bottom: none !important;
-//         }
-//     }
-//     .callout {
-//         padding: 0.8rem 1.4rem;
-//         margin-bottom: 1rem;
-//     }
-//     .menu.vertical {
-//         li a {
-//             line-height: 1.3;
-//             padding-top:    0.4rem;
-//             padding-bottom: 0.4rem;
-//         }
-//     }
-//     .menu-header { // primary nav items, that are sometimes not links =/
-//         // font-weight: $font-weight-mid;
-//         color: black(0.8);
-//         &:hover {
-//             color: $color_prime-alt;
-//         }
-//     }
-//     .submenu {
-//         @include shadow-anarchy(2px 2px 6px 0 black(0.2));
-//         li a {
-//             @include fx-hover-nudge;
-//         }
-//         border-radius: $global-radius;
-//         margin-top: 0.5rem;
-//         padding-top:    0.8rem;
-//         padding-bottom: 0.8rem;
-//         &-divider {
-//             border-bottom: 1px solid transparentize($gray-5, 0.8);
-//             padding-bottom:    0.5rem;
-//             margin-bottom:  0.5rem;
-//         }
-//         &::before {
-//             $tri-size: 10px;
-//             @include css-triangle(10px, white, up);
-//             position: absolute;
-//             top: -$tri-size;
-//             left: $tri-size * 8;
-//         }
-//     }
-//     .is-submenu-item {
-//         margin-bottom: 0;
-//         a {
-//             transition: none;
-//             transition: color $timing-default linear;
-//             color: $gray-3;
-//             // font-weight: $font-weight-mid;
-//             &:hover {
-//                 color: $color_prime-alt;
-//             }
-//         }
-//     }
-//     .js-dropdown-active {
-//         display: inline-block;
-//         @include animation (fadeIn 0.3s ease);
-//     }
-// }
-
-// .nav-mobile {
-//     .nav-button {
-//         @include no-nudge;
-//         background-color: black;
-//         margin-bottom: 0;
-//         &--icon {
-//             width:  1.3em;
-//             height: 1.3em;
-//             vertical-align: middle;
-//         } 
-//         &--label {
-//             @extend .spaced-out;
-//             font-size: 70%;
-//             margin-right: 0.3rem;
-//         }
-//     }
-//     .menu.vertical {
-//         li a {
-//             padding: 0.3rem 0.3rem 0.3rem 0;
-//         }
-//     }
-// }
