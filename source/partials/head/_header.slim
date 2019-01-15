@@ -37,6 +37,7 @@ nav.nav data-theme=theme
       - nav_collection.each do | id, nav_section |
         /p.lead.hide-for-medium = (nav_section.has_key?("subhead") ? nav_section.subhead : nil)
         - nav_section["related_entries"].each do | nav_item |
+          - if nav_item.section == "Compliance" || nav_item.section == "Integration" ? is_product = true : is_product = false
           - unless nav_item.has_key?("show_in_top_nav") && nav_item.show_in_top_nav == false
             li.menu-aim__item id=nav_item.title_short.parameterize
               a.menu-aim__item-name href=(nav_item.has_key?("section_link_uri") ? nav_item.section_link_uri : nil )
@@ -48,13 +49,24 @@ nav.nav data-theme=theme
                     h3.headline-4 = nav_item.title
                     p.text-small = nav_item.summary
                     - if nav_item.has_key?("section_link_label")
-                      = current_link_to nav_item.title, nav_item.section_link_uri, title: nav_item.title, class: "link-arrow link-arrow--yellow"
+                      = current_link_to nav_item.section_link_label, nav_item.section_link_uri, title: nav_item.section_link_label, class: "link-arrow link-arrow--yellow"
                   - if nav_item.has_key?("child_data")
-                    .columns.small-12.shrink.pad--lg
+                    .columns.small-12.medium-4.pad--lg
+                      h4.read-more.text-light = (is_product == true ? "Product Family" : nil)
                       ul.menu.menu-nav-list
                         - nav_item.child_data.each do | child |
                           li
-                            = current_link_to child.title, child.url, title: child.desc
+                            - if is_product == true && child.has_key?("icon")
+                              a href=child.url title="Explore #{child.title}"
+                                .media-object.product
+                                  .media-object-section
+                                    = inline_svg(child.icon, class: "icon-size--medium")
+                                  .media-object-section.media-object--info.main-section.align-self-middle
+                                    h4.product-title = child.title
+                                    .product-description.text-small = child.desc
+                            - else
+                              = current_link_to child.title, child.url, title: child.desc
+
                           - if child.has_key?("has_divider") && child.has_divider == true
                             hr.menu-divider
                   - if nav_item.has_key?("section_promo")

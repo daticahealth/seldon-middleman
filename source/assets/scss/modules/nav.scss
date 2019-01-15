@@ -125,7 +125,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
     }
     &[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
         .menu-aim { // change bg container 
-            background-color: $gray-1;
+            background-color: $gray-2;
         }
         .nav-logo--link, .menu-aim__item-name {
             color: white(0.8);
