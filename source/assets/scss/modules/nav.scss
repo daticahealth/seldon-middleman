@@ -323,15 +323,17 @@ $duration: $timing-default * 1.5; //settings.scss:281
                 background-color: transparent;
             }
         }
-        .menu-nav-list {
-            li a {
-                color: white;
+        @include breakpoint (medium-large down) {
+            .menu-nav-list {
+                li a {
+                    color: white;
+                }
             }
-        }
-        .product {
-            color: white;
-            svg path {
-                fill: white;
+            .product {
+                color: white;
+                svg path {
+                    fill: white;
+                }
             }
         }
     }
@@ -344,15 +346,17 @@ $duration: $timing-default * 1.5; //settings.scss:281
                 background-color: transparent;
             }
         }
-        .menu-nav-list {
-            li a {
-                color: black;
+        @include breakpoint (medium-large down) {
+            .menu-nav-list {
+                li a {
+                    color: black;
+                }
             }
-        }
-        .product {
-            color: black;
-            svg path {
-                fill: black;
+            .product {
+                color: black;
+                svg path {
+                    fill: black;
+                }
             }
         }
     }
@@ -416,6 +420,17 @@ $duration: $timing-default * 1.5; //settings.scss:281
             height: 100%;
             .preview-bg {
                 transform: scale3D(1.1,1.1,1);
+            }
+        }
+        .menu-nav-list {
+            li a {
+                color: white;
+            }
+        }
+        .product {
+            color: white;
+            svg path {
+                fill: white;
             }
         }
     }
