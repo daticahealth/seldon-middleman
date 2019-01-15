@@ -9,10 +9,17 @@ layout: basic
 = partial "assets/icons/inlined/datica-logo-horiz-symbol.svg"
 = partial "partials/snippets/alert-ribbon"
 - nav_collection = data.site.collections.to_a.select { |id, entry | (id == "HkskHrVGykqSqOKGiqkaW") }
-nav.nav data-theme="dark"
+nav.nav data-theme="light"
   .menu-aim
-    ul.menu.menu-aim__container
-      li.menu-aim__item.menu-aim__logo
+    .mobile-toggle.hide-for-large
+      a.nav-logo--link href="/" title="Datica Home"
+        svg id="datica-logo-mobile" class="nav-logo"
+          use.symbol-icon xlink:href="#datica-logo-horiz"
+      a.toggle-me#nav-toggle href="#"
+        span
+        span
+    ul.menu.menu-aim__container.mobile-toggle-target
+      li.menu-aim__item.menu-aim__logo.show-for-large
         a.nav-logo--link.no-child href="/" title="Datica Home" style="padding: 0 1rem;"
           svg id="datica-logo-desktop" class="nav-logo"
             use.symbol-icon xlink:href="#datica-logo-horiz"
@@ -24,7 +31,7 @@ nav.nav data-theme="dark"
             li.menu-aim__item id=nav_item.title_short.parameterize
               a.menu-aim__item-name href=(nav_item.has_key?("section_link_uri") ? nav_item.section_link_uri : nil )
                 span = nav_item.title_short 
-                .menu-aim__item-summary.hide-for-medium-large = nav_item.summary
+                .menu-aim__item-summary.hide-for-large = nav_item.summary
               .menu-aim__item-submenu.bg-gray-3.z-10
                 .row.align-center
                   .columns.small-12.medium-4.pad--lg
@@ -62,7 +69,7 @@ nav.nav data-theme="dark"
       li.menu-aim__item.menu-aim__contact.button-group.stacked-for-small
         = partial "partials/snippets/button", :locals => { :label => "Contact Us", :url => "/contact/", :button_classes => "button", :item_id => "contact", :data_track_group => "nav", :expand => "false" }
         /| &nbsp;
-        = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "call-button hide-for-medium-large button", :icon => "icon-phone", :icon_align => "left", :item_id => "phone", :data_track_group => "nav", :expand => "false" }
+        = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "call-button hide-for-large button", :icon => "icon-phone", :icon_align => "left", :item_id => "phone", :data_track_group => "nav", :expand => "false" }
         .menu-aim__item-submenu
   / - case_studies = data.site.collections.to_a.select { | id, cust | (id == "3N9NeiDhwcKacuIo0E4iwu") }
   / - case_studies.each do | id, cardgroup |

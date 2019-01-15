@@ -8,6 +8,7 @@ $("document").ready(function(){
     //     };
     //     menuAim(element, options);
     // }
+    // === nav stuff ===
     const element = document.querySelector('.menu-aim')
     const options = {
         menuItemSelector: '.menu-aim__item',
@@ -15,7 +16,21 @@ $("document").ready(function(){
         delayingClassName: 'menu-aim--delaying'
     }
     menuAim(element, options);
-        // const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    // mobile toggle, vanilla. Trying to do without ZF more
+    (function() {
+    var toggler = document.querySelector('.toggle-me');
+    var toggleTarget = document.querySelector('.mobile-toggle-target');
+    toggler.addEventListener('click', function() {
+        toggleTarget.classList.toggle('is-active');
+        toggler.classList.toggle('is-toggled');
+        });
+    })();
+
+    if (Foundation.MediaQuery.current == 'small' || Foundation.MediaQuery.current == 'medium') {
+      $('.sticky').removeAttr('data-sticky');
+    }
+    // ==== lozad, image stuff ======
+    // const observer = lozad(); // lazy loads elements with default selector as '.lozad'
     const observer = lozad('.lozad', {
         rootMargin: '100px 0px', // like css margin
         // threshold: 0.1 // ratio of element convergence
@@ -27,9 +42,6 @@ $("document").ready(function(){
     });
     observer.observe();
     // init foundation stuff - interchange, close box, etc.
-    if (Foundation.MediaQuery.current == 'small' || Foundation.MediaQuery.current == 'medium') {
-      $('.sticky').removeAttr('data-sticky');
-    }
     $(document).foundation();
     
     // Cookie config for modal
