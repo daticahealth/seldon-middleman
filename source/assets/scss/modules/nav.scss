@@ -186,9 +186,9 @@ $duration: $timing-default * 1.5; //settings.scss:281
 }
 
 .product { // a .media-object with an icon, a little adjustment needed
-    color: white;
+// color: white;
     .product-title {
-        font-weight: $font-weight-regular;
+        font-weight: $font-weight-mid;
         margin-bottom: 0.3em;
         font-size: 1rem;
     }
@@ -314,7 +314,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
     }
 }
 .nav { // theme the mobile button
-    &[data-theme="light"] {
+    &[data-theme="light"] { // content is light, bg is dark
         #nav-toggle {
             & span, & span:before, & span:after {
                 background: white;
@@ -323,14 +323,36 @@ $duration: $timing-default * 1.5; //settings.scss:281
                 background-color: transparent;
             }
         }
+        .menu-nav-list {
+            li a {
+                color: white;
+            }
+        }
+        .product {
+            color: white;
+            svg path {
+                fill: white;
+            }
+        }
     }
-    &[data-theme="dark"] {
+    &[data-theme="dark"] { // content is dark, bg is light
         #nav-toggle {
             & span, & span:before, & span:after {
                 background: black;
             }
             &.is-toggled span {
                 background-color: transparent;
+            }
+        }
+        .menu-nav-list {
+            li a {
+                color: black;
+            }
+        }
+        .product {
+            color: black;
+            svg path {
+                fill: black;
             }
         }
     }
@@ -418,7 +440,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
     // flex-wrap: wrap;
     flex-direction: column;
     li a {
-        color: white;
+        // color: white;
         padding-top:    0.5rem;
         padding-bottom: 0.5rem;
     }
