@@ -170,6 +170,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
 }
 
 // =================== new nav ==============
+// generic stuff that applies to both navs
 
 @mixin link-light {
   border: none;
@@ -184,6 +185,18 @@ $duration: $timing-default * 1.5; //settings.scss:281
     width: 5.7rem;
 }
 
+.product { // a .media-object with an icon, a little adjustment needed
+    color: white;
+    .product-title {
+        font-weight: $font-weight-regular;
+        margin-bottom: 0.3em;
+        font-size: 1rem;
+    }
+    .product-description { // pair with text-small
+        line-height: 1.2;
+        font-weight: $font-weight-light;
+    }
+}
 // mobile menu toggle
 .mobile-toggle { // container, mobile only
     position: relative;
@@ -201,6 +214,12 @@ $duration: $timing-default * 1.5; //settings.scss:281
             display: block;
         }
     }
+    li.menu-aim__section {
+        margin-bottom: 2rem;
+    }
+    .menu-aim__submenu-pane {
+        padding: 0; // applied to cols in desktop pane, replaces pad--lg
+    }
     .menu-aim__logo {
         margin-bottom: 1.5rem;
     }
@@ -211,14 +230,31 @@ $duration: $timing-default * 1.5; //settings.scss:281
         max-width: 30em;
     }
     .menu-aim__item-name {
-        font-weight: $font-weight-bold;
-        font-size: 1.1rem;
+        // font-weight: $font-weight-bold;
+        font-size: 1.5rem;
     }
     .menu-aim__item-summary {
         margin-top: 0.5rem;
         font-weight: $font-weight-regular;
         font-size: 0.9rem;
         line-height: 1.3;
+    }
+    .product { // a .media-object with an icon, a little adjustment needed
+        color: white;
+        .icon-size--medium { // make it smaller
+            width:  2rem;
+            height: 2rem;
+        }
+        &.media-object {
+            margin-bottom: 0;
+        }
+        // .product-title {
+        // }
+        // .product-description { // pair with text-small
+        // }
+    }
+    hr.menu-divider { 
+        display: none;
     }
 }
 
@@ -233,10 +269,10 @@ $duration: $timing-default * 1.5; //settings.scss:281
 #nav-toggle { // toggle button
     background: transparent;
     position: absolute;
-    right: 0;
-    top: 40%;
+    right:  7px;
+    top:    31px;
     height: 50px;
-    width: 50px;
+    width:  50px;
     cursor: pointer;
     transform: translate(0%, -50%);
     & span,
@@ -301,9 +337,9 @@ $duration: $timing-default * 1.5; //settings.scss:281
 }
 
 
-.menu-aim__item-submenu { // hide below large
-    display: none; // overriden below for desktop
-}
+// .menu-aim__item-submenu { // hide below large
+//     display: none; // overriden below for desktop
+// }
 // ======== DESKTOP ONLY STYLES / megamenu ==========
 @include breakpoint (large) {
     .menu-aim__item a {
@@ -332,6 +368,8 @@ $duration: $timing-default * 1.5; //settings.scss:281
     //     background: none;
     // }
     .menu-aim__item-submenu {
+        background-color: $gray-3;
+        color: white;
         display: block;
         // transition: visibility 0s, opacity 0.2s linear;
         visibility: hidden;
@@ -365,45 +403,38 @@ $duration: $timing-default * 1.5; //settings.scss:281
         // @include animation (fadeIn 0.3s ease);
         opacity: 1;
     }
-    .product { // a .media-object with an icon, a little adjustment needed
-        color: white;
-        .product-title {
-            font-weight: $font-weight-regular;
-            margin-bottom: 0.3em;
-            font-size: 1rem;
-        }
-        .product-description { // pair with text-small
-            line-height: 1.2;
-            font-weight: $font-weight-light;
-        }
+    .menu-aim__submenu-pane {
+        padding: calc(1rem + 1.2vw);
     }
-
+    hr.menu-divider { // used to separate child menu items 
+        margin: 0.5rem;
+        border-bottom: 1px solid $gray-5;
+    }
+    .menu-aim__contact {
+        margin-left: 1rem;
+    }
 } // end desktop stuff
 .menu-nav-list {
     // flex-wrap: wrap;
     flex-direction: column;
-    margin-left: -0.5rem; // pulls list left to line up/use space better
-    li { // not sure why .menu.align-center is trickling down here, setting classes in this nav have no effect...
-        justify-content: left !important;
-        border-radius: 6px;
-        transition: background-color 100ms linear;
-        &:hover {
-            background-color: black(0.6);
-        }
-        // &.item-divider:after { // adds space and divider below items that has_divider: true in data
-        //     content: "";
-        //     border-bottom:  1.5px solid black(1);
-        //     // padding-bottom: 0.5rem;
-        //     margin-bottom:  0.5rem;
-        // }
-    }
     li a {
-        @include link-light;
-        padding: 0.5rem !important;
+        color: white;
+        padding-top:    0.5rem;
+        padding-bottom: 0.5rem;
     }
-}
-
-hr.menu-divider { // used to separate child menu items 
-    margin: 0.5rem;
-    border-bottom: 1px solid $gray-5;
+    @include breakpoint (large) {
+        margin-left: -0.5rem; // pulls list left to line up/use space better
+        li { // not sure why .menu.align-center is trickling down here, setting classes in this nav have no effect...
+            justify-content: left !important;
+            border-radius: 6px;
+            transition: background-color 100ms linear;
+            &:hover {
+                background-color: black(0.6);
+            }
+        }
+        li a {
+            @include link-light;
+            padding: 0.5rem !important;
+        }
+    }
 }

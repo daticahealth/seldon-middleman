@@ -5,11 +5,11 @@ ruby:
       track_category = "nav"
   end
   if defined?(style) && style == "light"
-    theme = "light"
+    theme = "light" # light text on dark bg
     # header_class = " main-header--white"
     element_color = "white"
   else
-    theme = "dark"
+    theme = "dark" # dark text on light bg
     # header_class = nil
     element_color = "black"
   end
@@ -28,7 +28,7 @@ nav.nav data-theme=theme
       a.toggle-me#nav-toggle href="#"
         span
         span
-    ul.menu.menu-aim__container.mobile-toggle-target
+    ul.menu.menu-aim__container.mobile-toggle-target#nav-target
       li.menu-aim__item.menu-aim__logo.show-for-large
         a.nav-logo--link.no-child href="/" title="Datica Home" style="padding: 0 1rem;"
           svg id="datica-logo-desktop" class="nav-logo"
@@ -39,20 +39,20 @@ nav.nav data-theme=theme
         - nav_section["related_entries"].each do | nav_item |
           - if nav_item.section == "Compliance" || nav_item.section == "Integration" ? is_product = true : is_product = false
           - unless nav_item.has_key?("show_in_top_nav") && nav_item.show_in_top_nav == false
-            li.menu-aim__item id=nav_item.title_short.parameterize
+            li.menu-aim__item.menu-aim__section id=nav_item.title_short.parameterize
               a.menu-aim__item-name href=(nav_item.has_key?("section_link_uri") ? nav_item.section_link_uri : nil )
                 span = nav_item.title_short 
-                .menu-aim__item-summary.hide-for-large = nav_item.summary
-              .menu-aim__item-submenu.bg-gray-3.z-20
+                / .menu-aim__item-summary.hide-for-large = nav_item.summary
+              .menu-aim__item-submenu.z-20
                 .row.align-center
-                  .columns.small-12.medium-4.large-3.pad--lg
+                  .columns.small-12.large-4.menu-aim__submenu-pane.show-for-large.show-for-large
                     h3.headline-4 = nav_item.title
                     p.text-small = nav_item.summary
                     - if nav_item.has_key?("section_link_label")
-                      = current_link_to nav_item.section_link_label, nav_item.section_link_uri, title: nav_item.section_link_label, class: "link-arrow link-arrow--yellow"
+                      = current_link_to nav_item.section_link_label, nav_item.section_link_uri, title: nav_item.section_link_label, class: "link-arrow link-arrow--yellow show-for-large"
                   - if nav_item.has_key?("child_data")
-                    .columns.small-12.medium-4.pad--lg
-                      h4.read-more.text-light = (is_product == true ? "Product Family" : nil)
+                    .columns.small-12.large-4.menu-aim__submenu-pane
+                      h4.read-more.text-light.show-for-large = (is_product == true ? "Product Family" : nil)
                       ul.menu.menu-nav-list
                         - nav_item.child_data.each do | child |
                           li
@@ -63,7 +63,7 @@ nav.nav data-theme=theme
                                     = inline_svg(child.icon, class: "icon-size--medium")
                                   .media-object-section.media-object--info.main-section.align-self-middle
                                     h4.product-title = child.title
-                                    .product-description.text-small = child.desc
+                                    .product-description.text-small.show-for-large = child.desc
                             - else
                               = current_link_to child.title, child.url, title: child.desc
 
@@ -83,10 +83,10 @@ nav.nav data-theme=theme
                     - promo_url = "/#{path}/#{nav_item.section_promo.slug}"
                     - case nav_item.section_promo._meta.content_type_id
                     - when "webinars"
-                      .columns.small-12.medium-4.bg-gray-2.nopad
+                      .columns.small-12.large-4.bg-gray-2.nopad.show-for-large
                         = partial "partials/cards/webinar-poster", :locals => { :entry => data.site.webinars[nav_item.section_promo.id] }
                     - else
-                      .columns.small-12.medium-4.bg-gray-2.pad--lg
+                      .columns.small-12.large-4.bg-gray-2.menu-aim__submenu-pane.show-for-large
                         h4.headline-5.menu-aim--promo = nav_item.section_promo.title
                         p.text-small = nav_item.section_promo.summary
                         = partial "partials/snippets/button", :locals => { :label => "Learn More", :url => promo_url, :button_classes => "button small success", :data_track_group => "nav", :item_id => "nav-promo-#{path}", :icon => "icon-angle-right", :icon_align => "right" }
