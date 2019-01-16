@@ -43,7 +43,7 @@ nav.nav data-theme=theme
               a.menu-aim__item-name href=(nav_item.has_key?("section_link_uri") ? nav_item.section_link_uri : nil )
                 span = nav_item.title_short 
                 / .menu-aim__item-summary.hide-for-large = nav_item.summary
-              .menu-aim__item-submenu.z-20
+              .menu-aim__item-submenu.z-20 id="subnav-#{nav_item.section.parameterize}"
                 .row.align-center
                   .columns.small-12.large-4.menu-aim__submenu-pane.show-for-large.show-for-large
                     h3.headline-4 = nav_item.title
@@ -51,7 +51,7 @@ nav.nav data-theme=theme
                     - if nav_item.has_key?("section_link_label")
                       = current_link_to nav_item.section_link_label, nav_item.section_link_uri, title: nav_item.section_link_label, class: "link-arrow link-arrow--yellow show-for-large"
                   - if nav_item.has_key?("child_data")
-                    .columns.small-12.large-4.menu-aim__submenu-pane id="subnav-#{nav_item.section.parameterize}"
+                    .columns.small-12.large-4.menu-aim__submenu-pane
                       h4.read-more.text-light.show-for-large = (is_product == true ? "Product Family" : nil)
                       ul.menu.menu-nav-list
                         - nav_item.child_data.each do | child |
