@@ -11,26 +11,46 @@
             nav_main: true
             has_divider: true
         -
-            title: "Compliant Kubernetes Service"
-            title_short: "Datica CKS"
             url: "/compliant-kubernetes-service/"
-            desc: "Datica is a complete, enterprise cloud-native solution for regulated industries."
-            icon: "cks-logo-w"
+            desc: Datica is a complete, enterprise cloud-native solution for regulated industries.
+            icon: cks-logo-w
+            title: Compliant Kubernetes Service
             nav_main: true
+            title_short: Datica CKS
         -
-            title: "Compliant Platform-as-a-Service"
-            title_short: "Datica CPaaS"
             url: "/compliant-platform-as-a-service/"
-            desc: "The Compliant Cloud Platform Perfectly Designed for Early-Stage Applications."
-            icon: "cpaas-logo-w"
+            desc: The Compliant Cloud Platform Perfectly Designed for Early-Stage Applications.
+            icon: cpaas-logo-w
+            title: Compliant Platform-as-a-Service
             nav_main: true
+            title_short: Datica CPaaS
         -
-            title: "Cloud Compliance Management System"
-            title_short: "Datica CCMS"
             url: "/cloud-compliance-management-system/"
-            desc: "The first-ever tool to guarantee compliance assurance of managed cloud-native services."
-            icon: "ccms-logo-w"
+            desc: The first-ever tool to guarantee compliance assurance of managed cloud-native
+             services.
+            icon: ccms-logo-w
+            title: Cloud Compliance Management System
             nav_main: true
+            title_short: Datica CCMS
+
+        #-
+        #    title: "Compliant Kubernetes Service"
+        #    title_short: "Datica CKS"
+        #    url: "/compliant-kubernetes-service/"
+        #    desc: "Datica is a complete, enterprise cloud-native solution for regulated industries."
+        #    nav_main: true
+        #-
+        #    title: "Compliant Platform-as-a-Service"
+        #    title_short: "Datica CPaaS"
+        #    url: "/compliant-platform-as-a-service/"
+        #    desc: "The Compliant Cloud Platform Perfectly Designed for Early-Stage Applications."
+        #    nav_main: true
+        #-
+        #    title: "Cloud Compliance Management System"
+        #    title_short: "Datica CCMS"
+        #    url: "/cloud-compliance-management-system/"
+        #    desc: "The first-ever tool to guarantee compliance assurance of managed cloud-native services."
+        #    nav_main: true
         # -
         #     title: "Public Roadmap"
         #     url: "/roadmap"
@@ -44,11 +64,11 @@
         #     url: "/services/"
         #     desc: "Professional services offered by Datica"
         #     nav_main: true
-        -
-            title: "Pricing"
-            url: "/pricing/"
-            desc: "Talk to us for Datica pricing."
-            nav_main: true
+        # -
+        #     title: "Pricing"
+        #     url: "/pricing/"
+        #     desc: "Talk to us for Datica pricing."
+        #     nav_main: true
 -
     title: "Integration"
     title_short: "Integration"
@@ -56,26 +76,37 @@
     desc: 
     nav_main: true
     children:
-        -
-            title: "EHR Integration"
+        - 
             url: "/ehr-integration/"
-            desc: "Datica handles the risk and complexity of EHR integrations, so you can focus on building solutions."
-            has_divider: true
-        -
-            title: "Compliant Managed Integration"
-            title_short: "Datica CMI"
-            url: "/compliant-managed-integration/"
-            desc: "The complete toolset to handle compliant, scalable, secure data exchange with any EHR or clinical system."
-            icon: "cmi-logo-w"
+            desc: Get help with integration.
+            icon: cmi-logo-w
+            title: EHR Integration
             nav_main: true
-        -
-            title: "Pricing"
-            url: "/pricing/"
-            desc: "Talk to us for Datica pricing."
-            nav_main: false
+            title_short: Integration
+            has_divider: true
+        - 
+            url: "/compliant-managed-integration/"
+            desc: The complete toolset to handle compliant, scalable, secure data exchange
+             with any EHR or clinical system.
+            icon: cmi-logo-w
+            title: Compliant Managed Integration
+            nav_main: true
+            title_short: Datica CMI
+        - 
+            url: "/compliant-managed-integration#services"
+            desc: Expert guidance and project services.
+            icon: icon-consulting-compass
+            title: Integration Services + CMI
+            nav_main: true
+            title_short: Integration Services
+                # -
+        #     title: "Pricing"
+        #     url: "/pricing/"
+        #     desc: "Talk to us for Datica pricing."
+        #     nav_main: false
 
 -
-    title: "Resources"
+    title: "Learn"
     url:
     desc:
     nav_main: true
@@ -85,6 +116,10 @@
             url: "/academy/"
             desc: "The definitive resource for those looking to learn about compliance and interoperability"
             has_divider: true
+        -
+            title: "Datica Blog"
+            url: "/blog/"
+            desc: "News and insights from the Datica team."
         -
             title: "Digital Health Success Framework"
             url: "/dhsf/"
@@ -98,18 +133,14 @@
             url: "/discover/"
             desc: "A curated collection of compliance topics from Datica"
         -
-            title: "Webinars"
-            url: "/webinars/"
-            desc: "Datica webinars covering compliance topics in depth."
-        -
             title: "Open Source"
             url: "/open-source/"
             desc: "We believe in the importance of open source."
             has_divider: true
         -
-            title: "Datica Blog"
-            url: "/blog/"
-            desc: "News and insights from the Datica team."
+            title: "Webinars"
+            url: "/webinars/"
+            desc: "Datica webinars covering compliance topics in depth."
 -
     title: "Company"
     url:
