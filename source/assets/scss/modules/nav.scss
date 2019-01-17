@@ -6,22 +6,22 @@
 // Main header - the anchor to all of Seldon
 $duration: $timing-default * 1.5; //settings.scss:281
 
-@include keyframes( fadeIn ) {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@include keyframes( fadeOut ) {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
+// @include keyframes( fadeIn ) {
+//     0% {
+//         opacity: 0;
+//     }
+//     100% {
+//         opacity: 1;
+//     }
+// }
+// @include keyframes( fadeOut ) {
+//     0% {
+//         opacity: 1;
+//     }
+//     100% {
+//         opacity: 0;
+//     }
+// }
 .no-js { // preventing FOUC
     @include breakpoint (small only) {
         .top-bar {
@@ -50,6 +50,18 @@ $duration: $timing-default * 1.5; //settings.scss:281
             }
             // &[aria-current="page"] {
             // }
+            color: white(0.6);
+            padding: 1rem;
+            transition-property: background-color, color;
+            transition-duration: $timing-default;
+            &:hover {
+                color: white;
+                background-color: transparentize($gray-5, 0.5);
+            }
+            &[aria-current="page"] {
+                color: white;
+                border-bottom: 3px solid $color_yellow-glow;
+            }
         }
     }
 }
@@ -105,7 +117,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
     color: $gray-1;
 }
 .nav {
-    .menu-aim .menu.menu-aim__container {
+    .nav__container {
         flex-wrap: nowrap;
         flex-direction: column;
         @include breakpoint (large) {
@@ -117,17 +129,17 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
     // theming
-    .menu-aim {
-        background-color: white;
-    }
-    .menu-aim__item-name {
+    // .nav {
+    //     background-color: white;
+    // }
+    .nav__item-name {
         color: $gray-1;
     }
     &[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
-        .menu-aim { // change bg container 
+        .nav { // change bg container 
             background-color: $gray-2;
         }
-        .nav-logo--link, .menu-aim__item-name {
+        .nav-logo--link, .nav__item-name {
             color: white(0.8);
             // font-weight: $font-weight-regular;
             transition-property: background-color, color;
@@ -136,31 +148,14 @@ $duration: $timing-default * 1.5; //settings.scss:281
                 color: $color_yellow-glow;
             }
         }
-        .menu {
-            &-secondary { // this is now preferred solution for secondary stacked navs
-                li a {
-                    color: white(0.6);
-                    padding: 1rem;
-                    transition-property: background-color, color;
-                    transition-duration: $timing-default;
-                    &:hover {
-                        color: white;
-                        background-color: transparentize($gray-5, 0.5);
-                    }
-                    &[aria-current="page"] {
-                        color: white;
-                        border-bottom: 3px solid $color_yellow-glow;
-                    }
-                }
-            }
-        }
+
         // // fix pip color 
         // .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
         //     border-color: white(0.3);
         // }
     }
     &[data-bar-theme="none"] { // combine with data-theme above for no bg color
-        .menu-aim {
+        .nav {
             background-color: transparent;
         }
     }
@@ -185,26 +180,26 @@ $duration: $timing-default * 1.5; //settings.scss:281
     width: 5.7rem;
 }
 
-.product { // a .media-object with an icon, a little adjustment needed
+.nav__product { // a .media-object with an icon, a little adjustment needed
 // color: white;
-    .product-title {
+    .nav__product-title {
         font-weight: $font-weight-mid;
         margin-bottom: 0.3em;
         font-size: 1rem;
     }
-    .product-description { // pair with text-small
+    .nav__product-description { // pair with text-small
         line-height: 1.2;
         font-weight: $font-weight-light;
     }
 }
-// mobile menu toggle
-.mobile-toggle { // container, mobile only
-    position: relative;
-    display: block;
-    padding: 1rem;
-}
 
 @include breakpoint (medium-large down) {
+    // mobile menu toggle
+    .mobile-toggle { // container, mobile only
+        position: relative;
+        display: block;
+        padding: 1rem;
+    }
     .mobile-toggle-target {
         transition: color $timing-default linear, border-color $timing-default linear;
         padding: 0;
@@ -214,32 +209,32 @@ $duration: $timing-default * 1.5; //settings.scss:281
             display: block;
         }
     }
-    li.menu-aim__section {
+    li.nav__section {
         margin-bottom: 2rem;
     }
-    .menu-aim__submenu-pane {
+    .nav__submenu-pane {
         padding: 0; // applied to cols in desktop pane, replaces pad--lg
     }
-    .menu-aim__logo {
+    .nav__logo {
         margin-bottom: 1.5rem;
     }
-    .menu-aim__contact {
+    .nav__contact {
         padding: 1rem;
     }
-    .menu-aim__item a:not(.button) {
+    .nav__item a:not(.button) {
         max-width: 30em;
     }
-    .menu-aim__item-name {
+    .nav__item-name {
         // font-weight: $font-weight-bold;
         font-size: 1.5rem;
     }
-    .menu-aim__item-summary {
+    .nav__item-summary {
         margin-top: 0.5rem;
         font-weight: $font-weight-regular;
         font-size: 0.9rem;
         line-height: 1.3;
     }
-    .product { // a .media-object with an icon, a little adjustment needed
+    .nav__product { // a .media-object with an icon, a little adjustment needed
         color: white;
         .icon-size--medium { // make it smaller
             width:  2rem;
@@ -248,9 +243,9 @@ $duration: $timing-default * 1.5; //settings.scss:281
         &.media-object {
             margin-bottom: 0;
         }
-        // .product-title {
+        // .nav__product-title {
         // }
-        // .product-description { // pair with text-small
+        // .nav__product-description { // pair with text-small
         // }
     }
     hr.menu-divider { 
@@ -329,7 +324,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
                     color: white;
                 }
             }
-            .product {
+            .nav__product {
                 color: white;
                 svg path {
                     fill: white;
@@ -352,7 +347,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
                     color: black;
                 }
             }
-            .product {
+            .nav__product {
                 color: black;
                 svg path {
                     fill: black;
@@ -363,20 +358,20 @@ $duration: $timing-default * 1.5; //settings.scss:281
 }
 
 
-// .menu-aim__item-submenu { // hide below large
+// .nav__item-submenu { // hide below large
 //     display: none; // overriden below for desktop
 // }
 // ======== DESKTOP ONLY STYLES / megamenu ==========
 @include breakpoint (large) {
-    .menu-aim__item a {
+    .nav__item a {
         padding: 1.5rem;
     }
-    // .menu-aim__item-name {
+    // .nav__item-name {
     //     font-weight: $font-weight-bold;
     //     font-size: 1.1rem;
     // }
-    //.menu-aim a.menu-aim__item:hover,
-    .menu-aim__item--active .menu-aim__item-name {
+    //.nav a.nav__item:hover,
+    .nav__item--active .nav__item-name {
         color: $color_blue;
         // background: blue;
         background: {
@@ -386,14 +381,14 @@ $duration: $timing-default * 1.5; //settings.scss:281
             size: 16px;
         }
     }
-    .menu-aim .no-child {
+    .nav .no-child {
         background: none;
     }
-    // .menu-aim--delaying .menu-aim__item-name:hover {
+    // .nav--delaying .nav__item-name:hover {
     //     color: blue;
     //     background: none;
     // }
-    .menu-aim__item-submenu {
+    .nav__item-submenu {
         background-color: $gray-3;
         color: white;
         display: block;
@@ -427,27 +422,27 @@ $duration: $timing-default * 1.5; //settings.scss:281
                 color: white;
             }
         }
-        .product {
+        .nav__product {
             color: white;
             svg path {
                 fill: white;
             }
         }
     }
-    .menu-aim__item--active .menu-aim__item-submenu {
+    .nav__item--active .nav__item-submenu {
         visibility: visible;
         transition-delay: 0ms;
         // @include animation (fadeIn 0.3s ease);
         opacity: 1;
     }
-    .menu-aim__submenu-pane {
+    .nav__submenu-pane {
         padding: calc(1rem + 1.2vw);
     }
     hr.menu-divider { // used to separate child menu items 
         margin: 0.5rem;
         border-bottom: 1px solid $gray-5;
     }
-    .menu-aim__contact {
+    .nav__contact {
         margin-left: 1rem;
     }
 } // end desktop stuff
