@@ -2,26 +2,16 @@
 @import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
 // @import '../mixins/colors';
 @import '../mixins/functions';
-
-// Main header - the anchor to all of Seldon
+// Primary navigation
 $duration: $timing-default * 1.5; //settings.scss:281
-
-// @include keyframes( fadeIn ) {
-//     0% {
-//         opacity: 0;
-//     }
-//     100% {
-//         opacity: 1;
-//     }
-// }
-// @include keyframes( fadeOut ) {
-//     0% {
-//         opacity: 1;
-//     }
-//     100% {
-//         opacity: 0;
-//     }
-// }
+@mixin link-light {
+  border: none;
+  color: $color_yellow-glow;
+  &:hover {
+    color: white;
+    border: none;
+  }
+}
 .no-js { // preventing FOUC
     @include breakpoint (small only) {
         .top-bar {
@@ -50,22 +40,9 @@ $duration: $timing-default * 1.5; //settings.scss:281
             }
             // &[aria-current="page"] {
             // }
-            color: white(0.6);
-            padding: 1rem;
-            transition-property: background-color, color;
-            transition-duration: $timing-default;
-            &:hover {
-                color: white;
-                background-color: transparentize($gray-5, 0.5);
-            }
-            &[aria-current="page"] {
-                color: white;
-                border-bottom: 3px solid $color_yellow-glow;
-            }
         }
     }
 }
-
 .sticky {
     $active-border-height: 4px;
     // .is-[state] classes for control over its appearance and exit if needed. Desktop only
@@ -148,7 +125,24 @@ $duration: $timing-default * 1.5; //settings.scss:281
                 color: $color_yellow-glow;
             }
         }
-
+        .menu {
+            &-secondary { // this is now preferred solution for secondary stacked navs
+                li a {
+                    color: white(0.6);
+                    padding: 1rem;
+                    transition-property: background-color, color;
+                    transition-duration: $timing-default;
+                    &:hover {
+                        color: white;
+                        background-color: transparentize($gray-5, 0.5);
+                    }
+                    &[aria-current="page"] {
+                        color: white;
+                        border-bottom: 3px solid $color_yellow-glow;
+                    }
+                }
+            }
+        }
         // // fix pip color 
         // .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
         //     border-color: white(0.3);
@@ -167,14 +161,6 @@ $duration: $timing-default * 1.5; //settings.scss:281
 // =================== new nav ==============
 // generic stuff that applies to both navs
 
-@mixin link-light {
-  border: none;
-  color: $color_yellow-glow;
-  &:hover {
-    color: white;
-    border: none;
-  }
-}
 .nav-logo { // pairing with svg use symbol, requires express dimensions. Aspect ratio is maintained, but spacing can be weird.
     height: 2.3rem;
     width: 5.7rem;
@@ -251,163 +237,199 @@ $duration: $timing-default * 1.5; //settings.scss:281
     hr.menu-divider { 
         display: none;
     }
-}
-
-// small screen nav
-// .nav-items {
-//     top: 4rem;
-//     display: none;
-//     &.is-active {
-//         display: block;
-//     }
-// }
-#nav-toggle { // toggle button
-    background: transparent;
-    position: absolute;
-    right:  7px;
-    top:    31px;
-    height: 50px;
-    width:  50px;
-    cursor: pointer;
-    transform: translate(0%, -50%);
-    & span,
-    & span:before,
-    & span:after {
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
-        border-radius: 1px;
-        height: 2px;
-        width: 35px;
-        // background: white;
+    #nav-toggle { // toggle button
+        background: transparent;
         position: absolute;
-        left: 0;
-        top: 50%;
-        display: block;
-        content: "";
-    }
-    & span:before {
-      top: -10px;
-    }
-    & span:after {
-      top: 10px;
-    }
-    // &.is-toggled span {
-    //     background-color: transparent;
-    // }
-
-    &.is-toggled span:before,
-    &.is-toggled span:after {
-        top: 0;
-    }
-
-    &.is-toggled span:before {
-        transform: rotate(135deg);
-    }
-
-    &.is-toggled span:after {
-        transform: rotate(-135deg);
-    }
-}
-.nav { // theme the mobile button
-    &[data-theme="light"] { // content is light, bg is dark
-        #nav-toggle {
-            & span, & span:before, & span:after {
-                background: white;
-            }
-            &.is-toggled span {
-                background-color: transparent;
-            }
+        right:  7px;
+        top:    31px;
+        height: 50px;
+        width:  50px;
+        cursor: pointer;
+        transform: translate(0%, -50%);
+        & span,
+        & span:before,
+        & span:after {
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 1px;
+            height: 2px;
+            width: 35px;
+            // background: white;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            display: block;
+            content: "";
         }
-        @include breakpoint (medium-large down) {
-            .menu-nav-list {
-                li a {
+        & span:before {
+          top: -10px;
+        }
+        & span:after {
+          top: 10px;
+        }
+        // &.is-toggled span {
+        //     background-color: transparent;
+        // }
+        &.is-toggled span:before,
+        &.is-toggled span:after {
+            top: 0;
+        }
+        &.is-toggled span:before {
+            transform: rotate(135deg);
+        }
+        &.is-toggled span:after {
+            transform: rotate(-135deg);
+        }
+    }
+    .nav { // theme the mobile button
+        &[data-theme="light"] { // content is light, bg is dark
+            #nav-toggle {
+                & span, & span:before, & span:after {
+                    background: white;
+                }
+                &.is-toggled span {
+                    background-color: transparent;
+                }
+            }
+            @include breakpoint (medium-large down) {
+                .menu-nav-list {
+                    li a {
+                        color: white;
+                    }
+                }
+                .nav__product {
                     color: white;
-                }
-            }
-            .nav__product {
-                color: white;
-                svg path {
-                    fill: white;
+                    svg path {
+                        fill: white;
+                    }
                 }
             }
         }
-    }
-    &[data-theme="dark"] { // content is dark, bg is light
-        #nav-toggle {
-            & span, & span:before, & span:after {
-                background: black;
+        &[data-theme="dark"] { // content is dark, bg is light
+            #nav-toggle {
+                & span, & span:before, & span:after {
+                    background: black;
+                }
+                &.is-toggled span {
+                    background-color: transparent;
+                }
             }
-            &.is-toggled span {
-                background-color: transparent;
-            }
-        }
-        @include breakpoint (medium-large down) {
-            .menu-nav-list {
-                li a {
+            @include breakpoint (medium-large down) {
+                .menu-nav-list {
+                    li a {
+                        color: black;
+                    }
+                }
+                .nav__product {
                     color: black;
-                }
-            }
-            .nav__product {
-                color: black;
-                svg path {
-                    fill: black;
+                    svg path {
+                        fill: black;
+                    }
                 }
             }
         }
     }
 }
 
-
-// .nav__item-submenu { // hide below large
-//     display: none; // overriden below for desktop
-// }
 // ======== DESKTOP ONLY STYLES / megamenu ==========
 @include breakpoint (large) {
-    .nav__item a {
-        padding: 1.5rem;
-    }
-    // .nav__item-name {
-    //     font-weight: $font-weight-bold;
-    //     font-size: 1.1rem;
+    // .nav__container {
+    //     &:hover {
+    //         & > .nav__item > a:not(.button) { // set "parent" items to the not-selected state
+    //             // color: red;
+    //         }
+    //     }
     // }
-    //.nav a.nav__item:hover,
-    .nav__item--active .nav__item-name {
-        color: $color_blue;
-        // background: blue;
-        background: {
-            image: url("data:image/svg+xml;charset=utf8,%3Csvg width='25' height='17' viewBox='0 0 25 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 0L25 17H0L12.5 0z' fill='%233B4145'/%3E%3C/svg%3E");
-            repeat: no-repeat;
-            position: center bottom;
-            size: 16px;
+    .nav { // theme desktop stuff
+        &[data-theme="light"] { // content is light, bg is dark
+            li.nav__item {
+                &:hover {
+                    & > a:not(.button) { // selected state of button/pane
+                        color: $color_yellow-glow;
+                    }
+                }
+            }
+        }
+        &[data-theme="dark"] { // content is dark, bg is light
+            li.nav__item {
+                &:hover {
+                    & > a:not(.button) { // selected state of button/pane
+                        color: $color_blue;
+                    }
+                }
+            }
         }
     }
-    .nav .no-child {
-        background: none;
+    li.nav__item {
+        & > a {
+            padding: 1.5rem;
+        }
+        & > a:not(.button) {// default state of button/pane
+            color: black;
+            transition: background-position .3s ease-out;
+            background-position: center 80px;
+        }
+        &:hover {
+            & > a:not(.button) { // selected state of button/pane
+                // color: blue;
+                background: {
+                    image: url("data:image/svg+xml;charset=utf8,%3Csvg width='25' height='17' viewBox='0 0 25 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 0L25 17H0L12.5 0z' fill='%233B4145'/%3E%3C/svg%3E");
+                    repeat: no-repeat;
+                    position: center bottom;
+                    size: 16px;
+                }
+            }
+            & > .nav-submenu { // show (transition) in pane
+                visibility: visible;
+                opacity: 1;
+                .menu-nav-list li a {
+                    opacity: 1;
+                    transform: translate3D(0, 0, 0);
+                }
+                .fade-1 {
+                    opacity: 1;
+                    transform: translate3D(0, 0, 0);
+                }
+            }
+        }
     }
-    // .nav--delaying .nav__item-name:hover {
-    //     color: blue;
-    //     background: none;
+    //============== old
+    // .nav__item a {
+    //     padding: 1.5rem;
     // }
-    .nav__item-submenu {
+    // .nav__item--active .nav__item-name {
+    //     color: $color_blue;
+    //     // background: blue;
+    //     background: {
+    //         image: url("data:image/svg+xml;charset=utf8,%3Csvg width='25' height='17' viewBox='0 0 25 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 0L25 17H0L12.5 0z' fill='%233B4145'/%3E%3C/svg%3E");
+    //         repeat: no-repeat;
+    //         position: center bottom;
+    //         size: 16px;
+    //     }
+    // }
+
+    .nav-submenu {
         background-color: $gray-3;
         color: white;
         display: block;
-        // transition: visibility 0s, opacity 0.2s linear;
         visibility: hidden;
+        transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
         opacity: 0;
-        // transition: opacity 200ms;
-        transition-delay: .2s;
         position: absolute;
-        top: 62px;
+        top: 63px;
         left: 0;
         width: 100%;
+        border-radius: 0;
         .button {
             display: inline-block;
             width: auto;
         }
         a:not(.button):not(.preview) {
             text-align: initial;
-            padding: initial;
+            // padding: initial;
+        }
+        .link-arrow { // specific style used in link on left of the submenu
+            padding-left: 0;
         }
         .preview { // webinar or custom cards
             border-radius: 0;
@@ -429,12 +451,11 @@ $duration: $timing-default * 1.5; //settings.scss:281
             }
         }
     }
-    .nav__item--active .nav__item-submenu {
-        visibility: visible;
-        transition-delay: 0ms;
-        // @include animation (fadeIn 0.3s ease);
-        opacity: 1;
-    }
+    // .nav__item--active .nav-submenu {
+    //     visibility: visible;
+    //     transition-delay: 0ms;
+    //     opacity: 1;
+    // }
     .nav__submenu-pane {
         padding: calc(1rem + 1.2vw);
     }
@@ -445,8 +466,10 @@ $duration: $timing-default * 1.5; //settings.scss:281
     .nav__contact {
         margin-left: 1rem;
     }
+
+
 } // end desktop stuff
-.menu-nav-list {
+ul.menu.menu-nav-list {
     // flex-wrap: wrap;
     flex-direction: column;
     li a {
@@ -463,10 +486,26 @@ $duration: $timing-default * 1.5; //settings.scss:281
             &:hover {
                 background-color: black(0.6);
             }
-        }
-        li a {
-            @include link-light;
-            padding: 0.5rem !important;
+            @for $i from 1 through 8 { // add a small bit of delay for n children. Estimating 8
+                $t: 0.05s * $i + 0.2s;
+                &:nth-child(#{$i}) a { 
+                    transition-delay: $t;
+                }
+            }
+            & a {
+                transition: opacity 0.2s, transform 0.2s ease;
+                transform: translate3D(0, 3px, 0);
+                opacity: 0;
+                // transition-delay: 0.3s;
+                @include link-light;
+                padding: 0.5rem;
+            }
         }
     }
+}
+.fade-1 { // might need a coherent timing function, so delays are coordinated
+    transition: opacity 0.2s, transform 0.2s ease;
+    transform: translate3D(-4px, 0, 0);
+    transition-delay: 0.8s;
+    opacity: 0;
 }

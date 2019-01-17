@@ -9,13 +9,13 @@ $("document").ready(function(){
     //     menuAim(element, options);
     // }
     // === nav stuff ===
-    const element = document.querySelector('.menu-aim')
-    const options = {
-        menuItemSelector: '.menu-aim__item',
-        menuItemActiveClassName: 'menu-aim__item--active',
-        delayingClassName: 'menu-aim--delaying'
-    }
-    menuAim(element, options);
+    // const element = document.querySelector('.menu-aim')
+    // const options = {
+    //     menuItemSelector: '.menu-aim__item',
+    //     menuItemActiveClassName: 'menu-aim__item--active',
+    //     delayingClassName: 'menu-aim--delaying'
+    // }
+    // menuAim(element, options);
     // mobile toggle, vanilla. Trying to do without ZF more
     (function() {
     var toggler = document.querySelector('.toggle-me');

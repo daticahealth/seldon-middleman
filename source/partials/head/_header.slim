@@ -28,11 +28,10 @@ nav.nav data-theme=theme
       span
       span
   ul.menu.nav__container.mobile-toggle-target#nav-target
-    li.nav__item.nav__logo.show-for-large
+    li.nav__logo.show-for-large
       a.nav-logo--link href="/" title="Datica Home" style="padding: 0 1rem;"
         svg id="datica-logo-desktop" class="nav-logo"
           use.symbol-icon xlink:href="#datica-logo-horiz"
-      .nav-submenu
     - nav_collection.each do | id, nav_section |
       /p.lead.hide-for-medium = (nav_section.has_key?("subhead") ? nav_section.subhead : nil)
       - nav_section["related_entries"].each do | nav_item |
