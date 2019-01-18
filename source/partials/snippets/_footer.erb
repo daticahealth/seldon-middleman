@@ -19,25 +19,22 @@
         <div class="columns">
             <ul class="menu align-middle group">
                 <li>
-                    <a class="nav-logo--link" href="/" title="Datica Home"><svg class="nav-logo" id=datica-logo-footer><use class=symbol-icon xlink:href="#datica-logo-horiz"></use></svg></a>
+                    <a class="nav-logo--link" style="padding-left: 0;" href="/" title="Datica Home"><svg class="nav-logo" id=datica-logo-footer><use class=symbol-icon xlink:href="#datica-logo-horiz"></use></svg></a>
                 </li>
                 <% data.footer_misc.each do |m| %>
                     <li>
                         <%= current_link_to m.title, m.url, title: m.desc, class: "link--dark faded" %>
                 <% end %>
             </ul>
-            <ul class="menu align-middle">
-                <li class="pad--sm"><img data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/6438fbb76abda83deac6b9c810745891/hitrust-logo.svg?fm=png&w=240" class="logo-size--large lozad" alt="HITRUST Certified" />
-                </li>
-                <li class="pad--sm"><img data-src="https://images.ctfassets.net/189dvqdsjh46/1db5oL4HFeKkSGGcCmQACW/22310ce8955be0da9b65addc7a46dbd9/AICPA_SOC_2_badge.svg?fm=png&w=240" class="logo-size--large lozad" alt="AICPA/SOC2 badge" />
-                </li>
-                <li class="pad--sm">
-                    <img data-src="https://images.ctfassets.net/189dvqdsjh46/2VnE1VKgSI0CigIaimYymm/8661955dacafd96c3c565bb5d1503dc8/coalfire-badge.png" class="lozad logo-size--large" />
+            <div class="logo-cloud nopad">
+                <img class="logo-cloud--item logo-size--medium lozad" data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/016f2d364265c04e12c7db4eae95f94c/hitrust-logo.svg" alt="HITRUST Certified" width="83" height="48" />
+                <img class="logo-cloud--item logo-size--medium lozad" data-src="https://images.ctfassets.net/189dvqdsjh46/1db5oL4HFeKkSGGcCmQACW/4b650496f1136e1d76f0d88547f8e428/AICPA_SOC_2_badge.svg" alt="AICPA/SOC2 badge" width="58" height="58" />
+                <img class="logo-cloud--item logo-size--medium lozad" data-src="https://images.ctfassets.net/189dvqdsjh46/2VnE1VKgSI0CigIaimYymm/8661955dacafd96c3c565bb5d1503dc8/coalfire-badge.png"  />
                     <%# <script defer type='text/javascript' src='https://www.coalfire.com/CMSPages/Coalfire/CertificateSealJS.aspx?cc=248fe0c0-6343-4785-9cb0-0602a6a82a6c'></script> %>
-                </li>
-                <li class="pad--sm"><img data-src="https://images.ctfassets.net/189dvqdsjh46/2qNhrxRsmEGqUOuCq2qWgU/f67da4afefb727a699a679bdcac9d630/cncf-logo-horizontal.svg?fm=png&w=240" class="logo-size--large lozad" alt="Cloud native computing foundation" /></li>
-            </ul>
+                <img class="logo-cloud--item logo-size--medium lozad" data-src="https://images.ctfassets.net/189dvqdsjh46/2qNhrxRsmEGqUOuCq2qWgU/7dc0a16f892c1950cb743bb3f54f1ad6/cncf-logo-horizontal-alt.svg" alt="Cloud native computing foundation" width="157" height="48" />
+            </div>
         </div>
     </div>
+
 </footer>
 <div class="strip-bright"></div>

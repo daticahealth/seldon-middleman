@@ -16,7 +16,7 @@ ruby:
   # sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
   # sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
 
-= partial "assets/icons/inlined/datica-logo-horiz-symbol.svg"
+= partial "assets/icons/inlined/datica-branding-logos-symbol.svg"
 = partial "partials/snippets/alert-ribbon"
 - nav_collection = data.site.collections.to_a.select { |id, entry | (id == "HkskHrVGykqSqOKGiqkaW") }
 nav.nav data-theme=theme
@@ -31,7 +31,7 @@ nav.nav data-theme=theme
     li.nav__logo.show-for-large
       a.nav-logo--link href="/" title="Datica Home" style="padding: 0 1rem;"
         svg id="datica-logo-desktop" class="nav-logo"
-          use.symbol-icon xlink:href="#datica-logo-horiz"
+          use.symbol-icon xlink:href="#datica-logo-horiz" href="#datica-logo-horiz"
     - nav_collection.each do | id, nav_section |
       /p.lead.hide-for-medium = (nav_section.has_key?("subhead") ? nav_section.subhead : nil)
       - nav_section["related_entries"].each do | nav_item |
@@ -58,7 +58,9 @@ nav.nav data-theme=theme
                             a href=child.url title="Explore #{child.title}"
                               .media-object.nav__product
                                 .media-object-section
-                                  = inline_svg(child.icon, class: "icon-size--medium")
+                                  svg id="product-#{child.icon}" class="icon-size--medium"
+                                    use.symbol-icon xlink:href="##{child.icon}" href="##{child.icon}"
+                                  /= inline_svg(child.icon, class: "icon-size--medium")
                                 .media-object-section.media-object--info.main-section.align-self-middle
                                   h4.nav__product-title = child.title
                                   .nav__product-description.text-small.show-for-large = child.desc
