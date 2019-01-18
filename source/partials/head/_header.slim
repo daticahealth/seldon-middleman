@@ -90,7 +90,7 @@ nav.nav data-theme=theme
                     aside.columns.nav__submenu-pane.small-12.large-4.show-for-large
                       - if nav_item.section_promo.has_key?("cta_image")
                         a href=cta_entry.cta_url title=cta_entry.cta_title
-                          img.lozad.thumbnail alt=cta_entry.cta_title data-src="#{cta_entry.cta_image.url}?w=600" src="#{cta_entry.cta_image.url}?w=600=jpg=5" /
+                          img.lozad.thumbnail alt=cta_entry.cta_title data-src="#{cta_entry.cta_image.url}?w=600" src="#{cta_entry.cta_image.url}?w=600&q=5" /
                       - else
                         h4.headline-5.nav--promo = cta_entry.cta_title
                         p.text-small = cta_entry.cta_desc
