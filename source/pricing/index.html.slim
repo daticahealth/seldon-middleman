@@ -9,6 +9,15 @@ customCSS: "pricing"
 layout: "basic"
 priority: "1.0"
 ---
+scss:
+  .pricing-content {
+    .headline-5 {
+      margin-bottom: 0.3em;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
 .strip-bright.strip-small
 .bg-gray-2.container-image-fill.lozad data-background-image=bg_product_dark
   = partial "partials/head/header", :locals => { :style => "light" }
@@ -46,7 +55,7 @@ priority: "1.0"
                   | Product Subscription (Required)
                 p CMI product currently available on AWS or Azure. We deploy it into Datica's existing cloud account. All infrastructure costs, like RAM and storage, are absorbed by Datica. We then maintain all DevOps, security, compliance, and networking duties related to the integration stack itself and all live integrations it powers.
                 h4.headline-5
-                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--gray-7")
+                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--gray-12")
                   | Service Subscription (Optional)
                 p Leverage Datica's expertise to help instantiate any new integration sites. Hundreds of live sites have been integrated over the last four years via this service.
               .group
