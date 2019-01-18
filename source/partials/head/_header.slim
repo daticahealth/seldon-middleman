@@ -43,13 +43,13 @@ nav.nav data-theme=theme
               / .nav__item-summary.hide-for-large = nav_item.summary
             .nav-submenu.z-20 id="subnav-#{nav_item.section.parameterize}"
               .row.align-center
-                .columns.small-12.large-4.nav__submenu-pane.show-for-large.show-for-large
+                .columns.small-12.large-3.nav__submenu-pane.show-for-large
                   h3.headline-4 = nav_item.title
                   p.text-small = nav_item.summary
                   - if nav_item.has_key?("section_link_label")
                     = current_link_to nav_item.section_link_label, nav_item.section_link_uri, title: nav_item.section_link_label, class: "link-arrow link-arrow--yellow fade-1 show-for-large"
                 - if nav_item.has_key?("child_data")
-                  .columns.small-12.large-4.nav__submenu-pane
+                  .columns.small-12.large-4.nav__submenu-pane class=(is_product == true ? nil : "shrink-for-large")
                     h4.read-more.text-light.show-for-large = (is_product == true ? "Product Family" : nil)
                     ul.menu.menu-nav-list
                       - nav_item.child_data.each do | child |
@@ -83,10 +83,20 @@ nav.nav data-theme=theme
                   - promo_url = "/#{path}/#{nav_item.section_promo.slug}"
                   - case nav_item.section_promo._meta.content_type_id
                   - when "webinars"
-                    .columns.small-12.large-4.bg-gray-2.nopad.show-for-large
+                    aside.columns.nav__submenu-pane.small-12.large-4.bg-gray-2.show-for-large
                       = partial "partials/cards/webinar-poster", :locals => { :entry => data.site.webinars[nav_item.section_promo.id] }
+                  - when "cta"
+                    - cta_entry = data.site.cta[nav_item.section_promo.id]
+                    aside.columns.nav__submenu-pane.small-12.large-4.show-for-large
+                      - if nav_item.section_promo.has_key?("cta_image")
+                        a href=cta_entry.cta_url title=cta_entry.cta_title
+                          img.lozad.thumbnail alt=cta_entry.cta_title data-src="#{cta_entry.cta_image.url}?w=600" src="#{cta_entry.cta_image.url}?w=600=jpg=5" /
+                      - else
+                        h4.headline-5.nav--promo = cta_entry.cta_title
+                        p.text-small = cta_entry.cta_desc
+                        = partial "partials/snippets/button", :locals => { :label => cta_entry.cta_label, :url => cta_entry.cta_url, :button_classes => "button small success", :data_track_group => "nav", :item_id => "nav-promo-#{path}", :icon => "icon-angle-right", :icon_align => "right" }
                   - else
-                    .columns.small-12.large-4.bg-gray-2.nav__submenu-pane.show-for-large
+                    aside.columns.small-12.large-4.bg-gray-2.nav__submenu-pane.show-for-large
                       h4.headline-5.nav--promo = nav_item.section_promo.title
                       p.text-small = nav_item.section_promo.summary
                       = partial "partials/snippets/button", :locals => { :label => "Learn More", :url => promo_url, :button_classes => "button small success", :data_track_group => "nav", :item_id => "nav-promo-#{path}", :icon => "icon-angle-right", :icon_align => "right" }

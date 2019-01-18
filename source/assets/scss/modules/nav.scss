@@ -12,6 +12,14 @@ $duration: $timing-default * 1.5; //settings.scss:281
     border: none;
   }
 }
+@mixin link-white {
+  border: none;
+  color: white;
+  &:hover {
+    color: $color_yellow-glow;
+    border: none;
+  }
+}
 .no-js { // preventing FOUC
     @include breakpoint (small only) {
         .top-bar {
@@ -177,6 +185,9 @@ $duration: $timing-default * 1.5; //settings.scss:281
         line-height: 1.2;
         font-weight: $font-weight-light;
     }
+    &.media-object { // product items with icons, shouldn't have bottom spacing here
+        margin-bottom: 0;
+    }
 }
 
 @include breakpoint (medium-large down) {
@@ -226,13 +237,6 @@ $duration: $timing-default * 1.5; //settings.scss:281
             width:  2rem;
             height: 2rem;
         }
-        &.media-object {
-            margin-bottom: 0;
-        }
-        // .nav__product-title {
-        // }
-        // .nav__product-description { // pair with text-small
-        // }
     }
     hr.menu-divider { 
         display: none;
@@ -332,6 +336,12 @@ $duration: $timing-default * 1.5; //settings.scss:281
 }
 
 // ======== DESKTOP ONLY STYLES / megamenu ==========
+.shrink-for-large { // does what .shrink does on a .column
+    @include breakpoint (large) {
+        flex: 0 0 auto;
+        max-width: 100%;
+    }
+}
 @include breakpoint (large) {
     // .nav__container {
     //     &:hover {
@@ -386,7 +396,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
                     opacity: 1;
                     transform: translate3D(0, 0, 0);
                 }
-                .fade-1 {
+                .fade-1, .fade-2 {
                     opacity: 1;
                     transform: translate3D(0, 0, 0);
                 }
@@ -458,6 +468,12 @@ $duration: $timing-default * 1.5; //settings.scss:281
     // }
     .nav__submenu-pane {
         padding: calc(1rem + 1.2vw);
+        a {
+            padding: 0;
+            img {
+                margin-bottom: 0;
+            }
+        }
     }
     hr.menu-divider { // used to separate child menu items 
         margin: 0.5rem;
@@ -497,15 +513,24 @@ ul.menu.menu-nav-list {
                 transform: translate3D(0, 3px, 0);
                 opacity: 0;
                 // transition-delay: 0.3s;
-                @include link-light;
+                @include link-white;
                 padding: 0.5rem;
             }
         }
     }
 }
-.fade-1 { // might need a coherent timing function, so delays are coordinated
+%prefade {
     transition: opacity 0.2s, transform 0.2s ease;
     transform: translate3D(-4px, 0, 0);
     transition-delay: 0.8s;
     opacity: 0;
 }
+.fade-1 { // might need a coherent timing function, so delays are coordinated
+    @extend %prefade;
+    transition-delay: 0.8s;
+}
+// .fade-2 { // might need a coherent timing function, so delays are coordinated
+//     @extend %prefade;
+//     transition-delay: 1.2s;
+// }
+
