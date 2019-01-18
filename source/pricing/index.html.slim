@@ -1,5 +1,5 @@
 ---
-title: "Datica | Pricing"
+title: "Get Pricing | Datica"
 summary: "Choose a package to fit your needs. Scaling is predictable and self-service."
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
@@ -10,61 +10,66 @@ layout: "basic"
 priority: "1.0"
 ---
 .strip-bright.strip-small
-.container-color--gray-light
-  .container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")
-    = partial "partials/head/header", :locals => { :style => "dark" }
-    section#pricing-tiers.section-article
-      .row.align-center.group
-        .columns.small-12
-          h1.headline-2.pricing-headline Datica Pricing
-          / p.lead 
-      .row.align-center
-        .columns.small-12
-          .callout.callout--dark.callout--large.pricing-callout
-            .row.align-center
-              .columns.small-12.medium-large-6.pricing-content
-                .group
-                  h2.headline-4.text--yellow-glow 
-                    a.link--yellow href="/compliant-kubernetes-service" title="Compliant Kubernetes Service" Compliant Kubernetes Service Pricing
-                  h4.headline-5 
-                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
-                    | Product Subscription
-                  p CKS subscription is per production Kubernetes cluster. Currently available on AWS. You pay infrastructure costs, like EC2 and S3, directly to AWS because we install the cluster onto your existing AWS account.
-                .group
-                  h2.headline-4.text--yellow-glow 
-                    a.link--yellow href="/compliant-managed-integration" title="Compliant Managed Integration" Compliant Managed Integration Pricing
-                  h4.headline-5
-                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
-                    | Product Subscription
-                  p CMI product currently available on AWS or Azure. We deploy the stack for you onto Datica's existing cloud account. All infrastructure costs, like RAM and storage, are absorbed by Datica within the product subscription.
-                  h4.headline-5
-                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
-                    | Managed Integration Service (Required)
-                  p Ongoing management and maintenance is a critical component of integration. The CMI product provides 24/7 management of infrastructure, VPNs, and connections to sites.
-                  h4.headline-5
-                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
-                    | Single-site Integration Service (Required)
-                  p Integrating with sites is always point-to-point. We are here to provide project management of a site integration from start to finish over a 30-day project plan.
-                .group
-                  h2.headline-4.text--yellow-glow 
-                    a.link--yellow href="/compliant-platform-as-a-service" title="Compliant Platform as a Service" Compliant Platform as a Service
-                  h4.headline-5 
-                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
-                    | Environment Subscription
-                  p Customers purchase environments which they then deploy their applications into.
+.bg-gray-2.container-image-fill.lozad data-background-image=bg_product_dark
+  = partial "partials/head/header", :locals => { :style => "light" }
+  section#pricing-tiers.section-article
+    .row.align-center.group
+      .columns.small-12
+        h1.headline-2.pricing-headline Get Pricing
+        / p.lead 
+    .row.align-center
+      .columns.small-12
+        .callout.callout--dark.callout--large.pricing-callout style="background-color: rgba(0, 0, 0, 0.3);"
+          .row.align-center
+            .columns.small-12.medium-large-6.pricing-content
+              .group
+                h2.headline-4
+                  a.link--white href="/cloud-compliance-management-system" title="Cloud Compliance Management" Cloud Compliance Management System
+                  / svg id="product-icon-ccms" class="icon-inline"
+                    use.symbol-icon xlink:href="#ccms-logo" href="#ccms-logo"
+                h4.headline-5 
+                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                  | Resource Subscription
+                p Starting early 2019, customers can use the CCMS by subscribing per cloud service being monitored.
+              .group
+                h2.headline-4
+                  a.link--white href="/compliant-kubernetes-service" title="Compliant Kubernetes Service" Compliant Kubernetes Service Pricing
+                h4.headline-5 
+                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                  | Product Subscription
+                p CKS subscription is per production Kubernetes cluster. Currently available on AWS. You pay infrastructure costs, like EC2 and S3, directly to AWS because we install the cluster onto your existing AWS account.
+              .group
+                h2.headline-4
+                  a.link--white href="/compliant-managed-integration" title="Compliant Managed Integration" Compliant Managed Integration Pricing
+                h4.headline-5
+                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                  | Product Subscription (Required)
+                p CMI product currently available on AWS or Azure. We deploy it into Datica's existing cloud account. All infrastructure costs, like RAM and storage, are absorbed by Datica. We then maintain all DevOps, security, compliance, and networking duties related to the integration stack itself and all live integrations it powers.
+                h4.headline-5
+                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--gray-7")
+                  | Service Subscription (Optional)
+                p Leverage Datica's expertise to help instantiate any new integration sites. Hundreds of live sites have been integrated over the last four years via this service.
+              .group
+                h2.headline-4
+                  a.link--white href="/compliant-platform-as-a-service" title="Compliant Platform as a Service" Compliant Platform as a Service
+                h4.headline-5 
+                  = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
+                  | Environment Subscription
+                p Customers purchase container-based environments which they can deploy their applications into. No additional customizations available outside of general availability. All infrastructure costs are pass-through in addition to the environment price, pegged to AWS costs for EC2, EBS, etc.
 
-                .group
-                  h2.headline-4.text--yellow-glow 
-                    a.link--yellow href="/cloud-compliance-management-system" title="Cloud Compliance Management" Cloud Compliance Management System
-                  h4.headline-5 
-                    = inline_svg("small/icon-check-circle", class: "icon-inline icon-left svg-color--green-glow")
-                    | Resource Subscription
-                  p Starting early 2019, customers can use the CCMS by subscribing per cloud service being monitored.
-              #cta.columns.small-12.medium-large-6
-                .callout.pad.drop.form-embed.nomargin.pricing-form.group
-                  h3.headline-4.text-center Request Pricing
-                  p Thank you for your interest in our suite of products built to help digital health succeed. One of our Datica experts will reach out to you shortly.
-                  - the_form = data.site.forms['pdrdbrjyUKoooYI8EUAYw']
-                  = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
-                p 
-                  em Ask us about ad-hoc compliance services related to your infrastructure.
+              p 
+                em Ask us about ad-hoc compliance services related to your infrastructure.
+            #cta.columns.small-12.medium-large-6
+              .callout.pad--lg.drop.form-embed.nomargin.pricing-form.group
+                / h3.headline-4.text-center Request Pricing
+                p Thank you for your interest in the Datica product suite. After completion, a representative will reach out to answer any questions.
+                - the_form = data.site.forms['pdrdbrjyUKoooYI8EUAYw']
+                = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+
+
+    .row.align-center
+      .columns.small-12.medium-12.large-8.text-center
+        h2.headline-3 Not sure what you need? Start here.
+    .button-group.menu.align-center.group
+      = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST assessment", :url => "/cloud-compliance/", :icon_align => "left", :button_classes => "button button--light button--hover-compliance no-nudge", :icon => "icon-chevron-left", :item_id => "get-compliance", :data_track_group => "compliance" }
+      = partial "partials/snippets/button", :locals => { :label => "I need to integrate with an EHR", :url => "/ehr-integration/", :button_classes => "button button--light button--hover-integration no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get-integration", :data_track_group => "integration" }
