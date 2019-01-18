@@ -4,14 +4,32 @@ navTitle: "Navigation"
 summary: "Navigation Patterns"
 author: "Datica, Inc."
 hide_from_sitemap: true
+layout: basic
 ---
+= partial "assets/icons/inlined/datica-logo-horiz-symbol.svg"
+= partial "partials/snippets/alert-ribbon"
+
+  / - case_studies = data.site.collections.to_a.select { | id, cust | (id == "3N9NeiDhwcKacuIo0E4iwu") }
+  / - case_studies.each do | id, cardgroup |
+    .row.align-center
+      .columns.small-12.text-center.group
+        h2.headline-3 = cardgroup.title
+    .row.align-center.small-up-1.medium-up-2.large-up-3
+      - cardgroup["related_entries"].each do | card |
+        - carditem = data.site.caseStudy[card.id]
+        - cust = data.site.customers[carditem.customer.id]
+        .column
+          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
+
+
+
 .container-gray-2
   = partial "partials/head/header", :locals => { :style => "light" }
 
 .container-gray-12.show-for-large
   = partial "partials/head/header", :locals => { :style => "dark" }
 
-#companyTop.show-for-large data-sticky-container="" 
+/ #companyTop.show-for-large data-sticky-container="" 
   nav.nav.nav-desktop.sticky.sticky-nav.container-gray-1.full-width data-options=("marginTop:0; topAnchor:companyTop") data-sticky="" data-theme="light" 
     ul.menu.horizontal.align-center.menu-secondary
       = partial "partials/snippets/nav-sub-company", :locals => { :class_li => "menu-item", :class_a => "menu-header menu-item--link" }
@@ -20,3 +38,18 @@ hide_from_sitemap: true
 /   nav.sticky.sticky-nav.container-color--white.drop.text-center.full-width data-options=("marginTop:0; topAnchor:platformTop") data-sticky="" 
 /     ul.menu.horizontal.align-center
 /       = partial "products/nav-platform"
+
+/ trying to make dynamic path ugh
+                      - path = "#{nav_item.section_promo._meta.content_type_id}"
+                      - promo = data.site.path[nav_item.section_promo.id]
+
+/ mapping path list
+  - when "academy" then "academy"
+  - when "blog" then "blog"
+  - when "cta" then "cta"
+  - when "caseStudy" then "customer"
+  - when "events" then "event"
+  - when "guides" then "guide"
+  - when "pressReleases" then "press-release"
+  - when "reports" then "innovation"
+  - when "webinars" then "webinar"

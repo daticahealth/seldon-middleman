@@ -63,13 +63,14 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
       p.lead.group Datica's approach to integration has helped a wide range of solutions across the entire spectrum of healthcare.
   .row
     .columns.shrink
-      = inline_svg("cmi-logo-w", class: "icon-size--xlarge")
-    .columns.small-12.medium-6.shrink.relative.has-blob
-      / .subhead--spaced CMI
-      h3.headline-4 Compliant Managed Integration
-      p.strip.strip-small.strip-cmi
-      p.lead Scalable, secure data exchange with any EHR
-      / .blob-color.blob-cmi.z-auto data-glow="false"
+      .media-object
+        .media-object-section
+          svg id="product-icon-cmi" class="icon-size--xlarge"
+            use.symbol-icon xlink:href="#cmi-logo" href="#cmi-logo"
+        .media-object-section.media-object--info.main-section.align-self-middle.relative.has-blob
+          h3.headline-4 Compliant Managed Integration
+          .strip.strip-small.strip-cmi.margin-bottom-small
+          p.lead Scalable, secure data exchange with any EHR
   .row
     .columns.small-12.medium-6.large-6.group
       p.lead We combine cutting-edge automation of cloud infrastructure security, DevOps processes, and interface engines, with our extensive experience in solving healthcare integration problems. All built on a solid foundation of <strong>continuous HIPAA compliance</strong>.
@@ -79,13 +80,14 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
             / <h2 class="headline-3">Get to market faster, beat the competition, and meet compliance requirements&mdash;all with fewer engineering resources.</h2>
   .row
     .columns.shrink
-      = inline_svg("icon-consulting-compass", class: "icon-size--xlarge")
-    .columns.small-12.medium-6.shrink.relative.has-blob
-      / .subhead--spaced Services
-      h3.headline-4 Integration Services
-      p.strip.strip-small.strip-services
-      p.lead Expert guidance and project services
-      / .blob-color.blob-services.z-auto data-glow="false"
+      .media-object
+        .media-object-section
+          svg id="product-icon-services" class="icon-size--xlarge"
+            use.symbol-icon xlink:href="#icon-consulting-compass" href="#icon-consulting-compass"
+        .media-object-section.media-object--info.main-section.align-self-middle.relative.has-blob
+          h3.headline-4 Integration Services
+          .strip.strip-small.strip-cmi.margin-bottom-small
+          p.lead Expert guidance and project services
   .row
     .columns.small-12.medium-6.large-6.group
       p.lead.group Our team of cloud engineers, integration and compliance experts can help you assessyour business challenges, ensure complete compliance on the cloud, integrate with any system, and even migrate your data to a new, efficient, and cost-effective cloud platform.

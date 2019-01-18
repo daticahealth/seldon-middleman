@@ -65,7 +65,6 @@
 @import 'modules/utility';
 @import 'modules/containers';
 // @import 'modules/ui';
-@import 'modules/nav';
 // @import 'modules/footer';
 @import 'modules/type';
 @import 'modules/headers';
@@ -84,6 +83,7 @@
 @import 'modules/buttons';
 @import 'modules/webinars';
 @import 'sitewide';
+@import 'modules/nav';
 
 // Import any vendors here
 @import 'vendor/font-awesome/font-awesome.scss';
