@@ -2,13 +2,16 @@
 title: "Get Pricing | Datica"
 summary: "Choose a package to fit your needs. Scaling is predictable and self-service."
 author: "Datica, Inc."
-tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
-date: "January 1, 2017"
-share_image: "https://images.ctfassets.net/189dvqdsjh46/80SDxxPlIsygQUCWOowSS/789e2f55d9d2a10b3a0887ef8536f7c0/cta-schedule-demo.jpg"
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration, pricing"
 customCSS: "pricing"
 layout: "basic"
 priority: "1.0"
 ---
+ruby:
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  # current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" /><link href="' + bg_product_light + '" rel="preload" as="image" />'
+  current_page.data.share_image = image_share_default
+
 scss:
   .pricing-content {
     .headline-5 {
