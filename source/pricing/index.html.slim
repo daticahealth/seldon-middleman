@@ -31,17 +31,17 @@ scss:
           color: #1055ff;
         }
       }
-      .item-check {
-        //margin-left: 2rem;
-        &::before {
-          vertical-align: bottom;
-          display: inline-block;
-          width: 1.4em;
-          height: 1.4em;
-          //margin-bottom: -0.3em;
-          content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath fill='%23009c63' d='M6.61 11.89L3.5 8.78 2.44 9.84 6.61 14l8.95-8.95L14.5 4z'/%3E%3C/svg%3E");
-        }
-      }
+      //.item-check {
+      //  //margin-left: 2rem;
+      //  &::before {
+      //    vertical-align: bottom;
+      //    display: inline-block;
+      //    width: 1.4em;
+      //    height: 1.4em;
+      //    //margin-bottom: -0.3em;
+      //    content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath fill='%23009c63' d='M6.61 11.89L3.5 8.78 2.44 9.84 6.61 14l8.95-8.95L14.5 4z'/%3E%3C/svg%3E");
+      //  }
+      //}
     }
     .product-icon {
       margin-right: 1rem;
@@ -93,7 +93,7 @@ scss:
               use.symbol-icon xlink:href="#cpaas-logo" href="#cpaas-logo"
           .columns
             h2.headline-4.text-regular
-              a href="/compliant-managed-integration" title="Compliant Managed Integration" Compliant Managed Integration Pricing
+              a href="/compliant-managed-integration" title="Compliant Managed Integration" Compliant Managed Integration
             h4.headline-5 Product Subscription (Required)
             p CMI product currently available on AWS or Azure. We deploy it into Datica's existing cloud account. All infrastructure costs, like RAM and storage, are absorbed by Datica. We then maintain all DevOps, security, compliance, and networking duties related to the integration stack itself and all live integrations it powers.
             h4.headline-5 Service Subscription (Optional)
@@ -107,7 +107,6 @@ scss:
           = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
         p 
           em Ask us about ad-hoc compliance services related to your infrastructure.
-
 
   section.section-article--med
     .row.align-center

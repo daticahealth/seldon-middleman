@@ -22,10 +22,10 @@
     <//cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js>;rel=preload;as=script, \
     <//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.7.0/lozad.min.js>;rel=preload;as=script, \
     <//fast.wistia.com/assets/external/E-v1.js>;rel=preload;as=script, \
+    <//js.hsforms.net/forms/v2.js>;rel=preload;as=script, \
     </public/fonts/gt-america-light.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
     </public/fonts/gt-america-regular.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
     </public/fonts/gt-america-bold.woff>;rel=preload;as=font;type=font/woff;crossorigin'''
-# </fonts/gt-america-regular.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
 
 # Redirect domain aliases to primary domain
 [[redirects]]
