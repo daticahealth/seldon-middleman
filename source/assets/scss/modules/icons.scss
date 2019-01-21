@@ -115,6 +115,26 @@
         }
     }
 }
+// legacy? Not used widely
+.logo { 
+    &--customer {
+        height: 6vw;
+        @include breakpoint(medium up) {
+            height: 3vw;
+        }
+        @include breakpoint(large up) {
+            height: 2.5vw;
+        }
+    }
+    &--nav {
+        width: 100px;
+        height: 22px; // how can we do this responsively?
+        min-width: 50px;
+        &:hover path{
+            fill: hsl(188, 100%, 89%);
+        }
+    }
+}
 // for logo clouds. Wrap logos in this class, then ensure .logo-cloud--item is on each image. Sizing classes optional (above)
 .logo-cloud {
     @include flex-it(0 0 auto);
