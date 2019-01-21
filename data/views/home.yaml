@@ -121,6 +121,11 @@ customers:
         file: 'soc-telemed-logo'
         url: 'https://www.soctelemed.com/'
         logoSize: 'medium'
+    -
+        name: 'Wolters Kluwer'
+        file: 'wolters-kluwer-logo'
+        url: 'https://wolterskluwer.com/'
+        logoSize: 'small-mid'
 
 # block_hero_1:
 #     -
