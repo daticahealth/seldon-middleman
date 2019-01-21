@@ -1,3 +1,7 @@
+// Max width on iFrames
+@include breakpoint (medium) { // not sure this is needed
+    iframe {max-width: 100%;height: auto;}
+}
 .flex-grow {
     flex: 1 1 auto;
 }
