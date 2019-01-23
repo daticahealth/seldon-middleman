@@ -254,11 +254,17 @@ ul.bullet-outside {
         // &.is-anchored {
         //     opacity: 0;
         // }
+        .breadcrumbs {
+            opacity: 0;
+        }
         &.is-stuck {
             // opacity: 1;
             background-color: $gray-12;
             @include shadow(4px, 4px, $black, 0.85);
             .menu-item--logo { // subnav logo item
+                opacity: 1;
+            }
+            .breadcrumbs {
                 opacity: 1;
             }
         }

@@ -1,21 +1,41 @@
 ---
 title: "Compliant Managed Integration (CMI)"
 summary: "The complete toolset to handle compliant, scalable, secure data exchange with any EHR or clinical system."
-navTitle: "Integration"
+navTitle: "Datica CMI"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 ogType: "product"
 customCSS: "products"
 layout: products
 priority: "0.9"
+category: "integration"
 collectionName: "products"
 collectionOrder: 3
 ctaCustom: true
+subnav:
+  -
+    title: "Overview"
+    slug: "overview"
+  -
+    title: "Use Cases"
+    slug: "use-cases"
+  -
+    title: "Benefits"
+    slug: "benefits"
+  -
+    title: "Customer Proof"
+    slug: "proof"
+  -
+    title: "Get Started"
+    slug: "start"
+
 ---
 ruby:
   current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/nGfjpkdV4GIIk6ii6wQiE/e3d6a9f1b90f2bdd9e4f9a071f156930/product-cmi-share.jpg'
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   the_form = data.site.forms['328pNB4IvCaQWQMCWmgSCy']
+
+= partial "partials/snippets/nav-sub-product"
 
 aside.hide-for-large.section-article.container-color--blue-alt.menu.button-group.align-center
   = partial "partials/snippets/button", :locals => { :label => "Hear from our customers", :url => "/compliant-kubernetes-service/", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :item_id => "cta_top_success" }

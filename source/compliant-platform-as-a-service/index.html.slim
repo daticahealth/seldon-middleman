@@ -1,13 +1,13 @@
 ---
-title: "Datica Technology Platform"
-summary: "Technology capabilities and support on the Datica Platform"
-navTitle: "Technology"
+title: "Datica Compliant Platform as a Service | Cloud Compliance"
+summary: "Datica CPaaS is a compliant cloud platform perfectly designed for early-stage applications."
+navTitle: "Datica CPaaS"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
-date: "July 15, 2018"
 ogType: "product"
 customCSS: "products"
 layout: products
+category: "compliance"
 collectionName: "products"
 collectionOrder: 1
 priority: "0.9"
@@ -66,20 +66,12 @@ block_benefits:
     feature: "Datica's tools immediately bring your organization to the starting line, enabling focus on business priorities."
     benefit: "Do not waste precious months getting your infrastructure to a compliant state just to get started on your product or initiative."
 ---
-- current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/5nhUL1CBYQIKy4Qu822yws/0e527937543ca6793dafda4bfb834930/product-cpaas-share.jpg'
-- the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
+ruby:
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/5nhUL1CBYQIKy4Qu822yws/0e527937543ca6793dafda4bfb834930/product-cpaas-share.jpg'
+  the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
 
-#top.show-for-large data-sticky-container="data-sticky-container"
-  .subnav.sticky.sticky-nav.bg-gray-11 data-sticky="data-sticky" data-options="marginTop:0; topAnchor:top; activeClass:active; stickyOn:large;" data-theme="light"
-    ul.menu.menu-secondary.align-center data-magellan="data-magellan"
-      / li.nav-logo
-        a.nav-logo--link href="#top" title="CPaaS"
-          svg#product-cpaas-logo.nav-logo
-            use.symbol-icon href="#cpaas-logo" xlink:href="#cpaas-logo" 
-
-      - current_page.data.subnav.each do | item |
-        li.menu-item
-          a.menu-item--link href="##{item.slug}" title=item.title = item.title
+= partial "partials/snippets/nav-sub-product"
 
 section.section-article.container-gray-12 id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   .row.align-center

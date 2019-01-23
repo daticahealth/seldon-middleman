@@ -5,14 +5,6 @@
 @import '../mixins/colors';
 @import '../mixins/functions';
 
-// Breadcrumb nav: http://foundation.zurb.com/sites/docs/breadcrumbs.html
-.breadcrumb {
-    li {
-        &:not(:last-child)::after {
-            content: "\203A"; // a '›' http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/
-        }
-    }
-}
 blockquote + .media-object, .blockquote-info { // line person/info up with quote indent
     margin-left: 1.5rem;
 }

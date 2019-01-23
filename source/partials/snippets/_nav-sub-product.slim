@@ -1,0 +1,26 @@
+ruby:
+  unless [current_page.data.category, current_page.data.navTitle, current_page.data.subnav].all?
+    puts "⚠️ The page at #{current_page.url} is missing key variables for the subnav! \n Required: category, navTitle, subnav (a yaml array)."
+  end
+#top.show-for-large data-sticky-container="data-sticky-container"
+  .subnav.sticky.sticky-nav.bg-gray-11 data-sticky="data-sticky" data-options="marginTop:0; topAnchor:top; activeClass:active; stickyOn:large;" data-theme="light"
+    ul.menu.menu-secondary.align-center.align-middle data-magellan="data-magellan"
+      li
+        nav aria-label=("You are here:") role="navigation" 
+          ul.breadcrumbs.align-middle.nomargin
+            li
+              a href="#" Home
+            li
+              a href="/cloud-compliance/" #{current_page.data.category.capitalize}
+            li
+              span.show-for-sr Current: 
+              = current_page.data.navTitle
+
+      / li.menu-item.text-small style="align-items: inherit;"
+        svg#subnav-product-cpaas-logo.icon-size--small.icon-inline.icon-left
+          use.symbol-icon href="#cpaas-logo" xlink:href="#cpaas-logo"
+        | Datica CPaaS
+
+      - current_page.data.subnav.each do | item |
+        li.menu-item
+          a.menu-item--link href="##{item.slug}" title=item.title = item.title
