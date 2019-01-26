@@ -1,0 +1,7 @@
+<svg aria-hidden="true" data-name="product-shapes" style="position: absolute; width: 0; height: 0; overflow: hidden;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<symbol id="disc" viewBox="-1 -1 2 2">
+		    <circle cx="0" cy="0" r="1" />
+		</symbol>
+	</defs>
+</svg>

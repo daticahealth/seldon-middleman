@@ -66,6 +66,7 @@ block_benefits:
     feature: "Datica's tools immediately bring your organization to the starting line, enabling focus on business priorities."
     benefit: "Do not waste precious months getting your infrastructure to a compliant state just to get started on your product or initiative."
 ---
+
 ruby:
   bg_image = 'https://images.ctfassets.net/189dvqdsjh46/6Xc3X2fJYIcwz2Sd5rwuRl/cd1c5622ec375bd87625e29c9dfdb07a/bg-circles.svg'
   current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
@@ -73,18 +74,79 @@ ruby:
   current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/5nhUL1CBYQIKy4Qu822yws/0e527937543ca6793dafda4bfb834930/product-cpaas-share.jpg'
   the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
 
+= partial "assets/icons/inlined/product-shapes-symbol.svg"
 = partial "partials/snippets/nav-sub-product"
+<style type="text/css">.product-bg {background-image: url(#{bg_image});}</style>
+scss:
+  .masthead {
+    //background: linear-gradient(70.92deg, rgba(0, 107, 206, 0.5) -3.63%, rgba(0, 133, 255, 0) 26.82%), linear-gradient(112.42deg, rgba(0, 227, 186, 0.28) 0.62%, rgba(0, 227, 186, 0) 27.21%), linear-gradient(180deg, #312F2F 0%, #62605D 100%);
+    /* Rectangle 2.1 */
+    background: linear-gradient(299.37deg, rgba(0, 107, 206, 0.5) -2.29%, rgba(0, 133, 255, 0) 28.36%), linear-gradient(270deg, rgba(0, 227, 186, 0.28) -17.37%, rgba(0, 227, 186, 0) 32.47%), linear-gradient(180deg, #1F1E1E 0%, #595856 100%);
 
-section.section-article.container-gray-12 id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
-  .row.align-center
-    .columns.small-12.medium-10.large-8.text-center
-      h1.headline-3 The Compliant Cloud Platform Perfectly Designed for Early-Stage Applications
-      p The Datica Compliant Platform as a Service (CPaaS) makes hosting compliant healthcare applications as simple as <code>git push.</code>
-  .row.align-center
-    .columns.small-12.medium-10.large-8.text-center
-      - diagram = "https://images.ctfassets.net/189dvqdsjh46/1zXwr2EWQoMkIskG68y8Qk/149a669a8d1895a5b6fd8fa1848905db/platform-overview-diagram-2x.png"
-      img.img-crisp.lozad.group--2x height="475" src="https://images.ctfassets.net/189dvqdsjh46/1GQpi4JS8UIYUMyykysou0/b83234d89d75e91da39de18885072dff/platform-overview-diagram-lqip.svg" alt="Datica Compliant Platform as a Service Diagram" data-src="#{diagram}?w=640" data-srcset="#{diagram}?w=640 800w, #{diagram}?w=1200 1000w, #{diagram} 1200w" /
+    color: white;
+    .art {
+      position: absolute;
+      height: 100%;
+      overflow: hidden;
+      svg.art-accent {
+        padding: 4vw;
+        height: 100%;
+        //mix-blend-mode: color-dodge;
+        //z-index: 3;
+      }
+      .art-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: black;
+        object-fit: cover;
+        opacity: 0.3;
+        //z-index: 0;
+      }
+      .art-light-blob {
+        position: absolute;
+        width: 393px;
+        height: 219px;
+        background: linear-gradient(170deg, #003ADF -5%, #00A280 82%);
+        opacity: 0.5;
+        filter: blur(110px);
+        border-radius: 200px;
+        top: 5vw;
+        left: 4vw;
+        transform: rotate3d(1,1,1,45deg);
+        //z-index: 1;
+      }
+    }
+    .masthead-icon {
+      width:  calc(5rem + 3vw);
+      height: calc(5rem + 3vw);
+    }
+  }
 
+section.masthead.relative.z-back id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+  / svg id="disc-1" class="shape-product"
+  /   use xlink:href="#disc"
+  .art
+    .art-light-blob.z-5
+    = inline_svg("products-discs-color", class: "art-accent z-0")
+    = inline_svg("bg-circles-fill", class: "art-bg z-back")
+
+  / .container-image-fill.lozad data-background-image=bg_image
+  .section-article--lg
+    .row.align-middle
+      .columns.small-12.medium-10.medium-large-9.large-7
+        .media-object.relative.has-blob.z-5
+          .media-object-section
+            = inline_svg("cmi-logo-w", class: "masthead-icon")
+          .media-object-section.media-object--info.main-section.align-self-middle
+            h1.headline-3.text-bold.nomargin Compliant Managed Integration
+            / .strip.strip-small.strip-cmi.margin-bottom-small
+            p.lead = current_page.data.summary
+          / .blob-color.blob-cpaas.z-bg data-glow="true"
+
+      / - diagram = "https://images.ctfassets.net/189dvqdsjh46/1zXwr2EWQoMkIskG68y8Qk/149a669a8d1895a5b6fd8fa1848905db/platform-overview-diagram-2x.png"
+      / img.img-crisp.lozad.group--2x height="475" src="https://images.ctfassets.net/189dvqdsjh46/1GQpi4JS8UIYUMyykysou0/b83234d89d75e91da39de18885072dff/platform-overview-diagram-lqip.svg" alt="Datica Compliant Platform as a Service Diagram" data-src="#{diagram}?w=640" data-srcset="#{diagram}?w=640 800w, #{diagram}?w=1200 1000w, #{diagram} 1200w" /
+section.section-article.bg-gray-11
   .row.align-center id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
     .columns.small-12.text-center
       h2.headline-4.nomargin Building On CPaaS

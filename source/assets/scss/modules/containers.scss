@@ -1,35 +1,35 @@
-.masthead {
-    color: white;
-    background: {
-        color: $color_deep-alt;
-    };
-    padding: 2em; //legacy - this sets it for old browsers
-    padding-bottom: 5vw;
-    padding-left:  3vw;
-    padding-right: 3vw;
-    @include breakpoint(xlarge up){
-        padding-left:  0;
-        padding-right: 0;
-    }
-    &--subheader {
-        font: {
-            size: 1.5em;
-            weight: $font-weight-bold;
-        };
-        opacity: 0.7;
-    }
-    &-featured { // for large featured images
-        @include background-fill (center top);
-        &--caption {
-            height: 30vw;
-            @include breakpoint (xlarge up){ // desktop
-                height: 40vw;
-            }
-        }
+// .masthead {
+//     color: white;
+//     background: {
+//         color: $color_deep-alt;
+//     };
+//     padding: 2em; //legacy - this sets it for old browsers
+//     padding-bottom: 5vw;
+//     padding-left:  3vw;
+//     padding-right: 3vw;
+//     @include breakpoint(xlarge up){
+//         padding-left:  0;
+//         padding-right: 0;
+//     }
+//     &--subheader {
+//         font: {
+//             size: 1.5em;
+//             weight: $font-weight-bold;
+//         };
+//         opacity: 0.7;
+//     }
+//     &-featured { // for large featured images
+//         @include background-fill (center top);
+//         &--caption {
+//             height: 30vw;
+//             @include breakpoint (xlarge up){ // desktop
+//                 height: 40vw;
+//             }
+//         }
 
-        //@include background-fill (center top);
-    }
-}
+//         //@include background-fill (center top);
+//     }
+// }
 .section-article--stack { // adding this parent above sections will remove top padding on children, for stacking. Don't use with differing colors as is often the case. only in a group!
     .section-article + .section-article {
         border-top: 0;
@@ -51,14 +51,20 @@
             padding: 6.25rem 1.875rem;
         }
         // here's the deal with this. I intended for the padding in containers to scale with the viewport - giant screens get more padding, mobile keeps it tight. The VW units do that. BUT that means there is no "pixel-perfect state" regarding padding - it's fluid. That said, here's my compromise: variable padding for small to medium, and fixed above that for desktop. -AW
+        &--small {
+            padding: 1rem 1.875rem 1.2rem 1.875rem;
+        }
         &--med {
             @include container-pad; // defaults for mobile -> ipad
             @include breakpoint (large up){ // desktop
                 padding: 3rem 1.875rem;
             }
         }
-        &--small {
-            padding: 1rem 1.875rem 1.2rem 1.875rem;
+        &--lg {
+            @include container-pad; // defaults for mobile -> ipad
+            @include breakpoint (medium){ // desktop
+                padding: 10vw 1rem;
+            }
         }
         &--xlarge, &--xl {
             @include container-pad; // defaults for mobile -> ipad
@@ -265,7 +271,7 @@
         &--gray-dark {
             @include color--gray-dark;
         }
-        &--gray-dark-grad {
+        &--gray-dark-grad { // used in new product backgrounds
             @include color--gray-dark-grad;
         }
         &--gray-dark-grad-noise {
@@ -391,6 +397,9 @@
             // padding: 0.3em;
             // display: inline-block;
         }
+    }
+    &-gray-grad { // alias
+        @extend .container-color--gray-dark-grad;
     }
 }
 [class*="container"], [class*="bg"] {
