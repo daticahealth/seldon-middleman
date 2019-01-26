@@ -103,6 +103,13 @@ scss:
         opacity: 0.3;
         //z-index: 0;
       }
+      .art-bg-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width:  100%;
+      }
       .art-light-blob {
         position: absolute;
         width: 393px;
@@ -118,8 +125,9 @@ scss:
       }
     }
     .masthead-icon {
-      width:  calc(5rem + 3vw);
-      height: calc(5rem + 3vw);
+      width:  calc(4rem + 5vw);
+      height: calc(4rem + 5vw);
+      padding-right: 1vw;
     }
   }
 
@@ -129,21 +137,23 @@ section.masthead.relative.z-back id=current_page.data.subnav[0].slug data-magell
   .art
     .art-light-blob.z-5
     = inline_svg("products-discs-color", class: "art-accent z-0")
-    = inline_svg("bg-circles-fill", class: "art-bg z-back")
+    /= inline_svg("bg-circles-fill", class: "art-bg z-back")
+    .art-bg-fill.container-image-fill.lozad data-background-image=bg_image
 
   / .container-image-fill.lozad data-background-image=bg_image
   .section-article--lg
     .row.align-middle
       .columns.small-12.medium-10.medium-large-9.large-7
-        .media-object.relative.has-blob.z-5
+        .media-object.relative.has-blob.z-5.stack-for-small 
           .media-object-section
             = inline_svg("cmi-logo-w", class: "masthead-icon")
           .media-object-section.media-object--info.main-section.align-self-middle
-            h1.headline-3.text-bold.nomargin Compliant Managed Integration
+            h1.headline-3.text-bold.margin-bottom-sm Compliant Managed Integration
             / .strip.strip-small.strip-cmi.margin-bottom-small
             p.lead = current_page.data.summary
           / .blob-color.blob-cpaas.z-bg data-glow="true"
-
+      .columns.shrink.z-auto
+        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "#start", :button_classes => "button button--light nomargin", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-right", :icon_align => "right" }
       / - diagram = "https://images.ctfassets.net/189dvqdsjh46/1zXwr2EWQoMkIskG68y8Qk/149a669a8d1895a5b6fd8fa1848905db/platform-overview-diagram-2x.png"
       / img.img-crisp.lozad.group--2x height="475" src="https://images.ctfassets.net/189dvqdsjh46/1GQpi4JS8UIYUMyykysou0/b83234d89d75e91da39de18885072dff/platform-overview-diagram-lqip.svg" alt="Datica Compliant Platform as a Service Diagram" data-src="#{diagram}?w=640" data-srcset="#{diagram}?w=640 800w, #{diagram}?w=1200 1000w, #{diagram} 1200w" /
 section.section-article.bg-gray-11
