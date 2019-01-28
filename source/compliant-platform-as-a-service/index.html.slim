@@ -81,7 +81,7 @@ scss:
   .masthead {
     //background: linear-gradient(70.92deg, rgba(0, 107, 206, 0.5) -3.63%, rgba(0, 133, 255, 0) 26.82%), linear-gradient(112.42deg, rgba(0, 227, 186, 0.28) 0.62%, rgba(0, 227, 186, 0) 27.21%), linear-gradient(180deg, #312F2F 0%, #62605D 100%);
     /* Rectangle 2.1 */
-    background: linear-gradient(299.37deg, rgba(0, 107, 206, 0.5) -2.29%, rgba(0, 133, 255, 0) 28.36%), linear-gradient(270deg, rgba(0, 227, 186, 0.28) -17.37%, rgba(0, 227, 186, 0) 32.47%), linear-gradient(180deg, #1F1E1E 0%, #595856 100%);
+    //background: linear-gradient(299.37deg, rgba(0, 107, 206, 0.5) -2.29%, rgba(0, 133, 255, 0) 28.36%), linear-gradient(270deg, rgba(0, 227, 186, 0.28) -17.37%, rgba(0, 227, 186, 0) 32.47%), linear-gradient(180deg, #1F1E1E 0%, #595856 100%);
 
     color: white;
     .art {
@@ -115,13 +115,15 @@ scss:
         position: absolute;
         width: 393px;
         height: 219px;
-        background: linear-gradient(170deg, #003ADF -5%, #00A280 82%);
-        opacity: 0.5;
-        filter: blur(110px);
+        //background: linear-gradient(170deg, #003ADF -5%, #00A280 82%);
+        width: 23vw;
+        height: 16vw;
+        opacity: 0.7;
+        filter: blur(70px);
         border-radius: 200px;
-        top: 5vw;
-        left: 4vw;
-        transform: rotate3d(1,1,1,45deg);
+        top: 0;
+        left: 0;
+        transform: rotate3d(1, 1, 1, 45deg) translate3d(4vw, 3vw, 0);
         //z-index: 1;
       }
     }
@@ -131,14 +133,24 @@ scss:
       padding-right: 1vw;
     }
   }
+  .product-cpaas {
+    .art-light-grad {
+      background: linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(297.76deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
+      // mix-blend-mode: color-dodge;
+    }
+    .art-light-blob {
 
-section.masthead.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+    }
+  }
+
+section.masthead.container-color--gray-dark-grad.product-cpaas.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   / svg id="disc-1" class="shape-product"
   /   use xlink:href="#disc"
   .art
-    .art-light-blob.z-5
+    .art-light-blob.strip-cpaas.z-5
     = inline_svg("products-discs-color", class: "art-accent z-0")
     /= inline_svg("bg-circles-fill", class: "art-bg z-back")
+    .art-bg-fill.art-light-grad
     .art-bg-fill.container-image-fill.lozad data-background-image=bg_image
 
   / .container-image-fill.lozad data-background-image=bg_image
