@@ -2,7 +2,7 @@ ruby:
   unless [current_page.data.category, current_page.data.navTitle, current_page.data.subnav].all?
     puts "⚠️ The page at #{current_page.url} is missing key variables for the subnav! \n Required: category, navTitle, subnav (a yaml array)."
   end
-#top.show-for-large.z-10 data-sticky-container="data-sticky-container"
+#top.show-for-large.z-18 data-sticky-container="data-sticky-container"
   .subnav.sticky.sticky-nav.bg-gray-1 data-sticky="data-sticky" data-options="marginTop:0; topAnchor:top; activeClass:active; stickyOn:large;" data-theme="light"
     ul.menu.menu-secondary.align-center.align-middle data-magellan="data-magellan"
       li

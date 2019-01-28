@@ -87,6 +87,7 @@ scss:
     .art {
       position: absolute;
       height: 100%;
+      width:  100%;
       overflow: hidden;
       svg.art-accent {
         padding: 4vw;
@@ -131,7 +132,7 @@ scss:
     }
   }
 
-section.masthead.relative.z-back id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+section.masthead.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   / svg id="disc-1" class="shape-product"
   /   use xlink:href="#disc"
   .art
@@ -141,10 +142,10 @@ section.masthead.relative.z-back id=current_page.data.subnav[0].slug data-magell
     .art-bg-fill.container-image-fill.lozad data-background-image=bg_image
 
   / .container-image-fill.lozad data-background-image=bg_image
-  .section-article--lg
+  .section-article--lg.relative.z-10
     .row.align-middle
       .columns.small-12.medium-10.medium-large-9.large-7
-        .media-object.relative.has-blob.z-5.stack-for-small 
+        .media-object.relative.has-blob.stack-for-small 
           .media-object-section
             = inline_svg("cmi-logo-w", class: "masthead-icon")
           .media-object-section.media-object--info.main-section.align-self-middle
@@ -152,7 +153,7 @@ section.masthead.relative.z-back id=current_page.data.subnav[0].slug data-magell
             / .strip.strip-small.strip-cmi.margin-bottom-small
             p.lead = current_page.data.summary
           / .blob-color.blob-cpaas.z-bg data-glow="true"
-      .columns.shrink.z-auto
+      .columns.shrink
         = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "#start", :button_classes => "button button--light nomargin", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-right", :icon_align => "right" }
       / - diagram = "https://images.ctfassets.net/189dvqdsjh46/1zXwr2EWQoMkIskG68y8Qk/149a669a8d1895a5b6fd8fa1848905db/platform-overview-diagram-2x.png"
       / img.img-crisp.lozad.group--2x height="475" src="https://images.ctfassets.net/189dvqdsjh46/1GQpi4JS8UIYUMyykysou0/b83234d89d75e91da39de18885072dff/platform-overview-diagram-lqip.svg" alt="Datica Compliant Platform as a Service Diagram" data-src="#{diagram}?w=640" data-srcset="#{diagram}?w=640 800w, #{diagram}?w=1200 1000w, #{diagram} 1200w" /
@@ -179,7 +180,7 @@ section.section-article.bg-gray-11
       p.text-left Once your application is live on Datica you’ll enjoy a suite of tools and products to manage your application’s environment. From intrusion detection to backups and much much more.
 /data-interchange="[, small]"
 section#hitrust.container-gray-11
-  .section-article.container-image--center.lozad data-background-image="/public/img/art/hexagon-bg-simple-light.svg"
+  .section-article
     .row.align-center.group
       .columns.small-12.medium-10.large-8.text-center
         img.lozad.logo-size--large.group--sm data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/6438fbb76abda83deac6b9c810745891/hitrust-logo.svg?fm=png&w=480" alt="HITRUST Certified"

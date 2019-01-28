@@ -364,6 +364,9 @@
     &-15 {
         z-index: 15;
     }
+    &-18 { // sticky & secondary navs here
+        z-index: 18;
+    }
     &-20 { // navs should exist here
         z-index: 20;
     }
