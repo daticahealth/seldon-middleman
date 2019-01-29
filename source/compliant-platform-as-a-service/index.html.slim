@@ -68,92 +68,20 @@ block_benefits:
 ---
 
 ruby:
-  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/6Xc3X2fJYIcwz2Sd5rwuRl/cd1c5622ec375bd87625e29c9dfdb07a/bg-circles.svg'
+  # bg_image = 'https://images.ctfassets.net/189dvqdsjh46/6Xc3X2fJYIcwz2Sd5rwuRl/cd1c5622ec375bd87625e29c9dfdb07a/bg-circles.svg'
+  bg_image = '/assets/icons/inlined/bg-circles-fill.svg'
   current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/5nhUL1CBYQIKy4Qu822yws/0e527937543ca6793dafda4bfb834930/product-cpaas-share.jpg'
   the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
 
 = partial "assets/icons/inlined/product-shapes-symbol.svg"
-= partial "partials/snippets/nav-sub-product"
-<style type="text/css">.product-bg {background-image: url(#{bg_image});}</style>
-scss:
-  .masthead {
-    //background: linear-gradient(70.92deg, rgba(0, 107, 206, 0.5) -3.63%, rgba(0, 133, 255, 0) 26.82%), linear-gradient(112.42deg, rgba(0, 227, 186, 0.28) 0.62%, rgba(0, 227, 186, 0) 27.21%), linear-gradient(180deg, #312F2F 0%, #62605D 100%);
-    /* Rectangle 2.1 */
-    //background: linear-gradient(299.37deg, rgba(0, 107, 206, 0.5) -2.29%, rgba(0, 133, 255, 0) 28.36%), linear-gradient(270deg, rgba(0, 227, 186, 0.28) -17.37%, rgba(0, 227, 186, 0) 32.47%), linear-gradient(180deg, #1F1E1E 0%, #595856 100%);
+/ <style type="text/css">.product-bg {background-image: url(#{bg_image});}</style>
 
-    color: white;
-    .art {
-      position: absolute;
-      height: 100%;
-      width:  100%;
-      overflow: hidden;
-      svg.art-accent {
-        padding: 4vw;
-        height: 100%;
-        //mix-blend-mode: color-dodge;
-        //z-index: 3;
-      }
-      .art-bg {
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: black;
-        object-fit: cover;
-        opacity: 0.3;
-        //z-index: 0;
-      }
-      .art-bg-fill {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width:  100%;
-      }
-      .art-light-blob {
-        position: absolute;
-        width: 393px;
-        height: 219px;
-        //background: linear-gradient(170deg, #003ADF -5%, #00A280 82%);
-        width: 23vw;
-        height: 16vw;
-        opacity: 0.7;
-        filter: blur(70px);
-        border-radius: 200px;
-        top: 0;
-        left: 0;
-        transform: rotate3d(1, 1, 1, 45deg) translate3d(4vw, 3vw, 0);
-        //z-index: 1;
-      }
-    }
-    .masthead-icon {
-      width:  calc(4rem + 5vw);
-      height: calc(4rem + 5vw);
-      padding-right: 1vw;
-    }
-  }
-  .product-cpaas {
-    .art-light-grad {
-      background: linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(297.76deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
-      // mix-blend-mode: color-dodge;
-    }
-    .art-light-blob {
-
-    }
-  }
-
+= stylesheet_link_tag "views/products-mastheads"
 section.masthead.container-color--gray-dark-grad.product-cpaas.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   / svg id="disc-1" class="shape-product"
   /   use xlink:href="#disc"
-  .art
-    .art-light-blob.strip-cpaas.z-5
-    = inline_svg("products-discs-color", class: "art-accent z-0")
-    /= inline_svg("bg-circles-fill", class: "art-bg z-back")
-    .art-bg-fill.art-light-grad
-    .art-bg-fill.container-image-fill.lozad data-background-image=bg_image
-
-  / .container-image-fill.lozad data-background-image=bg_image
   .section-article--lg.relative.z-10
     .row.align-middle
       .columns.small-12.medium-10.medium-large-9.large-7
@@ -164,11 +92,18 @@ section.masthead.container-color--gray-dark-grad.product-cpaas.relative id=curre
             h1.headline-3.text-bold.margin-bottom-sm Compliant Managed Integration
             / .strip.strip-small.strip-cmi.margin-bottom-small
             p.lead = current_page.data.summary
-          / .blob-color.blob-cpaas.z-bg data-glow="true"
-      .columns.shrink
-        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "#start", :button_classes => "button button--light nomargin", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-right", :icon_align => "right" }
+            = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+  .art
+    = partial "partials/snippets/nav-sub-product"
+    = inline_svg("products-discs-color", class: "z-5 art-accent")
+    / .art-light-blob
+    / <svg class="art-accent" xmlns="http://www.w3.org/2000/svg" width="817" height="636" fill="none" viewBox="0 0 817 636"><path fill="url(#paint0_radial)" d="M1 .7h815.1v635H1z" opacity=".5"/><defs><radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientTransform="rotate(55 -101.5 551.7) scale(325.616 267.838)" gradientUnits="userSpaceOnUse"><stop stop-color="#00E3BA"/><stop offset="1" stop-color="#008FDF" stop-opacity="0"/></radialGradient></defs></svg>
+    .art-bg-fill.art-light-grad
+    .z-0.art-bg-fill.art-pattern.container-image-fill.lozad data-background-image=bg_image
+
       / - diagram = "https://images.ctfassets.net/189dvqdsjh46/1zXwr2EWQoMkIskG68y8Qk/149a669a8d1895a5b6fd8fa1848905db/platform-overview-diagram-2x.png"
       / img.img-crisp.lozad.group--2x height="475" src="https://images.ctfassets.net/189dvqdsjh46/1GQpi4JS8UIYUMyykysou0/b83234d89d75e91da39de18885072dff/platform-overview-diagram-lqip.svg" alt="Datica Compliant Platform as a Service Diagram" data-src="#{diagram}?w=640" data-srcset="#{diagram}?w=640 800w, #{diagram}?w=1200 1000w, #{diagram} 1200w" /
+/ .strip.strip-cpaas
 section.section-article.bg-gray-11
   .row.align-center id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
     .columns.small-12.text-center
