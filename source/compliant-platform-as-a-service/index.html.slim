@@ -92,23 +92,23 @@ section.masthead.container-color--gray-dark-grad.product-cpaas.relative id=curre
             h1.headline-3.text-bold.margin-bottom-sm Compliant Managed Integration
             / .strip.strip-small.strip-cmi.margin-bottom-small
             p.lead = current_page.data.summary
-            = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+            = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
     = partial "partials/snippets/nav-sub-product"
-    = inline_svg("products-discs-color", class: "z-5 art-accent")
+    = inline_svg("products-discs-color", class: "z-5 art-accent step-1")
     / .art-light-blob
     / <svg class="art-accent" xmlns="http://www.w3.org/2000/svg" width="817" height="636" fill="none" viewBox="0 0 817 636"><path fill="url(#paint0_radial)" d="M1 .7h815.1v635H1z" opacity=".5"/><defs><radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientTransform="rotate(55 -101.5 551.7) scale(325.616 267.838)" gradientUnits="userSpaceOnUse"><stop stop-color="#00E3BA"/><stop offset="1" stop-color="#008FDF" stop-opacity="0"/></radialGradient></defs></svg>
     .art-bg-fill.art-light-grad
     .z-0.art-bg-fill.art-pattern.container-image-fill.lozad data-background-image=bg_image
 
-      / - diagram = "https://images.ctfassets.net/189dvqdsjh46/1zXwr2EWQoMkIskG68y8Qk/149a669a8d1895a5b6fd8fa1848905db/platform-overview-diagram-2x.png"
-      / img.img-crisp.lozad.group--2x height="475" src="https://images.ctfassets.net/189dvqdsjh46/1GQpi4JS8UIYUMyykysou0/b83234d89d75e91da39de18885072dff/platform-overview-diagram-lqip.svg" alt="Datica Compliant Platform as a Service Diagram" data-src="#{diagram}?w=640" data-srcset="#{diagram}?w=640 800w, #{diagram}?w=1200 1000w, #{diagram} 1200w" /
-/ .strip.strip-cpaas
-section.section-article.bg-gray-11
+.strip.strip-cpaas.strip-small
+section.section-article.bg-gray-12
   .row.align-center id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
-    .columns.small-12.text-center
+    .columns.small-12.large-8.text-center
       h2.headline-4.nomargin Building On CPaaS
       p.lead See how developers build compliant applications
+      - diagram = "https://images.ctfassets.net/189dvqdsjh46/1zXwr2EWQoMkIskG68y8Qk/149a669a8d1895a5b6fd8fa1848905db/platform-overview-diagram-2x.png"
+      img.img-crisp.lozad.group--2x height="475" src="https://images.ctfassets.net/189dvqdsjh46/1GQpi4JS8UIYUMyykysou0/b83234d89d75e91da39de18885072dff/platform-overview-diagram-lqip.svg" alt="Datica Compliant Platform as a Service Diagram" data-src="#{diagram}?w=640" data-srcset="#{diagram}?w=640 800w, #{diagram}?w=1200 1000w, #{diagram} 1200w" /
   .row.align-center
     .columns.small-12.medium-4.align-center.text-center
       img.lozad.logo-size--xlarge.group--sm alt="Build" data-src="https://images.ctfassets.net/189dvqdsjh46/6p4qvRe42kM8mcAyGqiIwE/f713310dfcf586ba5251e15f958f92f8/build_flow_step_1.png?w=400" src="https://images.ctfassets.net/189dvqdsjh46/6p4qvRe42kM8mcAyGqiIwE/f713310dfcf586ba5251e15f958f92f8/build_flow_step_1.png?fm=jpg&w=200&q=10" /
@@ -126,11 +126,11 @@ section.section-article.bg-gray-11
       p.lead.nomargin Your app is now compliant on Datica.
       p.text-left Once your application is live on Datica you’ll enjoy a suite of tools and products to manage your application’s environment. From intrusion detection to backups and much much more.
 /data-interchange="[, small]"
-section#hitrust.container-gray-11
+section#hitrust.bg-gray-12.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/2KLdtxvmcVlfytFTkDJcqF/5b67df6dc568cdc73ff36af5a70fb505/lab_tech_with_ipad.jpg?w=1400&h=800"
   .section-article
     .row.align-center.group
       .columns.small-12.medium-10.large-8.text-center
-        img.lozad.logo-size--large.group--sm data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/6438fbb76abda83deac6b9c810745891/hitrust-logo.svg?fm=png&w=480" alt="HITRUST Certified"
+        img.lozad.logo-size--large.group--sm data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/6438fbb76abda83deac6b9c810745891/hitrust-logo.svg" alt="HITRUST Certified"
         h2.headline-3.nomargin HITRUST CSF Infrastructure
     .row.align-center.small-up-1.large-up-3.row--card-grid
       .column
@@ -149,7 +149,7 @@ section#hitrust.container-gray-11
             h4.headline-5 You inherit Datica’s certification
             p HITRUST allows for inheritance, which means if you are planning to obtain your own CSF certification, you can inherit Datica’s certificate to shortcut 40% of the time and costs of the process.
 
-section#tech.section-article.container-color--white
+section.section-article.container-color--white id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
   .row.align-center.group
     .columns.small-12.large-10
       h3.headline-3.group.text-center Making critical technologies compliant
@@ -197,11 +197,11 @@ section#ui.section-article.container-gray-11
       h4.headline-5 Command Line Interface
       p The Datica CLI gives engineers access to the control they need, with the tools they are used to.
 
-section#benefits.section-article.container-color--gray-dark-grad-mono-noise
+section#benefits.section-article.container-image--fixed.bg-gray-1.lozad data-background-image=bg_image
   .row.align-center
     .columns.small-12.large-8.text-center
+      h2.headline-5.spaced-out.faded Shared Responsibility
       h3.headline-3.group Compliance ownership is a liability, not an asset. Don't shoulder that risk by yourself.
-      / p.lead Those who choose the Datica Platform get the calculus right.
   .row.group--sm
     .columns.small-6.medium-4.medium-offset-3
       h5.headline-5.spaced-out.text--blue-glow What we do...
@@ -230,8 +230,8 @@ section.section-article.container-gray-12 id=current_page.data.subnav[3].slug da
         .column
           = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
 
-aside.container-color--dark-grad-blue id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
-  .section-article.container-image--center.lozad data-background-image="/public/img/art/platform-iso-illustration-bg.svg"
+aside.container-color--gray-dark-grad.product-cpaas id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+  .section-article.art-bg-fill.art-pattern.container-image-fill.lozad data-background-image=bg_image
     .row.align-center
       .columns.small-12.medium-10.large-10.text-center
         h2.headline-3.group Talk to a Datica Compliance Expert Today.
