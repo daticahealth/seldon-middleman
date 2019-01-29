@@ -17,14 +17,11 @@ subnav:
     title: "Overview"
     slug: "overview"
   -
-    title: "How it works"
-    slug: "how-it-works"
-  -
     title: "Benefits"
     slug: "benefits"
   -
-    title: "Features"
-    slug: "features"
+    title: "Services"
+    slug: "services"
   -
     title: "Customer Proof"
     slug: "proof"
@@ -34,7 +31,7 @@ subnav:
 
 ---
 ruby:
-  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/71ZkJFY8CgC3a0huhg9Wqh/d224bad2c080c6694d56137b0e59e3c5/bg-cards.svg'
+  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/71ZkJFY8CgC3a0huhg9Wqh/19a52b2852b0f336e0c51d8acfcc8e85/bg-cards.svg'
   current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
   current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/nGfjpkdV4GIIk6ii6wQiE/e3d6a9f1b90f2bdd9e4f9a071f156930/product-cmi-share.jpg'
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
@@ -46,7 +43,7 @@ aside.hide-for-large.section-article.container-color--blue-alt.menu.button-group
   = partial "partials/snippets/button", :locals => { :label => "Hear from our customers", :url => "/compliant-kubernetes-service/", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :item_id => "cta_top_success" }
   = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
-section.masthead.bg-blue-green-grad.product-cmi.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+section.masthead.bg-dark.bg-red-yellow-grad.product-cmi.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   .section-article--lg.relative.z-10
     .row.align-middle
       .columns.small-12.medium-10.large-8
@@ -59,12 +56,12 @@ section.masthead.bg-blue-green-grad.product-cmi.relative id=current_page.data.su
             = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
     = partial "partials/snippets/nav-sub-product"
-    = inline_svg("products-discs-color", class: "z-5 art-accent step-1")
-    .art-bg-fill.art-light-blob
-    .z-0.art-bg-fill.art-pattern.container-image--fixed.lozad data-background-image=bg_image
-
+    = inline_svg("products-cards-color", class: "z-5 art-accent step-1")
+    / .art-bg-fill.art-light-blob
+    .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
+.strip.strip-small.strip-cmi
 .container-color--gray-light
-  section.section-article
+  section.section-article id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
     .row.align-center
       .columns.small-12.medium-12.large-7.text-center.group
         = inline_svg("icon-integration", class: "icon-size--xlarge svg-color--gray-4")
@@ -117,7 +114,7 @@ section.section-article.container-color--blue-bright-noise
           p Total number of mission-critical messages processed monthly on Datica's platform.
 
 section.section-article
-  #benefits.row.align-center
+  .row.align-center
     .columns.small-12.large-6.text-center.group
       h3.headline-3 More than just an API
       p.lead The full suite of integration tooling you need to successfully complete an integration project with a clinical site.
@@ -169,7 +166,7 @@ section.section-article.container-gray-5.text-center
       h3.headline-4 One REST API for all your connections
       img.img-crisp.lozad alt=("One REST API for all your connections") data-src="/public/img/platform-one-api-diagram.png" /
 
-section#services.section-article.container-gray-12
+section.section-article.container-gray-12 id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
   .row.align-center
     .columns.small-12
       h2.headline-3.text-center.group
@@ -222,7 +219,7 @@ section#services.section-article.container-gray-12
 
 = partial("/partials/section-promos/tco-integration-banner", :locals => { :style => "dark", :align => "right", :bgImage => "https://images.ctfassets.net/189dvqdsjh46/1iP2tqSCPKuIY6gIakoWcM/c954e6875e22448528da37b912f8aca4/triangle_theme__darker__Dallas_Ball__-_ash-edmonds-636863-unsplash.jpg" })
 
-section.section-article.container-color--white
+section.section-article.container-color--white id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
   .row.align-center.group
     .columns.small-12.medium-10.large-6
       = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'] })
@@ -249,33 +246,33 @@ section.section-article.container-gray-12
         - carditem = data.site.caseStudy[card.id]
         - cust = data.site.customers[carditem.customer.id]
         .column
-          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
+          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust }
+.strip.strip-small.strip-cmi
+section.bg-dark.bg-red-yellow-grad.product-cmi id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+  .section-article.container-image--center.lozad data-background-image=bg_image
+    .row.align-center.align-middle
+      .columns.small-12.medium-6.large-5
+        h2.headline-3.group--2x Schedule a conversation to learn more about Datica's Managed Integration services
+        / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
+        .callout.callout--dark-alpha
+          blockquote.quote--serif
+            | The Datica team is helping us solve critical infrastructure and scaling problems faster and more competently than we can in-house.
+          .media-object.card-person
+            .media-object-section
+              img.avatar.avatar--large.circle alt=("Jon Pearce") src="https://images.ctfassets.net/189dvqdsjh46/6IUA5I8suWEWI28YcIkMgm/134af76338fd572e45a9d4a716a8ddb7/headshot-zipnosis.jpg" /
+            .media-object-section.main-section.align-self-middle
+              h4.person-name Jon Pearce
+              p.person-title CEO, Zipnosis
+      / .columns.small-12.medium-6.large-5
+        /#absoluteForm.callout.callout--large.drop
+        /  
+        /  hr/
+        /  = partial("partials/snippets/form-hubspot", :locals => { :form_id => "2904bae4-9c64-4ed7-95a5-9af6ae6af302" })
+      #form.columns.small-12.medium-large-6.large-4
+        .callout.drop
+          h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
+          = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
 
-
-section#cta.section-article.container-color--gray-dark-grad
-  .row.align-center.align-middle
-    .columns.small-12.medium-6.large-5
-      h2.headline-3.group--2x Schedule a conversation to learn more about Datica's Managed Integration services
-      / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
-      .callout.callout--dark-alpha
-        blockquote.quote--serif
-          | The Datica team is helping us solve critical infrastructure and scaling problems faster and more competently than we can in-house.
-        .media-object.card-person
-          .media-object-section
-            img.avatar.avatar--large.circle alt=("Jon Pearce") src="https://images.ctfassets.net/189dvqdsjh46/6IUA5I8suWEWI28YcIkMgm/134af76338fd572e45a9d4a716a8ddb7/headshot-zipnosis.jpg" /
-          .media-object-section.main-section.align-self-middle
-            h4.person-name Jon Pearce
-            p.person-title CEO, Zipnosis
-    / .columns.small-12.medium-6.large-5
-      /#absoluteForm.callout.callout--large.drop
-      /  
-      /  hr/
-      /  = partial("partials/snippets/form-hubspot", :locals => { :form_id => "2904bae4-9c64-4ed7-95a5-9af6ae6af302" })
-    #form.columns.small-12.medium-large-6.large-4
-      .callout.drop
-        h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
-        = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
-        
 section#faq.section-article.container-gray-12
   .row.align-center
     .columns.small-12.medium-8.large-8

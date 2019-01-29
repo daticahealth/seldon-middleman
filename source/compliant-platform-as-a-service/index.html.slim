@@ -81,7 +81,7 @@ ruby:
 / <style type="text/css">.product-bg {background-image: url(#{bg_image});}</style>
 
 
-section.masthead.bg-blue-green-grad.product-cpaas.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+section.masthead.bg-dark.bg-blue-green-grad.product-cpaas.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   / svg id="disc-1" class="shape-product"
   /   use xlink:href="#disc"
   .section-article--lg.relative.z-10
@@ -101,7 +101,7 @@ section.masthead.bg-blue-green-grad.product-cpaas.relative id=current_page.data.
     .art-bg-fill.art-light-blob
     .z-0.art-bg-fill.art-pattern.container-image--fixed.lozad data-background-image=bg_image
 
-.strip.strip-cpaas.strip-small
+.strip.strip-small.strip-cpaas
 section.section-article.bg-gray-12
   .row.align-center id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
     .columns.small-12.large-8.text-center
@@ -237,8 +237,8 @@ section.section-article.container-gray-12 id=current_page.data.subnav[4].slug da
         - cust = data.site.customers[carditem.customer.id]
         .column
           = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
-
-aside.bg-blue-green-grad.product-cpaas id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
+.strip.strip-small.strip-cpaas
+section.bg-dark.bg-blue-green-grad.product-cpaas id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
   .section-article.container-image-fill.lozad data-background-image='https://images.ctfassets.net/189dvqdsjh46/6Xc3X2fJYIcwz2Sd5rwuRl/cd1c5622ec375bd87625e29c9dfdb07a/bg-circles.svg'
     .row.align-center
       .columns.small-12.medium-10.large-10.text-center

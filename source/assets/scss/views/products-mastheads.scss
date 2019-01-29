@@ -34,9 +34,6 @@
     }
 }
 .masthead {
-    //background: linear-gradient(70.92deg, rgba(0, 107, 206, 0.5) -3.63%, rgba(0, 133, 255, 0) 26.82%), linear-gradient(112.42deg, rgba(0, 227, 186, 0.28) 0.62%, rgba(0, 227, 186, 0) 27.21%), linear-gradient(180deg, #312F2F 0%, #62605D 100%);
-    /* Rectangle 2.1 */
-    //background: linear-gradient(299.37deg, rgba(0, 107, 206, 0.5) -2.29%, rgba(0, 133, 255, 0) 28.36%), linear-gradient(270deg, rgba(0, 227, 186, 0.28) -17.37%, rgba(0, 227, 186, 0) 32.47%), linear-gradient(180deg, #1F1E1E 0%, #595856 100%);
     color: white;
     .sticky {
         &:not(.is-stuck) { // set initial states, before .is-stuck is set by scroll
@@ -64,9 +61,7 @@
         width:  100%;
         overflow: hidden;
         .art-accent { // svg art of brighter shapes. SVG needs preserveAspectRatio
-            @include abs-topleft;
-            width: calc(3rem + 9vw);
-            transform: translate3d(4vw, 4vw, 0); // using transform vs positioning or padding
+            @include abs-topleft; // other positioning is per-masthead, below
         }
         .art-bg-fill {
             @include abs-topleft;
@@ -86,10 +81,7 @@
             @include abs-topleft;
             width:  45vw;
             height: 45vw;
-            // background: radial-gradient(325.62px at 50% 50%, #00E3BA 0%, rgba(0, 143, 223, 0) 100%);
             opacity: 0.8;
-            // transform: translate3d(4vw, 4vw, 0);
-
         }
         .art-pattern {
             mix-blend-mode: soft-light;
@@ -102,6 +94,41 @@
         padding-right: 1vw;
     }
 }
+// page-specific styles for gradients, artwork
+.product-cpaas { /* grad-green-blue */
+    $hue: 212;
+    .art-accent { // svg art of brighter shapes. SVG needs preserveAspectRatio
+        width: calc(3rem + 9vw);
+        transform: translate3d(2vw, -2vw, 0); // using transform vs positioning or padding
+    }
+    // .art-light-grad {
+    //     background: radial-gradient(234.90px at 20.53% 41.54%, rgba(46, 108, 165, 0.88) 0%, rgba(28, 118, 139, 0) 100%), linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(292.05deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
+    //     mix-blend-mode: normal;
+    //     // background: linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(297.76deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
+    //     // mix-blend-mode: color-dodge;
+    // }
+    .art-light-blob {
+        background: radial-gradient(20vw at 44.68% 42.78%, hsla($hue, 53, 42, 0.88) 0%, hsla($hue, 53, 42, 0.09) 82.87%, hsla($hue, 53, 42, 0) 100%);
+        // mix-blend-mode: normal;
+    }
+}
+.product-cmi { /* grad-red-yellow-cmi */
+    $hue: 335;
+    .art-accent { // svg art of brighter shapes. SVG needs preserveAspectRatio
+        width: calc(13rem + 11vw);
+        transform: translate3d(4vw, -2vw, 0);
+        height: auto;
+        // mix-blend-mode: color-dodge;
+    }
+    // .art-light-grad {
+    //     background: linear-gradient(58.65deg, rgba(212, 72, 131, 0.81) -2.22%, rgba(217, 72, 155, 0.19) 14.52%, rgba(218, 72, 159, 0) 27.72%, rgba(136, 32, 101, 0) 86.95%, rgba(185, 41, 102, 0.81) 103.16%), linear-gradient(111.54deg, rgba(255, 204, 105, 0.63) -6.07%, rgba(168, 116, 54, 0) 24.26%), linear-gradient(189.79deg, #312F2F -0.87%, #62605D 87.34%);
+    //     mix-blend-mode: normal;
+    // }
+    .art-light-blob {
+        background: radial-gradient(20vw at 44.68% 42.78%, hsla($hue, 53, 42, 0.88) 0%, hsla($hue, 53, 42, 0.09) 82.87%, hsla($hue, 53, 42, 0) 100%);
+    }
+}
+
 $transition: opacity $timing-medium linear, color $timing-medium linear, background-color $timing-medium linear, transform $timing-medium ease;
 .step-1, .step-2 {@include transition ($transition);}
 .step-1 {
@@ -110,22 +137,4 @@ $transition: opacity $timing-medium linear, color $timing-medium linear, backgro
 }
 .step-2 {
     animation: fade-in 0.6s ease 1s both;
-}
-
-.product-cpaas {
-    .art-light-grad {
-        /* grad-green-blue-cpaas - contains lighting - right grad and ball left*/
-        background: radial-gradient(234.90px at 20.53% 41.54%, rgba(46, 108, 165, 0.88) 0%, rgba(28, 118, 139, 0) 100%), linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(292.05deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
-        mix-blend-mode: normal;
-        // background: linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(297.76deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
-        // mix-blend-mode: color-dodge;
-    }
-    .art-light-blob {
-        /* grad-green-blue-cpaas */
-        background: radial-gradient(20vw at 44.68% 42.78%, rgba(50, 102, 162, 0.88) 0%, rgba(34, 99, 173, 0.09) 82.87%, rgba(34, 99, 173, 0) 100%);
-        mix-blend-mode: normal;
-    }
-}
-.product-cmi {
-
 }
