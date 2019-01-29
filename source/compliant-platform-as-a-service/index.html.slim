@@ -16,11 +16,14 @@ subnav:
     title: "Overview"
     slug: "overview"
   -
-    title: "Use Cases"
-    slug: "use-cases"
+    title: "How it works"
+    slug: "how-it-works"
   -
     title: "Benefits"
     slug: "benefits"
+  -
+    title: "Features"
+    slug: "features"
   -
     title: "Customer Proof"
     slug: "proof"
@@ -68,8 +71,8 @@ block_benefits:
 ---
 
 ruby:
-  # bg_image = 'https://images.ctfassets.net/189dvqdsjh46/6Xc3X2fJYIcwz2Sd5rwuRl/cd1c5622ec375bd87625e29c9dfdb07a/bg-circles.svg'
-  bg_image = '/assets/icons/inlined/bg-circles-fill.svg'
+  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/6Xc3X2fJYIcwz2Sd5rwuRl/cd1c5622ec375bd87625e29c9dfdb07a/bg-circles.svg'
+  # bg_image = '/assets/icons/inlined/bg-circles-fill.svg'
   current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/5nhUL1CBYQIKy4Qu822yws/0e527937543ca6793dafda4bfb834930/product-cpaas-share.jpg'
@@ -79,13 +82,13 @@ ruby:
 / <style type="text/css">.product-bg {background-image: url(#{bg_image});}</style>
 
 = stylesheet_link_tag "views/products-mastheads"
-section.masthead.container-color--gray-dark-grad.product-cpaas.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+section.masthead.bg-blue-green-grad.product-cpaas.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   / svg id="disc-1" class="shape-product"
   /   use xlink:href="#disc"
   .section-article--lg.relative.z-10
     .row.align-middle
       .columns.small-12.medium-10.medium-large-9.large-7
-        .media-object.relative.has-blob.stack-for-small 
+        .media-object.relative.stack-for-small 
           .media-object-section
             = inline_svg("cmi-logo-w", class: "masthead-icon")
           .media-object-section.media-object--info.main-section.align-self-middle
@@ -96,10 +99,8 @@ section.masthead.container-color--gray-dark-grad.product-cpaas.relative id=curre
   .art
     = partial "partials/snippets/nav-sub-product"
     = inline_svg("products-discs-color", class: "z-5 art-accent step-1")
-    / .art-light-blob
-    / <svg class="art-accent" xmlns="http://www.w3.org/2000/svg" width="817" height="636" fill="none" viewBox="0 0 817 636"><path fill="url(#paint0_radial)" d="M1 .7h815.1v635H1z" opacity=".5"/><defs><radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientTransform="rotate(55 -101.5 551.7) scale(325.616 267.838)" gradientUnits="userSpaceOnUse"><stop stop-color="#00E3BA"/><stop offset="1" stop-color="#008FDF" stop-opacity="0"/></radialGradient></defs></svg>
-    .art-bg-fill.art-light-grad
-    .z-0.art-bg-fill.art-pattern.container-image-fill.lozad data-background-image=bg_image
+    .art-bg-fill.art-light-blob
+    .z-0.art-bg-fill.art-pattern.container-image--fixed.lozad data-background-image=bg_image
 
 .strip.strip-cpaas.strip-small
 section.section-article.bg-gray-12
@@ -125,13 +126,38 @@ section.section-article.bg-gray-12
       h4.headline-4 Manage Compliance
       p.lead.nomargin Your app is now compliant on Datica.
       p.text-left Once your application is live on Datica you’ll enjoy a suite of tools and products to manage your application’s environment. From intrusion detection to backups and much much more.
-/data-interchange="[, small]"
+
+section.section-article.container-image--fixed.bg-gray-2.lozad data-background-image=bg_image id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+  .row.align-center
+    .columns.small-12.medium-10.large-8.text-center
+      h2.headline-5.spaced-out.faded Shared Responsibility
+      h3.headline-3.group Datica takes on compliance risks—so your team can focus on what it does best.
+      .group
+        = Kramdown::Document.new(data.site.videos['1PMH8PLuSa4rN56QdMOIvP'].custom_form).to_html
+  .row.align-center
+    .columns.small-12.large-8.text-center
+      h3.headline-3.group Compliance ownership is a liability, not an asset. Don't shoulder that risk by yourself.
+  .row.group--sm
+    .columns.small-6.medium-4.medium-offset-3
+      h5.headline-5.spaced-out.text--blue-glow What we do...
+    .columns.small-6.medium-5
+      h5.headline-5.spaced-out.text--green-glow ...to your benefit
+  - current_page.data.block_benefits.each do | item |
+    .row.group--sm
+      .columns.small-12.medium-3.text-right
+        h4.headline-5 = item.title
+      .columns.small-12.medium-4.text--blue-glow = item.feature
+      .columns.small-12.medium-5.text--green-glow = item.benefit
+  aside.section-article--sm.menu.button-group.align-center
+    = partial "partials/snippets/button", :locals => { :label => "Learn more about compliance in the cloud", :url => "/cloud-compliance#compliance-products", :button_classes => "button hollow-inverted", :data_track_group => "compliance", :item_id => "learn-compliance", :icon => "icon-chevron-left", :icon_align => "left" }
+
+
 section#hitrust.bg-gray-12.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/2KLdtxvmcVlfytFTkDJcqF/5b67df6dc568cdc73ff36af5a70fb505/lab_tech_with_ipad.jpg?w=1400&h=800"
   .section-article
-    .row.align-center.group
-      .columns.small-12.medium-10.large-8.text-center
+    .row.group
+      .columns.small-12
         img.lozad.logo-size--large.group--sm data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/6438fbb76abda83deac6b9c810745891/hitrust-logo.svg" alt="HITRUST Certified"
-        h2.headline-3.nomargin HITRUST CSF Infrastructure
+        h2.headline-4.nomargin HITRUST CSF Infrastructure
     .row.align-center.small-up-1.large-up-3.row--card-grid
       .column
         .card.drop
@@ -148,8 +174,8 @@ section#hitrust.bg-gray-12.container-image-fill.lozad data-background-image="htt
           .card-section
             h4.headline-5 You inherit Datica’s certification
             p HITRUST allows for inheritance, which means if you are planning to obtain your own CSF certification, you can inherit Datica’s certificate to shortcut 40% of the time and costs of the process.
-
-section.section-article.container-color--white id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+/======= 
+section.section-article.container-color--white id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
   .row.align-center.group
     .columns.small-12.large-10
       h3.headline-3.group.text-center Making critical technologies compliant
@@ -197,24 +223,7 @@ section#ui.section-article.container-gray-11
       h4.headline-5 Command Line Interface
       p The Datica CLI gives engineers access to the control they need, with the tools they are used to.
 
-section#benefits.section-article.container-image--fixed.bg-gray-1.lozad data-background-image=bg_image
-  .row.align-center
-    .columns.small-12.large-8.text-center
-      h2.headline-5.spaced-out.faded Shared Responsibility
-      h3.headline-3.group Compliance ownership is a liability, not an asset. Don't shoulder that risk by yourself.
-  .row.group--sm
-    .columns.small-6.medium-4.medium-offset-3
-      h5.headline-5.spaced-out.text--blue-glow What we do...
-    .columns.small-6.medium-5
-      h5.headline-5.spaced-out.text--green-glow ...to your benefit
-  - current_page.data.block_benefits.each do | item |
-    .row.group--sm
-      .columns.small-12.medium-3.text-right
-        h4.headline-5 = item.title
-      .columns.small-12.medium-4.text--blue-glow = item.feature
-      .columns.small-12.medium-5.text--green-glow = item.benefit
-
-section.section-article.container-gray-12 id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
+section.section-article.container-gray-12 id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
   .text-center.group
     h2.headline-3.text-light Build <strong>Breakthrough</strong> Healthcare Solutions
   = partial "partials/content/video-quote", :locals => { :classes => "group--2x" }
@@ -230,9 +239,9 @@ section.section-article.container-gray-12 id=current_page.data.subnav[3].slug da
         .column
           = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
 
-aside.container-color--gray-dark-grad.product-cpaas id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
-  .section-article.art-bg-fill.art-pattern.container-image-fill.lozad data-background-image=bg_image
+aside.bg-blue-green-grad.product-cpaas id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
+  .section-article.container-image-fill.lozad data-background-image='https://images.ctfassets.net/189dvqdsjh46/6Xc3X2fJYIcwz2Sd5rwuRl/cd1c5622ec375bd87625e29c9dfdb07a/bg-circles.svg'
     .row.align-center
       .columns.small-12.medium-10.large-10.text-center
         h2.headline-3.group Talk to a Datica Compliance Expert Today.
-        = partial "partials/snippets/button", :locals => { :label => "Let's get started", :url => "/contact", :button_classes => "button hollow-inverted" }
+        = partial "partials/snippets/button", :locals => { :label => "Ask about pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :data_track_group => "compliance", :item_id => "get-ccms-footer" }
