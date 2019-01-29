@@ -1,5 +1,5 @@
 ---
-title: "Datica Compliant Platform as a Service | Cloud Compliance"
+title: "Compliant Platform as a Service | Datica Cloud Compliance"
 summary: "Compliant Platform as a Service (CPaaS) is a turnkey compliant cloud platform perfectly designed for digital health applications."
 navTitle: "Datica CPaaS"
 author: "Datica, Inc."
@@ -78,21 +78,20 @@ ruby:
   current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/5nhUL1CBYQIKy4Qu822yws/0e527937543ca6793dafda4bfb834930/product-cpaas-share.jpg'
   the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
 
-= partial "assets/icons/inlined/product-shapes-symbol.svg"
 / <style type="text/css">.product-bg {background-image: url(#{bg_image});}</style>
 
-= stylesheet_link_tag "views/products-mastheads"
+
 section.masthead.bg-blue-green-grad.product-cpaas.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   / svg id="disc-1" class="shape-product"
   /   use xlink:href="#disc"
   .section-article--lg.relative.z-10
     .row.align-middle
-      .columns.small-12.medium-10.medium-large-9.large-7
+      .columns.small-12.medium-10.large-8
         .media-object.relative.stack-for-small 
           .media-object-section
-            = inline_svg("cmi-logo-w", class: "masthead-icon")
+            = inline_svg("cpaas-logo-w", class: "masthead-icon")
           .media-object-section.media-object--info.main-section.align-self-middle
-            h1.headline-3.text-bold.margin-bottom-sm Compliant Managed Integration
+            h1.headline-3.text-bold.margin-bottom-sm Compliant Platform as a Service
             / .strip.strip-small.strip-cmi.margin-bottom-small
             p.lead = current_page.data.summary
             = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
@@ -208,7 +207,7 @@ section#ui.section-article.container-gray-11
   .row.align-center
     .columns.small-12.large-6
       p.lead.text-center.group
-        | The Datica web dashboard and CLI make building and managing your compliant apps easy—while maintaining security.
+        | The Datica CPaaS web dashboard and CLI make building and managing your compliant apps easy—while maintaining security.
   .row.align-center
     .columns.small-12
       - ui = 'https://images.ctfassets.net/189dvqdsjh46/3n9ldRiT84qkuwESeoo4Mq/14115cc48d5c89252553e2966ad5c16a/cpaas-mockup-2017-2x.png'

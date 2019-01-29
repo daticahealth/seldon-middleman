@@ -68,15 +68,6 @@
             width: calc(3rem + 9vw);
             transform: translate3d(4vw, 4vw, 0); // using transform vs positioning or padding
         }
-        .art-light-blob {
-            @include abs-topleft;
-            width:  45vw;
-            height: 45vw;
-            // background: radial-gradient(325.62px at 50% 50%, #00E3BA 0%, rgba(0, 143, 223, 0) 100%);
-            opacity: 0.8;
-            // transform: translate3d(4vw, 4vw, 0);
-
-        }
         .art-bg-fill {
             @include abs-topleft;
             height: 100%;
@@ -90,6 +81,15 @@
                 -webkit-transition-delay: 1s;
                 transition-delay:         1s;
             }
+        }
+        .art-light-blob {
+            @include abs-topleft;
+            width:  45vw;
+            height: 45vw;
+            // background: radial-gradient(325.62px at 50% 50%, #00E3BA 0%, rgba(0, 143, 223, 0) 100%);
+            opacity: 0.8;
+            // transform: translate3d(4vw, 4vw, 0);
+
         }
         .art-pattern {
             mix-blend-mode: soft-light;
@@ -122,7 +122,10 @@ $transition: opacity $timing-medium linear, color $timing-medium linear, backgro
     }
     .art-light-blob {
         /* grad-green-blue-cpaas */
-        background: radial-gradient(392.20px at 44.68% 42.78%, rgba(50, 102, 162, 0.88) 0%, rgba(34, 99, 173, 0.09) 82.87%, rgba(34, 99, 173, 0) 100%);
+        background: radial-gradient(20vw at 44.68% 42.78%, rgba(50, 102, 162, 0.88) 0%, rgba(34, 99, 173, 0.09) 82.87%, rgba(34, 99, 173, 0) 100%);
         mix-blend-mode: normal;
     }
+}
+.product-cmi {
+
 }
