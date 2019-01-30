@@ -53,7 +53,7 @@ section.masthead.bg-dark.bg-red-yellow-grad.product-cmi.relative id=current_page
             = inline_svg("cmi-logo-w", class: "masthead-icon")
           .media-object-section.media-object--info.main-section.align-self-middle
             h1.headline-3.text-bold.margin-bottom-sm Compliant Managed Integration
-            p.lead = current_page.data.summary
+            p.lead Exchange data securely with any EHR in a scalable fashion
             = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
     = partial "partials/snippets/nav-sub-product"
@@ -62,15 +62,15 @@ section.masthead.bg-dark.bg-red-yellow-grad.product-cmi.relative id=current_page
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
   .strip.strip-small.strip-cmi
 
-section.section-article.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4JHMGlqAon75fyTjuaEWyf/acd8e33feb896e46108e95721219cc60/Doctor_with_patients_in_office__crop_.jpg?w=1600"
-  .row.bg-white-on-small
-    .columns.small-12.medium-6.large-4
-      h2.headline-2 Take the stress out of EHR integrations.
-      p.lead We handle the stress, risk and complexity of EHR integrations, so you can help medical teams do what they do best.
-      h3.headline-4 Get back to solving problems for heathcare
-      p In the past, EHR integration projects have been frustrating obstacles for innovation teams, preventing them from creating breakthrough solutions for overwhelmed medical professionals.
-      p Imagine being free to focus on <em>solving</em> problems again, instead of the worry and cost of integrating your solution with your EHR.
-      p Integrating with EHRs is an ongoing challenge for digital health solutions. EHR integration is not just a technology problem, it’s also a people and process problem.
+section.section-article.container-gray-11
+  .row.align-middle
+    .columns.small-12.medium-8
+      .video.drop.group
+        <script src="https://fast.wistia.com/embed/medias/0rr2p8xca5.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_0rr2p8xca5 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+    .columns.small-12.medium-4
+      h3.headline-4 What is EHR Integration?
+      p EHR integration is the partnership between providers, payers, vendors, and other players that brings the data or function from one application or program to that of another. Because of the sheer quantity and diversity of data, healthcare providers face major obstacles in integrating and effectively analyzing healthcare information.
+      = partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/ehr-integrations/", :button_classes => "button hollow secondary", :item_id => "integration" }
 
 section.section-article.bg-gray-3 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
   .row.align-center
@@ -108,15 +108,6 @@ section.section-article.bg-gray-3 id=current_page.data.subnav[1].slug data-magel
     /= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow", :item_id => "cta_top_pricing" }
     = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
-section.section-article.container-gray-11
-  .row.align-middle
-    .columns.small-12.medium-8
-      .video.drop.group
-        <script src="https://fast.wistia.com/embed/medias/0rr2p8xca5.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_0rr2p8xca5 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
-    .columns.small-12.medium-4
-      h3.headline-4 What is EHR Integration?
-      p EHR integration is the partnership between providers, payers, vendors, and other players that brings the data or function from one application or program to that of another. Because of the sheer quantity and diversity of data, healthcare providers face major obstacles in integrating and effectively analyzing healthcare information.
-      = partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/discover/ehr-integrations/", :button_classes => "button hollow", :item_id => "integration" }
 section.section-article--med.strip.strip-cmi
   .row.align-center.text-center
     .columns.small-12.large-10
@@ -185,30 +176,41 @@ section.section-article.bg-gray-3
           li REST API endpoints mapped to all major data standards
           li VPN setup for secure connectivity
 
+/section.section-article.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4JHMGlqAon75fyTjuaEWyf/acd8e33feb896e46108e95721219cc60/Doctor_with_patients_in_office__crop_.jpg?w=1600"
+  .row.bg-white-on-small
+    .columns.small-12.medium-6.large-4
+
+.strip.strip-cmi
 section.section-article.container-gray-12 id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
-  .row.align-center
-    .columns.small-12
-      h2.headline-3.text-center.group
-        | Integration Services
-  .row.align-center.align-middle.group
-    .columns.small-12.medium-6.large-5
-      h3.headline-4 Project Management
-      p Our team of project managers provide an expert view into integrated with EHRs and health systems. They will help manage timelines, create project plans, and track deliverables.
-      h3.headline-4 Connection Setup and Maintenance
-      p Datica’s Integration Engineers will build, configure, test and maintain VPN connections to allow for transmission of HL7 messages.
-      h3.headline-4 Interface Build and Configuration
-      p We will transform HL7 messages into JSON or FHIR messages to help keep things standard for you across implementations. We have many predesigned channels ready to go.
-    .columns.small-12.medium-6.large-5
+  .row.align-left
+    .columns.small-12.large-6
+      h2.headline-3.group Integration Services
+      h3.headline-4 Take the stress out of EHR integrations.
+      p.lead We handle the stress, risk and complexity of EHR integrations, so you can help medical teams do what they do best.
+  .row.align-left
+    .column.small-12.medium-6
+      h3.headline-4 Get back to solving problems for heathcare
+      p In the past, EHR integration projects have been frustrating obstacles for innovation teams, preventing them from creating breakthrough solutions for overwhelmed medical professionals.
+      p Imagine being free to focus on <em>solving</em> problems again, instead of the worry and cost of integrating your solution with your EHR.
+      p.group Integrating with EHRs is an ongoing challenge for digital health solutions. EHR integration is not just a technology problem, it’s also a people and process problem.
       .callout.drop.group
         blockquote.quote--serif
           - quote_services = data.site.quotes['4r9Bmb0l8QiMgKqCagOa0E']
           = Kramdown::Document.new(quote_services["quote_body"]).to_html
         - if quote_services.has_key?("related_person")
           = partial("partials/snippets/person", :locals => { :p => quote_services.related_person } )
+    .columns.small-12.medium-6.large-5
+      .card.bg-dark.bg-red-yellow-grad
+        .card-section
+          h3.headline-4 Project Management
+          p Our team of project managers provide an expert view into integrated with EHRs and health systems. They will help manage timelines, create project plans, and track deliverables.
+          h3.headline-4 Connection Setup and Maintenance
+          p Datica’s Integration Engineers will build, configure, test and maintain VPN connections to allow for transmission of HL7 messages.
+          h3.headline-4 Interface Build and Configuration
+          p We will transform HL7 messages into JSON or FHIR messages to help keep things standard for you across implementations. We have many predesigned channels ready to go.
+        .card-divider.text-center
+          = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light", :icon => "icon-chevron-down", :expand => "false" }
 
-  .row.align-center
-    .columns.text-center
-      = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button hollow", :icon => "icon-chevron-down" }
 
 = partial("/partials/section-promos/tco-integration-banner", :locals => { :style => "dark", :align => "right", :bgImage => "https://images.ctfassets.net/189dvqdsjh46/1iP2tqSCPKuIY6gIakoWcM/c954e6875e22448528da37b912f8aca4/triangle_theme__darker__Dallas_Ball__-_ash-edmonds-636863-unsplash.jpg" })
 
@@ -228,7 +230,7 @@ section.section-article.container-color--white id=current_page.data.subnav[3].sl
       .logo-cloud
         - data.views.ehrs.ehr_list.each do |logo|
           img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
-section.section-article.container-gray-12
+section.section-article.bg-gray-11
   - case_studies = data.site.collections.to_a.select { | id, cust | (id == "6wxpCFBxTy6aKEYQoEU4Y4") }
   - case_studies.each do | id, cardgroup |
     .row.align-center
@@ -240,7 +242,7 @@ section.section-article.container-gray-12
         - cust = data.site.customers[carditem.customer.id]
         .column
           = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust }
-.strip.strip-small.strip-cmi
+.strip.strip-cmi
 section.bg-dark.bg-red-yellow-grad.product-cmi id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
   .section-article.container-image--center.lozad data-background-image=bg_image
     .row.align-center.align-middle

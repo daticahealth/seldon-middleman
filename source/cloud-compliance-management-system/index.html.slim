@@ -53,11 +53,11 @@ section.masthead.bg-dark.bg-purple-bp-grad.product-ccms.relative id=current_page
             = inline_svg("ccms-logo-w", class: "masthead-icon")
           .media-object-section.media-object--info.main-section.align-self-middle
             h1.headline-3.text-bold.margin-bottom-sm Cloud Compliance Management System
-            p.lead = current_page.data.summary
+            p.lead Know the precise compliance state of your cloud environments
             = partial "partials/snippets/button", :locals => { :label => "Get Pricing", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-top", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
-  .row.align-right
-    .columns.small-12.large-8
-      img.lozad.img-crisp.glow-light src="#{img_1}?fit=crop&w=1800&h=800&f=top_left&q=5" data-src="#{img_1}?fit=crop&w=1800&h=800&f=top_left" alt="CCMS screenshot"
+  .row.align-right.relative.z-10
+    .columns.small-12.large-9
+      = Kramdown::Document.new(data.site.videos['1ucmmX9i5Lo4gNY1UKpWOz'].custom_form).to_html
   .art
     = partial "partials/snippets/nav-sub-product"
     /= inline_svg("products-triangles-color", class: "z-5 art-accent step-1")
