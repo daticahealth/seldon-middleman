@@ -30,7 +30,8 @@ subnav:
 
 ---
 ruby:
-  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/4F8Y3ZvCpWdmTRdgnTLUOF/6a39aecd28adfbf6adc99aec79b3f7f8/bg-triangles.svg'
+  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/4F8Y3ZvCpWdmTRdgnTLUOF/ac4acbc9aac7b147be6c86c5c8a29c63/bg-triangles.svg'
+  art_1 = 'https://images.ctfassets.net/189dvqdsjh46/GCJUrPFu9d1DE6iL4A6lM/3856a5ee424cde5d578619b58e3ca462/cks-art-tri-bg.png'
   current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
   current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/9zghfb4EzCi8csc6KYOEK/ae8460645d31a850e55e771c13772ab6/product-cks-share.jpg'
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
@@ -40,7 +41,7 @@ scss:
     background: {
       position: top left;
       repeat: repeat-y;
-
+      size: 100%;
     }
   }
 svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -68,7 +69,7 @@ section.masthead.bg-dark.bg-blue-purple-grad.product-cks.relative id=current_pag
   .strip.strip-small.strip-cks
 
 section.section-article.container-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
-  .row.group--2x.align-middle
+  .row.group--2x.align-center.align-middle
     .columns.small-12.medium-8.large-7
       = inline_svg("icon-datica", :class => "icon-size--large float-left")
       .group.content-indent
@@ -85,8 +86,8 @@ section.section-article.container-gray-11 id=current_page.data.subnav[1].slug da
         h4.headline-4 The most secure Kubernetes cluster available
         / img.pad.show-for-medium src="https://images.ctfassets.net/189dvqdsjh46/4jQ7VNUSIMUIS2aIKQWEOO/bb83fc6ec264ddd12f3b29410fe784c0/setup-2.png?w=450" alt="Installation"
         p Deployments include logging, monitoring, intrusion detection, antivirus software, and more. In addition to the technical configuration, Datica assumes the liability for the complete stack within our BAA, something not available or possible with any other managed Kubernetes offering. CKS functions like any other Kubernetes cluster—but one that comes pre-configured for compliance and security out of the box.
-    .show-for-medium.columns.small-12.medium-4.large-4.large-offset-1
-      img.img-crisp.lozad data-src="https://images.ctfassets.net/189dvqdsjh46/GCJUrPFu9d1DE6iL4A6lM/abe78f568d8d2875be0073cebf69b710/brush-matte-with-lighthouse-diagram.png?w=800&fit=pad&bg=rgb:e5e9eb&fm=jpg" /
+    .show-for-medium.columns.small-12.medium-4.large-5
+      img.img-crisp.lozad alt="CKS illustration diagram with triangle art background" src="#{art_1}?w=800&fit=pad&bg=rgb:e5e9eb&fm=jpg&q=5" data-src="#{art_1}?w=900&fit=pad&bg=rgb:e5e9eb&fm=jpg" /
      
 
 

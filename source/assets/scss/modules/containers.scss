@@ -447,6 +447,9 @@
 .bg-blue-purple-grad {// grad-blue-cks */
     background: linear-gradient(94.97deg, rgba(135, 61, 255, 0.36) -3.1%, rgba(135, 61, 255, 0) 17.94%), linear-gradient(44deg, rgba(23, 73, 249, 0.75) -4.91%, rgba(23, 73, 249, 0) 29.21%, rgba(23, 73, 249, 0) 89.52%, rgba(23, 73, 249, 0.72) 105.36%), linear-gradient(186.59deg, #2C2A2A -2.38%, #62605D 95.07%);
 }
+.bg-purple-bp-grad {// grad-blue-cks
+    background: linear-gradient(116.38deg, rgba(26, 35, 255, 0.288) 5.51%, rgba(135, 61, 255, 0) 35.06%), linear-gradient(117.48deg, rgba(204, 23, 249, 0.525) -3.92%, rgba(136, 23, 249, 0) 29.59%, rgba(82, 23, 249, 0) 82.05%, rgba(167, 13, 221, 0.504) 110%), linear-gradient(186.59deg, #2C2A2A -2.38%, #62605D 95.07%);
+}
 // these are the same as strip, just diff angle /shrug
 .blob-cks {
     @include gradient-cks(to left top);
