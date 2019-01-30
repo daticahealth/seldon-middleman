@@ -43,11 +43,6 @@ scss:
       padding: 1rem;
     }
   }
-/ = partial "partials/snippets/nav-sub-product"
-
-aside.hide-for-large.section-article.container-color--blue-alt.menu.button-group.align-center
-  = partial "partials/snippets/button", :locals => { :label => "Hear from our customers", :url => "/compliant-kubernetes-service/", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :item_id => "cta_top_success" }
-  = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
 section.masthead.bg-dark.bg-red-yellow-grad.product-cmi.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   .section-article--lg.relative.z-10
@@ -67,7 +62,7 @@ section.masthead.bg-dark.bg-red-yellow-grad.product-cmi.relative id=current_page
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
   .strip.strip-small.strip-cmi
 
-section.section-article.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4JHMGlqAon75fyTjuaEWyf/acd8e33feb896e46108e95721219cc60/Doctor_with_patients_in_office__crop_.jpg?w=2400"
+section.section-article.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4JHMGlqAon75fyTjuaEWyf/acd8e33feb896e46108e95721219cc60/Doctor_with_patients_in_office__crop_.jpg?w=1600"
   .row.bg-white-on-small
     .columns.small-12.medium-6.large-4
       h2.headline-2 Take the stress out of EHR integrations.
@@ -104,7 +99,7 @@ section.section-article.bg-gray-3 id=current_page.data.subnav[1].slug data-magel
         li Orthopedic Implant Providers for Supply Chain Optimization &amp; Instrument Tray Reconfiguration
         li Claims Processing and Claim Audit Tracking Solutions
   .row.align-center
-    .columns.small-12.large-9.text-center
+    .columns.small-12.large-10.text-center
       h4.headline-6.spaced-out.text-light Use case: Hospital integration
       / img.lozad alt=("Platform Integration") data-src="/public/img/platform-integration-2x.png" /
       img.group.lozad alt="Integration - hospital use case" src="https://images.ctfassets.net/189dvqdsjh46/4UZr8wc5XYiFIA8jYSzxaF/ab9f343b28b8d180e103b558d49b6e9b/CMI_example_use_case__hospital_.png?w=1000&fm=png&fl=png8" data-src="https://images.ctfassets.net/189dvqdsjh46/4UZr8wc5XYiFIA8jYSzxaF/ab9f343b28b8d180e103b558d49b6e9b/CMI_example_use_case__hospital_.png"
@@ -169,13 +164,13 @@ section.section-article.bg-gray-3
         .column
           h4.headline-5 Open source transformations
           p You own your transformations because we use open source Mirth as the interface engine.
-      .row
+      .row.group
         .columns.small-12
           h3.headline-4 One REST API for all your connections
           img.img-crisp.lozad alt=("One REST API for all your connections") data-src="/public/img/platform-one-api-diagram.png" /
 
     .columns.small-12.medium-6.large-4
-      .card.bg-gray-10.pad
+      .card.bg-gray-10.card-section
         h3.headline-4.text-light <strong>Full-Stack</strong> Data Integration
         p The mature integration stack considers HIPAA compliance, data security, redundant backups, and no reliance on black box proprietary APIs as core ingredients to a successful integration strategy.
         p Don't get caught with infrastructure gotchas as you go from zero-to-one or if you are preparing to scale to hundreds of integrations. Instead, get Datica CMI.
@@ -261,11 +256,7 @@ section.bg-dark.bg-red-yellow-grad.product-cmi id=current_page.data.subnav[4].sl
             .media-object-section.main-section.align-self-middle
               h4.person-name Jon Pearce
               p.person-title CEO, Zipnosis
-      / .columns.small-12.medium-6.large-5
-        /#absoluteForm.callout.callout--large.drop
-        /  
-        /  hr/
-        /  = partial("partials/snippets/form-hubspot", :locals => { :form_id => "2904bae4-9c64-4ed7-95a5-9af6ae6af302" })
+
       #form.columns.small-12.medium-large-6.large-4
         .callout.drop
           h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.

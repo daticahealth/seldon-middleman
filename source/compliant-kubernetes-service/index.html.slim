@@ -1,5 +1,5 @@
 ---
-title: "Datica Compliant Kubernetes Service"
+title: "Compliant Kubernetes Service | Datica Compliance"
 summary: "Compliant Kubernetes Service (CKS) provides healthcare enterprises security and HIPAA compliance in a scalable, secure Kubernetes cluster."
 navTitle: "Datica CKS"
 author: "Datica, Inc."
@@ -16,11 +16,11 @@ subnav:
     title: "Overview"
     slug: "overview"
   -
-    title: "Use Cases"
-    slug: "use-cases"
-  -
     title: "Benefits"
     slug: "benefits"
+  -
+    title: "How it Works"
+    slug: "how-it-works"
   -
     title: "Customer Proof"
     slug: "proof"
@@ -35,45 +35,63 @@ ruby:
   current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/9zghfb4EzCi8csc6KYOEK/ae8460645d31a850e55e771c13772ab6/product-cks-share.jpg'
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
+scss:
+  .container-image-repeat-y {
+    background: {
+      position: top left;
+      repeat: repeat-y;
 
-= partial "partials/snippets/nav-sub-product"
-
+    }
+  }
 svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   defs
     symbol#icon-chevron-down viewbox=("0 0 18 18")
       title chevron-down
       path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
-.container-gray-3
-  section#platform-top.section-article.product-cks-bg
-    / section#platform-top.section-article.container-image--top.bg-blend-overlay.product-cks-bg.lozad(data-background-image="https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg")
-    / .row
-    /   .columns.small-12
-    /     h1.headline-1 Compliant Kubernetes<sup>&reg;</sup> Service is how regulated industries work with cloud native architectures.
-    .row.group
+
+section.masthead.bg-dark.bg-blue-purple-grad.product-cks.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+  .section-article--lg.relative.z-10
+    .row.align-middle
       .columns.small-12.medium-10.large-8
-        .group--2x
-          h1.headline-2 Datica Compliant Kubernetes<sup>&reg;</sup> Service (CKS) <strong>bridges security and compliance</strong> with Kubernetes to offer an enterprise-grade cloud native solution.
-          = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "#cta", :button_classes => "button button--light", :icon => "icon-chevron-down", :item_id => "cta_top_success" }
-    .row.group--2x.align-middle
-      .columns.small-12.medium-8.large-7
-        = inline_svg("icon-datica", :class => "icon-size--large svg-color--white float-left")
-        .group.content-indent
-          h2.headline-3 The Datica promise brought to a <br>Kubernetes service
-          / h2.headline-2 Datica bridges security and compliance with Kubernetes to offer an enterprise-grade cloud native solution.
-          p.lead If you're working within a regulated industry like healthcare, you have almost zero options when it comes to using Kubernetes — either you manage the control plane, the operating system and the underlying infrastructure to maintain the flexibility required for compliance, or you risk falling out of compliance by using an existing managed service. <strong>Datica changes all of that.</strong>
-        = inline_svg("icon-k8", :class => "icon-size--large svg-color--white float-left")
-        .group.content-indent
-          h4.headline-4 Complete Kubernetes compliance
-          / img.pad.show-for-medium src="https://images.ctfassets.net/189dvqdsjh46/yc639CSDwka8aAs4Uo0kW/cb3458e6089ae9bd7312389acc374f9b/setup-1.png?w=450" alt="Setup"
-          p CKS is a compliant managed Kubernetes service for regulated industries. In addition to managing the cluster control plane, CKS configures the underlying operating system and instances, and installs, configures, and manages a set of deployments required to achieve compliance.
-        = inline_svg("small/icon-check-circle", :class => "icon-size--large svg-color--white float-left")
-        .group.content-indent
-          h4.headline-4 The most secure Kubernetes cluster available
-          / img.pad.show-for-medium src="https://images.ctfassets.net/189dvqdsjh46/4jQ7VNUSIMUIS2aIKQWEOO/bb83fc6ec264ddd12f3b29410fe784c0/setup-2.png?w=450" alt="Installation"
-          p Deployments include logging, monitoring, intrusion detection, antivirus software, and more. In addition to the technical configuration, Datica assumes the liability for the complete stack within our BAA, something not available or possible with any other managed Kubernetes offering. CKS functions like any other Kubernetes cluster—but one that comes pre-configured for compliance and security out of the box.
-      .show-for-medium.columns.small-12.medium-4.large-4.large-offset-1
-        img.img-crisp.product-cks-2.lozad(data-src="https://images.ctfassets.net/189dvqdsjh46/6ukoyjsk7e2CciYIG2Cueu/20999ad20f16115051f1c84bd448289c/cks-art.png")
-    section#features
+        .media-object.relative.stack-for-small 
+          .media-object-section
+            = inline_svg("cks-logo-w", class: "masthead-icon")
+          .media-object-section.media-object--info.main-section.align-self-middle
+            h1.headline-3.text-bold.margin-bottom-sm Compliant Kubernetes Service
+            p.lead = current_page.data.summary
+            = partial "partials/snippets/button", :locals => { :label => "Get Pricing", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-cks-top", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+  .art
+    = partial "partials/snippets/nav-sub-product"
+    /= inline_svg("products-triangles-color", class: "z-5 art-accent step-1")
+    / .art-bg-fill.art-light-blob
+    .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
+  .strip.strip-small.strip-cks
+
+section.section-article.container-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
+  .row.group--2x.align-middle
+    .columns.small-12.medium-8.large-7
+      = inline_svg("icon-datica", :class => "icon-size--large float-left")
+      .group.content-indent
+        h2.headline-3 The Datica promise brought to a <br>Kubernetes service
+        / h2.headline-2 Datica bridges security and compliance with Kubernetes to offer an enterprise-grade cloud native solution.
+        p.lead If you're working within a regulated industry like healthcare, you have almost zero options when it comes to using Kubernetes — either you manage the control plane, the operating system and the underlying infrastructure to maintain the flexibility required for compliance, or you risk falling out of compliance by using an existing managed service. <strong>Datica changes all of that.</strong>
+      = inline_svg("icon-k8", :class => "icon-size--large float-left")
+      .group.content-indent
+        h4.headline-4 Complete Kubernetes compliance
+        / img.pad.show-for-medium src="https://images.ctfassets.net/189dvqdsjh46/yc639CSDwka8aAs4Uo0kW/cb3458e6089ae9bd7312389acc374f9b/setup-1.png?w=450" alt="Setup"
+        p CKS is a compliant managed Kubernetes service for regulated industries. In addition to managing the cluster control plane, CKS configures the underlying operating system and instances, and installs, configures, and manages a set of deployments required to achieve compliance.
+      = inline_svg("small/icon-check-circle", :class => "icon-size--large float-left")
+      .group.content-indent
+        h4.headline-4 The most secure Kubernetes cluster available
+        / img.pad.show-for-medium src="https://images.ctfassets.net/189dvqdsjh46/4jQ7VNUSIMUIS2aIKQWEOO/bb83fc6ec264ddd12f3b29410fe784c0/setup-2.png?w=450" alt="Installation"
+        p Deployments include logging, monitoring, intrusion detection, antivirus software, and more. In addition to the technical configuration, Datica assumes the liability for the complete stack within our BAA, something not available or possible with any other managed Kubernetes offering. CKS functions like any other Kubernetes cluster—but one that comes pre-configured for compliance and security out of the box.
+    .show-for-medium.columns.small-12.medium-4.large-4.large-offset-1
+      img.img-crisp.lozad data-src="https://images.ctfassets.net/189dvqdsjh46/GCJUrPFu9d1DE6iL4A6lM/abe78f568d8d2875be0073cebf69b710/brush-matte-with-lighthouse-diagram.png?w=800&fit=pad&bg=rgb:e5e9eb&fm=jpg" /
+     
+
+
+section.bg-dark.bg-blue-purple-grad id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+  .section-article.product-cks.container-image-repeat-y.lozad data-background-image=bg_image
     - ordered_feature_categories = data.site.featureCategories.to_a.sort_by{ |id, featureCat| featureCat['sort_order'] }
     - ordered_feature_categories.each do | id, featureCat |
       .row
@@ -107,28 +125,28 @@ svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0;
                     - if feature.has_key?("desc")
                       .show-more--container.text-smaller data-off-canvas="" data-toggler="" id="feature-detail_#{feature.slug}"
                         = Kramdown::Document.new(feature.desc).to_html
-    .row.align-center.align-middle
-      .columns.small-6.text-right
-        h3.headline-5.spaced-out Talk to our experts today
-      .columns.small-6
-        = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "#cta", :button_classes => "button button--light", :icon => "icon-chevron-down", :item_id => "cta_top_success" }
+    .row.align-center
+      .columns.small-12.medium-10.large-9.group.text-center
+        / h3.headline-5.spaced-out Leverage the power of Kubernetes
+        h2.headline-2 Datica's shared responsibility model
+        p.lead With Datica’s Cloud Compliance Management System, we ensure both the cluster and the underlying infrastructure on your cloud account are secure and compliant to the highest standards across an ever-growing list of frameworks and regimes.
+    .row.align-center
+      .columns.small-12.large-10
+        .card.container-color--tint-50.pad--xl.group--2x
+          .card-section
+            img.lozad data-src="https://images.ctfassets.net/189dvqdsjh46/2HRXBAtQrSga8OuaMgYc22/fa77a259452d4c7dc5d77a0a45db31e1/shared-resp-1-dark.svg" alt="Shared Responsibility"
+            img.lozad data-src="https://images.ctfassets.net/189dvqdsjh46/28YL53F8qMaumKQ0IA4sEW/ab55b40593c253f782e383c164ae6715/shared-resp-2-dark.svg" alt="Shared Responsibility Diagram"
+    ul.menu.button-group.align-center.align-middle
+      li
+        h3.headline-5.spaced-out.nomargin style="margin-right: 2rem;" Talk to our experts today
+      li
+        = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin", :icon => "icon-chevron-down", :data_track_group => "compliance", :item_id => "get-cks-mid" }
 
-section#setup.section-article.container-gray-2
-  .row.align-center
-    .columns.small-12.medium-10.large-9.group.text-center
-      / h3.headline-5.spaced-out Leverage the power of Kubernetes
-      h2.headline-2 Datica's shared responsibility model
-      p.lead With Datica’s Cloud Compliance Management System, we ensure both the cluster and the underlying infrastructure on your cloud account are secure and compliant to the highest standards across an ever-growing list of frameworks and regimes.
-  .row.align-center
-    .columns.small-12.large-8
-      img.lozad data-src="https://images.ctfassets.net/189dvqdsjh46/2HRXBAtQrSga8OuaMgYc22/fa77a259452d4c7dc5d77a0a45db31e1/shared-resp-1-dark.svg" alt="Shared Responsibility"
-    .columns.small-12.large-12
-      img.lozad data-src="https://images.ctfassets.net/189dvqdsjh46/28YL53F8qMaumKQ0IA4sEW/ab55b40593c253f782e383c164ae6715/shared-resp-2-dark.svg" alt="Shared Responsibility Diagram"
-  .row.align-center
-    .columns.text-center
-      = partial "partials/snippets/button", :locals => { :label => "Learn more about Compliance", :title => "Read more", :url => "/compliance/", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :icon_align => "left", :item_id => "shared-responsibility", :data_track_group => "compliance" }
+    /.row.align-center
+      .columns.text-center
+        = partial "partials/snippets/button", :locals => { :label => "Learn more about Compliance", :title => "Read more", :url => "/compliance/", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :icon_align => "left", :item_id => "shared-responsibility", :data_track_group => "compliance" }
 
-section.section-article.container-gray-11
+section.section-article.container-gray-11 id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
   .row.align-center.group
     .columns.small-12
       h2.headline-2.text-center Customer Success
@@ -173,21 +191,23 @@ section.section-article.container-gray-11
   /    .column
   /      = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cf_customer } 
 
-section#cta.section-article.container-color--gray-dark-grad
-  .row.align-center.align-middle
-    .columns.small-12.medium-6.large-5
-      h2.headline-3.group--2x Schedule a conversation to learn more about Datica Compliant Kubernetes Service.
-      / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
-      .callout.callout--dark-alpha
-        blockquote.quote--serif
-          | The Datica team is helping us solve critical infrastructure and scaling problems faster and more competently than we can in-house.
-        .media-object.card-person
-          .media-object-section
-            img.avatar.avatar--large.circle alt=("Jon Pearce") src="https://images.ctfassets.net/189dvqdsjh46/6IUA5I8suWEWI28YcIkMgm/134af76338fd572e45a9d4a716a8ddb7/headshot-zipnosis.jpg" /
-          .media-object-section.main-section.align-self-middle
-            h4.person-name Jon Pearce
-            p.person-title CEO, Zipnosis
-    #form.columns.small-12.medium-large-6.large-4
-      .callout.drop
-        / h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
-        = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+.strip.strip-small.strip-cks
+section.bg-dark.bg-blue-purple-grad.product-cks id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+  .section-article.container-image--center.lozad data-background-image=bg_image
+    .row.align-center.align-middle
+      .columns.small-12.medium-6.large-5
+        h2.headline-3.group--2x Schedule a conversation to learn more about Datica Compliant Kubernetes Service.
+        / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
+        .callout.callout--dark-alpha
+          blockquote.quote--serif
+            | The Datica team is helping us solve critical infrastructure and scaling problems faster and more competently than we can in-house.
+          .media-object.card-person
+            .media-object-section
+              img.avatar.avatar--large.circle alt=("Jon Pearce") src="https://images.ctfassets.net/189dvqdsjh46/6IUA5I8suWEWI28YcIkMgm/134af76338fd572e45a9d4a716a8ddb7/headshot-zipnosis.jpg" /
+            .media-object-section.main-section.align-self-middle
+              h4.person-name Jon Pearce
+              p.person-title CEO, Zipnosis
+      #form.columns.small-12.medium-large-6.large-4
+        .callout.drop
+          / h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
+          = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
