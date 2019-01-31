@@ -12,33 +12,33 @@
 // @include foundation-off-canvas;
 
 // custom stuff
-.product-cks-bg {
-    // position: absolute;
-    // top:  0;
-    // left: 0;
-    // width: 100%;
-    color: $color_white; // optional, only spec if needed
-    // background-image: url("https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg");
-    // background-color: #1c4a6c; // fallback. can't combine this with blend-mode, it will stack!
-    @include breakpoint (small only) {
-        @include gradient(to bottom, #234880 0%, #366090 60%, #3d7e9c 100%);
-    }
-    // Multiple backgrounds, blend modes, tablet up only :zap:
-    @include breakpoint (medium) {
-        @supports (background-blend-mode: overlay) and (background-blend-mode: screen) {
-            background-image:
-                url('https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg?w=1200'),
-                url('/public/img/art/hexagon-bg-simple.svg'),
-                linear-gradient(to bottom, #234880 0%, #366090 60%, #3d7e9c 100%);
-            background-blend-mode: overlay, screen;
-            background-repeat: no-repeat;
-            background-position:
-                center top,
-                bottom right;
-            background-size: contain;
-        }
-    }
-}
+// .product-cks-bg {
+//     // position: absolute;
+//     // top:  0;
+//     // left: 0;
+//     // width: 100%;
+//     color: $color_white; // optional, only spec if needed
+//     // background-image: url("https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg");
+//     // background-color: #1c4a6c; // fallback. can't combine this with blend-mode, it will stack!
+//     @include breakpoint (small only) {
+//         @include gradient(to bottom, #234880 0%, #366090 60%, #3d7e9c 100%);
+//     }
+//     // Multiple backgrounds, blend modes, tablet up only :zap:
+//     @include breakpoint (medium) {
+//         @supports (background-blend-mode: overlay) and (background-blend-mode: screen) {
+//             background-image:
+//                 url('https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg?w=1200'),
+//                 url('/public/img/art/hexagon-bg-simple.svg'),
+//                 linear-gradient(to bottom, #234880 0%, #366090 60%, #3d7e9c 100%);
+//             background-blend-mode: overlay, screen;
+//             background-repeat: no-repeat;
+//             background-position:
+//                 center top,
+//                 bottom right;
+//             background-size: contain;
+//         }
+//     }
+// }
 
 $color: $color_blue;
 .solid {
@@ -67,25 +67,25 @@ img.soft-border{
 ul.bullet-outside {
     margin-left: 0;
 }
-.bullets-chevron {
-    list-style: none;
-    li {
-        margin-bottom: 1em;
-        @include breakpoint (xlarge) {
-            &:before {
-                content: '';
-                display: inline-block;
-                height: 2em;
-                width:  2em;
-                // background-image: url(http://placehold.it/32?text=fallback); // Fallback PNG
-                background-image: url(/public/icons/inlined/chevron-right-circle-white.svg);
-                background-size: contain;
-                background-repeat: no-repeat;
-                margin: -2rem 0.5rem -1rem -2.5rem;
-            }
-        }
-    }
-}
+// .bullets-chevron {
+//     list-style: none;
+//     li {
+//         margin-bottom: 1em;
+//         @include breakpoint (xlarge) {
+//             &:before {
+//                 content: '';
+//                 display: inline-block;
+//                 height: 2em;
+//                 width:  2em;
+//                 // background-image: url(http://placehold.it/32?text=fallback); // Fallback PNG
+//                 background-image: url(/public/icons/inlined/chevron-right-circle-white.svg);
+//                 background-size: contain;
+//                 background-repeat: no-repeat;
+//                 margin: -2rem 0.5rem -1rem -2.5rem;
+//             }
+//         }
+//     }
+// }
 @include keyframes( expando ) {
     0% {
         // height: 0px;
@@ -97,44 +97,6 @@ ul.bullet-outside {
     100% {
         // height: auto;
         opacity: 1;
-    }
-}
-
-// expand/toggle component
-.icon-toggle {
-    opacity: 0.5;
-    // margin-bottom: 0.03em;
-    margin-left:   0.1em;
-    @include transition(transform $timing-default, opacity $timing-default);
-}
-
-.is-toggle {
-    @include transition(color $timing-default, transform $timing-default);
-    &:hover {
-        .icon-toggle {
-            opacity: 1;
-            transform: translate3d(0, 2px, 0);
-        }
-    }
-    &[aria-expanded="true"] {
-        color: black;
-        .icon-toggle {
-            transform: rotate(180deg);
-        }
-    }
-    &[aria-expanded="false"] {
-        color: $color_prime-alt;
-    }
-}
-
-.show-more {
-    &--container {
-        display: none;
-        // height: 0;
-        &[aria-hidden='false'] { // ZF toggler
-            display: inline-block;
-            @include animation (expando 0.3s ease);
-        }
     }
 }
 
@@ -304,14 +266,14 @@ ul.bullet-outside {
         }
     }
 }
-.section-platform--technology-build{
-    img{
-        display: block;
-        margin: 0 auto;
-        max-width: rem-calc(250px);
-    }
-    #two{max-width: 200px;}
-}
+// .section-platform--technology-build{
+//     img{
+//         display: block;
+//         margin: 0 auto;
+//         max-width: rem-calc(250px);
+//     }
+//     #two{max-width: 200px;}
+// }
 
 
 .quote-callout {
@@ -369,24 +331,24 @@ ul.bullet-outside {
 }
 
 
-.drop-taper {
-    position:relative;
-    // @include shadow-anarchy(0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset);
-    &:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        @include shadow-anarchy(0 0 30px black(0.4));
-        top:    0%;
-        bottom: 20%;
-        left:   7vw;
-        right:  7vw;
-        border-radius: 250px / 50px;
-    }
-    &:after {
-        right: 10px;
-        left: auto;
-        @include transform(skew(8deg) rotate(3deg));
-    }
-}
+// .drop-taper { // sort of a tapering drop shadow for a thing above it
+//     position:relative;
+//     // @include shadow-anarchy(0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset);
+//     &:before {
+//         content: "";
+//         position: absolute;
+//         z-index: -1;
+//         @include shadow-anarchy(0 0 30px black(0.4));
+//         top:    0%;
+//         bottom: 20%;
+//         left:   7vw;
+//         right:  7vw;
+//         border-radius: 250px / 50px;
+//     }
+//     &:after {
+//         right: 10px;
+//         left: auto;
+//         @include transform(skew(8deg) rotate(3deg));
+//     }
+// }
 
