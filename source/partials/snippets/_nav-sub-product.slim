@@ -10,12 +10,13 @@ ruby:
           ul.breadcrumbs.align-middle.nomargin
             li
               a href="#" Home
-            li
-              a href="/cloud-compliance/" #{current_page.data.category.capitalize}
+            - if defined?(parent_url) # no parent_url, no parent 'folder' for u. Use 'category' in frontmatter or pass string
+              - if defined?(parent_label) ? label = parent_label : label = current_page.data.category
+              li
+                a href=parent_url title="Learn more about #{label}" #{label.capitalize}
             li
               span.show-for-sr Current: 
               = current_page.data.navTitle
-
       / li.menu-item.text-small style="align-items: inherit;"
         svg#subnav-product-cpaas-logo.icon-size--small.icon-inline.icon-left
           use.symbol-icon href="#cpaas-logo" xlink:href="#cpaas-logo"

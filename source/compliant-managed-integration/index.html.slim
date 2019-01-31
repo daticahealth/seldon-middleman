@@ -56,7 +56,7 @@ section.masthead.bg-dark.bg-red-yellow-grad.product-cmi.relative id=current_page
             p.lead Exchange data securely with any EHR in a scalable fashion
             = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
-    = partial "partials/snippets/nav-sub-product"
+    = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
     = inline_svg("products-cards-color", class: "z-5 art-accent step-1")
     / .art-bg-fill.art-light-blob
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
@@ -70,7 +70,7 @@ section.section-article.container-gray-11
     .columns.small-12.medium-4
       h3.headline-4 What is EHR Integration?
       p EHR integration is the partnership between providers, payers, vendors, and other players that brings the data or function from one application or program to that of another. Because of the sheer quantity and diversity of data, healthcare providers face major obstacles in integrating and effectively analyzing healthcare information.
-      = partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/ehr-integrations/", :button_classes => "button hollow secondary", :item_id => "integration" }
+      = partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/ehr-integration/", :button_classes => "button hollow secondary", :item_id => "integration" }
 
 section.section-article.bg-gray-3 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
   .row.align-center

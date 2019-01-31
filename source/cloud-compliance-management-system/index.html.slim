@@ -60,7 +60,7 @@ section.masthead.bg-dark.bg-purple-bp-grad.product-ccms.relative id=current_page
       .glow-light
         = Kramdown::Document.new(data.site.videos['1ucmmX9i5Lo4gNY1UKpWOz'].custom_form).to_html
   .art
-    = partial "partials/snippets/nav-sub-product"
+    = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/cloud-compliance/" }
     = inline_svg("products-hexagons-color", class: "z-5 art-accent step-1")
     / .art-bg-fill.art-light-blob
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image

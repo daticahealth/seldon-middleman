@@ -96,7 +96,7 @@ section.masthead.bg-dark.bg-blue-green-grad.product-cpaas.relative id=current_pa
             p.lead Build & deploy digital health apps on a compliant, hosted platform
             = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
-    = partial "partials/snippets/nav-sub-product"
+    = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/cloud-compliance/" }
     = inline_svg("products-discs-color", class: "z-5 art-accent step-1")
     .art-bg-fill.art-light-blob
     .z-0.art-bg-fill.art-pattern.container-image--fixed.lozad data-background-image=bg_image
