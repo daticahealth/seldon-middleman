@@ -44,11 +44,14 @@
         @include breakpoint (medium){ // desktop
             padding: 2.5rem 1rem;
         }
-        @include breakpoint (large){ // desktop
+        @include breakpoint (medium-large){ // desktop
             padding: 3rem 1.875rem;
         }
+        @include breakpoint (large){ // desktop
+            padding: 4rem 2.5rem;
+        }
         @include breakpoint (xlarge up){ // desktop xl
-            padding: 6.25rem 1.875rem;
+            padding: 6.25rem 3rem;
         }
         // here's the deal with this. I intended for the padding in containers to scale with the viewport - giant screens get more padding, mobile keeps it tight. The VW units do that. BUT that means there is no "pixel-perfect state" regarding padding - it's fluid. That said, here's my compromise: variable padding for small to medium, and fixed above that for desktop. -AW
         &--small {
