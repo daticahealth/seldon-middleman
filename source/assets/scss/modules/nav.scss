@@ -501,6 +501,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
     }
     .nav__contact {
         margin-left: 1rem;
+        white-space: nowrap; // Edge makes button wrap
     }
 
 

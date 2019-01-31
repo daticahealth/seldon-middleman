@@ -63,7 +63,7 @@ section.masthead.bg-dark.bg-blue-purple-grad.product-cks.relative id=current_pag
             = partial "partials/snippets/button", :locals => { :label => "Get Pricing", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-cks-top", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
     = partial "partials/snippets/nav-sub-product"
-    /= inline_svg("products-triangles-color", class: "z-5 art-accent step-1")
+    = inline_svg("products-triangles-color", class: "z-5 art-accent step-1")
     / .art-bg-fill.art-light-blob
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
   .strip.strip-small.strip-cks

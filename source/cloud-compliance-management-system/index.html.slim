@@ -57,10 +57,11 @@ section.masthead.bg-dark.bg-purple-bp-grad.product-ccms.relative id=current_page
             = partial "partials/snippets/button", :locals => { :label => "Get Pricing", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-top", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .row.align-right.relative.z-10
     .columns.small-12.large-9
-      = Kramdown::Document.new(data.site.videos['1ucmmX9i5Lo4gNY1UKpWOz'].custom_form).to_html
+      .glow-light
+        = Kramdown::Document.new(data.site.videos['1ucmmX9i5Lo4gNY1UKpWOz'].custom_form).to_html
   .art
     = partial "partials/snippets/nav-sub-product"
-    /= inline_svg("products-triangles-color", class: "z-5 art-accent step-1")
+    = inline_svg("products-hexagons-color", class: "z-5 art-accent step-1")
     / .art-bg-fill.art-light-blob
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
   .strip.strip-small.strip-ccms
