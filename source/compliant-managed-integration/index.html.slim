@@ -258,19 +258,17 @@ section.bg-dark.bg-red-yellow-grad.product-cmi id=current_page.data.subnav[4].sl
 
 section#faq.section-article.container-gray-12
   .row.align-center
-    .columns.small-12.medium-8.large-8
-      h3.headline-3.text-center.group Frequently asked questions about integrations
-  .row.align-center
-    .columns.small-12.medium-4.large-4
-      .callout.callout--gray-light
-        ol
-          - data.views.faqs.platform_integration.each_with_index do |item, index|
-            li
-              a href="#platform-tech-question-#{index}" = item["question"]
-    .columns.small-12.medium-8.large-8
+    .columns.small-12.medium-10.large-7
+      h3.headline-3.group Frequently asked questions about integrations
+      / .columns.small-12.medium-4.large-4
+        .callout.callout--gray-light
+          ol
+            - data.views.faqs.platform_integration.each_with_index do |item, index|
+              li
+                a href="#platform-tech-question-#{index}" = item["question"]
       dl
         - data.views.faqs.platform_integration.each_with_index do |item, index|
           dt id="platform-tech-question-#{index}" = item["question"]
           dd= Kramdown::Document.new(item["answer"]).to_html
-      = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => current_page.data.subnav[4].slug, :button_classes => "button hollow", :icon => "icon-chevron-up" }
+      = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button hollow", :icon => "icon-chevron-up" }
 
