@@ -151,6 +151,18 @@
   force = true
 
 [[redirects]]
+  from = "/compliant-kubernetes-service/technology/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/compliant-kubernetes-service/roadmap/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/customer/va"
   to = "/customer/veterans-affairs"
   status = 301
