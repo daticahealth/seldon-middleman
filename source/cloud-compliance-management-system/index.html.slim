@@ -32,6 +32,7 @@ subnav:
 ---
 ruby:
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  current_year = DateTime.now.strftime('%Y')
   current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/4wojUl2MFGICcaykkGIMCK/26d4dd220c5ebbf9335aa81c7d3d575c/share-ccms.jpg'
   the_form = data.site.forms['1sd7ExrRIkg0SgQ0CsiiaO']
   bg_image = 'https://images.ctfassets.net/189dvqdsjh46/3FCC7CKhlkP2bzFf8UzNk6/651f57bfbd77c0d38a7b188776ac4230/bg-hexagons-1.svg'
@@ -89,7 +90,7 @@ section.container-color--white id=current_page.data.subnav[2].slug data-magellan
   .section-article
     .row.align-center
       .columns.small-12.medium-8.large-6
-        h2.headline-2.text-center 2018 is a Post-Cloud World
+        h2.headline-2.text-center = "#{current_year} is a Post-Cloud World"
         p.lead The proliferation of abstracted cloud services has increased in an effort to improve developer experience (a good thing). As a result, most cloud environments are a constellation of managed services and microservices. The cloud is no longer simply an operating system on someone else's hard drive.
         p.lead But increased abstraction has meant greater control has been taken away from the end user's ability to attest to compliance assurances (a bad thing). The entire layer of "Services" on top of traditional VMs has completely changed how compliance should be measured, monitored, and managed.
         p

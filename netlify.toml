@@ -563,6 +563,11 @@
   status = 301
 
 [[redirects]]
+  from = "/blog/what-were-building-daticas-public-product-roadmap/"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
   from = "/learn/whitepapers"
   to = "/academy"
   status = 301
