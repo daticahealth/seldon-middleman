@@ -106,22 +106,13 @@ section.section-article.bg-gray-3 id=current_page.data.subnav[1].slug data-magel
 
   aside.section-article--sm.menu.button-group.align-center.show-for-large
     /= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow", :item_id => "cta_top_pricing" }
-    = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button button--light", :icon => "icon-chevron-down" }
+    = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => current_page.data.subnav[4].slug, :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
 section.section-article--med.strip.strip-cmi
   .row.align-center.text-center
     .columns.small-12.large-10
       h2.headline-3 Datica's Proven Integration Track Record
-      .row.small-up-1.medium-up-3.align-center
-        .column
-          span.headline-1 200+
-          p Total number of sites with live integrations using CMI.
-        .column
-          span.headline-1 32+
-          p Total number of EHRs Datica has helped integrate successfully with customer products.
-        .column
-          span.headline-1 Millions
-          p Total number of mission-critical messages processed monthly on Datica's platform.
+  = partial "partials/content/stats-integration"
 
 section.section-article.bg-gray-3
   .row.align-middle.group
@@ -281,5 +272,5 @@ section#faq.section-article.container-gray-12
         - data.views.faqs.platform_integration.each_with_index do |item, index|
           dt id="platform-tech-question-#{index}" = item["question"]
           dd= Kramdown::Document.new(item["answer"]).to_html
-      = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "#cta", :button_classes => "button hollow", :icon => "icon-chevron-up" }
+      = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => current_page.data.subnav[4].slug, :button_classes => "button hollow", :icon => "icon-chevron-up" }
 
