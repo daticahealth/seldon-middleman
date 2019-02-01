@@ -5,14 +5,6 @@
 @import '../mixins/colors';
 @import '../mixins/functions';
 
-// Breadcrumb nav: http://foundation.zurb.com/sites/docs/breadcrumbs.html
-.breadcrumb {
-    li {
-        &:not(:last-child)::after {
-            content: "\203A"; // a '›' http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/
-        }
-    }
-}
 blockquote + .media-object, .blockquote-info { // line person/info up with quote indent
     margin-left: 1.5rem;
 }
@@ -270,6 +262,43 @@ span.label + span.label { // when in a tag list
     }
     &-icon {
 
+    }
+}
+// expand/toggle component - moved from products.scss
+.icon-toggle {
+    opacity: 0.5;
+    // margin-bottom: 0.03em;
+    margin-left:   0.1em;
+    @include transition(transform $timing-default, opacity $timing-default);
+}
+
+.is-toggle {
+    @include transition(color $timing-default, transform $timing-default);
+    &:hover {
+        .icon-toggle {
+            opacity: 1;
+            transform: translate3d(0, 2px, 0);
+        }
+    }
+    &[aria-expanded="true"] {
+        color: black;
+        .icon-toggle {
+            transform: rotate(180deg);
+        }
+    }
+    &[aria-expanded="false"] {
+        color: $color_prime-alt;
+    }
+}
+
+.show-more {
+    &--container {
+        display: none;
+        // height: 0;
+        &[aria-hidden='false'] { // ZF toggler
+            display: inline-block;
+            @include animation (expando 0.3s ease);
+        }
     }
 }
 

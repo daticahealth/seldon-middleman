@@ -13,7 +13,8 @@ collectionName: "product"
 priority: "0.9"
 ---
 ruby:
-  current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" />'
+  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/HbsGXWHaxOhy7fuR9mtJb/2884620ec5b3b1633d5bfd8c3787a5e4/bg-cards-fade.svg'
+  current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
   current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/Qh24iUaLW6Saoe4QKAAu6/3c1d9922a320aa39808f5b55e1a2583f/cta-integrations-share.jpg"
   featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/0715bdb8ca051eb4e3e69085fc78c443/Computer_programmers_working_together.jpg"
 / = partial "partials/snippets/platform-icons"
@@ -31,7 +32,7 @@ section.hide-for-large
       .bg-white.pad--lg
         h2.headline-2 Is the stress of hospital integrations holding your business back?
         h2.headline-3.text-bold.group Activate your digital health product with data from any EHR enables EHR integrations at scale.
-        = partial "partials/snippets/button", :locals => { :label => "Get started with CMI", :url => "/compliant-managed-integration#cta", :button_classes => "button nomargin", :data_track_group => "integration", :item_id => "get-integration-mobile", :icon => "icon-chevron-right", :icon_align => "right" }
+        = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "/compliant-managed-integration#cta", :button_classes => "button nomargin", :data_track_group => "integration", :item_id => "get-integration-mobile", :icon => "icon-chevron-right", :icon_align => "right" }
 section#top.show-for-large.section-article.pad-no-bottom.bg-gray-12.container-image--center.lozad data-background-image="#{featured_img}?fit=thumb&w=1800&h=900&q=65"
   .row.align-right.align-middle
     .columns.small-12.medium-6
@@ -41,12 +42,12 @@ section#top.show-for-large.section-article.pad-no-bottom.bg-gray-12.container-im
         .bg-white.pad--lg
           h2.headline-3.text-bold Activate your digital health product with data from any EHR
           p.lead You've created an amazing healthcare application, now it's time to grow by exchanging data with more EHRs. Datica enables EHR integrations at scale.
-          = partial "partials/snippets/button", :locals => { :label => "Get started with CMI", :url => "/compliant-managed-integration#cta", :button_classes => "button nomargin", :data_track_group => "integration", :item_id => "get-integration-desktop", :icon => "icon-chevron-right", :icon_align => "right" }
+          = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "/compliant-managed-integration#cta", :button_classes => "button nomargin", :data_track_group => "integration", :item_id => "get-integration-desktop", :icon => "icon-chevron-right", :icon_align => "right" }
 .strip.strip-cmi
 
 / section#top.section-article.bg-gray-11.container-image-fill.lozad data-background-image="?fit=crop&w=1600&h=800"
 
-section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
+section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_image
   / .row
   /   .columns.small-12.medium-12.large-8
   /     h2.headline-2.text-bold Get back to solving problems for heathcare
@@ -57,7 +58,7 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
   /     p Integrating with EHRs is an ongoing challenge for digital health solutions. 
   /       strong EHR integration is not just a technology problem, it’s also a people and process problem.
 
-  .row
+  .row.group
     .columns.small-12.large-7
       h2.headline-1 Datica Integration Solutions
       p.lead.group Datica's approach to integration has helped a wide range of solutions across the entire spectrum of healthcare.
@@ -74,10 +75,10 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
 
       / .subhead--spaced CMI
       / .blob-color.blob-cmi.z-auto data-glow="false"
-  .row
+  .row.group
     .columns.small-12.medium-6.large-6.group
       p.lead We combine cutting-edge automation of cloud infrastructure security, DevOps processes, and interface engines, with our extensive experience in solving healthcare integration problems. All built on a solid foundation of <strong>continuous HIPAA compliance</strong>.
-      = partial "partials/snippets/button", :locals => { :label => "Learn more about CMI", :url => "/compliant-managed-integration/", :button_classes => "button button--light button-inline", :data_track_group => "integration", :item_id => "get-cmi", :icon => "icon-chevron-right", :icon_align => "right" }
+      = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "/compliant-managed-integration/", :button_classes => "button button--light button-inline", :data_track_group => "integration", :item_id => "get-cmi", :icon => "icon-chevron-right", :icon_align => "right" }
     .columns.small-12.medium-6.large-6
       = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => 'nopad bg-gray-11' })
             / <h2 class="headline-3">Get to market faster, beat the competition, and meet compliance requirements&mdash;all with fewer engineering resources.</h2>
@@ -108,26 +109,7 @@ section.section-article.bg-white
   .row.align-center.text-center
     .columns.small-12.large-10
       h2.headline-3 Datica's Proven Integration Track Record
-  .row.small-up-2.medium-up-4.large-up-5.xlarge-up-6.align-center.text-center.text-small.group--2x
-    .column
-      span.headline-3.text-bold 200+
-      p Live integrations completed
-    / .column
-    /   span.headline-1.text-bold 32+
-    /   p Total number of EHRs Datica has helped integrate successfully with customer products.
-    .column
-      span.headline-3.text-bold Millions
-      p Total number of mission-critical messages processed monthly with Datica's products
-    .column
-      span.headline-3.text-bold 1,000+
-      p Security and risk assessments passed
-    .column
-      span.headline-3.text-bold Zero
-      p Unexpected downtime three years in a row
-    .column
-      span.headline-3.text-bold 100%
-      p Built with open-source tech
-
+  = partial "partials/content/stats-integration", :locals => { :classes => "group--2x" }
   /.row.align-center.group
     .columns.small-12.medium-10.large-6
       = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => 'bg-gray-12' })
@@ -164,7 +146,7 @@ section#integration.section-article.bg-gray-11
       = partial "/partials/content/collection-list", :locals => { :collection => collection }
 
 .strip.strip-cmi
-aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-background-image=bg_product_dark
+aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-background-image=bg_image
   .relative.has-blob
     .relative.z-5
       .row.align-center.group--sm

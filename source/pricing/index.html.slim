@@ -59,7 +59,9 @@ scss:
       .columns.small-12.medium-large-6
         .row.group.collapse.product-block
           .columns.shrink
-            = inline_svg("ccms-logo-dark", class: "icon-size--large product-icon")
+            svg id="product-ccms" class="icon-size--medium product-icon text--gray-5"
+              use.symbol-icon xlink:href="#ccms-logo" href="#ccms-logo"
+            /= inline_svg("ccms-logo-dark", class: "icon-size--large product-icon")
           .columns
             h2.headline-4.text-regular
               a href="/cloud-compliance-management-system" title="Cloud Compliance Management System" Cloud Compliance Management System
@@ -68,7 +70,9 @@ scss:
           
         .row.group.collapse.product-block
           .columns.shrink
-            = inline_svg("cks-logo-dark", class: "icon-size--large product-icon")
+            svg id="product-cks" class="icon-size--medium product-icon text--gray-5"
+              use.symbol-icon xlink:href="#cks-logo" href="#cks-logo"
+            /= inline_svg("cks-logo-dark", class: "icon-size--large product-icon")
           .columns
             h2.headline-4.text-regular
               a href="/compliant-kubernetes-service" title="Compliant Kubernetes Service" Compliant Kubernetes Service
@@ -77,7 +81,9 @@ scss:
 
         .row.group.collapse.product-block
           .columns.shrink
-            = inline_svg("cpaas-logo-dark", class: "icon-size--large product-icon")
+            svg id="product-cpaas" class="icon-size--medium product-icon text--gray-5"
+              use.symbol-icon xlink:href="#cpaas-logo" href="#cpaas-logo"
+            /= inline_svg("cpaas-logo-dark", class: "icon-size--large product-icon")
           .columns
             h2.headline-4.text-regular
               a href="/compliant-platform-as-a-service" title="Compliant Platform as a Service" Compliant Platform as a Service
@@ -86,7 +92,9 @@ scss:
           
         .row.group.collapse.product-block
           .columns.shrink
-            = inline_svg("cmi-logo-dark", class: "icon-size--large product-icon")
+            svg id="product-cmi" class="icon-size--medium product-icon text--gray-5"
+              use.symbol-icon xlink:href="#cmi-logo" href="#cmi-logo"
+            /= inline_svg("cmi-logo-dark", class: "icon-size--large product-icon")
           .columns
             h2.headline-4.text-regular
               a href="/compliant-managed-integration" title="Compliant Managed Integration" Compliant Managed Integration
@@ -96,7 +104,7 @@ scss:
             p Leverage Datica's expertise to help instantiate any new integration sites. Hundreds of live sites have been integrated over the last four years via this service.
 
       #cta.columns.small-12.medium-large-6.large-5
-        .callout.pad--lg.drop.form-embed.nomargin.pricing-form.group
+        .callout.pad--lg.drop.form-embed.pricing-form.group
           / h3.headline-4.text-center Request Pricing
           p Thank you for your interest in the Datica product suite. A representative will reach out to schedule time to answer your questions.
           - the_form = data.site.forms['pdrdbrjyUKoooYI8EUAYw']

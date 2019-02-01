@@ -1,0 +1,165 @@
+@charset 'utf-8';
+@import '../settings';
+@import 'node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+// @import 'node_modules/foundation-sites/scss/components/_off-canvas.scss';
+@import '../mixins/colors';
+@import '../mixins/functions';
+@import '../mixins/animation';
+// @import '../vendor/slick';
+// @import '../modules/masonry';
+// @import '../modules/fonts-optional';
+// @include foundation-off-canvas;
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    50% { opacity: 0; }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-move {
+    0% {
+        opacity: 0;
+        transform: translate3D(-6px, 0, 0);
+    }
+    75% {
+        opacity: 0;
+        transform: translate3D(-6px, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3D(0, 0, 0);
+    }
+}
+.masthead {
+    color: white;
+    .sticky {
+        &:not(.is-stuck) { // set initial states, before .is-stuck is set by scroll
+            &[data-theme="light"] {
+                .menu-item--link {
+                    color: $gray-11;
+                }
+            }
+            &[data-theme="dark"] {
+                .menu-item--link {
+                    color: $gray-3;
+                }
+            }
+        }
+        &.is-stuck {
+            .menu-item:last-child { // highlight the CTA
+                background-color: white;
+                // color: white;
+            }
+        }
+    }
+    .art {
+        @include abs-topleft;
+        height: 100%;
+        width:  100%;
+        overflow: hidden;
+        .art-accent { // svg art of brighter shapes. SVG needs preserveAspectRatio
+            @include abs-topleft; // other positioning is per-masthead, below
+        }
+        .art-bg-fill {
+            @include abs-topleft;
+            height: 100%;
+            width:  100%;
+            &.lozad {
+                @include blur(2vw);
+                transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
+            }
+            &.lozad.loaded {
+                @include blur(0);
+                -webkit-transition-delay: 1s;
+                transition-delay:         1s;
+            }
+        }
+        .art-light-blob {
+            @include abs-topleft;
+            width:  45vw;
+            height: 45vw;
+            opacity: 0.8;
+        }
+        .art-pattern {
+            mix-blend-mode: soft-light;
+            // opacity: 0.3;
+        }
+    }
+    .masthead-icon {
+        width:    calc(4rem + 5vw);
+        height: calc(4rem + 5vw);
+        padding-right: 1vw;
+    }
+}
+.art-accent {
+    transition: fill-opacity $timing-default linear, transform $timing-default ease;
+    fill-opacity: 0.3;
+    @include breakpoint (large) {
+        fill-opacity: 1;
+    }
+}
+// page-specific styles for gradients, artwork
+.product-cpaas { /* grad-green-blue */
+    $hue: 212;
+    .art-accent { // svg art of brighter shapes. SVG needs preserveAspectRatio
+        width: calc(3rem + 9vw);
+        transform: translate3d(2vw, -2vw, 0); // using transform vs positioning or padding
+    }
+    // .art-light-grad {
+    //     background: radial-gradient(234.90px at 20.53% 41.54%, rgba(46, 108, 165, 0.88) 0%, rgba(28, 118, 139, 0) 100%), linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(292.05deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
+    //     mix-blend-mode: normal;
+    //     // background: linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(297.76deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
+    //     // mix-blend-mode: color-dodge;
+    // }
+    .art-light-blob {
+        background: radial-gradient(20vw at 44.68% 42.78%, hsla($hue, 53, 42, 0.88) 0%, hsla($hue, 53, 42, 0.09) 82.87%, hsla($hue, 53, 42, 0) 100%);
+        // mix-blend-mode: normal;
+    }
+}
+.product-cmi { /* grad-red-yellow-cmi */
+    $hue: 335;
+    .art-accent { // svg art of brighter shapes. SVG needs preserveAspectRatio
+        width: calc(13rem + 11vw);
+        transform: translate3d(4vw, -2vw, 0);
+        height: auto;
+        // mix-blend-mode: color-dodge;
+    }
+    // .art-light-grad {
+    //     background: linear-gradient(58.65deg, rgba(212, 72, 131, 0.81) -2.22%, rgba(217, 72, 155, 0.19) 14.52%, rgba(218, 72, 159, 0) 27.72%, rgba(136, 32, 101, 0) 86.95%, rgba(185, 41, 102, 0.81) 103.16%), linear-gradient(111.54deg, rgba(255, 204, 105, 0.63) -6.07%, rgba(168, 116, 54, 0) 24.26%), linear-gradient(189.79deg, #312F2F -0.87%, #62605D 87.34%);
+    //     mix-blend-mode: normal;
+    // }
+    .art-light-blob {
+        background: radial-gradient(20vw at 44.68% 42.78%, hsla($hue, 53, 42, 0.88) 0%, hsla($hue, 53, 42, 0.09) 82.87%, hsla($hue, 53, 42, 0) 100%);
+    }
+}
+.product-cks {
+    $hue: 255;
+    .art-accent {
+        transform: translate3d(2vw, -1vw, 0) scale3d(1, 1, 1);
+    }
+    .art-light-blob {
+        background: radial-gradient(20vw at 44.68% 42.78%, hsla($hue, 53, 42, 0.88) 0%, hsla($hue, 53, 42, 0.09) 82.87%, hsla($hue, 53, 42, 0) 100%);
+    }
+}
+.product-ccms {
+    $hue: 278;
+    .art-accent {
+        transform: translate3d(5vw, 7vw, 0) scale3d(1.2, 1.2, 1);
+    }
+    .art-light-blob {
+        background: radial-gradient(20vw at 44.68% 42.78%, hsla($hue, 53, 42, 0.88) 0%, hsla($hue, 53, 42, 0.09) 82.87%, hsla($hue, 53, 42, 0) 100%);
+    }
+}
+
+$transition: opacity $timing-medium linear, color $timing-medium linear, background-color $timing-medium linear, transform $timing-medium ease;
+.step-1, .step-2 {@include transition ($transition);}
+.step-1 {
+    animation: fade 1s linear both;
+    transition-delay: 0.3s;       
+}
+.step-2 {
+    animation: fade-in 0.6s ease 1s both;
+}

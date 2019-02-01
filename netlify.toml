@@ -151,6 +151,18 @@
   force = true
 
 [[redirects]]
+  from = "/compliant-kubernetes-service/technology/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/compliant-kubernetes-service/roadmap/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/customer/va"
   to = "/customer/veterans-affairs"
   status = 301
@@ -548,6 +560,11 @@
 [[redirects]]
   from = "/blog/configuration-management-on-the-catalyze-docker-paas"
   to = "https://engineering.datica.com/configuration-management-on-the-catalyze-docker-paas.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/what-were-building-daticas-public-product-roadmap/"
+  to = "/blog/"
   status = 301
 
 [[redirects]]

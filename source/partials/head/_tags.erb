@@ -12,7 +12,7 @@
 <meta name="topic" content="<%= current_page.data.title %>">
 <meta name="classification" content="website">
 <meta name="url" content="<%= site_url %>">
-<meta name="keywords" content="heathcare, <%= current_page.data.tags %>">
+<%# <meta name="keywords" content="heathcare, "> %><%#= current_page.data.tags %>
 <meta name="coverage" content="Worldwide">
 <meta name="distribution" content="Global">
 <meta name="author" content="<%= current_page.data.author %>">
@@ -31,7 +31,7 @@
 <meta property="twitter:creator" content="<%= twitter_handle %>">
 <meta property="twitter:title" content="<%= current_page.data.title %>">
 <meta property="twitter:description" content="<%= current_page.data.summary %>">
-
+<link rel="alternate" href="<%= site_url %>" hreflang="en-us" />
 <link rel="canonical" href="<%= site_url + current_page.url %>">
 <% if current_page.data.has_key?("share_image") %>
     <meta property="og:image" content="<%= current_page.data.share_image %>">

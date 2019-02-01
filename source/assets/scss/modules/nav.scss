@@ -32,6 +32,15 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
+// Breadcrumb nav: http://foundation.zurb.com/sites/docs/breadcrumbs.html
+.breadcrumbs {
+    transition: opacity $timing-default linear;
+    li {
+        &:not(:last-child)::after {
+            content: "\203A"; // a '›' http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/
+        }
+    }
+}
 // foundation sticky nav basics
 .menu {
     li {
@@ -48,6 +57,17 @@ $duration: $timing-default * 1.5; //settings.scss:281
             }
             // &[aria-current="page"] {
             // }
+        }
+        ul.breadcrumbs { // breadcrumbs inside subnav, usually first li
+            margin-right: 3rem;
+            li {
+                a {
+                    padding: 0.2rem;
+                }
+            }
+            li:not(:last-child)::after { // divider
+                align-self: center;
+            }
         }
     }
 }
@@ -481,6 +501,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
     }
     .nav__contact {
         margin-left: 1rem;
+        white-space: nowrap; // Edge makes button wrap
     }
 
 

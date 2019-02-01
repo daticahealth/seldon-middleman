@@ -1,42 +1,73 @@
 ---
-title: "Datica Cloud Compliance Management System"
-summary: "Datica's Cloud Compliance Management System (CCMS) will be the first-ever tool to guide compliance assurance of managed cloud-native services."
+title: "Cloud Compliance Management System | Datica Compliance"
+summary: "Cloud Compliance Management System (CCMS) maps to HITRUST and manages the continual compliance state of cloud services."
 navTitle: "Datica CCMS"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
 date: "September 25, 2018"
 ogType: "product"
-customCSS: "products"
+category: "compliance"
+customCSS: "products, products-mastheads"
 layout: products
 collectionName: "products"
 collectionOrder: 3
 priority: "0.9"
+subnav:
+  -
+    title: "Overview"
+    slug: "overview"
+  -
+    title: "How it Works"
+    slug: "how-it-works"
+  -
+    title: "Benefits"
+    slug: "benefits"
+  -
+    title: "Configurations"
+    slug: "configurations"
+  -
+    title: "Get Started"
+    slug: "start"
+
 ---
 ruby:
-  current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/4wojUl2MFGICcaykkGIMCK/a65e77c6c0ea966fbc8dee9659a84d4f/product-ccms-share.jpg'
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  current_year = DateTime.now.strftime('%Y')
+  current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/4wojUl2MFGICcaykkGIMCK/26d4dd220c5ebbf9335aa81c7d3d575c/share-ccms.jpg'
   the_form = data.site.forms['1sd7ExrRIkg0SgQ0CsiiaO']
+  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/3FCC7CKhlkP2bzFf8UzNk6/651f57bfbd77c0d38a7b188776ac4230/bg-hexagons-1.svg'
   img_1 = 'https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg'
   img_2 = 'https://images.ctfassets.net/189dvqdsjh46/1KxUwvIiuE4gEaeqUSIgq4/a4b9c86fda34d160d94bdd55c766b2e5/ccms-diagram.png'
   diagram_1 = "https://images.ctfassets.net/189dvqdsjh46/1DnnFdmBAYcWSyiGE2M6aK/1651ceeb1d2343007b09a5ce4c20ed38/c3-diagram-1.png"
   diagram_2 = "https://images.ctfassets.net/189dvqdsjh46/iEhDz8im4wyCMCGk0Wcqk/79088104bd888bcb3e9867fb0ccb242a/c3-diagram-2.png"
+  current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
+scss:
+  .glow-light {
+    box-shadow: 0rem 0rem 5rem 0.5rem hsla(66, 100%, 90%, 0.2);
+  }
+section.masthead.bg-dark.bg-purple-bp-grad.product-ccms.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+  .section-article--lg.relative.z-10 style="padding-bottom: 4vw;"
+    .row.align-middle
+      .columns.small-12.medium-10.large-8
+        .media-object.relative.stack-for-small 
+          .media-object-section
+            = inline_svg("ccms-logo-w", class: "masthead-icon")
+          .media-object-section.media-object--info.main-section.align-self-middle
+            h1.headline-3.text-bold.margin-bottom-sm Cloud Compliance Management System
+            p.lead Know the precise compliance state of your cloud environments
+            = partial "partials/snippets/button", :locals => { :label => "Get Started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-top", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+  .row.align-right.relative.z-10
+    .columns.small-12.large-9
+      .glow-light
+        = Kramdown::Document.new(data.site.videos['1ucmmX9i5Lo4gNY1UKpWOz'].custom_form).to_html
+  .art
+    = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/cloud-compliance/" }
+    = inline_svg("products-hexagons-color", class: "z-5 art-accent step-1")
+    / .art-bg-fill.art-light-blob
+    .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
+  .strip.strip-small.strip-ccms
 
-/ svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  defs
-    symbol#icon-chevron-down viewbox=("0 0 18 18")
-      title chevron-down
-      path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
-
-section#top.section-article.pad-no-bottom
-  .row.align-center
-    .columns.small-12.large-8.text-center
-      .group
-        = inline_svg("icon-ccms-mag", class: "icon-size--xlarge svg-color--gray-6")
-        h3.headline-5.spaced-out Datica CCMS
-        h1.headline-3 Continuous Compliance Monitoring for Cloud Services
-        p.lead = current_page.data.summary
-      img.lozad.img-crisp src="#{img_1}?fit=crop&w=1800&h=800&f=top_left&q=5" data-src="#{img_1}?fit=crop&w=1800&h=800&f=top_left" alt="CCMS screenshot"
-
-section#api.section-article.pad-no-bottom.container-gray-11.drop-taper
+section.section-article.pad-no-bottom.container-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
   .row.align-center
     .columns.small-12.large-8.text-center
       h2.headline-2 API-Driven Compliance
@@ -55,11 +86,11 @@ section#api.section-article.pad-no-bottom.container-gray-11.drop-taper
       img.lozad.img-crisp src="#{img_2}?w=792&fm=jpg&q=10&bg=rgb:e5e9eb" data-src="#{img_2}?w=2000" alt="CCMS features"
 
 
-section#cloud-info.container-color--white
+section.container-color--white id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
   .section-article
     .row.align-center
       .columns.small-12.medium-8.large-6
-        h2.headline-2.text-center 2018 is a Post-Cloud World
+        h2.headline-2.text-center = "#{current_year} is a Post-Cloud World"
         p.lead The proliferation of abstracted cloud services has increased in an effort to improve developer experience (a good thing). As a result, most cloud environments are a constellation of managed services and microservices. The cloud is no longer simply an operating system on someone else's hard drive.
         p.lead But increased abstraction has meant greater control has been taken away from the end user's ability to attest to compliance assurances (a bad thing). The entire layer of "Services" on top of traditional VMs has completely changed how compliance should be measured, monitored, and managed.
         p
@@ -81,7 +112,8 @@ section#cloud-info.container-color--white
     .row.align-center
       .columns.small-12.medium-8.large-6
         p.lead <strong>Datica CCMS solves this problem.</strong> Simply plug <a href="#configs" title="Configurations">available services</a> into the CCMS and let us continuously monitor the compliance state of a service. Users can be assured the configurations map to the proper HITRUST CSF controls, thus generating a compliant posture against regimes such as HIPAA, GDPR, and GxP.
-section#hitrust.section-article.container-gray-12
+
+section.section-article.container-gray-12 id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
   .row.align-center.align-middle
     .columns.small-12.medium-6.large-6
       h2.headline-3 Make any cloud service compliant
@@ -111,7 +143,7 @@ section#hitrust.section-article.container-gray-12
             .media-object-section
               h4.headline-5 GCP Cloud SQL Guide
 
-section#configs.section-article.container-gray-11
+/section#configs.section-article.container-gray-11
   .row.align-center
     .columns.small-12.large-8
       h2.headline-3.group.text-center Coming soon — more configurations on the way
@@ -159,18 +191,19 @@ section#configs.section-article.container-gray-11
             = partial "partials/snippets/button", :locals => { :label => "Start the survey", :url => "survey", :button_classes => "button button-inline", :icon => "icon-chevron-right", :item_id => "ccms_survey" }
             / = partial "partials/snippets/form", :locals => { :the_form => form_1["custom_form"], :form_id => "configForm" }
 
-
-section#cta.section-article.container-color--gray-dark-grad.relative(style="overflow: hidden;")
-  .row.align-center.align-middle.z-10.relative
-    .columns.small-12.medium-6.large-5
-      h2.headline-3 Datica CCMS is coming in early 2019.
-      p.lead.group--2x Sign up to be notified of the release and to help prioritize service configurations. Registrants have the chance to be included in a private preview.
-    #cta-form.columns.small-12.medium-large-6.large-4
-      .callout.drop
-        / h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
-        = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
-  .absolute.preview-bg.z-0.group
-    img.lozad.img-cover.img-multiply.blur-4 src="#{img_1}?w=250&fm=jpg&q=10" data-src="#{img_1}?w=1000"
+.strip.strip-small.strip-ccms
+section.bg-dark.bg-purple-bp-grad.product-ccms id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+  .section-article.container-image--center.lozad data-background-image=bg_image
+    .row.align-center.align-middle.z-10.relative
+      .columns.small-12.medium-6.large-5
+        h2.headline-3 Datica CCMS is coming in early 2019.
+        p.lead.group--2x Sign up to be notified of the release and to help prioritize service configurations. Registrants have the chance to be included in a private preview.
+      #cta-form.columns.small-12.medium-large-6.large-4
+        .callout.drop
+          / h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
+          = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+    / .absolute.preview-bg.z-0.group
+    /   img.lozad.img-cover.img-multiply.blur-4 src="#{img_1}?w=250&fm=jpg&q=10" data-src="#{img_1}?w=1000"
 
 
 / extra content

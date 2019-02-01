@@ -361,6 +361,12 @@
     &-10 {
         z-index: 10;
     }
+    &-15 {
+        z-index: 15;
+    }
+    &-18 { // sticky & secondary navs here
+        z-index: 18;
+    }
     &-20 { // navs should exist here
         z-index: 20;
     }
@@ -396,7 +402,7 @@
 //     margin-left:  auto;
 // }
 .nomargin, .no-margin {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 .no-margin-top{
   margin-top: 0;
