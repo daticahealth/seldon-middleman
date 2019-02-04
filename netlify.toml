@@ -17,15 +17,19 @@
     Link = '''
     <//images.ctfassets.net>;rel=dns-prefetch, \
     <//images.ctfassets.net>;rel=preconnect, \
+    <//cdnjs.cloudflare.com>;rel=preconnect, \
+    <//fast.wistia.com>;rel=preconnect, \
+    <//js.hsforms.net>;rel=preconnect, \
     </public/css/seldon.css>;rel=preload;as=style, \
     <//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js>;rel=preload;as=script, \
     <//cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js>;rel=preload;as=script, \
     <//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.7.0/lozad.min.js>;rel=preload;as=script, \
-    <//fast.wistia.com/assets/external/E-v1.js>;rel=preload;as=script, \
-    <//js.hsforms.net/forms/v2.js>;rel=preload;as=script, \
+    </public/js/all.js>;rel=preload;as=script, \
     </public/fonts/gt-america-light.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
     </public/fonts/gt-america-regular.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
     </public/fonts/gt-america-bold.woff>;rel=preload;as=font;type=font/woff;crossorigin'''
+    # <//fast.wistia.com/assets/external/E-v1.js>;rel=preload;as=script, \
+    # <//js.hsforms.net/forms/v2.js>;rel=preload;as=script, \
 
 # Redirect domain aliases to primary domain
 [[redirects]]

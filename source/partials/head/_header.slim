@@ -89,8 +89,9 @@ nav.nav data-theme=theme
                     - cta_entry = data.site.cta[nav_item.section_promo.id]
                     aside.columns.nav__submenu-pane.small-12.large-4.show-for-large
                       - if nav_item.section_promo.has_key?("cta_image")
+                        - if nav_item.section_promo.has_key?("cta_image_small") ? banner = cta_entry.cta_image_small.url : banner = cta_entry.cta_image.url
                         a href=cta_entry.cta_url title=cta_entry.cta_title
-                          img.lozad.thumbnail alt=cta_entry.cta_title data-src="#{cta_entry.cta_image.url}?w=600" src="#{cta_entry.cta_image.url}?w=600&q=5" /
+                          img.lozad.thumbnail alt=cta_entry.cta_title data-src="#{banner}?w=560" src="#{banner}?w=560&q=5" width="280" /
                       - else
                         h4.headline-5.nav--promo = cta_entry.cta_title
                         p.text-small = cta_entry.cta_desc
