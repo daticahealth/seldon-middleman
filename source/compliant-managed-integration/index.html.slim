@@ -106,7 +106,7 @@ section.section-article.bg-gray-3 id=current_page.data.subnav[1].slug data-magel
 
   aside.section-article--sm.menu.button-group.align-center.show-for-large
     /= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow", :item_id => "cta_top_pricing" }
-    = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => current_page.data.subnav[4].slug, :button_classes => "button button--light", :icon => "icon-chevron-down" }
+    = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
 section.section-article--med.strip.strip-cmi
   .row.align-center.text-center
