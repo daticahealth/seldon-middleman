@@ -1,21 +1,24 @@
-// Main header - the anchor to all of Seldon
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../mixins/colors';
+@import '../mixins/functions';
+// Primary navigation
 $duration: $timing-default * 1.5; //settings.scss:281
-
-@include keyframes( fadeIn ) {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+@mixin link-light {
+  border: none;
+  color: $color_yellow-glow;
+  &:hover {
+    color: white;
+    border: none;
+  }
 }
-@include keyframes( fadeOut ) {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+@mixin link-white {
+  border: none;
+  color: white;
+  &:hover {
+    color: $color_yellow-glow;
+    border: none;
+  }
 }
 .no-js { // preventing FOUC
     @include breakpoint (small only) {
@@ -26,6 +29,15 @@ $duration: $timing-default * 1.5; //settings.scss:281
     @include breakpoint (medium) {
         .title-bar {
             display: none;
+        }
+    }
+}
+// Breadcrumb nav: http://foundation.zurb.com/sites/docs/breadcrumbs.html
+.breadcrumbs {
+    transition: opacity $timing-default linear;
+    li {
+        &:not(:last-child)::after {
+            content: "\203A"; // a '›' http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/
         }
     }
 }
@@ -46,12 +58,19 @@ $duration: $timing-default * 1.5; //settings.scss:281
             // &[aria-current="page"] {
             // }
         }
+        ul.breadcrumbs { // breadcrumbs inside subnav, usually first li
+            margin-right: 3rem;
+            li {
+                a {
+                    padding: 0.2rem;
+                }
+            }
+            li:not(:last-child)::after { // divider
+                align-self: center;
+            }
+        }
     }
 }
-    // &-nav--secondary { // secondary sticky nav... it happens
-    //     ul li a {
-    //     }
-    // }
 .sticky {
     $active-border-height: 4px;
     // .is-[state] classes for control over its appearance and exit if needed. Desktop only
@@ -97,146 +116,442 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
     }
 }
-.nav {
-    a.link--white {
-        border-bottom: none !important;
-        &:hover {
-            border-bottom: none !important;
-        }
-    }
-    .callout {
-        padding: 0.8rem 1.4rem;
-        margin-bottom: 1rem;
-    }
-    .menu.vertical {
-        li a {
-            line-height: 1.3;
-            padding-top:    0.4rem;
-            padding-bottom: 0.4rem;
-        }
-    }
-    .menu-header { // primary nav items, that are sometimes not links =/
-        // font-weight: $font-weight-mid;
-        color: black(0.8);
-        &:hover {
-            color: $color_prime-alt;
-        }
-    }
-    .submenu {
-        @include shadow-anarchy(2px 2px 6px 0 black(0.2));
-        li a {
-            @include fx-hover-nudge;
-        }
-        border-radius: $global-radius;
-        margin-top: 0.5rem;
-        padding-top:    0.8rem;
-        padding-bottom: 0.8rem;
-        &-divider {
-            border-bottom: 1px solid transparentize($gray-5, 0.8);
-            padding-bottom:    0.5rem;
-            margin-bottom:  0.5rem;
-        }
-        &::before {
-            $tri-size: 10px;
-            @include css-triangle(10px, white, up);
-            position: absolute;
-            top: -$tri-size;
-            left: $tri-size * 8;
-        }
-    }
-    .is-submenu-item {
-        margin-bottom: 0;
-        a {
-            transition: none;
-            transition: color $timing-default linear;
-            color: $gray-3;
-            // font-weight: $font-weight-mid;
-            &:hover {
-                color: $color_prime-alt;
-            }
-        }
-    }
-    .js-dropdown-active {
-        display: inline-block;
-        @include animation (fadeIn 0.3s ease);
-    }
-}
-.nav-logo { // pairing with svg use symbol, requires express dimensions. Aspect ratio is maintained, but spacing can be weird.
-    height: 3rem; //2.3rem;
-    width:  7rem; //5.6rem;
-}
-.nav-mobile {
-    .nav-button {
-        @include no-nudge;
-        background-color: black;
-        margin-bottom: 0;
-        &--icon {
-            width:  1.3em;
-            height: 1.3em;
-            vertical-align: middle;
-        } 
-        &--label {
-            @extend .spaced-out;
-            font-size: 70%;
-            margin-right: 0.3rem;
-        }
-    }
-    .menu.vertical {
-        li a {
-            padding: 0.3rem 0.3rem 0.3rem 0;
-        }
-    }
-}
+
 // ==== desktop nav theming; see .menu stuff at top of this file for defaults.
 .nav-logo--link { // data-theme = dark default
     color: $gray-1;
-}   
-.nav[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
-    .nav-logo--link, .menu-header, .is-active .menu-header {
-        color: white(0.8);
-        // font-weight: $font-weight-regular;
-        transition-property: background-color, color;
-        transition-duration: $timing-default;
-        &:hover, &:active {
-            color: $color_yellow-glow;
+}
+.nav {
+    .nav__container {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        @include breakpoint (large) {
+            padding: 0;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
         }
     }
-    .menu {
-        &-secondary { // this is now preferred solution for secondary stacked navs
-            li a {
-                color: white(0.6);
-                padding: 1rem;
-                transition-property: background-color, color;
-                transition-duration: $timing-default;
-                &:hover {
-                    color: white;
-                    background-color: transparentize($gray-5, 0.5);
-                }
-                &[aria-current="page"] {
-                    color: white;
-                    border-bottom: 3px solid $color_yellow-glow;
+    // theming
+    // .nav {
+    //     background-color: white;
+    // }
+    .nav__item-name {
+        color: $gray-1;
+    }
+    &[data-theme="light"] { // light (light text on dark) | dark (dark text on light backgrounds)
+        .nav { // change bg container 
+            background-color: $gray-2;
+        }
+        .nav-logo--link, .nav__item-name {
+            color: white(0.8);
+            // font-weight: $font-weight-regular;
+            transition-property: background-color, color;
+            transition-duration: $timing-default;
+            &:hover, &:active {
+                color: $color_yellow-glow;
+            }
+        }
+        .menu {
+            &-secondary { // this is now preferred solution for secondary stacked navs
+                li a {
+                    color: white(0.6);
+                    padding: 1rem;
+                    transition-property: background-color, color;
+                    transition-duration: $timing-default;
+                    &:hover {
+                        color: white;
+                        background-color: transparentize($gray-5, 0.5);
+                    }
+                    &[aria-current="page"] {
+                        color: white;
+                        border-bottom: 3px solid $color_yellow-glow;
+                    }
                 }
             }
         }
+        // // fix pip color 
+        // .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+        //     border-color: white(0.3);
+        // }
     }
-    // // fix pip color 
-    // .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
-    //     border-color: white(0.3);
-    // }
-}
-.nav-desktop {
-    .nav-logo--link {
-        padding: 0.2rem 1rem 0.2rem 0.2rem;
+    &[data-bar-theme="none"] { // combine with data-theme above for no bg color
+        .nav {
+            background-color: transparent;
+        }
     }
 }
 .nav-title--compact {
     font-size: 90%;
 }
 
-// // override for ZF alignment bug
-// .dropdown.menu .is-dropdown-submenu.first-sub {
-// .submenu.menu.vertical.is-dropdown-submenu.first-sub {
-//     top: 100%;
-//     right: auto;
-//     left: 1.5rem;
+// =================== new nav ==============
+// generic stuff that applies to both navs
+
+.nav-logo { // pairing with svg use symbol, requires express dimensions. Aspect ratio is maintained, but spacing can be weird.
+    height: 2.3rem;
+    width: 5.7rem;
+}
+
+.nav__product { // a .media-object with an icon, a little adjustment needed
+// color: white;
+    .nav__product-title {
+        font-weight: $font-weight-mid;
+        margin-bottom: 0.3em;
+        font-size: 1rem;
+    }
+    .nav__product-description { // pair with text-small
+        line-height: 1.2;
+        font-weight: $font-weight-light;
+    }
+    &.media-object { // product items with icons, shouldn't have bottom spacing here
+        margin-bottom: 0;
+    }
+}
+
+@include breakpoint (medium-large down) {
+    // mobile menu toggle
+    .mobile-toggle { // container, mobile only
+        position: relative;
+        display: block;
+        padding: 1rem;
+    }
+    .mobile-toggle-target {
+        transition: color $timing-default linear, border-color $timing-default linear;
+        padding: 0;
+        display: none; // hidden until active
+        @include shadow-anarchy(0 3px 5px black(0.2));
+        &.is-active {
+            display: block;
+        }
+    }
+    li.nav__section {
+        margin-bottom: 2rem;
+    }
+    .nav__submenu-pane {
+        padding: 0; // applied to cols in desktop pane, replaces pad--lg
+    }
+    .nav__logo {
+        margin-bottom: 1.5rem;
+    }
+    .nav__contact {
+        padding: 1rem;
+    }
+    .nav__item a:not(.button) {
+        max-width: 30em;
+    }
+    .nav__item-name {
+        // font-weight: $font-weight-bold;
+        font-size: 1.5rem;
+    }
+    .nav__item-summary {
+        margin-top: 0.5rem;
+        font-weight: $font-weight-regular;
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+    .nav__product { // a .media-object with an icon, a little adjustment needed
+        color: white;
+        .icon-size--medium { // make it smaller
+            width:  2rem;
+            height: 2rem;
+        }
+    }
+    hr.menu-divider { 
+        display: none;
+    }
+    #nav-toggle { // toggle button
+        background: transparent;
+        position: absolute;
+        right:  7px;
+        top:    31px;
+        height: 50px;
+        width:  50px;
+        cursor: pointer;
+        transform: translate(0%, -50%);
+        & span,
+        & span:before,
+        & span:after {
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 1px;
+            height: 2px;
+            width: 35px;
+            // background: white;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            display: block;
+            content: "";
+        }
+        & span:before {
+          top: -10px;
+        }
+        & span:after {
+          top: 10px;
+        }
+        // &.is-toggled span {
+        //     background-color: transparent;
+        // }
+        &.is-toggled span:before,
+        &.is-toggled span:after {
+            top: 0;
+        }
+        &.is-toggled span:before {
+            transform: rotate(135deg);
+        }
+        &.is-toggled span:after {
+            transform: rotate(-135deg);
+        }
+    }
+    .nav { // theme the mobile button
+        &[data-theme="light"] { // content is light, bg is dark
+            #nav-toggle {
+                & span, & span:before, & span:after {
+                    background: white;
+                }
+                &.is-toggled span {
+                    background-color: transparent;
+                }
+            }
+            @include breakpoint (medium-large down) {
+                .menu-nav-list {
+                    li a {
+                        color: white;
+                    }
+                }
+                .nav__product {
+                    color: white;
+                    svg path {
+                        fill: white;
+                    }
+                }
+            }
+        }
+        &[data-theme="dark"] { // content is dark, bg is light
+            #nav-toggle {
+                & span, & span:before, & span:after {
+                    background: black;
+                }
+                &.is-toggled span {
+                    background-color: transparent;
+                }
+            }
+            @include breakpoint (medium-large down) {
+                .menu-nav-list {
+                    li a {
+                        color: black;
+                    }
+                }
+                .nav__product {
+                    color: black;
+                    svg path {
+                        fill: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ======== DESKTOP ONLY STYLES / megamenu ==========
+.shrink-for-large { // does what .shrink does on a .column
+    @include breakpoint (large) {
+        flex: 0 0 auto;
+        max-width: 100%;
+    }
+}
+@include breakpoint (large) {
+    // .nav__container {
+    //     &:hover {
+    //         & > .nav__item > a:not(.button) { // set "parent" items to the not-selected state
+    //             // color: red;
+    //         }
+    //     }
+    // }
+    .nav { // theme desktop stuff
+        &[data-theme="light"] { // content is light, bg is dark
+            li.nav__item {
+                &:hover {
+                    & > a:not(.button) { // selected state of button/pane
+                        color: $color_yellow-glow;
+                    }
+                }
+            }
+        }
+        &[data-theme="dark"] { // content is dark, bg is light
+            li.nav__item {
+                &:hover {
+                    & > a:not(.button) { // selected state of button/pane
+                        color: $color_blue;
+                    }
+                }
+            }
+        }
+    }
+    li.nav__item {
+        & > a {
+            padding: 1.5rem;
+        }
+        & > a:not(.button) {// default state of button/pane
+            color: black;
+            transition: background-position .3s ease-out;
+            background-position: center 80px;
+        }
+        &:hover {
+            & > a:not(.button) { // selected state of button/pane
+                // color: blue;
+                background: {
+                    image: url("data:image/svg+xml;charset=utf8,%3Csvg width='25' height='17' viewBox='0 0 25 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 0L25 17H0L12.5 0z' fill='%233B4145'/%3E%3C/svg%3E");
+                    repeat: no-repeat;
+                    position: center bottom;
+                    size: 16px;
+                }
+            }
+            & > .nav-submenu { // show (transition) in pane
+                visibility: visible;
+                opacity: 1;
+                .menu-nav-list li a {
+                    opacity: 1;
+                    transform: translate3D(0, 0, 0);
+                }
+                .fade-1, .fade-2 {
+                    opacity: 1;
+                    transform: translate3D(0, 0, 0);
+                }
+            }
+        }
+    }
+    //============== old
+    // .nav__item a {
+    //     padding: 1.5rem;
+    // }
+    // .nav__item--active .nav__item-name {
+    //     color: $color_blue;
+    //     // background: blue;
+    //     background: {
+    //         image: url("data:image/svg+xml;charset=utf8,%3Csvg width='25' height='17' viewBox='0 0 25 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 0L25 17H0L12.5 0z' fill='%233B4145'/%3E%3C/svg%3E");
+    //         repeat: no-repeat;
+    //         position: center bottom;
+    //         size: 16px;
+    //     }
+    // }
+
+    .nav-submenu {
+        background-color: $gray-3;
+        color: white;
+        display: block;
+        visibility: hidden;
+        transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        opacity: 0;
+        position: absolute;
+        top: 63px;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+        .button {
+            display: inline-block;
+            width: auto;
+        }
+        a:not(.button):not(.preview) {
+            text-align: initial;
+            // padding: initial;
+        }
+        .link-arrow { // specific style used in link on left of the submenu
+            padding-left: 0;
+        }
+        .preview { // webinar or custom cards
+            border-radius: 0;
+            min-height: initial;
+            height: 100%;
+            .preview-bg {
+                transform: scale3D(1.1,1.1,1);
+            }
+        }
+        .menu-nav-list {
+            li a {
+                color: white;
+            }
+        }
+        .nav__product {
+            color: white;
+            svg path {
+                fill: white;
+            }
+        }
+    }
+    // .nav__item--active .nav-submenu {
+    //     visibility: visible;
+    //     transition-delay: 0ms;
+    //     opacity: 1;
+    // }
+    .nav__submenu-pane {
+        padding: calc(1rem + 1.2vw);
+        a {
+            padding: 0;
+            img {
+                margin-bottom: 0;
+            }
+        }
+    }
+    hr.menu-divider { // used to separate child menu items 
+        margin: 0.5rem;
+        border-bottom: 1px solid $gray-5;
+    }
+    .nav__contact {
+        margin-left: 1rem;
+        white-space: nowrap; // Edge makes button wrap
+    }
+
+
+} // end desktop stuff
+ul.menu.menu-nav-list {
+    // flex-wrap: wrap;
+    flex-direction: column;
+    li a {
+        // color: white;
+        padding-top:    0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    @include breakpoint (large) {
+        margin-left: -0.5rem; // pulls list left to line up/use space better
+        li { // not sure why .menu.align-center is trickling down here, setting classes in this nav have no effect...
+            justify-content: left !important;
+            border-radius: 6px;
+            transition: background-color 100ms linear;
+            &:hover {
+                background-color: black(0.6);
+            }
+            @for $i from 1 through 8 { // add a small bit of delay for n children. Estimating 8
+                $t: 0.05s * $i + 0.2s;
+                &:nth-child(#{$i}) a { 
+                    transition-delay: $t;
+                }
+            }
+            & a {
+                transition: opacity 0.2s, transform 0.2s ease;
+                transform: translate3D(0, 3px, 0);
+                opacity: 0;
+                // transition-delay: 0.3s;
+                @include link-white;
+                padding: 0.5rem;
+            }
+        }
+    }
+}
+%prefade {
+    transition: opacity 0.2s, transform 0.2s ease;
+    transform: translate3D(-4px, 0, 0);
+    transition-delay: 0.8s;
+    opacity: 0;
+}
+.fade-1 { // might need a coherent timing function, so delays are coordinated
+    @extend %prefade;
+    transition-delay: 0.8s;
+}
+// .fade-2 { // might need a coherent timing function, so delays are coordinated
+//     @extend %prefade;
+//     transition-delay: 1.2s;
 // }
+

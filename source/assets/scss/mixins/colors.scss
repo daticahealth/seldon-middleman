@@ -48,10 +48,12 @@
     @include bg-noise;
 }
 @mixin color--gray-dark-grad {
-    background-color: $color_deep-alt;
-    background: linear-gradient(to top, $color_deep-alt 0%, adjust-color($color_deep-alt, $lightness: 10%) 100%);
+    background-color: #2C2A2A;
+    // background: linear-gradient(to top, $color_deep-alt 0%, adjust-color($color_deep-alt, $lightness: 10%) 100%);
+    @include gradient(180deg, #2C2A2A 0%, #959595 100%);
     color: $color_white;
 }
+
 @mixin color--gray-dark-grad-noise {
     // @include noisy;
     color: $color_white;

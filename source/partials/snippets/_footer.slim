@@ -1,0 +1,43 @@
+ruby:
+  if defined?(style) && style == "light"
+    theme = "light" # light text on dark bg
+    element_color = "white"
+  else
+    theme = "dark" # dark text on light bg
+    element_color = "black"
+  end
+  # this is the CF entry with nav items
+  nav_collection = data.site.collections.to_a.select { |id, entry | (id == "HkskHrVGykqSqOKGiqkaW") }
+
+footer.section-article.container-color--gray-gradient.main-footer role="contentinfo" data-theme=theme
+  .row.small-up-2.medium-up-3.large-up-6
+    - nav_collection.each do | id, nav_section |
+      - nav_section["related_entries"].each do | nav_item |
+        .column.group
+          h5.headline-6
+            - if nav_item.has_key?("section_link_uri")
+              = current_link_to nav_item.title_short, nav_item.section_link_uri, title: nav_item.section_link_label, class: "text-bold"
+            - else
+              span.faded = nav_item.title_short
+          - if nav_item.has_key?("child_data")
+            ul.no-bullet
+              - nav_item.child_data.each do | child |
+                li
+                  = current_link_to child.title, child.url, title: child.desc, class: ""
+
+  .row
+    .columns
+      ul.menu.align-middle.group
+        li
+          a.nav-logo--link href="/" style=("padding-left: 0;") title=("Datica Home") 
+            svg#datica-logo-footer.nav-logo
+              use.symbol-icon xlink:href="#datica-logo-horiz" 
+        - data.footer_misc.each do |m|
+          li
+            = current_link_to m.title, m.url, title: m.desc, class: ""
+      .logo-cloud.nopad
+        img.logo-cloud--item.logo-size--medium.lozad alt=("HITRUST Certified") data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/016f2d364265c04e12c7db4eae95f94c/hitrust-logo.svg" height="48" width="83" /
+        img.logo-cloud--item.logo-size--medium.lozad alt=("AICPA/SOC2 badge") data-src="https://images.ctfassets.net/189dvqdsjh46/1db5oL4HFeKkSGGcCmQACW/4b650496f1136e1d76f0d88547f8e428/AICPA_SOC_2_badge.svg" height="58" width="58" /
+        img.logo-cloud--item.logo-size--medium.lozad data-src="https://images.ctfassets.net/189dvqdsjh46/2VnE1VKgSI0CigIaimYymm/8661955dacafd96c3c565bb5d1503dc8/coalfire-badge.png" /
+        img.logo-cloud--item.logo-size--medium.lozad alt=("Cloud native computing foundation") data-src="https://images.ctfassets.net/189dvqdsjh46/2qNhrxRsmEGqUOuCq2qWgU/7dc0a16f892c1950cb743bb3f54f1ad6/cncf-logo-horizontal-alt.svg" height="48" width="157" /
+.strip-bright

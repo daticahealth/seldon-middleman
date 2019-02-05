@@ -17,12 +17,25 @@
     Link = '''
     <//images.ctfassets.net>;rel=dns-prefetch, \
     <//images.ctfassets.net>;rel=preconnect, \
+    <//cdnjs.cloudflare.com>;rel=preconnect, \
+    <//distillery.wistia.com>;rel=preconnect, \
+    <//pipedream.wistia.com>;rel=preconnect, \
+    <//s.ytimg.com>;rel=preconnect, \
+    <//connect.facebook.net>;rel=preconnect, \
+    <//www.googletagmanager.com>;rel=preconnect, \
+    <//www.google-analytics.com>;rel=preconnect, \
+    <//fast.wistia.com>;rel=preconnect, \
+    <//js.hsforms.net>;rel=preconnect, \
     </public/css/seldon.css>;rel=preload;as=style, \
     <//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js>;rel=preload;as=script, \
     <//cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js>;rel=preload;as=script, \
     <//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.7.0/lozad.min.js>;rel=preload;as=script, \
-    </fonts/gt-america-light.woff>;rel=preload;as=font;type=font/woff;crossorigin'''
-# </fonts/gt-america-regular.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
+    </public/js/all.js>;rel=preload;as=script, \
+    </public/fonts/gt-america-light.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
+    </public/fonts/gt-america-regular.woff>;rel=preload;as=font;type=font/woff;crossorigin, \
+    </public/fonts/gt-america-bold.woff>;rel=preload;as=font;type=font/woff;crossorigin'''
+    # <//fast.wistia.com/assets/external/E-v1.js>;rel=preload;as=script, \
+    # <//js.hsforms.net/forms/v2.js>;rel=preload;as=script, \
 
 # Redirect domain aliases to primary domain
 [[redirects]]
@@ -144,6 +157,18 @@
 [[redirects]]
   from = "/platform/technology/"
   to = "/cloud-compliance/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/compliant-kubernetes-service/technology/"
+  to = "/compliant-kubernetes-service/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/compliant-kubernetes-service/roadmap/"
+  to = "/compliant-kubernetes-service/"
   status = 301
   force = true
 
@@ -290,6 +315,11 @@
 [[redirects]]
   from = "/compliance/hitrust/"
   to = "/cloud-compliance/"
+  status = 301
+
+[[redirects]]
+  from = "/compliance/global/"
+  to = "/cloud-compliance/global/"
   status = 301
 
 [[redirects]]
@@ -545,6 +575,11 @@
 [[redirects]]
   from = "/blog/configuration-management-on-the-catalyze-docker-paas"
   to = "https://engineering.datica.com/configuration-management-on-the-catalyze-docker-paas.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/what-were-building-daticas-public-product-roadmap/"
+  to = "/blog/"
   status = 301
 
 [[redirects]]

@@ -1,30 +1,26 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-<%# datica CKS 2018 %>
+<html class="no-js" lang="en-us">
+<%# datica Product Family Launch, Feb 2019 %>
     <head>
         <%= partial "partials/head/tags" %>
         <%= partial "partials/head/icons" %>
         <%= stylesheet_link_tag "seldon" %>
+        <%# if current_page.data.has_key?("customCSS") %>
+          <%#= stylesheet_link_tag "views/"+current_page.data.customCSS %>
+        <%# end %>
         <% if current_page.data.has_key?("customCSS") %>
-          <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
+            <% current_page.data.customCSS.split(",").each do |filename| %>
+                <%= stylesheet_link_tag "views/"+filename.strip+".css" %>
+            <% end %>
         <% end %>
     </head>
     <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
     <body class="<%= page_classes %> container-gray-11">
+        <%= partial "assets/icons/inlined/product-shapes-symbol.svg" %><%# product-related shapes %>
         <%#= partial "partials/snippets/alert-ribbon" %>
-        <%#=<div class="strip-bright strip-small"></div>%>
-        <div class="container-gray-2">
+        <div class="container-gray-1">
             <%= partial "partials/head/header", :locals => { :style => "light" } %>
         </div>
-        <%#
-        <div id="platformTop" class="show-for-large" data-sticky-container>
-            <nav class="sticky sticky-nav container-color--white drop text-center full-width" data-sticky data-options="marginTop:0; topAnchor:platformTop">
-                <ul class="menu horizontal align-center">
-                    <%#= partial "products/nav-platform" %><%#
-                </ul>
-            </nav>
-        </div>
-        #%>
         <div id="content" class="content">
             <main>
             <%= yield %>

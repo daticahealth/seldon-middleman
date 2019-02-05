@@ -1,6 +1,6 @@
 <%# Listing Layout Template - Datica, 2016 - 2017 %>
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en-us">
     <head>
         <%# Meta tags %>
         <%= partial "partials/head/tags" %>
@@ -9,8 +9,11 @@
         <%# Assets %>
         <%= stylesheet_link_tag "seldon" %>
         <% if current_page.data.has_key?("customCSS") %>
-            <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
+            <% current_page.data.customCSS.split(",").each do |filename| %>
+                <%= stylesheet_link_tag "views/"+filename.strip+".css" %>
+            <% end %>
         <% end %>
+
     </head>
     <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
     <body class="<%= page_classes %>">

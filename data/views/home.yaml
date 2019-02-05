@@ -111,11 +111,26 @@ customers:
         file: 'emory-healthcare-logo'
         url: 'https://www.emoryhealthcare.org/'
         logoSize: 'medium'
+    -
+        name: 'Voalte'
+        file: 'voalte-logo'
+        url: 'https://www.voalte.com/'
+        logoSize: 'medium'
+    -
+        name: 'SOC Telemed'
+        file: 'soc-telemed-logo'
+        url: 'https://www.soctelemed.com/'
+        logoSize: 'medium'
+    -
+        name: 'Wolters Kluwer'
+        file: 'wolters-kluwer-logo'
+        url: 'https://wolterskluwer.com/'
+        logoSize: 'small-mid'
 
 # block_hero_1:
 #     -
 #         title: "HITRUST is how healthcare does business"
-#         body: "The HITRUST Common Security Framework (CSF) has become the preferred way to prove compliance in healthcare. HITRUST certification helps establish and accelerate partnerships. If you plan to do business in healthcare at the speed of change, you need to be HITRUST CSF Certified."
+#         body: "The HITRUST Common Security Framework (CSF) has become the preferred way to provve compliance in healthcare. HITRUST certification helps establish and accelerate partnerships. If you plan to do business in healthcare at the speed of change, you need to be HITRUST CSF Certified."
 #         bg: https://place-hold.it/480x240/f2f2f2/ccc.ededed.png&text=background-image&fontsize=32
 #     -
 #         title: "Datica’s HITRUST CSF Certification gives you industry credibility overnight"

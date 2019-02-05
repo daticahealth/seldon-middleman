@@ -184,6 +184,7 @@ $underline: false !default;
             -ms-flex: $set;
                 flex: $set;
 }
+$button-transition: transform $timing-default ease, box-shadow $timing-default ease-out, background-color $timing-default ease-out, color $timing-default ease-out;
 @mixin fx-hover-nudge {
     transition: $button-transition;
     &:focus,
@@ -439,4 +440,8 @@ $underline: false !default;
         background-blend-mode: overlay;
     }
 }
-
+@mixin abs-topleft { // less typing 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
