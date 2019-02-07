@@ -117,7 +117,7 @@ ruby:
                 - if p.has_key?("related_form")
                     #report-form.hide
                         .callout.drop.group
-                            h3.headline-4.text-center.group Register to attend
+                            h3.headline-4.text-center.group = (is_future == true ? "Register to attend" : "Register to watch")
                             = partial "partials/snippets/form", :locals => { :the_form => data.site.forms[p.related_form.id].custom_form }
                 = partial "partials/snippets/button", :locals => { :label => "See All Datica Webinars", :url => "/webinars/", :button_classes => "button hollow", :item_id => "all_webinars", :icon => "icon-webinar-sm", :icon_align => "left" }
 
