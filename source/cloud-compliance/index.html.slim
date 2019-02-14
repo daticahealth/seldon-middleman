@@ -7,6 +7,7 @@ tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 date: "March 5, 2018"
 ogType: "product"
 customCSS: "products"
+# customCSS: "products, product-lens-anim"
 layout: products
 collectionName: "product"
 # collectionOrder: 2
@@ -17,7 +18,6 @@ ruby:
   current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/2aPhdyH76MiQwqQq4KiGMg/186518b5a3896994d54ae3cef4fbac8d/cta-compliance-share.jpg"
   featured_img = "https://images.ctfassets.net/189dvqdsjh46/40nTU46iGkIsck8qEa0qcm/4822d250b4eb05924aa530dbd1ccf73f/working_together__looking_at_screen.jpg"
 
-/= partial "partials/snippets/platform-icons"
 section.hide-for-large
   .row.collapse
     .columns.small-12
@@ -38,77 +38,6 @@ section#top.show-for-large.section-article.pad-no-bottom.bg-gray-3.container-ima
         = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/cloud-compliance-management-system#cta", :button_classes => "button nomargin success", :data_track_group => "compliance", :item_id => "get-ccms-desktop", :icon => "icon-chevron-right", :icon_align => "right" }
 
 .strip-bright
-scss:
-  .border-dash-line {
-    margin: 1.3rem 0;
-    height: 2px;
-    position: relative;
-    background: repeating-linear-gradient(to right,white 0,white 8px,transparent 8px,transparent 15px);
-    &::before, &::after { // svg data-URI of chevron shape
-      content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='18' viewBox='0 2 16 14'%3E%3Cpolygon fill='%23fff' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      margin: -7px;
-      transform-origin: 48%;
-      position: absolute;
-    }
-    &::before {
-      transform: rotate(180deg);
-      left: -5px;
-    }
-    &::after {
-      right: -5px;
-    }
-  }
-  // product lens animations
-  .anim-group-1.fancy {
-    animation: anim1 .7s ease-out;
-  }
-  .anim-group-2.fancy {
-    animation: anim2 .7s ease-out;
-  }
-
-  @keyframes anim1 {
-    0% {
-      opacity: 0;
-      transform: translateX(-30rem);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes anim2 {
-    0% {
-      opacity: 0;
-      transform: translateX(30rem);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-javascript:
-  const items = document.querySelectorAll('.animate-me');
-
-  observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.intersectionRatio > 0) {
-        entry.target.classList.add('fancy');
-        console.log('in the view');
-      } else {
-        entry.target.classList.remove('fancy');
-        console.log('out of view');
-      }
-    });
-  });
-
-  items.forEach(item => {
-    observer.observe(item);
-  });
 
 section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
   .row
@@ -117,24 +46,24 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
       p.lead Compliance on the cloud isn’t a one-size-fits-all kind of challenge. Maybe you don’t have the expertise, time, and resources to build your own compliant infrastructure and want a solution that picks up where your cloud provider leaves off.  Or, maybe you do and just need help with compliance monitoring and reporting for your complex environments.
       p.lead Wherever you are on the road to healthcare compliance, we can help.
   #product-lens.show-for-medium
-    .row.align-justify.text-center.animate-me.anim-group-1
+    .row.align-justify.text-center
       .columns.small-12.medium-4 
-        h3.headline-3.text-italic.text-serif.nomargin Simplicity & Speed
+        h3.headline-3.text-italic.text-serif.nomargin.animate-me.step-1 Simplicity & Speed
       .columns.small-12.medium-4 
-        h3.headline-3.text-italic.text-serif.nomargin Developer Control
+        h3.headline-3.text-italic.text-serif.nomargin.animate-me.step-5 Developer Control
     .row
       .column
-        .border-dash-line.animate-me.anim-group-1
+        .border-dash-line
     .row.align-justify.text-small
-      .columns.small-12.medium-4
+      .columns.small-12.medium-4.animate-me.step-3
         p Emerging digital health products need to demonstrate compliance and security credibility from day one and need a fast and simple way to start without taking on the burden of compliance.
-      .columns.small-12.medium-4
+      .columns.small-12.medium-4.animate-me.step-4
         p As your apps and services scale so does your need for orchestration and control. You now have the resources to take on more of the compliance responsibility yourself.
-      .columns.small-12.medium-4
+      .columns.small-12.medium-4.animate-me.step-6
         p You have building your compliant apps and infrastructure covered, but continuously maintaining and monitoring compliance of your complex environment may be beyond you.
 
   .row.collapse.align-center.small-up-1.medium-large-up-2.large-up-3.row--card-grid
-    .column.relative.has-blob
+    .column.relative.has-blob.animate-me.step-3
       .card.container-color--trans.relative.z-5
         .card-section
           = inline_svg("cpaas-logo-w", class: "icon-size--xlarge")
@@ -145,8 +74,8 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           / p Datica Compliant Platform as a Service gives startups pre-packaged compliance and security. CPaaS makes hosting your compliant healthcare applications as simple as git push.
         .card-divider.card-divider--flush
           = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
-      .blob-color.blob-cpaas.z-auto data-glow="false"
-    .column.relative.has-blob
+      /.blob-color.blob-cpaas.z-auto data-glow="false"
+    .column.relative.has-blob.animate-me.step-4
       .card.container-color--trans.relative.z-5
         .card-section
           = inline_svg("cks-logo-w", class: "icon-size--xlarge")
@@ -157,8 +86,8 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           / p Datica Compliant Kubernetes Service gives you the orchestration and scalable power of Kubernetes with compliance built in.
         .card-divider.card-divider--flush
           = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-cks", :icon => "icon-angle-right", :icon_align => "right" }
-      .blob-color.blob-cks.z-auto data-glow="false"
-    .column.relative.has-blob
+      /.blob-color.blob-cks.z-auto data-glow="false"
+    .column.relative.has-blob.animate-me.step-6
       .card.container-color--trans.relative.z-5
         .card-section
           = inline_svg("ccms-logo-w", class: "icon-size--xlarge")
@@ -169,7 +98,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
           / p Datica Cloud Compliance Management System is the first-ever tool to guarantee compliance assurance of managed cloud-native services. Our dashboard and reports enable you to continuously monitor compliance, react quickly to risks and incidents, and attest to compliance for audits.
         .card-divider.card-divider--flush
           = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-ccms", :icon => "icon-angle-right", :icon_align => "right" }
-      .blob-color.blob-ccms.z-auto data-glow="false"
+      /.blob-color.blob-ccms.z-auto data-glow="false"
 
 
 section.section-article.pad-no-bottom.bg-gray-12
@@ -213,3 +142,22 @@ aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-bac
         .columns.shrink
           = partial "partials/snippets/button", :locals => { :label => "Get started with CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :data_track_group => "compliance", :item_id => "get-ccms-bottom" }
     .blob-color.blob-ccms.z-auto data-glow="false"
+
+/ This "product-lens" animation is showing some weird blitting in certain states. Holding off for now. Note in the frontmatter above - views/product-lens-anim.css is needed.
+/javascript:
+  const items = document.querySelectorAll('.animate-me');
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.intersectionRatio > 0) {
+        entry.target.classList.add('fancy');
+        console.log('in the view');
+      } else {
+        entry.target.classList.remove('fancy');
+        console.log('out of view');
+      }
+    });
+  });
+  items.forEach(item => {
+    observer.observe(item);
+  });
