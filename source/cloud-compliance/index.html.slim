@@ -6,8 +6,7 @@ author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 date: "March 5, 2018"
 ogType: "product"
-customCSS: "products"
-# customCSS: "products, product-lens-anim"
+customCSS: "products, product-lens-anim"
 layout: products
 collectionName: "product"
 # collectionOrder: 2
@@ -53,7 +52,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
         h3.headline-3.text-italic.text-serif.nomargin.animate-me.step-5 Developer Control
     .row
       .column
-        .border-dash-line
+        .border-dash-line.animate-me.step-2
     .row.align-justify.text-small
       .columns.small-12.medium-4.animate-me.step-3
         p Emerging digital health products need to demonstrate compliance and security credibility from day one and need a fast and simple way to start without taking on the burden of compliance.
@@ -62,7 +61,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
       .columns.small-12.medium-4.animate-me.step-6
         p You have building your compliant apps and infrastructure covered, but continuously maintaining and monitoring compliance of your complex environment may be beyond you.
 
-  .row.collapse.align-center.small-up-1.medium-large-up-2.large-up-3.row--card-grid
+  .row.collapse.align-center.small-up-1.medium-large-up-3.large-up-3.row--card-grid
     .column.relative.has-blob.animate-me.step-3
       .card.container-color--trans.relative.z-5
         .card-section
@@ -144,20 +143,31 @@ aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-bac
     .blob-color.blob-ccms.z-auto data-glow="false"
 
 / This "product-lens" animation is showing some weird blitting in certain states. Holding off for now. Note in the frontmatter above - views/product-lens-anim.css is needed.
-/javascript:
-  const items = document.querySelectorAll('.animate-me');
-
-  observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.intersectionRatio > 0) {
-        entry.target.classList.add('fancy');
-        console.log('in the view');
-      } else {
-        entry.target.classList.remove('fancy');
-        console.log('out of view');
-      }
+javascript:
+  //const bp = 1024;
+  function animateLens() {
+    const items = document.querySelectorAll('.animate-me');
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add('fancy');
+          // console.log('in the view');
+        } else {
+          entry.target.classList.remove('fancy');
+          // console.log('out of view');
+        }
+      });
     });
-  });
-  items.forEach(item => {
-    observer.observe(item);
+    items.forEach(item => {
+      observer.observe(item);
+    });
+  }
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    animateLens();
+  }
+  window.addEventListener("resize", function() {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      animateLens();
+        // console.log("Screen width is at least 1024px");
+    }
   });
