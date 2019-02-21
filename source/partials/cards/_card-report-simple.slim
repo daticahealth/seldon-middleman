@@ -15,8 +15,8 @@ ruby:
 
     if post.has_key?("image_thumb")
         image_url = post.image_thumb.url
-    elsif post.has_key?("bg_image")
-        image_url = post.bg_image.url
+    elsif post.has_key?("share_image")
+        image_url = post.share_image.url
     else
         image_url = nil
     end
@@ -57,27 +57,25 @@ ruby:
 
 / Renders a card inside a post loop. Post var must be injected - AW
 
-.card(class="#{style_classes} #{fit_classes}")
+div(class="#{style_classes} #{fit_classes}")
     - if defined?(desc) && desc == true
-        .card-section
-            .subheader-small
-                = card_subhead
-            h3.headline-4
-                a class=link_style href=related_post_path title=link_title
-                    = post.title
-            - unless image_url == nil
-                a.text-center href=related_post_path title=link_title
-                    img.lozad.thumbnail.float-right src="#{image_url}?fit=thumb&fm=jpg&w=240&h=240&q=10" data-src="#{image_url}?fit=thumb&w=240&h=240" alt="preview" width="120"
-            p.text-small = post.summary
-            - if defined?(show_button) && show_button == true
-                = partial "partials/snippets/button", :locals => { :label => link_title_short, :url => related_post_path, :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right" }
+        - unless image_url == nil
+            a href=related_post_path title=link_title
+                img.lozad.group--sm src="#{image_url}?fit=thumb&fm=jpg&w=240&h=240&q=10" data-src="#{image_url}?fit=thumb&w=240&h=240" alt="preview" width="180"
+        .subheader-small
+            = card_subhead
+        h3.headline-4
+            a class=link_style href=related_post_path title=link_title
+                = post.title
+        p.text-small = post.summary
+        - if defined?(show_button) && show_button == true
+            = partial "partials/snippets/button", :locals => { :label => link_title_short, :url => related_post_path, :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right" }
     - else
-        .card-section
-            .subheader-small
-                = card_subhead
-            h3.headline-4
-                a class=link_style href=related_post_path title=link_title
-                    = post.title
-        - if post.has_key?("image_thumb")
-            a.text-center href=related_post_path title=link_title
-                img.lozad.product-thumb alt="preview" src="#{image_url}?fit=thumb&w=200&fm=jpg&q=10" data-src="#{image_url}?fit=thumb&w=450" style="padding: 0 1rem 0 1rem;" /
+        .subheader-small
+            = card_subhead
+        h3.headline-4
+            a class=link_style href=related_post_path title=link_title
+                = post.title
+    /- if post.has_key?("image_thumb")
+        a.text-center href=related_post_path title=link_title
+            img.lozad.product-thumb alt="preview" src="#{image_url}?fit=thumb&w=200&fm=jpg&q=10" data-src="#{image_url}?fit=thumb&w=450" style="padding: 0 1rem 0 1rem;" /
