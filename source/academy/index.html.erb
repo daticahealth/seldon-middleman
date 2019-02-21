@@ -86,7 +86,7 @@ promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc8
         <div id="articleList" class="no-bullet columns small-12 large-8 article-list">
             <% sorted_entries = data.site.academy.to_a.sort_by{ |id, the_entry| the_entry['title'] } %>
             <% sorted_entries.each do | id, entry | %>
-                <div id="id-<%= id %>" class="card callout--hover article-list--item group <% if entry.has_key?('tags') %><% entry['tags'].each_with_index do |tag, i| %><%= tag['tag_full'].downcase %> <% end %><% end %>" data-date-created="<%= entry["pub_date"].strftime("%B %-d, %Y") %>" data-title="<%= entry["title"] %>">
+                <div id="id-<%= id %>" class="card callout--hover article-list--item group <% if entry.has_key?('tags') %><% entry['tags'].each_with_index do |tag, i| %><%= tag['tag_full'].to_s.downcase.gsub(/\s+/, '') %> <% end %><% end %>" data-date-created="<%= entry["pub_date"].strftime("%B %-d, %Y") %>" data-title="<%= entry["title"] %>">
                     <div class="card-section card-section--with-grid">
                         <div class="row align-middle">
                             <div class="columns small-12 medium-8">

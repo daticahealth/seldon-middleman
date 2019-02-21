@@ -51,7 +51,7 @@ page '/google8c054d702c2044e4.html', :directory_index => false
 
 # Build-specific configuration
 configure :build do
-    # ignore 'seldon/*' unless ENV['DATICA_ENVIRONMENT'] == "development"
+    ignore 'seldon/*' unless ENV['DATICA_ENVIRONMENT'] == "development"
     # /assets/* folder itself must not be served up or created. Seems to output items to public okay. -AW
     ignore 'assets/*'
     ignore 'assets/icons/inlined/*'
