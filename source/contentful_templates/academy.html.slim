@@ -48,20 +48,35 @@ ruby:
 scss:
   #article-body h2 a, h3 a {color: #252828;}
   #article-body h2 a {font-weight: 400;}
+  .content-dynamic blockquote { // overrides for serif quote style, trying to reduce type styles
+      quotes:       none;
+      font-family:  "GT America", "Roboto", sans-serif;
+      font-size:    104%;
+      font-style:   italic;
+      border-left:  6px solid #0054ff66;
+      margin-left:  -1.5rem;
+      padding-left: 1rem;
+      line-height:  1.5;
+      p {
+        line-height: 1.5;
+      }
+  }
 
 section.bg-gray-12
   = partial "partials/head/header", :locals => { :style => "dark" }
 section.bg-white.section-article
   .row
     .columns.small-12.medium-large-8
-      h4.subhead--spaced.headline-6
-        a.link--dark.faded href="/academy/" title=("Explore the Datica Academy")  Datica Academy
+      a.link--dark.faded href="/academy/" title=("Explore the Datica Academy")
+        = inline_svg("academy-logo", class: "logo-size--small")
       h1.headline-2= p["title"]
       - if p.has_key?("author")
         = partial("partials/snippets/person", :locals => { :p => p["author"] })
       p
         = partial "/partials/snippets/pubdate", :locals => p
         - if p.has_key?("tags")
+          | &nbsp;
+          = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
           = partial "/partials/content/tags", :locals => p
   .row
     .columns.small-12.medium-large-8
@@ -101,12 +116,12 @@ section.bg-white.section-article
         #toc-sidebar.article-toc.show-for-large.group
         - if p.has_key?("related_guide")
           .group
-            = partial "partials/cards/card-report", :locals => { :post => p.related_guide, :style => "white", :size => "small", :desc => true, :show_button => true }
+            = partial "partials/cards/card-report-simple", :locals => { :post => p.related_guide, :style => "none", :size => "small", :desc => true, :show_button => true }
         - else
           - sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
           - sorted_guides.take(1).each do | id, guide_entry |
             .group
-              = partial "partials/cards/card-report", :locals => { :post => guide_entry, :style => "white", :size => "small", :desc => true, :show_button => true }
+              = partial "partials/cards/card-report-simple", :locals => { :post => guide_entry, :style => "none", :size => "small", :desc => true, :show_button => true }
 
 = partial "partials/snippets/json-ld-article"
 <script type="text/javascript" defer src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autorun=true&skin=desert"></script>
