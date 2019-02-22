@@ -24,16 +24,17 @@ $bg-height: calc(8rem + 16vw);
         width:  100%;
         height: 100% !important;
     }
-    &.lozad {
-        @include blur(2vw);
-        transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
-    }
-    &.lozad.loaded {
-        @include blur(0);
-        -webkit-transition-delay: 1s;
-        transition-delay:         1s;
-    }
 }
+img.lozad {
+    @include blur(5px);
+    transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
+}
+img.lozad.loaded {
+    @include blur(0);
+    -webkit-transition-delay: 0.5s;
+    transition-delay:         0.5s;
+}
+
 .post-body {// pull up over image for desktop only
     @include breakpoint (large) {
         margin-top: -120px; // fallback

@@ -98,7 +98,7 @@ section.bg-white.section-article
     aside.columns.small-12.medium-large-4.section--sidebar data-sticky-container="" 
       .sticky data-options=("anchor: content;") data-sticky="" data-sticky-on="large" 
         - if p.has_key?("featured_image")
-          img.lozad.group data-srcset="#{post_featured_image}?fit=thumb&w=640&h=360&q=50 640w, #{post_featured_image}?fit=thumb&w=600&h=400&q=40 800w, #{post_featured_image}?w=800 1200w" /
+          img.lozad.group src="#{post_featured_image}?w=320&q=5" data-srcset="#{post_featured_image}?fit=thumb&w=640&h=360&q=50&fm=jpg&fl=progressive 640w, #{post_featured_image}?fit=thumb&fm=jpg&fl=progressive&w=600&h=400&q=40 800w, #{post_featured_image}?w=800&fm=jpg&fl=progressive 1200w" /
         #toc-sidebar.article-toc.show-for-medium-large.group
         - if p.has_key?("related_guide")
           .group

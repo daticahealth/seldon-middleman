@@ -61,7 +61,7 @@ current_cta = data.site.cta.to_a.sort_by{ |id, cta| cta['_meta']['updated_at'] }
                     <div class="columns medium-3 large-3 show-for-medium">
                         <% if post.has_key?("featured_image") %>
                             <a href="/blog/<%= post["slug"] %>" title="Read this post">
-                                <img class="thumbnail lozad" data-src="<%= post["featured_image"]["url"] %>?fit=thumb&w=300&h=300" alt="<%= post["featured_image"]["title"] %>">
+                                <img class="lozad thumbnail" src="/assets/img/loader-square.svg" data-src="<%= post["featured_image"]["url"] %>?fit=thumb&fm=jpg&fl=progressive&w=300&h=300" alt="<%= post["featured_image"]["title"] %>">
                             </a>
                         <% end %>
                     </div>
@@ -85,7 +85,7 @@ current_cta = data.site.cta.to_a.sort_by{ |id, cta| cta['_meta']['updated_at'] }
                 <h4 class="headline-5"><a href="/blog/<%= post["slug"] %>" title="Read this post"><%= post["title"] %></a></h4>
                 <% if post.has_key?("featured_image") %>
                     <a href="/blog/<%= post["slug"] %>" title="Read this post">
-                        <img class="thumbnail float-left" width="80" data-interchange="[<%= post["featured_image"]["url"] %>?fit=thumb&w=160&h=160&q=40, medium]"  alt="<%= post["featured_image"]["title"] %>">
+                        <img class="lozad thumbnail float-left" width="80" src="/assets/img/loader-square.svg" data-src="<%= post["featured_image"]["url"] %>?fit=thumb&fm=jpg&fl=progressive&w=160&h=160&q=40" alt="<%= post["featured_image"]["title"] %>">
                     </a>
                 <% end %>
                 <div class="pub-date"> <%= post['pub_date'].strftime('%B %-d, %Y') %></div>
