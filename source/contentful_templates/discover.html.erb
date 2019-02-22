@@ -177,36 +177,6 @@ end
         </section>
     <% end %>
 
-    <% if p.has_key?("related_guides") %>
-        <section data-magellan-target="discoverGuides" id="discoverGuides" class="discover--guides section-article container-gray-11">
-            <div class="row align-center">
-                <div class="columns small-12 large-10">
-                    <h3 class="discover--section-header"><span class="discover--category">Datica Guides on</span> <%= p["title"] %></h3>
-                </div>
-            </div>
-            <div class="row align-center">
-                <div class="columns small-12 medium-3 large-3 text-center">
-                    <img class="group lozad" alt="Datica Guides" data-src="https://images.ctfassets.net/189dvqdsjh46/2zqo1GLqz6uAOgSCMe4aoc/ae9ed493b7dc700d63aad63b57689562/Guide_-_integration_featured_image.png?w=400">
-                </div>
-                <div class="columns small-12 medium-9 large-8">
-                <% p["related_guides"].each do |post| %>
-                <% related_guide = data.site.guides[post.id] %>
-                <% related_guide.uri = "/guide/" + related_guide.slug %>
-
-                    <aside class="discover--guide-entry group--2x">
-                        <h4 class="headline-4">
-                            <a class="" href="<%= related_guide.uri %>" title="Get the Guide"><%= related_guide.title %></a>
-                        </h4>
-                            <% if related_guide.has_key?("desc") %>
-                                <%= Kramdown::Document.new(related_guide.desc).to_html %>
-                            <% end %>
-                    </aside>
-                <% end %>
-                </div>
-            </div>
-        </section>
-    <% end %>
-
 <% if p.has_key?("related_podcast") %>
     <section data-magellan-target="discoverInnovation" id="discoverInnovation" class="discover--podcast section-article container-color--dark-alt container-image--middle" data-interchange="[/public/img/art/art-sound-bars-purple.svg, small]">
         <div class="row align-center">
