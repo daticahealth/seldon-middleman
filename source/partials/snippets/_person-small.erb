@@ -1,7 +1,7 @@
 <%# p = data.site.person[p.id] %>
 <div class="media-object person-small">
     <% if p.has_key?("profile_pic") %>
-        <div class="media-object-section media-object--avatar"><img class="lozad avatar avatar--medium circle" src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=48&h=48&fm=jpg&q=10" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=96&q=40" alt="<%= p["fullname"] %>"></div>
+        <div class="media-object-section media-object--avatar"><img class="lozad avatar avatar--medium circle" src="/assets/img/loader-disc.svg" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=96&q=40" alt="<%= p["fullname"] %>"></div>
     <% end %>
     <div class="media-object-section media-object--info main-section align-self-middle">
         <h4 class="person-name">

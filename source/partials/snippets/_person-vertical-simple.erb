@@ -37,7 +37,7 @@ end
             <a href="/about/<%= p["slug"] %>/" title="<%= person_summary %>">
         <% end %>
         <span data-tooltip aria-haspopup="true" class="" data-alignment="center" data-tooltip-width="400" data-fade-in-duration="0" data-fade-out-duration="400" data-allow-html="true" data-disable-hover="false" data-v-offset="5" data-click-open="false"  title="<span class='text-small'><%= person_summary %><%= show_more %></span>">
-            <img class="lozad avatar avatar--large-mid circle" src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=125&h=125&fm=jpg&q=5" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=250&h=250&fm=jpg&q=60" alt="<%= p["fullname"] %>">
+            <img class="lozad avatar avatar--large-mid circle" src="/assets/img/loader-disc.svg" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&fm=jpg&fl=progressive&w=250&h=250&fm=jpg&q=60" alt="<%= p["fullname"] %>">
         </span>
         <% if datican == true %>
             </a>

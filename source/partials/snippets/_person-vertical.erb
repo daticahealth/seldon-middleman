@@ -15,7 +15,7 @@ end
 
 <div class="person-card--vertical<% if defined?(classes) %> <%= classes %><% end %>">
     <% if p.has_key?("profile_pic") %>
-        <img class="lozad avatar--large-mid circle" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=250&h=250&fm=jpg&q=80" alt="<%= p["fullname"] %>">
+        <img class="lozad avatar--large-mid circle" src="/assets/img/loader-disc.svg" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=250&h=250&fm=jpg&q=80" alt="<%= p["fullname"] %>">
     <% end %>
     <div class="person-card--caption">
         <<%= tag_1 %> class="person-name">

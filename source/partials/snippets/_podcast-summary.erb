@@ -24,7 +24,7 @@
             <% if podcast.has_key?("guest") %>
                 <% if podcast["guest"].has_key?("fullname") %>
                     <a class="" href="/innovation/<%= podcast["slug"] %>" title="Listen to this episode now">
-                        <img src="<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="avatar--large-mid circle float-right hide-for-medium" alt="<%= podcast["guest"]["fullname"] %>">
+                        <img src="/assets/img/loader-disc.svg" data-src="<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="lozad avatar--large-mid circle float-right hide-for-medium" alt="<%= podcast["guest"]["fullname"] %>">
                     </a>
                 <% end %>
             <% end %>
@@ -34,7 +34,7 @@
             <% if podcast.has_key?("guest") %>
                 <% if podcast["guest"].has_key?("fullname") %>
                     <a class="" href="/innovation/<%= podcast["slug"] %>/" title="Listen to this episode now">
-                        <img src="<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="avatar--large-mid circle" alt="<%= podcast["guest"]["fullname"] %>">
+                        <img src="/assets/img/loader-disc.svg" data-src="<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="lozad avatar--large-mid circle" alt="<%= podcast["guest"]["fullname"] %>">
                     </a>
                 <% end %>
             <% end %>
