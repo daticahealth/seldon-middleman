@@ -87,6 +87,7 @@ end
                             </a>
                         </aside>
                     <% else %>
+                        <%= current_page.data.inject_svgs = true %>
                         <aside class="callout discover--cta container-color--white" id="ctaTop">
                             <% if p["cta_ref"].has_key?("cta_icon") %>
                                 <img src="<%= p["cta_ref"]["cta_icon"] %>" alt="icon" class="cta--icon inject-me svg-color--gray">

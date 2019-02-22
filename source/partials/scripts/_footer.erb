@@ -28,6 +28,6 @@
         <script defer src="<%= filename.strip %>"></script>
     <% end %>
 <% end %>
-<% unless current_page.data.has_key?("smoothScroll") && current_page.data.smoothScroll == false %>
-	<script defer src="/public/js/smooth-scroll.js"></script>
-<% end %>
+<%# unless current_page.data.has_key?("smoothScroll") && current_page.data.smoothScroll == false %>
+	<%#<script defer src="/public/js/smooth-scroll.js"></script> %>
+<%# end %>
