@@ -4,7 +4,7 @@ subheader: "Your place to learn the intricacies of interoperability, compliance,
 ogType: article
 layout: "basic"
 sharer: true
-customCSS: "blog-detail"
+customCSS: "blog-detail, academy-detail"
 customJS: "/public/js/academy-article.js, /public/js/contents.js, /public/js/article.js"
 change_frequency: daily
 ---
@@ -45,30 +45,14 @@ ruby:
   else
       current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   end
-scss:
-  #article-body h2 a, h3 a {color: #252828;}
-  #article-body h2 a {font-weight: 400;}
-  .content-dynamic blockquote { // overrides for serif quote style, trying to reduce type styles
-      quotes:       none;
-      font-family:  "GT America", "Roboto", sans-serif;
-      font-size:    104%;
-      font-style:   italic;
-      border-left:  6px solid #0054ff66;
-      margin-left:  -1.5rem;
-      padding-left: 1rem;
-      line-height:  1.5;
-      p {
-        line-height: 1.5;
-      }
-  }
 
 section.bg-gray-12
   = partial "partials/head/header", :locals => { :style => "dark" }
 section.bg-white.section-article
-  .row
-    .columns.small-12.medium-large-8
-      a.link--dark.faded href="/academy/" title=("Explore the Datica Academy")
-        = inline_svg("academy-logo", class: "logo-size--small")
+  .row.align-spaced.group
+    .columns.small-12.medium-large-8.xlarge-7
+      a.faded.link--dark href="/academy/" title=("Explore the Datica Academy")
+        = inline_svg("academy-logo", class: "logo-size--medium group--sm")
       h1.headline-2= p["title"]
       - if p.has_key?("author")
         = partial("partials/snippets/person", :locals => { :p => p["author"] })
@@ -78,10 +62,12 @@ section.bg-white.section-article
           | &nbsp;
           = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
           = partial "/partials/content/tags", :locals => p
-  .row
-    .columns.small-12.medium-large-8
+      /.strip-bright.strip-small
+    .columns.medium-large-4
+  .row.align-spaced
+    .columns.small-12.medium-large-8.xlarge-7
       article#content.group
-        #toc-top.group.article-toc.hide-for-large
+        #toc-top.group.article-toc.hide-for-medium-large
         - if p.has_key?("lead")
           .lead
             = Kramdown::Document.new(p["lead"]).to_html
@@ -113,7 +99,7 @@ section.bg-white.section-article
       .sticky data-options=("anchor: content;") data-sticky="" data-sticky-on="large" 
         - if p.has_key?("featured_image")
           img.lozad.group data-srcset="#{post_featured_image}?fit=thumb&w=640&h=360&q=50 640w, #{post_featured_image}?fit=thumb&w=600&h=400&q=40 800w, #{post_featured_image}?w=800 1200w" /
-        #toc-sidebar.article-toc.show-for-large.group
+        #toc-sidebar.article-toc.show-for-medium-large.group
         - if p.has_key?("related_guide")
           .group
             = partial "partials/cards/card-report-simple", :locals => { :post => p.related_guide, :style => "none", :size => "small", :desc => true, :show_button => true }

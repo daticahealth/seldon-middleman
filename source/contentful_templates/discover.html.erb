@@ -92,7 +92,7 @@ end
                             <div class="cta--body<% if p["cta_ref"].has_key?("cta_icon") %> cta--body-right<% end %>">
                                 <h3 class="headline-4"><%= p["cta_ref"]["cta_title"] %></h3>
                                 <div class="cta--desc"><%= Kramdown::Document.new(p["cta_ref"]["cta_desc"]).to_html %></div>
-                                <a class="button button--primary button--cta" href="<%= p["cta_ref"]["cta_url"] %>"><%= p["cta_ref"]["cta_label"] %>  <i class="fa fa-angle-right"></i></a>
+                                <%= partial "partials/snippets/button", :locals => { :label => p["cta_ref"]["cta_label"], :url => p["cta_ref"]["cta_url"], :button_classes => "button button--primary button--cta", :icon => "icon-chevron-right", :icon_align => "right" } %>
                             </div>
                         </aside>
                     <% end %>
@@ -200,7 +200,6 @@ end
                             <% if related_guide.has_key?("desc") %>
                                 <%= Kramdown::Document.new(related_guide.desc).to_html %>
                             <% end %>
-                            <!-- <p class=""><a class="button" href="/guide/<%= post["slug"] %>" title="Listen now">Get the Guide <i class="fa fa-angle-right" aria-hidden="true"></i></a></p> -->
                     </aside>
                 <% end %>
                 </div>
@@ -246,7 +245,7 @@ end
                     </p>
                         <% if post.has_key?("summary") %>
                         <div class="discover--podcast-entry__summary">
-                            <%= Kramdown::Document.new(post["summary"]).to_html %> <a class="link--yellow" href="/innovation/<%= post["slug"] %>" title="Listen now">Listen now <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <%= Kramdown::Document.new(post["summary"]).to_html %> <a class="link-arrow link-arrow--yellow" href="/innovation/<%= post["slug"] %>" title="Listen now">Listen now</a>
                         </div>
                         <% end %>
                 </aside>
@@ -274,7 +273,7 @@ end
                         <div class="">
                             <h3 class="headline-2"><%= p["cta_ref"]["cta_title"] %></h3>
                             <div class="lead"><%= Kramdown::Document.new(p["cta_ref"]["cta_desc"]).to_html %></div>
-                            <a class="button button--primary button--cta" href="<%= p["cta_ref"]["cta_url"] %>"><%= p["cta_ref"]["cta_label"] %>  <i class="fa fa-angle-right"></i></a>
+                            <%= partial "partials/snippets/button", :locals => { :label => p["cta_ref"]["cta_label"], :url => p["cta_ref"]["cta_url"], :button_classes => "button button--primary button--cta", :icon => "icon-chevron-right", :icon_align => "right" } %>
                         </div>
                     </aside>
                 <% end %>
