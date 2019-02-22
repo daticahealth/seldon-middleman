@@ -1,0 +1,16 @@
+ruby:
+  unless [current_page.data.category, current_page.data.navTitle ].all?
+    puts "⚠️ The page at #{current_page.url} is missing key variables for the subnav! \n Required: category, navTitle, subnav (a yaml array)."
+  end
+
+nav.show-for-medium-large.z-18 aria-label=("You are here:") role="navigation" 
+  ul.breadcrumbs.align-middle.nomargin
+    li
+      a href="#" Home
+    - if defined?(parent_url) # no parent_url, no parent 'folder' for u. Use 'category' in frontmatter or pass string
+      - if defined?(parent_label) ? label = parent_label : label = current_page.data.category
+      li
+        a href=parent_url title="Learn more about #{label}" #{label.capitalize}
+    li
+      span.show-for-sr Current: 
+      = current_page.data.navTitle

@@ -1,11 +1,13 @@
 ---
 layout: basic
-customCSS: discover
+customCSS: "discover, products"
+category: "Discover Topics"
 ogType: article
-inject_svgs: true
+# inject_svgs: true
 ---
 <% p = locals[:item]
 current_page.data.title = p["title"] + " | Discovery Topics"
+current_page.data.navTitle = p["title"]
 current_page.data.summary = safe_summary(p.summary)
 if p.has_key?("featured_image")
     current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
@@ -31,18 +33,18 @@ end
         <%= partial "partials/head/header", :locals => { :style => "dark" } %>
     </div>
     <div id="discoverTop" class="show-for-medium-large" data-sticky-container>
-        <div class="sticky sticky-nav container-color--white drop text-center" id="pageNav" data-sticky data-margin-top="0" style="width:100%;" data-margin-bottom="0" data-top-anchor="discoverTop" data-btm-anchor="ctaBottom:bottom" data-animation-duration="250" data-active-class="active" data-sticky-on="medium">
+        <div class="subnav sticky sticky-nav container-color--white drop text-center" id="pageNav" data-sticky data-margin-top="0" style="width:100%;" data-margin-bottom="0" data-top-anchor="discoverTop" data-btm-anchor="ctaBottom:bottom" data-animation-duration="250" data-active-class="active" data-sticky-on="medium">
             <nav>
-                <ul class="menu horizontal align-center" data-magellan>
+                <ul class="menu menu-secondary align-center align-middle" data-magellan>
+                    <%= partial "partials/snippets/breadcrumbs", :locals => { :parent_url => "/discover/" } %>
                     <!-- <li class="show-for-large">Discover <strong></strong></li> -->
                     <li class="menu-item"><a class="menu-item--link" href="#discoverTop" title="<%= p["title"] %> Overview"><%= p["title"] %></a></li>
                     <% if p.has_key?("related_academy") %><li class="menu-item"><a class="menu-item--link" href="#discoverAcademy">Academy Articles</a></li><% end %>
                     <% if p.has_key?("related_blog") %><li class="menu-item"><a class="menu-item--link" href="#discoverBlog">Blog Posts</a></li><% end %>
                     <% if p.has_key?("related_whitepaper") %><li class="menu-item"><a class="menu-item--link" href="#discoverWhitepaper">White Papers</a></li><% end %>
-                    <% if p.has_key?("related_guides") %><li class="menu-item"><a class="menu-item--link" href="#discoverGuides">Guides</a></li><% end %>
                     <% if p.has_key?("related_podcast") %><li class="menu-item"><a class="menu-item--link" href="#discoverInnovation">Podcasts</a></li><% end %>
                     <% if p.has_key?("cta_ref") %><li class="menu-item menu-item--cta">
-                        <%= partial "partials/snippets/button", :locals => { :label => "Go Further",  :url => "#ctaBottom", :button_classes => "button", :icon => "icon-chevron-down" } %>
+                        <%= partial "partials/snippets/button", :locals => { :label => "Go Further",  :url => "#ctaBottom", :button_classes => "button small", :icon => "icon-chevron-down" } %>
 
                     </li><% end %>
                 </ul>
