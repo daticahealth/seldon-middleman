@@ -47,6 +47,7 @@ end
 <% else %>
     <aside class="<%= style_classes %>" id="cta">
         <% if p.has_key?("cta_icon") %>
+            <%= current_page.data.inject_svgs = true %>
             <img data-src="<%= p['cta_icon'] %>" alt="icon" class="lozad cta--icon inject-me <%= svg_color %>">
         <% end %>
         <div class="cta--body<% if p.has_key?("cta_icon") %> cta--body-right<% end %>">

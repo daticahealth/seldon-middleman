@@ -1,11 +1,13 @@
 ---
 layout: basic
-customCSS: discover
+customCSS: "discover, products"
+category: "Discover Topics"
 ogType: article
-inject_svgs: true
+# inject_svgs: true
 ---
 <% p = locals[:item]
 current_page.data.title = p["title"] + " | Discovery Topics"
+current_page.data.navTitle = p["title"]
 current_page.data.summary = safe_summary(p.summary)
 if p.has_key?("featured_image")
     current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
@@ -31,18 +33,18 @@ end
         <%= partial "partials/head/header", :locals => { :style => "dark" } %>
     </div>
     <div id="discoverTop" class="show-for-medium-large" data-sticky-container>
-        <div class="sticky sticky-nav container-color--white drop text-center" id="pageNav" data-sticky data-margin-top="0" style="width:100%;" data-margin-bottom="0" data-top-anchor="discoverTop" data-btm-anchor="ctaBottom:bottom" data-animation-duration="250" data-active-class="active" data-sticky-on="medium">
+        <div class="subnav sticky sticky-nav container-color--white drop text-center" id="pageNav" data-sticky data-margin-top="0" style="width:100%;" data-margin-bottom="0" data-top-anchor="discoverTop" data-btm-anchor="ctaBottom:bottom" data-animation-duration="250" data-active-class="active" data-sticky-on="medium">
             <nav>
-                <ul class="menu horizontal align-center" data-magellan>
+                <ul class="menu menu-secondary align-center align-middle" data-magellan>
+                    <%= partial "partials/snippets/breadcrumbs", :locals => { :parent_url => "/discover/" } %>
                     <!-- <li class="show-for-large">Discover <strong></strong></li> -->
                     <li class="menu-item"><a class="menu-item--link" href="#discoverTop" title="<%= p["title"] %> Overview"><%= p["title"] %></a></li>
                     <% if p.has_key?("related_academy") %><li class="menu-item"><a class="menu-item--link" href="#discoverAcademy">Academy Articles</a></li><% end %>
                     <% if p.has_key?("related_blog") %><li class="menu-item"><a class="menu-item--link" href="#discoverBlog">Blog Posts</a></li><% end %>
                     <% if p.has_key?("related_whitepaper") %><li class="menu-item"><a class="menu-item--link" href="#discoverWhitepaper">White Papers</a></li><% end %>
-                    <% if p.has_key?("related_guides") %><li class="menu-item"><a class="menu-item--link" href="#discoverGuides">Guides</a></li><% end %>
                     <% if p.has_key?("related_podcast") %><li class="menu-item"><a class="menu-item--link" href="#discoverInnovation">Podcasts</a></li><% end %>
                     <% if p.has_key?("cta_ref") %><li class="menu-item menu-item--cta">
-                        <%= partial "partials/snippets/button", :locals => { :label => "Go Further",  :url => "#ctaBottom", :button_classes => "button", :icon => "icon-chevron-down" } %>
+                        <%= partial "partials/snippets/button", :locals => { :label => "Go Further",  :url => "#ctaBottom", :button_classes => "button small", :icon => "icon-chevron-down" } %>
 
                     </li><% end %>
                 </ul>
@@ -85,6 +87,7 @@ end
                             </a>
                         </aside>
                     <% else %>
+                        <%= current_page.data.inject_svgs = true %>
                         <aside class="callout discover--cta container-color--white" id="ctaTop">
                             <% if p["cta_ref"].has_key?("cta_icon") %>
                                 <img src="<%= p["cta_ref"]["cta_icon"] %>" alt="icon" class="cta--icon inject-me svg-color--gray">
@@ -92,7 +95,7 @@ end
                             <div class="cta--body<% if p["cta_ref"].has_key?("cta_icon") %> cta--body-right<% end %>">
                                 <h3 class="headline-4"><%= p["cta_ref"]["cta_title"] %></h3>
                                 <div class="cta--desc"><%= Kramdown::Document.new(p["cta_ref"]["cta_desc"]).to_html %></div>
-                                <a class="button button--primary button--cta" href="<%= p["cta_ref"]["cta_url"] %>"><%= p["cta_ref"]["cta_label"] %>  <i class="fa fa-angle-right"></i></a>
+                                <%= partial "partials/snippets/button", :locals => { :label => p["cta_ref"]["cta_label"], :url => p["cta_ref"]["cta_url"], :button_classes => "button button--primary button--cta", :icon => "icon-chevron-right", :icon_align => "right" } %>
                             </div>
                         </aside>
                     <% end %>
@@ -177,37 +180,6 @@ end
         </section>
     <% end %>
 
-    <% if p.has_key?("related_guides") %>
-        <section data-magellan-target="discoverGuides" id="discoverGuides" class="discover--guides section-article container-gray-11">
-            <div class="row align-center">
-                <div class="columns small-12 large-10">
-                    <h3 class="discover--section-header"><span class="discover--category">Datica Guides on</span> <%= p["title"] %></h3>
-                </div>
-            </div>
-            <div class="row align-center">
-                <div class="columns small-12 medium-3 large-3 text-center">
-                    <img class="group lozad" alt="Datica Guides" data-src="https://images.ctfassets.net/189dvqdsjh46/2zqo1GLqz6uAOgSCMe4aoc/ae9ed493b7dc700d63aad63b57689562/Guide_-_integration_featured_image.png?w=400">
-                </div>
-                <div class="columns small-12 medium-9 large-8">
-                <% p["related_guides"].each do |post| %>
-                <% related_guide = data.site.guides[post.id] %>
-                <% related_guide.uri = "/guide/" + related_guide.slug %>
-
-                    <aside class="discover--guide-entry group--2x">
-                        <h4 class="headline-4">
-                            <a class="" href="<%= related_guide.uri %>" title="Get the Guide"><%= related_guide.title %></a>
-                        </h4>
-                            <% if related_guide.has_key?("desc") %>
-                                <%= Kramdown::Document.new(related_guide.desc).to_html %>
-                            <% end %>
-                            <!-- <p class=""><a class="button" href="/guide/<%= post["slug"] %>" title="Listen now">Get the Guide <i class="fa fa-angle-right" aria-hidden="true"></i></a></p> -->
-                    </aside>
-                <% end %>
-                </div>
-            </div>
-        </section>
-    <% end %>
-
 <% if p.has_key?("related_podcast") %>
     <section data-magellan-target="discoverInnovation" id="discoverInnovation" class="discover--podcast section-article container-color--dark-alt container-image--middle" data-interchange="[/public/img/art/art-sound-bars-purple.svg, small]">
         <div class="row align-center">
@@ -246,7 +218,7 @@ end
                     </p>
                         <% if post.has_key?("summary") %>
                         <div class="discover--podcast-entry__summary">
-                            <%= Kramdown::Document.new(post["summary"]).to_html %> <a class="link--yellow" href="/innovation/<%= post["slug"] %>" title="Listen now">Listen now <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <%= Kramdown::Document.new(post["summary"]).to_html %> <a class="link-arrow link-arrow--yellow" href="/innovation/<%= post["slug"] %>" title="Listen now">Listen now</a>
                         </div>
                         <% end %>
                 </aside>
@@ -274,7 +246,7 @@ end
                         <div class="">
                             <h3 class="headline-2"><%= p["cta_ref"]["cta_title"] %></h3>
                             <div class="lead"><%= Kramdown::Document.new(p["cta_ref"]["cta_desc"]).to_html %></div>
-                            <a class="button button--primary button--cta" href="<%= p["cta_ref"]["cta_url"] %>"><%= p["cta_ref"]["cta_label"] %>  <i class="fa fa-angle-right"></i></a>
+                            <%= partial "partials/snippets/button", :locals => { :label => p["cta_ref"]["cta_label"], :url => p["cta_ref"]["cta_url"], :button_classes => "button button--primary button--cta", :icon => "icon-chevron-right", :icon_align => "right" } %>
                         </div>
                     </aside>
                 <% end %>

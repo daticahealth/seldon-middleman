@@ -39,6 +39,6 @@ a.preview.container-gray-2.relative href="/webinars/#{entry["slug"]}" title=("Vi
             div.preview-topic
                 span.label.dark.round = data.site.discover[entry.discovery_topic.id].title
     .absolute.preview-bg.z-0.group
-        img.lozad.img-cover.img-multiply.blur-1 src="#{thumb}?w=250&fm=jpg&q=10" data-src="#{thumb}?w=800"
+        img.lozad.img-cover.img-multiply src="#{thumb}?w=250&fm=jpg&q=10" data-src="#{thumb}?w=800"
     .preview-cta.headline-5.spaced-out.show-for-large.text-right = cta_label
     = inline_svg("icon-video-play-circle", class: "show-for-large preview-icon icon-size--xlarge svg-color--white")

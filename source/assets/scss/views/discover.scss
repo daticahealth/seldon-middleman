@@ -10,9 +10,9 @@
 .discover {
     $r: $global-radius * 0.5;
     &--page {
-        a {
-            font-weight: $font-weight-bold; // should be everywhere...someday
-        }
+        // a {
+        //     font-weight: $font-weight-bold; // should be everywhere...someday
+        // }
         @include color--dark-alt;
         color: initial;
         .person-card--vertical {
