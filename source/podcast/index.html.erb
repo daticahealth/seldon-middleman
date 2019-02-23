@@ -51,7 +51,7 @@ feed_url: "https://datica.com/podcast/feed.xml"
                             <div class="lead">
                                 <%= Kramdown::Document.new(podcast["summary"]).to_html %>
                             </div>
-                            <a class="button button--primary" href="/innovation/<%= podcast["slug"] %>" title="Listen now">Listen now <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a class="button button--primary" href="/innovation/<%= podcast["slug"] %>" title="Listen now">Listen now</a>
                         </div>
                     </div>
                 <% end %>

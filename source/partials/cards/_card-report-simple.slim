@@ -61,7 +61,7 @@ div(class="#{style_classes} #{fit_classes}")
     - if defined?(desc) && desc == true
         - unless image_url == nil
             a href=related_post_path title=link_title
-                img.lozad.group--sm src="#{image_url}?fit=thumb&fm=jpg&w=240&h=240&q=10" data-src="#{image_url}?fit=thumb&w=240&h=240" alt="preview" width="180"
+                img.lozad.group--sm src="#{loader_square}" data-src="#{image_url}?fit=thumb&w=240&h=240" alt="preview" width="180"
         .subheader-small
             = card_subhead
         h3.headline-4

@@ -63,7 +63,7 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
 %>
 <%# Renders a card inside a post loop. Post var must be injected - AW %>
 <div class="card <%= style_classes %> <%= fit_classes %>">
-    <% if image_url != nil %><a class="container-image-fill card-header-image container-gray-3 lozad" href="<%= related_post_path %>" title="Read '<%= post["title"] %>'" data-background-image="<%= image_url %>?fit=thumb&w=600&h=300">
+    <% if image_url != nil %><a class="container-image-fill card-header-image container-gray-3 lozad" href="<%= related_post_path %>" title="Read '<%= post["title"] %>'" style="background-image: url('<%= loader_rect %>?fit=crop&w=600&h=300');" data-background-image="<%= image_url %>?fit=thumb&w=600&h=300">
         <% if content_type != nil %><span class="card-header-subhead"><%= content_type %></span><% end %>
         <h2 class="headline-5 card-header-title ribbon--gray-1"><%= post["title"] %></h2>
         <%= inline_svg("icon-arrow-right-circle-large", class: "icon-size--xlarge card-header-icon svg-color--white") %>
@@ -91,7 +91,7 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
             <div class="media-object card-person">
                 <% if post["guest"].has_key?("profile_pic") %>
                     <div class="media-object-section">
-                        <img data-src="<%= data.site.person[post.guest.id].profile_pic.url %>?f=face&fit=thumb&w=128&h=128&q=50" class="lozad avatar avatar--medium circle"></div>
+                        <img src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= data.site.person[post.guest.id].profile_pic.url %>?f=face&fit=thumb&fm=jpg&fl=progressive&w=128&h=128&q=50" class="lozad avatar avatar--medium circle"></div>
                 <% end %>
                 <div class="<%= card_size %> media-object-section main-section align-self-middle">
                     <h4 class="person-name"><%= post["guest"]["fullname"] %></h4>
@@ -104,7 +104,7 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
             <div class="media-object card-person">
                 <% if post["author"].has_key?("profile_pic") %>
                     <div class="media-object-section">
-                        <img data-src="<%= data.site.person[post.author.id].profile_pic.url %>?f=face&fit=thumb&w=128&h=128&q=50" class="lozad avatar avatar--medium circle"></div>
+                        <img src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= data.site.person[post.author.id].profile_pic.url %>?f=face&fit=thumb&w=128&h=128&q=50" class="lozad avatar avatar--medium circle"></div>
                 <% end %>
                 <div class="<%= card_size %> media-object-section main-section align-self-middle">
                     <h4 class="person-name"><%= post["author"]["fullname"] %></h4>

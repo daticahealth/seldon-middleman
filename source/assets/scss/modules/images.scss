@@ -147,6 +147,16 @@ img.lozad.loaded {
         transition-delay:         .3s;
     }
 }
+img.lozad {
+    @include blur(1vw);
+    transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
+}
+img.lozad.loaded {
+    @include blur(0);
+    -webkit-transition-delay: .3s;
+    transition-delay:         .3s;
+}
+
 // .container--image-fit {
 //     position: relative;
 //     overflow: hidden;
