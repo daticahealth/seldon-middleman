@@ -32,7 +32,7 @@ end
 %>
 <div class="media-object card-person<% if defined?(classes) %> <%= classes %><% end %>">
     <% if p.has_key?("profile_pic") %>
-        <div class="media-object-section media-object--avatar"><img src="/assets/img/loader-disc.svg" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=128&h=128&fm=jpg&q=60" class="lozad avatar avatar--large circle" alt="<%= p["fullname"] %>"></div>
+        <div class="media-object-section media-object--avatar"><img src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=128&h=128&fm=jpg&q=60" class="lozad avatar avatar--large circle" alt="<%= p["fullname"] %>"></div>
     <% end %>
     <div class="media-object-section media-object--info main-section align-self-middle">
         <<%= tag_1 %> class="person-name">

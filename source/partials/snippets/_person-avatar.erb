@@ -45,7 +45,7 @@ end
             <a href="/about/<%= p["slug"] %>/" title="<%= p.fullname %>">
         <% end %>
         <span data-tooltip aria-haspopup="true" class="" data-fade-in-duration="20" data-fade-out-duration="100" data-allow-html="true" data-disable-hover="false" data-v-offset="0" data-click-open="false"  title="<%= p.fullname %>, <% if p.person_type == "Datica Alumni" %>Datica Alumni — Former <% end %><%= p.role %>">
-            <img class="lozad avatar avatar--<%= size %> circle" src="/assets/img/loader-disc.svg" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=<%= img_size %>&h=<%= img_size %>&fm=jpg&fl=progressive&q=60" alt="<%= p.fullname %>">
+            <img class="lozad avatar avatar--<%= size %> circle" src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=<%= img_size %>&h=<%= img_size %>&fm=jpg&fl=progressive&q=60" alt="<%= p.fullname %>">
         </span>
         <% if datican == true %>
             </a>

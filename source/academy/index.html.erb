@@ -45,10 +45,12 @@ promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc8
                         <div class="card-section card-section--flush">
                             <% if guide_entry.has_key?("image_thumb") %>
                                 <a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>">
-                                    <img class="lozad product-thumb float-right" data-src="<%= guide_entry.image_thumb.url %>?fit=thumb&w=200" width="40%">
+                                    <img class="lozad product-thumb float-right" src="https://images.ctfassets.net/189dvqdsjh46/14EaN5W0ItsJ3B8V8LfrWS/02dd779de703aa4925587ef089bd9953/loader-square.svg" data-src="<%= guide_entry.image_thumb.url %>?fit=thumb&w=200" width="40%">
                                 </a>
                             <% end %>
-                            <%= Kramdown::Document.new(guide_entry["summary"]).to_html %>
+                            <div class="text-small">
+                                <%= Kramdown::Document.new(guide_entry["summary"]).to_html %>
+                            </div>
                         </div>
                     </div>
                 </div>

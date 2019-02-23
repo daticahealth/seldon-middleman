@@ -91,7 +91,7 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
             <div class="media-object card-person">
                 <% if post["guest"].has_key?("profile_pic") %>
                     <div class="media-object-section">
-                        <img src="/assets/img/loader-disc.svg" data-src="<%= data.site.person[post.guest.id].profile_pic.url %>?f=face&fit=thumb&fm=jpg&fl=progressive&w=128&h=128&q=50" class="lozad avatar avatar--medium circle"></div>
+                        <img src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= data.site.person[post.guest.id].profile_pic.url %>?f=face&fit=thumb&fm=jpg&fl=progressive&w=128&h=128&q=50" class="lozad avatar avatar--medium circle"></div>
                 <% end %>
                 <div class="<%= card_size %> media-object-section main-section align-self-middle">
                     <h4 class="person-name"><%= post["guest"]["fullname"] %></h4>
@@ -104,7 +104,7 @@ card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
             <div class="media-object card-person">
                 <% if post["author"].has_key?("profile_pic") %>
                     <div class="media-object-section">
-                        <img src="/assets/img/loader-disc.svg" data-src="<%= data.site.person[post.author.id].profile_pic.url %>?f=face&fit=thumb&w=128&h=128&q=50" class="lozad avatar avatar--medium circle"></div>
+                        <img src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= data.site.person[post.author.id].profile_pic.url %>?f=face&fit=thumb&w=128&h=128&q=50" class="lozad avatar avatar--medium circle"></div>
                 <% end %>
                 <div class="<%= card_size %> media-object-section main-section align-self-middle">
                     <h4 class="person-name"><%= post["author"]["fullname"] %></h4>
