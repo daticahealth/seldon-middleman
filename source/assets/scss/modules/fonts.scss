@@ -38,19 +38,19 @@ $fam: GT America;
 //     font-style: italic;
 // }
 
-@font-face{
-    src: url('/public/fonts/gt-america-light.woff') format('woff');
-    font-family: $fam;
-    font-display: optional;
-    font-weight: 300;
-}
-@font-face{
-    src: url('/public/fonts/gt-america-lightitalic.woff') format('woff');
-    font-family: $fam;
-    font-display: optional;
-    font-weight: 300;
-    font-style: italic;
-}
+// @font-face{
+//     src: url('/public/fonts/gt-america-light.woff') format('woff');
+//     font-family: $fam;
+//     font-display: optional;
+//     font-weight: 300;
+// }
+// @font-face{
+//     src: url('/public/fonts/gt-america-lightitalic.woff') format('woff');
+//     font-family: $fam;
+//     font-display: optional;
+//     font-weight: 300;
+//     font-style: italic;
+// }
 
 @font-face{
     src: url('/public/fonts/gt-america-regular.woff') format('woff');
