@@ -1,0 +1,42 @@
+---
+title: "2019 Predictions"
+navTitle: "2019 Predictions"
+summary: "A collection of blog articles from Datica team members"
+layout: "ebook-simple"
+hide_from_sitemap: true
+relative_css: true
+---
+ruby:
+  today = DateTime.now
+  current_page.data.date = today.strftime('%B %-d, %Y')
+  # today = time.inspect
+  # sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+  sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['slug'] }.select{ |id, post| (post.title.include? "2019") }
+
+  # series = data.site.person.to_a.sort_by{ |id, person| person['slug'] }.select{ |id, person| (person.person_type == "Datica Executives" || person.person_type == "Datica VP" || person.person_type == "Datica Directors") }
+scss:
+  article {
+    margin-bottom: 3rem;
+  }
+chapter#cover
+header#introduction.page-break-after
+  h1.title= current_page.data.title
+  section.section
+    h2 Table of Contents
+    p The DHSF gives guidance and insights into these main topics:   
+    ul.toc.no-bullet
+      - sorted_posts.each do | id, post |
+        li = post.title
+          a href="#2019-predictions-#{post.slug}"
+
+  section.section
+    - sorted_posts.each do | id, post |
+      article id="2019-predictions-#{post.slug}"
+        .pub-date = post.pub_date.strftime('%B %-d, %Y')
+        h2.headline-4 = post.title
+        - if post.has_key?("blog_lead")
+          = Kramdown::Document.new(plain_text(post.blog_lead)).to_html
+        - if post.has_key?("post")
+          / section = post.post
+          = Kramdown::Document.new(post.post).to_html
+        a href="/blog/#{post.slug}" title="Read, #{post.title}" = site_url + "/blog/#{post.slug}"
