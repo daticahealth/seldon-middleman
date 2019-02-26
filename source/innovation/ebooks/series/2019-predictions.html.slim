@@ -18,6 +18,10 @@ scss:
   article {
     margin-bottom: 3rem;
   }
+  aside img {
+    max-width: 40rem;
+  }
+
 chapter#cover
 header#introduction.page-break-after
   h1.title= current_page.data.title
@@ -26,14 +30,17 @@ header#introduction.page-break-after
     p The DHSF gives guidance and insights into these main topics:   
     ul.toc.no-bullet
       - sorted_posts.each do | id, post |
-        li = post.title
-          a href="#2019-predictions-#{post.slug}"
+        li
+          a href="#2019-predictions-#{post.slug}" = post.title
 
   section.section
     - sorted_posts.each do | id, post |
       article id="2019-predictions-#{post.slug}"
         .pub-date = post.pub_date.strftime('%B %-d, %Y')
         h2.headline-4 = post.title
+        - if post.has_key?("featured_image")
+          aside
+            img src="#{post.featured_image.url}?fit=thumb&w=1200&h=600"
         - if post.has_key?("blog_lead")
           = Kramdown::Document.new(plain_text(post.blog_lead)).to_html
         - if post.has_key?("post")
