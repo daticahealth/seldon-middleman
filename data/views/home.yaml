@@ -6,18 +6,18 @@ badges:
     -
         name: "HIPAA logo"
         fileUrl: "https://images.ctfassets.net/189dvqdsjh46/7twnCUuD72YGS4cusiS6mQ/fa43b0f1faaecb4e8865415add79e538/logo-hipaa-federal.png"
-        logoSize: "xlarge"
+        logoSize: "large"
     -
         name: "SOC2 AICPA"
-        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/1Tt54MVMgkqIW8OWaYKmoo/7cb2c9e5e3d4f54cbd7498cc7e001fec/logo-aicpa.png"
+        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/1db5oL4HFeKkSGGcCmQACW/22310ce8955be0da9b65addc7a46dbd9/AICPA_SOC_2_badge.svg"
         logoSize: "xlarge"
     -
         name: "GDPR"
-        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/2gXAIuikiQyWYMmU4QAoOe/0106b4a35cd09e120f0eca6ee6a15446/gdpr-ready-badge.png"
+        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/5AloABwvCwMuaYkYsuy4Ks/f1f34d278a97690e876ffd539896d46b/gdpr-ready-badge.svg"
         logoSize: "xlarge"
     -
         name: "GxP"
-        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/1MTvqDED4USkYYE8S2eSwU/3d8116969c0142abfc77f74e34594155/gxp-badge.png"
+        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/1QSK9ETDS0Iogq8QQgKK64/e75076a0f712ca9f710a5bef3ed40bab/gxp-badge.svg"
         logoSize: "xlarge"
 
 customers:
@@ -29,47 +29,47 @@ customers:
     -
         name: 'Zipnosis'
         file: 'zipnosis-logo'
-        url: 'http://zipnosis.com'
+        url: 'https://zipnosis.com'
         logoSize: 'medium'
     -
         name: 'Healthloop'
         file: 'healthloop-logo'
-        url: 'http://healthloop.com'
+        url: 'https://healthloop.com'
         logoSize: 'small-mid'
     -
         name: 'BSC'
         file: 'bsc-logo-wide'
-        url: 'http://blueshieldca.com'
+        url: 'https://blueshieldca.com'
         logoSize: 'small'
     -
         name: 'healthfinch'
         file: 'healthfinch-logo'
-        url: 'http://healthfinch.com'
+        url: 'https://healthfinch.com'
         logoSize: 'medium'
     -
         name: 'BCGDV'
         file: 'bcgdv-logo'
-        url: 'http://bcgdv.com'
+        url: 'https://bcgdv.com'
         logoSize: 'medium'
     -
         name: 'Propeller Health'
         file: 'propeller-logo'
-        url:  'propellerhealth.com'
+        url:  'https://propellerhealth.com'
         logoSize: 'small-mid'
     -
         name: 'Hennepin County Medical Center'
         file: 'hcmc-logo'
-        url: 'http://hcmc.org'
+        url: 'https://hcmc.org'
         logoSize: 'medium'
     -
         name: 'COTA'
         file: 'cota-logo'
-        url: 'http://oncota.com'
+        url: 'https://oncota.com'
         logoSize: 'small-mid'
     -
         name: 'CirrusMD'
         file: 'cirrusmd-logo'
-        url: 'http://cirrusmd.com'
+        url: 'https://cirrusmd.com'
         logoSize: 'medium'
     -
         name: 'Stony Brook'
@@ -79,17 +79,17 @@ customers:
     -
         name: 'Optum'
         file: 'optum-logo'
-        url: 'http://optum.com'
+        url: 'https://optum.com'
         logoSize: 'medium'
     -
         name: 'University of Kansas Hospital'
         file: 'university-of-kansas-hospital-logo'
-        url: 'http://www.kumed.com/'
+        url: 'https://www.kumed.com/'
         logoSize: 'small-mid'
     -
         name: 'Hurley Medical Center'
         file: 'hurley-medical-center-logo'
-        url: 'http://www.hurleymc.com/'
+        url: 'https://www.hurleymc.com/'
         logoSize: 'medium'
     -
         name: 'The VA'
@@ -104,13 +104,33 @@ customers:
     -
         name: 'Methodist Lebonheur Hospital'
         file: 'mlh-logo'
-        url: 'http://www.methodisthealth.org'
+        url: 'https://www.methodisthealth.org'
+        logoSize: 'small-mid'
+    -
+        name: 'Emory Healthcare'
+        file: 'emory-healthcare-logo'
+        url: 'https://www.emoryhealthcare.org/'
         logoSize: 'medium'
+    -
+        name: 'Voalte'
+        file: 'voalte-logo'
+        url: 'https://www.voalte.com/'
+        logoSize: 'medium'
+    -
+        name: 'SOC Telemed'
+        file: 'soc-telemed-logo'
+        url: 'https://www.soctelemed.com/'
+        logoSize: 'medium'
+    -
+        name: 'Wolters Kluwer'
+        file: 'wolters-kluwer-logo'
+        url: 'https://wolterskluwer.com/'
+        logoSize: 'small-mid'
 
 # block_hero_1:
 #     -
 #         title: "HITRUST is how healthcare does business"
-#         body: "The HITRUST Common Security Framework (CSF) has become the preferred way to prove compliance in healthcare. HITRUST certification helps establish and accelerate partnerships. If you plan to do business in healthcare at the speed of change, you need to be HITRUST CSF Certified."
+#         body: "The HITRUST Common Security Framework (CSF) has become the preferred way to provve compliance in healthcare. HITRUST certification helps establish and accelerate partnerships. If you plan to do business in healthcare at the speed of change, you need to be HITRUST CSF Certified."
 #         bg: https://place-hold.it/480x240/f2f2f2/ccc.ededed.png&text=background-image&fontsize=32
 #     -
 #         title: "Datica’s HITRUST CSF Certification gives you industry credibility overnight"

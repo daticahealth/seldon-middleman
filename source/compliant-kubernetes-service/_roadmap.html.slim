@@ -1,0 +1,90 @@
+---
+title: "Datica Public Roadmap"
+summary: "A window into Datica product development."
+navTitle: "Roadmap"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "March 5, 2018"
+ogType: "product"
+customCSS: "products"
+layout: products
+priority: "0.9"
+collectionName: "products"
+collectionOrder: 3
+ctaCustom: true
+---
+ruby:
+  current_page.data.share_image = image_share_platform
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  feature_list = data.site.features.to_a.sort_by{ |id, feature| feature['_meta']['updated_at'] }
+  feature_states = ["In Development", "On Deck", "Future"] # hard-coded list must match one in Contentful model
+  form_id = '6cpdQDL5S06YmySAKIamom'
+
+svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  defs
+    symbol#icon-chevron-down viewbox=("0 0 18 18")
+      title chevron-down
+      path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
+
+section.container-color--dark-grad-blue
+  .section-article.container-image--center data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]"
+    .row.align-center
+      .columns.small-12.text-center.group
+        .row.align-center
+          .columns.small-12.medium-7
+            h1.headline-2.text-center = current_page.data.title
+            p.lead.text-center Our public roadmap gives customers and prospects full transparency into what we’re building. Read more about our decision to publish our product roadmap <a href="https://datica.com/blog/what-were-building-daticas-public-product-roadmap" class="link--yellow">here</a>.
+            / p= the_form.title
+section.section-article.container-gray-11
+  .row.align-center.small-up-1.medium-up-3.large-up-3
+    - feature_states.each do | state |
+      .column
+        h2.headline-4.spaced-out.text-center.group= state
+        - feature_list.each do | id, feature |
+          - if feature.has_key?("feature_status")
+            - if feature.feature_status == state
+              .card.drop.group
+                .card-section
+                  / - if feature.has_key?('category')
+                  /   .pub-date.text--gray-9 = feature.category
+                  - if feature.has_key?('desc')
+                    h4.headline-5(id="feature-#{feature.slug}")
+                      a.is-toggle(data-toggle="feature-detail_#{feature.slug}" data-track="true" data-track-category="platform" data-track-id="feature-detail_#{feature.slug}")
+                        = feature.title
+                        svg.icon-inline.icon-toggle.svg-color--blue.icon.icon-plus-disc id="feature-icon-#{feature.slug}"
+                          use.symbol-icon xlink:href="#icon-chevron-down"
+                  - else
+                    h4.headline-6= feature.title
+                  - if feature.has_key?("summary")
+                    = Kramdown::Document.new(feature.summary).to_html
+                  - if feature.has_key?("desc")
+                    .show-more--container.text-smaller data-off-canvas="" data-toggler="" id="feature-detail_#{feature.slug}"
+                      = Kramdown::Document.new(feature.desc).to_html
+                / - ugh. Refactor and resubmit Allan. Bolting categories into this list of tags isn't clean.
+                - if feature.has_key?("related_tags") || feature.has_key?("category")
+                  .card-divider.card-divider--flush
+                    span.text--gray-9
+                      = inline_svg("small/icon-tag", class: "icon-inline")
+                      | &nbsp;
+                    - if feature.has_key?('category')
+                      - tag_color = case feature.category
+                      - when "Kubernetes" then "success"
+                      - when "Core Compliance" then "primary"
+                      - else "info"
+                      span.label.round class=tag_color = feature.category
+                    - if feature.has_key?("related_tags")
+                      - feature["related_tags"].each do |tag|
+                        - if tag.has_key?("tag_full")
+                          // create this map for any colors wanted for tags. current list - settings.scss:198
+                          - tag_color = case tag.slug
+                          - when "kubernetes" then "primary"
+                          - when "add-ons" then "info"
+                          - when "foo" then "success"
+                          - when "bar" then "warning"
+                          - when "baz" then "info"
+                          - else "dark"
+                          span.label.round class=tag_color = tag.slug
+
+= partial "partials/snippets/product-req-bar", :locals => { :form_id => "6cpdQDL5S06YmySAKIamom" }
+
+

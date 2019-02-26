@@ -55,10 +55,12 @@ $underline: false !default;
     -o-transition: $args;
     transition: $args;
 }
-@mixin transform($t){
+@mixin transform($args...){
     // -ms-transform: $t;
-    -webkit-transform: $t;
-    transform: $t;
+    -moz-transform: $args;
+    -webkit-transform: $args;
+    -o-transform: $args;
+    transform: $args;
 }
 
 @mixin vertical-center-text(){
@@ -103,8 +105,8 @@ $underline: false !default;
     box-shadow: $s;
 }
 
-@mixin blur($radius){ // covers most browsers...FF needs JS for this I think. http://codepen.io/ebellempire/pen/rnvEK
-    $r: $radius * 1px;
+@mixin blur($r){ // covers most browsers...FF needs JS for this I think. http://codepen.io/ebellempire/pen/rnvEK
+    // $r: $radius * 1px;
     filter: blur($r); /* Someday, sigh ... */
     -webkit-filter: blur($r); /* Prefixed CSS3 blur filters */
     -moz-filter: blur($r);
@@ -182,11 +184,19 @@ $underline: false !default;
             -ms-flex: $set;
                 flex: $set;
 }
+$button-transition: transform $timing-default ease, box-shadow $timing-default ease-out, background-color $timing-default ease-out, color $timing-default ease-out;
 @mixin fx-hover-nudge {
-    transition: transform $timing-default * 0.8 ease, color $timing-default * 0.8 linear;
+    transition: $button-transition;
     &:focus,
     &:hover {
         transform: translate3d(3px, 0, 0);
+    }
+}
+@mixin fx-hover-nudge-left {
+    transition: $button-transition;
+    &:focus,
+    &:hover {
+        transform: translate3d(-3px, 0, 0);
     }
 }
 @mixin no-nudge {
@@ -202,6 +212,9 @@ $underline: false !default;
     background-image: -o-linear-gradient($args);
     background-image: linear-gradient($args);
 }
+// @function gradient-prefixes($args...){
+//     @return -webkit-linear-gradient($args), -o-linear-gradient($args), linear-gradient($args);
+// }
 
 @mixin clip-path($a, $b, $c, $d){
     -webkit-clip-path: polygon($a, $b, $c, $d);
@@ -415,4 +428,20 @@ $underline: false !default;
     &-third {
         max-width: 33%;
     }
+}
+
+@mixin blend-multiply {
+    @supports (background-blend-mode: multiply) {
+        background-blend-mode: multiply;
+    }
+}
+@mixin blend-overlay {
+    @supports (background-blend-mode: overlay) {
+        background-blend-mode: overlay;
+    }
+}
+@mixin abs-topleft { // less typing 
+    position: absolute;
+    top: 0;
+    left: 0;
 }

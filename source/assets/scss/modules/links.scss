@@ -11,3 +11,5 @@ a {
 section a {
     font-weight: $font-weight-mid;
 }
+// note that containers.scss:211 currently loads after this file; 
+// there are basic link style overrides per container colors (at least for grays)

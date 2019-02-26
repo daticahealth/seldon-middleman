@@ -1,0 +1,354 @@
+@charset 'utf-8';
+@import '../settings';
+@import 'node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import 'node_modules/foundation-sites/scss/components/_off-canvas.scss';
+@import '../mixins/colors';
+@import '../mixins/functions';
+@import '../mixins/animation';
+// @import '../vendor/slick';
+// @import '../modules/masonry';
+// @import '../modules/fonts-optional';
+// @include foundation-off-canvas;
+
+// custom stuff
+// .product-cks-bg {
+//     // position: absolute;
+//     // top:  0;
+//     // left: 0;
+//     // width: 100%;
+//     color: $color_white; // optional, only spec if needed
+//     // background-image: url("https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg");
+//     // background-color: #1c4a6c; // fallback. can't combine this with blend-mode, it will stack!
+//     @include breakpoint (small only) {
+//         @include gradient(to bottom, #234880 0%, #366090 60%, #3d7e9c 100%);
+//     }
+//     // Multiple backgrounds, blend modes, tablet up only :zap:
+//     @include breakpoint (medium) {
+//         @supports (background-blend-mode: overlay) and (background-blend-mode: screen) {
+//             background-image:
+//                 url('https://images.ctfassets.net/189dvqdsjh46/47HWdSLHTOSiowmkyqqEey/15b3b6d4a4740f0ad50094061cf2ac7c/cks-bridge-bw2.jpg?w=1200'),
+//                 url('/public/img/art/hexagon-bg-simple.svg'),
+//                 linear-gradient(to bottom, #234880 0%, #366090 60%, #3d7e9c 100%);
+//             background-blend-mode: overlay, screen;
+//             background-repeat: no-repeat;
+//             background-position:
+//                 center top,
+//                 bottom right;
+//             background-size: contain;
+//         }
+//     }
+// }
+
+$color: $color_blue;
+.solid {
+  fill: $color;
+  color: adjust-color($color, $lightness: 20%, $hue: -5%, $saturation: 50%);
+}
+
+.card-add-feature { // special button on roadmap
+    $transition: color $timing-medium linear, background-color $timing-medium linear, transform $timing-medium ease;
+    @include transition ($transition);
+    .icon {
+        @include transition ($transition);
+    }
+    &:hover {
+        background-color: $color_prime-alt;
+        .icon {
+            color: white;
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+    }
+}
+// Add a border to the bottom of the "How the Platform Works" images
+img.soft-border{
+  border-bottom: 1px solid $color_light;
+}
+ul.bullet-outside {
+    margin-left: 0;
+}
+// .bullets-chevron {
+//     list-style: none;
+//     li {
+//         margin-bottom: 1em;
+//         @include breakpoint (xlarge) {
+//             &:before {
+//                 content: '';
+//                 display: inline-block;
+//                 height: 2em;
+//                 width:  2em;
+//                 // background-image: url(http://placehold.it/32?text=fallback); // Fallback PNG
+//                 background-image: url(/public/icons/inlined/chevron-right-circle-white.svg);
+//                 background-size: contain;
+//                 background-repeat: no-repeat;
+//                 margin: -2rem 0.5rem -1rem -2.5rem;
+//             }
+//         }
+//     }
+// }
+@include keyframes( expando ) {
+    0% {
+        // height: 0px;
+        opacity: 0;
+    }
+    // 50% {
+
+    // }
+    100% {
+        // height: auto;
+        opacity: 1;
+    }
+}
+
+.feature-item {
+    & > * {
+        margin-bottom: 0.3em; // tighten spacing in children
+    }
+    margin-bottom: 0.8rem;
+}
+// @include transition(opacity $timing-default);
+
+.platform { // this is injected into body via MM
+    // #topNavCTA { // override, as is not primary cta
+    //     background-color: $gray-5;
+    // }
+    // .hollow {
+    //     &--inverted {
+    //         background-color: transparent;
+    //         color: white;
+    //         border: 1px solid white;
+    //     }
+    // }
+    &-bg {
+        &-bridge {
+            @include background-fill (center center);
+            // background-size: 25%; // 2x image
+            @include breakpoint (medium) {
+                background-size: 50%; // 2x image
+            }
+            @include breakpoint (large) {
+                background-size: 35%; // 2x image
+            }
+            .card {
+                @include breakpoint (medium) {
+                    margin-bottom: 0; // remove default margin on card child in horiz layouts
+                }
+            }
+        }
+    }
+}
+
+.multicol {
+    &-2 {
+        // @include multicolumns (2, 5em, 1.5rem);
+        @include breakpoint (large) {
+            @include multicolumns (2, 5em, 1.5rem);
+        }
+        // h3, h4 {
+        //     @include break-before ();
+        // }
+    }
+    &-3 {
+        @include breakpoint (medium) {
+            @include multicolumns (2, 5em, 1.5rem);
+        }
+        @include breakpoint (large) {
+            @include multicolumns (3, 5em, 1.5rem);
+        }
+        // @include breakpoint (xxlarge) {
+        //     @include multicolumns (4, 5em, 1.5rem);
+        // }
+        // h3, h4 {
+        //     @include break-before ();
+        // }
+    }
+    &--cards-group { // group of proof cards
+        @include breakpoint (medium) {
+            @include multicolumns (2, 15em, 2rem);
+        }
+        @include breakpoint (large) {
+            @include multicolumns (3, 15em, 2rem);
+        }
+        @include breakpoint (1600px) {
+            @include multicolumns (4, 15em, 2rem);
+        }
+        &__item {
+            @include break-inside;
+            .card {
+                margin: 0 0.7vw 4vw 0.7vw; // 0 0.5rem 2rem 0.5rem;
+            }
+            .button {// this overrides the animated nudge behavior, because of a chrome bug in multicol items: https://stackoverflow.com/questions/28595742/chrome-bug-content-not-rendering-multi-columns-properly. https://bugs.chromium.org/p/chromium/issues/detail?id=460222
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+}
+.no-break { // keep dl list items together in cols. Might move to utils
+    @include break-inside;
+}
+
+.callout {
+    // &-parent { // rare beast, that holds other callouts. Spacing adjustments
+    //     padding: 2.3rem 1rem;
+    //     border-radius: $global-radius * 2;
+    // }
+    &-content--left {
+        float: left;
+        text-align: left;
+        padding: 0.3rem;
+        width: calc(100% - 4rem);
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &-icon--right {
+        float: right;
+        margin-top: 2rem;
+    }
+}
+.sticky {
+    z-index: 18;
+    // .is-[state] classes for control over its appearance and exit if needed. Desktop only
+    @include breakpoint (large) {
+        transition: box-shadow $timing-default linear, background-color .3s linear;
+        // background-color: $gray-11;
+        @include shadow(0, 0, $black, 0);
+        // opacity: 0;
+        // &.is-anchored {
+        //     opacity: 0;
+        // }
+        .breadcrumbs {
+            opacity: 0;
+        }
+        &.is-stuck {
+            // opacity: 1;
+            background-color: $gray-12;
+            @include shadow(4px, 4px, $black, 0.85);
+            .menu-item--logo { // subnav logo item
+                opacity: 1;
+            }
+            .breadcrumbs {
+                opacity: 1;
+            }
+        }
+    }
+    .menu {
+        $bar: rem-calc(2px);
+        &-item {
+            // &:first-child a { // removed this item in secondary nav on platform
+            //     padding-right: 0; // puts logo flush with next item.
+            //     padding-bottom: 0;
+            // }
+            &--logo {
+                @include transition(opacity $timing-default);
+                opacity: 0;
+                height: rem-calc(29px); // must fit within nav space, and align with other li items
+            }
+            &--link {
+                color: $color_talk;
+                &:hover {
+                    transition: all $timing-default linear;
+                    background-color: white(0);
+                    border-bottom: $bar solid $color_prime-alt;
+                }
+                // padding: 1rem 1rem rem-calc(16-$bar) 1rem;
+                border-bottom: $bar solid transparent;
+                &.is-current {
+                    color: $color_prime-alt;
+                    border-bottom: $bar solid $color_prime-alt;
+                }
+            }
+            // &--cta { // for cta button in sticky nav bar
+            //     &:focus,
+            //     &:hover { // clear 'nudge' behavior
+            //     }
+            // }
+        }
+    }
+}
+// .section-platform--technology-build{
+//     img{
+//         display: block;
+//         margin: 0 auto;
+//         max-width: rem-calc(250px);
+//     }
+//     #two{max-width: 200px;}
+// }
+
+
+.quote-callout {
+    color: inherit;
+    opacity: 0.9;
+    font: {
+        family: $font_serif;
+        size: larger;
+        style: normal;
+    }
+    // padding: 0 0 0.5rem 0;
+    padding: 0;
+    margin: 0;
+    // margin-bottom: 1rem;
+    // &--medium {
+    //     @include breakpoint (large) {
+    //         max-width: 40vw;
+    //         margin-left: auto;
+    //         margin-right: auto;
+    //     }
+    // }
+    // inserted quotation marks
+    quotes: "\201C""\201D";
+    &:before {
+        // text-align: center;
+        opacity: 0.8;
+        content: open-quote;
+        // font-size: 2.6em;
+        // line-height: 0;
+        // vertical-align: -0.4em;
+        // padding: 0 0.1em 0 0;
+        // margin-left: -0.6em;
+        // font-weight: bold;
+        // margin-bottom: 1rem;
+    }
+    &:after {
+        // text-align: center;
+        opacity: 0.8;
+        content: close-quote;
+        // font-size: 2em;
+        // line-height: 0.3em;
+        // margin-right: 0.25em;
+        // margin-left: -0.2em;
+        // vertical-align: -0.2em;
+        // padding: 0 0 0 0.1em;
+        // margin-top: 1rem;
+    }
+    // &:first-child {
+    //     display: block;
+    //     padding-top: 1.3em;
+    // }
+    // &:last-child {
+    //     display: block;
+    // }
+}
+
+
+// .drop-taper { // sort of a tapering drop shadow for a thing above it
+//     position:relative;
+//     // @include shadow-anarchy(0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset);
+//     &:before {
+//         content: "";
+//         position: absolute;
+//         z-index: -1;
+//         @include shadow-anarchy(0 0 30px black(0.4));
+//         top:    0%;
+//         bottom: 20%;
+//         left:   7vw;
+//         right:  7vw;
+//         border-radius: 250px / 50px;
+//     }
+//     &:after {
+//         right: 10px;
+//         left: auto;
+//         @include transform(skew(8deg) rotate(3deg));
+//     }
+// }
+

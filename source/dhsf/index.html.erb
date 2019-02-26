@@ -5,13 +5,14 @@ author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 date: "July 12, 2017"
 share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
-layout: sparse
+layout: basic
 customCSS: "dhsf"
 customJS: "/public/js/dhsf.js"
+smoothScroll: false
 ---
 
 <div class="df dhsf container-color--gray-dark-grad">
-        <%= partial "partials/head/header", :locals => { :style => "light" } %>
+    <%= partial "partials/head/header", :locals => { :style => "light" } %>
     <section class="section-article" id="df-top">
         <div class="row align-center">
             <div class="columns small-12 medium-10 large-8">
@@ -23,7 +24,7 @@ customJS: "/public/js/dhsf.js"
         </div>
         <div class="row align-center">
             <div class="columns small-12 large-10 group">
-                <script src="https://fast.wistia.com/embed/medias/kl98fd2faa.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_kl98fd2faa seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+                <script class="lozad" data-src="https://fast.wistia.com/embed/medias/kl98fd2faa.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_kl98fd2faa seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
             </div>
         </div>
         <div class="row align-center">
@@ -45,8 +46,8 @@ customJS: "/public/js/dhsf.js"
             <div class="waypoint-title subhead--small">
                 Explore the framework
             </div>
-            <a href="#content" class="pulse" title="Explore the framework" data-smooth-scroll>
-                <i class="waypoint-icon fa fa-icon fa-4x fa-angle-down"></i>
+            <a href="#content" class="pulse" title="Explore the framework" data-smooth-scroll data-animation-duration="350" data-animation-easing="swing">
+                <%= inline_svg("icon-angle-down-large", class: "icon-size--large waypoint-icon") %>
             </a>
         </div>
     </section>
@@ -205,7 +206,7 @@ customJS: "/public/js/dhsf.js"
                 </div>
                 <div class="group text-center">
                     <a href="https://datica.com/guide/digital-health-success-framework-ebook/" title="Download your ebook">
-                        <img src="https://images.ctfassets.net/189dvqdsjh46/2q4JydYcuAgSQ6SKmy88US/47ce92d94666f955ab2ef252297fa838/dhsf-report-preview.png?w=500" alt="DHSF Ebook" class="group">
+                        <img data-src="https://images.ctfassets.net/189dvqdsjh46/2q4JydYcuAgSQ6SKmy88US/47ce92d94666f955ab2ef252297fa838/dhsf-report-preview.png?w=500" alt="DHSF Ebook" class="lozad group">
                     </a>
                     <!-- <h3 class="headline-4">Get your free DHSF ebook</h3> -->
                     <a class="button hollow hollow-inverted" href="/guide/digital-health-success-framework-ebook/" title="Download your ebook">Get your free DHSF ebook today</a>
@@ -216,13 +217,15 @@ customJS: "/public/js/dhsf.js"
             <div class="waypoint-title subhead--small">
                 Go Further
             </div>
-            <a href="#cta" class="pulse" title="Learn more" data-smooth-scroll data-animation-duration="200" data-animation-easing="swing">
-                <i class="waypoint-icon fa fa-icon fa-4x fa-angle-down"></i>
+            <a href="#cta" class="pulse" title="Learn more" data-smooth-scroll data-animation-duration="400" data-animation-easing="swing">
+                <%= inline_svg("icon-angle-down-large", class: "icon-size--large waypoint-icon") %>
             </a>
         </div>
 
     </section>
+    <aside id="cta">
     <%= partial "partials/section-promos/report-promo-latest" %>
+    </aside>
 
 </div>
 <%#= partial "partials/snippets/footer" %>

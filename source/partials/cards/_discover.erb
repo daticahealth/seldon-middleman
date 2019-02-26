@@ -1,8 +1,8 @@
 <div class="callout--article container-color--dark<% if defined?(classes) %> <%= classes %><% end %>">
-    <a class="callout--article-link" href="/discover/<%= post["slug"] %>" title="Discover <%= post["title"] %>">
+    <a class="callout--article-link" href="/discover/<%= post["slug"] %>/" title="Discover <%= post["title"] %>">
         <div class="callout--article-content">
             <div class="subheader-small">Discover</div>
-            <h3 class="headline-4"><%= post["title"] %> <i class="callout--article-action fa fa-arrow-circle-right"></i></h3>
+            <h3 class="headline-4" style="white-space: nowrap;"><%= post["title"] %><%= inline_svg("small/icon-arrow-forward", class: "callout--article-action icon-inline icon-right") %></h3>
             <% if post.has_key?("summary") %>
                 <div class="callout--article-body">
                     <%#= Kramdown::Document.new(post["summary"]).to_html %>
@@ -11,7 +11,7 @@
             <% end %>
         </div>
         <% if post.has_key?("featured_image") %>
-            <div class="callout--article-image container-image--center" data-interchange="[<%= post["featured_image"]["url"] %>?fit=scale&w=400&h=200&q=35, small], [<%= post["featured_image"]["url"] %>?fit=scale&w=600&h=300&q=55, medium]"></div>
+            <div class="lozad container-gray-7 img-multiply callout--article-image container-image--center" data-background-image="<%= post["featured_image"]["url"] %>?fit=scale&w=400&h=250&q=55"></div>
         <% end %>
     </a>
 </div>

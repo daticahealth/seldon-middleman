@@ -16,6 +16,9 @@ module SiteHelpers
     def twitter_handle
         "@daticahealth"
     end
+    def company_phone
+        "+1-888-377-3184"
+    end
     # responsive image strings for contentful images https://www.contentful.com/blog/2014/08/14/do-more-with-images-on-contentful-platform/
     def image_thumb
         # add q=[30-50] after; don't forget to set width & height for retina images
@@ -39,10 +42,10 @@ module SiteHelpers
     end
     # For sharing metadata - if no key image on the page, fall back to this.
     def image_share_default
-        site_url + '/public/img/datica-social-twitter-2x.png'
+        "https://images.ctfassets.net/189dvqdsjh46/3IyRP3gK64W4MaqMwWmSgU/d2c4ee3f02cbceda200b8b444fd67f26/cta-generic.jpg" + image_size_small
     end
     def image_share_platform # get ID from CF
-        data.site.cta["6KOQ7XhaJqCI00oYacessy"].cta_image.url + image_size_small
+        "https://images.ctfassets.net/189dvqdsjh46/2aPhdyH76MiQwqQq4KiGMg/186518b5a3896994d54ae3cef4fbac8d/cta-compliance-share.jpg" + image_size_small
     end
     def cf_asset_protocol
         'https:'
@@ -143,5 +146,35 @@ module SiteHelpers
     def safe_summary(item)
         source_text = Kramdown::Document.new(item).to_html
         return truncate_words(strip_tags(source_text), :length => 45)
+    end
+    # some common SVG sprites
+    def icon_permalink
+        '<svg class="icon icon-size--small" viewBox="0 0 37 34" width="37" height="34"><use xlink:href="/public/icons/util-icons-sprite.svg#icon-links"></use></svg>'
+    end
+    def icon_tag
+        '<svg class="icon icon-size--small" width="27" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 32"><use xlink:href="/public/icons/util-icons-sprite.svg#icon-tag"></use></svg>'
+    end
+    # product backgrounds, light & dark
+    def bg_product_light 
+        "https://images.ctfassets.net/189dvqdsjh46/50WC8N3lz2k0K4o0WQYE4A/96d25d0d7f385f8cfc82950e78285a8a/hex-pattern-light-bg.svg"
+    end
+    def bg_product_dark 
+        "https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
+    end
+    # super tiny images to use as src preloaders while lozad loads main image
+    def loader_rect
+        "https://images.ctfassets.net/189dvqdsjh46/60M3sIMdt8dyJUuX1a5oJw/ce77d30769d913103fcf480dee9df865/loader-rect.png"
+    end
+    def loader_square
+        "https://images.ctfassets.net/189dvqdsjh46/60M3sIMdt8dyJUuX1a5oJw/ce77d30769d913103fcf480dee9df865/loader-rect.png"
+    end
+    def loader_square_svg
+        "https://images.ctfassets.net/189dvqdsjh46/14EaN5W0ItsJ3B8V8LfrWS/02dd779de703aa4925587ef089bd9953/loader-square.svg"
+    end
+    def loader_disc
+        "https://images.ctfassets.net/189dvqdsjh46/60M3sIMdt8dyJUuX1a5oJw/ce77d30769d913103fcf480dee9df865/loader-rect.png"
+    end
+    def loader_disc_svg
+        "https://images.ctfassets.net/189dvqdsjh46/60M3sIMdt8dyJUuX1a5oJw/ce77d30769d913103fcf480dee9df865/loader-rect.png"
     end
 end

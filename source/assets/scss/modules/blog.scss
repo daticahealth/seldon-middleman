@@ -1,0 +1,56 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+// @import '../mixins/colors';
+@import '../mixins/functions';
+// @import '../mixins/animation';
+// @import '../vendor/slick';
+// @import '../modules/masonry';
+// @import '../modules/fonts-optional';
+
+body.blog {
+    background-color: $gray-10;
+}
+.legal-consent-container { // hubspot disclaimer, I do not want thee
+    display: none;
+}
+.blog-subscription {
+    max-width: 38rem;
+    label {
+        display: none;
+    }
+    .button {
+        margin-bottom: 0;
+    }
+}
+.post-meta { // group for tags, permalink, etc.
+    line-height: 1;
+}
+.post-tags {
+    display: inline-block;
+    // margin: 0 1rem 0 0; // space for anchor
+    .icon {
+        margin-right: 0.5rem;
+    }
+}
+.post-author + .post-meta { // when both are present, and parent is narrow, this adds some space above tags
+    margin-top: 1rem;
+}
+.post-card--horiz {
+    .feature-thumb {
+        width: 6rem;
+        @include breakpoint (medium) {
+            width: 8rem;
+        }
+        @include breakpoint (large) {
+            width: 12rem;
+        }
+        @include breakpoint (xlarge) {
+            width: 15rem;
+        }
+    }
+}
+.card-featured-section .card-header-title {
+    font-size: 1.4rem;
+}

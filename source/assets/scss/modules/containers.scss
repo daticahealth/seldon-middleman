@@ -1,35 +1,35 @@
-.masthead {
-    color: white;
-    background: {
-        color: $color_deep-alt;
-    };
-    padding: 2em; //legacy - this sets it for old browsers
-    padding-bottom: 5vw;
-    padding-left:  3vw;
-    padding-right: 3vw;
-    @include breakpoint(xlarge up){
-        padding-left:  0;
-        padding-right: 0;
-    }
-    &--subheader {
-        font: {
-            size: 1.5em;
-            weight: $font-weight-bold;
-        };
-        opacity: 0.7;
-    }
-    &-featured { // for large featured images
-        @include background-fill (center top);
-        &--caption {
-            height: 30vw;
-            @include breakpoint (xlarge up){ // desktop
-                height: 40vw;
-            }
-        }
+// .masthead {
+//     color: white;
+//     background: {
+//         color: $color_deep-alt;
+//     };
+//     padding: 2em; //legacy - this sets it for old browsers
+//     padding-bottom: 5vw;
+//     padding-left:  3vw;
+//     padding-right: 3vw;
+//     @include breakpoint(xlarge up){
+//         padding-left:  0;
+//         padding-right: 0;
+//     }
+//     &--subheader {
+//         font: {
+//             size: 1.5em;
+//             weight: $font-weight-bold;
+//         };
+//         opacity: 0.7;
+//     }
+//     &-featured { // for large featured images
+//         @include background-fill (center top);
+//         &--caption {
+//             height: 30vw;
+//             @include breakpoint (xlarge up){ // desktop
+//                 height: 40vw;
+//             }
+//         }
 
-        //@include background-fill (center top);
-    }
-}
+//         //@include background-fill (center top);
+//     }
+// }
 .section-article--stack { // adding this parent above sections will remove top padding on children, for stacking. Don't use with differing colors as is often the case. only in a group!
     .section-article + .section-article {
         border-top: 0;
@@ -44,21 +44,30 @@
         @include breakpoint (medium){ // desktop
             padding: 2.5rem 1rem;
         }
-        @include breakpoint (large){ // desktop
+        @include breakpoint (medium-large){ // desktop
             padding: 3rem 1.875rem;
         }
+        @include breakpoint (large){ // desktop
+            padding: 4rem 2.5rem;
+        }
         @include breakpoint (xlarge up){ // desktop xl
-            padding: 6.25rem 1.875rem;
+            padding: 6.25rem 3rem;
         }
         // here's the deal with this. I intended for the padding in containers to scale with the viewport - giant screens get more padding, mobile keeps it tight. The VW units do that. BUT that means there is no "pixel-perfect state" regarding padding - it's fluid. That said, here's my compromise: variable padding for small to medium, and fixed above that for desktop. -AW
+        &--small {
+            padding: 1rem 1.875rem 1.2rem 1.875rem;
+        }
         &--med {
             @include container-pad; // defaults for mobile -> ipad
             @include breakpoint (large up){ // desktop
                 padding: 3rem 1.875rem;
             }
         }
-        &--small {
-            padding: 1rem 1.875rem 1.2rem 1.875rem;
+        &--lg {
+            @include container-pad; // defaults for mobile -> ipad
+            @include breakpoint (medium){ // desktop
+                padding: 10vw 1rem;
+            }
         }
         &--xlarge, &--xl {
             @include container-pad; // defaults for mobile -> ipad
@@ -132,26 +141,7 @@
         }
     }
 }
-.pad {
-    $gap: 1.5vw;
-    padding: $gap;
-    &--sm {
-        padding: $gap * 0.6;
-    }
-    &--lg { // moar spacing!
-        padding: $gap * 1.5 !important;
-    }
-}
-.block { // useful when you need to cap the width of a person widget, etc.
-    &-width-medium {
-        max-width: 14rem;
-    }
-}
-.strip-bright { // bright strip, supersat
-    min-height: calc(3px + 0.5vw);
-    @include grad-bright;
-    &--small{min-height: rem-calc(5px);}
-}
+
 .container { // this is generally only for color & image settings on containers
     &-image {
         &-fill {
@@ -190,6 +180,7 @@
         //     // this occupies a full area; hack to hide it when at mobile widths
         //     background-position: -900px;
         //     @include breakpoint(large up) {
+        //         background-position: bottom right; // have a mixin for this
         //         background-position: bottom right; // have a mixin for this
         //     }
         //     background:{
@@ -232,6 +223,10 @@
             }
             @else {
                 color: #fff;
+                // a { // better defaults for dark containers
+                //     color: white;
+                //     &:hover, &:active, &:focus {color: $color_yellow-glow; }
+                // }
             }
             background-color: $color;
             // &:after {
@@ -279,7 +274,7 @@
         &--gray-dark {
             @include color--gray-dark;
         }
-        &--gray-dark-grad {
+        &--gray-dark-grad { // used in new product backgrounds
             @include color--gray-dark-grad;
         }
         &--gray-dark-grad-noise {
@@ -334,6 +329,12 @@
             //     background-image: linear-gradient(-135deg, #1B2044 0%, #17181D 52%, #17181D 100%);
             // }
         }
+        &--dark-grad-green {
+            // @include noisy;
+            color: $color_white; // optional, only spec if needed
+            background-color: #003630; // fallback
+            @include gradient(45deg, #1E504C 0%, #273536 20%, #273536 65%, #1A745A 100%);
+        }
         &--purple-grad-noise {
             @include noisy;
             color: $color_white; // optional, only spec if needed
@@ -369,11 +370,25 @@
         }
     }
 }
+.gradient-gray-11-fade-up { // works with .disclosure-fade below, but also independent
+    $c: $gray-11;
+    @include gradient(bottom, transparentize($c, 0) 40%, transparentize($c, 0.7) 80%, transparentize($c, 1) 100%);
+}
+.gradient-gray-12-fade-up { // works with .disclosure-fade below, but also independent
+    $c: $gray-12;
+    @include gradient(bottom, transparentize($c, 0) 40%, transparentize($c, 0.7) 80%, transparentize($c, 1) 100%);
+}
+.disclosure-fade { // use with class above for gradient fade over elements
+    position: absolute;
+    bottom: 0;
+    padding-top: 8rem;
+    width: 100%;
+}
 // just background colors
 .bg {
     @each $name, $color in $fill-color-list { // this generates all grays 1-12 (dark to lightest), sets color
         $color-hsl: hsl-str($color);
-        &--#{$name} {
+        &-#{$name} {
             $color-lightness: lightness($color);
             @if $color-lightness >= 55% {
                 color: #000;
@@ -381,11 +396,105 @@
             @else {
                 color: #fff;
             }
-            background: $color;
+            background-color: $color;
             // padding: 0.3em;
             // display: inline-block;
         }
     }
+    &-gray-grad { // alias
+        @extend .container-color--gray-dark-grad;
+    }
+}
+[class*="container"], [class*="bg"] {
+    transition: background-color $timing-default, color $timing-default, box-shadow $timing-default;
+}
+@supports (display: grid) { // a check for filter: blur does not work in FF; grid check is close support-wise. Test: https://codepen.io/allanwhite/pen/yGeXXz
+    .blob-color {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: scale3d(0.5, 0.6, 0.5); // scales it down so it's more blob-ish. 
+        // z-index: 0;
+        // background-blend-mode: lighten;
+        @include blur(6rem);
+        border-radius: 35%;
+        transition: background $timing-default * 2.5, color $timing-default * 2.5, opacity $timing-default * 2.5;
+        &[data-glow='true'] {
+            opacity: 1;
+        }
+        &[data-glow='false'] {
+            opacity: 0;
+        }
+    }
+    .has-blob {
+        &:hover {
+            .blob-color {
+                opacity: 1;
+            }
+        }
+    }
+}
+.bg-dark { // pair with gradients below for correct text colors, etc.
+    color: white;
+    mix-blend-mode: normal;
+}
+.bg-blue-green-grad {// grad-green-blue-cpaas
+    background: linear-gradient(276.03deg, rgba(0, 227, 186, 0.15) 1.62%, rgba(0, 227, 186, 0) 18.61%, rgba(0, 227, 186, 0) 88.36%, rgba(0, 227, 186, 0.19) 107.7%), linear-gradient(301.24deg, rgba(0, 107, 206, 0.5) 3.05%, rgba(0, 133, 255, 0) 26.72%, rgba(0, 133, 255, 0) 82.35%, rgba(0, 107, 206, 0.4) 108.59%), linear-gradient(180deg, #1F1E1E 0%, #595856 100%);
+}
+.bg-red-yellow-grad {// grad-red-yellow-cmi
+    background: linear-gradient(58.65deg, rgba(212, 72, 131, 0.81) -2.22%, rgba(217, 72, 155, 0.19) 14.52%, rgba(218, 72, 159, 0) 27.72%, rgba(136, 32, 101, 0) 86.95%, rgba(185, 41, 102, 0.81) 103.16%), linear-gradient(111.54deg, rgba(255, 204, 105, 0.63) -6.07%, rgba(168, 116, 54, 0) 24.26%), linear-gradient(187.45deg, #1D1B1B -6.22%, #62605D 101.05%);
+    // background: linear-gradient(58.65deg, rgba(212, 72, 131, 0.81) -2.22%, rgba(217, 72, 155, 0.19) 14.52%, rgba(218, 72, 159, 0) 27.72%, rgba(136, 32, 101, 0) 86.95%, rgba(185, 41, 102, 0.81) 103.16%), linear-gradient(111.54deg, rgba(255, 204, 105, 0.63) -6.07%, rgba(168, 116, 54, 0) 24.26%), linear-gradient(189.79deg, #312F2F -0.87%, #62605D 87.34%);
+}
+.bg-blue-purple-grad {// grad-blue-cks */
+    background: linear-gradient(94.97deg, rgba(135, 61, 255, 0.36) -3.1%, rgba(135, 61, 255, 0) 17.94%), linear-gradient(44deg, rgba(23, 73, 249, 0.75) -4.91%, rgba(23, 73, 249, 0) 29.21%, rgba(23, 73, 249, 0) 89.52%, rgba(23, 73, 249, 0.72) 105.36%), linear-gradient(186.59deg, #2C2A2A -2.38%, #62605D 95.07%);
+}
+.bg-purple-bp-grad {// grad-blue-cks
+    background: linear-gradient(116.38deg, rgba(26, 35, 255, 0.288) 5.51%, rgba(135, 61, 255, 0) 35.06%), linear-gradient(117.48deg, rgba(204, 23, 249, 0.525) -3.92%, rgba(136, 23, 249, 0) 29.59%, rgba(82, 23, 249, 0) 82.05%, rgba(167, 13, 221, 0.504) 110%), linear-gradient(186.59deg, #2C2A2A -2.38%, #62605D 95.07%);
+}
+// these are the same as strip, just diff angle /shrug
+.blob-cks {
+    @include gradient-cks(to left top);
+}
+.blob-cpaas {
+    @include gradient-cpaas(to left top);
+}
+.blob-ccms {
+    @include gradient-ccms(to left top);
+}
+.blob-cmi {
+    @include gradient-cmi(to left top);
+}
+.blob-services {
+    @include gradient-services(to left top);
+}
+.strip {
+    min-height: calc(3px + 0.5vw);
+    &-small {
+        min-height: rem-calc(5px);
+    }
+    &--small{min-height: rem-calc(5px);}
+    &-cks {
+        @include gradient-cks(to right);
+    }
+    &-cpaas {
+        @include gradient-cpaas(to right);
+    }
+    &-ccms {
+        @include gradient-ccms(to right);
+    }
+    &-cmi {
+        @include gradient-cmi(to right);
+    }
+    &-services {
+        @include gradient-services(to right);
+    }
+}
+.strip-bright { // bright strip, supersat
+    // min-height: calc(3px + 0.5vw);
+    @extend .strip;
+    @include grad-bright;
 }
 // Vertical align helper
 .vertical-align {
@@ -423,5 +532,12 @@
     .row {
         margin-left: 0;
         margin-right: 0;
+    }
+}
+
+// for content collections
+.collection .row:nth-child(odd) {
+    @include breakpoint (medium) {
+        flex-direction: row-reverse;
     }
 }

@@ -1,0 +1,82 @@
+---
+title: "HIPAA Compliant Web Hosting with Datica"
+summary: "HIPAA compliant web hosting made possible and and secure with Datica"
+author: "Datica, Inc."
+tags: "training, education, HIPAA, HL7, FHIR, hosting, interoperability, EHR, integration, resource"
+date: "January 1, 2017"
+share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+# customCSS:
+layout: basic
+---
+<div class="container-color--blue-alt">
+    <%= partial "partials/head/header", :locals => { :style => "light" } %>
+    <div class="section-article">
+        <div class="row align-center">
+            <div class="section--header-dark-group text-center">
+                <div class="group">
+                    <h1>HIPAA Compliant Web Hosting</h1>
+                    <h2>The best HIPAA compliant web hosting provider is also healthcare's digital health platform of choice</h2>
+                </div>
+                <a class="button button--light" href="/cks">Explore Datica Compliant Cloud</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-article container-gray-12">
+    <div class="row">
+        <div class="columns small-12 medium-6 text-left small-order-2 large-order-1">
+            <div class="callout drop">
+                <p>Datica goes beyond simple web hosting. We offer the industry's best compliant platform, relieving the technical burden other hosting providers force as your responsibility.</p>
+                <p>We have been independently audited three times against the OCR HIPAA audit protocol. Our team consists of industry veterans and leaders.</p>
+                <p>Focus on building your apps, not hosting them.</p>
+            </div>
+        </div>
+        <div class="columns small-12 medium-6 text-left small-order-2 large-order-1">
+            <img class="image-medium" src="https://images.ctfassets.net/189dvqdsjh46/tPI7wEI7zaSEQ2cu6MqOc/7f837591f0a7f85448180a4a1e61158d/logo-hitrust-certified.png" alt="Datica is HITRUST CSF Certified"/>
+            <h3>Datica is HITRUST CSF Certified</h3>
+        </div>
+    </div>
+</div>
+<section class="section-article container-gray-12">
+    <div class="row group">
+        <div class="columns small-12 text-center">
+            <h3 class="">Datica has been selected as a premier hosting partner by many of healthcare's best health systems and digital health companies.</h3>
+            <div class="logo-cloud">
+                <% data.views.home.customers.each do |logo| %>
+                    <img src="/public/img/customer-logos/<%= logo["file"] %>.png" alt="<%= logo["name"] %>" class="logo-cloud--item logo-size--small-mid" />
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="section-article">
+    <div class="row align-center">
+        <div class="columns small-12 medium-6 text-left small-order-2 large-order-1">
+            <h2>HIPAA compliant web hosting explained</h2>
+            <p>Achieving compliance takes a lot more than one would think. For you, a software developer who handles Protected Health Information, going with a regular host means you are now responsible for the following:</p>
+            <ul>
+                <li>Encrypting your data both in transit and at rest.</li>
+                <li>Dedicated logging that tracks every time your environment is accessed, what events occurred, and the duration of sessions.</li>
+                <li>Monitoring like intrusion detection and vulnerability scanning.</li>
+                <li>Disaster recovery, and mind that backups must be restored in line with most healthcare BAAs, which can be as short as 6 hours after incident.</li>
+                <li>Breach notification policy and processes.</li>
+            </ul>
+            <p>Most likely your HIPAA compliant web hosting provider doesn't handle all this for you. They are compliant at a small slice of HIPAA's requirements. Like most web hosting providers, they will give you root access to a basic box and send you on your way without additional help.</p>
+            <p>The quickest way to compliance is to choose a HIPAA compliant hosting partner who maintains everything else you need. Enter Datica, healthcare's trusted digital health platform.</p>
+        </div>
+    </div>
+</div>
+<div class="container-color--blue-alt">
+    <div class="section-article">
+        <div class="row align-center">
+            <div class="section--header-dark-group text-center">
+                <div class="group">
+                    <img class="icon-size--medium icon-with-margin--bottom inject-me svg-color--white" src="/public/icons/datica-icons/icons-products/icon-compliant-cloud.svg" alt="compliant cloud" />
+                    <h3 class="headline-1">Compliant Cloud</h3>
+                    <p>Learn more about Datica's HIPAA compliant web hosting product</p>
+                </div>
+                <a class="button button--light" href="/cks">Explore capabilities</a>
+            </div>
+        </div>
+    </div>
+</div>

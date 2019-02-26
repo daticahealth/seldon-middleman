@@ -1,8 +1,7 @@
 <%# Article Layout Template - Datica 2017 %>
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en-us">
     <head>
-        <% if build? %><%= partial "partials/scripts/google-tm-head" %><% end %>
         <%# Meta tags %>
         <%= partial "partials/head/tags" %>
         <%# Icons %>
@@ -10,12 +9,16 @@
         <%# Assets %>
         <%= stylesheet_link_tag "seldon" %>
         <% if current_page.data.has_key?("customCSS") %>
-            <%= stylesheet_link_tag "views/"+current_page.data.customCSS %>
+            <% current_page.data.customCSS.split(",").each do |filename| %>
+                <%= stylesheet_link_tag "views/"+filename.strip+".css" %>
+            <% end %>
         <% end %>
+
     </head>
     <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
     <body class="<%= page_classes %>">
         <a name="top"></a>
+        <%#= partial "partials/snippets/alert-ribbon" %>
         <%= partial "partials/head/header", :locals => { :style => "dark" } %>
         <%= yield %>
         <%= partial "partials/snippets/footer" %>

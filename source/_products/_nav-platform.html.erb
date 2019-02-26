@@ -1,0 +1,18 @@
+<%#
+#	<li class="menu-item">
+#	  	<a href="/" title="Datica Home">
+#			= inline_svg("icon-datica", class: "menu-item--logo svg-color--black")
+#		</a>
+#	</li>
+%>
+<% ordered_pages = sitemap.resources.select{|p| p.data.collectionName == "products" }.sort_by{ |page| page.data.collectionOrder } %>
+<% ordered_pages.each do |page| %>
+    <li class="menu-item">
+        <a href="<%= page.url %>" title="<%= page.data.summary %>" class="menu-item--link<% if page.url == current_page.url %> is-current<% end %>">
+            <%= page.data.navTitle %>
+        </a>
+    </li>
+<% end %>
+<li class="menu-item menu-item--cta">
+    <%= partial "partials/snippets/button", :locals => { :label => "Demo", :title => "Schedule a demo today.", :url => "/demo/", :button_classes => "button button--primary small", :icon => "icon-chevron-right", :icon_color => "white", :item_id => "top-nav", :data_track_group => "products" } %>
+</li>

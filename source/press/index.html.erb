@@ -22,15 +22,7 @@ feed_url: "https://datica.com/press/feed.xml"
 <section class="section-article container-color--gray-light" id="companyStory">
     <div class="row align-center">
         <div class="columns small-12 medium-3 large-3">
-            <div class="media-object card-person">
-                <div class="media-object-section">
-                    <img src="//images.ctfassets.net/189dvqdsjh46/FV6bMibcoS6KucswgSCec/9b32170214c6c1f3b0c967183c6ac9e6/prof-marcia.jpg" class="avatar avatar--medium circle" alt="Marcia Noyes">
-                </div>
-                <div class="media-object-section main-section align-self-middle">
-                    <h4 class="person-name">Marcia Noyes</h4>
-                    <p class="person-title"><a href="mailto:press@datica.com">press@datica.com</a></p>
-                </div>
-            </div>
+            <%= partial("partials/snippets/person", :locals => { :p => data.site.person["5kC0Y798vm6ag8sCq0O2CQ"], :classes => "block-width-medium", :use_headers => false }) %>
             <hr class="divider"/>
             <%= partial "partials/snippets/press-links" %>
         </div>
@@ -55,7 +47,7 @@ feed_url: "https://datica.com/press/feed.xml"
             <div class="column">
                 <div class="card drop">
                     <div class="card-section">
-                        <a href="/press-release/<%= post["slug"] %>" title="Read press release">
+                        <a href="/press-release/<%= post["slug"] %>/" title="Read press release">
                             <h3 class="headline-5"><%= post["title"] %></h3>
                         </a>
                             <p><span class="pub-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></span></p>
@@ -63,7 +55,7 @@ feed_url: "https://datica.com/press/feed.xml"
 
                     </div>
                     <div class="card-divider card-section--flush text-right">
-                        <a href="/press-release/<%= post["slug"] %>" title="Read press release">Read more <i class="fa fa-angle-right"></i></a>
+                        <a href="/press-release/<%= post["slug"] %>/" title="Read press release">Read more <%= inline_svg("small/icon-angle-right", class: "icon-inline") %></a>
                     </div>
                 </div>
             </div>
@@ -71,7 +63,7 @@ feed_url: "https://datica.com/press/feed.xml"
     </div>
     <div class="row align-center">
         <div class="columns small-12 medium-6 text-center">
-            <a class="button button--primary" href="/press/all" title="View all">View all Press Releases <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="button button--primary" href="/press/all/" title="View all">View all Press Releases <%= inline_svg("small/icon-angle-right", class: "icon-inline") %></a>
         </div>
     </div>
 </section>

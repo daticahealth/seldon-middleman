@@ -5,136 +5,158 @@
 @import '../mixins/colors';
 @import '../mixins/functions';
 
-$tab-border: 5px;
-.has-tip { // tooltip text styles, this needs to be scoped to this page. Maybe.
-    font-weight: initial;
-    // border-bottom: 1px dashed $gray-5;
-    &:after {
-        content: "\f05a"; // "\f129";
-        font-family: "FontAwesome";
-        opacity: 0.5;
-        font-size: 90%;
-        padding-left: 0.3em;
-    }
-}
-.headline-1, .headline-2{
-  font-weight: 200;
-}
-.tier {
-    $glow-r: 20px;
-    $glow-o: 0.4;
-    &-standard, &-ent { // bump em down
-        margin-top: 3rem;
-    }
-    &-standard{
-        .card {
-            border-top: $tab-border solid $color_prime-alt;
-        }
-    }
-    &-pro{
-        .card {
-            border-top: $tab-border solid $color_green;
-        }
-    }
-    &-ent{
-        .card {
-            border-top: $tab-border solid $color_deep-alt;
-        }
-    }
-    // &.reveal > .card {
-    //     border-top-width: $tab-border * 2;
-    // }
-}
-
-// mobile styles; modified zf tabs component
-.price {
-    &-panel {
-        background-color: white;
-        padding: 0;
-    }
-    &-info {
-        color: $gray-4;
-        margin-bottom: 1.5em;
-        li {
-            line-height: 1.3em;
-            margin-bottom: 0.5em;
-            i {
-                color: $gray-9;
-            }
-        }
-        &--price {
-            // font-weight: bold;
-            text-align: center;
-            padding: 0.3em;
-        }
-    }
-}
-ul#pricing-tabs {
-    text-align: center;
-    li.tabs-title {
-        margin-bottom: 0;
-        float: none;
-        display: inline-block;
-        border-top: $tab-border solid transparent;
-        // border-color: $color_prime-alt;
-        transition: all 130ms linear;
-        a {
-            padding: 0.8rem; // make tabs a bit more compact for smallest viewports
-            font-weight: bold;
-            color: rgba(0,0,0,0.6);
-        }
-        &.is-active {
-            background-color: white;
-            border-color: $color_prime-alt;
-            a {
-                color: black;
-            }
-        }
-    }
-}
-ul.no-style{
-  list-style: none;
-}
-.pill-best{
-  @include border-radius(0.2rem);
-  position: absolute;
-  background-color: $color_green;
-  padding: 0.2rem 0.3rem;
+.pricing-headline {
   text-align: center;
-  color: $color_white;
-  text-transform: uppercase;
-  font-size: rem-calc(10px);
-  font-weight: $font-weight-bold;
-  top: 5px;
-  left: 0;
+  @include breakpoint (medium-large) {
+    text-align: left;
+    margin-left: 4rem;
+  }
 }
-
-.pill-new{
-  @extend .pill-best;
-  background-color: $color_prime-alt;
+.pricing-content {
+  margin-bottom: 2rem;
 }
-
-.revert-has-tip{
-  display: inline;
-}
-ul.border-ul{
-  list-style: none;
-  margin-left: 0;
-  li{
-    display: inline-block;
-    padding: 0 0 0.5rem 0;
-    margin: 0 0 0.5rem 0;
-    border-bottom: 1px solid $color_light;
-    &:last-of-type{
-      padding: 0;
-      margin: 0;
-      border-bottom: 0;
-    }
+@include breakpoint (medium-large) {
+  .pricing-form {
+      margin-top: -8rem;
+  }
+  .pricing-callout {
+    overflow: visible; // for the nested form to pull up over box
+  }
+  .pricing-content {
+    margin-bottom: 0;
   }
 }
 
-.custom-pass-through-list{
-  li{
-    font-size: 0.875rem;
-  }
-}
+// $tab-border: 5px;
+// .has-tip { // tooltip text styles, this needs to be scoped to this page. Maybe.
+//     font-weight: initial;
+//     // border-bottom: 1px dashed $gray-5;
+//     &:after {
+//         content: "\f05a"; // "\f129";
+//         font-family: "FontAwesome";
+//         opacity: 0.5;
+//         font-size: 90%;
+//         padding-left: 0.3em;
+//     }
+// }
+// .headline-1, .headline-2{
+//   font-weight: 200;
+// }
+// .tier {
+//     $glow-r: 20px;
+//     $glow-o: 0.4;
+//     &-standard, &-ent { // bump em down
+//         margin-top: 3rem;
+//     }
+//     &-standard{
+//         .card {
+//             border-top: $tab-border solid $color_prime-alt;
+//         }
+//     }
+//     &-pro{
+//         .card {
+//             border-top: $tab-border solid $color_green;
+//         }
+//     }
+//     &-ent{
+//         .card {
+//             border-top: $tab-border solid $color_deep-alt;
+//         }
+//     }
+//     // &.reveal > .card {
+//     //     border-top-width: $tab-border * 2;
+//     // }
+// }
+
+// // mobile styles; modified zf tabs component
+// .price {
+//     &-panel {
+//         background-color: white;
+//         padding: 0;
+//     }
+//     &-info {
+//         color: $gray-4;
+//         margin-bottom: 1.5em;
+//         li {
+//             line-height: 1.3em;
+//             margin-bottom: 0.5em;
+//             i {
+//                 color: $gray-9;
+//             }
+//         }
+//         &--price {
+//             // font-weight: bold;
+//             text-align: center;
+//             padding: 0.3em;
+//         }
+//     }
+// }
+// ul#pricing-tabs {
+//     text-align: center;
+//     li.tabs-title {
+//         margin-bottom: 0;
+//         float: none;
+//         display: inline-block;
+//         border-top: $tab-border solid transparent;
+//         // border-color: $color_prime-alt;
+//         transition: all 130ms linear;
+//         a {
+//             padding: 0.8rem; // make tabs a bit more compact for smallest viewports
+//             font-weight: bold;
+//             color: rgba(0,0,0,0.6);
+//         }
+//         &.is-active {
+//             background-color: white;
+//             border-color: $color_prime-alt;
+//             a {
+//                 color: black;
+//             }
+//         }
+//     }
+// }
+// ul.no-style{
+//   list-style: none;
+// }
+// .pill-best{
+//   @include border-radius(0.2rem);
+//   position: absolute;
+//   background-color: $color_green;
+//   padding: 0.2rem 0.3rem;
+//   text-align: center;
+//   color: $color_white;
+//   text-transform: uppercase;
+//   font-size: rem-calc(10px);
+//   font-weight: $font-weight-bold;
+//   top: 5px;
+//   left: 0;
+// }
+
+// .pill-new{
+//   @extend .pill-best;
+//   background-color: $color_prime-alt;
+// }
+
+// .revert-has-tip{
+//   display: inline;
+// }
+// ul.border-ul{
+//   list-style: none;
+//   margin-left: 0;
+//   li{
+//     display: inline-block;
+//     padding: 0 0 0.5rem 0;
+//     margin: 0 0 0.5rem 0;
+//     border-bottom: 1px solid $color_light;
+//     &:last-of-type{
+//       padding: 0;
+//       margin: 0;
+//       border-bottom: 0;
+//     }
+//   }
+// }
+
+// .custom-pass-through-list{
+//   li{
+//     font-size: 0.875rem;
+//   }
+// }

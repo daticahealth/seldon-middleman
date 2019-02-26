@@ -1,0 +1,210 @@
+-
+    title: "Compliance"
+    url:
+    desc:
+    nav_main: true
+    children:
+        -
+            title: "Compliance"
+            url: "/cloud-compliance/"
+            desc: "Datica helps you become HITRUST CSF Certified"
+            nav_main: true
+            has_divider: true
+        -
+            url: "/compliant-kubernetes-service/"
+            desc: Datica is a complete, enterprise cloud-native solution for regulated industries.
+            icon: cks-logo-w
+            title: Compliant Kubernetes Service
+            nav_main: true
+            title_short: Datica CKS
+        -
+            url: "/compliant-platform-as-a-service/"
+            desc: The Compliant Cloud Platform Perfectly Designed for Early-Stage Applications.
+            icon: cpaas-logo-w
+            title: Compliant Platform-as-a-Service
+            nav_main: true
+            title_short: Datica CPaaS
+        -
+            url: "/cloud-compliance-management-system/"
+            desc: The first-ever tool to guarantee compliance assurance of managed cloud-native
+             services.
+            icon: ccms-logo-w
+            title: Cloud Compliance Management System
+            nav_main: true
+            title_short: Datica CCMS
+
+        #-
+        #    title: "Compliant Kubernetes Service"
+        #    title_short: "Datica CKS"
+        #    url: "/compliant-kubernetes-service/"
+        #    desc: "Datica is a complete, enterprise cloud-native solution for regulated industries."
+        #    nav_main: true
+        #-
+        #    title: "Compliant Platform-as-a-Service"
+        #    title_short: "Datica CPaaS"
+        #    url: "/compliant-platform-as-a-service/"
+        #    desc: "The Compliant Cloud Platform Perfectly Designed for Early-Stage Applications."
+        #    nav_main: true
+        #-
+        #    title: "Cloud Compliance Management System"
+        #    title_short: "Datica CCMS"
+        #    url: "/cloud-compliance-management-system/"
+        #    desc: "The first-ever tool to guarantee compliance assurance of managed cloud-native services."
+        #    nav_main: true
+        # -
+        #     title: "Public Roadmap"
+        #     url: "/roadmap"
+        #     desc: "Here's what we're building."
+        # -
+        #     title: "Customer Success"
+        #     url: "/products/success/"
+        #     desc: "Case studies and customer profiles of success"
+        # -
+        #     title: "Services"
+        #     url: "/services/"
+        #     desc: "Professional services offered by Datica"
+        #     nav_main: true
+        # -
+        #     title: "Pricing"
+        #     url: "/pricing/"
+        #     desc: "Talk to us for Datica pricing."
+        #     nav_main: true
+-
+    title: "Integration"
+    title_short: "Integration"
+    url: 
+    desc: 
+    nav_main: true
+    children:
+        - 
+            url: "/ehr-integration/"
+            desc: Get help with integration.
+            icon: cmi-logo-w
+            title: EHR Integration
+            nav_main: true
+            title_short: Integration
+            has_divider: true
+        - 
+            url: "/compliant-managed-integration/"
+            desc: The complete toolset to handle compliant, scalable, secure data exchange
+             with any EHR or clinical system.
+            icon: cmi-logo-w
+            title: Compliant Managed Integration
+            nav_main: true
+            title_short: Datica CMI
+        - 
+            url: "/compliant-managed-integration#services"
+            desc: Expert guidance and project services.
+            icon: icon-consulting-compass
+            title: Integration Services + CMI
+            nav_main: true
+            title_short: Integration Services
+                # -
+        #     title: "Pricing"
+        #     url: "/pricing/"
+        #     desc: "Talk to us for Datica pricing."
+        #     nav_main: false
+
+-
+    title: "Learn"
+    url:
+    desc:
+    nav_main: true
+    children:
+        -
+            title: "Datica Academy"
+            url: "/academy/"
+            desc: "The definitive resource for those looking to learn about compliance and interoperability"
+            has_divider: true
+        -
+            title: "Datica Blog"
+            url: "/blog/"
+            desc: "News and insights from the Datica team."
+        -
+            title: "Digital Health Success Framework"
+            url: "/dhsf/"
+            desc: "The framework for teams building digital health products"
+        -
+            title: "Innovation Hub"
+            url: "/innovation/"
+            desc: "Home of the Healthcare Innovators Podcast, In-depth Reports, and More"
+        -
+            title: "Discover: Compliance Topics"
+            url: "/discover/"
+            desc: "A curated collection of compliance topics from Datica"
+        -
+            title: "Open Source"
+            url: "/open-source/"
+            desc: "We believe in the importance of open source."
+            has_divider: true
+        -
+            title: "Webinars"
+            url: "/webinars/"
+            desc: "Datica webinars covering compliance topics in depth."
+-
+    title: "Company"
+    url:
+    desc:
+    nav_main: true
+    children:
+        -
+            title: "About Us"
+            url: "/about/"
+            desc: "Background on the company"
+        -
+            title: "Leadership"
+            url: "/leadership/"
+            desc: "The team guiding Datica"
+        -
+            title: "Careers"
+            url: "/careers/"
+            desc: "Job opportunities at Datica"
+            has_divider: true
+        -
+            title: "Press"
+            url: "/press/"
+            desc: "Full press background, and information for media outlets"
+        -
+            title: "Events"
+            url: "/events/"
+            desc: "Datica events, past and future."
+-
+    title: "Help"
+    url:
+    desc:
+    nav_main: true
+    children:
+        -
+            title: "Sign in"
+            url: "https://product.datica.com/"
+            desc: "Sign in to your dashboard"
+        -
+            title: "Documentation & Support"
+            url: "https://help.datica.com/hc/en-us/"
+            desc: "Documentation & Support across all Datica products"
+        -
+            title: "System Status"
+            url: "https://status.datica.com/"
+            desc: "System up time and alerts"
+-
+    title: "Legal"
+    url:
+    desc:
+    nav_main: false
+    children:
+        -
+            title: "Company Policies"
+            url: "https://policy.datica.com/"
+            desc: "Our company policies"
+        -
+            title: "Compliance Training"
+            url: "https://training.datica.com/"
+            desc: "Our training policies"
+        -
+            title: "HIPAA Mappings"
+            url: "https://hipaa.datica.com/"
+            desc: "How we map to HIPAA's rules"
+        -
+            title: "Datica Privacy Policy"
+            url: "https://privacy.datica.com/"
+            desc: "This Privacy Statement describes Datica’s Web site privacy practices."

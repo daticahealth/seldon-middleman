@@ -1,0 +1,187 @@
+@charset 'utf-8';
+@import '../settings';
+// @import 'node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+// @import 'node_modules/foundation-sites/scss/components/_off-canvas.scss';
+@import '../mixins/colors';
+@import '../mixins/functions';
+@import '../mixins/animation';
+
+.border-dash-line {
+    margin: 1.3rem 0;
+    height: 2px;
+    position: relative;
+    background: repeating-linear-gradient(to right,white 0,white 8px,transparent 8px,transparent 15px);
+    &::before, &::after { // svg data-URI of chevron shape
+        content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='18' viewBox='0 2 16 14'%3E%3Cpolygon fill='%23fff' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin: -7px;
+        transform-origin: 48%;
+        position: absolute;
+    }
+    &::before {
+        transform: rotate(180deg);
+        left: -5px;
+    }
+    &::after {
+        right: -5px;
+    }
+}
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes intro-left {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+        transform: translate3D(-200px,0,0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3D(1,1,1);
+    }
+}
+
+@keyframes intro-right {
+    0% {
+        opacity: 0;
+        // transform: translateX(30rem);
+    }
+    70% {
+        opacity: 0;
+        transform: translate3D(200px,0,0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3D(1,1,1);
+    }
+}
+@keyframes scale-center {
+    0% {
+        opacity: 0;
+        // transform: translateX(30rem);
+    }
+    50% {
+        opacity: 0;
+        // transform: translateX(-20rem);
+        transform: scale3D(0.2,1,1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3D(1,1,1);
+    }
+}
+@keyframes fadeup { // simple fade-in
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+        transform: translate3D(0,10px,0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3D(0,0,0);
+    }
+}
+@keyframes fadeup-2 { // simple fade-in
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+        transform: translate3D(0,10px,0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3D(0,0,0);
+    }
+}
+@keyframes fadeup-3 { // simple fade-in
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+        transform: translate3D(0,10px,0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3D(0,0,0);
+    }
+}
+@media screen and (min-width: 768px) {
+    .step-1.fancy {
+        animation: intro-left .7s ease-out;
+    }
+    .step-2.fancy {
+        animation: scale-center 1s ease-out;
+    }
+    .step-3.fancy {
+        animation: fadeup 1.1s ease-out;
+    } 
+    .step-4.fancy {
+        animation: fadeup-2 1.8s ease-out;
+        // & > .blob-color {
+        //     anmation: fade-in-out 1.8s linear;
+        // }
+    } 
+    .step-5.fancy {
+        animation: intro-right 2.1s ease-out;
+    } 
+    .step-6.fancy {
+        animation: fadeup-3 2.1s ease-out;
+    }
+    // .step-7.fancy {
+    //     animation-delay: 0.5s;
+    //     animation: intro-right 3.5s ease-out;
+    // } 
+    // .step-8.fancy {
+    //     animation-delay: 0.5s;
+    //     animation: fadeup 4s ease-out;
+    // }
+    // .step-9.fancy {
+    //     animation-delay: 0.5s;
+    //     animation: fadeup 4.4s ease-out;
+    // }
+}
+
+// === prepend a number to help see which elements are in what order
+// $class-slug: step !default;
+// @for $i from 1 through 9 {
+//     .#{$class-slug}-#{$i} {
+//         position: relative;
+//         &::before {
+//             content: '#{$i}';
+//             position: absolute;
+//             left: 0;
+//             top: 0;
+//             display: inline-table;
+//             // right: 0;
+//             // float: right;
+//             top: 0;
+//             color: black;
+//             font-size: 1rem;
+//             font-weight: bold;
+//             border-radius: 50%;
+//             padding: 0.5em;
+//             // border: 5px solid black;
+//             // box-shadow: 0 0 10px black;
+//             // width: 1.5em;
+//             // height: 1.5em;
+//         }
+//     }
+// }
+

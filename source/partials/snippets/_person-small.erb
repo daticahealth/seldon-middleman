@@ -1,11 +1,12 @@
+<%# p = data.site.person[p.id] %>
 <div class="media-object person-small">
     <% if p.has_key?("profile_pic") %>
-        <div class="media-object-section media-object--avatar"><img src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=250&q=35" class="avatar avatar--medium circle" alt="<%= p["fullname"] %>"></div>
+        <div class="media-object-section media-object--avatar"><img class="lozad avatar avatar--medium circle" src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=96&q=40" alt="<%= p["fullname"] %>"></div>
     <% end %>
     <div class="media-object-section media-object--info main-section align-self-middle">
         <h4 class="person-name">
             <%= p["fullname"] %>
         </h4>
-        <p class="person-title"><%= p["role"] %></p>
+        <p class="person-title"><% if p.person_type == "Datica Alumni" %>Datica Alumni — Former <% end %><%= p["role"] %></p>
     </div>
 </div>

@@ -1,0 +1,130 @@
+---
+title: "Datica Professional Services"
+summary: "Datica Professional Services help you get to market faster, beat the competition, and meet compliance requirements."
+navTitle: "Services"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "July 15, 2017"
+ogType: "product"
+share_image: "https://images.ctfassets.net/189dvqdsjh46/3sLvuskfFmYoAieKyCG644/d0b35a015189bad32c0ebc12053129e0/services-share.jpg"
+customCSS: "products"
+customJS: "/public/js/svg-injector.js"
+layout: basic
+priority: "0.9"
+# collectionName: "products"
+# collectionOrder: 5
+---
+<% sorted_services = data.site.services.to_a.sort_by{ |id, service| service['sort_order'] } %>
+<div class="container-color--dark-alt">
+    <%= partial "partials/head/header", :locals => { :style => "light" } %>
+</div>
+<section id="benefits" class="section-article" data-magellan-target="service_benefits">
+    <div class="row align-center">
+        <div class="columns small-12 large-10 text-center">
+            <h1 class="headline-2 text-center">Datica Services</h1>
+            <h2 class="headline-3">Get to market faster, beat the competition, and meet compliance requirements&mdash;all with fewer engineering resources.</h2>
+            <p class="lead">Through the <a href="/cks" title="See how Datica can help">Datica Compliant Kubernetes Service</a>, our team of cloud engineers, integration and compliance experts can help you <a href="#consulting" title="">assess</a> your business problems, ensure <a href="#compliance" title="">complete compliance</a> on the cloud, <a href="#integration" title="">integrate</a> with any system, and even <a href="#data_migration">migrate</a> your data to a new, efficient, and cost-effective cloud platform.</p>
+        </div>
+    </div>
+</section>
+<div id="serviceNav" class="show-for-large" data-sticky-container>
+    <nav class="sticky sticky-nav sticky-nav--secondary container-gray-12 text-center full-width" data-sticky data-options="marginTop:0; topAnchor:serviceNav; btmAnchor:cta;">
+        <ul class="menu horizontal align-center" data-magellan data-options="activeClass: is-current; offset: 75; deepLinking: true;">
+            <% sorted_services.each do | id, service | %>
+                <li class="menu-item">
+                    <a class="menu-item--link" href="#<%= service["slug"].downcase.tr("-", "_") %>" title="<%= service["title"] %>" class="menu-item--link">
+                        <%= service["title"] %>
+                    </a>
+                </li>
+            <% end %>
+            <li class="menu-item menu-item--cta">
+                <%= partial "partials/snippets/button", :locals => { :label => "Start free consultation", :title => "Start today", :url => "#cta", :button_classes => "button button--primary small", :item_id => "services", :icon => "icon-chevron-down" }  %>
+            </li>
+        </ul>
+    </nav>
+</div>
+<% sorted_services.each do | id, service | %>
+    <section id="<%= service["slug"].downcase.tr("-", "_") %>" class="section-article" data-magellan-target="<%= service["slug"].downcase.tr("-", "_") %>">
+        <div class="row group">
+            <div class="columns small-12 text-center">
+                <% if service.has_key?("icon") %><img class="inject-me icon-size--xlarge svg-color--blue" src="<%= service["icon"]["url"] %>"></img><% end %>
+                <h3 class="headline-3"><%= service["title"] %> Services</h3>
+            </div>
+        </div>
+        <div class="row align-center">
+            <div class="columns small-12 large-6">
+                <% if service.has_key?("video") %>
+                    <figure class="group">
+                        <%= service["video"] %>
+                        <% if service.has_key?("discovery_topic") %>
+                            <% related_topic = data.site.discover[service.discovery_topic.id] %>
+                            <figcaption class="faded">Learn more about <a href="/discover/<%= related_topic.slug %>"><%= related_topic.title %></a></figcaption>
+                        <% end %>
+                    </figure>
+                <% end %>
+                    <% if service.has_key?("related_customer") %>
+                        <% service.related_customer.take(1).each do | customer | %>
+                            <div class="show-for-medium">
+                                <%= partial("partials/cards/quote-customer", :locals => { :customer => customer }) %>
+                            </div>
+                        <% end %>
+                    <% end %>
+            </div>
+            <div class="columns small-12 large-6">
+                <% if service.has_key?("description") %>
+                    <div class="lead"><%= Kramdown::Document.new(service["description"]).to_html %></div>
+                    <% if service.has_key?("body") %>
+                        <div class="content-dynamic">
+                            <%= Kramdown::Document.new(service["body"]).to_html %>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+        <div class="group">
+             <hr class="narrow">
+            <% if service.has_key?("expert_people") %>
+                <div class="people-group" data-stack-breakpoint="small">
+                    <% service["expert_people"].each do |expert| %>
+                        <!-- <div class="flex-child-shrink column"> -->
+                            <%= partial("partials/snippets/person", :locals => { :p => expert }) %>
+                        <!-- </div> -->
+                    <% end %>
+                </div>
+                <p class="text-center group"><a class="button hollow small spaced-out" data-expand-on-small="true" href="/services#cta" title="Start your services project today">Talk to our <%= service["title"].downcase %> experts <i class="fa fa-icon fa-angle-down"></i></a></p>
+            <% else %>
+                <p class="text-center group"><a class="button hollow small spaced-out" data-expand-on-small="true" href="/services#cta" title="Start your services project today">Ask about <%= service["title"] %> <i class="fa fa-icon fa-angle-down"></i></a></p>
+            <% end %>
+        </div>
+
+    </section>
+<% end %>
+<%  
+    the_form = data.site.forms['1JUlX2euRSEgu4KuamI6Gq']
+    the_quote = data.site.quotes['5fDbO1XJ1CAEWAEIoiO6mS']
+%>
+
+<section id="cta" class="section-article container-gray-12">
+    <div class="row align-center">
+        <div class="columns small-12 large-8 group text-center">
+            <h2 class="headline-3">Start your free consultation today.</h2>
+            <p class="lead">Our team of experts brings years of veteran experience from health systems, EHRs, compliance, and cloud platforms.</p>
+        </div>
+    </div>
+    <div class="row align-middle align-center">
+        <div class="columns small-12 medium-6 large-5">
+            <blockquote class="quote--serif">
+                <%= Kramdown::Document.new(the_quote["quote_body"]).to_html %>
+            </blockquote>
+            <%= partial("partials/snippets/person", :locals => { :p => the_quote. customer, :company => the_quote.customer.company_name } ) %>
+        </div>
+        <div class="columns small-12 medium-6 large-5">
+            <div class="callout drop">
+                <h3 class="headline-4 text-center group"> Start Today</h3>
+                <%= Kramdown::Document.new(the_form["custom_form"]).to_html %>
+            </div>
+        </div>
+    </div>
+</section>
+
+                

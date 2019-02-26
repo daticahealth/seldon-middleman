@@ -8,10 +8,10 @@
         <% end %>
         <div class="card-section">
             <% if post.has_key?("pub_date") %>
-                <div class="text-small"><i class="fa fa-calendar" aria-hidden="true"></i> <%= post['pub_date'].strftime('%B %-d, %Y') %> &nbsp;</div>
+                <div class="text-small"><%= inline_svg("small/icon-event-note", class: "icon-inline") %> <%= post['pub_date'].strftime('%B %-d, %Y') %> &nbsp;</div>
             <% end %>
             <h3 class="headline-4">
-                <a class="" href="/blog/<%= post["slug"] %>" title="Read this blog post"><%= post["title"] %></a>
+                <a class="" href="/blog/<%= post["slug"] %>/" title="Read this blog post"><%= post["title"] %></a>
             </h3>
             <% if post["author"].has_key?("fullname") %>
                 <div class="media-object card-person">

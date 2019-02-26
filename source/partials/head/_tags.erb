@@ -1,4 +1,4 @@
-<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" name="Content-Type" />
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title><%= current_page.data.title %></title>
@@ -7,10 +7,12 @@
     <meta name="robots" content="noindex,nofollow,noodp">
     <meta name="googlebot" content="noindex,nofollow">
 <% end %>
+<%# GTM tags need to be near top %>
+<% if build? %><%= partial "partials/scripts/google-tm-head" %><% end %>
 <meta name="topic" content="<%= current_page.data.title %>">
 <meta name="classification" content="website">
 <meta name="url" content="<%= site_url %>">
-<meta name="keywords" content="heathcare, <%= current_page.data.tags %>">
+<%# <meta name="keywords" content="heathcare, "> %><%#= current_page.data.tags %>
 <meta name="coverage" content="Worldwide">
 <meta name="distribution" content="Global">
 <meta name="author" content="<%= current_page.data.author %>">
@@ -29,7 +31,6 @@
 <meta property="twitter:creator" content="<%= twitter_handle %>">
 <meta property="twitter:title" content="<%= current_page.data.title %>">
 <meta property="twitter:description" content="<%= current_page.data.summary %>">
-
 <link rel="canonical" href="<%= site_url + current_page.url %>">
 <% if current_page.data.has_key?("share_image") %>
     <meta property="og:image" content="<%= current_page.data.share_image %>">
@@ -46,4 +47,8 @@
 <% end %>
 <% if current_page.data.has_key?("feed_url") %>
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<%= current_page.data.feed_url %>">
+<% end %>
+<%# use asset_preload to preload relevant assets %>
+<% if current_page.data.has_key?("asset_preload") %>
+    <%= current_page.data.asset_preload %>
 <% end %>

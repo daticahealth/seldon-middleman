@@ -75,7 +75,7 @@ $font_serif:   "Source Serif Pro", Georgia, serif;
 // Font Weights                    // GT America Mapping; omitting ones that aren't loaded. Can be restored and loaded in fonts.scss.
 $font-weight-xlight:            100; // ultra light
 $font-weight-thin:              200; // thin
-$font-weight-light:             300; // light
+$font-weight-light:             400; // light - testing to see if we can do without this weight
 $font-weight-regular:           400; // regular
 $font-weight-mid:               500; // medium
 $font-weight-sem:               600; // N/A
@@ -87,13 +87,13 @@ $font-weight-black:             900; // black
 // ---------
 $global-left: left;
 $global-font-size: 100%; // this permits user to ± font size, foundation default
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1280);
 $global-lineheight: 1.5;
 
 // 1a. Colors
 // ---------
 
-$gray-1:  hsl(204, 10%, 8%);
+$gray-1:  hsl(204, 10%, 12%);
 $gray-2:  hsl(204, 10%, 16%);
 $gray-3:  hsl(204, 8%, 25%);
 $gray-4:  hsl(204, 8%, 33%);
@@ -140,9 +140,10 @@ $gray-list-short: (
 
 // Datica Colors
 $color_blue:             hsl(219, 94%, 48%);
-$color_green:            hsl(152, 79%, 39%); //hsl(150, 85%, 39%); // hsl(160, 100%, 34%);
+$color_green:            hsl(158, 100%, 34%); //hsl(150, 85%, 39%); // hsl(160, 100%, 34%);
 $color_shadow:           #DCE4E9;
 $color_highlight-yellow: #FEDB45;
+$color_yellow:           $color_highlight-yellow;
 $color_red:              hsl(349, 72%, 39%); // cool darker red
 $color_deep:             #010101;
 $color_deep-alt:         #1E2127;
@@ -169,6 +170,13 @@ $color-slugs: (
     gray-dark-grad,
     gray-dark-grad-noise,
     purple-grad
+);
+
+$product-colors: (
+    cks: #9A0BFF,
+    cmi: #6E52FF,
+    cpaas: #498CFF,
+    ccms: #25C6FF
 );
 
 // Art Directed Colors !! Use these sparingly and wisely
@@ -304,11 +312,11 @@ $breakpoints:(
   medium: 640px,
   medium-large: 840px,
   large: 1024px,
-  xlarge: 1200px,
-  xxlarge: 1440px
+  xlarge: 1400px,
+  xxlarge: 1600px
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small medium medium-large large xlarge xxlarge);
+$breakpoint-classes: (small medium medium-large large xlarge);
 
 // Custom breakpoints
 $custom_breakpoint-mid: 52.5rem; // 840px "medium-large"
@@ -323,7 +331,8 @@ $grid-column-count: 12;
 $grid-column-gutter: (
   small:  24px,
   medium: 40px,
-  large:  48px
+  large:  54px,
+  xlarge: 64px
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
@@ -341,7 +350,7 @@ $header-lineheight: 1.2;
 $header-margin-bottom: 0.5em;
 $header-styles: (
   small: (
-    'h1': ('font-size': 42, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
+    'h1': ('font-size': 40, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
     'h2': ('font-size': 30, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
     'h3': ('font-size': 26, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
     'h4': ('font-size': 22, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
@@ -349,7 +358,7 @@ $header-styles: (
     'h6': ('font-size': 16, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom)
   ),
   medium: (
-    'h1': ('font-size': 42, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
+    'h1': ('font-size': 40, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
     'h2': ('font-size': 30, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
     'h3': ('font-size': 26, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
     'h4': ('font-size': 22, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
@@ -357,9 +366,9 @@ $header-styles: (
     'h6': ('font-size': 16, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom)
   ),
   large: (
-    'h1': ('font-size': 58, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
-    'h2': ('font-size': 42, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
-    'h3': ('font-size': 32, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
+    'h1': ('font-size': 52, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
+    'h2': ('font-size': 40, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
+    'h3': ('font-size': 28, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
     'h4': ('font-size': 22, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
     'h5': ('font-size': 18, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom),
     'h6': ('font-size': 16, 'line-height': $header-lineheight, 'margin-top': 0, 'margin-bottom': $header-margin-bottom)
@@ -389,7 +398,7 @@ $list-margin-bottom: $paragraph-margin-bottom * 0.6;
 $list-style-type: disc;
 $list-style-position: outside;
 $list-side-margin: 1.25rem;
-$list-nested-side-margin: 1.25rem;
+$list-nested-side-margin: 2rem;
 $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.2rem;
@@ -475,7 +484,7 @@ $badge-font-size: 0.7rem;
 
 $breadcrumbs-margin: 0 0 $global-margin 0;
 $breadcrumbs-item-font-size: rem-calc(13);
-$breadcrumbs-item-color: $primary-color;
+$breadcrumbs-item-color: $secondary-color;
 $breadcrumbs-item-color-current: $black;
 $breadcrumbs-item-color-disabled: $medium-gray;
 $breadcrumbs-item-margin: 0.5rem;
@@ -506,13 +515,13 @@ $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
 $button-hollow-hover-lightness: -50%;
-$button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+$button-transition: transform $timing-default ease, box-shadow $timing-default ease-out, background-color $timing-default ease-out, color $timing-default ease-out;
 
 // 12. Button Group
 // ----------------
 
-$buttongroup-margin: 1rem;
-$buttongroup-spacing: 1rem;
+$buttongroup-margin: 0;
+$buttongroup-spacing: 1.5rem;
 $buttongroup-child-selector: '.button';
 $buttongroup-expand-max: 6;
 $buttongroup-radius-on-each: true;
@@ -584,22 +593,22 @@ $dropdown-padding: 1rem;
 $dropdown-background: $body-background;
 $dropdown-border: 1px solid $medium-gray;
 $dropdown-font-size: 1rem;
-$dropdown-width: 250px;
+$dropdown-width: 350px;
 $dropdown-radius: $global-radius;
 $dropdown-sizes: (
-  tiny: 100px,
-  small: 200px,
-  large: 400px,
+  tiny: 200px,
+  small: 300px,
+  large: 500px,
 );
 
 // 18. Dropdown Menu
 // -----------------
 
 $dropdownmenu-arrows: true;
-$dropdownmenu-arrow-color: $gray-5;
-$dropdownmenu-arrow-size: 6px;
+$dropdownmenu-arrow-color: transparentize($gray-6, 0.4);
+$dropdownmenu-arrow-size: 5px;
 $dropdownmenu-arrow-padding: 1.5rem;
-$dropdownmenu-min-width: 250px;
+$dropdownmenu-min-width: 260px;
 $dropdownmenu-background: $white;
 $dropdownmenu-submenu-background: $dropdownmenu-background;
 $dropdownmenu-padding: $global-menu-padding;

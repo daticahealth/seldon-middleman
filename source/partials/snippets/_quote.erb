@@ -5,7 +5,7 @@
     <div class="media-object-section main-section align-self-middle">
         <h4 class="person-name">
             <% if p.has_key?("profile_URL") %>
-                <a href="<%= p["profile_URL"] %>" title="Learn more about <%= p["fullname"] %>">
+                <a href="<%= p["profile_URL"] %>/" title="Learn more about <%= p["fullname"] %>">
                     <%= p["fullname"] %>
                 </a>
             <% else %>

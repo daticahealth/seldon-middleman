@@ -6,24 +6,38 @@ else
     tag_1 = "div"
     tag_2 = "div"
 end
+alumni = nil
 case p.person_type
     when "Datica Executives", "Datica VP", "Datica Directors"
         datican = true
+    when "Datica Alumni"
+        alumni = "Datica Alumni — former "
 end
 if p.has_key?("bio_short")
     person_summary = p.bio_short
 else
     person_summary = "Learn more about " + p.fullname
 end
+if defined?(style) && style == "light"
+    link_style = "link--yellow"
+else
+    link_style = nil
+end
+# This can work, once customer/person data model is redesigned. 
+# if p.has_key?("profile_pic")
+#     photo = data.site.person[p.id].profile_pic.url
+# else
+#     photo = nil
+# end
 %>
 <div class="media-object card-person<% if defined?(classes) %> <%= classes %><% end %>">
     <% if p.has_key?("profile_pic") %>
-        <div class="media-object-section media-object--avatar"><img src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=128&h=128&fm=jpg&q=60" class="avatar avatar--large circle" alt="<%= p["fullname"] %>"></div>
+        <div class="media-object-section media-object--avatar"><img src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=128&h=128&fm=jpg&q=60" class="lozad avatar avatar--large circle" alt="<%= p["fullname"] %>"></div>
     <% end %>
     <div class="media-object-section media-object--info main-section align-self-middle">
         <<%= tag_1 %> class="person-name">
             <% if datican == true %>
-                <a href="/about/<%= p["slug"] %>" title="Learn more about <%= p["fullname"] %>">
+                <a class="<%= link_style %>" href="/about/<%= p["slug"] %>/" title="Learn more about <%= p["fullname"] %>">
                     <%= p["fullname"] %>
                 </a>
             <% else %>
@@ -31,7 +45,7 @@ end
             <% end %>
         </<%= tag_1 %>>
         <% if p.has_key?("role") %>
-            <p class="person-title nomargin"><%= p["role"] %></p>
+            <p class="person-title nomargin"><% if p.person_type == "Datica Alumni" %>Datica Alumni — Former <% end %><%= p["role"] %></p>
         <% end %>
         <% if defined?(company) %>
             <p class="person-company"><%= company %></p>

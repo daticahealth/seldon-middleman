@@ -14,7 +14,7 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
     sorted_posts.take(1).each do | id, post |
         xml.updated post['pub_date'].to_time.iso8601
     end
-    sorted_posts[0...20].each do | id, post |
+    sorted_posts[0...15].each do | id, post |
         xml.entry do
             xml.title post["title"]
             xml.link "rel" => "alternate", "href" => site_url + post["slug"]
@@ -26,14 +26,19 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
             if post.has_key?("featured_image")
                 post_image = '<img src="' + post.featured_image.url + image_featured_small + '" width="420" alt="' + post.title + '">'
             else
-                post_image = nil
+                post_image = ''
             end
             # if post.has_key?("cta_ref")
             #     post_cta = '<h3>Next: <a href="' + post.cta_ref.cta_url + '">' + post.cta_ref.cta_title + '</a></h3>'
             # else
             #     post_cta = nil
             # end
-            post_all = post_image + Kramdown::Document.new(post["blog_lead"]).to_html + Kramdown::Document.new(post["post"]).to_html + '<p><a href="' + site_url + post.slug + '"> Continue reading, &quot;' + post.title + '&quot;</a></p>'
+            if post.has_key?("blog_lead")
+                post_body = Kramdown::Document.new(post["blog_lead"]).to_html + Kramdown::Document.new(post["post"]).to_html
+            else
+                post_body = Kramdown::Document.new(post["post"]).to_html
+            end
+            post_all = post_image + post_body + '<p><a href="' + site_url + post.slug + '"> Continue reading, &quot;' + post.title + '&quot;</a></p>'
             xml.tag!("content", "type" => "html") { xml.cdata!(post_all) }
         end
     end

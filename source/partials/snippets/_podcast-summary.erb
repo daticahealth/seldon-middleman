@@ -7,7 +7,7 @@
             <%= podcast['pub_date'].strftime('%B %-d, %Y') %>
         <% end %>
     </span>
-    <h4 class="headline-5"><a href="/innovation/<%= podcast["slug"] %>"><%= podcast["title"] %></a></h4>
+    <h4 class="headline-5"><a href="/innovation/<%= podcast["slug"] %>/"><%= podcast["title"] %></a></h4>
     <%= partial("partials/snippets/person", :locals => { :p => podcast["guest"] }) %>
 
 <% else %>
@@ -20,11 +20,11 @@
                     <%= podcast['pub_date'].strftime('%B %-d, %Y') %>
                 <% end %>
             </span>
-            <h4 class="headline-5"><a href="/innovation/<%= podcast["slug"] %>"><%= podcast["title"] %></a></h4>
+            <h4 class="headline-5"><a href="/innovation/<%= podcast["slug"] %>/"><%= podcast["title"] %></a></h4>
             <% if podcast.has_key?("guest") %>
                 <% if podcast["guest"].has_key?("fullname") %>
                     <a class="" href="/innovation/<%= podcast["slug"] %>" title="Listen to this episode now">
-                        <img src="<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="avatar--large-mid circle float-right hide-for-medium" alt="<%= podcast["guest"]["fullname"] %>">
+                        <img src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="lozad avatar--large-mid circle float-right hide-for-medium" alt="<%= podcast["guest"]["fullname"] %>">
                     </a>
                 <% end %>
             <% end %>
@@ -33,8 +33,8 @@
         <div class="columns small-12 medium-3 large-3 text-center medium-order-1 show-for-medium">
             <% if podcast.has_key?("guest") %>
                 <% if podcast["guest"].has_key?("fullname") %>
-                    <a class="" href="/innovation/<%= podcast["slug"] %>" title="Listen to this episode now">
-                        <img src="<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="avatar--large-mid circle" alt="<%= podcast["guest"]["fullname"] %>">
+                    <a class="" href="/innovation/<%= podcast["slug"] %>/" title="Listen to this episode now">
+                        <img src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="lozad avatar--large-mid circle" alt="<%= podcast["guest"]["fullname"] %>">
                     </a>
                 <% end %>
             <% end %>

@@ -1,0 +1,11 @@
+ruby:
+	unless defined?(the_form)
+		puts "The form partial at #{current_page.url} is not defined!"
+	end
+	if defined?(form_id) # ex :formId => 'foo'; in case there's more than 1 embed on a page
+		formAnchor = form_id
+	else
+		formAnchor = 'hsFormContainer'
+	end
+div id = formAnchor
+= Kramdown::Document.new(the_form).to_html

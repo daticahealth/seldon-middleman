@@ -1,5 +1,5 @@
 <!-- card-case-study partial -->
-<div class="card drop-light">
+<div class="card drop-light drop-hover">
     <% if cf_customer["case_study"].has_key?("media_object") %>
 
         <div class="responsive-embed widescreen">
@@ -9,16 +9,17 @@
     <% end %>
     <div class="card-divider text-center">
         <a href="/customer/<%= cf_customer["slug"] %>" title="<%= cf_customer["company_name"] %> case study">
-            <img class="logo-size--medium group--sm" src="/public/img/customer-logos/<%= cf_customer["slug"] %>-logo.png" alt="<%= cf_customer["company_name"] %> Logo"/>
+            <img class="logo-size--medium group--sm lozad" data-src="/public/img/customer-logos/<%= cf_customer["slug"] %>-logo.png" alt="<%= cf_customer["company_name"] %> Logo"/>
         </a>
-        <h3 class="headline-5"><%= cf_customer["case_study"]["case_study_title"] %></h3>
+        <h3 class="lead"><%= cf_customer["case_study"]["case_study_title"] %></h3>
     </div>
     <div class="card-section card-section--flush text-left">
         <% if cf_customer["case_study"].has_key?("customer_quote") %>
                 <blockquote class="quote--serif">
-                    <%= cf_customer["case_study"]["customer_quote"]["quote_body"] %>
+                    <%= Kramdown::Document.new(cf_customer["case_study"]["customer_quote"]["quote_body"]).to_html %>
+
                 </blockquote>
-                <%= partial("partials/snippets/person", :locals => { :p => cf_customer }) %>
+                <%= partial("partials/snippets/person-vertical-simple", :locals => { :p => cf_customer }) %>
         <% else %>
             <% if cf_customer["case_study"].has_key?("value_prop") %>
                 <p class="lead"><%= cf_customer["case_study"]["value_prop"] %></p>
@@ -26,8 +27,7 @@
         <% end %>
     </div>
     <div class="card-divider card-section--flush">
-        <a class="button hollow small" href="/customer/<%= cf_customer["slug"] %>" title="<%= cf_customer["company_name"] %> case study">
-            Read the <%= cf_customer["company_name"] %> case study <i class="fa fa-angle-right"></i>
-        </a>
+        <%= partial "partials/snippets/button", :locals => { :label => "Read the #{cf_customer.company_name} Case study", :url => "/customer/#{cf_customer["slug"]}", :button_classes => "button hollow small", :item_id => "customer", :icon => "icon-chevron-right", :icon_align => "right" } %>
     </div>
 </div>
+

@@ -5,14 +5,6 @@
 @import '../mixins/colors';
 @import '../mixins/functions';
 
-// Breadcrumb nav: http://foundation.zurb.com/sites/docs/breadcrumbs.html
-.breadcrumb {
-    li {
-        &:not(:last-child)::after {
-            content: "\203A"; // a '›' http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/
-        }
-    }
-}
 blockquote + .media-object, .blockquote-info { // line person/info up with quote indent
     margin-left: 1.5rem;
 }
@@ -23,6 +15,7 @@ blockquote + .media-object, .blockquote-info { // line person/info up with quote
 .label {
     font-weight: $font-weight-mid;
     opacity: 0.7;
+    vertical-align: bottom;
     // font-weight: $font-weight-mid;
     &.round { // this is normally in Foundation, seems to be missing
         border-radius: 1000px;
@@ -31,11 +24,11 @@ blockquote + .media-object, .blockquote-info { // line person/info up with quote
         // background-color: $gray-6;
         opacity: 0.5;
     }
-    &-hollow {
+    &.hollow {
         background-color: transparent;
         border: 1px solid darken($label-background, 60%);
         color: darken($label-background, 60%);
-        &--inverted {
+        &-inverted {
             background-color: transparent;
             border: 1px solid white(0.7);
             color: white(0.7);
@@ -54,28 +47,28 @@ span.label + span.label { // when in a tag list
     margin-left: 0.4em;
 }
 // Pills are functionally identical to "labels". We should unify these two someday. - AW
-.pill {
-    display: inline-block;
-    padding: rem-calc(3px) rem-calc(6px);
-    @include border-radius(5px);
-    text-transform: uppercase;
-    font-size: rem-calc(12px);
-    font-weight: $font-weight-mid;
-    &--yellow{
-        color: darken(#CEBA65, 30%);
-        background-image: -webkit-linear-gradient(#FFFDAA 0%, #FFF871 100%);
-        background-image: -o-linear-gradient(#FFFDAA 0%, #FFF871 100%);
-        background-image: linear-gradient(#FFFDAA 0%, #FFF871 100%);
-        @include shadow-anarchy(inset 0 -1px 1px 0 #CEBA65);
-    }
-    &--green{
-        color: darken($color_aqua-glow, 45%);
-        background-image: -webkit-linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
-        background-image: -o-linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
-        background-image: linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
-        @include shadow-anarchy(inset 0 -1px 1px 0 darken($color_aqua-glow, 30%));
-    }
-}
+// .pill {
+//     display: inline-block;
+//     padding: rem-calc(3px) rem-calc(6px);
+//     @include border-radius(5px);
+//     text-transform: uppercase;
+//     font-size: rem-calc(12px);
+//     font-weight: $font-weight-mid;
+//     &--yellow{
+//         color: darken(#CEBA65, 30%);
+//         background-image: -webkit-linear-gradient(#FFFDAA 0%, #FFF871 100%);
+//         background-image: -o-linear-gradient(#FFFDAA 0%, #FFF871 100%);
+//         background-image: linear-gradient(#FFFDAA 0%, #FFF871 100%);
+//         @include shadow-anarchy(inset 0 -1px 1px 0 #CEBA65);
+//     }
+//     &--green{
+//         color: darken($color_aqua-glow, 45%);
+//         background-image: -webkit-linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
+//         background-image: -o-linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
+//         background-image: linear-gradient(lighten($color_aqua-glow, 10%) 0%, darken($color_aqua-glow, 10%) 100%);
+//         @include shadow-anarchy(inset 0 -1px 1px 0 darken($color_aqua-glow, 30%));
+//     }
+// }
 
 .alert {
     &-ribbon {
@@ -91,7 +84,7 @@ span.label + span.label { // when in a tag list
             padding: 0.5rem 1.8rem; // approx. with site nav
             // height: 2rem;
             // @include breakpoint (medium) {
-            //     height: 3vw;                
+            //     height: 3vw;
             // }
             // text-align: center;
             &.menu { // when using zf .menu elements as children. Useful for aligning across breakpoints.
@@ -110,37 +103,48 @@ span.label + span.label { // when in a tag list
 // CTA containers
 .cta {
     text-align: center;
-    @include breakpoint(medium up){
+    @include breakpoint(medium up) {
         text-align: left;
-        padding: 2rem !important;
+        // padding: 2rem !important;
+    }
+    margin: 2rem 0 2.5rem 0;
+    overflow: hidden;
+    border-radius: $global-radius;
+    @include breakpoint(medium) {
+        margin: 2rem auto 3rem auto;
+        max-width: 75%;
+    }
+    @include breakpoint(large) {
+        max-width: 100%; // an exception, it's 2-col here but narrow. Need container queries!
+        margin: 3rem 0 4rem 0;
+    }
+    @include breakpoint(xlarge) {
+        max-width: 75%;
     }
     &--image{ // only used in full-image CTAs
-        margin-bottom: 2rem;
         padding: 0 !important;
-        overflow: hidden;
-        border-radius: $global-radius;
     }
     &--icon{
         max-width: $thing-l; // 4 rem/64px
         max-height: $thing-l;
-        @include breakpoint(medium up){
+        @include breakpoint(medium up) {
             margin-bottom: 1rem;
             float: left;
         }
     }
     &--medium {
         max-width: initial;
-        @include breakpoint(medium){
+        @include breakpoint(medium) {
             max-width: 50%;
         }
-        @include breakpoint(large){
+        @include breakpoint(large) {
             max-width: initial;
         }
     }
     &--body{
         &-right {
             // float: right;
-            @include breakpoint(medium up){
+            @include breakpoint(medium up) {
                 margin-left: 5.5rem;
             }
         }
@@ -151,20 +155,20 @@ span.label + span.label { // when in a tag list
         margin-bottom: 1.5rem;
     }
     &--button{
-        @include breakpoint(small only){
+        @include breakpoint(small only) {
             width: 100%;
         }
         margin-bottom: 0;
     }
 }
 .share {
-    $offset: 5.5rem; // how far we're sticking this thing off the ledge
+    $offset: 9rem; // how far we're sticking this thing off the ledge
     &--item { // li's
         padding-left: 0.3rem;
         padding-right: 0.3rem;
     }
     &-icons {
-        // @include breakpoint(xlarge up){
+        // @include breakpoint(xlarge up) {
         // }
         &.horizontal {
 
@@ -196,10 +200,35 @@ span.label + span.label { // when in a tag list
         padding-bottom: 0.8rem;
         &-top { // top item, just needs adjustment
             max-height: 2.2rem;
-            @include breakpoint(xlarge up){
+            @include breakpoint(xlarge up) {
                 max-height: 3rem;
                 padding-bottom: 0.8rem;
             }
+        }
+    }
+}
+.post-permalink { // link icon 
+    $speed: 300ms;
+    // position: absolute;
+    // bottom:   0;
+    // right: 0;
+    display: inline-block;
+    // padding: 0.5rem;
+    transition: color $speed, background-color $speed, opacity $speed, transform $speed;
+    &[data-theme="light"] {
+        color: white;
+        opacity: 0.5;
+        &:hover {
+            color: #fffa5e;
+            opacity: 1;
+        }
+    }
+    &[data-theme="dark"] {
+        color: black;
+        opacity: 0.3;
+        &:hover {
+            color: $color_blue;
+            opacity: 1;
         }
     }
 }
@@ -235,13 +264,41 @@ span.label + span.label { // when in a tag list
 
     }
 }
-.blog-subscription {
-    max-width: 38rem;
-    label {
-        display: none;
+// expand/toggle component - moved from products.scss
+.icon-toggle {
+    opacity: 0.5;
+    // margin-bottom: 0.03em;
+    margin-left:   0.1em;
+    @include transition(transform $timing-default, opacity $timing-default);
+}
+
+.is-toggle {
+    @include transition(color $timing-default, transform $timing-default);
+    &:hover {
+        .icon-toggle {
+            opacity: 1;
+            transform: translate3d(0, 2px, 0);
+        }
     }
-    .button {
-        margin-bottom: 0;
+    &[aria-expanded="true"] {
+        color: black;
+        .icon-toggle {
+            transform: rotate(180deg);
+        }
+    }
+    &[aria-expanded="false"] {
+        color: $color_prime-alt;
+    }
+}
+
+.show-more {
+    &--container {
+        display: none;
+        // height: 0;
+        &[aria-hidden='false'] { // ZF toggler
+            display: inline-block;
+            @include animation (expando 0.3s ease);
+        }
     }
 }
 

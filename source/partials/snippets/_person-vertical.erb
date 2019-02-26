@@ -1,4 +1,5 @@
-<% 
+<%
+# p = data.site.person[p.id]
 if defined?(use_headers) && use_headers == true
     tag_1 = "h3"
     tag_2 = "h4"
@@ -14,12 +15,12 @@ end
 
 <div class="person-card--vertical<% if defined?(classes) %> <%= classes %><% end %>">
     <% if p.has_key?("profile_pic") %>
-        <img class="avatar--large-mid circle" src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=250&h=250&fm=jpg&q=80" alt="<%= p["fullname"] %>">
+        <img class="lozad avatar--large-mid circle" src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=250&h=250&fm=jpg&q=80" alt="<%= p["fullname"] %>">
     <% end %>
     <div class="person-card--caption">
         <<%= tag_1 %> class="person-name">
             <% if datican == true %>
-                <a href="/about/<%= p["slug"] %>" title="Learn more about <%= p["fullname"] %>">
+                <a href="/about/<%= p["slug"] %>/" title="Learn more about <%= p["fullname"] %>">
                     <%= p["fullname"] %>
                 </a>
             <% else %>
@@ -27,7 +28,7 @@ end
             <% end %>
         </<%= tag_1 %>>
          <% if p.has_key?("role") %>
-            <<%= tag_2 %> class="person-title"><%= p["role"] %></<%= tag_2 %>>
+            <<%= tag_2 %> class="person-title"><% if p.person_type == "Datica Alumni" %>Datica Alumni — Former <% end %><%= p["role"] %></<%= tag_2 %>>
         <% end %>
     </div>
 </div>

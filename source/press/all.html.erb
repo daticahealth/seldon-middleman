@@ -22,7 +22,7 @@ layout: company
 <section class="section-article">
     <div class="row">
         <div class="columns small-12">
-            <a class="button hollow" href="/press" title="View all"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Media Resources</a>
+            <%= partial "partials/snippets/button", :locals => { :label => "Back to Media Resources", :title => "view all", :url => "/press/", :button_classes => "button hollow", :icon => "icon-chevron-left", :icon_align => "left" } %>
         </div>
     </div>
     <div class="row">
@@ -30,7 +30,7 @@ layout: company
         <% sorted_pressReleases.each do | id, post | %>
             <div class="columns small-12 medium-4">
                 <div class="callout callout-card--featured callout--stretch drop">
-                    <a class="hover--fancy-shift" href="/press-release/<%= post["slug"] %>">
+                    <a class="hover--fancy-shift" href="/press-release/<%= post["slug"] %>/">
                         <p><strong><%= post["title"] %></strong></p>
                         <p><span class="date"><%= post['pub_date'].strftime('%B %-d, %Y') %></span></p>
                         <%= Kramdown::Document.new(post["summary"]).to_html %>

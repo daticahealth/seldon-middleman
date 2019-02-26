@@ -62,37 +62,41 @@
         // gotta say, these sizes are kinda fuct and it's my fault - AW
         &--small { // inline with content
             max-height: $thing-s;
-            @include breakpoint(medium up) {
-                max-width: 90%; // avoid combining this and declared max-height at small viewports.
-                max-height: $thing-s;
-            }
+            // @include breakpoint(medium up) {
+            //     max-width: 90%; // avoid combining this and declared max-height at small viewports.
+            //     max-height: $thing-s;
+            // }
         }
         &--small-mid{
             max-width: 90%;
-            max-height: $thing-s;
-            @include breakpoint(medium up){
-                max-height: 2rem;
-            }
+            max-height: 2rem;
+            // max-height: $thing-s;
+            // @include breakpoint(medium up){
+            //     max-height: 2rem;
+            // }
         }
         &--medium {
             max-width: 90%;
-            max-height: $thing-s;
-            @include breakpoint(medium up) {
-                max-height: $thing-m;
-            }
+            max-height: $thing-m;
+            // max-height: $thing-s;
+            // @include breakpoint(medium up) {
+            //     max-height: $thing-m;
+            // }
         }
         &--large {
             max-width: 90%;
-            max-height: $thing-s;
-            @include breakpoint(medium up) {
-                max-height: $thing-l;
-            }
+            max-height: $thing-l;
+            // max-height: $thing-s;
+            // @include breakpoint(medium up) {
+            //     max-height: $thing-l;
+            // }
         }
         &--xlarge {
-            max-height: $thing-l;
-            @include breakpoint(medium up) {
-                max-height: $thing-l * 2;
-            }
+            max-height: $thing-xl;
+            // max-height: $thing-l;
+            // @include breakpoint(medium up) {
+            //     max-height: $thing-l * 2;
+            // }
         }
     }
     &-basic {
@@ -108,6 +112,26 @@
         }
         &--brightness-invert{
             @extend .brightness-invert;
+        }
+    }
+}
+// legacy? Not used widely
+.logo { 
+    &--customer {
+        height: 6vw;
+        @include breakpoint(medium up) {
+            height: 3vw;
+        }
+        @include breakpoint(large up) {
+            height: 2.5vw;
+        }
+    }
+    &--nav {
+        width: 100px;
+        height: 22px; // how can we do this responsively?
+        min-width: 50px;
+        &:hover path{
+            fill: hsl(188, 100%, 89%);
         }
     }
 }

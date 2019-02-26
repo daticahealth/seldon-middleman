@@ -58,11 +58,11 @@
 
         // }
     }
-    &-section {
-        p, li {
-            @include hyphens (auto);
-        }
-    }
+    // &-section {
+    //     p, li {
+    //         @include hyphens(auto);
+    //     }
+    // }
     &-divider {
         display: block; // overrides global-flexbox: true in settings:268. Not sure how this setting will play out (which components are flexbox-enabled? - AW)
     }
@@ -76,7 +76,7 @@
     // featured card container
     &-featured-section {
         @extend .section-article--med;
-        padding-bottom: 1rem;
+        // padding-bottom: 1rem;
     }
     // featured image atop card, with title set at bottom
     &-header {

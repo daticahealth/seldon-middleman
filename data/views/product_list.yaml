@@ -1,0 +1,44 @@
+products:
+  -
+    title: "Compliant Kubernetes Service"
+    abbr: "CKS"
+    url: "/compliant-kubernetes-service/"
+    lead: "__Datica CKS__ bridges security and compliance with Kubernetes® to offer a complete, enterprise cloud-native solution for regulated industries. We deploy a managed Kubernetes cluster on your cloud account which is then configured to a perfectly compliant state every five minutes."
+    features:
+      - The only fully compliant Kubernetes service out there
+      - HITRUST CSF v9.1 Certified, GDPR Compliant
+      - Immediate AWS availability, Azure and GCP coming soon
+      - Compatible with managed services like AWS RDS
+    cta: "Explore CKS"
+  -
+    title: "Compliant Managed Integration"
+    abbr: "CMI"
+    url: "/compliant-managed-integration/"
+    lead: "__Datica CMI__ solves the entire process of integration, enabling real-time data exchange with EHRs. We do this by focusing on a required blend of expertise, services, open source, and addressing infrastructure compliance and security concerns."
+    features:
+      - Translates hard-to-use data standards to REST APIs
+      - You own the transformations, meaning zero lock-in
+      - Vendor app store compatible
+      - Predictable pricing
+    cta: "Explore CMI"
+  -
+    title: "Compliant Platform-as-a-Service"
+    abbr: "CPaaS"
+    url: "/compliant-platform-as-a-service/"
+    lead: "__Datica CPaaS__ is the fastest path to hosting compliant healthcare applications. As easy as `git-push.`"
+    features:
+      - Quickly deploy IPSEC or TLS VPNs in minutes
+      - Nightly backups
+      - Self-service scaling of internal application and database services
+      - Proactive health checks
+    cta: "Explore CPaaS"
+  -
+    title: "Cloud Compliance Management System"
+    abbr: "CCMS"
+    url: "/cloud-compliance-management-system/"
+    lead: "__Datica CCMS__ monitors approved configurations of popular cloud managed services, like AWS RDS, Azure Cosmos DB, or Google Cloud SQL—with dozens more supported. Customers can trust that CCMS-based configurations have been audited to the specific requirements of the HITRUST CSF."
+    features:
+      - Easy-to-deploy SaaS subscription gets out of the way and lets you pick your cloud environment
+      - Compatible with the most popular HIPAA eligible services across AWS, Azure, and GCP
+      - Provides tools to help with assessments and remediations
+    cta: "Learn about CCMS"

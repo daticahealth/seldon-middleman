@@ -1,4 +1,5 @@
-<% 
+<%
+# p = data.site.person[p.id]
 if defined?(use_headers) && use_headers == true
     tag_1 = "h3"
     tag_2 = "h4"
@@ -17,7 +18,7 @@ else
 end
 
 if datican == true
-    show_more = 
+    show_more =
         %(
             <em> Read full bio </em><svg class='icon-inline svg-color--white' data-name='icon-chevron-right' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'><title>chevron-right</title><path d='M5 13.71l1.45 1.46L12.59 9 6.42 2.83 5 4.29 9.68 9z'/></svg>
         )
@@ -33,10 +34,10 @@ end
 <div class="person-simple<% if defined?(classes) %> <%= classes %><% end %>">
     <% if p.has_key?("profile_pic") %>
         <% if datican == true %>
-            <a href="/about/<%= p["slug"] %>" title="<%= person_summary %>">
+            <a href="/about/<%= p["slug"] %>/" title="<%= person_summary %>">
         <% end %>
         <span data-tooltip aria-haspopup="true" class="" data-alignment="center" data-tooltip-width="400" data-fade-in-duration="0" data-fade-out-duration="400" data-allow-html="true" data-disable-hover="false" data-v-offset="5" data-click-open="false"  title="<span class='text-small'><%= person_summary %><%= show_more %></span>">
-            <img class="avatar avatar--large-mid circle" src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&w=250&h=250&fm=jpg&q=60" alt="<%= person_summary %>">
+            <img class="lozad avatar avatar--large-mid circle" src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= p["profile_pic"]["url"] %>?f=face&fit=thumb&fm=jpg&fl=progressive&w=250&h=250&fm=jpg&q=60" alt="<%= p["fullname"] %>">
         </span>
         <% if datican == true %>
             </a>
@@ -45,7 +46,7 @@ end
     <div class="">
         <<%= tag_1 %> class="person-name">
             <% if datican == true %>
-                <a href="/about/<%= p["slug"] %>" title="<%= p["fullname"] %>">
+                <a href="/about/<%= p["slug"] %>/" title="<%= p["fullname"] %>">
                     <%= p["fullname"] %>
                 </a>
             <% else %>
@@ -53,7 +54,7 @@ end
             <% end %>
         </<%= tag_1 %>>
          <% if p.has_key?("role") %>
-            <<%= tag_2 %> class="person-title"><%= p["role"] %></<%= tag_2 %>>
+            <<%= tag_2 %> class="person-title"><% if p.person_type == "Datica Alumni" %>Datica Alumni — Former <% end %><%= p["role"] %></<%= tag_2 %>>
         <% end %>
     </div>
 </div>

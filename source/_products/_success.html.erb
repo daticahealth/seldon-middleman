@@ -1,0 +1,199 @@
+---
+title: "Healthcare companies who trust Datica"
+summary: "A collection of Datica customer case studies, testamonials, and profiles"
+navTitle: "Customer Success"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "March 5, 2018"
+ogType: "product"
+customCSS: "products"
+layout: products
+priority: "0.9"
+collectionName: "products"
+collectionOrder: 4
+---
+<% current_page.data.share_image = image_share_platform %>
+
+<div class="container-color--white">
+    <section class="section-article">
+        <div class="row align-center">
+            <div class="columns small-12 medium-12 large-7 text-center">
+                <h1 class="headline-3">Healthcare's <strong>trusted</strong> partner</h1>
+                <p>We are the compliance and data foundation for industry leaders and thought leaders, health systems and vendors. Start your <a href="/pricing" title="Free trial of the Datica Platform">free trial</a> today.</p>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="successNav" class="show-for-large" data-sticky-container>
+    <nav class="sticky sticky-nav sticky-nav--secondary container-gray-12 text-center full-width" data-sticky data-options="marginTop:3; topAnchor:successNav;">
+        <ul class="menu horizontal align-center" data-magellan data-options="activeClass:is-current; offset: 48">
+            <% data.views.proof.sectionNav.each do |item| %>
+                <li class="menu-item">
+                    <a href="#success<%= item["slug"] %>" title="<%= item["title"] %>" class="menu-item--link">
+                        <%= item["label"] %>
+                    </a>
+                </li>
+            <% end %>
+        </ul>
+    </nav>
+</div>
+<% sorted_customers = data.site.customers.to_a.sort_by{ |id, cf_customer | cf_customer['pub_date'] }.reverse! %>
+<div class="" id="successCaseStudies" data-magellan-target="successCaseStudies">
+
+<%= partial "partials/section-promos/aws-mlh-video", 
+    :locals => {
+        :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS",
+        :container_color => "container-gray-12"
+        #:background => "https://images.ctfassets.net/189dvqdsjh46/55EpUazd5CQSqC66CaWYqI/fd3aa1534d8d641ee8bd60d3592e98a3/aws-mlh-diagram-k-alpha.png"
+    }
+%>
+    <section class="section-article--med container-gray-11">
+        <div class="text-center group">
+            <h2 class="headline-3">A shared vision for the future of healthcare</h2>
+        </div>
+        <div class="multicol--cards-group">
+            <% sorted_customers.each do | id, cf_customer | %>
+                <% if cf_customer.has_key?("case_study") && cf_customer["case_study"].has_key?("media_object") %>
+                    <div class="multicol--cards-group__item">
+                        <%= partial "/partials/content/card-case-study",  :locals => { :cf_customer => cf_customer } %>
+                    </div>
+                <% end %>
+            <% end %>
+            <% sorted_customers.each do | id, cf_customer | %>
+                <% if cf_customer.has_key?("case_study") && cf_customer["slug"] != current_page.data.featuredCase && cf_customer["case_study"].has_key?("media_object") == false %>
+                    <div class="multicol--cards-group__item">
+                        <%= partial "/partials/content/card-case-study",  :locals => { :cf_customer => cf_customer } %>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </section>
+</div>
+
+
+<section class="section-article container-color--gray-light" id="successPartners" data-magellan-target="successPartners">
+    <div class="row align-center">
+        <div class="columns small-12 large-10 text-center group">
+            <h2 class="headline-2">A trusted healthcare-only partner with the world's biggest cloud providers</h2>
+        </div>
+    </div>
+    <div class="row align-stretch">
+        <div class="columns small-12 large-4">
+            <p><a class="group" href="https://azure.microsoft.com"><img src="/public/img/customer-logos/microsoft-logo.png" alt="microsoft" class="logo-size--medium" /> </a>
+            </p>
+            <p class="quote--serif quote--serif-plain">Healthcare is undergoing massive technological transformation. Datica's approach to HIPAA compliance means Microsoft Azure customers can utilize trusted solutions to privacy and data security which meet the highest levels of healthcare standards. We're excited to offer a HITRUST CSF Certified platform such as Datica in the Azure ecosystem.</p>
+            <div class="person person-small group">
+                <div class="person-name">Nicole Herskowitz</div>
+                <div class="person-role">Senior Director Product Marketing, Microsoft Azure</div>
+                <div class="company"><em>Microsoft Corp.</em></div>
+            </div>
+        </div>
+        <div class="columns small-12 large-4">
+            <p><a class="group" href="https://aws.amazon.com/"><img src="/public/img/customer-logos/aws-logo.png" alt="Amazon AWS" class="logo-size--medium" /> </a>
+            </p>
+            <p class="quote--serif quote--serif-plain">Healthcare is an industry in the midst of transitioning to the cloud, and AWS is strategically positioned to service the healthcare industry's computing needs. AWS’s work with Datica, a company that focuses on meeting healthcare’s unique compliance needs through security frameworks like HITRUST, helps position AWS to play a key role in the health industry’s transformation.</p>
+            <div class="person person-small group">
+                <div class="person-name">Josh Hofmann</div>
+                <div class="person-role">Global Lead, Partner Ecosystem</div>
+                <div class="company"><em>Amazon Web Services, Inc.</em></div>
+            </div>
+        </div>
+        <div class="columns small-12 large-4">
+            <p><a class="group" href="http://salesforce.com"><img src="/public/img/customer-logos/salesforce-logo.png" alt="salesforce" class="logo-size--large" /> </a>
+            </p>
+            <p class="quote--serif quote--serif-plain">We live in the age of the customer, and patients now expect personalized and engaging experiences with their healthcare providers. Health Cloud is all about building stronger patient relationships, and Datica is a valuable part of our journey towards creating a modern healthcare platform for patients, doctors, and everyone else involved in care.</p>
+            <div class="person person-small group">
+                <div class="person-name">Joshua Newman, MD</div>
+                <div class="person-role">Chief Medical Officer, GM</div>
+                <div class="company"><em>Salesforce Healthcare and Life Sciences</em></div>
+            </div>
+        </div>
+    </div>
+    <%
+    # <div class="row">
+    #     <div class="half-hr half-hr--more-space"></div>
+    # </div>
+    # <div class="row">
+    #     <div class="columns small-12 medium-4">
+    #         <div class="text-center align-self-bottom">
+    #             <a href="http://softlayer.com" title="Visit http://softlayer.com">
+    #                 <img src="/public/img/customer-logos/softlayer-logo.png" alt="Softlayer logo" class="logo-header-image" />
+    #             </a>
+    #         </div>
+    #     </div>
+    #     <div class="columns small-12 medium-4">
+    #         <div class="text-center align-self-bottom">
+    #             <a href="http://rackspace.com" title="Visit http://rackspace.com">
+    #                 <img src="/public/img/customer-logos/rackspace-logo.png" alt="Rackspace logo" class="logo-header-image" />
+    #             </a>
+    #         </div>
+    #     </div>
+    #     <div class="columns small-12 medium-4">
+    #         <div class="text-center align-self-bottom">
+    #             <a href="http://hosting.com" title="Visit http://hosting.com">
+    #                 <img src="/public/img/customer-logos/hosting-logo.png" alt="Hosting logo" class="logo-header-image" />
+    #             </a>
+    #         </div>
+    #     </div>
+    # </div>
+      %>
+</section>
+<section class="section-article" id="successHealthSystems" data-magellan-target="successHealthSystems">
+    <div class="row group">
+        <div class="columns small-12 text-center">
+            <h3 class="">Focus on your core competency</h3>
+            <div class="row collapse align-center">
+                <div class="columns small-12 large-8">
+                    <p class="lead">Innovative organizations across healthcare depend upon Datica to relieve the burden of compliance and integration.</p>
+                </div>
+            </div>
+            <div class="logo-cloud">
+                <% data.views.proof.customersCore.each do |logo| %>
+                    <img src="/public/img/customer-logos/sm/<%= logo["slug"] %>-logo.png" alt="<%= logo["name"] %>" class="logo-cloud--item logo-size--<%= logo['logoSize']%> " />
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="row group">
+        <div class="columns small-12 text-center">
+            <h3 class="">We help customers secure relationships with health systems</h3>
+            <div class="row collapse align-center">
+                <div class="columns small-12 large-9">
+                    <p class="lead">Vendors who use Datica can lean on our HITRUST CSF Certification and integration expertise to quickly establish relationships with systems across healthcare</p>
+                    <div class="logo-cloud">
+                        <% data.views.proof.customersHT.each do |logo| %>
+                            <img src="/public/img/customer-logos/sm/<%= logo["slug"] %>-logo.png" alt="<%= logo["name"] %>" class="logo-cloud--item logo-size--<%= logo['logoSize']%> " />
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row group" id="successEHRs" data-magellan-target="successEHRs">
+        <div class="columns small-12 text-center">
+            <h3 class="">We have successfully worked with all major EHRs</h3>
+            <div class="row collapse align-center">
+                <div class="columns small-12 large-8">
+                    <p class="lead">Our trust with health systems combined with our expertise in integration means you can count on successful integrations with any major EHR</p>
+                    <div class="logo-cloud">
+                        <% data.views.ehrs.ehr_list.each do |logo| %>
+                            <img src="/public/img/customer-logos/sm/<%= logo["slug"] %>-logo.png" alt="<%= logo["name"] %>" class="logo-cloud--item logo-size--<%= logo['logoSize'] %>" />
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<aside id="ctaBottom" class="container-color--dark-grad-blue"> 
+    <div class="section-article container-image--center" data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]">
+        <div class="row align-center">
+            <div class="columns small-12 medium-10 text-center">
+                <h2 class="headline-3 group"><strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.</h2>
+                <!-- <p class="lead">Start your free trial today.</p> -->
+                <%= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "black", :icon_align => "right" } %>
+            </div>
+        </div>
+    </div>
+</aside>

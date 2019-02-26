@@ -1,0 +1,44 @@
+ruby:
+    bg_default = "https://images.ctfassets.net/189dvqdsjh46/42ucBFmGx2ek0C8IWU6CiC/2177ddcfa81da18bd83f49c4e1232f84/webinar-bg-default.svg"
+    if entry.has_key?("image_thumb")
+        thumb = entry.image_thumb.url
+    else
+        thumb = bg_default
+    end
+    if defined?(label)
+        cta_label = label
+    else
+        cta_label = "Watch"
+    end
+    today = DateTime.now
+    if entry.has_key?("event_date")
+        event_date = entry["event_date"].to_s.in_time_zone("Central Time (US & Canada)").strftime('%B %-d, %Y, %l:%M %p %Z')
+        if today.strftime("%F") >= entry['event_date'].strftime("%F")
+            is_future = false # puts "this already happened"
+        else
+            is_future = true # puts "this is a future entry"
+            cta_label = "Register Today"
+        end
+    else
+        is_future = false
+    end
+    #if is_future == true
+    #    cta_label = "Register Today"
+    #end
+
+a.preview.container-gray-2.relative href="/webinars/#{entry["slug"]}" title=("View webinar") data-background-image="#{thumb}" data-webinar-id = entry._meta.id
+    .webinar-meta.z-10.relative
+        .preview-subhead Datica Webinar
+        .preview-title
+            h2.headline-4.nomargin = entry["title"]
+        div.preview-info(style="margin-bottom: 0.2em;")
+            = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
+            / span = entry['event_date'].strftime('%B %-d, %Y')
+            span = event_date
+        - if entry.has_key?("discovery_topic")
+            div.preview-topic
+                span.label.dark.round = data.site.discover[entry.discovery_topic.id].title
+    .absolute.preview-bg.z-0.group
+        img.lozad.img-cover.img-multiply src="#{thumb}?w=250&fm=jpg&q=10" data-src="#{thumb}?w=800"
+    .preview-cta.headline-5.spaced-out.show-for-large.text-right = cta_label
+    = inline_svg("icon-video-play-circle", class: "show-for-large preview-icon icon-size--xlarge svg-color--white")

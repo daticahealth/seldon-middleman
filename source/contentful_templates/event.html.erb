@@ -7,16 +7,16 @@ sharer: true
 p = locals[:item]
 current_page.data.title = p["title"] + " | Datica Events"
 current_page.data.summary = safe_summary(p.summary)
-if p.has_key?("featured_image")
+share_image_fallback = "https://images.ctfassets.net/189dvqdsjh46/2HzxmY3I4ESUU6ICM0ge0Y/f5ed3801dfe3328ec1ee09ea83434ba6/events-share-default.jpg"
+
+if p.has_key?("share_image")
+    current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_size_small
+elsif p.has_key?("featured_image")
     current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
 else
-    current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/2HzxmY3I4ESUU6ICM0ge0Y/f5ed3801dfe3328ec1ee09ea83434ba6/events-share-default.jpg" + image_size_small
+    current_page.data.share_image = share_image_fallback
 end
-# if p.has_key?("tags")
-#     current_page.data.tags = get_tag_list(p["tags"])
-# else
-#     current_page.data.tags = "events, conferences, presentations"
-# end
+
 current_page.data.tags = "events, conferences, presentations"
 if p.has_key?("author")
     current_page.data.author = p["event_related_people"]["fullname"]
@@ -32,50 +32,21 @@ end
 
 <section class="section-article container-color--gray-light">
     <div class="row align-center">
-        <div class="columns small-12 large-8">
-                <% if p.has_key?("event_logo") %>
-                    <p><img class="logo-size--medium" src="<%= p["event_logo"]["url"] %>?w=300" alt="Event Logo"></p>
-                <% end %>
-                <h1 class="headline-3"><%= p["title"] %></h1>
-                <h4 class="headline-5 spaced-out">
-                    <%= inline_svg("small/icon-event-note", class: "icon-inline svg-color--gray-5") %>
-                    <%= partial("partials/snippets/date-range", :locals => { :p => p }) %>
-                </h4>
-                <div class="content-dynamic group">
-                    <% if p.has_key?("event_related_people") %>
-                        <div class="float-right-on-medium">
-                            <% p["event_related_people"].each do |person| %>
-                                <%= partial("partials/snippets/person", :locals => { :p => person, :classes => "block-width-medium", :use_headers => false }) %>
-                            <% end %>
-                        </div>
-                    <% end %>
-                    <%= Kramdown::Document.new(p["event_desc"]).to_html %>
-                    <% if p.has_key?("event_photos") %>
-                        <% p["event_photos"].each do |photo| %>
-                            <img class="thumbnail" src="<%= photo.url %>?w=500" title="<%= photo.title %>" width="300"> 
-                        <% end %>
-                    <% end %>
-                    <% if p.has_key?("event_tags") %>
-                        <p class="group">
-                            <% p["event_tags"].each do |tag| %>
-                                <span class="label faded round secondary"><%= tag %></span>
-                            <% end %>
-                        </p>
-                    <% end %>
-                    <%#= partial "/partials/snippets/share", :locals => { :p => p, :classes => "" }  %>
-                </div>
+        <div class="columns small-12 large-10">
+            <%= partial "partials/content/event", :locals => { :event => p, :level => 1 } %>
             <% if p.has_key?("cta_ref") %>
                 <% if p["cta_ref"].has_key?("custom_form") %>
-                <%= stylesheet_link_tag "views/forms-inline.css" %>
-                <div class="row collapse">
-                    <div class="columns small-12 medium-10 large-8">
+                <div class="row collapse" style="margin-top: 1.5rem;">
+                    <div class="columns small-12 medium-10 large-7">
                         <div class="callout callout--large drop">
                             <% if p["cta_ref"].has_key?("title") %>
                                 <h2 class="headline-4"><%= p.cta_ref.title %></h2>
                                 <hr class="divider" />
                             <% end %>
                             <% if p["cta_ref"].has_key?("desc") %><%= Kramdown::Document.new(p["cta_ref"]["desc"]).to_html %><% end %>
-                            <%= p.cta_ref.custom_form %>
+                            <%= partial "partials/snippets/form", :locals => { :the_form => p["cta_ref"]["custom_form"] }
+                              %>
+                            <%#= p.cta_ref.custom_form %>
                         </div>
                     </div>
                 </div>
@@ -84,12 +55,5 @@ end
                 <% end %>
             <% end %>
         </div>
-        <!--
-        <% if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta") %>
-            <div class="columns small-12 large-4">
-            <%#= partial "partials/cards/discover", :locals => { :post => p["discovery_topic"], :classes => "group" } %>
-            </div>
-        <% end %>
-        -->
     </div>
 </section>

@@ -36,9 +36,11 @@
     &--light, &--tertiary { // use these on dark or busy backgrounds
         @include gradient(to bottom, white 0%, $gray-12 100%);
         // @include shadow-anarchy(inset 0 -1px 2px 0 #B3C8D6);
-        color: darken($color_product, 20%);
+        // background-color: $gray-12;
+        color: darken($color_product, 20%) !important; // not sure what .container rule is overriding this, it's lower in the OOO
         &:hover, &:active, &:focus {
-            color: black;
+            color: black !important;
+            background-color: white;
             // @include gradient(to bottom, $gray-12 0%, $gray-11 100%);
         }
     }
@@ -97,13 +99,13 @@
             border: 1px solid inherit;
         }
     }
-    &--neat{
-        @include gradient (#59BDFF 0%, #548CFE 100%);
-        box-shadow: inset 0 -1px 2px 0 rgba(20,30,47,0.30);
-        font-weight: $font-weight-bold;
-        color: $color_white;
-        &:hover, &:active, &:focus {color: $color_light-alt;}
-    }
+    // &--neat{
+    //     @include gradient (#59BDFF 0%, #548CFE 100%);
+    //     box-shadow: inset 0 -1px 2px 0 rgba(20,30,47,0.30);
+    //     font-weight: $font-weight-bold;
+    //     color: $color_white;
+    //     &:hover, &:active, &:focus {color: $color_light-alt;}
+    // }
     &.disabled {
         // background-color: $gray-4;
         opacity: 0.4;
@@ -132,14 +134,34 @@
         }
     }
     &.success { // $color_green is a bit dark
-        // color: white;
+        color: white;
         &:hover, &:active, &:focus {
-            background-color: scale-color($success_color, $lightness: 15%);
+            background-color: scale-color($success_color, $lightness: -10%);
+            color: white;
         }
     }
     // &.icon-inline { // target svg icon
 
     // }
+    &.nudge-left {
+        @include fx-hover-nudge-left;
+    }
+    &.no-nudge {
+        @include no-nudge;
+    }
+}
+.button--hover-compliance {
+    // font-weight: $font-weight-bold;
+    &:hover {
+        @include shadow-anarchy(0 0 0 5px #2e8dff)
+    }
+    // @include grad-bright;
+}
+.button--hover-integration {
+    // font-weight: $font-weight-bold;
+    &:hover {
+        @include shadow-anarchy(0 0 0 5px #e85c86)
+    }
 }
 .button-cluster { // pair with zf .menu for flexbox button grouping
     // when stacking vertically, space between. 

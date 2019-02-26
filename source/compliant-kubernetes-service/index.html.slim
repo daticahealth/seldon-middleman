@@ -1,0 +1,204 @@
+---
+title: "Compliant Kubernetes Service | Datica Compliance"
+summary: "Compliant Kubernetes Service (CKS) provides healthcare enterprises security and HIPAA compliance in a scalable, secure Kubernetes cluster."
+navTitle: "Datica CKS"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
+ogType: "product"
+category: "compliance"
+customCSS: "products, products-mastheads"
+layout: products
+collectionName: "products"
+collectionOrder: 1
+priority: "0.9"
+subnav:
+  -
+    title: "Overview"
+    slug: "overview"
+  -
+    title: "Benefits"
+    slug: "benefits"
+  -
+    title: "How it Works"
+    slug: "how-it-works"
+  -
+    title: "Customer Proof"
+    slug: "proof"
+  -
+    title: "Get Started"
+    slug: "start"
+
+---
+ruby:
+  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/4F8Y3ZvCpWdmTRdgnTLUOF/ac4acbc9aac7b147be6c86c5c8a29c63/bg-triangles.svg'
+  art_1 = 'https://images.ctfassets.net/189dvqdsjh46/GCJUrPFu9d1DE6iL4A6lM/f428f18cfab6e62400c69072c6d2f395/cks-art-tri-bg.png'
+  current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
+  current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/9zghfb4EzCi8csc6KYOEK/1313ca2191aa1e39c0e40c5d5c4df619/share-cks.jpg'
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  the_form = data.site.forms['54agWFbPVYog62Ugg64ocW']
+scss:
+  .container-image-repeat-y {
+    background: {
+      position: top left;
+      repeat: repeat-y;
+      size: 100%;
+    }
+  }
+svg aria-hidden="true" data-name="chevron" style=("position: absolute; width: 0; height: 0; overflow: hidden;") xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  defs
+    symbol#icon-chevron-down viewbox=("0 0 18 18")
+      title chevron-down
+      path d=("M4.29 5.19L2.83 6.64 9 12.81l6.17-6.17-1.46-1.45L9 9.9z")
+
+section.masthead.bg-dark.bg-blue-purple-grad.product-cks.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+  .section-article--lg.relative.z-10
+    .row.align-middle.align-center
+      .columns.small-12.medium-10.large-8
+        .media-object.relative.stack-for-small 
+          .media-object-section
+            = inline_svg("cks-logo-w", class: "masthead-icon")
+          .media-object-section.media-object--info.main-section.align-self-middle
+            h1.headline-3.text-bold.margin-bottom-sm Compliant Kubernetes Service
+            p.lead Get the scalable power of Kubernetes in a secure cluster
+            = partial "partials/snippets/button", :locals => { :label => "Get Started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-cks-top", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+  .art
+    = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/cloud-compliance/" }
+    = inline_svg("products-triangles-color", class: "z-5 art-accent step-1")
+    / .art-bg-fill.art-light-blob
+    .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
+  .strip.strip-small.strip-cks
+
+section.section-article.container-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
+  .row.group--2x.align-center.align-middle
+    .columns.small-12.medium-8.large-7
+      = inline_svg("icon-datica", :class => "icon-size--large float-left")
+      .group.content-indent
+        h2.headline-3 The Datica promise brought to a <br>Kubernetes service
+        / h2.headline-2 Datica bridges security and compliance with Kubernetes to offer an enterprise-grade cloud native solution.
+        p.lead If you're working within a regulated industry like healthcare, you have almost zero options when it comes to using Kubernetes — either you manage the control plane, the operating system and the underlying infrastructure to maintain the flexibility required for compliance, or you risk falling out of compliance by using an existing managed service. <strong>Datica changes all of that.</strong>
+      = inline_svg("icon-k8", :class => "icon-size--large float-left")
+      .group.content-indent
+        h4.headline-4 Complete Kubernetes compliance
+        / img.pad.show-for-medium src="https://images.ctfassets.net/189dvqdsjh46/yc639CSDwka8aAs4Uo0kW/cb3458e6089ae9bd7312389acc374f9b/setup-1.png?w=450" alt="Setup"
+        p CKS is a compliant managed Kubernetes service for regulated industries. In addition to managing the cluster control plane, CKS configures the underlying operating system and instances, and installs, configures, and manages a set of deployments required to achieve compliance.
+      = inline_svg("small/icon-check-circle", :class => "icon-size--large float-left")
+      .group.content-indent
+        h4.headline-4 The most secure Kubernetes cluster available
+        / img.pad.show-for-medium src="https://images.ctfassets.net/189dvqdsjh46/4jQ7VNUSIMUIS2aIKQWEOO/bb83fc6ec264ddd12f3b29410fe784c0/setup-2.png?w=450" alt="Installation"
+        p Deployments include logging, monitoring, intrusion detection, antivirus software, and more. In addition to the technical configuration, Datica assumes the liability for the complete stack within our BAA, something not available or possible with any other managed Kubernetes offering. CKS functions like any other Kubernetes cluster—but one that comes pre-configured for compliance and security out of the box.
+    .show-for-medium.columns.small-12.medium-4.large-5
+      img.img-crisp.lozad alt="CKS illustration diagram with triangle art background" src="#{art_1}?w=800&fit=pad&bg=rgb:e5e9eb&fm=jpg&q=5" data-src="#{art_1}?w=900&fit=pad&bg=rgb:e5e9eb&fm=jpg" /
+     
+
+
+section.bg-dark.bg-blue-purple-grad id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+  .section-article.product-cks.container-image-repeat-y.lozad data-background-image=bg_image
+    - ordered_feature_categories = data.site.featureCategories.to_a.sort_by{ |id, featureCat| featureCat['sort_order'] }
+    - ordered_feature_categories.each do | id, featureCat |
+      .row
+        .columns.small-12
+          .container-gray-11.callout--large.drop.group--2x
+            .media-object.relative.stack-for-small 
+              - if featureCat.has_key?("icon_slug")
+                .media-object-section
+                  = inline_svg(featureCat.icon_slug, :class => "icon-size--xlarge svg-color--blue")
+              .media-object-section.media-object--info.main-section.align-self-middle
+                h3.headline-3(id="featureCat_#{featureCat.slug}") #{featureCat["title"]}
+                - if featureCat.has_key?("desc")
+                  p = featureCat["desc"]
+            .row
+              .columns.small-12
+                hr.no-margin-top
+            .row.small-up-1.medium-up-2.large-up-3.xlarge-up-3.group--2x.no-margin-all-the-things
+              - if featureCat.has_key?("related_features")
+                - featureCat["related_features"].each do | feature |
+                  .column.feature-item
+                    - if feature.has_key?('desc')
+                      h4.headline-5(id="feature-#{feature.slug}")
+                        a.is-toggle(data-toggle="feature-detail_#{feature.slug}" data-track="true" data-track-category="platform" data-track-id="feature-detail_#{feature.slug}")
+                          = feature.title
+                          svg.icon-inline.icon-toggle.svg-color--blue.icon.icon-plus-disc id="feature-icon-#{feature.slug}"
+                            use.symbol-icon xlink:href="#icon-chevron-down"
+                    - else
+                      h4.headline-6= feature.title
+                    - if feature.has_key?("summary")
+                      = Kramdown::Document.new(feature.summary).to_html
+                    - if feature.has_key?("desc")
+                      .show-more--container.text-smaller data-off-canvas="" data-toggler="" id="feature-detail_#{feature.slug}"
+                        = Kramdown::Document.new(feature.desc).to_html
+    .row.align-center
+      .columns.small-12.medium-10.large-9.group.text-center
+        / h3.headline-5.spaced-out Leverage the power of Kubernetes
+        h2.headline-2 Datica's shared responsibility model
+        p.lead With Datica’s Cloud Compliance Management System, we ensure both the cluster and the underlying infrastructure on your cloud account are secure and compliant to the highest standards across an ever-growing list of frameworks and regimes.
+    .row.align-center
+      .columns.small-12.large-10
+        .card.container-color--tint-50.pad--xl.group--2x
+          .card-section
+            img.lozad data-src="https://images.ctfassets.net/189dvqdsjh46/2HRXBAtQrSga8OuaMgYc22/fa77a259452d4c7dc5d77a0a45db31e1/shared-resp-1-dark.svg" alt="Shared Responsibility"
+            img.lozad data-src="https://images.ctfassets.net/189dvqdsjh46/28YL53F8qMaumKQ0IA4sEW/ab55b40593c253f782e383c164ae6715/shared-resp-2-dark.svg" alt="Shared Responsibility Diagram"
+    ul.menu.button-group.align-center.align-middle
+      li
+        h3.headline-5.spaced-out.nomargin style="margin-right: 2rem;" Talk to our experts today
+      li
+        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin", :icon => "icon-chevron-down", :data_track_group => "compliance", :item_id => "get-cks-mid" }
+
+    /.row.align-center
+      .columns.text-center
+        = partial "partials/snippets/button", :locals => { :label => "Learn more about Compliance", :title => "Read more", :url => "/compliance/", :button_classes => "button button--light", :icon => "icon-shield-solid-small", :icon_align => "left", :item_id => "shared-responsibility", :data_track_group => "compliance" }
+
+section.section-article.container-gray-11 id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
+  .row.align-center.group
+    .columns.small-12
+      h2.headline-2.text-center Customer Success
+  .row.group
+    .columns.small-12.medium-6
+      script async="" src="https://fast.wistia.com/embed/medias/djywh7kkgd.jsonp" 
+      script async="" src="https://fast.wistia.com/assets/external/E-v1.js" 
+      .wistia_responsive_padding style=("padding:56.25% 0 0 0;position:relative;") 
+        .wistia_responsive_wrapper style="height:100%;left:0;position:absolute;top:0;width:100%;" 
+          span.wistia_embed.wistia_async_djywh7kkgd class=("popover=true popoverAnimateThumbnail=true videoFoam=true") style="display:inline-block;height:100%;width:100%"   
+    .columns.small-12.medium-6
+      .group
+        blockquote.quote--serif
+          - the_quote = data.site.quotes["5fDbO1XJ1CAEWAEIoiO6mS"]
+          = Kramdown::Document.new(the_quote["quote_body"]).to_html
+          / a href="/customer/methodist-lebonheur-healthcare" title="MLH Case Study" data_track_group="case-study"
+          / | Get the Case Study 
+          / - inline_svg("small/icon-download", :class => "icon-inline")
+        = partial("partials/snippets/person", :locals => { :p => the_quote.customer, :company => the_quote.customer.company_name } )
+  .group.text-center
+    = partial "partials/snippets/button", :locals => { :label => "Get the Case Study", :url => "/customer/methodist-lebonheur-healthcare", :button_classes => "button secondary", :icon => "icon-download", :icon_align => "right", :data_track_group => "case-study" }
+
+  - case_studies = data.site.collections.to_a.select { | id, cust | (id == "3N9NeiDhwcKacuIo0E4iwu") }
+  - case_studies.each do | id, cardgroup |
+    .row.align-center
+      .columns.small-12.text-center.group
+        h2.headline-3 = cardgroup.title
+    .row.align-center.small-up-1.medium-up-2.large-up-3
+      - cardgroup["related_entries"].each do | card |
+        - carditem = data.site.caseStudy[card.id]
+        - cust = data.site.customers[carditem.customer.id]
+        .column
+          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
+
+.strip.strip-small.strip-cks
+section.bg-dark.bg-blue-purple-grad.product-cks id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+  .section-article.container-image--center.lozad data-background-image=bg_image
+    .row.align-center.align-middle
+      .columns.small-12.medium-6.large-5
+        h2.headline-3.group--2x Schedule a conversation to learn more about Datica Compliant Kubernetes Service.
+        / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
+        .callout.callout--dark-alpha
+          blockquote.quote--serif
+            | The Datica team is helping us solve critical infrastructure and scaling problems faster and more competently than we can in-house.
+          .media-object.card-person
+            .media-object-section
+              img.avatar.avatar--large.circle alt=("Jon Pearce") src="https://images.ctfassets.net/189dvqdsjh46/6IUA5I8suWEWI28YcIkMgm/134af76338fd572e45a9d4a716a8ddb7/headshot-zipnosis.jpg" /
+            .media-object-section.main-section.align-self-middle
+              h4.person-name Jon Pearce
+              p.person-title CEO, Zipnosis
+      #form.columns.small-12.medium-large-6.large-4
+        .callout.drop
+          / h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
+          = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }

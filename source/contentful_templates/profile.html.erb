@@ -143,3 +143,14 @@ daticans = data.site.person.to_a.sort_by{ |id, person| person['slug'] }.select{ 
 previous_item = get_previous_item(daticans, entry, "fullname")
 next_item = get_next_item(daticans, entry, "fullname")
 %>
+
+<script type='application/ld+json'> 
+{
+  "@context": "http://www.schema.org",
+  "@type": "person",
+  "name": "<%= entry["fullname"] %>",
+  <% if entry.has_key?("role") %>"jobTitle": "<%= entry["role"] %>",<% end %>
+  "url": "<%= site_url + current_page.url %>",
+  <% if entry.has_key?("email") %>"email": "<%= entry["email"] %>"<% end %>
+}
+</script>

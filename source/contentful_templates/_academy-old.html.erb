@@ -1,0 +1,121 @@
+---
+header: "Datica HIPAA Academy"
+subheader: "Your place to learn the intricacies of interoperability, compliance, and cloud technologies."
+ogType: article
+layout: "basic"
+sharer: true
+customJS: "/public/js/academy-article.js, /public/js/contents.js, /public/js/article.js"
+change_frequency: daily
+---
+<% p = locals[:item]
+
+current_page.data.title = p["title"] + " | The Datica Academy"
+current_page.data.summary = safe_summary(p.summary)
+current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/NL2SgI83KesMS86cWO44y/e908972bb9193eec594b639881e25e6f/academy-share-default.jpg?w=800"
+
+if p.has_key?("tags")
+    current_page.data.tags = get_tag_list(p["tags"])
+else
+    current_page.data.tags = "healthcare, blog, IT"
+end
+if p.has_key?("author")
+    current_page.data.author = p["author"]["fullname"]
+else
+    current_page.data.author = "Datica, Inc."
+end
+if p.has_key?("pub_date")
+    current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
+else
+    current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+end
+%>
+<style type="text/css">
+    #article-body h2 a, h3 a {color: #252828;}
+    #article-body h2 a {font-weight: 400;}
+</style>
+<div class="container-color--gray-light">
+    <%= partial "partials/head/header", :locals => { :style => "dark" } %>
+    <section class="section-article">
+        <div class="row">
+            <div class="columns small-12 large-8 featured-post">
+                <h4 class="subhead--spaced headline-6"><a class="link--dark faded" href="/academy/" title="Explore the Datica Academy">Datica Academy</a></h4>
+                <h1 class="headline-2"><%= p["title"] %></h1>
+                <% if p.has_key?("author") %>
+                    <%= partial("partials/snippets/person", :locals => { :p => p["author"] }) %>
+                <% end %>
+                <p class="lead">
+                    <%= partial "/partials/snippets/pubdate", :locals => p %>
+                    <% if p.has_key?("tags") %>
+                        &nbsp;
+                        <%= partial "/partials/content/tags", :locals => p %>
+                    <% end %>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns small-12 large-8">
+                <article id="content" class="group">
+                    <% if p.has_key?("lead") %>
+                        <div class="lead"> <%= Kramdown::Document.new(p["lead"]).to_html %></div>
+                    <% end %>
+                    <div id="toc-top" class="group article-toc hide-for-large"></div> 
+                    <div id="article-body" class="content-dynamic">
+                    <%= Kramdown::Document.new(p["post"]).to_html %>
+                    </div>
+                </article>
+                <%= partial "/partials/snippets/share", :locals => { :p => p, :classes => "group" }  %>
+                <% if p.has_key?("cta_ref") %>
+                    <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
+                <% end %>
+                <% if p.has_key?("related_entries") %>
+                    <h4 class="headline-5 text--spaced text-center">Related Academy Articles</h4>
+                    <aside class="row row--gutter-small small-up-1 medium-up-2 group">
+                        <% p["related_entries"].each do | relatedPost | %>
+                        <% 
+                        # mapping content type to paths. How could this be a ruby helper or function?
+                        url_segment = case relatedPost._meta.content_type_id
+                            when "podcastEntry" then "innovation"
+                            when "pressRelease" then "press-release"
+                            else relatedPost._meta.content_type_id
+                        end
+                        related_post_path = "/" + url_segment + "/" + relatedPost.slug 
+                        %>
+                        <% if relatedPost.has_key?("title") %>
+                            <div class="column">
+                                <a href="<%= related_post_path %>" title="Read this post"><%= relatedPost["title"] %></a>
+                                <% if relatedPost.has_key?("summary") %>
+                                <div class="text-smaller"><%= Kramdown::Document.new(relatedPost["summary"]).to_html %></div>
+                                <% end %>
+                            </div>
+                        <% end %>
+                        <% end %>
+                        <div class="column">
+                            <%= partial "partials/snippets/button", :locals => { :label => "Datica Academy", :title => "Explore the Datica Academy", :url => "/academy/", :button_classes => "button hollow", :icon => "icon-book-fill", :icon_align => "left" } %>
+                    </aside>  
+                <% end %>
+            </div>
+            <aside class="columns small-12 large-4 section--sidebar" data-sticky-container>
+                <div class="sticky" data-sticky data-sticky-on="large" data-options="anchor: content;">
+                    <div id="toc-sidebar" class="group article-toc show-for-large"></div>
+                    <% if p.has_key?("related_guide") %>
+                        <div class="group">
+                        <%= partial "partials/cards/card-report", :locals => { :post => p.related_guide, :style => "white", :size => "small", :desc => true, :show_button => true } %>
+                        </div>
+                    <% else %>
+                    <% sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse! %>
+                        <% sorted_guides.take(1).each do | id, guide_entry | %>
+                            <div class="group">
+                            <%= partial "partials/cards/card-report", :locals => { :post => guide_entry, :style => "white", :size => "small", :desc => true, :show_button => true } %>
+                            </div>
+                        <% end %>
+                    <% end %>
+                    <%#<div class="text-center">
+                        <%#= inline_svg("icon-book-academy", class: "icon-size--medium svg-color--gray-6") %>
+                    <%#</div>%>                              
+                </div>
+            </aside>
+        </div>
+    </section>
+</div>
+<%= partial "partials/snippets/json-ld-article" %>
+<script defer src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autorun=true&skin=desert"></script>

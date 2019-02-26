@@ -1,0 +1,114 @@
+---
+header: "Datica HIPAA Academy"
+subheader: "Your place to learn the intricacies of interoperability, compliance, and cloud technologies."
+ogType: article
+layout: "basic"
+sharer: true
+customCSS: "blog-detail, academy-detail"
+customJS: "/public/js/academy-article.js, /public/js/contents.js, /public/js/article.js"
+change_frequency: daily
+---
+ruby:
+  p = locals[:item]
+  current_page.data.title = p["title"] + " | Datica Academy"
+  current_page.data.summary = safe_summary(p.summary)
+
+  share_image_fallback = "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+
+  if p.has_key?("featured_image")
+      post_featured_image = cf_asset_protocol + p["featured_image"]["url"]
+      post_featured_image_title = p["featured_image"]["title"]
+  #else
+      # post_featured_image = "https://images.ctfassets.net/189dvqdsjh46/3gflDVmPuoecamYsY6OOSI/90c46d15b8af71129e3612ac010c0574/city_blurry_bokeh_chuttersnap-179223.jpg"
+      # post_featured_image_title = "Datica Academy"
+  end
+  if p.has_key?("share_image")
+      current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_size_small
+  elsif p.has_key?("featured_image")
+      current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
+  else
+      current_page.data.share_image = share_image_fallback
+  end
+
+  if p.has_key?("tags")
+      current_page.data.tags = get_tag_list(p["tags"])
+  else
+      current_page.data.tags = "healthcare, education, training, HIPAA"
+  end
+  if p.has_key?("author")
+      current_page.data.author = p["author"]["fullname"]
+  else
+      current_page.data.author = "Datica, Inc."
+  end
+  if p.has_key?("pub_date")
+      current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
+  else
+      current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  end
+
+section.bg-gray-12
+  = partial "partials/head/header", :locals => { :style => "dark" }
+section.bg-white.section-article
+  .row.align-spaced.group
+    .columns.small-12.medium-large-8.xlarge-7
+      a.faded.link--dark href="/academy/" title=("Explore the Datica Academy")
+        = inline_svg("academy-logo", class: "logo-size--medium group--sm")
+      h1.headline-2= p["title"]
+      - if p.has_key?("author")
+        = partial("partials/snippets/person", :locals => { :p => p["author"] })
+      p
+        = partial "/partials/snippets/pubdate", :locals => p
+        - if p.has_key?("tags")
+          | &nbsp;
+          = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
+          = partial "/partials/content/tags", :locals => p
+      /.strip-bright.strip-small
+    .columns.medium-large-4
+  .row.align-spaced
+    .columns.small-12.medium-large-8.xlarge-7
+      article#content.group
+        #toc-top.group.article-toc.hide-for-medium-large
+        - if p.has_key?("lead")
+          .lead
+            = Kramdown::Document.new(p["lead"]).to_html
+
+        #article-body.content-dynamic
+          = Kramdown::Document.new(p["post"]).to_html
+      = partial "/partials/snippets/share", :locals => { :p => p, :classes => "group" }
+      - if p.has_key?("cta_ref")
+        = partial("/partials/content/cta", :locals => { :p => p["cta_ref"] })
+      - if p.has_key?("related_entries")
+        h4.headline-5.text--spaced.text-center Related Academy Articles
+        aside.row.row--gutter-small.small-up-1.medium-up-2.group
+          - p["related_entries"].each do | relatedPost |
+            - # mapping content type to paths. How could this be a ruby helper or function?
+            - url_segment = case relatedPost._meta.content_type_id
+            - when "podcastEntry" then "innovation"
+            - when "pressRelease" then "press-release"
+            - else relatedPost._meta.content_type_id
+            - related_post_path = "/" + url_segment + "/" + relatedPost.slug
+            - if relatedPost.has_key?("title")
+              .column
+                a href=related_post_path title=("Read this post") = relatedPost["title"]
+                - if relatedPost.has_key?("summary")
+                  .text-smaller= Kramdown::Document.new(relatedPost["summary"]).to_html
+      .column
+        = partial "partials/snippets/button", :locals => { :label => "Datica Academy", :title => "Explore the Datica Academy", :url => "/academy/", :button_classes => "button hollow", :icon => "icon-book-fill", :icon_align => "left" }
+
+    aside.columns.small-12.medium-large-4.section--sidebar data-sticky-container="" 
+      .sticky data-options=("anchor: content;") data-sticky="" data-sticky-on="large" 
+        - if p.has_key?("featured_image")
+          img.lozad.group src="#{loader_rect}?fit=thumb&w=320&h=240" data-srcset="#{post_featured_image}?fit=thumb&w=640&h=360&q=50&fm=jpg&fl=progressive 640w, #{post_featured_image}?fit=thumb&fm=jpg&fl=progressive&w=600&h=400&q=40 800w, #{post_featured_image}?w=800&fm=jpg&fl=progressive 1200w" /
+        #toc-sidebar.article-toc.show-for-medium-large.group
+        - if p.has_key?("related_guide")
+          .group
+            = partial "partials/cards/card-report-simple", :locals => { :post => p.related_guide, :style => "none", :size => "small", :desc => true, :show_button => true }
+        - else
+          - sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
+          - sorted_guides.take(1).each do | id, guide_entry |
+            .group
+              = partial "partials/cards/card-report-simple", :locals => { :post => guide_entry, :style => "none", :size => "small", :desc => true, :show_button => true }
+
+= partial "partials/snippets/json-ld-article"
+<script type="text/javascript" defer src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autorun=true&skin=desert"></script>
+

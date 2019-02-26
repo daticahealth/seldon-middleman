@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<%# datica Product Family Launch, Feb 2019 %>
+    <head>
+        <%= partial "partials/head/tags" %>
+        <%= partial "partials/head/icons" %>
+        <%= stylesheet_link_tag "seldon" %>
+        <%# if current_page.data.has_key?("customCSS") %>
+          <%#= stylesheet_link_tag "views/"+current_page.data.customCSS %>
+        <%# end %>
+        <% if current_page.data.has_key?("customCSS") %>
+            <% current_page.data.customCSS.split(",").each do |filename| %>
+                <%= stylesheet_link_tag "views/"+filename.strip+".css" %>
+            <% end %>
+        <% end %>
+    </head>
+    <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
+    <body class="<%= page_classes %> container-gray-11">
+        <%= partial "assets/icons/inlined/product-shapes-symbol.svg" %><%# product-related shapes %>
+        <%#= partial "partials/snippets/alert-ribbon" %>
+        <div class="container-gray-1">
+            <%= partial "partials/head/header", :locals => { :style => "light" } %>
+        </div>
+        <div id="content" class="content">
+            <main>
+            <%= yield %>
+            </main>
+            <%# if current_page.data.has_key?("ctaCustom") != true %>
+                <%#= partial "partials/ctas/platform-cta" %>
+            <%# end %>
+        </div>
+        <%= partial "partials/snippets/footer" %>
+        <%= partial "partials/scripts/footer" %>
+    </body>
+</html>

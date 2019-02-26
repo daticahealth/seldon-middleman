@@ -1,92 +1,121 @@
 ---
-title: "Datica | Pricing"
+title: "Get Pricing | Datica"
 summary: "Choose a package to fit your needs. Scaling is predictable and self-service."
 author: "Datica, Inc."
-tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
-date: "January 1, 2017"
-share_image: "https://images.ctfassets.net/189dvqdsjh46/80SDxxPlIsygQUCWOowSS/789e2f55d9d2a10b3a0887ef8536f7c0/cta-schedule-demo.jpg"
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration, pricing"
 customCSS: "pricing"
 layout: "basic"
 priority: "1.0"
 ---
-.strip-bright.strip-bright--small
-.container-color--gray-light
-  .container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")
-    = partial "partials/head/header", :locals => { :style => "dark" }
-    section#pricing-tiers.section-article
-      .row.align-center.group
-        .columns.small-12.large-9.text-center
-          h1.headline-2 Plans & Platform Options
-          p.lead Infrastructure at cost, with compliance built in. Our Datica Experts will help you find the features and services to fit your needs.
-      .row.align-center
-        .columns.small-12.medium-10.large-7
-          .card.pad.drop
-            .card-section
-              h4.headline-5 
-                = inline_svg("small/icon-ui-checkmark", class: "icon-inline icon-left svg-color--green")
-                | Datica Platform Subscription
-              p A Datica Platform subscription is comprised of a <em>Licensing</em> and a <em>Continuous Compliance Management</em> Fee.
-              h4.headline-5 
-                = inline_svg("small/icon-ui-checkmark", class: "icon-inline icon-left svg-color--green") 
-                | Deployment Models
-              p We can deploy a Kubernetes cluster into your cloud account, or Datica's cloud. We give you the flexibility to decide how much, or how little you want to manage.
-              h4.headline-5 
-                = inline_svg("small/icon-ui-checkmark", class: "icon-inline icon-left svg-color--green") 
-                | Support
-              p All customers receive basic ticket support with their Platform subscription. We also offer premium support to enterprise customers.
-              h4.headline-5 
-                = inline_svg("small/icon-plus-circle", class: "icon-inline icon-left svg-color--blue")
-                / span.text--blue + 
-                | Add-ons
-              p We're dedicated to giving you the flexibility you need, while still providing the highest level of compliance available on the market. With add-ons, Datica can make any cloud native service compliant. Additionally, our industry-leading approach to EHR integration includes an HA Mirth Connect Environment.
-              h4.headline-5 
-                = inline_svg("small/icon-plus-circle", class: "icon-inline icon-left svg-color--blue")
-                / span.text--blue + 
-                | Professional Services
-              p Rely on Datica experts for compliance, auditing, and technical developer operations needs. Datica offers <a href="/services" title="Professional Services">a wide range of professional services</a>.
-            #pricing-cta.text-center.card-divider
-              p.lead Choose a time to see a Platform demo, and our Datica Experts will help you get the features and support you need.
-              = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "/demo", :button_classes => "button large button-inline", :icon => "icon-event-check", :icon_color => "white", :icon_align => "left", :data_track_group => "platform", :item_id => "pricing-demo" }
+ruby:
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  # current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" /><link href="' + bg_product_light + '" rel="preload" as="image" />'
+  current_page.data.share_image = image_share_default
 
-/ .container-color--gray-light
-/   .container-image--fixed(data-interchange="[https://images.ctfassets.net/189dvqdsjh46/31Xr7kD9GUu8gYo6IOISac/b72aedc4ed520f1ad4ae78a24109838f/bg-weave-light.png?w=2200&h=1000&fm=jpg, large]")
-/     section.section-article
-/       aside#pricing-tco.row.align-center
-/         .columns.small-12.medium-10.large-6
-/           .callout.drop
-/             = inline_svg("icon-dollar-circle", class: "icon-size--large svg-color--white float-right")
-/             h2.headline-3 Total Cost of Ownership of Compliance in the Cloud
-/             p In this guide are tested formulas and directional advice from the compliance and cloud experts at Datica on how to measure and manage the total cost of ownership to achieve compliance in the cloud.
-/             = partial "partials/snippets/button", :locals => { :label => "Get your free TCO Guide", :url => "/guide/total-cost-of-ownership-of-cloud-compliance", :button_classes => "button", :icon => "icon-chevron-right", :icon_color => "white", :data_track_group => "platform", :item_id => "tco-guide" }
-/ /
-/  section#pricing-faq.section-article
-/    .row.align-center
-/      .columns.small-12.medium-8.large-8
-/        h3.headline-3.text-center.group Frequently asked questions about pricing
-/    .row.align-center
-/      .columns.small-12.medium-4.large-4
-/        .callout.callout--gray-light
-/          ol
-/            - data.views.faqs.pricing.each_with_index do |item, index|
-/              li
-/                a href="#platform-tech-question-#{index}" = item["question"]
-/      .columns.small-12.medium-8.large-8
-/        dl
-/          - data.views.faqs.pricing.each_with_index do |item, index|
-/            dt id="platform-tech-question-#{index}" = item["question"]
-/            dd= Kramdown::Document.new(item["answer"]).to_html
-/ - data.views.pricing.plan_details.each_with_index do |content, id|
-/   .medium.reveal data-options=("closeOnEsc: true; animationSpeed: 150; animationIn: bounce-in") data-reveal="" id="tier#{content['slug']}Modal"
-/     .card
-/       .card-divider.container-gray-11.text-center
-/         img.inject-me.svg-color--black.icon-size--xlarge src="#{content["icon"]}" /
-/         h3.headline-4.text-light
-/           | I want to
-/           strong= content["title"]
-/       .card-section.content-dynamic
-/         = Kramdown::Document.new(content["body"]).to_html
-/       .card-divider.container-gray-3.text-center
-/         h4.headline-4.text-light.nomargin= content["primary_label"]
-/         /! <a href="<haml_loud> content[&quot;primary_url&quot;] </haml_loud>" class="button button--neat nomargin"><haml_loud> content[&quot;primary_label&quot;] </haml_loud> <i class="fa fa-angle-right"></i></a
-/     button.close-button aria-label=("Close panel") data-close="" type="button"
-/       span aria-hidden="true"  ×
+scss:
+  .nav__item.nav__contact .contact-button {
+    display: none; // hide this, you're here
+  }
+  .pricing-content {
+    .headline-5 {
+      margin-bottom: 0.3em;
+      font-weight: 500;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    .product-block {
+      a {
+        color: black;
+        &:hover {
+          color: #1055ff;
+        }
+      }
+      //.item-check {
+      //  //margin-left: 2rem;
+      //  &::before {
+      //    vertical-align: bottom;
+      //    display: inline-block;
+      //    width: 1.4em;
+      //    height: 1.4em;
+      //    //margin-bottom: -0.3em;
+      //    content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath fill='%23009c63' d='M6.61 11.89L3.5 8.78 2.44 9.84 6.61 14l8.95-8.95L14.5 4z'/%3E%3C/svg%3E");
+      //  }
+      //}
+    }
+    .product-icon {
+      margin-right: 1rem;
+    }
+  }
+.strip-bright.strip-small
+.bg-gray-12.container-image-fill.lozad data-background-image=bg_product_light
+  = partial "partials/head/header", :locals => { :style => "dark" }
+  section.section-article
+    .row.align-center.group
+      .columns.small-12
+        h1.headline-2.pricing-headline Get Pricing
+        / p.lead 
+    .row.align-center.pricing-content
+      .columns.small-12.medium-large-6
+        .row.group.collapse.product-block
+          .columns.shrink
+            svg id="product-ccms" class="icon-size--medium product-icon text--gray-5"
+              use.symbol-icon xlink:href="#ccms-logo" href="#ccms-logo"
+            /= inline_svg("ccms-logo-dark", class: "icon-size--large product-icon")
+          .columns
+            h2.headline-4.text-regular
+              a href="/cloud-compliance-management-system" title="Cloud Compliance Management System" Cloud Compliance Management System
+            h4.headline-5 Resource Subscription
+            p Starting early 2019, customers can use the CCMS by subscribing per cloud service being monitored.
+          
+        .row.group.collapse.product-block
+          .columns.shrink
+            svg id="product-cks" class="icon-size--medium product-icon text--gray-5"
+              use.symbol-icon xlink:href="#cks-logo" href="#cks-logo"
+            /= inline_svg("cks-logo-dark", class: "icon-size--large product-icon")
+          .columns
+            h2.headline-4.text-regular
+              a href="/compliant-kubernetes-service" title="Compliant Kubernetes Service" Compliant Kubernetes Service
+            h4.headline-5 Product Subscription
+            p CKS subscription is per production Kubernetes cluster. Currently available on AWS. You pay infrastructure costs, like EC2 and S3, directly to AWS because we install the cluster onto your existing AWS account.
+
+        .row.group.collapse.product-block
+          .columns.shrink
+            svg id="product-cpaas" class="icon-size--medium product-icon text--gray-5"
+              use.symbol-icon xlink:href="#cpaas-logo" href="#cpaas-logo"
+            /= inline_svg("cpaas-logo-dark", class: "icon-size--large product-icon")
+          .columns
+            h2.headline-4.text-regular
+              a href="/compliant-platform-as-a-service" title="Compliant Platform as a Service" Compliant Platform as a Service
+            h4.headline-5 Environment Subscription
+            p Customers purchase container-based environments which they can deploy their applications into. No additional customizations available outside of general availability. All infrastructure costs are pass-through in addition to the environment price, pegged to AWS costs for EC2, EBS, etc.
+          
+        .row.group.collapse.product-block
+          .columns.shrink
+            svg id="product-cmi" class="icon-size--medium product-icon text--gray-5"
+              use.symbol-icon xlink:href="#cmi-logo" href="#cmi-logo"
+            /= inline_svg("cmi-logo-dark", class: "icon-size--large product-icon")
+          .columns
+            h2.headline-4.text-regular
+              a href="/compliant-managed-integration" title="Compliant Managed Integration" Compliant Managed Integration
+            h4.headline-5 Product Subscription (Required)
+            p CMI product currently available on AWS or Azure. We deploy it into Datica's existing cloud account. All infrastructure costs, like RAM and storage, are absorbed by Datica. We then maintain all DevOps, security, compliance, and networking duties related to the integration stack itself and all live integrations it powers.
+            h4.headline-5 Service Subscription (Optional)
+            p Leverage Datica's expertise to help instantiate any new integration sites. Hundreds of live sites have been integrated over the last four years via this service.
+
+      #cta.columns.small-12.medium-large-6.large-5
+        .callout.pad--lg.drop.form-embed.pricing-form.group
+          / h3.headline-4.text-center Request Pricing
+          p Thank you for your interest in the Datica product suite. A representative will reach out to schedule time to answer your questions.
+          - the_form = data.site.forms['pdrdbrjyUKoooYI8EUAYw']
+          = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+        p 
+          em Ask us about ad-hoc compliance services related to your infrastructure.
+
+  section.section-article--med
+    .row.align-center
+      .columns.small-12.medium-12.large-8.text-center
+        h2.headline-3 Not sure what you need? Start here.
+    .button-group.menu.align-center.group
+      = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST assessment", :url => "/cloud-compliance/", :icon_align => "left", :button_classes => "button hollow no-nudge", :icon => "icon-chevron-left", :item_id => "get-compliance", :data_track_group => "compliance" }
+      = partial "partials/snippets/button", :locals => { :label => "I need to integrate with an EHR", :url => "/ehr-integration/", :button_classes => "button hollow no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get-integration", :data_track_group => "integration" }

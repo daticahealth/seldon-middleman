@@ -10,7 +10,7 @@ helpers SiteHelpers
 helpers ImageHelpers
 # helpers AriaCurrent
 
-Time.zone = 'UTC'
+Time.zone = 'Central Time (US & Canada)'
 
 # Files with no layout
 page '/*.xml', layout: false
@@ -51,7 +51,7 @@ page '/google8c054d702c2044e4.html', :directory_index => false
 
 # Build-specific configuration
 configure :build do
-    # ignore 'seldon/*' unless ENV['DATICA_ENVIRONMENT'] == "development"
+    ignore 'seldon/*' unless ENV['DATICA_ENVIRONMENT'] == "development"
     # /assets/* folder itself must not be served up or created. Seems to output items to public okay. -AW
     ignore 'assets/*'
     ignore 'assets/icons/inlined/*'
@@ -170,12 +170,12 @@ if Dir.exist?(config.data_dir + "/site")
     else
         puts "\n\nreports data folder doesn't exist!\n"
     end
-    if Dir.exist?(config.data_dir + "/site/whitepapers")
-        data.site.whitepapers.each do |id, whitepaper|
-            proxy "/whitepapers/#{whitepaper[:slug]}/index.html", "/contentful_templates/whitepaper.html", :locals => { :item => whitepaper }, :ignore => true
+    if Dir.exist?(config.data_dir + "/site/webinars")
+        data.site.webinars.each do |id, webinar|
+            proxy "/webinars/#{webinar[:slug]}/index.html", "/contentful_templates/webinar.html", :locals => { :item => webinar }, :ignore => true
         end
     else
-        puts "\n\nWhitepapers data folder doesn't exist!\n"
+        puts "\n\nwebinars data folder doesn't exist!\n"
     end
 else
     puts "\n\nDon't forget to pull content with, 'bundle exec middleman contentful'!\n"
@@ -193,26 +193,29 @@ activate :contentful do |f|
     f.content_types = {
         academy: 'academy',
         blog: 'blog',
-        cta: 'cta',
         caseStudy: 'caseStudy',
+        cta: 'cta',
         customers: 'customers',
+        collections: 'genericCollection',
         discover: 'discover',
         events: 'events',
-        features: 'features',
         featureCategories: 'featureCategories',
+        features: 'features',
         forms: 'forms',
         guides: 'guides',
         leadershipGallery: 'leadershipGallery',
+        navSections: 'navSections',
         person: 'person',
         podcast: 'podcastEntry',
         pressReleases: 'pressReleases',
-        # products: 'products',
+        products: 'products',
+        quotes: 'quotes',
         reports: 'reports',
         services: 'services',
         spotlights: 'spotlights',
-        quotes: 'quotes',
         tags: 'tags',
-        whitepapers: 'whitepapers'
+        videos: 'videos',
+        webinars: 'webinars'
     }
 end
 

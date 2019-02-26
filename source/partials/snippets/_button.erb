@@ -11,16 +11,16 @@
 # rel: for rel="" attributes. Suggested:  canonical|external|prev|next     https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types
 
 # Example call:
-# <%= 
-#     partial "partials/snippets/button", 
+# <%=
+#     partial "partials/snippets/button",
 #         :locals => {
-#             :label => "Join us on Github", 
-#             :title => "Explore Datica git repos", 
-#             :url => "https://github.com/daticahealth", 
-#             :rel => "external", 
-#             :button_classes => "button button--primary button--large", 
-#             :icon => "icon-github-octocat", 
-#             :icon_color => "white", 
+#             :label => "Join us on Github",
+#             :title => "Explore Datica git repos",
+#             :url => "https://github.com/daticahealth",
+#             :rel => "external",
+#             :button_classes => "button button--primary button--large",
+#             :icon => "icon-github-octocat",
+#             :icon_color => "white",
 #             :icon_align => "right",
 #             :tracking => "false", # optional, don't track this button in GTM. Negates the following
 #             :data_track_group => "funnelName" # optional, for GTM tracking group/funnel
@@ -30,83 +30,89 @@
 
 # required elements
 unless defined?(label)
-	puts "The Button partial at #{current_page.url} requires a label!"
-	label = "Click here"
+    puts "⚠️ The Button partial at #{current_page.url} requires a label!"
+    label = "Click here"
 end
 unless defined?(url)
-	puts "The Button partial at #{current_page.url} requires an URL!"
-	url = "/"
+    puts "⚠️ The Button partial at #{current_page.url} requires an URL!"
+    url = "/"
 end
 
 # if defined?(icon_color)
-# 	svg_class = "icon-inline svg-color--#{icon_color}"
+#   svg_class = "icon-inline svg-color--#{icon_color}"
 # else
-# 	icon_color = "white"
-# 	svg_class = "icon-inline svg-color--#{icon_color}"
+#   icon_color = "white"
+#   svg_class = "icon-inline svg-color--#{icon_color}"
 # end
 # if defined?(icon_color)
-# 	svg_class = "icon-inline svg-color--#{icon_color}"
+#   svg_class = "icon-inline svg-color--#{icon_color}"
 # else
-# 	icon_color = "white"
-# 	svg_class = "icon-inline"
+#   icon_color = "white"
+#   svg_class = "icon-inline"
 # end
 svg_class = "icon-inline"
 # check for icon alignment; if anything BUT "left" ensure it's "right"
 if defined?(icon_align) && icon_align == "left"
-	svg_class = svg_class + " icon-left"
+    svg_class = svg_class + " icon-left"
 else
-	svg_class = svg_class + " icon-right"
-	icon_align = "right"
+    svg_class = svg_class + " icon-right"
+    icon_align = "right"
 end
 unless defined?(button_classes)
-	button_classes = "button button--primary"
+    button_classes = "button button--primary"
 end
 unless defined?(title)
-	title = label
+    title = label
 end
 if defined?(rel)
-	rel = " rel=\"#{rel}\""
+    rel = " rel=\"#{rel}\""
 else
-	rel = ""
+    rel = ""
 end
 
 # GTM stuff
 # unless defined?(tracking) || tracking == false
 track_me = ' data-track="true"'
 track_category = ' data-track-category='
-if defined?(current_page.data.collectionName) # this is already a part of static pages/sections
-	data_funnel = track_me + track_category + '"' + current_page.data.collectionName + '"'
-	section = "_" + current_page.data.collectionName
-elsif defined?(data_track_group) # data_track_group should supercede collectionName if present in the partial obj.
-	data_funnel = track_me + track_category + '"' + data_track_group + '"'
-	section = "_" + data_track_group
+# Hid the collection name part here, it's not working right and probably unneeded
+# if defined?(current_page.data.collectionName) # this is already a part of static pages/sections
+#     data_funnel = track_me + track_category + '"' + current_page.data.collectionName + '"'
+#     section = "_" + current_page.data.collectionName
+if defined?(data_track_group) # data_track_group should supercede collectionName if present in the partial obj.
+    data_funnel = track_me + track_category + '"' + data_track_group + '"'
+    section = "_" + data_track_group
 else # neither, it's just generic
-	data_funnel = track_me + track_category + '"generic"'
-	section = ""
+    data_funnel = track_me + track_category + '"generic"'
+    section = ""
 end
 data_track = data_funnel
 unless defined?(item_id) # item_id can be passed to component
-	item_id = section
-	# tracking_id = "button" + item_id + "_" + label.parameterize
-	tracking_id = "button_" + label.parameterize
+    item_id = section
+    # tracking_id = "button" + item_id + "_" + label.parameterize
+    tracking_id = "button_" + label.parameterize
 else
-	tracking_id = "button_" + item_id
+    tracking_id = "button_" + item_id
+end
+unless defined?(expand) # item_id can be passed to component
+    button_expand = true
+else
+    button_expand = expand
 end
 # puts tracking_id
 # else
-# 	data_track = nil
+#   data_track = nil
 # end
 %>
-<a class="<%= button_classes %>" <%= data_track %> data-track-id="<%= tracking_id %>" data-expand-on-small="true" href="<%= url %>" title="<%= title %>"<%= rel %>>
-	<% if defined?(icon) %>
-		<% if icon_align == "right" %>
-			<%= label %>
-			<%= inline_svg("small/" + icon, class: svg_class) %>
-		<% else %>
-			<%= inline_svg("small/" + icon, class: svg_class) %>
-			<%= label %>
-		<% end %>
-	<% else %>
-		<%= label %> 
-	<% end %>
+<a class="<%= button_classes %>" <%= data_track %> data-track-id="<%= tracking_id %>" data-expand-on-small="<%= button_expand %>" href="<%= url %>" title="<%= title %>"<%= rel %>>
+    <% if defined?(icon) %>
+        <% if icon_align == "right" %>
+            <%= label %>
+            <%= inline_svg("small/" + icon, class: svg_class) %>
+        <% else %>
+            <%= inline_svg("small/" + icon, class: svg_class) %>
+            <%= label %>
+        <% end %>
+    <% else %>
+        <%= label %>
+    <% end %>
 </a>

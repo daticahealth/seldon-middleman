@@ -1,0 +1,115 @@
+@charset 'utf-8';
+@import '../settings';
+@import '../../../../node_modules/foundation-sites/scss/util/_mixins.scss';
+// @import '../../../../node_modules/foundation-sites/scss/components/_callout.scss';
+@import '../mixins/colors';
+@import '../mixins/functions';
+// @import '../modules/masonry';
+// @import '../modules/fonts-optional';
+
+// video thumbnails
+.preview {
+    border-radius: $global-radius;
+    position: relative;
+    display: block;
+    color: white;
+    padding: 2rem;
+    margin-bottom: calc(0.4rem + 2vw);
+    overflow: hidden;
+    // min-height: 25rem;
+    @include breakpoint (medium) {
+        min-height: 15rem;
+        margin-bottom: initial;
+    }
+    @include breakpoint (large) {
+        min-height: 20rem;
+        margin-bottom: initial;
+    }
+    &-meta { // child content below
+        max-width: 50em;
+    }
+    // transition: all $timing-default ease;
+    // &--hover {
+    //     transition: box-shadow $timing-default * 0.7 linear;
+    //     // box-shadow: 0 1px 1px 0 black(0);
+    //     &:hover {
+    //         box-shadow: 0 5px 15px 0 black(0.4);
+    //     }
+    // }
+    // featured image atop card, with title set at bottom
+    &-subhead {
+        // position: absolute;
+        // text-align: right;
+        // left: 0;
+        // top: 0;
+        // margin-top: 1rem;
+        color: white;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font: {
+            weight: $font-weight-bold;
+            size: rem-calc(12);
+        }
+    }
+    &-title { // title hugs bottom
+        // position: absolute;
+        transition: all $timing-default * 1.5 ease;
+        // bottom: 0;
+        margin-bottom: 1rem;
+        // max-width: 75%;
+        min-width: 15rem; // prevents getting squished when cards are narrow at lower edge of large breakpoint. Waiting for container queries...
+        z-index: 5;
+    }
+    &-icon {
+        position: absolute;
+        transition: all $timing-default * 2.25 ease;
+        bottom: 2rem;
+        right:  2rem;
+        opacity: 0.3;
+        color: $color_blue-glow;
+    }
+    &-cta {
+        opacity: 0;
+        color: white;
+        // text-align: right;
+        position: absolute;
+        bottom: 3.9rem;
+        right: 10rem;
+        transition: all $timing-default * 2 ease;
+    }
+    &-bg {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transition:         0.5s filter linear;
+        -webkit-transition: 0.5s -webkit-filter linear;
+        -ms-transition:     0.5s -ms-filter linear;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7 !important; // override lozad .loaded
+            // filter: blur(2px);
+        }
+    }
+    &:hover {
+        color: $white;
+        .preview-title {
+            color: $color_blue-glow;
+            // transform: translate3d(3px, 0, 0);
+        }
+        .preview-icon {
+            opacity: 1;
+            color: white;
+            // transform: translate3d(1rem, 0, 0);
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+        .preview-cta {
+            opacity: 1;
+            color: white;
+            transform: translate3d(5px, 0, 0);
+        }
+    }
+
+}

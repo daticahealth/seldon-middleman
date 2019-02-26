@@ -86,7 +86,7 @@ $strip-width: 2vw;
             color: black;
             opacity: 0.5; // set to 1 when section is active
             transition: all 200ms ease;
-
+            margin-bottom: 0.5rem;
         }
         // }
         &--lead {
@@ -274,11 +274,11 @@ $strip-width: 2vw;
     .callout {
         margin-bottom: 1em; // use em as it might be in a sea of type
     }
-    .menu {
-        li > a {
-            padding-left: 0;
-        }
-    }
+    // .menu {
+    //     li > a {
+    //         padding-left: 0;
+    //     }
+    // }
     //
     .tabs-panel {
         padding: 1.5rem 0 1rem 0; // fallback

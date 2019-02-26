@@ -82,12 +82,7 @@ end
             <% if p["case_study"].has_key?("related_form") %>
                 <div class="callout callout--large drop">
                     <h3 class="headline-4 text-center group">Read the Case Study</h3>
-                    <%= Kramdown::Document.new(p["case_study"]["related_form"]["custom_form"]).to_html %>
-                </div>
-            <% elsif p["case_study"].has_key?("form_id") %>
-                <div class="callout callout--large drop">
-                    <h3 class="headline-4 text-center group">Download this case study for free</h3>
-                    <%= partial("partials/snippets/form-hubspot", :locals => { :form_id => p["case_study"]["form_id"] }) %>
+                    <%= partial "partials/snippets/form", :locals => { :the_form => p["case_study"]["related_form"]["custom_form"] } %>
                 </div>
             <% end %>
             </div>
@@ -101,7 +96,7 @@ end
                 <% if p.has_key?("case_study") %>
                     <h3 class="headline-5 subhead--spaced" id="spotlight">Datica Customer Spotlight</h3>
                 <% end %>
-                <h1 class="headline-2"><%= p["customer_spotlight"]["title"] %></h1>
+                <h2 class="headline-2"><%= p["customer_spotlight"]["title"] %></h2>
                 <div class="lead spotlight--lead">
                     <%= Kramdown::Document.new(p["customer_spotlight"]["lead"]).to_html %>
                 </div>
@@ -158,10 +153,10 @@ end
 
     <div class="row align-center" id="pageNav">
         <div class="columns small-12">
-            <div class="menu button-cluster align-center">
+            <div class="menu button-group align-center">
                 <% filtered_customers = data.site.customers.select{ |id, customer| (customer.has_key?("case_study") || customer.has_key?("customer_spotlight")) } %>
                 <% previous_item = get_previous_item(filtered_customers, p, "company_name") %>
-                <%= partial "partials/snippets/button", :locals => { :label => "Customer Success", :title => "Datica Customer Proof - See All", :url => "/platform/success", :button_classes => "medium-order-2 button hollow hollow-invisible", :icon => "icon-chevron-up", :icon_align => "right", :icon_color => "blue", :rel => "prev" } %>
+                <%= partial "partials/snippets/button", :locals => { :label => "Customer Success", :title => "Datica Customer Proof - See All", :url => "/customers/", :button_classes => "medium-order-2 button hollow hollow-invisible", :icon => "icon-chevron-up", :icon_align => "right", :icon_color => "blue", :rel => "prev" } %>
                 <% if previous_item != nil %>
                     <%= partial "partials/snippets/button", :locals => { :label => "#{previous_item.company_name}", :title => "View Previous Profile", :url => "/customer/#{previous_item.slug}", :button_classes => "medium-order-1 button hollow", :icon => "icon-chevron-left", :icon_align => "left", :icon_color => "blue" } %>
                 <% end %>

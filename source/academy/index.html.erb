@@ -1,5 +1,5 @@
 ---
-title: "Learn about HIPAA, HITRUST, HL7, FHIR, and more at the Datica Academy"
+title: "Your place to learn the intricacies of interoperability, compliance, and cloud technologies."
 summary: "The industry's leading resource for understanding complex healthcare topics"
 author: "Datica, Inc."
 tags: "training, education, HIPAA, HL7, FHIR, interoperability, EHR, integration, resource"
@@ -12,18 +12,21 @@ customJS: "/public/js/academy.js"
 <% 
 today = DateTime.now
 current_page.data.date = today.strftime('%B %-d, %Y')
+promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc82592dd23d3c78bfa0a47126608c/cta-ccms-survey-ad-4x3.png"
 %>
 <%= partial "partials/head/header", :locals => { :style => "dark" } %>
 <section class="section-article">
     <div class="row align-center">
         <div class="columns small-12 medium-10 large-8 text-center group">
-            <h1 class="headline-2">The Datica Academy</h1>
+            <h1 class="headline-2">
+                <%= inline_svg("academy-logo", class: "logo-size--medium") %>
+            </h1>
             <p>HIPAA is complicated, but easily learned. The Datica HIPAA and Interoperability Academy walks you through the intricacies of HIPAA, HL7, and FHIR—from the highest concepts to the deepest details.</p>
             <p>Start with the basics, like why Protected Health Information (PHI) is central to HIPAA, then work your way towards advanced topics like FHIR and HL7.</p>
         </div>
     </div>
 </section>
-<section class="section-article container-gray-3">
+<section class="section-article container-gray-11">
     <div class="row align-center">
         <div class="columns small-12 large-6 text-center group">
             <h2 class="headline-3">Datica Guides</h2>
@@ -33,21 +36,25 @@ current_page.data.date = today.strftime('%B %-d, %Y')
     <div class="masonry-group">
         <% sorted_entries = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] } %>
         <% sorted_entries.each do | id, guide_entry | %>
-            <div class="masonry-group--item">
-                <div class="card">
-                    <div class="card-section container-gray-11">
-                        <h3 class="headline-4"><a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>"><%= guide_entry["title"] %></a></h3>
-                    </div>
-                    <div class="card-section">
-                        <% if guide_entry.has_key?("image_thumb") %>
-                            <a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>">
-                                <img class="product-thumb float-right" data-interchange="[<%= guide_entry.image_thumb.url %>?fit=thumb&w=200, medium]" width="40%">
-                            </a>
-                        <% end %>
-                        <%= Kramdown::Document.new(guide_entry["summary"]).to_html %>
+            <% unless guide_entry.has_key?("list_view_hidden") %>
+                <div class="masonry-group--item">
+                    <div class="card drop">
+                        <div class="card-section">
+                            <h3 class="headline-5"><a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>"><%= guide_entry["title"] %></a></h3>
+                        </div>
+                        <div class="card-section card-section--flush">
+                            <% if guide_entry.has_key?("image_thumb") %>
+                                <a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>">
+                                    <img class="lozad product-thumb float-right" src="https://images.ctfassets.net/189dvqdsjh46/14EaN5W0ItsJ3B8V8LfrWS/02dd779de703aa4925587ef089bd9953/loader-square.svg" data-src="<%= guide_entry.image_thumb.url %>?fit=thumb&w=200" width="40%">
+                                </a>
+                            <% end %>
+                            <div class="text-small">
+                                <%= Kramdown::Document.new(guide_entry["summary"]).to_html %>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <% end %>
         <% end %>
     </div>
 </section>
@@ -61,7 +68,7 @@ current_page.data.date = today.strftime('%B %-d, %Y')
         <div class="columns small-12 medium-6">
             <h3 class="headline-5">Search the Academy</h3>
             <div id="academySearch" class="group filter-search input-nav input-nav--black">
-                <span class="input-nav--icon"><i class="fa fa-search"></i></span>
+                <%= inline_svg("small/icon-filter-list", class: "input-nav--icon") %>
                 <input type="search" id="searchInput" onkeyup="filterList()" placeholder="Search in this list (hipaa, ehr, hitrust, etc.)">
             </div>
         </div>
@@ -81,7 +88,7 @@ current_page.data.date = today.strftime('%B %-d, %Y')
         <div id="articleList" class="no-bullet columns small-12 large-8 article-list">
             <% sorted_entries = data.site.academy.to_a.sort_by{ |id, the_entry| the_entry['title'] } %>
             <% sorted_entries.each do | id, entry | %>
-                <div id="id-<%= id %>" class="card callout--hover article-list--item group <% if entry.has_key?('tags') %><% entry['tags'].each_with_index do |tag, i| %><%= tag['tag_full'].downcase %> <% end %><% end %>" data-date-created="<%= entry["pub_date"].strftime("%B %-d, %Y") %>" data-title="<%= entry["title"] %>">
+                <div id="id-<%= id %>" class="card callout--hover article-list--item group <% if entry.has_key?('tags') %><% entry['tags'].each_with_index do |tag, i| %><%= tag['tag_full'].to_s.downcase.gsub(/\s+/, '') %> <% end %><% end %>" data-date-created="<%= entry["pub_date"].strftime("%B %-d, %Y") %>" data-title="<%= entry["title"] %>">
                     <div class="card-section card-section--with-grid">
                         <div class="row align-middle">
                             <div class="columns small-12 medium-8">
@@ -128,8 +135,9 @@ current_page.data.date = today.strftime('%B %-d, %Y')
         <aside class="column" data-sticky-container>
             <div class="sticky" data-sticky data-options="anchor: articles; stickyOn: large;">
                 <%= partial "partials/ctas/resources-compact", :locals => { :classes => "group" } %>
+                <a href="/cloud-compliance-management-system/survey/" title="take the cloud configuration survey"><img class="lozad thumbnail" src="<%= promo1 %>?fm=jpg&w=400&q=5" data-src="<%= promo1 %>?fm=png&fl=png8&w=600"></a>
                 <%# to embed/pass a unique ID or specific entry, use this notation. %>
-                <%= partial("/partials/content/cta", :locals => { :p => data.site.cta["1CKHNq6V7eG4W20ygCWmei"] }) %>
+                <%#= partial("/partials/content/cta", :locals => { :p => data.site.cta["1CKHNq6V7eG4W20ygCWmei"] }) %>
                 <%# sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse! %>
                 <%# sorted_reports.take(1).each do | id, report | %>
                     <%#= partial "partials/section-promos/report-promo-compact", :locals => { :p => report } %>
@@ -144,3 +152,18 @@ current_page.data.date = today.strftime('%B %-d, %Y')
         </aside>
     </div>
 </section>
+<section class="container-gray-10 section-article">
+    <%= partial "partials/content/recent-items" %>    
+</section>
+<aside id="ctaBottom" class="container-color--dark-grad-blue"> 
+    <div class="section-article container-image--center" data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]">
+        <div class="row align-center">
+            <div class="columns small-12 medium-10 text-center">
+                <h2 class="headline-3 group"><strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.</h2>
+                <!-- <p class="lead">Start your free trial today.</p> -->
+                <%= partial "partials/snippets/button", :locals => { :label => "Learn about Datica CKS", :url => "/compliant-kubernetes-service", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_align => "right" } %>
+            </div>
+        </div>
+    </div>
+</aside>
+<%= partial "/partials/section-promos/dhsf-video", :locals => { :align => "left" } %>

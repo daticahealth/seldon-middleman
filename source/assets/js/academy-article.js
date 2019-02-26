@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
         contents,
         eventEmitter;        
     var contents = gajus.Contents({
-        articles: $('#content').find('h2, h3').get()
+        articles: $('#content').find('h2').get()
     });
     eventEmitter = contents.eventEmitter();
 
-    $('#article-toc').append('<hr><p class="subheader-small">In This Article</p>');
-    $('#article-toc').append(contents.list());
-    $('#article-toc').append('<hr>');
+    $('.article-toc').append('<h4 class="headline-6 spaced-out">Table of Contents</h4>');
+    $('.article-toc').append(contents.list());
+    // $('.article-toc').append('');
     // $('#article-toc').addClass('group');
 });

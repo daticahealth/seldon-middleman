@@ -1,0 +1,173 @@
+---
+title: "HIPAA compliant cloud solutions"
+summary: "Datica compliance solutions help you pass a HITRUST assessment with HIPAA compliant cloud infrastructure, monitoring, and more."
+navTitle: "Compliance"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "March 5, 2018"
+ogType: "product"
+customCSS: "products, product-lens-anim"
+layout: products
+collectionName: "product"
+# collectionOrder: 2
+priority: "0.9"
+---
+ruby:
+  current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" />'
+  current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/2aPhdyH76MiQwqQq4KiGMg/186518b5a3896994d54ae3cef4fbac8d/cta-compliance-share.jpg"
+  featured_img = "https://images.ctfassets.net/189dvqdsjh46/40nTU46iGkIsck8qEa0qcm/4822d250b4eb05924aa530dbd1ccf73f/working_together__looking_at_screen.jpg"
+
+section.hide-for-large
+  .row.collapse
+    .columns.small-12
+      img.lozad.blur-in src="#{featured_img}?fit=thumb&w=800&h=400&q=10" data-src="#{featured_img}?fit=thumb&w=800&h=600&q=30" data-srcset="#{featured_img}?fit=thumb&w=800&h=600&q=50 800w, #{featured_img}?fit=thumb&w=1600&h=600 1200w" alt="Tech workers working on an audit"
+      .bg-white.pad--lg
+        h2.headline-1 Can your business pass a HITRUST assessment?
+        h2.headline-3.text-bold.group With CCMS, the answer is yes.
+        p.lead <strong>Get back to solving problems for healthcare.</strong> Let Datica take on the burden of compliance. We're the experts at understanding the exact policies and procedures required to turn HIPAA-eligible services on the public cloud into architectures that can pass a HITRUST CSF assessment. That expertise is passed on to you through our products and rock-solid BAA.
+        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/cloud-compliance-management-system#cta", :button_classes => "button nomargin", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-right", :icon_align => "right" }
+section#top.show-for-large.section-article.pad-no-bottom.bg-gray-3.container-image--center.lozad data-background-image="#{featured_img}?fit=thumb&w=1800&h=900&q=65"
+  .row.align-right.align-middle
+    .columns.small-12.medium-6
+      h1.headline-1.text-bold.text-shadow.group--2x Can your business pass a HITRUST assessment?
+      .strip-bright
+      .bg-white.pad--lg.drop.pull-down
+        h2.headline-3.text-bold With CCMS, the answer is yes.
+        p.lead <strong>Get back to solving problems for healthcare.</strong> Let Datica take on the burden of compliance. We're the experts at understanding the exact policies and procedures required to turn HIPAA-eligible services on the public cloud into architectures that can pass a HITRUST CSF assessment. That expertise is passed on to you through our products and rock-solid BAA.
+        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/cloud-compliance-management-system#cta", :button_classes => "button nomargin success", :data_track_group => "compliance", :item_id => "get-ccms-desktop", :icon => "icon-chevron-right", :icon_align => "right" }
+
+.strip-bright
+
+section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
+  .row
+    .columns.small-12.medium-10.large-8.group
+      h2.headline-2 Compliance Solutions
+      p.lead Compliance on the cloud isn’t a one-size-fits-all kind of challenge. Maybe you don’t have the expertise, time, and resources to build your own compliant infrastructure and want a solution that picks up where your cloud provider leaves off.  Or, maybe you do and just need help with compliance monitoring and reporting for your complex environments.
+      p.lead Wherever you are on the road to healthcare compliance, we can help.
+  #product-lens.show-for-medium
+    .row.align-justify.text-center
+      .columns.small-12.medium-4 
+        h3.headline-3.text-italic.text-serif.nomargin.animate-me.step-1 Simplicity & Speed
+      .columns.small-12.medium-4 
+        h3.headline-3.text-italic.text-serif.nomargin.animate-me.step-5 Developer Control
+    .row
+      .column
+        .border-dash-line.animate-me.step-2
+    .row.align-justify.text-small
+      .columns.small-12.medium-4.animate-me.step-3
+        p Emerging digital health products need to demonstrate compliance and security credibility from day one and need a fast and simple way to start without taking on the burden of compliance.
+      .columns.small-12.medium-4.animate-me.step-4
+        p As your apps and services scale so does your need for orchestration and control. You now have the resources to take on more of the compliance responsibility yourself.
+      .columns.small-12.medium-4.animate-me.step-6
+        p You have building your compliant apps and infrastructure covered, but continuously maintaining and monitoring compliance of your complex environment may be beyond you.
+
+  .row.collapse.align-center.small-up-1.medium-up-3.large-up-3.row--card-grid
+    .column.relative.has-blob.animate-me.step-3
+      .card.container-color--trans.relative.z-5
+        .card-section
+          = inline_svg("cpaas-logo-w", class: "icon-size--xlarge")
+          .subhead--spaced CPaaS
+          h3.headline-4 Compliant Platform <br />as a Service
+          p.strip.strip-small.strip-cpaas
+          p.lead Build and deploy a digital health application on a compliant hosted platform
+          / p Datica Compliant Platform as a Service gives startups pre-packaged compliance and security. CPaaS makes hosting your compliant healthcare applications as simple as git push.
+        .card-divider.card-divider--flush
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
+      /.blob-color.blob-cpaas.z-auto data-glow="false"
+    .column.relative.has-blob.animate-me.step-4
+      .card.container-color--trans.relative.z-5
+        .card-section
+          = inline_svg("cks-logo-w", class: "icon-size--xlarge")
+          .subhead--spaced CKS
+          h3.headline-4 Compliant Kubernetes Service
+          p.strip.strip-small.strip-cks
+          p.lead Get enterprise scalability for your complex digital health application on a compliant Kubernetes cluster
+          / p Datica Compliant Kubernetes Service gives you the orchestration and scalable power of Kubernetes with compliance built in.
+        .card-divider.card-divider--flush
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-cks", :icon => "icon-angle-right", :icon_align => "right" }
+      /.blob-color.blob-cks.z-auto data-glow="false"
+    .column.relative.has-blob.animate-me.step-6
+      .card.container-color--trans.relative.z-5
+        .card-section
+          = inline_svg("ccms-logo-w", class: "icon-size--xlarge")
+          .subhead--spaced CCMS
+          h3.headline-4 Cloud Compliance Management System 
+          p.strip.strip-small.strip-ccms
+          p.lead Know the precise compliance state of your cloud environments
+          / p Datica Cloud Compliance Management System is the first-ever tool to guarantee compliance assurance of managed cloud-native services. Our dashboard and reports enable you to continuously monitor compliance, react quickly to risks and incidents, and attest to compliance for audits.
+        .card-divider.card-divider--flush
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-ccms", :icon => "icon-angle-right", :icon_align => "right" }
+      /.blob-color.blob-ccms.z-auto data-glow="false"
+
+
+section.section-article.pad-no-bottom.bg-gray-12
+  .row.align-center.align-middle.group--2x
+    .columns.small-12.large-8.text-center
+      h2.headline-4.group Datica helps you comply with multiple compliance frameworks.
+      .row.medium-up-5.align-middle.align-center
+        - data.views.home.badges.each do |logo|
+          - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
+          .column
+            img alt="#{logo["name"]}" class="lozad" data-src="#{logo["fileUrl"]}" /
+  .row.align-center.align-middle.group style="overflow: hidden;"
+    .columns.small-12.large-8.text-center
+      h2.headline-4 Datica Global Compliance Posture
+      p.lead.text-center Datica's stringent compliance posture makes us compliant with many global standards.
+      = partial "partials/snippets/button", :locals => { :label => "Explore global compliance", :url => "/cloud-compliance/global/", :button_classes => "button hollow group", :data_track_group => "compliance", :item_id => "compliance-global", :icon => "icon-angle-right", :icon_align => "right" }
+      / a href="/cloud-compliance/global/" title="Global Compliance Table"
+        - preview = "https://images.ctfassets.net/189dvqdsjh46/4KtjQwGLOo6UGoAY82qe6k/dd058456a0fef3d725cd5fc8a1713840/global_compliance_stance_table.png"
+        img.lozad.drop.blur-in alt="Global Compliance Table" src="#{preview}?w=1200&fm=jpg&q=5" data-src="#{preview}?w=1200&fm=png&fl=png8"
+
+section#resources.section-article.collection.bg-gray-11
+  - related_entries = data.site.collections.to_a.select { |id, entry | (id == "2xAKQVZSKIsygICqimW0qA") }
+  - related_entries.each do | id, collection |
+    .row.align-center
+      .columns.small-12.text-center
+        h2.headline-3 = collection.subhead
+        - if collection.has_key?("desc")
+          p.lead.line-length.margin-auto = collection.desc
+    = partial "/partials/content/collection-list", :locals => { :collection => collection }
+
+.strip.strip-ccms
+aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-background-image=bg_product_dark
+  .relative.has-blob
+    .relative.z-5
+      .row.align-center.group--sm
+        .columns.small-12.medium-10.large-10.text-center
+          h2.headline-3 HITRUST assessment? No problem.
+      .row.align-center
+        .columns.shrink
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about HITRUST compliance", :url => "/discover/hitrust/", :button_classes => "button hollow-inverted" }
+        .columns.shrink
+          = partial "partials/snippets/button", :locals => { :label => "Get started with CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :data_track_group => "compliance", :item_id => "get-ccms-bottom" }
+    .blob-color.blob-ccms.z-auto data-glow="false"
+
+/ This "product-lens" animation is showing some weird blitting in certain states. Holding off for now. Note in the frontmatter above - views/product-lens-anim.css is needed.
+javascript:
+  //const bp = 1024;
+  function animateLens() {
+    const items = document.querySelectorAll('.animate-me');
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add('fancy');
+          // console.log('in the view');
+        } else {
+          entry.target.classList.remove('fancy');
+          // console.log('out of view');
+        }
+      });
+    });
+    items.forEach(item => {
+      observer.observe(item);
+    });
+  }
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    animateLens();
+  }
+  window.addEventListener("resize", function() {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      animateLens();
+        // console.log("Screen width is at least 1024px");
+    }
+  });

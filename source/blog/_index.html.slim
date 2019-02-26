@@ -1,0 +1,88 @@
+---
+title: "Thoughts from the team behind Healthcare's trusted cloud | Datica Blog"
+summary: "A collection of blog articles from Datica team members"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+layout: company
+customCSS: "blog-section"
+feed_url: "https://datica.com/blog/feed.xml"
+---
+ruby:
+  today = DateTime.now
+  current_page.data.date = today.strftime('%B %-d, %Y')
+  # today = time.inspect
+  sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+
+section.featured-posts
+  .row.align-center.group
+    .columns.small-12.medium-10.large-8.text-center.group
+      = inline_svg("icon-book-academy", class: "icon-size--xlarge")
+      h1.headline-2 The Datica Blog
+      p.lead Insights from the healthcare cloud experts
+  .grid-wrapper.width-xl
+    - sorted_posts[0...4].each_with_index do | (id, post), i |
+      .item.drop-hover.relative.align-justify class="item-#{i}"
+        - if post.has_key?("featured_image")
+          .featured-image.z-back.large-order-2
+            - if i == 0
+              img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=800&h=500&q=40 800w, #{post.featured_image.url}?fit=thumb&w=1800&h=600 1200w" /
+            - else
+              img.lozad.img-cover src="#{post.featured_image.url}?fit=thumb&w=400&h=100&fm=jpg&q=5" data-srcset="#{post.featured_image.url}?fit=thumb&w=640&h=360&q=50 640w, #{post.featured_image.url}?fit=thumb&w=1200&h=600&q=40 1000w" /
+        .post-card.z-0.bg-white.large-order-1
+          .pub-date = post.pub_date.strftime('%B %-d, %Y')
+          h2.headline-4
+            a. href="/blog/#{post.slug}" title="Read, #{post.title}" = post.title
+          - if post.has_key?("summary")
+            = Kramdown::Document.new(plain_text(post.summary)).to_html
+            .row.collapse.align-justify.align-middle.show-for-medium
+              - if post.has_key?("author")
+                .post-author.column.shrink
+                  = partial("partials/snippets/person", :locals => { :p => post.author })
+              .post-meta.column.align-self-bottom.text-right class=(if i <= 2 then 'shrink' else '' end)
+                - if post.has_key?("tags")
+                  .post-tags.text-tiny.text-bold
+                    /= icon_tag
+                    - post["tags"][0...3].each do |tag|
+                      span.label.info.round= tag["tag_full"]
+                / a.post-permalink data-theme="dark" href="/blog/#{post.slug}" title="Permalink"
+                  = icon_permalink
+
+    .item.relative.item-5.align-middle.align-center.post-card.bg-gray-4 style="flex-direction: column; align-items: center;"
+      = partial "blog/partials/blog-subscription-simple"
+      / = partial "blog/partials/blog-subscription", :locals => { :color => "dark" }
+
+section#blog-archives-1.section-article
+  .row.align-spaced.align-middle
+    .columns.small-12.large-8.xlarge-8
+      - sorted_posts[5...8].each do | id, post |
+        = partial "partials/cards/blog-card-horiz", :locals => { :post => post, :size => "large", :classes => "drop-hover bg-white group--2x" }
+    aside.columns.small-12.large-4.xlarge-4
+      
+
+section#blog-featured.section-article.container-gray-11
+  - featured_posts = data.site.collections.to_a.select { | id, collection | (id == "6u8cxfSJyg2eEAG0YCW2a6") }
+  - featured_posts.each do | id, posts |
+    .text-center.group
+      h2.headline-3 = posts.title
+    .row.row--card-grid.full-width.small-up-1.xlarge-up-2.xxlarge-up-3.width-xl
+      - posts["related_entries"].each do | entry |
+        - post = data.site.blog[entry.id]
+        .column
+          = partial "partials/cards/blog-card-horiz", :locals => { :post => post, :size => "large", :classes => "drop-hover bg-white group" }
+          /= partial "partials/cards/featured-blog", :locals => { :post => post, :style => "light", :size => "large" } 
+section#blog-archives-2.section-article
+  .row.align-spaced.align-middle.full-width
+    .columns.small-12.large-8.xlarge-6.large-order-2
+      - sorted_posts[8...15].each do | id, post |
+        = partial "partials/cards/blog-card-horiz", :locals => { :post => post, :size => "large", :classes => "drop-hover bg-white group--2x" }
+    aside.columns.small-12.large-4.xlarge-3.large-order-1
+      - sorted_webinars = data.site.webinars.to_a.sort_by{ |id, webinars| webinars['event_date'] }.reverse!
+      - sorted_webinars.take(1).each do | id, webinar_entry |
+        = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry }
+section#blog-archives.section-article.text-center
+  h3.headline-4.spaced-out.group Go further
+  .menu.button-group.align-center
+    = partial "partials/snippets/button", :locals => { :label => "Browse the blog archives", :url => "/blog/archives/", :button_classes => "button", :icon => "icon-files", :icon_align => "left" }
+    = partial "partials/snippets/button", :locals => { :label => "Get posts in your inbox", :url => "#blog-archives-1", :button_classes => "button success", :icon => "icon-email-open-sm", :icon_align => "left" }
+
