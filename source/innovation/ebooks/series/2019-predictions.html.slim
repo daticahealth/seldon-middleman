@@ -36,11 +36,11 @@ header#introduction.page-break-after
   section.section
     - sorted_posts.each do | id, post |
       article id="2019-predictions-#{post.slug}"
-        .pub-date = post.pub_date.strftime('%B %-d, %Y')
-        h2.headline-4 = post.title
+        h5 = post.pub_date.strftime('%B %-d, %Y')
+        h1 = post.title
         - if post.has_key?("featured_image")
           aside
-            img src="#{post.featured_image.url}?fit=thumb&w=1200&h=600"
+            img src="#{post.featured_image.url}?fit=thumb&w=1200&h=1200" width=400 style="float: right; margin-left: 2rem;"
         - if post.has_key?("blog_lead")
           = Kramdown::Document.new(plain_text(post.blog_lead)).to_html
         - if post.has_key?("post")
