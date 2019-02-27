@@ -11,7 +11,7 @@ ruby:
   current_page.data.date = today.strftime('%B %-d, %Y')
   # today = time.inspect
   # sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
-  sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['slug'] }.select{ |id, post| (post.title.include? "2019") }
+  sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['slug'] }.select{ |id, post| (post.title.include? "2019 Predictions") }
 
   # series = data.site.person.to_a.sort_by{ |id, person| person['slug'] }.select{ |id, person| (person.person_type == "Datica Executives" || person.person_type == "Datica VP" || person.person_type == "Datica Directors") }
 scss:
@@ -21,29 +21,49 @@ scss:
   aside img {
     max-width: 40rem;
   }
+  pre {
+    max-width: 100%;
+    white-space: pre-wrap;
+  }
+  .featured-image {
+    overflow: hidden;
+  }
 
 chapter#cover
 header#introduction.page-break-after
   h1.title= current_page.data.title
   section.section
     h2 Table of Contents
-    p The DHSF gives guidance and insights into these main topics:   
+    p = current_page.data.summary
     ul.toc.no-bullet
       - sorted_posts.each do | id, post |
         li
           a href="#2019-predictions-#{post.slug}" = post.title
-
+  // display markdown for pandoc conversion, easy copy pasta
   section.section
     - sorted_posts.each do | id, post |
       article id="2019-predictions-#{post.slug}"
-        h5 = post.pub_date.strftime('%B %-d, %Y')
-        h1 = post.title
+        h5 = "###### " + post.pub_date.strftime('%B %-d, %Y')
+        br /
+        h1 = "# " + post.title
+        br /
         - if post.has_key?("featured_image")
           aside
+            pre.featured-image
+              | ![#{post.title}. Image: Unsplash](#{post.featured_image.url}?fit=thumb&w=1200&h=1200")
+            br /
             img src="#{post.featured_image.url}?fit=thumb&w=1200&h=1200" width=400 style="float: right; margin-left: 2rem;"
         - if post.has_key?("blog_lead")
-          = Kramdown::Document.new(plain_text(post.blog_lead)).to_html
+          pre 
+            div markdown="0" = post.blog_lead
+          br /
         - if post.has_key?("post")
-          / section = post.post
-          = Kramdown::Document.new(post.post).to_html
-        a href="/blog/#{post.slug}" title="Read, #{post.title}" = site_url + "/blog/#{post.slug}"
+          pre
+            div markdown="0" = post.post
+          br /
+          /= Kramdown::Document.new(post.post).to_html
+        pre
+          div markdown="0"
+            | [datica.com/blog/#{post.slug}](https://datica.com/blog/#{post.slug})
+        br /
+        /a href="/blog/#{post.slug}" title="Read, #{post.title}" = "datica.com/blog/#{post.slug}"
