@@ -148,7 +148,7 @@ img.lozad.loaded {
     }
 }
 img.lozad {
-    @include blur(1vw);
+    @include blur(5px);
     transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
 }
 img.lozad.loaded {
