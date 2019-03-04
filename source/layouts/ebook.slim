@@ -1,0 +1,17 @@
+doctype html
+html lang="en-US" dir="ltr"
+  head
+    meta charset="UTF-8" /
+    title = current_page.data.title
+    meta name="keywords" content="heathcare, #{current_page.data.tags}" /
+    meta name="author" content="#{current_page.data.author}" /
+    meta property="date" content="#{current_page.data.date}" /
+    - if current_page.data.has_key?("relative_css")
+      = stylesheet_link_tag "print/print", "print/pdf", :relative => true
+    - else
+      = stylesheet_link_tag "print/print"
+    - if current_page.data.has_key?("customCSS")
+      = stylesheet_link_tag "print/"+current_page.data.customCSS
+  body
+    //- if build?
+    = yield

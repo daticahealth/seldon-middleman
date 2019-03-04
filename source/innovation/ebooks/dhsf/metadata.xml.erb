@@ -1,0 +1,17 @@
+<%
+  title = "Digital Health Success Framework"
+  today = DateTime.now
+  pub_date = today.strftime('%B %-d, %Y')
+  author = "Kris Gösser"
+  role = "Chief Marketing Officer"
+  company = "Datica Health, Inc."
+%>
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <dc:title id="t1"><%= title %></dc:title>
+  <dc:publisher><%= author %></dc:publisher>
+  <meta refines="#t1" property="title-type">main</meta>
+  <dc:rights>Copyright ©2018 by <%= author %></dc:rights>
+  <dc:date><%= pub_date %></dc:date>
+  <dc:creator><%= author %></dc:creator>
+  <dc:language>en-US</dc:language>
+</metadata>
