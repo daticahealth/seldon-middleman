@@ -60,7 +60,9 @@ sorted_events = data.site.events.to_a.sort_by{ |id, event| event['date_start'] }
                             <span class="dot"></span>
                             <div class="content">
                                 <% if event.has_key?("event_logo") %>
-                                    <img class="logo-size--medium lozad" style="margin-bottom: 0.4rem;" data-src="<%= event["event_logo"]["url"] %>?w=300" alt="Event logo">
+                                    <div style="display: inline-flex;">
+                                        <img class="logo-size--medium lozad" style="margin-bottom: 0.4rem; height: 3rem;" data-src="<%= event["event_logo"]["url"] %>?w=300" alt="Event logo">
+                                    </div>
                                 <% end %>
                                 <% if event.has_key?("title") %>
                                     <h4 class="headline-5">

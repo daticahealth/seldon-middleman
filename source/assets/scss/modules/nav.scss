@@ -55,8 +55,10 @@ $duration: $timing-default * 1.5; //settings.scss:281
                 size: 90%;
                 // weight: $font-weight-mid;
             }
-            // &[aria-current="page"] {
-            // }
+            &[aria-current="page"] {
+                color: $gray-1;
+                border-bottom: 3px solid $color_blue;
+            }
         }
         ul.breadcrumbs { // breadcrumbs inside subnav, usually first li
             margin-right: 3rem;

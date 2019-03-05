@@ -68,6 +68,10 @@ figcaption{
     -webkit-filter: brightness(0) invert(1);
 }
 
+.invert {
+    filter:         invert(1) hue-rotate(180deg);
+    -webkit-filter: invert(1) hue-rotate(180deg);
+}
 .img-crisp { // for images that have text in them, improves legibility in some cases
     image-rendering: optimizequality;            // Legal fallback
     // image-rendering: -moz-crisp-edges;           // Firefox - default is fine
@@ -148,7 +152,7 @@ img.lozad.loaded {
     }
 }
 img.lozad {
-    @include blur(1vw);
+    @include blur(5px);
     transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s, -moz-filter 0.3s, -o-filter 0.3s, -ms-filter 0.3s;
 }
 img.lozad.loaded {
