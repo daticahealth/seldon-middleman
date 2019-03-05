@@ -68,6 +68,10 @@ figcaption{
     -webkit-filter: brightness(0) invert(1);
 }
 
+.invert {
+    filter:         invert(1) hue-rotate(180deg);
+    -webkit-filter: invert(1) hue-rotate(180deg);
+}
 .img-crisp { // for images that have text in them, improves legibility in some cases
     image-rendering: optimizequality;            // Legal fallback
     // image-rendering: -moz-crisp-edges;           // Firefox - default is fine
