@@ -56,7 +56,7 @@ timeline_company:
     body: 'Datica announces the [Cloud Compliance Management System](/cloud-compliance-management-system "CCMS") (CCMS), giving customers constant visibility of the precise state of their cloud environments.'
 stats_list:
   - 
-    image: "https://images.ctfassets.net/189dvqdsjh46/7Cbcr7jzlDNIOpuGiehpwI/a03569360f53171a5c5587954a4b8370/3x_growth.svg"
+    image: "https://images.ctfassets.net/189dvqdsjh46/7Cbcr7jzlDNIOpuGiehpwI/5998dc3b3ddc844ece89c4c5407fb293/3x_growth.svg"
     desc: "3x Revenue Growth Since Founding"
     url: ""
     width: 200
@@ -66,12 +66,12 @@ stats_list:
     url: ""
     width: 200
   - 
-    image: "https://images.ctfassets.net/189dvqdsjh46/3T2aDxazGShZJVKW0xSKtD/f6f3b6760f7558d214ccb231a938328b/17_events.svg"
-    desc: "We have spoken at 17 distinguished events. See our other events."
+    image: "https://images.ctfassets.net/189dvqdsjh46/3T2aDxazGShZJVKW0xSKtD/31c94fc2ff132307129ab3690766a37a/many_events.svg"
+    desc: "We have spoken at dozens of distinguished events. See our other events."
     url: "/events/"
     width: 200
   - 
-    image: "https://images.ctfassets.net/189dvqdsjh46/6qs1qJbcBXtYj8xt2fjFnk/d79033ef2c0413e9804e45c74c532302/featured_partners.svg"
+    image: "https://images.ctfassets.net/189dvqdsjh46/6qs1qJbcBXtYj8xt2fjFnk/606aec3631dde9225f0a7a4b72e37533/featured_partners.svg"
     desc: "Learn how we can support you on AWS, Azure, and GCP."
     url: "/cloud-compliance/"
     width: 200
@@ -123,6 +123,12 @@ scss:
   .breadcrumbs li:nth-child(2) { // hide second level in crumbs
     display: none;
   }
+  .subheader-about { // tiny adjustment for text baselines
+    margin-top: 0.2rem;
+    @media screen and (min-width: 640px) {
+      text-align: right;
+    }
+  }
 
 .bg-gray-12.container-image-fill.lozad data-background-image=bg_product_light
   nav.nav.nav-desktop.show-for-large.full-width data-theme="none" 
@@ -137,62 +143,55 @@ scss:
         h1.headline-5.spaced-out About Datica
         h4.headline-2 We bring healthcare to the cloud.
     .row.align-center.group
-      .columns.small-12.medium-8.large-8.text-center.group
+      .columns.small-12.medium-large-10.large-8.text-center.group
         p.lead Datica was formed in 2013 to help healthcare technology companies move to the cloud. We help our customers <a class="" href="/cloud-compliance" title="Read more about cloud compliance">achieve HIPAA compliance</a>, <a class="" href="/ehr-integration" title="Learn about EHR integration">integrate securely</a> with hospitals and EHRs, and focus on what they're best at — without worrying about compliance. We're the experts at understanding the exact policies and procedures required to turn HIPAA-eligible services on the public cloud into architectures that can pass a HITRUST CSF assessment.
-    .row.align-center.group
-      .columns.small-12.large-10
-        .collection
-          .row.group.align-center.align-middle
-            .columns.small-12.medium-10.large-8
-              h2.headline-5.spaced-out.text-light Why We Exist
-              h3.headline-4 Empowering Digital Health Success
-              p The complexity of compliance on the cloud is holding back the adoption of cloud native technology in the healthcare space. By removing compliance as a concern, we help our customers focus on what they do best.
-            .columns.small-5.medium-3
-              /img.lozad alt="company stat" data-src="https://images.ctfassets.net/189dvqdsjh46/7Cbcr7jzlDNIOpuGiehpwI/1088af53aed696ee3da57e9d3ff9a51e/3x_growth.png"
 
-          .row.group.align-center.align-middle
-            .columns.small-12.medium-10.large-8
-              h2.headline-5.spaced-out.text-light What We Are
-              h3.headline-4 The Most Secure and Compliant Infrastructure Possible
-              p The hardest part about compliance on the cloud is between the physical infrastructure (which is the responsibility of AWS, Azure, or GCP) and the customer application. In another words, the operating system layer of cloud native architectures. We solve that by helping customers address attestation responsibilities with a suite of products built to fit the specific use case on the cloud.
-            .columns.small-5.medium-3
-              /img.lozad alt="company stat" data-src="https://images.ctfassets.net/189dvqdsjh46/0tDICrmYSfsnYSzn1gzgR/f1beb7b7b789030a72cd0396239f5945/us_eu.png"
-          .row.group.align-center.align-middle
-            .columns.small-12.medium-10.large-8
-              h2.headline-5.spaced-out.text-light How We Do It
-              h3.headline-4 Best Practices are Best Practices
-              img.logo-size--large.float-right.lozad alt=("HITRUST Certified") data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/016f2d364265c04e12c7db4eae95f94c/hitrust-logo.svg" width="180" /
-              p By mapping the very best compliance management frameworks, like the HITRUST CSF, to the requirements of other global regimes, we give customers a compliance story across geographies. We started with HIPAA in 2013, tackling the requirements of the most conservative and highest regulated industry on the cloud, and have expanded since then.
-            .columns.small-5.medium-3
-              /img.lozad alt="company stat" data-src="https://images.ctfassets.net/189dvqdsjh46/3T2aDxazGShZJVKW0xSKtD/bfc6aa50e70bf27f3815bcb22c828470/17_events.png"
+    .row.group
+      .columns.small-12.medium-3.large-3
+        h2.headline-5.spaced-out.text-light.subheader-about Why We Exist
+      .columns.small-12.medium-9.large-6
+        h3.headline-4 Empowering Digital Health Success
+        p The complexity of compliance on the cloud is holding back the adoption of cloud native technology in the healthcare space. By removing compliance as a concern, we help our customers focus on what they do best.
 
-          .row.group.align-center.align-middle
-            .columns.small-12.medium-10.large-8
-              h2.headline-5.spaced-out.text-light How We Create Value
-              h3.headline-4 Compliance Breeds Innovation
-              img.logo-size--large.float-right.lozad alt=("Cloud native computing foundation") src="https://images.ctfassets.net/189dvqdsjh46/2qNhrxRsmEGqUOuCq2qWgU/f67da4afefb727a699a679bdcac9d630/cncf-logo-horizontal.svg" /
-              p When regulated organizations have a handle on their cloud compliance program, they can innovate at the speed necessary to keep pace with the competition. It's a disruptive world out there, and the cloud gives companies an edge. Controlling compliance on the cloud is a step towards avoiding disruption.
-            .columns.small-5.medium-3
-              /img.lozad alt="company stat" data-src="https://images.ctfassets.net/189dvqdsjh46/6qs1qJbcBXtYj8xt2fjFnk/b948c2e6ccf1614cf5df86fd306f66c3/partners.png"
+    .row.group
+      .columns.small-12.medium-3.large-3
+        h2.headline-5.spaced-out.text-light.subheader-about What We Are
+      .columns.small-12.medium-9.large-6
+        h3.headline-4 The Most Secure and Compliant Infrastructure Possible
+        p The hardest part about compliance on the cloud is between the physical infrastructure (which is the responsibility of AWS, Azure, or GCP) and the customer application. In another words, the operating system layer of cloud native architectures. We solve that by helping customers address attestation responsibilities with a suite of products built to fit the specific use case on the cloud.
+    .row.group
+      .columns.small-12.medium-3.large-3
+        h2.headline-5.spaced-out.text-light.subheader-about How We Do It
+      .columns.small-12.medium-9.large-6
+        h3.headline-4 Best Practices are Best Practices
+        img.logo-size--large.float-right.lozad alt=("HITRUST Certified") data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/016f2d364265c04e12c7db4eae95f94c/hitrust-logo.svg" width="180" /
+        p By mapping the very best compliance management frameworks, like the HITRUST CSF, to the requirements of other global regimes, we give customers a compliance story across geographies. We started with HIPAA in 2013, tackling the requirements of the most conservative and highest regulated industry on the cloud, and have expanded since then.
 
-          .row.group.align-center.align-middle
-            .columns.small-12.medium-10.large-8
-              h2.headline-5.spaced-out.text-light What We Believe
-              h3.headline-4 Trust Is Earned
-              ul
-                li Compliance moves at the <strong>speed of trust</strong>.
-                li <strong>Transparency</strong> is how complex subjects, like HIPAA or GDPR, become easier to understand. We're trusted because we're transparent.
-                li Healthcare application development shouldn't be harder than other industries just because of HIPAA. Doing business in the European Union shouldn't be harder because of GDPR. <strong>Compliance shouldn't block progress</strong>.
-                li Give back to the developer community whenever possible. Use <strong>open source</strong> tools whenever possible. Learn more about our <a class="link-arrow" href="/open-source" title="Open source at Datica">open source contributions</a>.
-                li We know we can't make the cloud better alone. <strong>Industry collaboration</strong> is important. Work together for the greater good.
-                li We are <strong>"solutions-first"</strong>. This means Datica brings our deep healthcare, compliance, and integration expertise to work with customers to find the optimal solution — not a prefab, off-the-shelf product.
-            .columns.small-5.medium-3
-              /img.lozad alt="company stat" data-src="https://images.ctfassets.net/189dvqdsjh46/Wya4eSOBXCvaLlatIZN4y/231f374a3323172870f7bcf6b32e5cc1/100m_records.png"
+    .row.group
+      .columns.small-12.medium-3.large-3
+        h2.headline-5.spaced-out.text-light.subheader-about How We Create Value
+      .columns.small-12.medium-9.large-6
+        h3.headline-4 Compliance Breeds Innovation
+        img.logo-size--large.float-right.lozad alt=("Cloud native computing foundation") src="https://images.ctfassets.net/189dvqdsjh46/2qNhrxRsmEGqUOuCq2qWgU/f67da4afefb727a699a679bdcac9d630/cncf-logo-horizontal.svg" /
+        p When regulated organizations have a handle on their cloud compliance program, they can innovate at the speed necessary to keep pace with the competition. It's a disruptive world out there, and the cloud gives companies an edge. Controlling compliance on the cloud is a step towards avoiding disruption.
+
+    .row.group
+      .columns.small-12.medium-3.large-3
+        h2.headline-5.spaced-out.text-light.subheader-about What We Believe      
+      .columns.small-12.medium-9.large-6
+        h3.headline-4 Trust Is Earned
+        ul
+          li Compliance moves at the <strong>speed of trust</strong>.
+          li <strong>Transparency</strong> is how complex subjects, like HIPAA or GDPR, become easier to understand. We're trusted because we're transparent.
+          li Healthcare application development shouldn't be harder than other industries just because of HIPAA. Doing business in the European Union shouldn't be harder because of GDPR. <strong>Compliance shouldn't block progress</strong>.
+          li Give back to the developer community whenever possible. Use <strong>open source</strong> tools whenever possible. Learn more about our <a class="" href="/open-source" title="Open source at Datica">open source contributions</a>.
+          li We know we can't make the cloud better alone. <strong>Industry collaboration</strong> is important. Work together for the greater good.
+          li We are <strong>"solutions-first"</strong>. This means Datica brings our deep healthcare, compliance, and integration expertise to work with customers to find the optimal solution — not a prefab, off-the-shelf product.
 
     .row.align-center
       .columns.small-12.large-11.text-center
         h3.headline-3 <strong>World-class companies</strong> trust Datica
-        .logo-cloud.grayscale
+        .logo-cloud.grayscale.faded
           - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
             img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
 
