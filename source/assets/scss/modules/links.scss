@@ -1,3 +1,4 @@
+@import '../mixins/animation';
 // Global link styles
 a {
     text-decoration: none;
@@ -13,3 +14,7 @@ section a {
 }
 // note that containers.scss:211 currently loads after this file; 
 // there are basic link style overrides per container colors (at least for grays)
+
+.pulse { // for waypoint, other animations
+    @include pulse;
+}

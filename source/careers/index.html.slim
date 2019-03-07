@@ -45,6 +45,26 @@ scss:
   .text-minty-dark {
     color: $minty-dark;
   }
+  .buddies { // container for text with dogs
+    padding: 50px; // fallback
+    padding: 5vw;
+    //padding-top: calc(1rem + 3vw);
+  }
+  .huge-header {
+    font-size: 7rem;
+  }
+  .BambooHR-ATS-board { // overrides for bambooHR job embed
+    h2, li {
+      color: #ffffff !important;
+      font-family: "GT America", sans-serif;
+    }
+    h2, ul ul {
+      border: none !important;
+    }
+    .BambooHR-ATS-Location {
+      color: #6b6b6b;
+    }
+  }
 
 .careers-body
   section.bg-gray-3.container-image--center.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/5sg4ICUpO4m4eX5nAwerir/abc651f00fcedcfba995a551804067d9/Datica_cities_-_live_where_you_want.jpg?w=1600" style="border: 10px solid black;" id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
@@ -85,7 +105,7 @@ scss:
               | We celebrate achievements together, both large and small. <br />
               img.lozad width="180" data-src="https://images.ctfassets.net/189dvqdsjh46/1fYsqIu5BPcW4HYLxBIVAP/52e8de78941c4d07725b9c62089ee346/datica_slack_party_parrot_loop.gif" alt="slack"
 
-      .row.align-center.align-middle
+      .row.align-center.align-middle.group--2x
         .columns.small-12.large-6
           img.lozad src="https://images.ctfassets.net/189dvqdsjh46/24l7Rg3yevglHqcDulsUew/9fb2e36bc2cbafe197d3e1cda243552c/Datica_people_-_preview.svg" data-src="https://images.ctfassets.net/189dvqdsjh46/72WCH5CQFrLboETgfvdaus/48d6a95623b6f9d2d0dea63362cd3e4c/Datica_people.jpg?w=800" alt="Datica Careers"
         .columns.small-12.large-6
@@ -99,6 +119,12 @@ scss:
             li We have an open vacation policy that allows for unlimited planned time off, as well as personal days as needed.
             li Awesome swag at different intervals as well.
 
+    .waypoint
+      .waypoint-title.subhead--small
+        | See Open Positions
+      a.pulse href="#jobs" title="Apply today"
+        = inline_svg("icon-angle-down-large", class: "icon-size--large waypoint-icon")
+
   .strip.strip-small.strip-bright
   section.section-article--lg.bg-gray-2#jobs
     .row.align-center.align-middle
@@ -106,11 +132,13 @@ scss:
         h3.headline-2.text-bold.text-minty Open Positions
         p.lead Datica is always looking for talented new team members who are looking for tough challenges. If you are curious about career opportunities with Datica, please email Maggie Ostrowski at <a href="mailto:maggie@datica.com">maggie@datica.com</a>.
       .columns.small-12.medium-6
-        | <div id="BambooHR"><script src="//datica.bamboohr.com/js/jobs2.php" type="text/javascript"></script><div id="BambooHR-Footer">Powered by<a href="http://www.bamboohr.com" target="_blank" rel="external"><img src="//www.bamboohr.com/img/footer-logo.png" alt="BambooHR - HR software"/></a></div></div>
+        | <div id="BambooHR" class="group"><script src="//datica.bamboohr.com/js/jobs2.php" type="text/javascript"></script><div id="BambooHR-Footer">Powered by<a href="http://www.bamboohr.com" target="_blank" rel="external"><img src="//www.bamboohr.com/img/footer-logo.png" alt="BambooHR - HR software"/></a></div></div>
+        p.text-small.text-italic Note: the positions listed show locations because of the way our HR software works. All positions are indeed remote. =)
   .strip.strip-small.strip-bright
   section.bg-gray-3
-    .row.full-width.collapse.grayscale.faded
-      .columns.small-12.large-6
-        img.lozad.img-cover src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/4ZwFaVvIaVvjiTJgjN79cm/7664d986d3476414dbef9b036236e89e/datica_pets_1.jpg" alt="Datica Office Buddies"
-      .columns.small-12.large-6
-        img.lozad.img-cover src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/40kDVHpuzyjGIMBq5Bl89A/027a6b2a3f09ab168593f46c7a96d9bb/datica_pets_2.jpg" alt="Datica Office Buddies"
+    .row.full-width.align-middle.grayscale
+      .columns.small-12.large-6.buddies.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4YbBiqOhl4msCGXhNWms2W/0c2e4a7b3c81d67983cbc263f9891c8c/datica_pets_1b.jpg"
+        /.headline-5.spaced-out.nomargin Datica
+        h4.headline-1.huge-header.nomargin.text-minty.text-center office
+      .columns.small-12.large-6.buddies.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4LZaErm7Ptk5E0iwcPkn7C/31186719534e2e9713c89a2b1f600ff5/datica_pets_2b.jpg"
+        h4.headline-1.huge-header.nomargin.text-minty.text-center friends

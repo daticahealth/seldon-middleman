@@ -19,9 +19,6 @@ $light-gray-list: (
     gray-12: hsl(202, 10%, 97)
 );
 
-.pulse {
-    @include pulse;
-}
 // need to abstract this out into a pattern/component
 // .show-content {
 //     display: block;
