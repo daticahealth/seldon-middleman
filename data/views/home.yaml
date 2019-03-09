@@ -46,21 +46,21 @@ customers:
         file: 'healthfinch-logo'
         url: 'https://healthfinch.com'
         logoSize: 'medium'
-    -
-        name: 'BCGDV'
-        file: 'bcgdv-logo'
-        url: 'https://bcgdv.com'
-        logoSize: 'medium'
+    # -
+    #     name: 'BCGDV'
+    #     file: 'bcgdv-logo'
+    #     url: 'https://bcgdv.com'
+    #     logoSize: 'medium'
     -
         name: 'Propeller Health'
         file: 'propeller-logo'
         url:  'https://propellerhealth.com'
         logoSize: 'small-mid'
-    -
-        name: 'Hennepin County Medical Center'
-        file: 'hcmc-logo'
-        url: 'https://hcmc.org'
-        logoSize: 'medium'
+    # -
+    #     name: 'Hennepin County Medical Center'
+    #     file: 'hcmc-logo'
+    #     url: 'https://hcmc.org'
+    #     logoSize: 'medium'
     -
         name: 'COTA'
         file: 'cota-logo'

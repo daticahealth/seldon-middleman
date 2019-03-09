@@ -80,18 +80,18 @@ feed_url: "https://datica.com/press/feed.xml"
         <% sorted_press_mentions.each do | id, quote | %>
             <aside class="column group">
                 <blockquote class="quote--serif" cite="<%= quote["url"] %>">
-                    <% if quote.has_key?("source_logo") %>
-                        <a class="blockquote-info float-right" href="<%= quote["url"] %>" title="Read the article on their website">
-                            <img class="logo-size--medium img-multiply" src="<%= quote.source_logo.url %>" alt="<%= quote["source"] %>">
-                        </a>
-                    <% end %>
                     <%= quote["quote_body"] %>
                 </blockquote>
+                <p class="pub-date blockquote-info"><%= quote['date'].strftime('%B %-d, %Y') %></p>
+                <% if quote.has_key?("source_logo") %>
+                    <p>
+                    <a class="blockquote-info" href="<%= quote["url"] %>" title="Read the article on their website">
+                        <img class="logo-size--medium img-multiply" src="<%= quote.source_logo.url %>" alt="<%= quote["source"] %>">
+                    </a></p>
+                <% end %>
                 <% if quote.has_key?("source") %>
-                    <p class="blockquote-info">
-                        <span class="pub-date"><%= quote['date'].strftime('%B %-d, %Y') %></span>
-                        <br>
-                        <em>Source: <a href="<%= quote["url"] %>" title="Read the article on their website"><%= quote["source"] %></a></em>
+                    <p class="blockquote-info text-italic">
+                        Source: <a href="<%= quote["url"] %>" title="Read the article on their website"><%= quote["source"] %></a>
                     </p>
                 <% end %>
             </aside>
