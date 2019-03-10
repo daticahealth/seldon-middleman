@@ -1,3 +1,11 @@
+---
+title: "Ebook generation with pandoc and this site"
+summary: "book generation with pandoc and this site"
+layout: "ebook"
+hide_from_sitemap: true
+relative_css: true
+---
+
 # Conversion script instructions
 
 These are based on [Rachel Andrew's kit](https://github.com/rachelandrew/css-books). 

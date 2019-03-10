@@ -131,8 +131,29 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
           .blob-color.blob-cpaas.z-auto data-glow="false"
 .strip.strip-cmi
 
+section.section-article#compliance
+  .row.align-center.text-center
+    .columns.small-12.large-9
+      h4.headline-4 Datica helps you comply with multiple compliance frameworks.
+      .row.small-up-3.medium-up-5.align-middle.align-center.group
+        - data.views.home.badges.each do |logo|
+          - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
+          .column
+            img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
+      = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/cloud-compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "compliance-story", :data_track_group => "compliance" }
 
-section.container-gray-11.section-article
+section.section-article.bg-gray-12#proof
+  h3.headline-3.text-light.text-center.group Build <strong>Breakthrough</strong> Compliant Apps
+  = partial "partials/content/video-quote"
+section.section-article.bg-white
+  .row.align-center
+    .columns.small-12.large-11.text-center
+      h3.headline-3 <strong>World-class companies</strong> trust Datica
+      .logo-cloud
+        - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
+
+section.container-gray-12.section-article#education
   .row.align-center
     .columns.small-12.large-6
       h2.headline-3.text-center <strong>Grow</strong> with us
@@ -145,29 +166,9 @@ section.container-gray-11.section-article
         p = item.desc
   = partial "partials/content/recent-items"
 
-section.section-article
-  .row.align-center.text-center
-    .columns.small-12.large-9
-      h4.headline-4 Datica helps you comply with multiple compliance frameworks.
-      .row.small-up-3.medium-up-5.align-middle.align-center.group
-        - data.views.home.badges.each do |logo|
-          - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
-          .column
-            img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
-      = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/cloud-compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "compliance-story", :data_track_group => "compliance" }
 
-section.section-article.container-gray-11
-  .row.align-center
-    .columns.small-12.large-11.text-center
-      h3.headline-3 <strong>World-class companies</strong> trust Datica
-      .logo-cloud
-        - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
-          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
+/= partial "partials/section-promos/careers", :locals => { :tagline => "Solve hard problems.<br> Live where you want. Help us transform healthcare for the better." }
 
-
-section.section-article
-  h3.headline-3.text-light.text-center.group Build <strong>Breakthrough</strong> Compliant Apps
-  = partial "partials/content/video-quote"
 .strip.strip-ccms
 aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-background-image=bg_product_dark
   .relative.has-blob

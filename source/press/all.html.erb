@@ -9,34 +9,22 @@ header: "Media Resources"
 subheader: "Press Releases"
 layout: company
 ---
-<section class="section-article container-color--dark press-masthead">
-    <div class="row align-center">
-        <div class="columns small-12 medium-6">
-            <div class="text-center section--header-dark-group">
-                <h4>Press</h4>
-                <h1>Press Releases Archive</h1>
-            </div>
-        </div>
-    </div>
-</section>
+
 <section class="section-article">
-    <div class="row">
-        <div class="columns small-12">
-            <%= partial "partials/snippets/button", :locals => { :label => "Back to Media Resources", :title => "view all", :url => "/press/", :button_classes => "button hollow", :icon => "icon-chevron-left", :icon_align => "left" } %>
-        </div>
-    </div>
-    <div class="row">
+    <div class="row align-center">
         <% sorted_pressReleases = data.site.pressReleases.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
-        <% sorted_pressReleases.each do | id, post | %>
-            <div class="columns small-12 medium-4">
-                <div class="callout callout-card--featured callout--stretch drop">
-                    <a class="hover--fancy-shift" href="/press-release/<%= post["slug"] %>/">
-                        <p><strong><%= post["title"] %></strong></p>
-                        <p><span class="date"><%= post['pub_date'].strftime('%B %-d, %Y') %></span></p>
+            <div class="columns small-12 medium-8 large-6">
+                <h4 class="headline-6 subheader--spaced-out">Press</h4>
+                <h1 class="headline-2">Press Releases Archive</h1>
+                <%= partial "partials/snippets/button", :locals => { :label => "Back to Press Page", :url => "/press/", :button_classes => "button hollow group--2x small", :icon => "icon-chevron-left", :icon_align => "left" } %>
+
+                <% sorted_pressReleases.each do | id, post | %>
+                    <div class="group--2x">
+                        <h4 class="headline-4"><a class="" href="/press-release/<%= post['slug'] %>" title="Read release"><%= post["title"] %></a></h4>
+                        <div class="blog-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></div>
                         <%= Kramdown::Document.new(post["summary"]).to_html %>
-                    </a>
-                </div>
+                    </div>
+                <% end %>
             </div>
-        <% end %>
     </div>
 </section>

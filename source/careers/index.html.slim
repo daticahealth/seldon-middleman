@@ -8,6 +8,7 @@ ogType: "business.business"
 layout: products
 category: "Company"
 navTitle: "Careers"
+asset_preload: '<link href="https://images.ctfassets.net/189dvqdsjh46/1T4yN0IbMwIf43G9mHIF2b/c908b04c35bd79f1d051902d429e208b/Datica_cities_-_cluster.jpg?fm=jpg&fl=progressive&w=800" rel="preload" as="image" />'
 subnav:
   -
     title: "About us"
@@ -22,13 +23,10 @@ subnav:
     title: "Careers"
     slug: "careers"
 ---
-ruby:
-  first_image = "https://images.ctfassets.net/189dvqdsjh46/1T4yN0IbMwIf43G9mHIF2b/c908b04c35bd79f1d051902d429e208b/Datica_cities_-_cluster.jpg"
-  current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/tuYNdE8PeutFMbcu4Lhqy/d64de3b29eb1643862ed61f7006378d9/careers-share.jpg?q=40"
-  current_page.data.asset_preload = '<link href="' + first_image + '" rel="preload" as="image" />'
+- current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/tuYNdE8PeutFMbcu4Lhqy/d64de3b29eb1643862ed61f7006378d9/careers-share.jpg?fm=jpg&fl=progressive&q=40"
 scss:
   $minty:      #00e4c3;
-  $minty-dark: #009fa2;
+  $minty-dark: #00d0b2;
   .careers-body {
     a {
       color: $minty-dark;
@@ -67,33 +65,33 @@ scss:
   }
 
 .careers-body
-  section.bg-gray-3.container-image--center.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/5sg4ICUpO4m4eX5nAwerir/abc651f00fcedcfba995a551804067d9/Datica_cities_-_live_where_you_want.jpg?w=1600" style="border: 10px solid black;" id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
+  section.bg-gray-3.container-image--center.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/5sg4ICUpO4m4eX5nAwerir/abc651f00fcedcfba995a551804067d9/Datica_cities_-_live_where_you_want.jpg?fm=jpg&fl=progressive&w=1600" style="border: 10px solid black;" id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
     .section-article--lg.container-color--tint-20
       .row.align-center
         .columns.small-12.medium-10.large-9.text-center
           = inline_svg("map-with-pin", class: "icon-size--xlarge")
-          h1.headline-4.spaced-out Work at Datica
-          h4.headline-2 We hire the best. Live where you want. Solve hard problems. Help us transform healthcare for the better.
+          h1.headline-4.spaced-out.text-minty Work at Datica
+          h4.headline-2 We hire the best. Live where you want. <br>Solve hard problems. Help us transform healthcare for the better.
           = partial "partials/snippets/button", :locals => { :label => "See open positions", :url => "#jobs", :button_classes => "button button--light", :item_id => "open-positions", :icon => "icon-angle-down", :icon_align => "right" }
 
   section.bg-white.section-article--lg
     .row
       .column
-        h2.headline-1.text-minty.text-bold Why work at Datica?
+        h2.headline-1.text-minty-dark.text-bold Why work at Datica?
     .collection
       .row.align-center.align-middle.group--2x
-        .columns.small-12.large-6
-          img.lozad src="https://images.ctfassets.net/189dvqdsjh46/5plPYDbEUhfg7c7WcUf0j/ce88e74ee3dbf1965cb457a991f99cbf/Datica_cities_-_cluster_-_preview.svg" data-src="#{first_image}?w=800" alt="Datica Careers"
-        .columns.small-12.large-6
+        .columns.small-12.medium-4.large-6
+          img.lozad src="https://images.ctfassets.net/189dvqdsjh46/5plPYDbEUhfg7c7WcUf0j/f7c7f6f2089a77eddd9af6164ca637d2/Datica_cities_-_remote.svg" data-src="https://images.ctfassets.net/189dvqdsjh46/1T4yN0IbMwIf43G9mHIF2b/c908b04c35bd79f1d051902d429e208b/Datica_cities_-_cluster.jpg?fm=jpg&fl=progressive&w=800" alt="Datica Careers"
+        .columns.small-12.medium-8.large-6
           h3.headline-4 Remote from the ground up.
           p.lead Datica is a fully remote company, inside and out. Our team is all over the US, with clusters in Denver, San Francisco, Portland, and offices in Madison, WI and Seattle. We are looking for the best people in their fields — no matter where you are.
       .row.align-center.align-middle.group--2x
-        .columns.small-12.large-7
-          img.lozad src="https://images.ctfassets.net/189dvqdsjh46/4DdyNoJa6sEDSwhxTxnkNF/e055474ddb03882cdac59c5bf62711ee/Datica_tools_-_preview.svg" data-src="https://images.ctfassets.net/189dvqdsjh46/cR8cpADTHP4pVZq9J3rnC/07ab1075b6e4eafe1cd0a0f111325229/Datica_tools.jpg?w=800" alt="Datica Careers"
-        .columns.small-12.large-5
+        .columns.small-12.medium-4.large-7
+          img.lozad src="https://images.ctfassets.net/189dvqdsjh46/4DdyNoJa6sEDSwhxTxnkNF/e055474ddb03882cdac59c5bf62711ee/Datica_tools_-_preview.svg" data-src="https://images.ctfassets.net/189dvqdsjh46/cR8cpADTHP4pVZq9J3rnC/07ab1075b6e4eafe1cd0a0f111325229/Datica_tools.jpg?fm=jpg&fl=progressive&w=800" alt="Datica Careers"
+        .columns.small-12.medium-8.large-5
           h3.headline-4 Hard problems. The right tools.
           p.lead We use the latest tools for a modern, distributed workforce, to solve the hard problems of healthcare.
-          h4.headline-6 Work style
+          h4.headline-6.spaced-out Work style
           ul.list-check
             li Super flexible working hours.
             li Agile development with two week sprints and daily standups.
@@ -106,12 +104,12 @@ scss:
               img.lozad width="180" data-src="https://images.ctfassets.net/189dvqdsjh46/1fYsqIu5BPcW4HYLxBIVAP/52e8de78941c4d07725b9c62089ee346/datica_slack_party_parrot_loop.gif" alt="slack"
 
       .row.align-center.align-middle.group--2x
-        .columns.small-12.large-6
-          img.lozad src="https://images.ctfassets.net/189dvqdsjh46/24l7Rg3yevglHqcDulsUew/9fb2e36bc2cbafe197d3e1cda243552c/Datica_people_-_preview.svg" data-src="https://images.ctfassets.net/189dvqdsjh46/72WCH5CQFrLboETgfvdaus/48d6a95623b6f9d2d0dea63362cd3e4c/Datica_people.jpg?w=800" alt="Datica Careers"
-        .columns.small-12.large-6
+        .columns.small-12.medium-4.large-7
+          img.lozad src="https://images.ctfassets.net/189dvqdsjh46/24l7Rg3yevglHqcDulsUew/60929c3e09c158cd7005174909103162/Datica_people_-_preview.svg" data-src="https://images.ctfassets.net/189dvqdsjh46/72WCH5CQFrLboETgfvdaus/48d6a95623b6f9d2d0dea63362cd3e4c/Datica_people.jpg?fm=jpg&fl=progressive&w=800" alt="Datica Careers"
+        .columns.small-12.medium-8.large-5
           h3.headline-4 Decent folk who work hard and care about each other.
           p.lead Daticans get together at least once a year and more frequently in regional teams. We believe people do their best work when they're taken care of and work in a positive environment. 
-          h4.headline-6 Benefits
+          h4.headline-6.spaced-out Benefits
           ul.list-check
             li Medical and Dental Plan, Datica covers 100% of single premiums, and the majority of premiums for family coverage.
             li Flex Spending Accounts offered (both medical and dependent care).
@@ -120,8 +118,7 @@ scss:
             li Awesome swag at different intervals as well.
 
     .waypoint
-      .waypoint-title.subhead--small
-        | See Open Positions
+      h4.headline-4.text-minty-dark See Open Positions
       a.pulse href="#jobs" title="Apply today"
         = inline_svg("icon-angle-down-large", class: "icon-size--large waypoint-icon")
 
@@ -137,8 +134,8 @@ scss:
   .strip.strip-small.strip-bright
   section.bg-gray-3
     .row.full-width.align-middle.grayscale
-      .columns.small-12.large-6.buddies.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4YbBiqOhl4msCGXhNWms2W/0c2e4a7b3c81d67983cbc263f9891c8c/datica_pets_1b.jpg"
+      .columns.small-12.large-6.buddies.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4YbBiqOhl4msCGXhNWms2W/0c2e4a7b3c81d67983cbc263f9891c8c/datica_pets_1b.jpg?fm=jpg&fl=progressive&w=1500&q=60"
         /.headline-5.spaced-out.nomargin Datica
         h4.headline-1.huge-header.nomargin.text-minty.text-center office
-      .columns.small-12.large-6.buddies.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4LZaErm7Ptk5E0iwcPkn7C/31186719534e2e9713c89a2b1f600ff5/datica_pets_2b.jpg"
+      .columns.small-12.large-6.buddies.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4LZaErm7Ptk5E0iwcPkn7C/31186719534e2e9713c89a2b1f600ff5/datica_pets_2b.jpg?fm=jpg&fl=progressive&w=1500&q=60"
         h4.headline-1.huge-header.nomargin.text-minty.text-center friends

@@ -1,0 +1,26 @@
+ruby:
+  # background = "https://images.ctfassets.net/189dvqdsjh46/6hMhN0MlSSXjf8u8ALeM61/1846af2f9e708ea9b69ca95377c58f51/david-marcu-114194-unsplash.jpg"
+  background = "https://images.ctfassets.net/189dvqdsjh46/5sg4ICUpO4m4eX5nAwerir/abc651f00fcedcfba995a551804067d9/Datica_cities_-_live_where_you_want.jpg"
+  unless defined?(bg_image)
+    bg_image = background
+  end
+  unless defined?(tagline)
+    tagline = "Help us transform healthcare for the better."
+  end
+
+scss:
+  $minty:      #00e4c3;
+  $minty-dark: #00d0b2;
+  .text-minty {
+    color: $minty;
+  }
+aside.bg-gray-3.container-image--center.lozad data-background-image="#{bg_image}?fm=jpg&fl=progressive&fit=thumb&f=bottom&w=1600&h=650"
+  .section-article--med.container-color--tint-20
+    .row.align-center.align-middle
+      .columns.small-6.large-5
+        /= inline_svg("map-with-pin", class: "icon-size--xlarge")
+        h3.headline-5.spaced-out.text-minty Work at Datica
+        h4.headline-4.text-bold = tagline
+      .columns.shrink
+        = partial "partials/snippets/button", :locals => { :label => "See open positions", :url => "/careers/", :button_classes => "button button--light nomargin", :item_id => "open-positions", :icon => "icon-angle-right", :icon_align => "right" }
+

@@ -28,10 +28,10 @@ feed_url: "https://datica.com/press/feed.xml"
         </div>
         <div class="columns small-12 medium-9 large-7">
             <h2 class="headline-2 group">Company Backstory</h2>
-            <p>Datica was founded by Travis Good, MD, and Mohan Balachandran, two friends committed to bettering patient care. They were compelled to start Datica after seeing first hand the challenges healthcare faces re-inventing the wheel with compliance and integration.</p>
+            <p>Datica was founded by <a href="/about/travis" title="More about Travis Good, MD">Travis Good, MD</a>, and Mohan Balachandran, two friends committed to bettering patient care. They were compelled to start Datica after seeing first hand the challenges healthcare faces re-inventing the wheel with compliance and integration.</p>
             <p>Before starting Datica, the two founders explored healthcare from all angles—practicing and consulting to enterprise health systems and entrepreneurship. Datica's vision is derived from their holistic view of healthcare.</p>
             <p>The foundation of the company is built from members previously at Rackspace, the NSA, Epic, NASA, Influence Health, Intel, and industries such as meteorology, telephony, and pharmaceuticals. The team is a strong mix of industry experts and entrepreneurial veterans.</p>
-            <p>Datica is headquartered in Madison, WI, but is built to be a distributed team. The company recently closed a Series B funding round lead by Baird Capital, Arthur Ventures, Chicago Ventures, and Lewis &amp; Clark Ventures, and has raised over $12.6 million total.</p>
+            <p>Datica is headquartered in Madison, WI, but is built to be a distributed team.</p>
         </div>
     </div>
 </section>
@@ -45,7 +45,7 @@ feed_url: "https://datica.com/press/feed.xml"
         <% sorted_pressReleases = data.site.pressReleases.to_a.sort_by{ |id, post| post['pub_date'] }.reverse! %>
         <% sorted_pressReleases.take(6).each do | id, post | %>
             <div class="column">
-                <div class="card drop">
+                <div class="card drop-hover">
                     <div class="card-section">
                         <a href="/press-release/<%= post["slug"] %>/" title="Read press release">
                             <h3 class="headline-5"><%= post["title"] %></h3>
@@ -74,26 +74,24 @@ feed_url: "https://datica.com/press/feed.xml"
             <h2 class="headline-2 group text-center">Company Press Coverage</h2>
         </div>
     </div>
-    <div class="masonry-group--3col">
+    <div class="row small-up-1 medium-up-2 large-up-3 xlarge-up-4 full-width">
         <% press_mentions = data.site.quotes.to_a.select{ | id, quote | quote["quote_type"] == "press" } %>
         <% sorted_press_mentions = press_mentions.sort_by{ |id, quote| quote['date'] }.reverse! %>
         <% sorted_press_mentions.each do | id, quote | %>
-            <aside class="masonry-group--item pad">
-                <% if quote.has_key?("source_logo") %>
-                    <p>
-                        <a class="blockquote-info" href="<%= quote["url"] %>" title="Read the article on their website">
-                            <img class="logo-size--medium" src="<%= quote.source_logo.url %>" alt="<%= quote["source"] %>">
-                        </a>
-                    </p>
-                <% end %>
+            <aside class="column group">
                 <blockquote class="quote--serif" cite="<%= quote["url"] %>">
                     <%= quote["quote_body"] %>
                 </blockquote>
+                <p class="pub-date blockquote-info"><%= quote['date'].strftime('%B %-d, %Y') %></p>
+                <% if quote.has_key?("source_logo") %>
+                    <p>
+                    <a class="blockquote-info" href="<%= quote["url"] %>" title="Read the article on their website">
+                        <img class="logo-size--medium img-multiply" src="<%= quote.source_logo.url %>" alt="<%= quote["source"] %>">
+                    </a></p>
+                <% end %>
                 <% if quote.has_key?("source") %>
-                    <p class="blockquote-info">
-                        <span class="pub-date"><%= quote['date'].strftime('%B %-d, %Y') %></span>
-                        <br>
-                        <em>Source: <a href="<%= quote["url"] %>" title="Read the article on their website"><%= quote["source"] %></a></em>
+                    <p class="blockquote-info text-italic">
+                        Source: <a href="<%= quote["url"] %>" title="Read the article on their website"><%= quote["source"] %></a>
                     </p>
                 <% end %>
             </aside>
