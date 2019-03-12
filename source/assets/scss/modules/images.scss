@@ -87,6 +87,9 @@ figcaption{
 .img-multiply {
     @include blend-multiply;
 }
+.img-mix-multiply {
+    @include mix-multiply;
+}
 .blur {
     &-0 {
         @include blur(0);
