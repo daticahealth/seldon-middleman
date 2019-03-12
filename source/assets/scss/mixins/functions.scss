@@ -433,12 +433,20 @@ $button-transition: transform $timing-default ease, box-shadow $timing-default e
 @mixin blend-multiply {
     @supports (background-blend-mode: multiply) {
         background-blend-mode: multiply;
-        mix-blend-mode: multiply;
     }
 }
 @mixin blend-overlay {
     @supports (background-blend-mode: overlay) {
         background-blend-mode: overlay;
+    }
+}
+@mixin mix-multiply {
+    @supports (mix-blend-mode: multiply) {
+        mix-blend-mode: multiply;
+    }
+}
+@mixin mix-overlay {
+    @supports (mix-blend-mode: overlay) {
         mix-blend-mode: overlay;
     }
 }
