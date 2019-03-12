@@ -17,8 +17,8 @@ section.section-article.bg-gray-11
       .columns.small-12.large-8.text-center
         h1.headline-3 = collection.title
         h4.headline-5 = (collection.has_key?("subhead") ? collection.subhead : nil)
-        - if collection.has_key?("desc")
-          p.lead.line-length.margin-auto = collection.desc
+        /- if collection.has_key?("desc")
+          = Kramdown::Document.new(collection.desc).to_html
     - collection["related_entries"].each do | entry |
       - type = entry._meta.content_type_id
       - folder = case type
