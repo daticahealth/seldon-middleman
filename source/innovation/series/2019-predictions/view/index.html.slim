@@ -2,6 +2,7 @@
 layout: basic
 ogType: article
 customCSS: "series-detail"
+customJS: "/public/js/series-view.js"
 hide_from_sitemap: true
 ---
 ruby:
@@ -14,6 +15,8 @@ ruby:
   - current_page.data.title = collection.title + ' | Datica'
   - current_page.data.summary = (collection.desc? ? collection.desc : 'A curated collection of writing from our Datica exprerts.')
   - bg_image = (collection.has_key?("featured_image") ? collection.featured_image.url : 'https://images.ctfassets.net/189dvqdsjh46/40nTU46iGkIsck8qEa0qcm/4822d250b4eb05924aa530dbd1ccf73f/working_together__looking_at_screen.jpg')
+  <script>var seriesId = '#{collection.id}'</script>
+
   .container-gray-2.bg-dark.gradient-dusk.product-cmi.relative
     .z-0.absolute.art-bg-fill.container-image--center.lozad.img-mix-multiply data-background-image="#{bg_image}?w=1200&h=600&fit=thumb"
     .container-color--tint-20.faded-max.group.relative.z-10
@@ -33,40 +36,48 @@ ruby:
                 a.link--white href="#article-#{entry.slug}" title="jump to article" 
                   = entry.title.gsub("2019 Predictions: ", "")
   .strip.strip-sm.strip-cpaas
-  - collection["related_entries"].each do | entry |
-    - type = entry._meta.content_type_id
-    - folder = case type
-    - when "guides" then "guide"
-    - else type
-    - url = "/#{folder}/#{entry.slug}/"
-    - case type
-    - when "blog"
-    section.section-article--lg id="article-#{entry.slug}"
-      .row.align-center
-        .columns.small-12.medium-3.medium-large-5.large-5
-          .css-sticky.text-right
-            h3.headline-3.text-serif.text-bold.article-header.nomargin
-              a href=url title="Read the original post, '#{entry.title}' on the Datica Blog"
-                = entry.title.gsub("2019 Predictions: ", "")
-            .pub-date.group
-              = entry["pub_date"].strftime("%B %-d, %Y")
-            - if entry.has_key?("featured_image")
-              - image = data.site.blog[entry.id].featured_image.url
-              img.lozad.thumbnail.blur-in.group src=loader_square data-src="#{image}?fit=thumb&w=500&h=500" alt="Featured Image" width="250"
+  article#series data-registered="true"
+    - collection["related_entries"].each do | entry |
+      - type = entry._meta.content_type_id
+      - folder = case type
+      - when "guides" then "guide"
+      - else type
+      - url = "/#{folder}/#{entry.slug}/"
+      - case type
+      - when "blog"
+      section.section-article--lg id="article-#{entry.slug}"
+        .row.align-center
+          .columns.small-12.medium-3.medium-large-5.large-5
+            .css-sticky.text-right
+              h3.headline-3.text-serif.text-bold.article-header.nomargin
+                a href=url title="Read the original post, '#{entry.title}' on the Datica Blog"
+                  = entry.title.gsub("2019 Predictions: ", "")
+              .pub-date.group
+                = entry["pub_date"].strftime("%B %-d, %Y")
+              - if entry.has_key?("featured_image")
+                - image = data.site.blog[entry.id].featured_image.url
+                img.lozad.thumbnail.blur-in.group src=loader_square data-src="#{image}?fit=thumb&w=500&h=500" alt="Featured Image" width="250"
 
-                /= partial "/partials/content/tags", :locals => entry
-        .columns.small-12.medium-9.medium-large-7.large-6
-            /p = (entry.has_key?("summary") ? entry.summary : nil)
-            - if entry.has_key?("blog_lead")
-              .lead.text-serif
-                = Kramdown::Document.new(entry.blog_lead).to_html
-            .content-dynamic.text-serif.group
-              = Kramdown::Document.new(entry.post).to_html
-            - if entry.has_key?("tags")
-              .group
-                = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
-                - entry["tags"].each do |tag|
-                  - if tag.has_key?("tag_full")
-                    span.label.info.round= tag["tag_full"]
+                  /= partial "/partials/content/tags", :locals => entry
+          .columns.small-12.medium-9.medium-large-7.large-6
+              /p = (entry.has_key?("summary") ? entry.summary : nil)
+              - if entry.has_key?("blog_lead")
+                .lead.text-serif
+                  = Kramdown::Document.new(entry.blog_lead).to_html
+              .content-dynamic.text-serif.group
+                = Kramdown::Document.new(entry.post).to_html
+              /- if entry.has_key?("tags")
+                .group.faded
+                  = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
+                  - entry["tags"].each do |tag|
+                    - if tag.has_key?("tag_full")
+                      span.label.info.round= tag["tag_full"]
+              #please-register
+                h4.headline-5 Please <a href="../" title="Register to read">register</a> to read the full series.
+                noscript
+                  h3.headline-4 Javascript and cookies are required to register for this experience.
+                  p If that's a problem, you can read the series on our <a class="link--white" href="/blog/">blog</a>.😊
+
+
 
 

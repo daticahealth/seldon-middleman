@@ -140,6 +140,14 @@
             color: white;
         }
     }
+    &.success-light { // $color_green is a bit dark
+        color: black;
+        background-color: $color_green-glow;
+        &:hover, &:active, &:focus {
+            background-color: white;//scale-color($color_green-glow, $lightness: 30%);
+            // color: white;
+        }
+    }
     // &.icon-inline { // target svg icon
 
     // }
