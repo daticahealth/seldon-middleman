@@ -9,7 +9,7 @@ ruby:
   # This template is currently designed just for blog entries. - AW
   series = data.site.collections.to_a.select { |id, entry | (id == "4J4i2RsfnFJu7fDYA8XjTi") }
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
-  current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/2aPhdyH76MiQwqQq4KiGMg/186518b5a3896994d54ae3cef4fbac8d/cta-compliance-share.jpg"
+  current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/LfaevrlMKDp5nfDvS1fMs/13c97bd18f53d91bbe7fc0a5ed86e573/blog-2019-series-share.jpg"
 
 - series.each do | id, collection |
   - current_page.data.title = collection.title + ' | Datica'
@@ -47,8 +47,8 @@ ruby:
       - when "blog"
       section.section-article--lg id="article-#{entry.slug}"
         .row.align-center
-          .columns.small-12.medium-3.medium-large-5.large-5
-            .css-sticky.text-right
+          .columns.small-12.medium-4.medium-large-5.large-5
+            .css-sticky
               h3.headline-3.text-serif.text-bold.article-header.nomargin
                 a href=url title="Read the original post, '#{entry.title}' on the Datica Blog"
                   = entry.title.gsub("2019 Predictions: ", "")
@@ -56,10 +56,10 @@ ruby:
                 = entry["pub_date"].strftime("%B %-d, %Y")
               - if entry.has_key?("featured_image")
                 - image = data.site.blog[entry.id].featured_image.url
-                img.lozad.thumbnail.blur-in.group src=loader_square data-src="#{image}?fit=thumb&w=500&h=500" alt="Featured Image" width="250"
+                img.lozad.thumbnail.blur-in.group src=loader_square data-src="#{image}?fit=thumb&w=500&h=500" alt="Featured Image"
 
                   /= partial "/partials/content/tags", :locals => entry
-          .columns.small-12.medium-9.medium-large-7.large-6
+          .columns.small-12.medium-8.medium-large-7.large-6
               /p = (entry.has_key?("summary") ? entry.summary : nil)
               - if entry.has_key?("blog_lead")
                 .lead.text-serif
@@ -77,6 +77,13 @@ ruby:
                 noscript
                   h3.headline-4 Javascript and cookies are required to register for this experience.
                   p If that's a problem, you can read the series on our <a class="link--white" href="/blog/">blog</a>.😊
+    - if collection.has_key?("cta_ref")
+      aside.section-article.bg-gray-3
+        .row.align-center
+          .columns.small-12.large-7
+            h3.headline-3.text-serif.nomargin Thanks for reading our series, <em>#{collection.title}</em>.
+            p.lead Subscribe to our <a class="link--yellow" href="/blog" title="Read the blog">blog</a> for more insights from the Datica team.
+            = partial("/partials/content/cta", :locals => { :p => collection["cta_ref"] })
 
 
 

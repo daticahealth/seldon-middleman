@@ -114,14 +114,14 @@ $fam: GT America;
     src: url('/public/fonts/source-serif-pro-regular-subset.woff') format('woff');
     font-family: 'Source Serif Pro';
     font-display: optional;
-    font-weight: 400;
+    // font-weight: 400;
 }
 
 
 @font-face{
-    src: url('/public/fonts/charter-italic-subset.woff') format('woff');
+    src: url('/public/fonts/source-serif-pro-italic.woff') format('woff');
     font-family: 'Source Serif Pro';
     font-display: optional;
-    font-weight: 400;
+    // font-weight: 400;
     font-style: italic;
 }

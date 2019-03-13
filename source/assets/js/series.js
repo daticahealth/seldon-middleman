@@ -3,7 +3,7 @@ $("document").ready(function(){
     function showSeries(){
         $('.is-registered').removeClass("hide");
         $('#series-form').addClass("hide");
-        document.getElementById("button_view-series").setAttribute('href', window.location + '/view/');
+        document.getElementById("button_view-series").setAttribute('href', window.location + 'view/');
         console.log('show it');
     }
     function hideSeries(){

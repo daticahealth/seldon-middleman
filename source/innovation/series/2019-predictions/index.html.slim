@@ -8,7 +8,7 @@ ruby:
   # This template is currently designed just for blog entries. - AW
   series = data.site.collections.to_a.select { |id, entry | (id == "4J4i2RsfnFJu7fDYA8XjTi") }
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
-  current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/2aPhdyH76MiQwqQq4KiGMg/186518b5a3896994d54ae3cef4fbac8d/cta-compliance-share.jpg"
+  current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/LfaevrlMKDp5nfDvS1fMs/13c97bd18f53d91bbe7fc0a5ed86e573/blog-2019-series-share.jpg"
 - series.each do | id, collection |
   - current_page.data.title = collection.title + ' | Datica'
   - current_page.data.summary = (collection.has_key?("summary") ? collection.summary : 'A curated collection of writing from our Datica experts.')
