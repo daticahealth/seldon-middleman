@@ -29,12 +29,16 @@ ruby:
         .columns.small-12.medium-8
           h1.headline-1.text-serif.nomargin = collection.title
           h4.headline-4.group = (collection.has_key?("subhead") ? collection.subhead : nil)
-          h5.spaced-out Table of Contents
-          ul.no-bullet.text-small
-            - collection["related_entries"].each do | entry |
-              li
-                a.link--white href="#article-#{entry.slug}" title="jump to article" 
-                  = entry.title.gsub("2019 Predictions: ", "")
+          .row.collapse
+            .columns.small-6
+              = partial("partials/snippets/person", :locals => { :p => data.site.person["1gpUmvd6yuOKUIUIY620i0"], :style => "light" })
+            .columns.small-6
+              h5.headline-6.spaced-out In this series
+              ul.no-bullet.text-small
+                - collection["related_entries"].each do | entry |
+                  li
+                    a.link--white href="#article-#{entry.slug}" title="jump to article" 
+                      = entry.title.gsub("2019 Predictions: ", "")
   .strip.strip-sm.strip-cpaas
   article#series data-registered="true"
     - collection["related_entries"].each do | entry |
@@ -56,7 +60,7 @@ ruby:
                 = entry["pub_date"].strftime("%B %-d, %Y")
               - if entry.has_key?("featured_image")
                 - image = data.site.blog[entry.id].featured_image.url
-                img.lozad.thumbnail.blur-in.group src=loader_square data-src="#{image}?fit=thumb&w=500&h=500" alt="Featured Image"
+                img.lozad.thumbnail.blur-in.group src=loader_square_svg data-src="#{image}?fit=thumb&w=500&h=500" alt="Featured Image"
 
                   /= partial "/partials/content/tags", :locals => entry
           .columns.small-12.medium-8.medium-large-7.large-6
