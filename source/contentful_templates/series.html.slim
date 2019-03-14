@@ -3,6 +3,7 @@ layout: basic
 ogType: article
 customCSS: "series-detail"
 customJS: "/public/js/series.js"
+sharer: true
 ---
 ruby:
   series = locals[:item]
@@ -41,8 +42,12 @@ ruby:
             h3.headline-4.text-center.group Read #{series.title}
             = partial "partials/snippets/form", :locals => { :the_form => series["related_form"]["custom_form"] }
           .is-registered.hide
-            h4.headline-5 Thanks for registering
-            = partial "partials/snippets/button", :locals => { :label => "Read now", :url => "", :button_classes => "button success-light", :item_id => "view-series", :icon => "icon-files", :icon_align => "right" }
+            .card.bg-gray-2.pad
+              .card-section.text-center
+                h4.headline-5.group Thanks for registering!
+                = partial "partials/snippets/button", :locals => { :label => "Read now", :url => "", :button_classes => "button success-light group", :item_id => "view-series", :icon => "icon-files", :icon_align => "right" }
+                / p.text-small.faded Share the series
+                = partial "/partials/snippets/share", :locals => { :p => p, :classes => "", :theme => "dark" }
           noscript
             h3.headline-4 Javascript and cookies are required to view this experience.
             p If that's a problem, you can read the series on our <a class="link--white" href="/blog/">blog</a>.😊
