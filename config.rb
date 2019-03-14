@@ -163,6 +163,14 @@ if Dir.exist?(config.data_dir + "/site")
     else
         puts "\n\npodcast data folder doesn't exist!\n"
     end
+    if Dir.exist?(config.data_dir + "/site/seriesCollection")
+        data.site.seriesCollection.each do |id, series|
+            proxy "/innovation/series/#{series[:slug]}/index.html", "/contentful_templates/series.html", :locals => { :item => series }, :ignore => true
+            proxy "/innovation/series/#{series[:slug]}/view/index.html", "/contentful_templates/series-view.html", :locals => { :item => series }, :ignore => true
+        end
+    else
+        puts "\n\nseriesCollection data folder doesn't exist!\n"
+    end
     if Dir.exist?(config.data_dir + "/site/reports")
         data.site.reports.each do |id, report|
             proxy "/innovation/#{report[:slug]}/index.html", "/contentful_templates/report.html", :locals => { :item => report }, :ignore => true
