@@ -211,6 +211,7 @@ activate :contentful do |f|
         products: 'products',
         quotes: 'quotes',
         reports: 'reports',
+        seriesCollection: 'seriesCollection',
         services: 'services',
         spotlights: 'spotlights',
         tags: 'tags',
