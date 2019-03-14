@@ -10,22 +10,11 @@ ruby:
   current_page.data.title = series["title"] + " | Datica"
   current_page.data.summary = safe_summary(series.summary)
 
-/ if series.has_key?("tags")
-    current_page.data.tags = get_tag_list(series["tags"])
-  else
-      current_page.data.tags = "healthcare, blog, Datica Innovation Series"
-  end
-
+- current_page.data.tags = (series.has_key?("tags") ? get_tag_list(series["tags"]) : 'cloud, integration, HIPAA, HITRUST, Innovation Series' )
 - current_page.data.author = (series.has_key?("author") ? series.author.fullname : 'Datica, Inc.' )
 - current_page.data.share_image = (series.has_key?("share_image") ? series.share_image.url : nil)
 - current_page.data.tags = "healthcare, blog, Datica Innovation Series"
 - bg_image = (series.has_key?("featured_image") ? series.featured_image.url : 'https://images.ctfassets.net/189dvqdsjh46/40nTU46iGkIsck8qEa0qcm/4822d250b4eb05924aa530dbd1ccf73f/working_together__looking_at_screen.jpg')
-
-/ h1 = series.author.fullname
-/ todo: remove collection-
-  - convert 'collection' label to 'series'
-  - Test as proxied page
-  - convert out series-view
 
 <script>var seriesId = '#{series.id}'</script>
 

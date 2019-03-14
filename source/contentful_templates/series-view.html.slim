@@ -7,29 +7,15 @@ hide_from_sitemap: true
 ---
 ruby:
   series = locals[:item]
-  # This template is currently designed just for blog entries. - AW
-  # series = data.site.collections.to_a.select { |id, entry | (id == "4J4i2RsfnFJu7fDYA8XjTi") }
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   current_page.data.title = series["title"] + " | Datica"
   current_page.data.summary = safe_summary(series.summary)
-  if series.has_key?("share_image")
-      current_page.data.share_image = cf_asset_protocol + series["share_image"]["url"] + image_size_small
-  elsif series.has_key?("featured_image")
-      current_page.data.share_image = cf_asset_protocol + series["featured_image"]["url"] + image_size_small
-  else
-      current_page.data.share_image = share_image_fallback
-  end
 
-  if series.has_key?("tags")
-      current_page.data.tags = get_tag_list(series["tags"])
-  else
-      current_page.data.tags = "healthcare, blog, IT"
-  end
-  if series.has_key?("author")
-      current_page.data.author = series["author"]["fullname"]
-  else
-      current_page.data.author = "Datica, Inc."
-  end
+- current_page.data.tags = (series.has_key?("tags") ? get_tag_list(series["tags"]) : 'cloud, integration, HIPAA, HITRUST, Innovation Series' )
+- current_page.data.author = (series.has_key?("author") ? series.author.fullname : 'Datica, Inc.' )
+- current_page.data.share_image = (series.has_key?("share_image") ? series.share_image.url : nil)
+- current_page.data.tags = "healthcare, blog, Datica Innovation Series"
+- bg_image = (series.has_key?("featured_image") ? series.featured_image.url : 'https://images.ctfassets.net/189dvqdsjh46/40nTU46iGkIsck8qEa0qcm/4822d250b4eb05924aa530dbd1ccf73f/working_together__looking_at_screen.jpg')
 
 <script>var seriesId = '#{series.id}'</script>
 
