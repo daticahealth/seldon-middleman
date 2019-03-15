@@ -21,7 +21,7 @@
 <% if current_page.data.sharer == true %>
 	<script async src="/public/js/sharer.js"></script>
 <% end %>
-<script defer src="/public/js/all.js"></script>
+<script async src="/public/js/all.js"></script>
 <%# Custom JS files %>
 <% if current_page.data.has_key?("customJS") %>
     <% current_page.data.customJS.split(",").each do |filename| %>

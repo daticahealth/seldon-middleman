@@ -90,6 +90,9 @@ figcaption{
 .img-mix-multiply {
     @include mix-multiply;
 }
+.img-mix-overlay {
+    @include mix-overlay;
+}
 .blur {
     &-0 {
         @include blur(0);

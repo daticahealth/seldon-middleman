@@ -1,4 +1,4 @@
-<ul class="share-icons menu<% if defined?(classes) %> <%= classes %><% end %> align-middle">
+<ul class="share-icons menu<% if defined?(classes) %> <%= classes %><% end %> align-middle"<% if defined?(theme) %>  data-theme="<%= theme %>"<% end %>>
     <%# <li class="share--item">
         <svg class="share--icon-top" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet">
             <use xlink:href="/public/icons/util-icons-sprite.svg#icon-share" href="/public/icons/util-icons-sprite.svg#icon-share"></use>
@@ -21,7 +21,7 @@
         </svg>
     </li>
     <li class="share--item">
-        <svg class="share--icon icon-size--medium sharer" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet" data-sharer="email" data-title="<%= current_page.data.title %>" data-subject="<%= current_page.data.title %>" data-url="<%= site_url + current_page.url %>">
+        <svg class="share--icon icon-size--medium sharer post-email" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet" data-sharer="email" data-title="<%= current_page.data.title %>" data-subject="<%= current_page.data.title %>" data-url="<%= site_url + current_page.url %>">
             <use xlink:href="/public/icons/util-icons-sprite.svg#icon-email" href="/public/icons/util-icons-sprite.svg#icon-email"></use>
         </svg>
     </li>

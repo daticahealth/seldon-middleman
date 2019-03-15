@@ -26,7 +26,12 @@
 $link-color-default: #fff !default;
 $underline: false !default;
 @mixin link-colors($color: $link-color-default, $hover-color: $color_yellow-glow, $has-underline: $underline ) {
+    font-weight: $font-weight-bold;
+    transition: border-bottom .15s linear,color .15s linear;
     color: $color !important;
+    @if $has-underline == true {
+        border-bottom: 1px solid transparent;
+    }
     &:hover {
         color: $hover-color !important;
         @if $has-underline == true {
@@ -454,4 +459,37 @@ $button-transition: transform $timing-default ease, box-shadow $timing-default e
     position: absolute;
     top: 0;
     left: 0;
+}
+@mixin link-anchor { // use within an <a> statement to get a hover anchor icon
+    position: relative;
+    &::before { // em widths are proportional to header sizes
+        transition: opacity 0.3s, color 0.3s;
+        cursor: pointer;
+        // height: 16px;
+        width:  0.7em;
+        position: absolute;
+        left: -1em;
+        // top: 0;
+        display: block;
+        opacity: 0;
+        content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 36 36'%3E%3Cpath fill='%230758ed' d='M19 4l-6 6.1 2.3 2.4 6.1-6.1a5.8 5.8 0 0 1 8.2 8.2l-6 6 2.3 2.4 6-6A9.1 9.1 0 0 0 19.1 4zM6.5 29.7a5.8 5.8 0 0 1 0-8.2l6-6-2.3-2.4-6 6a9 9 0 0 0 0 13 9.1 9.1 0 0 0 12.8 0l6.1-6.1-2.3-2.4-6.1 6.1a5.8 5.8 0 0 1-8.2 0zm6.1-3.8l13.3-13.3-2.3-2.3-13.3 13.3 2.3 2.3z'/%3E%3C/svg%3E");
+        // transform-origin: 40%;
+        // margin-left: -1.8rem;
+        // padding-left: 1.8rem;
+    }
+    &:hover {
+        color: black;
+        &::before {
+            opacity: 0.8;
+            // fill: $color_blue;
+        }
+    }
+}
+@mixin coda { // puts micro logo at end of whatever, usually ::after something
+    content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 48 48'%3E%3Cpath fill='currentColor' d='M15.6 43l4.6 5 12.1-15.1-16.7 10zM32.4 5l-4.6-5-12.1 15.1 16.7-10zM43 32.3l5-4.5-15.1-12.1 10 16.6zM5 15.7l-5 4.5 15.1 12.1-10-16.6zM31.5 43.3l6.8.4-2.1-19.3-4.7 19zM16.5 4.7l-6.8-.4 2.1 19.3 4.7-19zM43.3 16.5l.4-6.8-19.3 2.1 19 4.7zM4.7 31.5l-.4 6.8 19.3-2.1-19-4.7z'/%3E%3C/svg%3E");
+    opacity: 0.7;
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: 0.3em;
 }

@@ -103,7 +103,7 @@ end
 #   data_track = nil
 # end
 %>
-<a class="<%= button_classes %>" <%= data_track %> data-track-id="<%= tracking_id %>" data-expand-on-small="<%= button_expand %>" href="<%= url %>" title="<%= title %>"<%= rel %>>
+<a id="<%= tracking_id %>" class="<%= button_classes %>" <%= data_track %> data-track-id="<%= tracking_id %>" data-expand-on-small="<%= button_expand %>" href="<%= url %>" title="<%= title %>"<%= rel %>>
     <% if defined?(icon) %>
         <% if icon_align == "right" %>
             <%= label %>

@@ -4,10 +4,10 @@
     // color: black(0.6); // color is inherited from block above
     // opacity: 0.8;
     margin-bottom: 1em;
-    @include breakpoint (small only){
-        font-size: medium;
-        // opacity: 0.8;
-    }
+    // @include breakpoint (small only){
+    //     font-size: medium;
+    //     // opacity: 0.8;
+    // }
 }
 
 
@@ -291,12 +291,7 @@ footer {
         line-height: 1.5;
     }
 }
-// p{
-//     line-height: $paragraph-lineheight;
-//     strong{
-//         font-weight: $font-weight-bold;
-//     }
-// }
+
 h4.caret-header{
     display: inline-block;
     font-size: $global-font-size;
@@ -385,165 +380,6 @@ ul.list-check {
 .hyphenate {
     @include hyphens (auto);
 }
-
-// Light styles
-// To-do: find where these classes are used and kill them. weight is fine, should not be paired with size or other attribs. Or, make these very specific classes. - AW
-.light{
-    font-size: 2.1875rem;
-    font-weight: $font-weight-light;
-}
-.mid{
-    font-size: 100%;
-    font-weight: $font-weight-mid;
-    line-height: 1.5;
-}
-// // TO-DO: this whole .section needs to be replaced with utility classes. - AW
-// .section {
-//     &--header-dark{
-//         &-group{
-//             h4{
-//                 color: $color_white;
-//                 font-size: rem-calc(12px);
-//                 text-transform: uppercase;
-//                 letter-spacing: rem-calc(3px);
-//                 font-weight: $font-weight-bold;
-//             }
-//             h1{
-//                 font-size: rem-calc(35px);
-//                 color: $color_white;
-//                 line-height: 1.5;
-//                 font-weight: $font-weight-light;
-//                 margin: 0 0 rem-calc(30px) 0;
-//                 @media all and (max-width: $custom_breakpoint-mid){
-//                     font-size: 2rem;
-//                     margin: 0 0 1rem 0;
-//                 }
-//             }
-//             hr{
-//                 display: block;
-//                 background-color: $color_aqua-glow;
-//                 max-width: rem-calc(150px);
-//                 margin: 0 auto;
-//                 @include opacity(0.2);
-//             }
-//             h2{
-//                 font-size: $global-font-size;
-//                 line-height: 1.5;
-//                 margin-top: rem-calc(30px);
-//                 margin-bottom: rem-calc(30px);
-//                 color: $color_light;
-//                 font-weight: $font-weight-mid;
-//                 max-width: rem-calc(450px);
-//                 @media all and (max-width: $custom_breakpoint-mid){
-//                     margin: 1rem auto;
-//                     font-weight: $font-weight-regular;
-//                     font-size: 1rem;
-//                 }
-//             }
-//             p.lead{margin: rem-calc(30px) auto;}
-//             &-small{
-//                 h1{
-//                     margin-bottom: 20rem;
-//                 }
-//             }
-//         }
-//     }
-//     &--header-light{
-//         &-group{
-//             h4{
-//                 color: $color_deep;
-//                 font-size: rem-calc(12px);
-//                 text-transform: uppercase;
-//                 letter-spacing: rem-calc(3px);
-//                 font-weight: $font-weight-bold;
-//             }
-//             h1{
-//                 font-size: rem-calc(35px);
-//                 color: $color_deep;
-//                 line-height: 1.5;
-//                 font-weight: $font-weight-light;
-//                 margin: 0 0 rem-calc(30px) 0;
-//                 @media all and (max-width: $custom_breakpoint-mid){
-//                     font-size: 2rem;
-//                     margin: 0 0 1rem 0;
-//                 }
-//             }
-//             h2{
-//                 font-size: $global-font-size;
-//                 line-height: 1.5;
-//                 margin-bottom: rem-calc(30px);
-//                 color: $color_talk;
-//                 font-weight: $font-weight-mid;
-//                 max-width: rem-calc(450px);
-//                 @media all and (max-width: $custom_breakpoint-mid){
-//                     margin: 1rem auto;
-//                     font-weight: $font-weight-regular;
-//                     font-size: 1rem;
-//                 }
-//             }
-//             &-small{
-//                 h1{margin-bottom: 0;}
-//             }
-//         }
-//     }
-//     &--header-dark-alt{
-//         &-group{
-//             h1{
-//                 font-size: rem-calc(35px);
-//                 color: $color_white;
-//                 line-height: 1.5;
-//                 font-weight: $font-weight-light;
-//                 margin: 0 0 rem-calc(30px) 0;
-//             }
-//             h2{
-//                 font-size: $global-font-size;
-//                 line-height: 1.5;
-//                 margin: 0 auto rem-calc(30px) auto;
-//                 color: $color_white;
-//                 font-weight: $font-weight-mid;
-//                 max-width: rem-calc(450px);
-//             }
-//         }
-//     }
-//     &--block-header-dark{
-//         &-group{
-//             h1{
-//                 font-size: rem-calc(35px);
-//                 color: $color_white;
-//                 line-height: 1.5;
-//                 font-weight: $font-weight-light;
-//                 margin: 0 0 rem-calc(30px) 0;
-//             }
-//             h2{
-//                 font-size: $global-font-size;
-//                 line-height: 1.5;
-//                 margin: 0 auto rem-calc(30px) auto;
-//                 color: $color_white;
-//                 font-weight: $font-weight-mid;
-//             }
-//         }
-//     }
-//     &--subheader {
-//         font: {
-//             size: 1.2rem;
-//             weight: $font-weight-bold;
-//         };
-//         opacity: 0.7;
-//     }
-//     &--block-header {
-//         font: {
-//             size: 1rem;
-//             weight: $font-weight-bold;
-//         }
-//     }
-//     // &--pubdate {
-//     //     // font-style: italic;
-//     //     // font-family: $font_serif;
-//     //     font-weight: $font-weight-bold;
-//     //     font-size: 0.7rem;
-//     //     @extend .faded;
-//     // }
-// }
 
 // Blog and looped content styles
 .date{

@@ -1,0 +1,18 @@
+doctype html
+html class="no-js" lang="en-us"
+  head
+    = partial "partials/head/tags"
+    = partial "partials/head/icons"
+    = stylesheet_link_tag "seldon"
+    - if current_page.data.has_key?("customCSS")
+      - current_page.data.customCSS.split(",").each do |filename|
+        = stylesheet_link_tag "views/"+filename.strip+".css"
+    - if build?
+      = partial "partials/scripts/google-tm-body"
+  body
+    a name="top" 
+    = partial "partials/snippets/alert-ribbon"
+    = partial "partials/head/header", :locals => { :style => "dark" }
+    = yield
+    = partial "partials/snippets/footer"
+    = partial "partials/scripts/footer"

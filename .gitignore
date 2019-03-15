@@ -66,3 +66,4 @@ jspm_packages
 .tmp
 .Temp
 .ruby-version
+.env

@@ -166,13 +166,24 @@ span.label + span.label { // when in a tag list
     &--item { // li's
         padding-left: 0.3rem;
         padding-right: 0.3rem;
+        &, & a {
+            color: $gray-6;
+            // .post-email {
+            //     opacity: 0.5;
+            // }
+            &:hover {
+                color: $color_blue;
+                opacity: 1;
+            }
+            &[data-theme="dark"] { // ok from here on out DARK means, "it's a dark field with light content". It's backwards elsewhere. ugh
+                color: $gray-6;
+                &:hover {
+                    color: $color_aqua-glow;
+                }
+            }
+        }
     }
     &-icons {
-        // @include breakpoint(xlarge up) {
-        // }
-        &.horizontal {
-
-        }
         &.vertical {
             display: none;
             // position: relative;

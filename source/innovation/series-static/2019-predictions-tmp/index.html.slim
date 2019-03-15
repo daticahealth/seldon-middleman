@@ -1,0 +1,64 @@
+---
+layout: basic
+ogType: article
+customCSS: "series-detail"
+customJS: "/public/js/series.js"
+---
+ruby:
+  # This template is currently designed just for blog entries. - AW
+  series = data.site.collections.to_a.select { |id, entry | (id == "4J4i2RsfnFJu7fDYA8XjTi") }
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/LfaevrlMKDp5nfDvS1fMs/13c97bd18f53d91bbe7fc0a5ed86e573/blog-2019-series-share.jpg"
+- series.each do | id, collection |
+  - current_page.data.title = collection.title + ' | Datica'
+  - current_page.data.summary = (collection.has_key?("summary") ? collection.summary : 'A curated collection of writing from our Datica experts.')
+  - bg_image = (collection.has_key?("featured_image") ? collection.featured_image.url : 'https://images.ctfassets.net/189dvqdsjh46/40nTU46iGkIsck8qEa0qcm/4822d250b4eb05924aa530dbd1ccf73f/working_together__looking_at_screen.jpg')
+
+  <script>var seriesId = '#{collection.id}'</script>
+
+  .container-gray-2.bg-dark.gradient-dusk.product-cmi.relative
+    .z-0.absolute.art-bg-fill.container-image--center.lozad.img-mix-multiply data-background-image="#{bg_image}?w=1200&h=1200"
+    .container-color--tint-20.faded-max.group.relative.z-10
+      = partial "partials/head/header", :locals => { :style => "light" }
+    section.section-article--lg.z-5.relative
+      .row.align-center.group--2x
+        .columns.small-12.large-6.text-center
+          - if collection.has_key?("icon_slug")
+            = inline_svg(collection.icon_slug, :class => "icon-size--xlarge")
+          h1.headline-2.text-serif = collection.title
+          h4.headline-4 = (collection.has_key?("subhead") ? collection.subhead : nil)
+      .row.align-center
+        .columns.small-12.medium-large-6.large-4
+          - if collection.has_key?("desc")
+            .group
+              = Kramdown::Document.new(collection.desc).to_html
+        - if collection.has_key?("related_form")
+          .columns.small-12.medium-large-6.large-4
+            #series-form.callout.drop.hide
+              h3.headline-4.text-center.group Read #{collection.title}
+              = partial "partials/snippets/form", :locals => { :the_form => collection["related_form"]["custom_form"] }
+            .is-registered.hide
+              h4.headline-5 Thanks for registering
+              = partial "partials/snippets/button", :locals => { :label => "Read now", :url => "", :button_classes => "button success-light", :item_id => "view-series", :icon => "icon-files", :icon_align => "right" }
+            noscript
+              h3.headline-4 Javascript and cookies are required to view this experience.
+              p If that's a problem, you can read the series on our <a class="link--white" href="/blog/">blog</a>.😊
+
+        /- collection["related_entries"].each do | entry |
+          - type = entry._meta.content_type_id
+          - folder = case type
+          - when "guides" then "guide"
+          - else type
+          - url = "/#{folder}/#{entry.slug}/"
+          .row.align-center
+            .columns.small-12.medium-10.large-6
+              - case type
+              - when "blog"
+                - if entry.has_key?("featured_image")
+                  - image = data.site.blog[entry.id].featured_image.url
+                  a href=url title=entry.title
+                    img.lozad.thumbnail.blur-in src="#{image}?fit=thumb&w=800&h=400&q=10" data-src="#{image}?fit=thumb&w=800&h=400"
+                h3.headline-4
+                  a href=url title=entry.title
+                    = entry.title
+                p = (entry.has_key?("summary") ? entry.summary : nil)

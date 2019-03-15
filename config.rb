@@ -163,6 +163,14 @@ if Dir.exist?(config.data_dir + "/site")
     else
         puts "\n\npodcast data folder doesn't exist!\n"
     end
+    if Dir.exist?(config.data_dir + "/site/seriesCollection")
+        data.site.seriesCollection.each do |id, series|
+            proxy "/innovation/series/#{series[:slug]}/index.html", "/contentful_templates/series.html", :locals => { :item => series }, :ignore => true
+            proxy "/innovation/series/#{series[:slug]}/view/index.html", "/contentful_templates/series-view.html", :locals => { :item => series }, :ignore => true
+        end
+    else
+        puts "\n\nseriesCollection data folder doesn't exist!\n"
+    end
     if Dir.exist?(config.data_dir + "/site/reports")
         data.site.reports.each do |id, report|
             proxy "/innovation/#{report[:slug]}/index.html", "/contentful_templates/report.html", :locals => { :item => report }, :ignore => true
@@ -185,11 +193,11 @@ end
 # content type mapping: [localname]: '[contentfulContentTypeId]'
 # these could map to url segments, take note. -AW
 activate :contentful do |f|
-    f.space = { site: '189dvqdsjh46'}
-    f.access_token = '9abdf5de79abc1e1cdc2cf25f3280641fd845a2f3fd5bad8222d1b457f20ba2d'
+    f.space           = { site: ENV['CONTENTFUL_SPACE_ID'] }
+    f.access_token    = ENV['CONTENTFUL_ACCESS_TOKEN']
     f.use_preview_api = false
-    f.all_entries = true
-    f.client_options = { max_include_resolution_depth: 2 }
+    f.all_entries     = true
+    f.client_options  = { max_include_resolution_depth: 2 }
     f.content_types = {
         academy: 'academy',
         blog: 'blog',
@@ -211,6 +219,7 @@ activate :contentful do |f|
         products: 'products',
         quotes: 'quotes',
         reports: 'reports',
+        seriesCollection: 'seriesCollection',
         services: 'services',
         spotlights: 'spotlights',
         tags: 'tags',

@@ -98,6 +98,9 @@ GEM
       servolux
       tilt (~> 2.0.9)
       uglifier (~> 3.0)
+    middleman-dotenv (2.0.0)
+      dotenv (>= 2.0)
+      middleman-core (>= 4.0)
     middleman-minify-html (3.4.1)
       htmlcompressor (~> 0.2.0)
       middleman-core (>= 3.2)
@@ -163,11 +166,12 @@ DEPENDENCIES
   inline_svg
   middleman
   middleman-blog
+  middleman-dotenv
   middleman-minify-html
   middleman-search_engine_sitemap
   oga
-  sanitize (~> 4.6.3)
+  sanitize
   slim
 
 BUNDLED WITH
-   1.16.1
+   1.17.2
