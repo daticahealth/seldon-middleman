@@ -25,12 +25,14 @@ ruby:
     = partial "partials/head/header", :locals => { :style => "light" }
   section.section-article--lg.z-5.relative
     .row.align-center
-      .columns.small-12.medium-2.text-right
-        - if series.has_key?("icon_slug")
+      - if series.has_key?("icon_slug")
+        .columns.small-12.medium-2.text-right
           = inline_svg(series.icon_slug, :class => "featured-icon")
       .columns.small-12.medium-8
+        h3.headline-5.spaced-out
+          a.link--white.faded href="/innovation/series/" title="Innovation Series Home" Datica Innovation Series
         h1.headline-1.text-serif.nomargin = series.title
-        h4.headline-4.group = (series.has_key?("subhead") ? series.subhead : nil)
+        h2.headline-4.group = (series.has_key?("subhead") ? series.subhead : nil)
         .row.collapse
           .columns.small-6
             = partial("partials/snippets/person", :locals => { :p => data.site.person["1gpUmvd6yuOKUIUIY620i0"], :style => "light" })
@@ -72,12 +74,8 @@ article#series data-registered="true"
                 = Kramdown::Document.new(entry.blog_lead).to_html
             .content-dynamic.text-serif.group
               = Kramdown::Document.new(entry.post).to_html
-            /- if entry.has_key?("tags")
-              .group.faded
-                = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
-                - entry["tags"].each do |tag|
-                  - if tag.has_key?("tag_full")
-                    span.label.info.round= tag["tag_full"]
+              /span
+                = inline_svg("small/icon-datica", :class => "icon-inline faded")
             #please-register
               h4.headline-5 Please <a href="../" title="Register to read">register</a> to read the full series.
               noscript

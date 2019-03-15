@@ -186,13 +186,7 @@
         }
     }
     &--white, &-light {
-        font-weight: $font-weight-bold;
-        color: $white !important;
-        border-bottom: 1px solid transparent;
-        &:hover {
-            color: lighten($color_yellow-glow, 5%) !important;
-            border-bottom: 1px solid lighten($color_yellow-glow, 5%);
-        }
+        @include link-colors (white, $color_yellow-glow, true);
     }
     &-light-plain {
         color: white !important;
@@ -213,27 +207,16 @@
         }
     }
     &--yellow {
+        @include link-colors ($color_yellow-glow, white, true);
         font-weight: $font-weight-bold;
-        color: $color_yellow-glow !important;
-        border-bottom: 1px solid transparent;
-        &:hover {
-            color: $white !important;
-            border-bottom: 1px solid $white;
-        }
     }
 
     &--blue-bright {
-        font-weight: $font-weight-bold;
-        color: $color_aqua-glow !important;
-        // border-bottom: 1px solid transparent;
-        &:hover {
-            color: $white !important;
-            // border-bottom: 1px solid $color_yellow-glow;
-        }
+        @include link-colors ($color_aqua-glow, white, false);
     }
     &--mini-cta{
         color: $color_yellow-glow !important;
-        font-weight: $font-weight-mid;
+        //font-weight: $font-weight-mid;
         &:hover {
             color: $white !important;
         }
@@ -245,6 +228,7 @@
         }
     }
 }
+
 .link-arrow {
     // @apply .uppercase .font-bold .text-base .no-underline .font-bold .text-green-deep .tracking-relaxed;
     &::after {
@@ -287,13 +271,7 @@
 }
 .link--white-parent { // when you need to style a link inside a component/partial
     a {
-        font-weight: $font-weight-bold;
-        color: $white !important;
-        border-bottom: 1px solid transparent;
-        &:hover {
-            color: lighten($color_yellow-glow, 5%) !important;
-            border-bottom: 1px solid lighten($color_yellow-glow, 5%);
-        }
+        @include link-colors (white, $color_yellow-glow, true);
     }
 }
 .card {

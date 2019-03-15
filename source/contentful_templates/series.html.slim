@@ -19,7 +19,7 @@ ruby:
 
 <script>var seriesId = '#{series.id}'</script>
 
-.container-gray-2.bg-dark.gradient-dusk.product-cmi.relative
+.container-gray-2.bg-dark.gradient-dusk.relative
   .z-0.absolute.art-bg-fill.container-image--center.lozad.img-mix-multiply data-background-image="#{bg_image}?w=1200&h=1200"
   .container-color--tint-20.faded-max.group.relative.z-10
     = partial "partials/head/header", :locals => { :style => "light" }
@@ -34,7 +34,7 @@ ruby:
       .columns.small-12.medium-large-6.large-4
         = partial("partials/snippets/person", :locals => { :p => series.author, :style => "light" })
         - if series.has_key?("body")
-          .group
+          .group.link--white-parent
             = Kramdown::Document.new(series.body).to_html
       - if series.has_key?("related_form")
         .columns.small-12.medium-large-6.large-4
@@ -47,7 +47,7 @@ ruby:
                 h4.headline-5.group Thanks for registering!
                 = partial "partials/snippets/button", :locals => { :label => "Read now", :url => "", :button_classes => "button success-light group", :item_id => "view-series", :icon => "icon-files", :icon_align => "right" }
                 / p.text-small.faded Share the series
-                = partial "/partials/snippets/share", :locals => { :p => p, :classes => "", :theme => "dark" }
+                = partial "/partials/snippets/share", :locals => { :p => p, :classes => "grayscale", :theme => "dark" }
           noscript
             h3.headline-4 Javascript and cookies are required to view this experience.
             p If that's a problem, you can read the series on our <a class="link--white" href="/blog/">blog</a>.😊

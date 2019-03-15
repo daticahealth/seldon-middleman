@@ -8,6 +8,7 @@
         color: $gray-3;
     }
 }
+
 .content-dynamic {
     font-size: 105%;
     p {
@@ -15,6 +16,9 @@
     }
     h2 {
         font-size: 1.8rem;
+    }
+    & > p:last-child::after { // adds a little coda logo to end of article. Not sure how to make it hit inline last paragraph.
+        @include coda;
     }
 }
 .art-bg-fill {

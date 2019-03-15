@@ -1,0 +1,40 @@
+---
+title: "Innovation Series | Datica"
+summary: "A curated collection of writing from our Datica experts."
+navTitle: "Innovation Series"
+share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+layout: basic
+ogType: article
+customCSS: "series-detail"
+customJS: "/public/js/series.js"
+---
+
+- current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+- bg_image = 'https://images.ctfassets.net/189dvqdsjh46/4y9umWwB871YeIbKb4joDs/d59be111d9de0ee7ca9eba8b0af6209a/triangle_sky_comp_1_sm.jpg'
+- collection = data.site.seriesCollection.to_a.sort_by{ |id, series| series['pub_date'] }.reverse!
+
+.container-gray-2.bg-dark.gradient-dusk.product-cmi.relative
+  .z-0.absolute.art-bg-fill.container-image--center.lozad.img-mix-multiply data-background-image="#{bg_image}?w=1200&h=1200"
+  .container-color--tint-20.faded-max.group.relative.z-10
+    = partial "partials/head/header", :locals => { :style => "light" }
+  
+  section.section-article.z-5.relative
+    .row.align-center
+      .columns.small-12.large-6
+        h1.headline-2.text-serif.text-light Datica Innovation Series
+        p.lead We've taken the best writing from our Datica experts on innovation in healthcare technology and bound it into an easy-to-read format for you.
+  section.section-article.z-5.relative
+    - collection.each do | id, series |
+      .row.align-center.group
+        .columns.small-12.large-6
+          h2.headline-3.text-serif.nomargin
+            a.link--white.text-light href="#{series.slug}" title="Read the series" = series.title
+          - if series.has_key?("icon_slug")
+            = inline_svg(series.icon_slug, :class => "icon-size--xlarge float-right-on-medium")
+          h4.headline-5 = (series.has_key?("subhead") ? series.subhead : nil)
+          - if series.has_key?("summary")
+            .group
+              = Kramdown::Document.new(series.summary).to_html
+  noscript
+    h3.headline-4 Javascript and cookies are required to view this experience.
+    p If that's a problem, you can read the series on our <a class="link--white" href="/blog/">blog</a>.😊
