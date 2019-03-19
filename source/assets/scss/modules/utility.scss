@@ -28,7 +28,12 @@
         @include shadow-anarchy(0 rem-calc(6px) rem-calc(17px) 0 hsla(220, 100%, 46%, 0.3));
     }
     &--big{
-      @include shadow-anarchy(0 rem-calc(10px) rem-calc(30px) 0 rgba(0,0,0,0.4));
+      @include shadow-anarchy(0 rem-calc(10px) rem-calc(30px) 0 black(0.4));
+    }
+    &-inset--v {
+        $n: 30px;
+        $c: black(0.1); // uses function above for transparent black
+        @include shadow-anarchy(inset 0 $n $n -#{$n} $c, inset 0 -#{$n} $n -#{$n} $c);
     }
 }
 .drop-hover {

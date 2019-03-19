@@ -1,0 +1,23 @@
+scss:
+  .featured-icon {
+    max-width: 14rem;
+  }
+
+- latest_series = data.site.seriesCollection.to_a.sort_by{ |id, series| series['pub_date'] }.reverse!
+- latest_series.take(1).each do |id, series|
+  - bg_image = (series.has_key?("featured_image") ? series.featured_image.url : 'https://images.ctfassets.net/189dvqdsjh46/40nTU46iGkIsck8qEa0qcm/4822d250b4eb05924aa530dbd1ccf73f/working_together__looking_at_screen.jpg')
+  .container-gray-2.bg-dark.gradient-dusk.relative
+    .z-0.absolute.art-bg-fill.container-image--center.lozad.img-mix-multiply data-background-image="#{bg_image}?w=1200&h=500&fit=thumb&q=40"
+    section.section-article.z-5.relative
+      .row.align-center.relative
+        - if series.has_key?("icon_slug")
+          .columns.small-12.medium-2.large-2.text-right
+            = inline_svg(series.icon_slug, :class => "featured-icon")
+        .columns.small-12.medium-10.large-8
+          h3.headline-6.spaced-out.nomargin Datica Innovation Series
+          h4.headline-2.text-serif.nomargin = series.title
+          h5.headline-5.group = (series.has_key?("subhead") ? series.subhead : nil)
+          / - if series.has_key?("summary")
+            .group
+              = Kramdown::Document.new(series.summary).to_html
+          = partial "partials/snippets/button", :locals => { :label => "Read the Series", :url => "/innovation/series/#{series.slug}", :button_classes => "button button--light", :data_track_group => "innovation", :item_id => "read-series" }
