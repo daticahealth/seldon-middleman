@@ -5,22 +5,22 @@ author: "Datica, Inc."
 tags: "HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
 date: "January 1, 2017"
 header: "Datica Innovation"
-subheader: "How does healthcare innovate? Datica explores this topic in a new series of interviews with the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
 layout: basic
 customCSS: "innovation"
 ---
-<div class="bg-dark bg-blue-purple-grad">
-    <!-- <div class="container-color--dark-alt container-image--bottom" data-interchange="[/public/img/art/art-sound-bars-bg.svg, small]"> -->
-    <%= partial "partials/head/header", :locals => { :style => "light" } %>
+
+<div class="bg-gray-12 container-image--top lozad" data-background-image="<%= bg_product_light %>">
+    <%= partial "partials/head/header", :locals => { :style => "dark" } %>
     <section id="top" class="section-article">
-        <div class="row">
-            <div class="columns small-12 medium-8 featured-post">
-                <h1 class="headline-1 headline--inverted"><%= current_page.data.header %></h1>
-                <p class="lead"><%= current_page.data.subheader %></p>
+        <div class="row align-center align-middle">
+            <div class="columns medium-5 text-right">
+                <h1 class="headline-2 headline--inverted text--gray-7">Datica <span class="text--gray-1 text-bold">Innovation</span></h1>
+            </div>
+            <div class="columns small-12 medium-7">
+                <p class="lead"><strong>How does healthcare innovate?</strong> Datica explores this topic in a new series of interviews with the industry's top thinkers and doers. Join us as we uncover insights to catalyzing change in healthcare.</p>
             </div>
         </div>
     </section>
-
 <%#= partial "partials/section-promos/aws-mlh-video", 
     :locals => {
         :quote_id => "5fDbO1XJ1CAEWAEIoiO6mS",
@@ -30,21 +30,10 @@ customCSS: "innovation"
 %>
 <%#= partial "/partials/section-promos/report-heart-of-medicine", :locals => { :style => "light", :align => "left" } %>
 <%#= partial "partials/section-promos/report-q317", :locals => { :style => "light", :align => "right" } %>
-
+    <%= partial("partials/section-promos/latest-series") %>
     <% sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse! %>
-    <% sorted_reports.take(1).each do | id, report | %>
-        <%
-            if report.has_key?("share_image")
-                current_page.data.share_image = cf_asset_protocol + report["share_image"]["url"] + image_size_small
-            end
-            if report.has_key?("subhead")
-                hed = report["subhead"]
-            end
-        %>
-        <%= partial "partials/section-promos/report-promo", :locals => { :p => report, :headline => hed } %>
-    <% end %>
 
-    <section class="container-gray-10 card-featured-section">
+    <section class="bg-gray-12 card-featured-section">
         <div class="row">
             <div class="columns group text-center">
                 <h3 class="subhead--spaced faded headline-5">Datica Innovation Reports</h3>
@@ -62,6 +51,15 @@ customCSS: "innovation"
         </div>
     </section>
 
+    <% sorted_reports.take(1).each do | id, report | %>
+        <%
+            if report.has_key?("subhead")
+                hed = report["subhead"]
+            end
+        %>
+        <%= partial "partials/section-promos/report-promo", :locals => { :p => report, :headline => hed } %>
+    <% end %>
+
     <%= partial "/partials/section-promos/leadership-gallery" %>
 
     <% sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse! %>
@@ -69,7 +67,7 @@ customCSS: "innovation"
         <div class="row align-center collapse">
             <div class="columns small-12 large-10">
                 <h3 class="innovation--section-header">Healthcare Innovators <span class="innovation--category">Podcast</span></h3>
-                <% sorted_podcasts[0...3].each do | id, podcast | %>
+                <% sorted_podcasts.take(1).each do | id, podcast | %>
                     <div class="row innovation--podcast-entry">
                         <div class="columns small-12 medium-3">
                             <% if podcast.has_key?("guest") %>

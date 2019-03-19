@@ -384,6 +384,15 @@
     padding-top: 8rem;
     width: 100%;
 }
+.art-bg-fill { // for absolutely-positioned image overlays
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+.gradient-dusk { // used in series, a nice dark sunset gradient
+    background: linear-gradient(178deg, #262936 0%, #465365 23.05%, #43606B 69.96%, #5B515C 83.54%, #544745 94.86%);
+}
+
 // just background colors
 .bg {
     @each $name, $color in $fill-color-list { // this generates all grays 1-12 (dark to lightest), sets color

@@ -142,7 +142,7 @@ section.section-article#compliance
             img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
       = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/cloud-compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "compliance-story", :data_track_group => "compliance" }
 
-section.section-article.bg-gray-12#proof
+section.section-article.bg-gray-12.drop-inset--v#proof
   h3.headline-3.text-light.text-center.group Build <strong>Breakthrough</strong> Compliant Apps
   = partial "partials/content/video-quote"
 section.section-article.bg-white
@@ -153,7 +153,8 @@ section.section-article.bg-white
         - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
           img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
 
-section.container-gray-12.section-article#education
+= partial "partials/section-promos/latest-series"
+section.section-article.bg-gray-12.drop-inset--v#education
   .row.align-center
     .columns.small-12.large-6
       h2.headline-3.text-center <strong>Grow</strong> with us
@@ -164,6 +165,7 @@ section.container-gray-12.section-article#education
         h4.headline-4.margin-bottom-small
           a href=item.url title=item.title data-track-category="education" data-track-id="resources_#{item.slug}" = item.title
         p = item.desc
+section.section-article.bg-white#recent
   = partial "partials/content/recent-items"
 
 
