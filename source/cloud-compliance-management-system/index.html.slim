@@ -37,7 +37,7 @@ ruby:
   the_form = data.site.forms['1sd7ExrRIkg0SgQ0CsiiaO']
   bg_image = 'https://images.ctfassets.net/189dvqdsjh46/3FCC7CKhlkP2bzFf8UzNk6/651f57bfbd77c0d38a7b188776ac4230/bg-hexagons-1.svg'
   img_1 = 'https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg'
-  img_2 = 'https://images.ctfassets.net/189dvqdsjh46/1KxUwvIiuE4gEaeqUSIgq4/a4b9c86fda34d160d94bdd55c766b2e5/ccms-diagram.png'
+  img_2 = 'https://images.ctfassets.net/189dvqdsjh46/6nxnpKEZvq4lSAN6u3l0Bf/670f5dbc61532bbb922389bb865d7154/ccms-diagram_bleed_bottom.svg'
   diagram_1 = "https://images.ctfassets.net/189dvqdsjh46/1DnnFdmBAYcWSyiGE2M6aK/1651ceeb1d2343007b09a5ce4c20ed38/c3-diagram-1.png"
   diagram_2 = "https://images.ctfassets.net/189dvqdsjh46/iEhDz8im4wyCMCGk0Wcqk/79088104bd888bcb3e9867fb0ccb242a/c3-diagram-2.png"
   current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
@@ -67,10 +67,21 @@ section.masthead.bg-dark.bg-purple-bp-grad.product-ccms.relative id=current_page
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
   .strip.strip-small.strip-ccms
 
-section.section-article.pad-no-bottom.container-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
+
+section.section-article.pad-no-bottom.bg-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
+  .row.align-center
+    .columns.small-12.medium-10.large-5.group--2x
+      h2.headline-3.text-strong Datica solves compliance in a post-cloud world
+      p The Cloud Compliance Management System (CCMS) is built to manage compliance requirements across popular HIPAA-eligible cloud provider services. Cloud-native environments tend towards a constellation of managed services and microservices, but they have a compliance problem. <strong>Datica CCMS is the solution.</strong>
+      p The CCMS is an easy-to-use SaaS tool that uses modern APIs to monitor and assess the configuration state of your favorite cloud services.
+    .columns.small-12.large-7.align-self-bottom
+      img.lozad.img-crisp src="https://images.ctfassets.net/189dvqdsjh46/57ACO3Sx2RSPR3rfn68nT5/6daa8c73dea24e9453c26ada6033dd83/ccms-diagram-loader.svg" data-src="#{img_2}" alt="CCMS keeps your services compliant; Feature list"
+      / snippet for bg color: ?w=792&fm=jpg&q=10&bg=rgb:e5e9eb
+section.section-article.bg-gray-2
   .row.align-center
     .columns.small-12.large-8.text-center
-      h2.headline-2 API-Driven Compliance
+      h2.headline-5.spaced-out How it works
+      h3.headline-2 API-Driven Compliance
   .row.align-center.small-up-1.medium-up-3.group
     .column
       h3.headline-4 Real Time
@@ -81,9 +92,6 @@ section.section-article.pad-no-bottom.container-gray-11 id=current_page.data.sub
     .column
       h3.headline-4 Uniquely Dynamic
       p The cloud is a dynamic world and compliance struggles to keep up. Datica CCMS is the only tool available to assess assurance of managed and microservices against critical compliance controls. It gives customers a strategy for the future.
-  .row.align-center
-    .columns.small-12.large-10.text-center
-      img.lozad.img-crisp src="#{img_2}?w=792&fm=jpg&q=10&bg=rgb:e5e9eb" data-src="#{img_2}?w=2000" alt="CCMS features"
 
 section.bg-white id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
   .section-article
@@ -98,7 +106,7 @@ section.bg-white id=current_page.data.subnav[2].slug data-magellan-target=curren
         h3.headline-4.text-center Understanding the Maturity Model
         table.model
           tbody
-            tr
+            tr.head-row
               td
                 .text-smallest.spaced-out Maturity stage
               td
@@ -106,7 +114,7 @@ section.bg-white id=current_page.data.subnav[2].slug data-magellan-target=curren
               td
                 .text-smallest.spaced-out How Datica Solves it
             tr
-              td.bracket valign="top"
+              td.bracket.model-stage
                 h4.headline-5 Policies
                 h4.headline-5 Procedures
               td 
@@ -115,7 +123,7 @@ section.bg-white id=current_page.data.subnav[2].slug data-magellan-target=curren
               td 
                 p Datica CCMS is the only product focused on making it easy to understand how to secure cloud environments specific to policies and procedures audited against the HITRUST CSF (the <span class="ribbon--yellow-glow">"Privacy"</span> part).
             tr
-              td valign="top"
+              td.model-stage
                 h4.headline-5 Implementations
               td 
                 .headline-4.spaced-out Security
@@ -123,7 +131,7 @@ section.bg-white id=current_page.data.subnav[2].slug data-magellan-target=curren
               td
                 p Other monitoring tools focus strictly on security, or don’t address compliance at all.
             tr
-              td.bracket valign="top"
+              td.bracket.model-stage
                 h4.headline-5 Measurement
                 h4.headline-5 Management
               td 

@@ -344,6 +344,7 @@ table.model { // diagram
         border: none;
     }
     tbody th, tbody td {
+        vertical-align: top;
         p {
             margin-bottom: 0;
         }
@@ -353,17 +354,32 @@ table.model { // diagram
             display: table-cell;
         }
     }
+    .head-row {
+        display: none;
+        @include breakpoint (medium) {
+            display: table-row;
+        }
+    }
     .bracket {
         position: relative;
-        &::after{
-            content: "}";
-            position: absolute;
-            top: 7px;
-            right: 9px;
-            font-size: 3rem;
-            font-weight: 300;
-            opacity: 0.2;
+        @include breakpoint (medium) {
+            &::after{
+                content: "}";
+                position: absolute;
+                top: 7px;
+                right: 9px;
+                font-size: 3rem;
+                font-weight: 300;
+                opacity: 0.2;
+            }
         }
+    }
+    .model-stage {
+        padding-top: 1.3rem; // brings text into baseline alignment with next cell
+        // vertical-align: top;
+        // @include breakpoint (medium) {
+        //     vertical-align: middle;
+        // }
     }
 }
 
