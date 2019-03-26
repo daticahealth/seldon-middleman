@@ -99,19 +99,41 @@ section.section-article.bg-white
   .row.align-center
     .columns
       h3.headline-3.group.text-center.color-ccms-dark API-Driven Compliance
+  .collection
+    .row.align-center.align-middle.group--2x
+      .columns.small-12.medium-8.large-6
+        h3.headline-5 Real Time
+        p Datica CCMS checks configuration states every day and tracks the states in a historical data model. This is the missing piece for modern cloud compliance: Constant understanding of the precise state of your cloud environments.
+      .columns.small-12.medium-4.large-4
+        img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/3SYqUI2cG1VPfpGvep5BD5/973d63a40f147c7917497ccc855cef2d/ccms-logging-crop.jpg"
+    .row.align-center.align-middle.group--2x
+      .columns.small-12.medium-8.large-5
+        h3.headline-5 Audited
+        p Each configuration supported by Datica CCMS has been audited against HITRUST CSF v9.1, meaning a configuration is meant to be compliant against the regimes of HIPAA, GDPR, and GxP. It tracks configuration changes with each CSF update.
+      .columns.small-12.medium-4.large-5
+        .logo-cloud.align-center
+          - data.views.home.badges.each do |logo|
+            img alt="#{logo["name"]}" class="lozad logo-size--large" data-src="#{logo["fileUrl"]}?fm=png&w=200" /
+
+
+    .row.align-center.align-middle.group--2x
+      .columns.small-12.medium-8.large-6
+        h3.headline-5 Uniquely Dynamic
+        p The cloud is a dynamic world and compliance struggles to keep up. Datica CCMS is the only tool available to assess assurance of managed and microservices against critical compliance controls. It gives customers a strategy for the future.
+      .columns.small-12.medium-4.large-4
+        img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/7cO8LZOhMz4VMc9kRU9lfO/5f76f76a1157005c10e887c42f081b6a/c3-diagram-managed-services-crop.png"
+    .row.align-center.align-middle.group--2x
+      .columns.small-12.medium-8.large-6
+        h3.headline-5 Zero Lock-in
+        p As with all of Datica's products, there is zero lock-in. Every service supported by the CCMS will have its configurations published to be publicly reviewable. Full transparency on what we monitor and why is critical to earning trust.
+
+      .columns.small-12.medium-4.large-4
+        img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/3SYqUI2cG1VPfpGvep5BD5/973d63a40f147c7917497ccc855cef2d/ccms-logging-crop.jpg"
   .row.align-center.small-up-1.medium-up-2.large-up-2.group
     .column
-      h3.headline-5 Real Time
-      p Datica CCMS checks configuration states every day and tracks the states in a historical data model. This is the missing piece for modern cloud compliance: Constant understanding of the precise state of your cloud environments.
     .column
-      h3.headline-5 Audited
-      p Each configuration supported by Datica CCMS has been audited against HITRUST CSF v9.1, meaning a configuration is meant to be compliant against the regimes of HIPAA, GDPR, and GxP. It tracks configuration changes with each CSF update.
     .column
-      h3.headline-5 Uniquely Dynamic
-      p The cloud is a dynamic world and compliance struggles to keep up. Datica CCMS is the only tool available to assess assurance of managed and microservices against critical compliance controls. It gives customers a strategy for the future.
     .column
-      h3.headline-5 Zero Lock-in
-      p As with all of Datica's products, there is zero lock-in. Every service supported by the CCMS will have its configurations published to be publicly reviewable. Full transparency on what we monitor and why is critical to earning trust.
   .row.align-center
     .columns.small-12.large-8
       h2.headline-4.group Datica helps you comply with multiple compliance frameworks.
