@@ -172,12 +172,6 @@ $color-slugs: (
     purple-grad
 );
 
-$product-colors: (
-    cks: #9A0BFF,
-    cmi: #6E52FF,
-    cpaas: #498CFF,
-    ccms: #25C6FF
-);
 
 // Art Directed Colors !! Use these sparingly and wisely
 // Datica 2017 neons, baby
@@ -190,7 +184,19 @@ $color_aqua-glow:    hsl(175, 100%, 62%);
 $color_blue-glow:    hsl(192, 100%, 58%);
 $color_neon-purple:  #C41BF1;
 $color_purple-deep:  hsl(236, 27%, 26%);
+
+$color_ccms-bright:  hsl(272, 100%, 76%); // product colors
+$color_ccms-dark:    hsl(267, 92%, 44%);
 //$color_blue-bright:  hsl(220, 100%, 53%);
+
+// needs 2019 update
+$product-colors: (
+    cks: #9A0BFF,
+    cmi: #6E52FF,
+    cpaas: #498CFF,
+    ccms-bright: $color_ccms-bright,
+    ccms-dark: $color_ccms-dark
+);
 
 // future dark, saturated gradients
 // $grad-color-list: (

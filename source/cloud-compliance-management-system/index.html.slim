@@ -71,39 +71,70 @@ section.masthead.bg-dark.bg-purple-bp-grad.product-ccms.relative id=current_page
 section.section-article.pad-no-bottom.bg-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
   .row.align-center
     .columns.small-12.medium-10.large-5.group--2x
-      h2.headline-3.text-strong Datica solves compliance in a post-cloud world
+      h2.headline-3.text-strong.color-ccms-dark Datica solves compliance in a post-cloud world
       p The Cloud Compliance Management System (CCMS) is built to manage compliance requirements across popular HIPAA-eligible cloud provider services. Cloud-native environments tend towards a constellation of managed services and microservices, but they have a compliance problem. <strong>Datica CCMS is the solution.</strong>
       p The CCMS is an easy-to-use SaaS tool that uses modern APIs to monitor and assess the configuration state of your favorite cloud services.
     .columns.small-12.large-7.align-self-bottom
       img.lozad.img-crisp src="https://images.ctfassets.net/189dvqdsjh46/57ACO3Sx2RSPR3rfn68nT5/6daa8c73dea24e9453c26ada6033dd83/ccms-diagram-loader.svg" data-src="#{img_2}" alt="CCMS keeps your services compliant; Feature list"
       / snippet for bg color: ?w=792&fm=jpg&q=10&bg=rgb:e5e9eb
-section.section-article.bg-gray-2
+section.section-article.bg-white
   .row.align-center
     .columns.small-12.large-8.text-center
-      h2.headline-5.spaced-out How it works
-      h3.headline-2 API-Driven Compliance
-  .row.align-center.small-up-1.medium-up-3.group
+      h2.headline-5.spaced-out.color-ccms-dark How it works
+      p.lead CCMS is a easy-to-use SaaS tool that uses modern APIs to assess the configuration state of your favorite cloud services.
+  .row.align-center.small-up-1.medium-up-2.large-up-2.group.width-two-thirds
+    .column.group
+      h4.headline-4 Easy set-up
+      p Customers select from a list of approved cloud services from one of the three major cloud service providers. Customers are walked through a workflow to configure the service to specific HITRUST CSF controls.
+    .column.group
+      h4.headline-4 Continuous compliance
+      p The chosen cloud services are connected to the CCMS via APIs. Datica then monitors the configuration states every day, checking to ensure the states have not changed in a non-compliant way.
+    .column.group
+      h4.headline-4 Compliance-specific features
+      p On-demand tools for remediation practices, attestation exercises, and historical reporting are available for all services monitored by the CCMS, making compliance tasks easy.
+    .column.group
+      h4.headline-4 The CCMS grows with you
+      p As a team's architecture grows, simply add more supported services to the CCMS. Even add services across multiple clouds! All centralized into a single elegant dashboard with powerful features.
+            
+  .row.align-center
+    .columns
+      h3.headline-3.group.text-center.color-ccms-dark API-Driven Compliance
+  .row.align-center.small-up-1.medium-up-2.large-up-2.group
     .column
-      h3.headline-4 Real Time
+      h3.headline-5 Real Time
       p Datica CCMS checks configuration states every day and tracks the states in a historical data model. This is the missing piece for modern cloud compliance: Constant understanding of the precise state of your cloud environments.
     .column
-      h3.headline-4 Audited
+      h3.headline-5 Audited
       p Each configuration supported by Datica CCMS has been audited against HITRUST CSF v9.1, meaning a configuration is meant to be compliant against the regimes of HIPAA, GDPR, and GxP. It tracks configuration changes with each CSF update.
     .column
-      h3.headline-4 Uniquely Dynamic
+      h3.headline-5 Uniquely Dynamic
       p The cloud is a dynamic world and compliance struggles to keep up. Datica CCMS is the only tool available to assess assurance of managed and microservices against critical compliance controls. It gives customers a strategy for the future.
+    .column
+      h3.headline-5 Zero Lock-in
+      p As with all of Datica's products, there is zero lock-in. Every service supported by the CCMS will have its configurations published to be publicly reviewable. Full transparency on what we monitor and why is critical to earning trust.
+  .row.align-center
+    .columns.small-12.large-8
+      h2.headline-4.group Datica helps you comply with multiple compliance frameworks.
+      .row.medium-up-5.align-middle.align-center
+        - data.views.home.badges.each do |logo|
+          - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
+          .column
+            img alt="#{logo["name"]}" class="lozad" data-src="#{logo["fileUrl"]}" /
 
+
+/.strip.strip-small.strip-ccms
 section.bg-white id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
   .section-article
     .row.align-center.group
       .columns.small-12.medium-8.large-6
         h2.headline-2.text-center = "#{current_year} is a Post-Cloud World"
-        p.lead The proliferation of abstracted cloud services has increased in an effort to improve developer experience (a good thing). As a result, most cloud environments are a constellation of managed services and microservices. The cloud is no longer simply an operating system on someone else's hard drive.
-        p.lead But increased abstraction has meant greater control has been taken away from the end user's ability to attest to compliance assurances (a bad thing). The entire layer of "Services" on top of traditional VMs has completely changed how compliance should be measured, monitored, and managed.
+        p The proliferation of abstracted cloud services has increased in an effort to improve developer experience (a good thing). As a result, most cloud environments are a constellation of managed services and microservices. The cloud is no longer simply an operating system on someone else's hard drive.
+        p.group But increased abstraction has meant greater control has been taken away from the end user's ability to attest to compliance assurances (a bad thing). The entire layer of "Services" on top of traditional VMs has completely changed how compliance should be measured, monitored, and managed.
+        h3.headline-4.text-center How CCMS Helps You Pass Audits
+        p This is a typical maturity model that your company will be audited against. It defines Privacy vs. Security vs. Compliance.
 
     .row.align-center
       .columns.small-12.xlarge-10
-        h3.headline-4.text-center Understanding the Maturity Model
         table.model
           tbody
             tr.head-row
