@@ -329,6 +329,43 @@ ul.bullet-outside {
     //     display: block;
     // }
 }
+.underline {
+    &-yellow {
+        border-bottom: 3px solid $color_yellow-glow;
+        display: inline-block;
+    }
+    &-aqua {
+        border-bottom: 3px solid $color_aqua-glow;
+        display: inline-block;
+    }
+}
+table.model { // diagram
+    thead, tbody {
+        border: none;
+    }
+    tbody th, tbody td {
+        p {
+            margin-bottom: 0;
+        }
+        display: block;
+        padding: 1rem 1.3rem;
+        @include breakpoint (medium) {
+            display: table-cell;
+        }
+    }
+    .bracket {
+        position: relative;
+        &::after{
+            content: "}";
+            position: absolute;
+            top: 7px;
+            right: 9px;
+            font-size: 3rem;
+            font-weight: 300;
+            opacity: 0.2;
+        }
+    }
+}
 
 
 // .drop-taper { // sort of a tapering drop shadow for a thing above it

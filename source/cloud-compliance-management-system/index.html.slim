@@ -85,18 +85,54 @@ section.section-article.pad-no-bottom.container-gray-11 id=current_page.data.sub
     .columns.small-12.large-10.text-center
       img.lozad.img-crisp src="#{img_2}?w=792&fm=jpg&q=10&bg=rgb:e5e9eb" data-src="#{img_2}?w=2000" alt="CCMS features"
 
-
-section.container-color--white id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+section.bg-white id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
   .section-article
-    .row.align-center
+    .row.align-center.group
       .columns.small-12.medium-8.large-6
         h2.headline-2.text-center = "#{current_year} is a Post-Cloud World"
         p.lead The proliferation of abstracted cloud services has increased in an effort to improve developer experience (a good thing). As a result, most cloud environments are a constellation of managed services and microservices. The cloud is no longer simply an operating system on someone else's hard drive.
         p.lead But increased abstraction has meant greater control has been taken away from the end user's ability to attest to compliance assurances (a bad thing). The entire layer of "Services" on top of traditional VMs has completely changed how compliance should be measured, monitored, and managed.
-        p
-          em Images from the book, 
-          a href="https://completecloudcompliance.com" title="Complete Cloud Compliance Book" Complete Cloud Compliance.
-  aside.row.collapse
+
+    .row.align-center
+      .columns.small-12.xlarge-10
+        h3.headline-4.text-center Understanding the Maturity Model
+        table.model
+          tbody
+            tr
+              td
+                .text-smallest.spaced-out Maturity stage
+              td
+                .text-smallest.spaced-out Dimension
+              td
+                .text-smallest.spaced-out How Datica Solves it
+            tr
+              td.bracket valign="top"
+                h4.headline-5 Policies
+                h4.headline-5 Procedures
+              td 
+                .headline-4.spaced-out.underline-yellow Privacy
+                p.text-small Defines what must be done to protect privacy.
+              td 
+                p Datica CCMS is the only product focused on making it easy to understand how to secure cloud environments specific to policies and procedures audited against the HITRUST CSF (the <span class="ribbon--yellow-glow">"Privacy"</span> part).
+            tr
+              td valign="top"
+                h4.headline-5 Implementations
+              td 
+                .headline-4.spaced-out Security
+                p.text-small is the act of implementing policies and procedures. 
+              td
+                p Other monitoring tools focus strictly on security, or don’t address compliance at all.
+            tr
+              td.bracket valign="top"
+                h4.headline-5 Measurement
+                h4.headline-5 Management
+              td 
+                .headline-4.spaced-out.underline-aqua Compliance
+                p.text-small Proves it was done.
+              td 
+                p CCMS then continuously monitors the configuration state on a daily basis to ensure continual validation (the <span class="ribbon--aqua-glow">"Compliance"</span> part).
+
+  /aside.row.collapse
     .columns.small-12
       h3.headline-4.text-center Multi-Dimensional Compliance on the Cloud
       img.img-crisp.lozad src="#{diagram_1}?fm=jpg&w=800&q=5" data-src="#{diagram_1}" width="100%"
@@ -104,6 +140,10 @@ section.container-color--white id=current_page.data.subnav[2].slug data-magellan
     .row.align-center
       .columns.small-12.medium-8.large-6
         p.lead The problem explodes when multiple services are used—a common approach to modern cloud workloads. Developers must reinvent the wheel of mapping controls in totality over a new service.
+        p
+          em Images from the book, 
+          a href="https://completecloudcompliance.com" title="Complete Cloud Compliance Book" Complete Cloud Compliance.
+
   aside.row.collapse
     .columns.small-12
       h3.headline-4.text-center Managing a Managed Service
