@@ -531,7 +531,7 @@
 }
 .width {
     // use these in conjunction with float classes, like .float-left, .float-right, .float-right-on-medium, etc.
-    @include breakpoint (large) {
+    @include breakpoint (xlarge) {
         @include percentage-widths;
     }
 }

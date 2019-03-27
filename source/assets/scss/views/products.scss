@@ -329,8 +329,66 @@ ul.bullet-outside {
     //     display: block;
     // }
 }
+.underline {
+    &-yellow {
+        border-bottom: 3px solid $color_yellow-glow;
+        display: inline-block;
+    }
+    &-aqua {
+        border-bottom: 3px solid $color_aqua-glow;
+        display: inline-block;
+    }
+}
+table.model { // diagram
+    thead, tbody {
+        border: none;
+    }
+    tbody th, tbody td {
+        vertical-align: top;
+        p {
+            margin-bottom: 0;
+        }
+        display: block;
+        padding: 1rem 1.3rem;
+        @include breakpoint (medium) {
+            display: table-cell;
+        }
+    }
+    .head-row {
+        display: none;
+        @include breakpoint (medium) {
+            display: table-row;
+        }
+    }
+    .bracket {
+        position: relative;
+        @include breakpoint (medium) {
+            &::after{
+                content: "}";
+                position: absolute;
+                top: 7px;
+                right: 9px;
+                font-size: 3rem;
+                font-weight: 300;
+                opacity: 0.2;
+            }
+        }
+    }
+    .model-stage {
+        padding-top: 1.3rem; // brings text into baseline alignment with next cell
+        // vertical-align: top;
+        // @include breakpoint (medium) {
+        //     vertical-align: middle;
+        // }
+    }
+}
 
-
+.color-ccms-bright {
+    color: $color_ccms-bright;
+}
+.color-ccms-dark {
+    color: $color_ccms-dark;
+}
 // .drop-taper { // sort of a tapering drop shadow for a thing above it
 //     position:relative;
 //     // @include shadow-anarchy(0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset);

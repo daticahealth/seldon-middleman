@@ -1,8 +1,9 @@
-
+@import '../settings';
+@import '../mixins/functions';
 svg {
 	text {
-		font-family: GT-America, Roboto Light, sans-serif; 
-		font-weight: 400;
+		font-family: $font_sans; //GT-America, Roboto Light, sans-serif; 
+		// font-weight: 400;
 	}
 	 // normalize with css var
     fill: currentColor;
