@@ -25,8 +25,8 @@ ruby:
     #if is_future == true
     #    cta_label = "Register Today"
     #end
-- if entry.has_key("trailer_preview")
-    h2 = entry.trailer_preview.id
+- if entry.has_key?("trailer_preview")
+    / h2 = entry.trailer_preview.id
     = Kramdown::Document.new(data.site.videos[entry.trailer_preview.id].custom_form).to_html
 - else
     a.preview.container-gray-2.relative href="/webinars/#{entry["slug"]}" title=("View webinar") data-background-image="#{thumb}" data-webinar-id = entry._meta.id

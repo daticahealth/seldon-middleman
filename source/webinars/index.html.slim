@@ -32,12 +32,15 @@ ruby:
                 .columns.small-12.large-6
                     .lead
                         = Kramdown::Document.new(webinar_entry["summary"]).to_html
-                    - if webinar_entry.has_key?("authors")
-                        aside.group
-                            .subhead--spaced.faded.headline-5.group--sm Presented by
-                            - webinar_entry["authors"].each do | author |
-                                p
-                                    = partial("partials/snippets/person", :locals => { :p => author })
+                    .row.collapse
+                        - if webinar_entry.has_key?("authors")
+                            .columns.small-6
+                                .subhead--spaced.faded.headline-5.group--sm Presented by
+                                - webinar_entry["authors"].each do | author |
+                                    p
+                                        = partial("partials/snippets/person", :locals => { :p => author })
+                        .columns.small-6
+                            = partial "partials/snippets/button", :locals => { :label => "Register to watch", :url => "/webinars/#{webinar_entry.slug}", :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right" }
 section.section-article.container-gray-11
     .row.align-center.group
         .columns.small-12.text-center

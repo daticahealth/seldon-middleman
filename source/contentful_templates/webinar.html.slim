@@ -59,11 +59,6 @@ ruby:
                 a href="/webinars" title="See all webinars"
                     = inline_svg("icon-webinar", class: "icon-size--large")
                     h2.headline-5.spaced-out Datica Webinars
-                    h2 = p.trailer_preview.id
-                - if p.has_key("trailer_preview")
-                    
-                    = Kramdown::Document.new(data.site.videos[p.trailer_preview.id].custom_form).to_html
-
         .row.align-center
             .columns.small-12.large-10.group
                 #webinar-container.preview.container-gray-3.relative href="/webinars/#{p["slug"]}" title=("View webinar")
@@ -71,6 +66,11 @@ ruby:
                         - if p.has_key?("video_embed")
                             .group
                                 = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
+                    // trailer will require multiple condition checks, not worth the trouble yet. 
+                    /- if p.has_key?("trailer_preview")
+                        / h2 = entry.trailer_preview.id
+                        = Kramdown::Document.new(data.site.videos[p.trailer_preview.id].custom_form).to_html
+                    /- else
                     .preview-meta.z-10.relative
                         h1.headline-3.nomargin = p["title"]
                         p.lead = (p.has_key?("subhead") ? p.subhead : nil)
