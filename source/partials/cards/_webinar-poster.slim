@@ -26,8 +26,39 @@ ruby:
     #    cta_label = "Register Today"
     #end
 - if entry.has_key?("trailer_preview")
-    / h2 = entry.trailer_preview.id
-    = Kramdown::Document.new(data.site.videos[entry.trailer_preview.id].custom_form).to_html
+    - the_video = data.site.videos[entry.trailer_preview.id].custom_form
+    /- if defined?(hide_info) && hide_info == true
+    - if defined?(card_style)
+        - case card_style
+        - when "vertical"
+            .card.bg-gray-3
+                = Kramdown::Document.new(the_video).to_html
+                .card-section
+                    h2.headline-4.nomargin = entry["title"]
+                    p = (entry.has_key?("subhead") ? entry.subhead : nil)
+                    = partial "partials/snippets/button", :locals => { :label => "Register today", :url => "/webinars/#{entry.slug}", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_align => "right" }
+        - when "horizontal" || "wide"
+            .row.align-center
+                .columns.small-12.large-6.group
+                    = Kramdown::Document.new(the_video).to_html
+                .columns.small-12.large-6
+                    .lead
+                        = Kramdown::Document.new(entry["summary"]).to_html
+                    .row.collapse
+                        - if entry.has_key?("authors")
+                            .columns.small-6
+                                .subhead--spaced.faded.headline-5.group--sm Presented by
+                                - entry["authors"].each do | author |
+                                    p
+                                        = partial("partials/snippets/person", :locals => { :p => author })
+                        .columns.small-6
+                            = partial "partials/snippets/button", :locals => { :label => "Register to watch", :url => "/webinars/#{entry.slug}", :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right" }
+        - else
+            - puts "⚠️ You specified a 'card_style' without a style matching [vertical|horizontal|wide]. Page: #{current_page.url}"
+    - else ## just show video only
+        = Kramdown::Document.new(the_video).to_html
+
+
 - else
     a.preview.container-gray-2.relative href="/webinars/#{entry["slug"]}" title=("View webinar") data-background-image="#{thumb}" data-webinar-id = entry._meta.id
         .webinar-meta.z-10.relative
