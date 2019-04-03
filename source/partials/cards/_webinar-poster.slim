@@ -34,8 +34,8 @@ ruby:
             .card.bg-gray-3
                 = Kramdown::Document.new(the_video).to_html
                 .card-section
-                    h2.headline-4.nomargin = entry["title"]
-                    p = (entry.has_key?("subhead") ? entry.subhead : nil)
+                    h2.headline-5 = entry["title"]
+                    p.text-small = (entry.has_key?("subhead") ? entry.subhead : nil)
                     = partial "partials/snippets/button", :locals => { :label => "Register today", :url => "/webinars/#{entry.slug}", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_align => "right" }
         - when "horizontal" || "wide"
             .row.align-center
@@ -47,7 +47,7 @@ ruby:
                     .row.collapse
                         - if entry.has_key?("authors")
                             .columns.small-6
-                                .subhead--spaced.faded.headline-5.group--sm Presented by
+                                .subhead--spaced.faded.headline-6.group--sm Presented by
                                 - entry["authors"].each do | author |
                                     p
                                         = partial("partials/snippets/person", :locals => { :p => author })
@@ -64,7 +64,7 @@ ruby:
         .webinar-meta.z-10.relative
             .preview-subhead Datica Webinar
             .preview-title
-                h2.headline-4.nomargin = entry["title"]
+                h2.headline-5.nomargin = entry["title"]
             div.preview-info(style="margin-bottom: 0.2em;")
                 = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
                 / span = entry['event_date'].strftime('%B %-d, %Y')

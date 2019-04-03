@@ -3,7 +3,7 @@ $("document").ready(function(){
     function showWebinar(){
         // $('nav.nav-desktop').attr('data-theme', 'dark');
         $('#webinar').attr('data-theme', 'dark');
-        $('#webinar').addClass("container-gray-3");
+        $('#webinar').addClass("bg-gray-3 link--white-parent");
         $('#webinar-play').removeClass("hide");
         $('#webinar-authors').addClass("hide");
         $('.preview-bg').addClass("hide");
@@ -18,7 +18,7 @@ $("document").ready(function(){
     function hideWebinar(){
         // $('nav.nav-desktop').attr('data-theme', 'dark');
         $('#webinar').attr('data-theme', 'light');
-        $('#webinar').removeClass("container-gray-3");
+        $('#webinar').removeClass("bg-gray-3 link--white-parent");
         $('#webinar-play').addClass("hide");
         $('#webinar-authors').removeClass("hide");
         $('.preview-bg').removeClass("hide");
