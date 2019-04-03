@@ -79,7 +79,7 @@ section#blog-archives-2.section-article
     aside.columns.small-12.large-4.xlarge-3.large-order-1
       - sorted_webinars = data.site.webinars.to_a.sort_by{ |id, webinars| webinars['event_date'] }.reverse!
       - sorted_webinars.take(1).each do | id, webinar_entry |
-        = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry }
+        = partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry, :card_style => "vertical" }
 section#blog-archives.section-article.text-center
   h3.headline-4.spaced-out.group Go further
   .menu.button-group.align-center
