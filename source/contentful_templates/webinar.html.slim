@@ -50,6 +50,7 @@ ruby:
 
 / section#top.container-gray-2.container-image-fill data-interchange="[#{thumb}, small], [#{thumb}#{image_featured_large}, large]"
 .strip-bright.strip-small
+
 .container-gray-11
     = partial "partials/head/header", :locals => { :style => "dark" }
     section#webinar.section-article--med data-webinar = p._meta.id
@@ -65,6 +66,11 @@ ruby:
                         - if p.has_key?("video_embed")
                             .group
                                 = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
+                    // trailer will require multiple condition checks, not worth the trouble yet. 
+                    /- if p.has_key?("trailer_preview")
+                        / h2 = entry.trailer_preview.id
+                        = Kramdown::Document.new(data.site.videos[p.trailer_preview.id].custom_form).to_html
+                    /- else
                     .preview-meta.z-10.relative
                         h1.headline-3.nomargin = p["title"]
                         p.lead = (p.has_key?("subhead") ? p.subhead : nil)

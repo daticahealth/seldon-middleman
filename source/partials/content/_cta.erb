@@ -44,6 +44,12 @@ end
         <% if p.has_key?("cta_desc") %><p class=""><%= p["cta_desc"] %></p><% end %>
         <%= p.cta_widget %>
     </aside>
+<% elsif p.has_key?("related_embed") %>
+    <aside class="<%= style_classes %>" id="cta">
+        <% if p.has_key?("custom_form") %>
+            <%= p.custom_form %>
+        <% end %>
+    </aside>
 <% else %>
     <aside class="<%= style_classes %>" id="cta">
         <% if p.has_key?("cta_icon") %>
