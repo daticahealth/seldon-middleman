@@ -401,5 +401,10 @@
         @include hyphens(none);
     }
 }
-
+// overrides for SVGs not rendering on IE/Edge https://gist.github.com/larrybotha/7881691
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%; 
+  }
+}
 // .overflow-hidden {}

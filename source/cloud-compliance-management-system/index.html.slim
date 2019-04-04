@@ -20,11 +20,11 @@ subnav:
     title: "How it Works"
     slug: "how-it-works"
   -
-    title: "Benefits"
-    slug: "benefits"
+    title: "Trusted & Proven"
+    slug: "trusted"
   -
-    title: "Configurations"
-    slug: "configurations"
+    title: "Managing Services"
+    slug: "services"
   -
     title: "Pricing"
     slug: "pricing"
@@ -75,8 +75,8 @@ scss:
   }
 section.masthead.bg-dark.bg-purple-bp-grad.product-ccms.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   .section-article--lg.relative.z-10 style="padding-bottom: 4vw;"
-    .row.align-middle
-      .columns.small-12.medium-10.large-8
+    .row.align-middle.align-center
+      .columns.small-12.large-8
         .media-object.relative.stack-for-small 
           .media-object-section
             = inline_svg("ccms-logo-w", class: "masthead-icon")
@@ -84,10 +84,6 @@ section.masthead.bg-dark.bg-purple-bp-grad.product-ccms.relative id=current_page
             h1.headline-3.text-bold.margin-bottom-sm Cloud Compliance Management System
             p.lead Know the precise compliance state of your cloud environments
             = partial "partials/snippets/button", :locals => { :label => "Get Started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-top", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
-  .row.align-right.relative.z-10
-    .columns.small-12.large-9
-      .glow-light
-        = Kramdown::Document.new(data.site.videos['1ucmmX9i5Lo4gNY1UKpWOz'].custom_form).to_html
   .art
     = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/cloud-compliance/" }
     = inline_svg("products-hexagons-color", class: "z-5 art-accent step-1")
@@ -95,17 +91,31 @@ section.masthead.bg-dark.bg-purple-bp-grad.product-ccms.relative id=current_page
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
   .strip.strip-small.strip-ccms
 
-
-section.section-article.pad-no-bottom.bg-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
-  .row.align-center
-    .columns.small-12.medium-10.large-5.group--2x
-      h2.headline-3.text-strong.color-ccms-dark Datica solves compliance in a post-cloud world
+section.section-article.bg-white
+  .row.align-center.align-middle
+    .columns.small-12.medium-10.large-5
+      h2.headline-4.text-strong.color-ccms-dark Datica solves compliance in a post-cloud world
       p The Cloud Compliance Management System (CCMS) is built to manage compliance requirements across popular HIPAA-eligible cloud provider services. Cloud-native environments tend towards a constellation of managed services and microservices, but they have a compliance problem. <strong>Datica CCMS is the solution.</strong>
       p The CCMS is an easy-to-use SaaS tool that uses modern APIs to monitor and assess the configuration state of your favorite cloud services.
-    .columns.small-12.large-7.align-self-bottom
+    .columns.small-12.medium-10.large-7
+      = Kramdown::Document.new(data.site.videos['1fMsxIMgXvZS6x0mowu1Nk'].custom_form).to_html
+
+section.section-article.pad-no-bottom.bg-gray-11
+  .row.align-center.align-middle
+    .columns.small-12.medium-10.large-5.large-order-2.group
+      h2.headline-5.color-ccms-dark Uniquely designed to fit the specific requirements of healthcare compliance
+      ul.text-small
+        li Only solution with built in policies and procedures designed to meet the needs of regimes like HIPAA, HITRUST, GDPR, and GxP.
+        li Only continuous monitoring tool to focus on checking specific compliance controls.
+        li Only solution that helps developers with the most important part of compliance: proving it. Unique features make attestation easier.
+        li Only compliance solution to focus on the post- cloud era, working hand-in-hand with the managed services on top of cloud providers that you want to use. It is not a VM or host-based
+        li CCMS leaves security implementation up to you, just the way you like it: pick the tools you want to use and solve security your way. We'll then check to ensure it is compliant.
+    .columns.small-12.medium-12.large-7.align-self-bottom.large-order-1
       img.lozad.img-crisp src="https://images.ctfassets.net/189dvqdsjh46/57ACO3Sx2RSPR3rfn68nT5/6daa8c73dea24e9453c26ada6033dd83/ccms-diagram-loader.svg" data-src="#{img_2}" alt="CCMS keeps your services compliant; Feature list"
       / snippet for bg color: ?w=792&fm=jpg&q=10&bg=rgb:e5e9eb
-section.section-article.bg-white
+
+
+section.section-article.bg-white id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
   .row.align-center
     .columns.small-12.large-8.text-center
       h2.headline-5.spaced-out.color-ccms-dark How it works
@@ -155,7 +165,7 @@ section.section-article.bg-white
       .columns.small-12.medium-4.large-4
         img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/dxlAzg0xvSNx6xwJ6GIke/2edad211a6ab0d17ba40226771423f1b/zero-lock-in.svg"
 
-section.bg-gray-12.section-article.drop-inset--v
+section.bg-gray-12.section-article.drop-inset--v id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
   .row.align-center
     .columns.small-12.large-11.text-center
       h3.headline-4 Proven and Reliable
@@ -186,7 +196,7 @@ section.bg-dark.bg-purple-bp-grad.product-ccms
 
 
 /.strip.strip-small.strip-ccms
-section.bg-white id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+section.bg-white id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
   .section-article
     .row.align-center.group
       .columns.small-12.medium-8.large-6
@@ -234,10 +244,6 @@ section.bg-white id=current_page.data.subnav[2].slug data-magellan-target=curren
               td 
                 p CCMS then continuously monitors the configuration state on a daily basis to ensure continual validation (the <span class="ribbon--aqua-glow">"Compliance"</span> part).
 
-  /aside.row.collapse
-    .columns.small-12
-      h3.headline-4.text-center Multi-Dimensional Compliance on the Cloud
-      img.img-crisp.lozad src="#{diagram_1}?fm=jpg&w=800&q=5" data-src="#{diagram_1}" width="100%"
   .section-article
     .row.align-center
       .columns.small-12.medium-8.large-6
@@ -255,12 +261,15 @@ section.bg-white id=current_page.data.subnav[2].slug data-magellan-target=curren
       .columns.small-12.medium-8.large-6
         p.lead <strong>Datica CCMS solves this problem.</strong> Simply plug <a href="#configs" title="Configurations">available services</a> into the CCMS and let us continuously monitor the compliance state of a service. Users can be assured the configurations map to the proper HITRUST CSF controls, thus generating a compliant posture against regimes such as HIPAA, GDPR, and GxP.
 
-section.section-article.bg-gray-12 id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
+section.section-article.bg-gray-12 id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
   .row.align-center.align-middle
     .columns.small-12.medium-6.large-6
       h2.headline-3 Make any cloud service compliant
       p.lead The compliant configuration states of cloud services should not be proprietary. Transparency is fundamental to healthcare's transformation. Every service monitored by the CCMS will be publicly documented to help empower healthcare developers.
-      p In a post-cloud world, configuring a service in a continual state is the goal. The hard part is simply knowing the proper configuration state mapped to a specific control. Modern compliance extends way beyond simple security group management, which is what existing tools do. Available today are configuration states of the three most popular managed database services across the three main cloud service providers. Each state has been mapped to appropriate HITRUST CSF controls and audited.
+      p.group In a post-cloud world, configuring a service in a continual state is the goal. The hard part is simply knowing the proper configuration state mapped to a specific control. Modern compliance extends way beyond simple security group management, which is what existing tools do. Available today are configuration states of the three most popular managed database services across the three main cloud service providers. Each state has been mapped to appropriate HITRUST CSF controls and audited.
+      h2.headline-3 Simple, straightforward pricing
+      p.lead Datica CCMS is $1,000/mo. per service type + $10/mo. per instance
+      p A 'service' is any supported cloud provider service, like AWS RDS, Azure Cosmos DB, or Google Cloud SQL
     .columns.small-12.medium-6.large-4
       ul.no-bullet
         li.group
@@ -285,68 +294,6 @@ section.section-article.bg-gray-12 id=current_page.data.subnav[3].slug data-mage
             .media-object-section
               h4.headline-5 GCP Cloud SQL Guide
 
-section.section-article.bg-white id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
-  .row.align-center.align-middle
-    .columns.small-12.medium-6.large-6
-      h2.headline-3 Uniquely designed to fit the specific requirements of healthcare compliance
-      ul
-        li Only solution with built in policies and procedures designed to meet the needs of regimes like HIPAA, HITRUST, GDPR, and GxP.
-        li Only continuous monitoring tool to focus on checking specific compliance controls.
-        li Only solution that helps developers with the most important part of compliance: proving it. Unique features make attestation easier.
-        li Only compliance solution to focus on the post- cloud era, working hand-in-hand with the managed services on top of cloud providers that you want to use. It is not a VM or host-based
-        li CCMS leaves security implementation up to you, just the way you like it: pick the tools you want to use and solve security your way. We'll then check to ensure it is compliant.
-    .columns.small-12.medium-6.large-6
-      h2.headline-3 Simple, straightforward pricing
-      p.lead Datica CCMS is $1,000/mo. per service type + $10/mo. per instance
-      p A 'service' is any supported cloud provider service, like AWS RDS, Azure Cosmos DB, or Google Cloud SQL
-/section#configs.section-article.container-gray-11
-  .row.align-center
-    .columns.small-12.large-8
-      h2.headline-3.group.text-center Coming soon — more configurations on the way
-  .row.align-center.relative
-    .columns.small-12.medium-4.large-3.large-offset-2.group
-      h4.headline-5 AWS
-      ul.no-bullet.faded
-        li AWS Redshift
-        li AWS DynamoDB
-        li AWS API Gateway
-        li AWS Lambda
-        li AWS EKS
-        li AWS Fargate
-        li AWS EC2
-        li AWS S3
-    .columns.small-12.medium-4.large-3.group
-      h4.headline-5 Azure
-      ul.no-bullet.faded
-        li Azure AKS
-        li Azure Active Directory
-        li Azure App Service
-        li Azure Database for PostgreSQL
-        li Azure Virtual Machines
-        li Azure Data Lake Analytics
-        li Azure IoT Hub
-        li Azure Storage
-    .columns.small-12.medium-4.large-3.group
-      h4.headline-5 GCP
-      ul.no-bullet.faded
-        li GCP GKE
-        li GCP BigQuery
-        li GCP Bigtable
-        li GCP Dataflow
-        li GCP Storage
-        li GCP Compute Engine
-        li GCP Genomics
-        li GCP Dataproc
-    / Here is a prototype disclosure component with some generic utility classes. 
-    #survey.disclosure-fade.gradient-gray-11-fade-up
-      /= inline_svg("icon-compliance-checklist", :class => "icon-size--large svg-color--white")
-      .margin-auto.small-12.medium-10.large-6
-        .card.container-color--white.drop-light
-          .card-section.text-center
-            p We want to make sure the Cloud Compliance Management System has you covered. <strong>Tell us what other cloud configurations you want to see.</strong>
-            = partial "partials/snippets/button", :locals => { :label => "Start the survey", :url => "survey", :button_classes => "button button-inline", :icon => "icon-chevron-right", :item_id => "ccms_survey" }
-            / = partial "partials/snippets/form", :locals => { :the_form => form_1["custom_form"], :form_id => "configForm" }
-
 .strip.strip-small.strip-ccms
 section.bg-dark.bg-purple-bp-grad.product-ccms id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
   .section-article.container-image--center.lozad data-background-image=bg_image
@@ -362,37 +309,3 @@ section.bg-dark.bg-purple-bp-grad.product-ccms id=current_page.data.subnav[5].sl
     /   img.lozad.img-cover.img-multiply.blur-4 src="#{img_1}?w=250&fm=jpg&q=10" data-src="#{img_1}?w=1000"
 
 
-/ extra content
-/  .row.align-left.small-up-1.medium-up-2
-    .column
-      h4.headline-4 Continuous Monitoring
-      p Datica CCMS is connected directly to your cloud provider account - programmatically receiving steaming updates.
-    .column
-      h4.headline-4 Attestation Tools
-      p Proving compliance is a critical step in actually achieving compliance. With the CCMS, users can provide auditors a digital papertrail of their cloud environment configuration over time.
-    .column
-      h4.headline-4 Risk and Incident Details
-      p When checks fail in the CCMS they don’t fail silently. With a robust notification system, users are made aware of compliance events as they happen.
-    .column
-      h4.headline-4 Remediation Guidance
-      p A failed check requires remediation. Leaving a system misconfigured can result in not only a failed audit, but places your end user’s data at risk. With Datica CCMS, users can see exactly how to remedy failed checks with step by step guides.
-    .column
-      h4.headline-4 Historical Reporting
-      p With historical monitoring, users can build and scope reports to fit their auditing needs, providing concrete evidence of compliance overtime.
-/section#api.section-article.pad-no-bottom.container-gray-11.drop-taper
-  .row.align-center
-    .columns.small-12.large-8.text-center
-      h2.headline-2 API-Driven Compliance
-  .row.align-center
-    .columns.small-12.medium-4.medium-order-2
-      .group
-        h3.headline-4 Real Time
-        p Datica CCMS checks configuration states every day and tracks the states in a historical data model. This is the missing piece for modern cloud compliance: Constant understanding of the precise state of your cloud environments.
-      .group
-        h3.headline-4 Audited
-        p Each configuration supported by Datica CCMS has been audited against HITRUST CSF v9.1, meaning a configuration is meant to be compliant against the regimes of HIPAA, GDPR, and GxP. It tracks configuration changes with each CSF update.
-      .group
-        h3.headline-4 Uniquely Dynamic
-        p The cloud is a dynamic world and compliance struggles to keep up. Datica CCMS is the only tool available to assess assurance of managed and microservices against critical compliance controls. It gives customers a strategy for the future.
-    .columns.small-12.medium-8.medium-order-1
-      img.lozad.img-crisp src="#{img_2}?w=792&fm=jpg&q=10&bg=rgb:e5e9eb" data-src="#{img_2}?w=1800" alt="CCMS features"
