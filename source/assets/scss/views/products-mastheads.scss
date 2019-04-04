@@ -147,7 +147,7 @@
 .product-ccms {
     $hue: 278;
     .art-accent {
-        transform: translate3d(5vw, 7vw, 0) scale3d(1.2, 1.2, 1);
+        transform: translate3d(0, -6rem, 0) scale3d(0.7, 0.7, 1);
     }
     .art-light-blob {
         background: radial-gradient(20vw at 44.68% 42.78%, hsla($hue, 53, 42, 0.88) 0%, hsla($hue, 53, 42, 0.09) 82.87%, hsla($hue, 53, 42, 0) 100%);
