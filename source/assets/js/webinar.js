@@ -13,6 +13,7 @@ $("document").ready(function(){
         // $('#webinar-title').removeClass("hide");
         $('.is-registered').removeClass("hide");
         $('#report-form').addClass("hide");
+        //$('#webinar-trailer').addClass("hide");
         console.log('show it');
     }
     function hideWebinar(){

@@ -31,24 +31,7 @@ ruby:
                     .card.bg-white.drop-hover
                         .card-section
                             = partial "partials/cards/card-guide-horiz", :locals => { :entry => guide_entry }
-                            /.media-object.article-card
-                                .media-object-section.media-object--info.main-section.align-self-middle
-                                    .h2.headline-5.margin-bottom-small
-                                        a(href="/guide/#{guide_entry["slug"]}" title="Get your free guide") = guide_entry["title"]
-                                    .menu.simple.margin-bottom-small
-                                        - if guide_entry.has_key?("discovery_topic")
-                                            li
-                                                span.label.info.round = data.site.discover[guide_entry.discovery_topic.id].title
-                                        - if guide_entry.has_key?("authors")
-                                            - guide_entry.authors.each do | author |
-                                                li
-                                                    = partial("partials/snippets/person-avatar", :locals => { :p => author, :size => "small" })
-                                    .text-small
-                                        = Kramdown::Document.new(guide_entry["summary"]).to_html
-                                - unless thumb == nil
-                                    .media-object-section.show-for-medium
-                                        a href="/guide/#{guide_entry["slug"]}" title=("Get your free guide")
-                                            img.float-left(src="#{thumb}?fit=thumb&w=240&h=240" alt="Guide Preview" width="120")
+
 
         .row.align-center
             .columns.small-12.text-center.group
