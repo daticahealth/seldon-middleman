@@ -129,18 +129,7 @@ section#resources.section-article.collection.bg-gray-11
     = partial "/partials/content/collection-list", :locals => { :collection => collection }
 
 .strip.strip-ccms
-aside#ctaBottom.bg-gray-3.section-article.container-image--center.lozad data-background-image=bg_product_dark
-  .relative.has-blob
-    .relative.z-5
-      .row.align-center.group--sm
-        .columns.small-12.medium-10.large-10.text-center
-          h2.headline-3 HITRUST assessment? No problem.
-      .row.align-center
-        .columns.shrink
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about HITRUST compliance", :url => "/discover/hitrust/", :button_classes => "button hollow-inverted" }
-        .columns.shrink
-          = partial "partials/snippets/button", :locals => { :label => "Get started with CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :data_track_group => "compliance", :item_id => "get-ccms-bottom" }
-    .blob-color.blob-ccms.z-auto data-glow="false"
+= partial "partials/section-promos/product-ccms"
 
 / This "product-lens" animation is showing some weird blitting in certain states. Holding off for now. Note in the frontmatter above - views/product-lens-anim.css is needed.
 javascript:

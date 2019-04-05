@@ -1,0 +1,25 @@
+ruby:
+  background = 'https://images.ctfassets.net/189dvqdsjh46/4F8Y3ZvCpWdmTRdgnTLUOF/ac4acbc9aac7b147be6c86c5c8a29c63/bg-triangles.svg'
+  if defined?(bg_image)
+    bg_image = background + '?fm=jpg&fl=progressive&fit=thumb&f=bottom&w=1600&h=650'
+  else
+    bg_image = background
+  end
+  unless defined?(tagline)
+    tagline = "<strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here."
+  end
+  unless defined?(anchor)
+    anchor = 'ctaBottom'
+  end
+
+aside.bg-dark.bg-blue-purple-grad.product-cks
+  .section-article.container-image--center.lozad data-background-image=bg_image id=anchor
+    .relative.has-blob
+      .relative.z-5
+        .row.align-center.group--sm
+          .columns.small-12.medium-10.large-10.text-center
+            h2.headline-3 = tagline
+        .button-group.menu.align-center
+          = partial "partials/snippets/button", :locals => { :label => "Learn more about HITRUST compliance", :url => "/cloud-compliance/", :button_classes => "button hollow-inverted", :data_track_group => "compliance", :item_id => "get-compliance-bottom" }
+          = partial "partials/snippets/button", :locals => { :label => "Get started today.", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_color => "gray-8", :icon_align => "right", :data_track_group => "compliance", :item_id => "get-cks-bottom" }
+      .blob-color.blob-cks.z-auto data-glow="false"

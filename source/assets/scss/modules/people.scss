@@ -32,7 +32,7 @@ blockquote + .media-object, .blockquote-info { // line person/info up with quote
 .avatar {
     &--small { // inline with content
         // max-width: 90%;
-        width: $thing-m;
+        width: $thing-s;
         @include breakpoint(medium up) {
             width: $thing-s;
         }
