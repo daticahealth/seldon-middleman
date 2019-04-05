@@ -163,7 +163,7 @@ section.section-article.bg-white id=current_page.data.subnav[1].slug data-magell
         h3.headline-5 Zero Lock-in
         p As with all of Datica's products, there is zero lock-in. Every service supported by the CCMS will have its configurations published to be publicly reviewable. Full transparency on what we monitor and why is critical to earning trust.
       .columns.small-12.medium-4.large-4
-        img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/dxlAzg0xvSNx6xwJ6GIke/2edad211a6ab0d17ba40226771423f1b/zero-lock-in.svg"
+        img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/dxlAzg0xvSNx6xwJ6GIke/d4dc2f8027447b1812d9b9ffb71c0ccd/zero-lock-in.png"
 
 section.bg-gray-12.section-article.drop-inset--v id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
   .row.align-center
@@ -174,9 +174,9 @@ section.bg-gray-12.section-article.drop-inset--v id=current_page.data.subnav[2].
       .column
         - if stat.url != ""
           a href=stat.url title=stat.desc
-            img.lozad.logo-size--xlarge data-src=stat.image alt=stat.desc
+            img.lozad.logo-size--xlarge data-src="#{stat.image}?fm=png&w=400" alt=stat.desc
         - else
-            img.lozad.logo-size--xlarge data-src=stat.image alt=stat.desc
+            img.lozad.logo-size--xlarge data-src="#{stat.image}?fm=png&w=400" alt=stat.desc
   .row.align-center
     .columns.small-12.large-11.text-center
       h3.headline-4.nomargin Trusted by the Best
