@@ -50,24 +50,30 @@ ruby:
 
 / section#top.container-gray-2.container-image-fill data-interchange="[#{thumb}, small], [#{thumb}#{image_featured_large}, large]"
 .strip-bright.strip-small
+.bg-gray-1
+    = partial "partials/head/header", :locals => { :style => "light" }
+
 
 .bg-gray-11
-    = partial "partials/head/header", :locals => { :style => "dark" }
     section#webinar.section-article--med data-webinar = p._meta.id
         .row.align-center
             .columns.small-12.large-6.text-center.group
                 a href="/webinars" title="See all webinars"
                     = inline_svg("icon-webinar", class: "icon-size--large")
                     h2.headline-5.spaced-out Datica Webinars
-        - if p.has_key?("trailer_preview")
-            #webinar-trailer.row.align-center.collapse
-                .columns.small-12.large-10.group
-                    h4.headline-6.spaced-out.faded.margin-bottom-small Webinar Preview
-                    = Kramdown::Document.new(data.site.videos[p.trailer_preview.id].custom_form).to_html    
-        - else
+        - if p.has_key?("trailer_preview") && is_future == true
+            #webinar-trailer
+                .row.align-center.align-middle
+                    .columns.small-12.large-6
+                        = Kramdown::Document.new(data.site.videos[p.trailer_preview.id].custom_form).to_html
+                        h4.headline-6.spaced-out.faded style="margin-top: 1rem;" Webinar Preview
+                    .columns.small-12.large-4
+                        h1.headline-4.nomargin = p["title"]
+                        p = (p.has_key?("subhead") ? p.subhead : nil)
+        - elsif p.has_key?("video_embed") && is_future == false
             .row.align-center.collapse
                 .columns.small-12.large-10.group
-                    #webinar-container.preview.container-gray-3.relative href="/webinars/#{p["slug"]}" title=("View webinar")
+                    #webinar-container.preview.container-gray-2.relative href="/webinars/#{p["slug"]}" title=("View webinar")
                         #webinar-play.hide.z-10.relative
                             - if p.has_key?("video_embed")
                                 .group
@@ -98,10 +104,9 @@ ruby:
         .row.align-center
             .columns.small-12.large-6
                 - if p.has_key?("lead")
-                    .lead
-                        = Kramdown::Document.new(p["lead"]).to_html
+                    = Kramdown::Document.new(p["lead"]).to_html
                 - if p.has_key?("desc")
-                    article.group.content-dynamic
+                    article.group
                         = Kramdown::Document.new(p["desc"]).to_html
             .columns.small-12.large-4
                 - if is_future == true
