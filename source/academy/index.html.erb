@@ -15,42 +15,26 @@ current_page.data.date = today.strftime('%B %-d, %Y')
 promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc82592dd23d3c78bfa0a47126608c/cta-ccms-survey-ad-4x3.png"
 %>
 <%= partial "partials/head/header", :locals => { :style => "dark" } %>
-<section class="section-article">
+<section class="section-article bg-gray-12">
     <div class="row align-center">
         <div class="columns small-12 medium-10 large-8 text-center group">
             <h1 class="headline-2">
-                <%= inline_svg("academy-logo", class: "logo-size--medium") %>
+                <%= inline_svg("academy-logo", class: "logo-size--large") %>
             </h1>
             <p>HIPAA is complicated, but easily learned. The Datica HIPAA and Interoperability Academy walks you through the intricacies of HIPAA, HL7, and FHIR—from the highest concepts to the deepest details.</p>
-            <p>Start with the basics, like why Protected Health Information (PHI) is central to HIPAA, then work your way towards advanced topics like FHIR and HL7.</p>
+            <p class="group">Start with the basics, like why Protected Health Information (PHI) is central to HIPAA, then work your way towards advanced topics like FHIR and HL7.</p>
+            <h2 class="headline-5 spaced-out">Datica Guides</h2>
+            <p class="">Authoritative Guides Written By Industry Experts</p>
         </div>
     </div>
-</section>
-<section class="section-article container-gray-11">
-    <div class="row align-center">
-        <div class="columns small-12 large-6 text-center group">
-            <h2 class="headline-3">Datica Guides</h2>
-            <p class="lead">Authoritative Guides Written By Industry Experts</p>
-        </div>
-    </div>
-    <div class="masonry-group">
+    <div class="row small-up-1 large-up-2 xxlarge-up-3 row--card-grid">
         <% sorted_entries = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] } %>
         <% sorted_entries.each do | id, guide_entry | %>
             <% unless guide_entry.has_key?("list_view_hidden") %>
-                <div class="masonry-group--item">
-                    <div class="card drop">
+                <div class="column group">
+                    <div class="card drop-hover">
                         <div class="card-section">
-                            <h3 class="headline-5"><a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>"><%= guide_entry["title"] %></a></h3>
-                        </div>
-                        <div class="card-section card-section--flush">
-                            <% if guide_entry.has_key?("image_thumb") %>
-                                <a class="" title="Get your free guide" href="/guide/<%= guide_entry["slug"] %>">
-                                    <img class="lozad product-thumb float-right" src="https://images.ctfassets.net/189dvqdsjh46/14EaN5W0ItsJ3B8V8LfrWS/02dd779de703aa4925587ef089bd9953/loader-square.svg" data-src="<%= guide_entry.image_thumb.url %>?fit=thumb&w=200" width="40%">
-                                </a>
-                            <% end %>
-                            <div class="text-small">
-                                <%= Kramdown::Document.new(guide_entry["summary"]).to_html %>
-                            </div>
+                            <%= partial "partials/cards/card-guide-horiz", :locals => { :entry => guide_entry } %>
                         </div>
                     </div>
                 </div>
@@ -58,10 +42,11 @@ promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc8
         <% end %>
     </div>
 </section>
-<section class="section-article container-gray-12">
+<div class="strip strip-bright strip-small"></div>
+<section class="section-article bg-gray-12">
     <div class="row align-center">
         <div class="columns small-12 large-6 text-center group">
-            <h2 class="headline-3">Datica Academy Articles</h2>
+            <h2 class="headline-4 spaced-out">Datica Academy Articles</h2>
         </div>
     </div>
     <div class="row">
@@ -155,15 +140,7 @@ promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc8
 <section class="container-gray-10 section-article">
     <%= partial "partials/content/recent-items" %>    
 </section>
-<aside id="ctaBottom" class="container-color--dark-grad-blue"> 
-    <div class="section-article container-image--center" data-interchange="[/public/img/art/platform-iso-illustration-bg.svg, small]">
-        <div class="row align-center">
-            <div class="columns small-12 medium-10 text-center">
-                <h2 class="headline-3 group"><strong>End-to-end compliance</strong> with Kubernetes<sup>&reg;</sup> is here.</h2>
-                <!-- <p class="lead">Start your free trial today.</p> -->
-                <%= partial "partials/snippets/button", :locals => { :label => "Learn about Datica CKS", :url => "/compliant-kubernetes-service", :button_classes => "button button--light", :icon => "icon-chevron-right", :icon_align => "right" } %>
-            </div>
-        </div>
-    </div>
-</aside>
+
+<div class="strip strip-ccms"></div>
+<%= partial "partials/section-promos/product-ccms" %>
 <%= partial "/partials/section-promos/dhsf-video", :locals => { :align => "left" } %>

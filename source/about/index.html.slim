@@ -247,9 +247,9 @@ scss:
           .group
             - if stat.url != ""
               a href=stat.url title=stat.desc
-                img.lozad width=stat.width data-src=stat.image alt=stat.desc
+                img.lozad width=stat.width data-src="#{stat.image}?fm=png&w=400" alt=stat.desc
             - else
-                img.lozad width=stat.width data-src=stat.image alt=stat.desc
+                img.lozad width=stat.width data-src="#{stat.image}?fm=png&w=400" alt=stat.desc
 
 section.section-article.bg-white.drop--big
   .row.align-center

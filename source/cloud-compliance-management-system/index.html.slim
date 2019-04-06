@@ -65,7 +65,7 @@ ruby:
   the_form = data.site.forms['1sd7ExrRIkg0SgQ0CsiiaO']
   bg_image = 'https://images.ctfassets.net/189dvqdsjh46/3FCC7CKhlkP2bzFf8UzNk6/651f57bfbd77c0d38a7b188776ac4230/bg-hexagons-1.svg'
   img_1 = 'https://images.ctfassets.net/189dvqdsjh46/41KHEMRsg8CeGiO2cSawU8/1d95703cc95b4ca18660e95a105f1345/ccms--compliance-checks.jpg'
-  img_2 = 'https://images.ctfassets.net/189dvqdsjh46/6nxnpKEZvq4lSAN6u3l0Bf/670f5dbc61532bbb922389bb865d7154/ccms-diagram_bleed_bottom.svg'
+  img_2 = 'https://images.ctfassets.net/189dvqdsjh46/6nxnpKEZvq4lSAN6u3l0Bf/4e0c45d4ae390fe95a682de8ba792c35/ccms-diagram_bleed_bottom.svg'
   diagram_1 = "https://images.ctfassets.net/189dvqdsjh46/1DnnFdmBAYcWSyiGE2M6aK/1651ceeb1d2343007b09a5ce4c20ed38/c3-diagram-1.png"
   diagram_2 = "https://images.ctfassets.net/189dvqdsjh46/iEhDz8im4wyCMCGk0Wcqk/79088104bd888bcb3e9867fb0ccb242a/c3-diagram-2.png"
   current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
@@ -151,7 +151,7 @@ section.section-article.bg-white id=current_page.data.subnav[1].slug data-magell
         h3.headline-5 Real Time
         p Datica CCMS checks configuration states every day and tracks the states in a historical data model. This is the missing piece for modern cloud compliance: Constant understanding of the precise state of your cloud environments.
       .columns.small-12.medium-4.large-4
-        img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/3SYqUI2cG1VPfpGvep5BD5/973d63a40f147c7917497ccc855cef2d/ccms-logging-crop.jpg"
+        img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/3SYqUI2cG1VPfpGvep5BD5/1435c7636d927693b7792a7825a90f4c/ccms-detail-realtime.png?w=700&fm=jpg&q=90&bg=rgb:ffffff"
     .row.align-center.align-middle.group--2x
       .columns.small-12.medium-8.large-6
         h3.headline-5 Uniquely Dynamic
@@ -163,7 +163,7 @@ section.section-article.bg-white id=current_page.data.subnav[1].slug data-magell
         h3.headline-5 Zero Lock-in
         p As with all of Datica's products, there is zero lock-in. Every service supported by the CCMS will have its configurations published to be publicly reviewable. Full transparency on what we monitor and why is critical to earning trust.
       .columns.small-12.medium-4.large-4
-        img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/dxlAzg0xvSNx6xwJ6GIke/2edad211a6ab0d17ba40226771423f1b/zero-lock-in.svg"
+        img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/dxlAzg0xvSNx6xwJ6GIke/d4dc2f8027447b1812d9b9ffb71c0ccd/zero-lock-in.png"
 
 section.bg-gray-12.section-article.drop-inset--v id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
   .row.align-center
@@ -174,9 +174,9 @@ section.bg-gray-12.section-article.drop-inset--v id=current_page.data.subnav[2].
       .column
         - if stat.url != ""
           a href=stat.url title=stat.desc
-            img.lozad.logo-size--xlarge data-src=stat.image alt=stat.desc
+            img.lozad.logo-size--xlarge data-src="#{stat.image}?fm=png&w=400" alt=stat.desc
         - else
-            img.lozad.logo-size--xlarge data-src=stat.image alt=stat.desc
+            img.lozad.logo-size--xlarge data-src="#{stat.image}?fm=png&w=400" alt=stat.desc
   .row.align-center
     .columns.small-12.large-11.text-center
       h3.headline-4.nomargin Trusted by the Best
@@ -273,24 +273,24 @@ section.section-article.bg-gray-12 id=current_page.data.subnav[4].slug data-mage
     .columns.small-12.medium-6.large-4
       ul.no-bullet
         li.group
-          a.media-object.align-middle.container-color--white.drop.radius href="/academy/aws-rds-guide-how-to-configure-rds-to-comply-with-hipaa-and-hitrust" title="AWS RDS Guide"
+          a.media-object.align-middle.container-color--white.drop-hover.radius href="/academy/aws-rds-guide-how-to-configure-rds-to-comply-with-hipaa-and-hitrust" title="AWS RDS Guide"
             .media-object-section.width-half
               - img_rds = "https://images.ctfassets.net/189dvqdsjh46/3Ml0plud3iWwgikOGEECi6/fe49398f8baeb5593ebb39bd10f637e9/guide-aws-rds.jpg"
-              img.img-cover.icon-size--xlarge.lozad src=img_rds data-src=img_rds alt="AWS RDS Guide"
+              img.icon-size--xlarge.lozad src=img_rds data-src=img_rds alt="AWS RDS Guide"
             .media-object-section
               h4.headline-5 AWS RDS Guide
         li.group
-          a.media-object.align-middle.container-color--white.drop.radius href="/academy/azure-cosmos-db-guide-how-to-configure-cosmos-db-to-comply-with-hipaa-and-hitrust" title="Azure CosmosDB Guide"
+          a.media-object.align-middle.container-color--white.drop-hover.radius href="/academy/azure-cosmos-db-guide-how-to-configure-cosmos-db-to-comply-with-hipaa-and-hitrust" title="Azure CosmosDB Guide"
             .media-object-section.width-half
               - img_az = "https://images.ctfassets.net/189dvqdsjh46/3plStwctlKGM2Mg0sWIIMm/bfe93306bd50af4a08a19937882b3724/guide-azure-cosmos.jpg"
-              img.img-cover.icon-size--xlarge.lozad src=img_az data-src=img_az alt="Azure CosmosDB Guide"
+              img.icon-size--xlarge.lozad src=img_az data-src=img_az alt="Azure CosmosDB Guide"
             .media-object-section
               h4.headline-5 Azure CosmosDB Guide
         li.group
-          a.media-object.align-middle.container-color--white.drop.radius href="/academy/google-cloud-sql-guide-how-to-configure-gcp-cloud-sql-to-comply-with-hipaa" title="GCP Cloud SQL Guide"
+          a.media-object.align-middle.container-color--white.drop-hover.radius href="/academy/google-cloud-sql-guide-how-to-configure-gcp-cloud-sql-to-comply-with-hipaa" title="GCP Cloud SQL Guide"
             .media-object-section.width-half
               - img_gcp = "https://images.ctfassets.net/189dvqdsjh46/5Pwsy82W4g2i2AOKoGiMyO/ae8de7bf28cb3d28b1e65401ed4bb290/guide-gcp-sql.jpg"
-              img.img-cover.icon-size--xlarge.lozad src=img_gcp data-src=img_gcp alt="GCP Cloud SQL Guide"
+              img.icon-size--xlarge.lozad src=img_gcp data-src=img_gcp alt="GCP Cloud SQL Guide"
             .media-object-section
               h4.headline-5 GCP Cloud SQL Guide
 

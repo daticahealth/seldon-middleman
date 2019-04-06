@@ -1,0 +1,26 @@
+- if entry.has_key?("image_thumb")
+    - thumb = entry.image_thumb.url
+- elsif entry.has_key?("bg_image")
+    - thumb = entry.bg_image.url
+- else
+    - thumb = nil
+
+/ shows an entry with a thumbnail
+.media-object.article-card
+    .media-object-section.media-object--info.main-section.align-self-middle
+        .h2.headline-5.margin-bottom-small
+            a(href="/guide/#{entry["slug"]}" title="Get your free guide") = entry["title"]
+        .menu.simple.margin-bottom-small
+            - if entry.has_key?("discovery_topic")
+                li
+                    span.label.info.round = data.site.discover[entry.discovery_topic.id].title
+            - if entry.has_key?("authors")
+                - entry.authors.each do | author |
+                    li
+                        = partial("partials/snippets/person-avatar", :locals => { :p => author, :size => "small" })
+        .text-small
+            = Kramdown::Document.new(entry["summary"]).to_html
+    - unless thumb == nil
+        .media-object-section.show-for-medium
+            a href="/guide/#{entry["slug"]}" title=("Get your free guide")
+                img.float-left(src="#{thumb}?fit=thumb&w=240&h=240" alt="Guide Preview" width="120")

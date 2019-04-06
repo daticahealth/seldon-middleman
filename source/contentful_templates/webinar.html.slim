@@ -50,61 +50,63 @@ ruby:
 
 / section#top.container-gray-2.container-image-fill data-interchange="[#{thumb}, small], [#{thumb}#{image_featured_large}, large]"
 .strip-bright.strip-small
+.bg-gray-1
+    = partial "partials/head/header", :locals => { :style => "light" }
+
 
 .bg-gray-11
-    = partial "partials/head/header", :locals => { :style => "dark" }
     section#webinar.section-article--med data-webinar = p._meta.id
         .row.align-center
             .columns.small-12.large-6.text-center.group
                 a href="/webinars" title="See all webinars"
                     = inline_svg("icon-webinar", class: "icon-size--large")
                     h2.headline-5.spaced-out Datica Webinars
-        .row.align-center
-            .columns.small-12.large-10.group
-                #webinar-container.preview.container-gray-3.relative href="/webinars/#{p["slug"]}" title=("View webinar")
-                    #webinar-play.hide.z-10.relative
-                        - if p.has_key?("video_embed")
-                            .group
-                                = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
-                    // trailer will require multiple condition checks, not worth the trouble yet. 
-                    /- if p.has_key?("trailer_preview")
-                        / h2 = entry.trailer_preview.id
+        - if p.has_key?("trailer_preview") && is_future == true
+            #webinar-trailer
+                .row.align-center.align-middle
+                    .columns.small-12.large-6
                         = Kramdown::Document.new(data.site.videos[p.trailer_preview.id].custom_form).to_html
-                    /- else
-                    .preview-meta.z-10.relative
-                        h1.headline-3.nomargin = p["title"]
-                        p.lead = (p.has_key?("subhead") ? p.subhead : nil)
-                        .menu.simple.group
-                            li
-                                = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
-                                span = event_date_full
-                            - if p.has_key?("discovery_topic")
+                        h4.headline-6.spaced-out.faded style="margin-top: 1rem;" Webinar Preview
+                    .columns.small-12.large-4
+                        h1.headline-4.nomargin = p["title"]
+                        p = (p.has_key?("subhead") ? p.subhead : nil)
+        - elsif p.has_key?("video_embed") && is_future == false
+            .row.align-center.collapse
+                .columns.small-12.large-10.group
+                    #webinar-container.preview.container-gray-2.relative href="/webinars/#{p["slug"]}" title=("View webinar")
+                        #webinar-play.hide.z-10.relative
+                            - if p.has_key?("video_embed")
+                                .group
+                                    = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
+                        .preview-meta.z-10.relative
+                            h1.headline-3.nomargin = p["title"]
+                            p.lead = (p.has_key?("subhead") ? p.subhead : nil)
+                            .menu.simple.group
                                 li
-                                    span.label.info.round = data.site.discover[p.discovery_topic.id].title
-                        - if p.has_key?("authors")
-                            aside#webinar-authors
-                                .subhead--spaced.faded.headline-6.group--sm Presented by
-                                - p["authors"].each do | author |
-                                    p
-                                        = partial("partials/snippets/person", :locals => { :p => author, :classes => "person-light" })
-                    #preview-register.show.show-for-large.absolute(style="bottom: 0; right: 0;")
-                        / .preview-cta.headline-5.spaced-out Register to watch
-                        = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
-                            
-                    #webinar-bg.absolute.preview-bg.z-0.group.img-multiply.blur-2
-                        img.lozad.img-cover src="#{thumb}?w=250&fm=jpg&q=10" data-src="#{thumb}?w=840"
+                                    = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
+                                    span = event_date_full
+                                - if p.has_key?("discovery_topic")
+                                    li
+                                        span.label.info.round = data.site.discover[p.discovery_topic.id].title
+                            - if p.has_key?("authors")
+                                aside#webinar-authors
+                                    .subhead--spaced.faded.headline-6.group--sm Presented by
+                                    - p["authors"].each do | author |
+                                        p
+                                            = partial("partials/snippets/person", :locals => { :p => author, :classes => "person-light" })
+                        #preview-register.show.show-for-large.absolute(style="bottom: 0; right: 0;")
+                            / .preview-cta.headline-5.spaced-out Register to watch
+                            = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
+                                
+                        #webinar-bg.absolute.preview-bg.z-0.group.img-multiply.blur-2
+                            img.lozad.img-cover src="#{thumb}?w=250&fm=jpg&q=10" data-src="#{thumb}?w=840"
     section#description.section-article--med
         .row.align-center
             .columns.small-12.large-6
-                /h4.headline-5
-                    /p = today.in_time_zone("Central Time (US & Canada)").strftime('%A, %B %-d, %Y, %l:%M %p')
-                    = inline_svg("small/icon-event-note", class: "icon-inline icon-left")
-                    span = event_date_full
                 - if p.has_key?("lead")
-                    .lead
-                        = Kramdown::Document.new(p["lead"]).to_html
+                    = Kramdown::Document.new(p["lead"]).to_html
                 - if p.has_key?("desc")
-                    article.group.content-dynamic
+                    article.group
                         = Kramdown::Document.new(p["desc"]).to_html
             .columns.small-12.large-4
                 - if is_future == true

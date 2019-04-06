@@ -3,7 +3,7 @@ $("document").ready(function(){
     function showWebinar(){
         // $('nav.nav-desktop').attr('data-theme', 'dark');
         $('#webinar').attr('data-theme', 'dark');
-        $('#webinar').addClass("bg-gray-3 link--white-parent");
+        $('#webinar').addClass("bg-gray-2 link--white-parent");
         $('#webinar-play').removeClass("hide");
         $('#webinar-authors').addClass("hide");
         $('.preview-bg').addClass("hide");
@@ -13,6 +13,9 @@ $("document").ready(function(){
         // $('#webinar-title').removeClass("hide");
         $('.is-registered').removeClass("hide");
         $('#report-form').addClass("hide");
+        $.cookie(currPromoCookie, 'true', { expires: 14, path: '/' });
+        $('#alertTop').addClass("hide");
+        //$('#webinar-trailer').addClass("hide");
         console.log('show it');
     }
     function hideWebinar(){
