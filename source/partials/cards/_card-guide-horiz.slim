@@ -10,6 +10,8 @@
     .media-object-section.media-object--info.main-section.align-self-middle
         .h2.headline-5.margin-bottom-small
             a(href="/guide/#{entry["slug"]}" title="Get your free guide") = entry["title"]
+        .text-small
+            = Kramdown::Document.new(entry["summary"]).to_html
         .menu.simple.margin-bottom-small
             - if entry.has_key?("discovery_topic")
                 li
@@ -18,8 +20,6 @@
                 - entry.authors.each do | author |
                     li
                         = partial("partials/snippets/person-avatar", :locals => { :p => author, :size => "small" })
-        .text-small
-            = Kramdown::Document.new(entry["summary"]).to_html
     - unless thumb == nil
         .media-object-section.show-for-medium
             a href="/guide/#{entry["slug"]}" title=("Get your free guide")
