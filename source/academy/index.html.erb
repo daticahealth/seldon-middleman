@@ -120,7 +120,9 @@ promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc8
         <aside class="column" data-sticky-container>
             <div class="sticky" data-sticky data-options="anchor: articles; stickyOn: large;">
                 <%= partial "partials/ctas/resources-compact", :locals => { :classes => "group" } %>
-                <a href="/cloud-compliance-management-system/survey/" title="take the cloud configuration survey"><img class="lozad thumbnail" src="<%= promo1 %>?fm=jpg&w=400&q=5" data-src="<%= promo1 %>?fm=png&fl=png8&w=600"></a>
+                <div class="group">
+                <%= partial "partials/cards/card-report-simple", :locals => { :post => data.site.guides['5KKD6XVLC8YuCq4eOoKEoO'], :style => "none", :size => "small", :desc => true, :show_button => true } %>
+                </div>
                 <%# to embed/pass a unique ID or specific entry, use this notation. %>
                 <%#= partial("/partials/content/cta", :locals => { :p => data.site.cta["1CKHNq6V7eG4W20ygCWmei"] }) %>
                 <%# sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse! %>
