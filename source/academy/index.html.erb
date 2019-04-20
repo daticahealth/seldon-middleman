@@ -21,13 +21,15 @@ promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc8
             <h1 class="headline-2">
                 <%= inline_svg("academy-logo", class: "logo-size--large") %>
             </h1>
-            <p>HIPAA is complicated, but easily learned. The Datica HIPAA and Interoperability Academy walks you through the intricacies of HIPAA, HL7, and FHIR—from the highest concepts to the deepest details.</p>
+            <p class="lead group">HIPAA is complicated, but easily learned. The Datica HIPAA and Interoperability Academy walks you through the intricacies of HIPAA, HL7, and FHIR—from the highest concepts to the deepest details.</p>
+            <%#
             <p class="group">Start with the basics, like why Protected Health Information (PHI) is central to HIPAA, then work your way towards advanced topics like FHIR and HL7.</p>
-            <h2 class="headline-5 spaced-out">Datica Guides</h2>
+            %>
+            <h2 class="headline-4 spaced-out">Datica Guides</h2>
             <p class="">Authoritative Guides Written By Industry Experts</p>
         </div>
     </div>
-    <div class="row small-up-1 large-up-2 xxlarge-up-3 row--card-grid">
+    <div class="row full-width small-up-1 medium-large-up-2 xlarge-up-3 row--card-grid">
         <% sorted_entries = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] } %>
         <% sorted_entries.each do | id, guide_entry | %>
             <% unless guide_entry.has_key?("list_view_hidden") %>
