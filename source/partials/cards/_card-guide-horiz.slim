@@ -19,7 +19,7 @@
             - if entry.has_key?("authors")
                 - entry.authors.each do | author |
                     li
-                        = partial("partials/snippets/person-avatar", :locals => { :p => author, :size => "small" })
+                        = partial("partials/snippets/person-avatar", :locals => { :p => data.site.person[author.id], :size => "small" })
     - unless thumb == nil
         .media-object-section.show-for-medium
             a href="/guide/#{entry["slug"]}" title=("Get your free guide")

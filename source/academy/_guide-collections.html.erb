@@ -1,0 +1,60 @@
+---
+title: "Your place to learn the intricacies of interoperability, compliance, and cloud technologies."
+summary: "The industry's leading resource for understanding complex healthcare topics"
+author: "Datica, Inc."
+tags: "training, education, HIPAA, HL7, FHIR, interoperability, EHR, integration, resource"
+ogType: "article"
+share_image: "https://images.ctfassets.net/189dvqdsjh46/n9pqHc4Xp62uUSwciEe4C/ead1ba4e14e45c06639c5dea3d47b8ac/datica-academy-notebook-share.jpg?w=1200"
+layout: "basic"
+customCSS: "academy"
+customJS: "/public/js/academy.js"
+---
+<% 
+today = DateTime.now
+current_page.data.date = today.strftime('%B %-d, %Y')
+promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc82592dd23d3c78bfa0a47126608c/cta-ccms-survey-ad-4x3.png"
+guides_integ = data.site.collections.to_a.select { |id, entry | (id == "6MFXPUbHf5kQhe0LOLYmJR") }
+guides_compl = data.site.collections.to_a.select { |id, entry | (id == "4NBneqxkelpfbRmarM33DK") }
+%>
+<%= partial "partials/head/header", :locals => { :style => "dark" } %>
+<section class="section-article bg-gray-12">
+    <div class="row align-center">
+        <div class="columns small-12 medium-10 large-8 text-center group">
+            <h1 class="headline-2">
+                <%= inline_svg("academy-logo", class: "logo-size--large") %>
+            </h1>
+            <p>HIPAA is complicated, but easily learned. The Datica HIPAA and Interoperability Academy walks you through the intricacies of HIPAA, HL7, and FHIR—from the highest concepts to the deepest details.</p>
+            <p class="group">Start with the basics, like why Protected Health Information (PHI) is central to HIPAA, then work your way towards advanced topics like FHIR and HL7.</p>
+            <h2 class="headline-5 spaced-out">Datica Guides</h2>
+            <p class="">Authoritative Guides Written By Industry Experts</p>
+        </div>
+    </div>
+    <div class="row align-center">
+        <div class="columns small-12 medium-6 large-6">
+            <% guides_compl.each do | id, guides_set | %>
+                <h3 class="headline-4"><%= guides_set.title %></h3>
+                <p class="lead"><%= guides_set.subhead %></p>
+                <% guides_set["related_entries"].each do | guide_entry | %>
+                    <div class="card drop-hover">
+                        <div class="card-section">
+                            <%= partial "partials/cards/card-guide-horiz", :locals => { :entry => guide_entry } %>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+        <div class="columns small-12 medium-6 large-6">
+            <% guides_integ.each do | id, guides_set | %>
+                <h3 class="headline-4"><%= guides_set.title %></h3>
+                <p class="lead"><%= guides_set.subhead %></p>
+                <% guides_set["related_entries"].each do | guide_entry | %>
+                    <div class="card drop-hover">
+                        <div class="card-section">
+                            <%= partial "partials/cards/card-guide-horiz", :locals => { :entry => guide_entry } %>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+</section>
+<div class="strip strip-bright strip-small"></div>

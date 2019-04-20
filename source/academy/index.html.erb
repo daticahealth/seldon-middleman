@@ -15,19 +15,27 @@ current_page.data.date = today.strftime('%B %-d, %Y')
 promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc82592dd23d3c78bfa0a47126608c/cta-ccms-survey-ad-4x3.png"
 %>
 <%= partial "partials/head/header", :locals => { :style => "dark" } %>
-<section class="section-article bg-gray-12">
+<section class="section-article bg-white">
     <div class="row align-center">
         <div class="columns small-12 medium-10 large-8 text-center group">
             <h1 class="headline-2">
                 <%= inline_svg("academy-logo", class: "logo-size--large") %>
             </h1>
-            <p>HIPAA is complicated, but easily learned. The Datica HIPAA and Interoperability Academy walks you through the intricacies of HIPAA, HL7, and FHIR—from the highest concepts to the deepest details.</p>
+            <p class="lead group">HIPAA is complicated, but easily learned. The Datica HIPAA and Interoperability Academy walks you through the intricacies of HIPAA, HL7, and FHIR—from the highest concepts to the deepest details.</p>
+            <%#
             <p class="group">Start with the basics, like why Protected Health Information (PHI) is central to HIPAA, then work your way towards advanced topics like FHIR and HL7.</p>
-            <h2 class="headline-5 spaced-out">Datica Guides</h2>
+            %>
+        </div>
+    </div>
+</section>
+<section class="section-article bg-gray-11">
+    <div class="row align-center">
+        <div class="columns small-12 medium-10 large-8 text-center group">
+                <h2 class="headline-4 spaced-out">Datica Guides</h2>
             <p class="">Authoritative Guides Written By Industry Experts</p>
         </div>
     </div>
-    <div class="row small-up-1 large-up-2 xxlarge-up-3 row--card-grid">
+    <div class="row full-width small-up-1 medium-large-up-2 xlarge-up-3 row--card-grid">
         <% sorted_entries = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] } %>
         <% sorted_entries.each do | id, guide_entry | %>
             <% unless guide_entry.has_key?("list_view_hidden") %>
@@ -120,7 +128,9 @@ promo1 = "https://images.ctfassets.net/189dvqdsjh46/6KsyCUFBSMsOW6UW2IUW4U/b2fc8
         <aside class="column" data-sticky-container>
             <div class="sticky" data-sticky data-options="anchor: articles; stickyOn: large;">
                 <%= partial "partials/ctas/resources-compact", :locals => { :classes => "group" } %>
-                <a href="/cloud-compliance-management-system/survey/" title="take the cloud configuration survey"><img class="lozad thumbnail" src="<%= promo1 %>?fm=jpg&w=400&q=5" data-src="<%= promo1 %>?fm=png&fl=png8&w=600"></a>
+                <div class="group">
+                <%= partial "partials/cards/card-report-simple", :locals => { :post => data.site.guides['5KKD6XVLC8YuCq4eOoKEoO'], :style => "none", :size => "small", :desc => true, :show_button => true } %>
+                </div>
                 <%# to embed/pass a unique ID or specific entry, use this notation. %>
                 <%#= partial("/partials/content/cta", :locals => { :p => data.site.cta["1CKHNq6V7eG4W20ygCWmei"] }) %>
                 <%# sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse! %>
