@@ -24,6 +24,7 @@ ruby:
         card_size = ""
     else
         card_size = "text-small"
+        size = "small"
     end
     if defined?(fit) && fit == "edge"
         fit_classes = "no-radius"
@@ -47,36 +48,68 @@ ruby:
         link_style = nil
     end
     # if post.has_key?("summary") && post.summary != ""
-    #     entry_summary = post.summary
+    #     post_summary = post.summary
     # elsif post.has_key?("lead") && post.lead != ""
-    #     entry_summary = post.lead
+    #     post_summary = post.lead
     # else
     #     card_summary = nil
     # end
-    # card_summary = truncate_words(strip_tags(entry_summary), :length => 45)
+    # card_summary = truncate_words(strip_tags(post_summary), :length => 45)
 
 / Renders a card inside a post loop. Post var must be injected - AW
 
-div(class="#{style_classes} #{fit_classes}")
-    - if defined?(desc) && desc == true
-        .subheader-small
-            = card_subhead
-        h3.headline-4
-            a class=link_style href=related_post_path title=link_title
-                = post.title
-        - unless image_url == nil
-            a href=related_post_path title=link_title
-                img.lozad.float-left.icon-size--xlarge src="#{loader_square}" data-src="#{image_url}?fit=thumb&w=180&h=180" alt="preview"
+- if size == "small"
+    div(class="#{style_classes} #{fit_classes}")
+        - if defined?(desc) && desc == true
+            .subheader-small
+                = card_subhead
+            h3.headline-4
+                a class=link_style href=related_post_path title=link_title
+                    = post.title
+            - unless image_url == nil
+                a href=related_post_path title=link_title
+                    img.lozad.float-left.icon-size--xlarge src="#{loader_square}" data-src="#{image_url}?fit=thumb&w=180&h=180" alt="preview"
 
-        p.text-small = post.summary
-        - if defined?(show_button) && show_button == true
-            = partial "partials/snippets/button", :locals => { :label => link_title_short, :url => related_post_path, :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right" }
+            p.text-small = post.summary
+            - if defined?(show_button) && show_button == true
+                = partial "partials/snippets/button", :locals => { :label => link_title_short, :url => related_post_path, :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right" }
+        - else
+            .subheader-small
+                = card_subhead
+            h3.headline-4
+                a class=link_style href=related_post_path title=link_title
+                    = post.title
+        /- if post.has_key?("image_thumb")
+            a.text-center href=related_post_path title=link_title
+                img.lozad.product-thumb alt="preview" src="#{image_url}?fit=thumb&w=200&fm=jpg&q=10" data-src="#{image_url}?fit=thumb&w=450" style="padding: 0 1rem 0 1rem;" /
+- elsif size == "large"
+    - if post.has_key?("image_thumb")
+        - thumb = post.image_thumb.url
+    - elsif post.has_key?("bg_image")
+        - thumb = post.bg_image.url
     - else
-        .subheader-small
-            = card_subhead
-        h3.headline-4
-            a class=link_style href=related_post_path title=link_title
-                = post.title
-    /- if post.has_key?("image_thumb")
-        a.text-center href=related_post_path title=link_title
-            img.lozad.product-thumb alt="preview" src="#{image_url}?fit=thumb&w=200&fm=jpg&q=10" data-src="#{image_url}?fit=thumb&w=450" style="padding: 0 1rem 0 1rem;" /
+        - thumb = nil
+    / shows an post with a thumbnail
+    .media-object.article-card(class="#{style_classes} #{fit_classes}")
+        - unless thumb == nil
+            .media-object-section.show-for-medium
+                a href="/guide/#{post["slug"]}" title=("Get your free guide")
+                    img.logo-size--xlarge.lozad src=loader_square data-src="#{thumb}?w=360" alt="Guide Preview"
+        .media-object-section.media-object--info.main-section.align-self-middle
+            - if defined?(desc) && desc == true
+                .subheader-small
+                    = card_subhead
+            .h2.headline-5.margin-bottom-small
+                a(href="/guide/#{post["slug"]}" title="Get your free guide") = post["title"]
+            .text-small
+                = Kramdown::Document.new(post["summary"]).to_html
+            /.menu.simple.margin-bottom-small
+                - if post.has_key?("discovery_topic")
+                    li
+                        span.label.info.round = data.site.discover[post.discovery_topic.id].title
+                - if post.has_key?("authors")
+                    - post.authors.each do | author |
+                        li
+                            = partial("partials/snippets/person-avatar", :locals => { :p => data.site.person[author.id], :size => "small" })
+            - if defined?(show_button) && show_button == true
+                = partial "partials/snippets/button", :locals => { :label => link_title_short, :url => related_post_path, :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right" }

@@ -7,10 +7,10 @@ badges:
         name: "HIPAA logo"
         fileUrl: "https://images.ctfassets.net/189dvqdsjh46/7twnCUuD72YGS4cusiS6mQ/fa43b0f1faaecb4e8865415add79e538/logo-hipaa-federal.png"
         logoSize: "large"
-    -
-        name: "SOC2 AICPA"
-        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/1db5oL4HFeKkSGGcCmQACW/22310ce8955be0da9b65addc7a46dbd9/AICPA_SOC_2_badge.svg"
-        logoSize: "xlarge"
+    # -
+    #     name: "SOC2 AICPA"
+    #     fileUrl: "https://images.ctfassets.net/189dvqdsjh46/1db5oL4HFeKkSGGcCmQACW/22310ce8955be0da9b65addc7a46dbd9/AICPA_SOC_2_badge.svg"
+    #     logoSize: "xlarge"
     -
         name: "GDPR"
         fileUrl: "https://images.ctfassets.net/189dvqdsjh46/5AloABwvCwMuaYkYsuy4Ks/f1f34d278a97690e876ffd539896d46b/gdpr-ready-badge.svg"

@@ -31,33 +31,33 @@ table:
       is_planned: true
       when_available: 1Q19
       # desc:
-  -
-      geography: "Global"
-      regime: SOC 1 Type 2
-      # regime_url:
-      is_possible: true
-      is_available: true
-      is_planned: true
-      when_available: ""
-      # desc:
-  -
-      geography: "Global"
-      regime: SOC 2 Type 2
-      # regime_url:
-      is_possible: true
-      is_available: true
-      is_planned: true
-      when_available: ""
-      # desc:
-  -
-      geography: "Global"
-      regime: SOC 3 Type 2
-      # regime_url:
-      is_possible: false
-      is_available: false
-      is_planned: true
-      when_available: 2020
-      # desc:
+  # -
+  #     geography: "Global"
+  #     regime: SOC 1 Type 2
+  #     # regime_url:
+  #     is_possible: true
+  #     is_available: true
+  #     is_planned: true
+  #     when_available: ""
+  #     # desc:
+  # -
+  #     geography: "Global"
+  #     regime: SOC 2 Type 2
+  #     # regime_url:
+  #     is_possible: true
+  #     is_available: true
+  #     is_planned: true
+  #     when_available: ""
+  #     # desc:
+  # -
+  #     geography: "Global"
+  #     regime: SOC 3 Type 2
+  #     # regime_url:
+  #     is_possible: false
+  #     is_available: false
+  #     is_planned: true
+  #     when_available: 2020
+  #     # desc:
   -
       geography: "Global"
       regime: CSA Star

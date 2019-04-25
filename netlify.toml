@@ -323,6 +323,11 @@
   status = 301
 
 [[redirects]]
+  from = "/cloud-compliance/global/"
+  to = "/cloud-compliance/"
+  status = 301
+
+[[redirects]]
   from = "/fhir"
   to = "/discover/ehr-integrations"
   status = 301

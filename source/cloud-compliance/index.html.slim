@@ -100,7 +100,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
       /.blob-color.blob-ccms.z-auto data-glow="false"
 
 
-section.section-article.pad-no-bottom.bg-gray-12
+section.section-article.bg-gray-12
   .row.align-center.align-middle.group--2x
     .columns.small-12.large-8.text-center
       h2.headline-4.group Datica helps you comply with multiple compliance frameworks.
@@ -109,7 +109,10 @@ section.section-article.pad-no-bottom.bg-gray-12
           - logo.logoSize == "xlarge" ? logopad = "pad--sm" : nil
           .column
             img alt="#{logo["name"]}" class="lozad" data-src="#{logo["fileUrl"]}" /
-  .row.align-center.align-middle.group style="overflow: hidden;"
+  .row.align-center.group
+    .columns.small-12.large-8
+      = partial "partials/cards/card-report-simple", :locals => { :post => data.site.guides['2niXNAQR924CwM0YcOeo0C'], :style => "none", :size => "large", :desc => true, :show_button => true }
+  / .row.align-center.align-middle.group style="overflow: hidden;"
     .columns.small-12.large-8.text-center
       h2.headline-4 Datica Global Compliance Posture
       p.lead.text-center Datica's stringent compliance posture makes us compliant with many global standards.
