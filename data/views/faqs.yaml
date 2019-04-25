@@ -8,9 +8,9 @@ platform_tech:
     -
         question: "Does Datica own its own server infrastructure?"
         answer: "No. Datica sits on top of the top public infrastructure-as-a-service providers, like AWS, Microsoft Azure, and IBM SoftLayer. We help make their clouds fully HIPAA compliant."
-    -
-        question: "Is Datica SOC2 compliant?"
-        answer: "Yes."
+    # -
+    #     question: "Is Datica SOC2 compliant?"
+    #     answer: "Yes."
     -
         question: "Will I have to re-architect my application to deploy onto Datica’s platform-as-a-service?"
         answer: "It depends what your application architecture looks like. Many customers leverage Datica's expertise in containerization to help re-architect their applications to be ready for a container-based future. Otherwise if your application already runs in the cloud, chances are it will run on Datica. You can leverage Datica's Services offering to engage with us to assess your options."
