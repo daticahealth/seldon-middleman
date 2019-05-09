@@ -1,0 +1,154 @@
+---
+title: "Life Sciences | Datica Case Studies"
+summary: "Global Life Sciences Company Enables Innovation with Datica and AWS."
+navTitle: "Life Sciences Case Study"
+category: "products"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
+date: "September 25, 2018"
+ogType: "product"
+customCSS: "products, products-mastheads"
+layout: products
+collectionName: "products"
+collectionOrder: 3
+priority: "0.9"
+subnav:
+  -
+    title: "The Situation"
+    slug: "overview"
+  -
+    title: "Challenges"
+    slug: "challenges"
+  -
+    title: "Outcomes"
+    slug: "outcomes"
+  -
+    title: "The Solution"
+    slug: "solution"
+  -
+    title: "Next"
+    slug: "next"
+
+---
+ruby:
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  current_year = DateTime.now.strftime('%Y')
+  current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/4wojUl2MFGICcaykkGIMCK/26d4dd220c5ebbf9335aa81c7d3d575c/share-ccms.jpg'
+  the_form = data.site.forms['7bcj6s0e7mc0a2iowoOmIS']
+  featured_img = 'https://images.ctfassets.net/189dvqdsjh46/MdBS4knzIgVpwDFaCfx9V/657017205c8bf60d548c30824e88da88/Doctor_on_ipad_sm.jpg'
+  diagram_1 = "https://images.ctfassets.net/189dvqdsjh46/1DnnFdmBAYcWSyiGE2M6aK/1651ceeb1d2343007b09a5ce4c20ed38/c3-diagram-1.png"
+
+section.section-article--lg.bg-gray-11.container-image-fill.lozad data-background-image="#{featured_img}?fit=thumb&w=1800&h=900&q=65"
+  .row.align-right.align-middle
+    .columns.small-12.medium-6
+      h3.headline-5.spaced-out Datica Case Study
+      h1.headline-2.text-bold Global Life Sciences Company Enables Innovation with Datica and AWS
+= partial "partials/snippets/nav-sub-product", :locals => { }
+/ = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
+.strip-bright
+section.section-article--lg.bg-gray-2 id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+  .row
+    .columns.small-12.large-3
+      h2.headline-3.text-bold.text-right-on-large The Situation
+    .columns.small-12.large-5.text-serif.lead
+      p The data integration committee at a Fortune 500 life sciences organization is responsible for strategy, data standards, and tooling as the company scales to more than 100 application environments across different global regions. The committee is made up of product management personnel across product and service lines, innovation staff and directors, and business technology leaders.  As one would expect, the compliance office is also critically involved to provide sign off on all plans. 
+      p Together, this global team is charged with modernizing web and mobile application experiences for commercial applications for care management, consumer applications for personal health management and access, and clinical research and development applications to analyze patient-reported outcomes. 
+      /p They knew they needed to move all applications into the cloud to ensure they could easily deploy and scale while ensuring all PHI was handled in a compliant and HITRUST-certified manner. They also needed a single source of truth in their data to replace the current siloed and duplicate systems. In 2016, they found what they were looking for with AWS and Datica.
+    .columns.small-12.large-4.text-small
+      .group
+        h4.headline-6.spaced-out Who
+        p Fortune 500 Global Life Sciences company
+      .group
+        h4.headline-6.spaced-out Datica Solutions
+        ul.no-bullet
+          li 
+            a.link--white href="/compliant-managed-integration" title="Datica Compliant Managed Integration (CMI)" Datica Compliant Managed Integration (CMI)
+          li 
+            a.link--white href="/compliant-managed-integration#services" title="Datica Integration Services" Datica Integration Services
+          li 
+            a.link--white href="/compliant-kubernetes-service" title="Datica Compliant Kubernetes Service (CKS)" Datica Compliant Kubernetes Service (CKS)
+      .group
+        h4.headline-6.spaced-out AWS Solutions
+        ul.no-bullet
+          li Amazon Elastic MapReduce (Amazon EMR) 
+          li Amazon Relational Database Service (Amazon RDS) 
+          li Amazon Elastic Compute Cloud (Amazon EC2)
+          li Amazon Elastic Container Service for Kubernetes (Amazon EKS)
+    .row
+      aside.column.small-12.large-9.large-offset-3
+        p.headline-3.text-serif They knew they needed to move all applications into the cloud to ensure they could easily deploy and scale while ensuring all PHI was handled in a compliant and HITRUST-certified manner.
+
+section.bg-gray-11.section-article
+  .row.align
+    .columns.small-12.medium-6.large-4.large-offset-3 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
+      .line-length
+        h2.headline-3.text-bold Challenges
+        ul
+          li EHR integrations are complex and have often gone poorly because of completely different technical and semantic data standards in multiple, conflicting systems.
+          li Clinical IT groups avoided innovation efforts because of the challenges of interoperability
+          li Physicians are fed up with and stressed out by EMR systems
+          li Data was siloed among disparate groups resulting in duplication and double-entry. 
+          li Wanted to move legacy systems onto the public cloud
+    .columns.small-12.medium-6.large-5 id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+      .line-length
+        h2.headline-3.text-bold Outcomes
+        ul
+          li Standardized security and compliance procedures in the rollout of new programs across geographies via standard data modeling for health data and contracts
+          li De-risked the sharing of patient data in the cloud both internally and externally
+          li Improved speed, efficiency, and scaling when launching new initiatives
+          li Increased the value of client’s products for both internal stakeholders and their customers
+          li Changed client’s internal business conversations with innovators from being centered around security and compliance to focusing on results
+          li Enabled modeling and utilization of a single, actionable source of real-world patient data across the organization as part of an expansion strategy into the cloud with Datica as the core foundation and AWS tooling as the bridge with the client’s existing data centers
+
+aside.section-article.strip.strip-cks
+  .row
+    .columns.small-12.large-9.large-offset-3
+      p.headline-3.text-serif One of the key benefits they see with using Datica and AWS together is reshaping the business conversations in innovation teams from “how to build a secure and a compliant application,” to “how to deliver better outcomes.”
+
+section.section-article--lg.bg-gray-2 id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
+  .row
+    .columns.small-12.large-3
+      h2.headline-3.text-bold.text-right-on-large The Solution: AWS & Datica
+    .columns.small-12.large-5.text-serif.lead.group
+      p The company examined the market for a cloud solution and quickly decided on AWS. Their challenge was to preserve and build upon their approach and their innovation model in a way that would be faster, more flexible, more trustworthy, and more standardized.
+      p The situation was complicated by many factors including a need to link disparate data sources internally and externally while maintaining security and compliance to different geographic frameworks. AWS cloud and data solutions proved to be the best foundation to bridge multiple data centers and geographies, while Datica’s HITRUST-certified platform on top of AWS provided the security and compliance layer and integration engine to securely add patient data to their applications.
+    aside.column.small-12.large-9.large-offset-3
+      h4.headline-6.spaced-out.text-light Use case: Hospital integration
+      / img.lozad alt=("Platform Integration") data-src="/public/img/platform-integration-2x.png" /
+      img.group.lozad alt="Integration - hospital use case" src="https://images.ctfassets.net/189dvqdsjh46/4UZr8wc5XYiFIA8jYSzxaF/ab9f343b28b8d180e103b558d49b6e9b/CMI_example_use_case__hospital_.png?w=1000&fm=png&fl=png8" data-src="https://images.ctfassets.net/189dvqdsjh46/4UZr8wc5XYiFIA8jYSzxaF/ab9f343b28b8d180e103b558d49b6e9b/CMI_example_use_case__hospital_.png"
+
+section.section-article--med.strip.strip-cks
+  .row.align-center.text-center
+    .columns.small-12.large-10
+      h2.headline-3 Datica's Proven Integration Track Record
+  = partial "partials/content/stats-integration"
+
+section.section-article--lg.bg-gray-12 id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+  .row
+    .columns.small-12.large-3.text-right-on-large.show-for-large
+      img.lozad.logo-size--xlarge src=loader_square data-src="https://images.ctfassets.net/189dvqdsjh46/yYSl0Yi3YWOsHOsExZPr6/69291bb4cdb86ed13aa5832480413c00/aws-partner-healthcare-card.png?w=280"
+    .columns.small-12.large-5.text-serif.lead
+      img.lozad.logo-size--xlarge.hide-for-large.float-right src=loader_square data-src="https://images.ctfassets.net/189dvqdsjh46/yYSl0Yi3YWOsHOsExZPr6/69291bb4cdb86ed13aa5832480413c00/aws-partner-healthcare-card.png?w=280"
+      p One of the key benefits they see with using Datica and AWS together is reshaping the business conversations in innovation teams from “how to build a secure and a compliant application,” to “how to deliver better outcomes.”  This customer now has the ability to drive a predictable cadence and safe format for their applications to deploy and access patient data. This means that time, energy, and patience trying to understand how to keep data secure and maintain adherence to compliance frameworks is now redirected to improving and developing new applications to make data more accessible and actionable across the spectrum of healthcare.
+      p It also means better outcomes for patients. For example, one new application launched through this new standardized process provides surgeons with the patient outcome data they need to judge and improve how effective their surgeries are. Getting this data back into the hands of the surgeon was not possible before the customer used AWS and Datica.
+      p With a standardized enterprise strategy using AWS and Datica, this global life sciences organization has met their challenge to launch and scale new initiatives while maintaining compliance and data control across multiple countries.
+    .columns.small-12.large-4.text-small.align-self-bottom
+      .callout.drop.group.line-length
+        blockquote.quote--serif
+          - quote_services = data.site.quotes['4r9Bmb0l8QiMgKqCagOa0E']
+          = Kramdown::Document.new(quote_services["quote_body"]).to_html
+        - if quote_services.has_key?("related_person")
+          = partial("partials/snippets/person", :locals => { :p => quote_services.related_person } )
+
+section.section-article.bg-gray-2
+  .row.align-middle
+    .columns.small-12.large-5.large-offset-3
+      .callout.drop
+        h2.headline-4.text-center Schedule a Demo
+        = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+    .columns.small-12.large-4
+      h3.headline-4 Datica Products & Solutions
+      .faded
+        = partial "partials/snippets/product-list"
+
+= partial "partials/snippets/json-ld-contact"
