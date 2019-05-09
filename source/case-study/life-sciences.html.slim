@@ -8,7 +8,7 @@ tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
 date: "September 25, 2018"
 ogType: "product"
 customCSS: "products, products-mastheads"
-layout: products
+layout: landing
 collectionName: "products"
 collectionOrder: 3
 priority: "0.9"
@@ -38,11 +38,14 @@ ruby:
   featured_img = 'https://images.ctfassets.net/189dvqdsjh46/MdBS4knzIgVpwDFaCfx9V/657017205c8bf60d548c30824e88da88/Doctor_on_ipad_sm.jpg'
   diagram_1 = "https://images.ctfassets.net/189dvqdsjh46/1DnnFdmBAYcWSyiGE2M6aK/1651ceeb1d2343007b09a5ce4c20ed38/c3-diagram-1.png"
 
-section.section-article--lg.bg-gray-11.container-image-fill.lozad data-background-image="#{featured_img}?fit=thumb&w=1800&h=900&q=65"
-  .row.align-right.align-middle
-    .columns.small-12.medium-6
-      h3.headline-5.spaced-out Datica Case Study
-      h1.headline-2.text-bold Global Life Sciences Company Enables Innovation with Datica and AWS
+section.bg-gray-11.container-image-fill.lozad data-background-image="#{featured_img}?w=1800"
+  .faded.group
+      = partial "partials/head/header", :locals => { :style => "dark" }
+  .section-article--lg
+    .row.align-right.align-middle
+      .columns.small-12.medium-6
+        h3.headline-5.spaced-out Datica Case Study
+        h1.headline-2.text-bold Global Life Sciences Company Enables Innovation with Datica and AWS
 = partial "partials/snippets/nav-sub-product", :locals => { }
 / = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
 .strip-bright
@@ -150,5 +153,5 @@ section.section-article.bg-gray-2
       h3.headline-4 Datica Products & Solutions
       .faded
         = partial "partials/snippets/product-list"
-
+.strip-bright
 = partial "partials/snippets/json-ld-contact"
