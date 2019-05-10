@@ -37,15 +37,33 @@ ruby:
   the_form = data.site.forms['7bcj6s0e7mc0a2iowoOmIS']
   featured_img = 'https://images.ctfassets.net/189dvqdsjh46/MdBS4knzIgVpwDFaCfx9V/657017205c8bf60d548c30824e88da88/Doctor_on_ipad_sm.jpg'
   diagram_1 = "https://images.ctfassets.net/189dvqdsjh46/1DnnFdmBAYcWSyiGE2M6aK/1651ceeb1d2343007b09a5ce4c20ed38/c3-diagram-1.png"
-
-section.bg-gray-11.container-image-fill.lozad data-background-image="#{featured_img}?w=1800"
-  .faded.group
-      = partial "partials/head/header", :locals => { :style => "dark" }
+scss:
+  //nav {
+  //  .nav__container {
+  //    &.is-active {
+  //      background-color: white;
+  //    }
+  //  }
+  //}
+  .masthead-cs {
+    @media screen and (max-width: 640px) {
+      min-height: 15rem;
+    }
+  }
+.bg-gray-12
+  = partial "partials/head/header", :locals => { :style => "dark" }
+section.bg-gray-11.masthead-cs.container-image-fill.lozad data-background-image="#{featured_img}?w=1800"
   .section-article--lg
     .row.align-right.align-middle
-      .columns.small-12.medium-6
+      .columns.small-12.medium-6.show-for-medium
         h3.headline-5.spaced-out Datica Case Study
         h1.headline-2.text-bold Global Life Sciences Company Enables Innovation with Datica and AWS
+section.section-article.bg-gray-12.hide-for-medium
+  .row
+    .columns.small-12
+      h3.headline-5.spaced-out Datica Case Study
+      h1.headline-2.text-bold Global Life Sciences Company Enables Innovation with Datica and AWS
+
 = partial "partials/snippets/nav-sub-product", :locals => { }
 / = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
 .strip-bright
