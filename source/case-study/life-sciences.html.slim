@@ -52,52 +52,52 @@ scss:
   }
 .bg-gray-12
   = partial "partials/head/header", :locals => { :style => "dark" }
+  .row.hide-for-medium
+    .columns.small-12.pad--lg
+      .headline-5.spaced-out Datica Case Study
+      h2.headline-2.text-bold Global Life Sciences Company Enables Innovation with Datica and AWS
 section.bg-gray-11.masthead-cs.container-image-fill.lozad data-background-image="#{featured_img}?w=1800"
   .section-article--lg
     .row.align-right.align-middle
       .columns.small-12.medium-6.show-for-medium
-        h3.headline-5.spaced-out Datica Case Study
-        h1.headline-2.text-bold Global Life Sciences Company Enables Innovation with Datica and AWS
-section.section-article.bg-gray-12.hide-for-medium
-  .row
-    .columns.small-12
-      h3.headline-5.spaced-out Datica Case Study
-      h1.headline-2.text-bold Global Life Sciences Company Enables Innovation with Datica and AWS
+        h1.headline-5.spaced-out Datica Case Study
+        h2.headline-2.text-bold Global Life Sciences Company Enables Innovation with Datica and AWS
 
-= partial "partials/snippets/nav-sub-product", :locals => { }
 / = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
 .strip-bright
-section.section-article--lg.bg-gray-2 id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
-  .row
-    .columns.small-12.large-3
-      h2.headline-3.text-bold.text-right-on-large The Situation
-    .columns.small-12.large-5.text-serif.lead
-      p The data integration committee at a Fortune 500 life sciences organization is responsible for strategy, data standards, and tooling as the company scales to more than 100 application environments across different global regions. The committee is made up of product management personnel across product and service lines, innovation staff and directors, and business technology leaders.  As one would expect, the compliance office is also critically involved to provide sign off on all plans. 
-      p Together, this global team is charged with modernizing web and mobile application experiences for commercial applications for care management, consumer applications for personal health management and access, and clinical research and development applications to analyze patient-reported outcomes. 
-      /p They knew they needed to move all applications into the cloud to ensure they could easily deploy and scale while ensuring all PHI was handled in a compliant and HITRUST-certified manner. They also needed a single source of truth in their data to replace the current siloed and duplicate systems. In 2016, they found what they were looking for with AWS and Datica.
-    .columns.small-12.large-4.text-small
-      .group
-        h4.headline-6.spaced-out Who
-        p Fortune 500 Global Life Sciences company
-      .group
-        h4.headline-6.spaced-out Datica Solutions
-        ul.no-bullet
-          li 
-            a.link--white href="/compliant-managed-integration" title="Datica Compliant Managed Integration (CMI)" Datica Compliant Managed Integration (CMI)
-          li 
-            a.link--white href="/compliant-managed-integration#services" title="Datica Integration Services" Datica Integration Services
-          li 
-            a.link--white href="/compliant-kubernetes-service" title="Datica Compliant Kubernetes Service (CKS)" Datica Compliant Kubernetes Service (CKS)
-      .group
-        h4.headline-6.spaced-out AWS Solutions
-        ul.no-bullet
-          li Amazon Elastic MapReduce (Amazon EMR) 
-          li Amazon Relational Database Service (Amazon RDS) 
-          li Amazon Elastic Compute Cloud (Amazon EC2)
-          li Amazon Elastic Container Service for Kubernetes (Amazon EKS)
+.bg-gray-2
+  = partial "partials/snippets/nav-sub-product", :locals => { }
+  section.section-article--lg id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
     .row
-      aside.column.small-12.large-9.large-offset-3
-        p.headline-3.text-serif They knew they needed to move all applications into the cloud to ensure they could easily deploy and scale while ensuring all PHI was handled in a compliant and HITRUST-certified manner.
+      .columns.small-12.large-3
+        h2.headline-3.text-bold.text-right-on-large The Situation
+      .columns.small-12.large-5.text-serif.lead
+        p The data integration committee at a Fortune 500 life sciences organization is responsible for strategy, data standards, and tooling as the company scales to more than 100 application environments across different global regions. The committee is made up of product management personnel across product and service lines, innovation staff and directors, and business technology leaders.  As one would expect, the compliance office is also critically involved to provide sign off on all plans. 
+        p Together, this global team is charged with modernizing web and mobile application experiences for commercial applications for care management, consumer applications for personal health management and access, and clinical research and development applications to analyze patient-reported outcomes. 
+        /p They knew they needed to move all applications into the cloud to ensure they could easily deploy and scale while ensuring all PHI was handled in a compliant and HITRUST-certified manner. They also needed a single source of truth in their data to replace the current siloed and duplicate systems. In 2016, they found what they were looking for with AWS and Datica.
+      .columns.small-12.large-4.text-small
+        .group
+          h4.headline-6.spaced-out Who
+          p Fortune 500 Global Life Sciences company
+        .group
+          h4.headline-6.spaced-out Datica Solutions
+          ul.no-bullet
+            li 
+              a.link--white href="/compliant-managed-integration" title="Datica Compliant Managed Integration (CMI)" Datica Compliant Managed Integration (CMI)
+            li 
+              a.link--white href="/compliant-managed-integration#services" title="Datica Integration Services" Datica Integration Services
+            li 
+              a.link--white href="/compliant-kubernetes-service" title="Datica Compliant Kubernetes Service (CKS)" Datica Compliant Kubernetes Service (CKS)
+        .group
+          h4.headline-6.spaced-out AWS Solutions
+          ul.no-bullet
+            li Amazon Elastic MapReduce (Amazon EMR) 
+            li Amazon Relational Database Service (Amazon RDS) 
+            li Amazon Elastic Compute Cloud (Amazon EC2)
+            li Amazon Elastic Container Service for Kubernetes (Amazon EKS)
+      .row
+        aside.column.small-12.large-9.large-offset-3
+          p.headline-3.text-serif They knew they needed to move all applications into the cloud to ensure they could easily deploy and scale while ensuring all PHI was handled in a compliant and HITRUST-certified manner.
 
 section.bg-gray-11.section-article
   .row.align

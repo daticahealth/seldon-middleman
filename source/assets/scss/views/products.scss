@@ -209,7 +209,7 @@ ul.bullet-outside {
 .sticky {
     z-index: 18;
     // .is-[state] classes for control over its appearance and exit if needed. Desktop only
-    @include breakpoint (large) {
+    @include breakpoint (medium-large) {
         transition: box-shadow $timing-default linear, background-color .3s linear;
         // background-color: $gray-11;
         @include shadow(0, 0, $black, 0);
