@@ -151,7 +151,7 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
             <% end %>
 
             <p>
-                <%= partial "partials/snippets/button", :locals => { :label => "All Podcast Episodes", :url => "/podcast/", :button_classes => "button hollow expanded", :icon => "icon-chevron-left", :icon_align => "left", :expand => false } %>
+                <%= partial "partials/snippets/button", :locals => { :label => "All Podcast Episodes", :url => "/podcast/", :button_classes => "button hollow", :icon => "icon-chevron-left", :icon_align => "left", :expand => false } %>
             </p>
         </aside>
     </div>
