@@ -47,7 +47,10 @@ ruby:
         thumb = bg_default
     end
 
-
+scss:
+    .cta {
+        margin-top: 0;
+    }
 / section#top.container-gray-2.container-image-fill data-interchange="[#{thumb}, small], [#{thumb}#{image_featured_large}, large]"
 .strip-bright.strip-small
 .bg-gray-1
@@ -127,6 +130,10 @@ ruby:
                         .callout.drop.group
                             h3.headline-4.text-center.group = (is_future == true ? "Register" : "Register")
                             = partial "partials/snippets/form", :locals => { :the_form => data.site.forms[p.related_form.id].custom_form }
+                - if p.has_key?("cta_next")
+                    #cta-next.is-registered.hide
+                        h4.headline-5.spaced-out.margin-bottom-small Ready for more?
+                        = partial("/partials/content/cta", :locals => { :p => p["cta_next"] })
                 = partial "partials/snippets/button", :locals => { :label => "See All Datica Webinars", :url => "/webinars/", :button_classes => "button hollow", :item_id => "all_webinars", :icon => "icon-webinar-sm", :icon_align => "left" }
 
     / section#all.section-article--small
