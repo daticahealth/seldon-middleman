@@ -333,11 +333,6 @@
   status = 301
 
 [[redirects]]
-  from = "/guide/fhir"
-  to = "/discover/ehr-integrations"
-  status = 301
-
-[[redirects]]
   from = "/how-to-integrate-with-hospitals"
   to = "/guide/how-to-integrate-with-hospitals"
   status = 301
