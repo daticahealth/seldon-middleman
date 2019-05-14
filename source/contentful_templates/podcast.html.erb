@@ -28,6 +28,18 @@ if p.has_key?("pub_date")
 else
     current_page.data.date = "January 1, 2017"
 end
+sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
+sorted_webinars = data.site.webinars.to_a.sort_by{ |id, webinars| webinars['event_date'] }.reverse!
+unless p.has_key?("discovery_topic")
+    current_page.data.topic = 'hipaa-compliance'
+else
+    current_page.data.topic = p.discovery_topic.slug
+end
+# result = sorted_webinars.find {|item| item.discovery_topic.slug.include?(current_page.data.topic)}
+# result = array.select { |hash| hash[:score] >= 100 }
+filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_key?("discovery_topic") && webinars.discovery_topic.slug == current_page.data.topic}.sort_by{ |id, webinars| webinars['event_date'] }.reverse!
+# filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| ( webinars["discovery_topic"]["slug"] == "ehr-integrations" ) }
+# filtered_reports = data.site.reports.to_a.select { |id, item| (item["slug"] == "2015" || item["slug"] == "2016" ) }
 %>
 
 <div class="container-color--dark-alt container-image--bottom" data-interchange="[/public/img/art/art-sound-bars-bg-small.svg, small], [/public/img/art/art-sound-bars-bg.svg, medium]">
@@ -40,7 +52,7 @@ end
                 </div>
             <% end %>
             <div class="columns small-12 medium-9 large-10 featured-post">
-                <div class="subhead--spaced headline-6">Podcast</div>
+                <a class="link--white subhead--spaced headline-6" href="/podcast/" title="Datica Podcasts">Datica Podcasts</a>
                 <h1 class="headline-3"><%= p["title"] %></h1>
                 <p class="lead">
                     <%= partial "/partials/snippets/pubdate", :locals => p %>
@@ -127,14 +139,18 @@ end
                     <h3 class="headline-4">Key Takeaways</h3>
                     <%= Kramdown::Document.new(p["key_takeaways"]).to_html %>
                 </div>
-                <% if p.has_key?("discovery_topic") %>
-                    <div class="group">
-                        <%= partial "partials/cards/discover", :locals => { :post => p["discovery_topic"], :classes => "group" } %>
-                        <% if p.discovery_topic.slug == "ehr-integrations" %>
-                          <%= partial "partials/ctas/ad-webinar" %>
-                      <% end %>
-                    </div>
+                <div class="group">
+                    <% filtered_webinars.take(1).each do | id, webinar_entry | %>
+                    <%= partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry, :card_style => "vertical" } %>
+                    <% end %>
+                </div>
+
+                <% if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta") %>
+                <% topic = data.site.discover[p.discovery_topic.id] %>
+                <%= partial "partials/cards/discover-lite", :locals => { :topic => topic, :classes => "group" } %>
+                <%#= partial "partials/cards/discover", :locals => { :post => p["discovery_topic"], :classes => "group" } %>
                 <% end %>
+
             <% end %>
             <p><a class="button hollow expanded" href="/podcast/" title="All Podcast Episodes"><i class="fa fa-angle-left" aria-hidden="true"></i> All Podcast Episodes</a></p>
         </aside>

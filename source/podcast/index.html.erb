@@ -11,6 +11,11 @@ layout: basic
 customCSS: "podcast"
 feed_url: "https://datica.com/podcast/feed.xml"
 ---
+<% 
+    sorted_webinars = data.site.webinars.to_a.sort_by{ |id, webinars| webinars['event_date'] }.reverse!
+    sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse!
+    sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
+%>
 <div class="container-color--dark-alt container-image--bottom" data-interchange="[https://images.ctfassets.net/189dvqdsjh46/5OUXo4nQ6kaqAsqE8McqIu/fcd84d36da7ad0c4b91ecb9cadb7ce87/art-sound-bars-bg.svg, small]">
     <%= partial "partials/head/header", :locals => { :style => "light" } %>
     <section class="section-article">
@@ -61,16 +66,18 @@ feed_url: "https://datica.com/podcast/feed.xml"
             <div class="group">
                 <%= partial "innovation/partials/subscribe" %>
             </div>
-            <%= partial "innovation/partials/2016-ebook" %>
+
+            <%  sorted_webinars.take(1).each do | id, webinar_entry |%>
+              <%= partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry, :card_style => "vertical" } %>
+            <% end %>
+
         </aside>
     </div>
 </section>
 <section class="section-article container-color--gray-light">
     <div class="row">
         <div class="columns small-12 large-8">
-            <% sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse! %>
             <% sorted_podcasts[1...-1].each do | id, podcast | %>
-
                 <%= partial("partials/snippets/podcast-summary", :locals => { :podcast => podcast, :hideSummary => false }) %>
 
             <% end %>
@@ -78,7 +85,9 @@ feed_url: "https://datica.com/podcast/feed.xml"
             <%= partial "partials/snippets/to-top" %>
         </div>
         <aside class="columns small-12 large-4 section--sidebar">
-            <%= partial "innovation/partials/2015-ebook" %>
+            <% sorted_reports.take(1).each do | id, report_entry | %>
+            <%= partial "partials/cards/card-report", :locals => { :post => report_entry, :style => "dark", :size => "small" } %>
+            <% end %>
         </aside>
     </div>
 </section>
