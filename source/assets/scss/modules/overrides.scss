@@ -113,6 +113,7 @@
     &-bottom {padding-bottom: 0;}
 //     &-left   {padding-left:   0;}
 }
+/// heyyyy bad idea jeans, this needs to be renamed. Easy to mistake this for a display:block class.
 .block { // useful when you need to cap the width of a person widget, etc.
     &-width-medium {
         max-width: 14rem;

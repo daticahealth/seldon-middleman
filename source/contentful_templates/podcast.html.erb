@@ -150,7 +150,9 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
             <%#= partial "partials/cards/discover", :locals => { :post => p["discovery_topic"], :classes => "group" } %>
             <% end %>
 
-            <p><a class="button hollow expanded" href="/podcast/" title="All Podcast Episodes"><i class="fa fa-angle-left" aria-hidden="true"></i> All Podcast Episodes</a></p>
+            <p>
+                <%= partial "partials/snippets/button", :locals => { :label => "All Podcast Episodes", :url => "/demo/", :button_classes => "button hollow expanded", :icon => "icon-chevron-left", :icon_align => "left", :expand => false } %>
+            </p>
         </aside>
     </div>
 </section>
