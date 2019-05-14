@@ -1,0 +1,137 @@
+-
+    category: "Cloud Physical Layer"
+    items:
+        -
+            title: "Entry to data center is managed"
+            description: "Personal access to physical hardware is managed via technical processes and administrative procedures, like badges. As a cloud customer, your CSP provider (e.g. AWS, Azure, GCP, etc) will cover this control in their BAAs and privacy agreements because it will be impossible for you to manage otherwise. If you don't have a BAA with your cloud service provider, then you are out of compliance. This is a requirement to run compliant workloads on any cloud."
+            question: "Do you have a BAA in place with your cloud service provider that takes on the risk of this control?"
+        -
+            title: "Physical repairs are managed and observed"
+            description: "Beyond access, managing a procedure that ensures repairs are monitored appropriately is required. For example, HVAC or electrical systems. As a cloud customer, your CSP provider (e.g. AWS, Azure, GCP, etc) will cover this control in their BAAs and privacy agreements because it will be impossible for you to manage otherwise. If you don't have a BAA with your cloud service provider, then you are out of compliance. This is a requirement to run compliant workloads on any cloud.\n"
+            question: "Do you have a BAA in place with your cloud service provider that takes on the risk of this control?"
+        -
+            title: "Physical firewall in place"
+            description: "Networking segmentation at the physical layer is a requirement. As a cloud customer, your CSP provider (e.g. AWS, Azure, GCP, etc) will cover this control in their BAAs and privacy agreements because it will be impossible for you to manage otherwise. If you don't have a BAA with your cloud service provider, then you are out of compliance. This is a requirement to run compliant workloads on any cloud.\n"
+            question: "Do you have a BAA in place with your cloud service provider that takes on the risk of this control?"
+        -
+            title: "Physical system failure in place (e.g. fire prevention, electrical, internet)"
+            description: "This concept relates to Disaster Recovery. Part of a DR program is ensuring localized incidents are contained, like proper fire prevention protocols are installed at the data center. As a cloud customer, your CSP provider (e.g. AWS, Azure, GCP, etc) will cover this control in their BAAs and privacy agreements because it will be impossible for you to manage otherwise. If you don't have a BAA with your cloud service provider, then you are out of compliance. This is a requirement to run compliant workloads on any cloud."
+            question: "Do you have a BAA in place with your cloud service provider that takes on the risk of this control?"
+-
+    category: "Cloud Operating System and Application Layers"
+    items:
+        -
+            title: "Encryption of data at rest"
+            description: "Basic block-level 256-bit AES encryption is required. There is debate if 128-bit is sufficient enough. Ultimately, it's a debate since there are no hard rules. We suggest deploying 256-bit AES in order to future proof future regimes, like what happened with the advent of GDPR in 2018."
+            question: "Have you encrypted all volumes with 256-bit AES encryption?"
+        -
+            title: "TLS / Network encryption"
+            description: "TLS is often terminated after the firewall or load balancer. You should re-encrypt it before passing back through to the cloud environment because encryption of data \"in transit\" is interpreted as a requirement for HIPAA."
+            question: "Do you re-encrypt traffic from the network perimeter?"
+        -
+            title: "Encryption of data between services (e.g. app and db)"
+            description: "One of the most controversial and misunderstood parts of HIPAA compliance, and newer compliance regimes coming out like GDPR, is the requirement for network-level encryption of data \"in flight\" between services within a cloud environment, whether the environment is phyiscally or logically separated from other tenants in the cloud. Ultimately, network encryption between services IS required in order to achieve certain HITRUST, NIST, GDPR, etc controls. One example is a database and app service, if both are contained inside a Docker container. Traffic in between those containers must be encrypted with proper key rotation. So, for example, Kubernetes was technically not compliant until Datica submitted a change to the Kubernetes project updating cri-o, the main interface between Docker containers and the k8s orchestration tooling, to use encryption in flight."
+            question: "Is all traffic between services within your cloud workloads encrypted with proper key rotation?"
+        -
+            title: "Subnetwork segregation at hardware and software firewalls"
+            description: "A best practice in leveraging the cloud is to use dedicated network spaces for you organization or for each application. This logical network segmentation adds a layer of protection against other cloud customers and services."
+            question: "Are you segmenting all network traffic via physical and logical separation of hardware and software firewalls? Are you using dedicated, logical networks for each application?"
+        -
+            title: "Nightly backups of data"
+            description: "As part of a business continuity plan required for compliance, continuous backup of data containing PHI must be done in a compliant manner. For example, if you are backing up data to an offsite server, then that server must also have the entire list of compliance controls implemented too, like encryption and everything else listed here. There is debate as to what specific frequency of backups will meet compliance, but we have seen nightly backups be the right balance of not too burdensome while meeting the demands of HIPAA, HITRUST, GDPR, etc."
+            question: "Do you have automated nightly backups in place to a destination that is also configured to be compliant and has been included within scope of your audit?"
+        -
+            title: "Cross-region Disaster Recovery automation in place"
+            description: "Should a specific physical location become unavailable due to a disaster, a combination of automated technology and adminstrative protocols must be in place to make available the data and supported services via another geography that didn't suffer from the disaster. On the cloud, this basically means ensuring you are replicated across different regions. It does NOT mean you must be replicated across different cloud, like say AWS and Azure for example. However, that level of DR policy is looked upon favorably by assessors."
+            question: "Do you have a DR plan in place across different regions?"
+        -
+            title: "Access Control Lists (ACLs) for access to OS level"
+            description: "ACLs a basic compliance administrative requirement, but the challenge with them is that they are spread across different layers of the technology stack. At the operating system level, ACLs include concepts like security groups, user provision management, and user-based hardening. "
+            question: "Do you have security groups implemented? Are you managing user access via an administrative ACL procedure?"
+        -
+            title: "Password management for all systems at the OS level"
+            description: "There are many controls that feel like overlap but are in fact specific isolated tasks needing to be managed. Password management is an administrative type task that is related to access control, but is its own job. It means that there is a procedure in place to ensure that passwords for users who have access to the operating system layer, and subsequent systems or services within the layer, are set to the appropriate complexity with appropriate rotation. It is also small part of the overall concept of \"hardening\" by ensuring users and passwords no longer used are removed."
+            question: "Is there an administrative procedure in place for password management at the OS level? Do single users only have access to their singular password? If any software is used to manage user passwords, is that software configured in a compliant manner?"
+        -
+            title: "Intrusion detection"
+            description: "IDS continuously monitors for threats coming into your cloud environments. Like with antivirus and other items on the list, there are great tools available to do the job."
+            question: "Do you have an IDS tool installed? If so, are you reviewing identified threats on a daily basis? If the tool is a managed service, do you have a BAA in place with that service provider?"
+        -
+            title: "Antivirus"
+            description: "The basic chore of scanning your cloud environment for viruses is a requirement. Like with IDS and other items on the list, there are great tools available to do the job."
+            question: "Do you have an antivirus tool installed? If so, are you reviewing scans on a daily basis? If the tool is a managed service, do you have a BAA in place with that service provider?"
+        -
+            title: "Vulnerability scanning for system failure"
+            description: "Vulnerabilities can be gateways for malicious actors, like virus or invaders attempting to hack in from other countries. But vulnerabilities can also be unintended and related to system failure, like a SAN disk filling up. Getting a system in place to scan for vulnerabilities is a requirement."
+            question: "Do you have a vulnerability scanning tool installed? If so, are you reviewing vulnerabilities on a daily basis? If the tool is a managed service, do you have a BAA in place with that service provider?"
+        -
+            title: "Audit logging of all user activity in the system"
+            description: "There must be a trail of all user activity within the system. Keep in mind this means users at the operating system level, not app users who are customers of your healthcare product. Those logs serve as both an input into tools like IDS but are also important for audits or lawsuits should there be a breach of the system."
+            question: "Do you log all user activity within the cloud environment?"
+        -
+            title: "Monitoring and logging of all system events"
+            description: "Events that are generated from the system, and not from users, must also be logged. System event monitoring and logging is the same as user logging in that it serves as an input into other tools like IDS but is also an important paper trail for audits or lawsuits should a breach happen."
+            question: "Do you log all system activity within the cloud environment?"
+        -
+            title: "Application events are logged"
+            description: "Outside of the cloud environment layer, application logs must be stored as well. App logs mean user events, so users who log into an app with a username and password then perform actions within the web or mobile interface of the app. App logs are also events created by the app services, like the codebase and database. All those things should be logged for the same reasons as other logs: As an input for other tools, and as a paper trail for audits and lawsuits should a breach happen."
+            question: "Do you log all application level events in the similar way as system level event logs?"
+        -
+            title: "Logs are protected: encrypted and have proper ACLs in place"
+            description: "Across all logs, it is important to ensure ACLs are in place so that the appropriate users of the system have access. Logs also need to be encrypted at rest and in flight like any other part of the system. If logs are shipped elsewhere, then you need to ensure that destination is compliant to all items in this list, and if it's to a third party service provider, then you need a BAA with them. Why is this important? Because PHI might be in the logs based on certain output from the system or application."
+            question: "Are logs encrypted at rest and in transit? If you ship them elsewhere, is the destination compliant? If shipped to a third party, do you have a BAA with that service provider?"
+        -
+            title: "Logs retained minimum 90 days"
+            description: "There is debate, like other items in this list, to the exact duration required in which logs should be retained to meet compliance. We suggest in the 90 day range. Interestingly, a BAA often governs this value. For example, some covered entities might want logs to be destroyed very quickly to minimize the threat vector of stale logs hanging around. Some covered entities prefer to have logs retained for several years in the event a law suit might occur. Facilitating the variability required by potential partners is a wonderful demonstration to the headache of aligning BAAs."
+            question: "Do you retain your logs for 90 days?"
+        -
+            title: "Patch management of all systems and components"
+            description: "Security vulnerabilities are continually discovered. Unpatched systems expose your cloud environment to risk of unauthorized access. This is one of the most commonly exploited threats."
+            question: "Do you have a policy and associated procedure to identify, test, and install patches for your cloud services?"
+        -
+            title: "Penetration testing done periodically within 12 month window"
+            description: "A penetration test is a required job to meet compliance. Officially, it must be done annually in order to pass annual audits. We suggest considering a test more often than that if possible."
+            question: "Have you conducted a penetration test in the last 12 months? Do you have one scheduled before your next audit season?"
+        -
+            title: "System clocks synchronized and locked down from being changed"
+            description: "This is a trivial concept in writing, but a major and central isolated control called out by most compliance regimes. System clocks must be centralized or just about every control on this list is deemed untrustworthy."
+            question: "Are the system clocks powering the cloud environment synchronized?"
+        -
+            title: "Disable remote access by 3rd parties"
+            description: "You should restrict direct access to your cloud networks and environments from the Internet. The only way to directly access your cloud environments should be through secure, restricted connections like VPNs and bastion hosts."
+            question: "Have you disabled public access to your cloud environments?"
+-
+    category: "Cloud Administrative Layer"
+    items:
+        -
+            title: "Privacy and Security officers appointed"
+            description: "A basic requirement of HIPAA compliance is appointing Privacy and Security Officers. Ideally they are two different people for business continuity reasons. We suggest aligning the Privacy Officer with the business and compliance part of the business while aligning the Security officer with the cloud native technical side of the business."
+            question: "Have you appointed a Privacy Officer? Security Officer?"
+        -
+            title: "Policies administering all cloud controls in place"
+            description: "You must have a set of organization policies in place to meet even Maturity Stage 1 of the HITRUST CSF. Datica has open sourced their policies designed specifically for cloud companies. You can find it at datica.com/open-source"
+            question: "Do you have written policies in place?"
+        -
+            title: "Policies reviewed within last 12 months"
+            description: "Once you have administrative policies in place, it is required to review them annually. Because of the fast pace of the cloud, and the inevitible new cloud technology associated to your environments, you should consider reviewing more frequently. We suggest every 6 months."
+            question: "Have you reviewed your company policies within the last 12 months?"
+        -
+            title: "Risk assessment completed within last 12 months"
+            description: "You should complete an internal company risk assessment every 12 months. A risk assessment is a comprehensive look at your entire organization, not just the cloud technology part. However, the cloud aspects are getting to be a harder part of assessments because of how challenging abstraction and liability is becoming with services on the cloud."
+            question: "Have you completed a risk assessment in the last 12 months?"
+        -
+            title: "Signed BAAs in place for all 3rd party service providers who handle your PHI"
+            description: "You must have BAAs signed for all partners who touch PHI you own. Within the scope of cloud environments, this means any technology service provider, like a managed database service for example, must sign a BAA with you."
+            question: "Do you have a signed BAA with each partner in your cloud ecosystem?"
+        -
+            title: "Process for software changes approved by Security Officer"
+            description: "There is debate to the extent at which this HIPAA rule applies, but in essence, major software changes to a cloud environment must be approved by the appointed Security Officer. Your milage may vary as to how this is scoped, but just know that it is a control in which auditors will investigate closely. We suggest at minimum providing a defined policy by which software is determined if it should be reviewed or not, and then in addition, for that which must be reviewed, a procedure in place for the Security Officer to approve the change."
+            question: "Do you have a policy in place that defines which software changes must be approved by the Security Officer? Do you have a procedure in place for which the Security Officer approves changes that meet that policy?"
+        -
+            title: "HIPAA training for all employees with access to cloud systems, data, and software"
+            description: "You must train all employees who touch the organization associated to the cloud environment on HIPAA compliance. Employees must take the training when they start employment, and every year thereafter. The hard part is coming up with the training, but the procedure is easy, which is why Datica open sourced their training available at training.datica.com."
+            question: "Do you have training content and procedures in place for employees?"
+        -
+            title: "Business continuity protocols in place for cloud systems"
+            description: "This control basically wraps everything all up into one. You must have documented policies, processes, and procedures in place for your business to handle any adverse change that could affect the business. So this isn't just disaster recovery should a tornado hit a datacenter, for example. It's also ensuring that if the CTO of your company dies, the root cloud encryption key for all PHI isn't lost forever. Things like that which are littered up and down the cloud stack."
+            question: "Do you have a business continuity plan in place for all layers of the cloud environment?"
