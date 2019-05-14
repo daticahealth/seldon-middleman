@@ -63,10 +63,10 @@ feed_url: "https://datica.com/podcast/feed.xml"
             </div>
         </div>
         <aside class="columns small-12 large-4 section--sidebar">
-            <div class="group">
-                <%= partial "innovation/partials/subscribe" %>
+            <div class="group text-center">
+                <p><%= inline_svg("subscribe-badge", class: "icon-size--xlarge") %></p>
+                <p><%= partial "innovation/partials/subscribe" %></p>
             </div>
-
             <%  sorted_webinars.take(1).each do | id, webinar_entry |%>
               <%= partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry, :card_style => "vertical" } %>
             <% end %>
