@@ -136,16 +136,8 @@ scss:
                 // "next step" actions
                 - if p.has_key?("cta_next")
                     #cta-next.show-for-registered.hide.text-center-for-small
-                        h4.headline-5 Read this next:
+                        h4.headline-5 Next:
                         = partial("/partials/content/cta", :locals => { :p => p["cta_next"] })
                         h4.headline-5 Ready for more?
                         = partial "partials/snippets/button", :locals => { :label => "Talk to Sales", :url => "/contact/", :button_classes => "button", :item_id => "all_webinars", :icon => "icon-chevron-right", :icon_align => "right" }
                 = partial "partials/snippets/button", :locals => { :label => "See All Datica Webinars", :url => "/webinars/", :button_classes => "button hollow hollow-invisible hide-for-registered", :item_id => "all_webinars", :icon => "icon-webinar-sm", :icon_align => "left" }
-
-    / section#all.section-article--small
-    /     .row.align-center
-    /         .columns.small-12.large-6.text-center.group
-                
-                / = inline_svg("icon-webinar", class: "icon-size--medium")
-                / h2.headline-5.spaced-out
-                /     a.link--dark href="/webinars" See All Webinars
