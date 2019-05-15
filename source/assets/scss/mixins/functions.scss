@@ -189,9 +189,9 @@ $underline: false !default;
             -ms-flex: $set;
                 flex: $set;
 }
-$button-transition: transform $timing-default ease, box-shadow $timing-default ease-out, background-color $timing-default ease-out, color $timing-default ease-out;
+$button-transition: transform $timing-default ease, box-shadow $timing-default, background-color $timing-default, color $timing-default, border $timing-default;
 @mixin fx-hover-nudge {
-    transition: $button-transition;
+    // transition: $button-transition;
     &:focus,
     &:hover {
         transform: translate3d(3px, 0, 0);
