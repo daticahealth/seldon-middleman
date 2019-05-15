@@ -133,11 +133,13 @@ scss:
                         .callout.drop.group
                             h3.headline-4.text-center.group = (is_future == true ? "Register" : "Register")
                             = partial "partials/snippets/form", :locals => { :the_form => data.site.forms[p.related_form.id].custom_form }
+                // "next step" actions
                 - if p.has_key?("cta_next")
                     #cta-next.is-registered.hide.text-center-for-small
-                        h4.headline-5.spaced-out.margin-bottom-small Ready for more?
+                        h4.headline-5.spaced-out style="margin-bottom: 0.8em;" Ready for more?
                         = partial("/partials/content/cta", :locals => { :p => p["cta_next"] })
-                = partial "partials/snippets/button", :locals => { :label => "See All Datica Webinars", :url => "/webinars/", :button_classes => "button hollow", :item_id => "all_webinars", :icon => "icon-webinar-sm", :icon_align => "left" }
+                        = partial "partials/snippets/button", :locals => { :label => "See All Datica Webinars", :url => "/contact/", :button_classes => "button", :item_id => "all_webinars", :icon => "icon-chevron-right", :icon_align => "right" }
+                = partial "partials/snippets/button", :locals => { :label => "See All Datica Webinars", :url => "/webinars/", :button_classes => "button hollow is-registered", :item_id => "all_webinars", :icon => "icon-webinar-sm", :icon_align => "left" }
 
     / section#all.section-article--small
     /     .row.align-center
