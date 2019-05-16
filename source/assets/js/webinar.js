@@ -4,34 +4,22 @@ $("document").ready(function(){
         // $('nav.nav-desktop').attr('data-theme', 'dark');
         $('#webinar').attr('data-theme', 'dark');
         $('#webinar').addClass("bg-gray-2 link--white-parent");
-        $('#webinar-play').removeClass("hide");
-        $('#webinar-authors').addClass("hide");
-        $('.preview-bg').addClass("hide");
-        // $('#webinar-play').addClass("group");
-        $('#preview-register').addClass("hide");
-        // $('#preview-registered').removeClass("hide");
-        // $('#webinar-title').removeClass("hide");
-        $('.is-registered').removeClass("hide");
-        $('#report-form').addClass("hide");
+        $('.show-for-registered').removeClass("hide");
+        $('.hide-for-registered').addClass("hide");
         $.cookie(currPromoCookie, 'true', { expires: 14, path: '/' });
         $('#alertTop').addClass("hide");
-        //$('#webinar-trailer').addClass("hide");
-        console.log('show it');
+        // console.log('show it');
+
     }
     function hideWebinar(){
         // $('nav.nav-desktop').attr('data-theme', 'dark');
         $('#webinar').attr('data-theme', 'light');
-        $('#webinar').removeClass("bg-gray-3 link--white-parent");
-        $('#webinar-play').addClass("hide");
-        $('#webinar-authors').removeClass("hide");
-        $('.preview-bg').removeClass("hide");
-        // $('#preview-register').removeClass("hide");
-        // $('#preview-registered').addClass("hide");
-        // $('#webinar-title').addClass("hide");
-        $('.is-registered').add("hide");
-        $('#report-form').removeClass("hide");
-        console.log('default');
+        $('#webinar').removeClass("bg-gray-2 link--white-parent");
+        $('.show-for-registered').addClass("hide");
+        $('.hide-for-registered').removeClass("hide");
+        // console.log('default');
     }
+
     if($.cookie('webinarReg') == null){
         // console.log('no match. hide thing');
         hideWebinar();
@@ -56,3 +44,4 @@ $("document").ready(function(){
         });
     });
 });
+

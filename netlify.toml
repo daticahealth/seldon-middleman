@@ -328,18 +328,23 @@
   status = 301
 
 [[redirects]]
-  from = "/fhir"
-  to = "/discover/ehr-integrations"
-  status = 301
-
-[[redirects]]
   from = "/how-to-integrate-with-hospitals"
   to = "/guide/how-to-integrate-with-hospitals"
   status = 301
 
 [[redirects]]
+  from = "/guide/fhir-for-health-systems"
+  to = "/guide/fhir"
+  status = 301
+
+[[redirects]]
   from = "/total-cost-of-ownership-integration"
   to = "/guide/total-cost-of-ownership-integration"
+  status = 301
+
+[[redirects]]
+  from = "/fhir"
+  to = "/guide/fhir"
   status = 301
 
 [[redirects]]

@@ -47,7 +47,13 @@ ruby:
         thumb = bg_default
     end
 
-
+scss:
+    .cta {
+        margin: 0 0 2rem 0;
+        @media screen and (min-width: 40em) {
+            max-width: 100%;
+        }
+    }
 / section#top.container-gray-2.container-image-fill data-interchange="[#{thumb}, small], [#{thumb}#{image_featured_large}, large]"
 .strip-bright.strip-small
 .bg-gray-1
@@ -74,7 +80,7 @@ ruby:
             .row.align-center.collapse
                 .columns.small-12.large-10.group
                     #webinar-container.preview.container-gray-2.relative href="/webinars/#{p["slug"]}" title=("View webinar")
-                        #webinar-play.hide.z-10.relative
+                        #webinar-play.show-for-registered.hide.z-10.relative
                             - if p.has_key?("video_embed")
                                 .group
                                     = Kramdown::Document.new(data.site.videos[p.video_embed.id].custom_form).to_html
@@ -89,28 +95,28 @@ ruby:
                                     li
                                         span.label.info.round = data.site.discover[p.discovery_topic.id].title
                             - if p.has_key?("authors")
-                                aside#webinar-authors
+                                aside#webinar-authors.hide-for-registered
                                     .subhead--spaced.faded.headline-6.group--sm Presented by
                                     - p["authors"].each do | author |
                                         p
                                             = partial("partials/snippets/person", :locals => { :p => author, :classes => "person-light" })
-                        #preview-register.show.show-for-large.absolute(style="bottom: 0; right: 0;")
+                        #preview-register.hide-for-registered.show-for-large.absolute(style="bottom: 0; right: 0;")
                             / .preview-cta.headline-5.spaced-out Register to watch
                             = inline_svg("icon-video-play-circle", class: "preview-icon icon-size--xlarge svg-color--white")
                                 
-                        #webinar-bg.absolute.preview-bg.z-0.group.img-multiply.blur-2
+                        #webinar-bg.hide-for-registered.absolute.preview-bg.z-0.group.img-multiply.blur-2
                             img.lozad.img-cover src="#{thumb}?w=250&fm=jpg&q=10" data-src="#{thumb}?w=840"
     section#description.section-article--med
         .row.align-center
-            .columns.small-12.large-6
+            .columns.small-12.medium-6.large-6
                 - if p.has_key?("lead")
                     = Kramdown::Document.new(p["lead"]).to_html
                 - if p.has_key?("desc")
                     article.group
                         = Kramdown::Document.new(p["desc"]).to_html
-            .columns.small-12.large-4
+            .columns.small-12.medium-6.large-4
                 - if is_future == true
-                    .is-registered.callout.drop.hide
+                    .show-for-registered.callout.drop.hide
                         = inline_svg("small/icon-check-circle", class: "float-right icon-size--large svg-color--green")
                         h3.headline-4 You're Registered!
                         p Join us <strong>#{event_date_full}</strong>
@@ -123,16 +129,15 @@ ruby:
                                 p
                                     = partial("partials/snippets/person", :locals => { :p => author, :classes => "" })
                 - if p.has_key?("related_form")
-                    #report-form.hide
+                    #report-form.hide-for-registered.hide
                         .callout.drop.group
                             h3.headline-4.text-center.group = (is_future == true ? "Register" : "Register")
                             = partial "partials/snippets/form", :locals => { :the_form => data.site.forms[p.related_form.id].custom_form }
-                = partial "partials/snippets/button", :locals => { :label => "See All Datica Webinars", :url => "/webinars/", :button_classes => "button hollow", :item_id => "all_webinars", :icon => "icon-webinar-sm", :icon_align => "left" }
-
-    / section#all.section-article--small
-    /     .row.align-center
-    /         .columns.small-12.large-6.text-center.group
-                
-                / = inline_svg("icon-webinar", class: "icon-size--medium")
-                / h2.headline-5.spaced-out
-                /     a.link--dark href="/webinars" See All Webinars
+                // "next step" actions
+                - if p.has_key?("cta_next")
+                    #cta-next.show-for-registered.hide.text-center-for-small
+                        h4.headline-5 Next:
+                        = partial("/partials/content/cta", :locals => { :p => p["cta_next"] })
+                        h4.headline-5 Ready for more?
+                        = partial "partials/snippets/button", :locals => { :label => "Talk to Sales", :url => "/contact/", :button_classes => "button", :item_id => "all_webinars", :icon => "icon-chevron-right", :icon_align => "right" }
+                = partial "partials/snippets/button", :locals => { :label => "See All Datica Webinars", :url => "/webinars/", :button_classes => "button hollow hollow-invisible hide-for-registered", :item_id => "all_webinars", :icon => "icon-webinar-sm", :icon_align => "left" }
