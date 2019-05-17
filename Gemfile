@@ -19,3 +19,4 @@ gem 'oga' # for svginjection, xml parsing
 gem 'contentful_middleman'
 gem 'sanitize'
 gem 'inline_svg'
+gem 'slugify'
