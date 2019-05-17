@@ -35,29 +35,31 @@ section.container-color--dark-grad-blue
             p.lead.text-center = current_page.data.summary
 
 section.bg-gray-12
-  - assessment.each do | item |
+  - assessment.each_with_index do | item, a |
     .row.align-center.section-article
       .columns.small-12
         h3.headline-2 = item.category
-        - item.items.each do | items |
+        - item.items.each_with_index do | items, b |
           .row.group
             .columns.small-12.medium-6
               h4.headline-5 = items.title
               p = items.description
             .columns.small-12.medium-5
               h4.headline-5.spaced-out Checklist
-              - items.questions.each do | q |
+              - items.questions.each_with_index do | q, c |
+                / for some reason this isn't parsing
+                /- item_id = 'item-#{a}-#{b}-#{c}'
                 .row.collapse
                   .columns.small-8
                     p = q
                   .columns.small-4.check-toggles
                     fieldset
                       span.inline
-                        label.text--gray-6.spaced-out.text-bold for="yes-#{q.slugify}" Yes
-                        input type="radio" id="yes-#{q.slugify}" name="list-#{q.slugify}" value="yes"
+                        label.text--gray-6.spaced-out.text-bold for="yes--#{a}-#{b}-#{c}" Yes
+                        input type="radio" id="yes--#{a}-#{b}-#{c}" name="field--#{a}-#{b}-#{c}" value="yes"
                       span.inline
-                        label.text--gray-6.spaced-out.text-bold for="no-#{q.slugify}" No
-                        input type="radio" id="no-#{q.slugify}" name="list-#{q.slugify}" value="no"
+                        label.text--gray-6.spaced-out.text-bold for="no--#{a}-#{b}-#{c}" No
+                        input type="radio" id="no--#{a}-#{b}-#{c}" name="field--#{a}-#{b}-#{c}" value="no"
 
 
 /section.section-article--med.container-gray-10
