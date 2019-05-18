@@ -16,6 +16,8 @@ ruby:
   separator = %(<span style="opacity: 0;">, </span>)
   assessment = data.views.self_assessment
 
+script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"
+
 svg aria-hidden="true" data-name="checks" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style=("position: absolute; width: 0; height: 0; overflow: hidden;")
   defs
     symbol.svg-color--green#icon-check viewbox=("0 0 18 18")
@@ -34,7 +36,7 @@ section.container-color--dark-grad-blue
             h1.headline-2.text-center = current_page.data.navTitle
             p.lead.text-center = current_page.data.summary
 
-section.bg-gray-12
+section#app.bg-gray-12
   - assessment.each_with_index do | item, a |
     .row.align-center.section-article
       .columns.small-12
@@ -51,101 +53,56 @@ section.bg-gray-12
                 /- item_id = 'item-#{a}-#{b}-#{c}'
                 .row.collapse
                   .columns.small-8
-                    p = q.question
-                    .answer id="answer--#{a}-#{b}-#{c}" = Kramdown::Document.new(q.answer).to_html
+                    p.question = q.question
+                    .answer v-bind:class="classObject" id="answer--#{a}-#{b}-#{c}"
+                      .card.bg-white.drop
+                        .card-section = Kramdown::Document.new(q.answer).to_html
                   .columns.small-4.check-toggles
                     fieldset
                       span.inline
                         label.text--gray-6.spaced-out.text-bold for="yes--#{a}-#{b}-#{c}" Yes
-                        input type="radio" id="yes--#{a}-#{b}-#{c}" name="field--#{a}-#{b}-#{c}" value="yes"
+                        input type="radio" id="yes--#{a}-#{b}-#{c}" name="field--#{a}-#{b}-#{c}" :value="true" v-model="showcheck"
                       span.inline
                         label.text--gray-6.spaced-out.text-bold for="no--#{a}-#{b}-#{c}" No
-                        input type="radio" id="no--#{a}-#{b}-#{c}" name="field--#{a}-#{b}-#{c}" value="no"
+                        input type="radio" id="no--#{a}-#{b}-#{c}" name="field--#{a}-#{b}-#{c}" :value="false" v-model="showcheck"
+
+javascript:
+  Vue.config.devtools = true;
+  var app = new Vue({
+    el: '#app',
+    data: {
+      showcheck: true,
+    },
+    computed: {
+      classObject: function () {
+        return {
+          'item-hidden': this.showcheck,
+          'item-shown': !this.showcheck
+        }
+      }
+    }
+  });
 
 scss:
+  .question {
+    font-style: italic;
+  }
   .answer {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    // transform: scale(0.8);
-    transition: 0.5s;
-    &.is-selected {
+      transition: 0.3s;
+    &.item-hidden {
+      opacity: 0;
+      //max-height: 0;
+      //overflow: hidden;
+      // transform: scale(0.8);
+    }
+    &.item-shown {
       opacity: 1;
-      max-height: 200px;
-      overflow: visible;
-      padding: 10px;
+      // max-height: 200px;
+      //overflow: visible;
+      // padding: 10px 0;
       //transform: scale(1);
     }
   }
-
-/section.section-article--med.container-gray-10
-    / h2.headline-4.spaced-out.text-center.group.text--gray-6 Legend
-    / .row.small-up-1.large-up-3.group
-    /   - data.views.global_compliance_posture.overview.each do | item |
-    /     .column
-    /       .callout.nomargin.drop-light
-    /         h4.headline-5 = item.title
-    /         = Kramdown::Document.new(item.desc).to_html
-    .row.align-center
-      #filter-table.columns.small-12.large-10
-        .group.filter-search.input-nav.input-nav--black
-          = inline_svg("small/icon-filter-list", class: "input-nav--icon")
-          / span class="input-nav--icon"><i class="fa fa-search"></i></span
-          input.search type="search" id="searchInput" placeholder="Filter list"
-        table width="100%" border="0"
-          thead
-            tr.container-gray-3
-              th.sort data-sort="place" Geography
-              th.sort data-sort="regime" Regime 
-              / th 
-                span data-tooltip="" aria-haspopup="true" data-fade-in-duration="20" data-v-offset="0" title="No legal or technical obstacles" Possible?
-              th.sort data-sort="available"
-                span data-tooltip="" aria-haspopup="true" data-fade-in-duration="20" data-v-offset="0" title="Compliant deploys are possible in this geography." Available Now?
-              th.sort data-sort="planned"
-                span data-tooltip="" aria-haspopup="true" data-fade-in-duration="20" data-v-offset="0" title="Planned features" Planned?
-              th.sort data-sort="time" Availability
-              / th Description
-          tbody.list
-            - data.views.global_compliance_posture.table.each do | locale |
-              tr style="vertical-align: top;"
-                td.place
-                  strong
-                    = locale.geography
-                td.regime
-                  = locale.regime
-                / td.possible
-                  - if locale.is_possible == true
-                    = inline_svg("small/icon-check", class: "icon-size--small svg-color--green")
-                td.available
-                  - if locale.is_available == true
-                    svg.icon-size--small
-                      title yes
-                      use.symbol-icon xlink:href="#icon-check"
-                td.planned
-                  - if locale.is_planned == true
-                    svg.icon-size--small
-                      title yes
-                      use.symbol-icon xlink:href="#icon-check"
-                  - else
-                    svg.icon-size--small
-                      title no
-                      use.symbol-icon xlink:href="#icon-x"
-                td.time
-                  = locale.when_available
-                / td.desc
-                /   = Kramdown::Document.new(locale.desc).to_html
-                  / - if member.has_key?("regime_url")
-
-/= partial "partials/snippets/product-req-bar", :locals => { :form_id => "6cpdQDL5S06YmySAKIamom" }
-
-script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"
-javascript:
-  var options = {
-    valueNames: [ 'place', 'regime', 'available', 'planned', 'time' ]
-  };
-  var tableList = new List('filter-table', options);
-
-scss:
   @media screen and (min-width: 640px) {
     .row .columns:first-child {
       padding-left: 0;
@@ -164,50 +121,4 @@ scss:
   }
   .inline {
     display: inline-block;
-  }
-  .sort:focus {
-    outline:none;
-  }
-  .sort:hover {
-    cursor: row-resize;
-  }
-  .sort:after {
-    display:inline-block;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    content:"";
-    position: relative;
-    top:-10px;
-    right:-5px;
-  }
-  .sort.asc:hover {
-    cursor: n-resize;
-  }
-  .sort.asc:after {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #fff;
-    content:"";
-    position: relative;
-    top:4px;
-    right:-5px;
-  }
-  .sort.desc:hover {
-    cursor: s-resize;
-  }
-  .sort.desc:after {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid #fff;
-    content:"";
-    position: relative;
-    top:-4px;
-    right:-5px;
   }
