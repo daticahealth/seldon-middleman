@@ -46,12 +46,13 @@ section.bg-gray-12
               p = items.description
             .columns.small-12.medium-5
               h4.headline-5.spaced-out Checklist
-              - items.questions.each_with_index do | q, c |
+              - items.checks.each_with_index do | q, c |
                 / for some reason this isn't parsing
                 /- item_id = 'item-#{a}-#{b}-#{c}'
                 .row.collapse
                   .columns.small-8
-                    p = q
+                    p = q.question
+                    .answer id="answer--#{a}-#{b}-#{c}" = Kramdown::Document.new(q.answer).to_html
                   .columns.small-4.check-toggles
                     fieldset
                       span.inline
@@ -61,6 +62,21 @@ section.bg-gray-12
                         label.text--gray-6.spaced-out.text-bold for="no--#{a}-#{b}-#{c}" No
                         input type="radio" id="no--#{a}-#{b}-#{c}" name="field--#{a}-#{b}-#{c}" value="no"
 
+scss:
+  .answer {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    // transform: scale(0.8);
+    transition: 0.5s;
+    &.is-selected {
+      opacity: 1;
+      max-height: 200px;
+      overflow: visible;
+      padding: 10px;
+      //transform: scale(1);
+    }
+  }
 
 /section.section-article--med.container-gray-10
     / h2.headline-4.spaced-out.text-center.group.text--gray-6 Legend
