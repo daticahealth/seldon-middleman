@@ -27,14 +27,39 @@ svg aria-hidden="true" data-name="checks" xmlns="http://www.w3.org/2000/svg" xml
       title no
       path d=("M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z")
 
-section.container-color--dark-grad-blue
+section.bg-gray-12
   .section-article.container-image--center
-    .row.align-center
-      .columns.small-12.text-center.group
-        .row.align-center
-          .columns.small-12.large-10
-            h1.headline-2.text-center = current_page.data.navTitle
-            p.lead.text-center = current_page.data.summary
+    .row.align-left.align-middle
+      .columns.small-12.medium-10.large-7
+        h1.headline-2 = current_page.data.navTitle
+        p.lead = current_page.data.summary
+        markdown:
+          This worksheet is meant to illuminate the cloud requirements of HIPAA that you need to plan for in your own digital health product. A more comprehensive risk assessment, such as the HITRUST CSF Self-Assessment, is also necessary. Use this checklist to understand what compliance controls are needed, and assess your compliant state at several cloud layers:
+
+          * The Physical Layer
+          * The Operating System and Application Layers
+          * The Administrative Layer
+          
+          Once you’ve completed this checklist you’ll have a much better understanding of what it will take to be HIPAA compliant in the cloud.
+      .columns.show-for-medium-up.medium-2.large-4
+        img.lozad src=loader_square_svg data-src="https://images.ctfassets.net/189dvqdsjh46/15YKK0XAJOlTjoLRMzSQG9/2b5f65409b28f1b80abda690f2753975/checklist-art.png?w=300"
+
+section#assessment.bg-gray-11.section-article
+  .row.collapse
+    .columns.small-12.large-8
+      h2.headline-2 Your Assessment
+      p You answered "no" to some of the items, so here is a list of a few tasks you need to undertake to become HIPAA compliant.
+  - assessment.each_with_index do | item, a |
+    .row.align-center.group.collapse
+      .columns.small-12
+        h3.headline-3 = item.category
+        - item.items.each_with_index do | items, b |
+          h4.headline-5 = items.title
+          / p = items.description
+          / h4.headline-6.spaced-out To-Do
+          ul.list-check-light
+            - items.checks.each_with_index do | q, c |
+              li id="task-#{a}-#{b}-#{c}" = Kramdown::Document.new(q.answer).to_html
 
 section#app.bg-gray-12
   - assessment.each_with_index do | item, a |
@@ -84,6 +109,14 @@ javascript:
   });
 
 scss:
+  ul.list-check-light {
+    // list-style: none;
+    margin-left: 2.25rem;
+    li {
+      margin-bottom: 0.4rem;
+      list-style-image: url("https://images.ctfassets.net/189dvqdsjh46/2nmiTjR00hDfsCPDjlO19B/8897408a0a916eb168a07bf533be3749/check-light.svg");
+    }
+  }
   .question {
     font-style: italic;
   }

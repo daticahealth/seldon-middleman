@@ -1,5 +1,6 @@
 -
     category: "Cloud Physical Layer"
+    description: ""
     items:
         -
             title: "Entry to data center is managed"
@@ -7,30 +8,31 @@
             checks:
                 -
                     question: "Do you have a BAA in place with your cloud service provider that takes on the risk of this control?"
-                    answer: "You will need a [BAA](https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa) (Business Associate Agreement) in place."
+                    answer: "You indicated that you will need a [BAA](https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa) (Business Associate Agreement) in place."
         -
             title: "Physical repairs are managed and observed"
             description: "Beyond access, managing a procedure that ensures repairs are monitored appropriately is required. For example, HVAC or electrical systems. As a cloud customer, your CSP provider (e.g. AWS, Azure, GCP, etc) will cover this control in their BAAs and privacy agreements because it will be impossible for you to manage otherwise. If you don't have a BAA with your cloud service provider, then you are out of compliance. This is a requirement to run compliant workloads on any cloud.\n"
             checks:
                 -
                     question: "Do you have a BAA in place with your cloud service provider that takes on the risk of this control?"
-                    answer: "You will need a [BAA](https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa) (Business Associate Agreement) in place."
+                    answer: "You indicated that you will need a [BAA](https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa) (Business Associate Agreement) in place."
         -
             title: "Physical firewall in place"
             description: "Networking segmentation at the physical layer is a requirement. As a cloud customer, your CSP provider (e.g. AWS, Azure, GCP, etc) will cover this control in their BAAs and privacy agreements because it will be impossible for you to manage otherwise. If you don't have a BAA with your cloud service provider, then you are out of compliance. This is a requirement to run compliant workloads on any cloud.\n"
             checks:
                 -
                     question: "Do you have a BAA in place with your cloud service provider that takes on the risk of this control?"
-                    answer: "You will need a [BAA](https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa) (Business Associate Agreement) in place."
+                    answer: "You indicated that you will need a [BAA](https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa) (Business Associate Agreement) in place."
         -
             title: "Physical system failure in place (e.g. fire prevention, electrical, internet)"
             description: "This concept relates to Disaster Recovery. Part of a DR program is ensuring localized incidents are contained, like proper fire prevention protocols are installed at the data center. As a cloud customer, your CSP provider (e.g. AWS, Azure, GCP, etc) will cover this control in their BAAs and privacy agreements because it will be impossible for you to manage otherwise. If you don't have a BAA with your cloud service provider, then you are out of compliance. This is a requirement to run compliant workloads on any cloud."
             checks:
                 -
                     question: "Do you have a BAA in place with your cloud service provider that takes on the risk of this control?"
-                    answer: "You will need a [BAA](https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa) (Business Associate Agreement) in place."
+                    answer: "You indicated that you will need a [BAA](https://policy.datica.com/#23-datica-hipaa-business-associate-agreement-baa) (Business Associate Agreement) in place."
 -
     category: "Cloud Operating System and Application Layers"
+    description: ""
     items:
         -
             title: "Encryption of data at rest"
@@ -213,6 +215,7 @@
                     answer: "(answer in development)"
 -
     category: "Cloud Administrative Layer"
+    description: ""
     items:
         -
             title: "Privacy and Security officers appointed"
