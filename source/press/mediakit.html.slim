@@ -1,0 +1,49 @@
+---
+title: "Datica Press and Downloadable Media Resources"
+summary: "Download our brand elements and understand how to use them."
+author: "Datica, Inc."
+tags: "media, logos, press, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+date: "January 1, 2017"
+share_image: "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
+header: "Media Resources"
+subheader: "Company Info, Press Releases, Coverage"
+layout: company
+---
+section.section-article.bg-gray-12
+  .row.align-center
+    .columns.small-12.medium-8
+      h1.headline-5.spaced-out Datica Brand Assets
+      /p.lead.group Download Datica brand assets here.
+      p Visit our Datica brand elements repo on Github, or download the zip directly.
+      .button-group.group
+        = partial "partials/snippets/button", :locals => { :label => "Datica Brand Assets On Github", :url => "https://github.com/daticahealth/brand-assets/", :button_classes => "button hollow", :icon => "icon-github-octocat", :icon_align => "left", :item_id => "brand_repo", :data_track_group => "assets", :expand => false }
+        = partial "partials/snippets/button", :locals => { :label => "Download Datica Brand Assets (.zip)", :title => "Download the assets as a zip file", :url => "https://github.com/daticahealth/brand-assets/archive/master.zip", :button_classes => "button primary", :icon => "icon-cloud-download", :icon_align => "right", :item_id => "download_logos", :data_track_group => "assets", :expand => false }
+      .content-dynamic.group
+        markdown:
+          ### Typefaces
+
+          <img class="float-right" src="https://raw.githubusercontent.com/daticahealth/brand-assets/master/assets/type-samples.png" alt="Type samples" width="300" />
+
+          Datica uses [GT America](https://www.grillitype.com/typeface/gt-america) for our primary typeface; this font is not freely distributable. Please contact allan@datica.com if you are a vendor and need the typeface.
+
+          Our secondary typefaces are open source: [Roboto](https://fonts.google.com/specimen/Roboto) (when GT America is not available) and [Source Serif Pro](https://github.com/adobe-fonts/source-serif-pro/tree/release/OTF).
+
+          ### Usage
+
+          <a href="https://downloads.ctfassets.net/189dvqdsjh46/7LykBR7TfoEZ6vUjl3G8BQ/f38505c8ec7a50a72c1a394033487c3b/Datica_Style_Guide_2019.pdf" title="style guide pdf"><img class="drop" src="https://raw.githubusercontent.com/daticahealth/brand-assets/master/assets/Brand%20Summary.jpg" alt="Datica brand usage" width="640" /></a>
+
+          You can download our style guide as a .pdf [here](https://downloads.ctfassets.net/189dvqdsjh46/7LykBR7TfoEZ6vUjl3G8BQ/f38505c8ec7a50a72c1a394033487c3b/Datica_Style_Guide_2019.pdf).
+      = partial "partials/snippets/button", :locals => { :label => "Back to Press", :url => "/press/", :button_classes => "button hollow hollow-invisible small", :icon => "icon-chevron-left", :icon_align => "left" }
+
+  /.row.align-center.text-center
+    .columns.small-12.medium-10
+      .row.align-center.align-stretch.small-up-1.medium-up-2.large-up-3
+        .column
+          h5 Horizontal, On White #FFFFFF
+          .callout.drop
+            img alt=("datica logo") src="/public/img/mediakit/datica-logo-black.png" /
+        .column
+          h5 Horizontal, On Dark Gray #1E2127
+          .callout--dark.drop
+            img alt=("datica logo") src="/public/img/mediakit/datica-logo-white.png" /
+
