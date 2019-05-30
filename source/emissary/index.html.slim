@@ -1,0 +1,201 @@
+---
+title: "Compliant Managed Integration (CMI) | Datica Cloud Compliance"
+summary: "Compliant Managed Integration (CMI) handles HIPAA compliant, scalable, and secure data exchange with any EHR."
+navTitle: "Datica CMI"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+ogType: "product"
+customCSS: "products, products-mastheads"
+layout: products
+priority: "0.9"
+category: "integration"
+collectionName: "products"
+collectionOrder: 3
+ctaCustom: true
+subnav:
+  -
+    title: "Overview"
+    slug: "overview"
+  -
+    title: "Charts"
+    slug: "chart-retrieval"
+  -
+    title: "Analytics"
+    slug: "analytics"
+  -
+    title: "Interactive"
+    slug: "interactive"
+  -
+    title: "Benefits"
+    slug: "benefits"
+  -
+    title: "Services"
+    slug: "services"
+  -
+    title: "Customer Proof"
+    slug: "proof"
+  -
+    title: "Get Started"
+    slug: "start"
+
+---
+ruby:
+  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/71ZkJFY8CgC3a0huhg9Wqh/19a52b2852b0f336e0c51d8acfcc8e85/bg-cards.svg'
+  current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
+  current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/nGfjpkdV4GIIk6ii6wQiE/7488832f05e372d1f13933a343a75826/share-cmi.jpg'
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  the_form = data.site.forms['328pNB4IvCaQWQMCWmgSCy']
+scss:
+  .bg-white-on-small {
+    @media screen and (max-width: 640px) {
+      background-color: hsla(0, 0%, 100%, .8);
+      padding: 1rem;
+    }
+  }
+
+
+
+section.masthead.bg-dark.bg-red-yellow-grad.product-cmi.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+  .section-article--lg.relative.z-10
+    .row.align-middle.align-center.group
+      .columns.small-12.medium-10.large-6.text-center
+        = inline_svg("cmi-logo-w", class: "masthead-icon")
+        h1.headline-3.text-bold.margin-bottom-sm Emissary® – Keep data in motion
+        p.lead Emissary helps you implement effortlessly, innovate brilliantly, deliver value swiftly and scale confidently.
+        p Why should health data exchange be so inefficient and costly, when information is easily – even instantaneously – accessible in almost all other aspects of our modern lives?
+    .row.align-center.text-center
+      .column.small-12.medium-4.shrink
+        = partial "partials/snippets/button", :locals => { :label => "Emissary Chart Retrieval", :url => "##{current_page.data.subnav[1].slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[1].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+      .column.small-12.medium-4.shrink
+        = partial "partials/snippets/button", :locals => { :label => "Emissary Analytics", :url => "##{current_page.data.subnav[2].slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[2].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+      .column.small-12.medium-4.shrink
+        = partial "partials/snippets/button", :locals => { :label => "Emissary Interactive", :url => "##{current_page.data.subnav[3].slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[3].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+
+  .art
+    = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
+    = inline_svg("products-cards-color", class: "z-5 art-accent step-1")
+    / .art-bg-fill.art-light-blob
+    .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
+  .strip.strip-small.strip-cmi
+
+section.section-article.container-gray-11
+  .row.align-middle
+    .columns.small-12.medium-8
+      .video.drop.group
+        <script src="https://fast.wistia.com/embed/medias/0rr2p8xca5.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_0rr2p8xca5 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+    .columns.small-12.medium-4
+      h3.headline-4 What is EHR Integration?
+      p EHR integration is the partnership between providers, payers, vendors, and other players that brings the data or function from one application or program to that of another. Because of the sheer quantity and diversity of data, healthcare providers face major obstacles in integrating and effectively analyzing healthcare information.
+      = partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/ehr-integration/", :button_classes => "button hollow secondary", :item_id => "integration" }
+
+section.section-article.bg-white id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+  .row.align-center
+    .columns.small-12.medium-4.large-4
+      img.lozad src=loader_rect data-src="https://sansorohealth.com/wp-content/uploads/2018/02/Emissary-diagram-new-V2.jpg" alt="emissary diagram"
+    .columns.small-12.medium-8.large-6
+      h3.headline-3 Emissary is a proven API solution
+      p.lead Emissary is a proven application programming interface (API) solution that allows healthcare information to be exchanged across any EHR platform – while ensuring the utmost security for PHI.
+      p Modern times call for modern measures. Emissary allows you to focus on your product – not on the integration. Within days, you are up and running with comprehensive APIs that work across EHRs.
+      = partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button", :item_id => "product-emissary" }
+
+.strip.strip-cmi
+section.section-article.container-gray-12 id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
+  .row.align-center.group
+    .columns.small-12.large-6.text-center
+      = inline_svg("icon-consulting-compass", class: "icon-size--xlarge svg-color--gray-5")
+      h2.headline-2.group Integration Services
+      h3.headline-4 Take the stress out of EHR integrations.
+      p.lead We handle the stress, risk and complexity of EHR integrations, so you can help medical teams do what they do best.
+  .row.align-center.align-middle
+    .column.small-12.medium-6
+      h3.headline-5 Get back to solving problems for heathcare
+      p In the past, EHR integration projects have been frustrating obstacles for innovation teams, preventing them from creating breakthrough solutions for overwhelmed medical professionals.
+      p Imagine being free to focus on <em>solving</em> problems again, instead of the worry and cost of integrating your solution with your EHR.
+      p.group Integrating with EHRs is an ongoing challenge for digital health solutions. EHR integration is not just a technology problem, it’s also a people and process problem.
+      .callout.drop.group
+        blockquote.quote--serif
+          - quote_services = data.site.quotes['4r9Bmb0l8QiMgKqCagOa0E']
+          = Kramdown::Document.new(quote_services["quote_body"]).to_html
+        - if quote_services.has_key?("related_person")
+          = partial("partials/snippets/person", :locals => { :p => quote_services.related_person } )
+    .columns.small-12.medium-6.large-5
+      .card.bg-gray-4.pad
+        .card-section
+          h3.headline-4 Project Management
+          p Our team of project managers provide an expert view into integrated with EHRs and health systems. They will help manage timelines, create project plans, and track deliverables.
+          h3.headline-4 Connection Setup and Maintenance
+          p Datica’s Integration Engineers will build, configure, test and maintain VPN connections to allow for transmission of HL7 messages.
+          h3.headline-4 Interface Build and Configuration
+          p We will transform HL7 messages into JSON or FHIR messages to help keep things standard for you across implementations. We have many predesigned channels ready to go.
+        .card-divider.text-center
+          = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light", :icon => "icon-chevron-down", :expand => "false" }
+
+
+= partial("/partials/section-promos/tco-integration-banner", :locals => { :style => "dark", :align => "right", :bgImage => "https://images.ctfassets.net/189dvqdsjh46/1iP2tqSCPKuIY6gIakoWcM/c954e6875e22448528da37b912f8aca4/triangle_theme__darker__Dallas_Ball__-_ash-edmonds-636863-unsplash.jpg" })
+
+section.section-article.container-color--white id=current_page.data.subnav[6].slug data-magellan-target=current_page.data.subnav[6].slug
+  .row.align-center.group
+    .columns.small-12.medium-10.large-6
+      = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'] })
+  .row.align-center.group
+    .columns.small-12.large-10.text-center
+      h3.headline-3 A trusted partner with established healthcare organizations
+      .logo-cloud
+        - data.views.managed_integration.customer_healthsystems_list.each do |logo|
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+  .row.align-center
+    .columns.small-12.large-10.text-center
+      h3.headline-3.nomargin Successful, live integrations with all major EHRs
+      .logo-cloud
+        - data.views.ehrs.ehr_list.each do |logo|
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+section.section-article.bg-gray-11
+  - case_studies = data.site.collections.to_a.select { | id, cust | (id == "6wxpCFBxTy6aKEYQoEU4Y4") }
+  - case_studies.each do | id, cardgroup |
+    .row.align-center
+      .columns.small-12.text-center.group
+        h2.headline-3 = cardgroup.title
+    .row.full-width.align-center.small-up-1.medium-up-2.large-up-2.xlarge-up-4
+      - cardgroup["related_entries"].each do | card |
+        - carditem = data.site.caseStudy[card.id]
+        - cust = data.site.customers[carditem.customer.id]
+        .column
+          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust }
+.strip.strip-cmi
+section.bg-dark.bg-red-yellow-grad.product-cmi id=current_page.data.subnav[7].slug data-magellan-target=current_page.data.subnav[7].slug
+  .section-article.container-image--center.lozad data-background-image=bg_image
+    .row.align-center.align-middle
+      .columns.small-12.medium-6.large-5
+        h2.headline-3.group--2x Schedule a conversation to learn more about Datica's Managed Integration services
+        / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
+        .callout.callout--dark-alpha
+          blockquote.quote--serif
+            | The Datica team is helping us solve critical infrastructure and scaling problems faster and more competently than we can in-house.
+          .media-object.card-person
+            .media-object-section
+              img.avatar.avatar--large.circle alt=("Jon Pearce") src="https://images.ctfassets.net/189dvqdsjh46/6IUA5I8suWEWI28YcIkMgm/134af76338fd572e45a9d4a716a8ddb7/headshot-zipnosis.jpg" /
+            .media-object-section.main-section.align-self-middle
+              h4.person-name Jon Pearce
+              p.person-title CEO, Zipnosis
+
+      #form.columns.small-12.medium-large-6.large-4
+        .callout.drop
+          h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
+          = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+
+section#faq.section-article.container-gray-12
+  .row.align-center
+    .columns.small-12.medium-10.large-7
+      h3.headline-3.group Frequently asked questions about integrations
+      / .columns.small-12.medium-4.large-4
+        .callout.callout--gray-light
+          ol
+            - data.views.faqs.platform_integration.each_with_index do |item, index|
+              li
+                a href="#platform-tech-question-#{index}" = item["question"]
+      dl
+        - data.views.faqs.platform_integration.each_with_index do |item, index|
+          dt id="platform-tech-question-#{index}" = item["question"]
+          dd= Kramdown::Document.new(item["answer"]).to_html
+      = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button hollow", :icon => "icon-chevron-up" }
+
