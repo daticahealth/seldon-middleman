@@ -53,6 +53,9 @@ timeline_company:
   -
     date: 'October 2018'
     body: 'Datica announces the [Cloud Compliance Management System](/cloud-compliance-management-system "CCMS") (CCMS), giving customers constant visibility of the precise state of their cloud environments.'
+  -
+    date: 'June 2019'
+    body: 'Datica and Sansoro Health announce merger, creating the most advanced and complete platform available to manage and integrate patient data on the cloud.'
 stats_list:
   - 
     image: "https://images.ctfassets.net/189dvqdsjh46/7Cbcr7jzlDNIOpuGiehpwI/5998dc3b3ddc844ece89c4c5407fb293/3x_growth.svg"
@@ -140,24 +143,23 @@ scss:
     .row.align-center
       .columns.small-12.large-8.text-center
         h1.headline-5.spaced-out About Datica
-        h4.headline-2 We bring healthcare to the cloud.
+        h4.headline-2 We bring the cloud to healthcare
     .row.align-center.group
       .columns.small-12.medium-large-10.large-8.text-center.group
-        p.lead Datica was formed in 2013 to help healthcare technology companies move to the cloud. We help our customers <a class="" href="/cloud-compliance" title="Read more about cloud compliance">achieve HIPAA compliance</a>, <a class="" href="/ehr-integration" title="Learn about EHR integration">integrate securely</a> with hospitals and EHRs, and focus on what they're best at — without worrying about compliance. We're the experts at understanding the exact policies and procedures required to turn HIPAA-eligible services on the public cloud into architectures that can pass a HITRUST CSF assessment.
+        p.lead Datica offers a complete, single platform that mitigates the complexity and risk of using patient data in the cloud — solving <a class="" href="/ehr-integration" title="Learn about EHR integration">integration</a> and <a class="" href="/cloud-compliance" title="Read more about cloud compliance">compliance challenges</a> created by regulations. We help hundreds of customers achieve compliance assurance, integrate securely with hospitals and EHRs, and focus on what they are best at.
 
     .row.group
       .columns.small-12.medium-3.large-3
         h2.headline-5.spaced-out.text-light.subheader-about Why We Exist
       .columns.small-12.medium-9.large-6
         h3.headline-4 Empowering Digital Health Success
-        p The complexity of compliance on the cloud is holding back the adoption of cloud native technology in the healthcare space. By removing compliance as a concern, we help our customers focus on what they do best.
-
+        p The challenges of handling patient data is holding back the adoption of cloud technology in the healthcare space. By mitigating the complexity and risk of integrating and using health data in the cloud, we help our customers focus on what they do best.
     .row.group
       .columns.small-12.medium-3.large-3
         h2.headline-5.spaced-out.text-light.subheader-about What We Are
       .columns.small-12.medium-9.large-6
-        h3.headline-4 The Most Secure and Compliant Infrastructure Possible
-        p The hardest part about compliance on the cloud is between the physical infrastructure (which is the responsibility of AWS, Azure, or GCP) and the customer application. In another words, the operating system layer of cloud native architectures. We solve that by helping customers address attestation responsibilities with a suite of products built to fit the specific use case on the cloud.
+        h3.headline-4 A Platform of Tools Designed for Healthcare Developers
+        p Every verb developers are responsible for on the cloud is really hard—storing, computing, transmitting, securing. Datica makes it easy by pulling together a collection of tools under a single Business Associate Agreement. With our platform, developers can build, integrate, and monitor their patient data.
     .row.group
       .columns.small-12.medium-3.large-3
         h2.headline-5.spaced-out.text-light.subheader-about How We Do It
@@ -200,6 +202,8 @@ scss:
 .bg-gray-12 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
   section.section-article.bg-white.drop
     - execs = data.site.collections.to_a.select { | id, collection | (id == "22eMtdZGs5yignjP47GxYH") }
+    /- execs = data.site.collections.to_a.select { | id, collection | (id == "38gnLAlscvVtQyR4wnO4w4") }
+    / 38gn is the new one above
     - execs.each do | id, collection |
       .row.align-center
         .columns.small-12.medium-8.large-6.text-center.group
@@ -257,7 +261,7 @@ section.section-article.bg-white.drop--big
       h2.headline-5.spaced-out.group A Strong Backing
       .row.small-up-2.medium-up-4.align-middle
         .column
-          img.logo-size--large.img-crisp.lozad alt=("Arthur Ventures") data-src="https://images.ctfassets.net/189dvqdsjh46/4cObssAG4goygs6kYoggm6/125b40ff261847103d0d9c9fc22d4393/av-logo.png?h=120" /
+          img.logo-size--large.img-crisp.lozad alt=("Arthur Ventures") data-src="https://images.ctfassets.net/189dvqdsjh46/1FORIBpnundEyWRvwt1FxG/05ef2a76d50063e095a271bf8243e024/Bain_Capital_logo.svg" /
         .column
           img.logo-size--large.img-crisp.lozad alt=("Baird Ventures") data-src="https://images.ctfassets.net/189dvqdsjh46/54MNeLPfOM68gyIya8sySU/1ae051e26424b0888c0bb93d8d3ba0b3/bc-logo.png?h=120" /
         .column
