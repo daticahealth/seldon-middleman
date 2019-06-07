@@ -1,5 +1,5 @@
 ---
-title: "Datica brings healthcare to the cloud"
+title: "Datica brings the cloud to healthcare"
 summary: "Datica and Sansoro Health merge to help accelerate healthcare’s data-driven future in the cloud."
 author: "Datica, Inc."
 tags: "compliance, HITRUST, integration, EHR, healthcare, education, HIPAA, HL7, FHIR, interoperability"
@@ -52,10 +52,11 @@ section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_produ
   = partial "partials/head/header", :locals => { :style => "dark" }
   .section-article
     .row.align-center.group
-      .columns.small-12.medium-12.large-10.text-center
-        h1.headline-2.text-bold Datica and Sansoro Health merge to help accelerate healthcare’s data-driven future in the cloud.
-        p.lead Datica solves the really hard problems of working with patient data.
-        ul.menu.align-center.show-for-medium.text-small
+      .columns.small-12.medium-12.large-8.text-center
+        h4.headline-5.spaced-out news
+        h1.headline-3.text-light <strong>Datica</strong> and <strong>Sansoro Health</strong> merge to help accelerate healthcare’s data-driven future in the cloud.
+        = Kramdown::Document.new(data.site.videos['1h4QAhdY3DwWUKCLj6h8i7'].custom_form).to_html
+        /ul.menu.align-center.show-for-medium.text-small
           li
             a.text-bold.spaced-out title="Cloud Compliance" href="/cloud-compliance/" Compliance
           li
@@ -66,21 +67,22 @@ section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_produ
             a.text-bold.spaced-out title="Careers at Datica" href="/careers/" Careers
     .button-group.menu.align-center
       /= partial "partials/snippets/button", :locals => { :label => "Ask a Datica Expert", :url => "/contact/", :icon_align => "right", :button_classes => "button hollow", :icon => "icon-chat" }
-      = partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/demo/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get_demo", :data_track_group => "compliance", :expand => false }
+      = partial "partials/snippets/button", :locals => { :label => "Read the Announcment", :url => "/press/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "merge_press", :data_track_group => "company", :expand => false }
+      /= partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/demo/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get_demo", :data_track_group => "compliance", :expand => false }
 .strip-bright
 section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
   .row.align-center
-    .columns.small-12.medium-12.large-8.text-center
-      h2.headline-1.text-bold What's your biggest challenge?
+    .columns.small-12.medium-12.large-6.text-center
+      h2.headline-3.text-bold.group Datica solves the tough challenges of working with patient data.
   .button-group.menu.align-center.group
-    = partial "partials/snippets/button", :locals => { :label => "Compliance is a risk we make go away", :url => "/cloud-compliance/", :icon_align => "left", :button_classes => "button button--light button--hover-compliance no-nudge", :icon => "icon-chevron-left", :item_id => "get-compliance", :data_track_group => "compliance" }
-    = partial "partials/snippets/button", :locals => { :label => "EHR integration is a pain we make easy", :url => "/ehr-integration/", :button_classes => "button button--light button--hover-integration no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get-integration", :data_track_group => "integration" }
+    = partial "partials/snippets/button", :locals => { :label => "Compliance is a risk we make go away", :url => "/cloud-compliance/", :button_classes => "button button--light button--hover-compliance no-nudge", :item_id => "get-compliance", :data_track_group => "compliance" }
+    = partial "partials/snippets/button", :locals => { :label => "EHR integration is a pain we make easy", :url => "/ehr-integration/", :button_classes => "button button--light button--hover-integration no-nudge", :item_id => "get-integration", :data_track_group => "integration" }
   .row.align-center
     .columns.small-12.large-8.text-center
       p.lead <strong>You have complex problems.</strong> Datica has a family of powerful solutions. Powerful when used on their own but meant to work together, our products and solutions address your most pressing challenges.
   .row.align-center
-    .columns.small-12.large-9
-      .row.align-center.small-up-1.medium-large-up-2.row--card-grid.text-center
+    .columns.small-12.large-11
+      .row.align-center.small-up-1.medium-large-up-2.large-up-3.row--card-grid.text-center
         .column.relative.has-blob
           a.link-light-plain.card.container-color--trans.relative.z-5 title="Cloud Compliance Management System " href="/cloud-compliance-management-system/"
             .card-section
@@ -93,17 +95,6 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
             .card-divider.card-divider--flush
               /= partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light button-inline", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
           .blob-color.blob-ccms.z-auto data-glow="false"
-        .column.relative.has-blob
-          a.link-light-plain.card.container-color--trans.relative.z-5 title="Compliant Managed Integration" href="/compliant-managed-integration/"
-            .card-section
-              = inline_svg("cmi-logo-w", class: "icon-size--xlarge")
-              .subhead--spaced CMI
-              h3.headline-4 Compliant Managed Integration
-              p.strip.strip-small.strip-cmi
-              p.lead Scalable, secure data exchange with any EHR
-              / p We combine cutting-edge automation of cloud infrastructure security, DevOps processes, and interface engines, with our extensive experience in solving healthcare integration problems. All built on a solid foundation of <strong>continuous HIPAA compliance</strong>.
-            .card-divider.card-divider--flush
-              /= partial "partials/snippets/button", :locals => { :label => "Learn more about CMI", :url => "/compliant-managed-integration/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-chevron-right", :icon_align => "right" }
           .blob-color.blob-cmi.z-auto data-glow="false"
         .column.relative.has-blob
           a.link-light-plain.card.container-color--trans.relative.z-5 title="Compliant Kubernetes Service" href="/compliant-kubernetes-service/"
@@ -129,6 +120,27 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
             .card-divider.card-divider--flush
               /= partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
           .blob-color.blob-cpaas.z-auto data-glow="false"
+        .column.relative.has-blob
+          a.link-light-plain.card.container-color--trans.relative.z-5 title="Compliant Managed Integration" href="/compliant-managed-integration/"
+            .card-section
+              = inline_svg("cmi-logo-w", class: "icon-size--xlarge")
+              .subhead--spaced CMI
+              h3.headline-4 Compliant Managed Integration
+              p.strip.strip-small.strip-cmi
+              p.lead Scalable, secure data exchange with any EHR
+              / p We combine cutting-edge automation of cloud infrastructure security, DevOps processes, and interface engines, with our extensive experience in solving healthcare integration problems. All built on a solid foundation of <strong>continuous HIPAA compliance</strong>.
+            .card-divider.card-divider--flush
+              /= partial "partials/snippets/button", :locals => { :label => "Learn more about CMI", :url => "/compliant-managed-integration/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-chevron-right", :icon_align => "right" }
+        .column.relative.has-blob
+          a.link-light-plain.card.container-color--trans.relative.z-5 title="Compliant Managed Integration" href="/compliant-managed-integration/"
+            .card-section
+              = inline_svg("emissary-icon-large-white", class: "icon-size--xlarge")
+              .subhead--spaced Integration Suite
+              h3.headline-4 Emissary
+              p.strip.strip-small.strip-cmi
+              p.lead A scalable, centralized API for clinical data of any time
+            .card-divider.card-divider--flush
+
 .strip.strip-cmi
 
 section.section-article#compliance
