@@ -21,6 +21,8 @@ ruby:
   if defined?(desc) && desc == true
   else
   end
+  cat_compliance = '<h3 class="text-light"><span class="text-bold">Build</span><br>with patient data in the cloud</h3>'
+  cat_integration = '<h3 class="text-light"><span class="text-bold">Integrate</span><br>with patient data from anywhere</h3>'
 
   # sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
   # sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
@@ -35,8 +37,9 @@ aside data-theme=theme
       - if nav_item.section == "Compliance" || nav_item.section == "Integration" ? is_product = true : is_product = false
       - unless nav_item.has_key?("show_in_top_nav") && nav_item.show_in_top_nav == false
         - if nav_item.has_key?("child_data") && is_product == true
-          .bg-dark class=(is_product == true ? nil : "shrink-for-large")
-            h4.read-more.text-light.group--sm = nav_item.section
+          .column.bg-dark class=(is_product == true ? nil : "shrink-for-large")
+            - if nav_item.section == 'Compliance' ? category = cat_compliance : category = cat_integration
+            h4.read-more.text-light.group--sm = category
             - nav_item.child_data.each do | child |
               div.group--sm
                 - if is_product == true && child.has_key?("icon")
