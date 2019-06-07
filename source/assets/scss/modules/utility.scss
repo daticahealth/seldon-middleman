@@ -168,6 +168,12 @@ hr {
         }
     }
 }
+.text-right-on-large {
+    text-align: initial;
+    @include breakpoint (large) {
+        text-align: right;
+    }
+}
 .radius {
     border-radius: $global-radius;
     overflow: hidden;
