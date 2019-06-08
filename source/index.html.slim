@@ -72,74 +72,18 @@ section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_produ
 .strip-bright
 section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
   .row.align-center
-    .columns.small-12.medium-12.large-6.text-center
+    .columns.small-12.medium-10.large-6.text-center
       h2.headline-3.text-bold.group Datica solves the tough challenges of working with patient data.
   .button-group.menu.align-center.group
     = partial "partials/snippets/button", :locals => { :label => "Compliance is a risk we make go away", :url => "/cloud-compliance/", :button_classes => "button button--light button--hover-compliance no-nudge", :item_id => "get-compliance", :data_track_group => "compliance" }
     = partial "partials/snippets/button", :locals => { :label => "EHR integration is a pain we make easy", :url => "/ehr-integration/", :button_classes => "button button--light button--hover-integration no-nudge", :item_id => "get-integration", :data_track_group => "integration" }
-  .row.align-center
-    .columns.small-12.large-8.text-center
+  .row.align-center.group
+    .columns.small-12.medium-10.large-7.text-center
       p.lead <strong>You have complex problems.</strong> Datica has a family of powerful solutions. Powerful when used on their own but meant to work together, our products and solutions address your most pressing challenges.
   .row.align-center
-    .columns.small-12.large-11
-      .row.align-center.small-up-1.medium-large-up-2.large-up-3.row--card-grid.text-center
-        .column.relative.has-blob
-          a.link-light-plain.card.container-color--trans.relative.z-5 title="Cloud Compliance Management System " href="/cloud-compliance-management-system/"
-            .card-section
-              = inline_svg("ccms-logo-w", class: "icon-size--xlarge")
-              .subhead--spaced CCMS
-              h3.headline-4 Cloud Compliance Management System
-              p.strip.strip-small.strip-ccms
-              p.lead Know the precise compliance state of your cloud environments
-              / p Datica Cloud Compliance Management System is the first-ever tool to guarantee compliance assurance of managed cloud-native services. Our dashboard and reports enable you to continuously monitor compliance, react quickly to risks and incidents, and attest to compliance for audits.
-            .card-divider.card-divider--flush
-              /= partial "partials/snippets/button", :locals => { :label => "Learn more about CCMS", :url => "/cloud-compliance-management-system/", :button_classes => "button button--light button-inline", :item_id => "product-group-ccms", :icon => "icon-angle-right", :icon_align => "right" }
-          .blob-color.blob-ccms.z-auto data-glow="false"
-          .blob-color.blob-cmi.z-auto data-glow="false"
-        .column.relative.has-blob
-          a.link-light-plain.card.container-color--trans.relative.z-5 title="Compliant Kubernetes Service" href="/compliant-kubernetes-service/"
-            .card-section
-              = inline_svg("cks-logo-w", class: "icon-size--xlarge")
-              .subhead--spaced CKS
-              h3.headline-4 Compliant Kubernetes Service
-              p.strip.strip-small.strip-cks
-              p.lead Get enterprise scalability for your complex digital health application on a compliant Kubernetes cluster
-              / p Datica Compliant Kubernetes Service gives you the orchestration and scalable power of Kubernetes with compliance built in.
-            .card-divider.card-divider--flush
-              /= partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-angle-right", :icon_align => "right" }
-          .blob-color.blob-cks.z-auto data-glow="false"
-        .column.relative.has-blob
-          a.link-light-plain.card.container-color--trans.relative.z-5 title="Compliant Platform as a Service" href="/compliant-platform-as-a-service/"
-            .card-section
-              = inline_svg("cpaas-logo-w", class: "icon-size--xlarge")
-              .subhead--spaced CPaaS
-              h3.headline-4 Compliant Platform <br />as a Service
-              p.strip.strip-small.strip-cpaas
-              p.lead Build and deploy a digital health application on a compliant hosted platform
-              / p Datica Compliant Platform as a Service gives startups pre-packaged compliance and security. CPaaS makes hosting your compliant healthcare applications as simple as git push.
-            .card-divider.card-divider--flush
-              /= partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light button-inline", :item_id => "product-group-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
-          .blob-color.blob-cpaas.z-auto data-glow="false"
-        .column.relative.has-blob
-          a.link-light-plain.card.container-color--trans.relative.z-5 title="Compliant Managed Integration" href="/compliant-managed-integration/"
-            .card-section
-              = inline_svg("cmi-logo-w", class: "icon-size--xlarge")
-              .subhead--spaced CMI
-              h3.headline-4 Compliant Managed Integration
-              p.strip.strip-small.strip-cmi
-              p.lead Scalable, secure data exchange with any EHR
-              / p We combine cutting-edge automation of cloud infrastructure security, DevOps processes, and interface engines, with our extensive experience in solving healthcare integration problems. All built on a solid foundation of <strong>continuous HIPAA compliance</strong>.
-            .card-divider.card-divider--flush
-              /= partial "partials/snippets/button", :locals => { :label => "Learn more about CMI", :url => "/compliant-managed-integration/", :button_classes => "button button--light button-inline", :item_id => "product-group-cks", :icon => "icon-chevron-right", :icon_align => "right" }
-        .column.relative.has-blob
-          a.link-light-plain.card.container-color--trans.relative.z-5 title="Compliant Managed Integration" href="/compliant-managed-integration/"
-            .card-section
-              = inline_svg("emissary-icon-large-white", class: "icon-size--xlarge")
-              .subhead--spaced Integration Suite
-              h3.headline-4 Emissary
-              p.strip.strip-small.strip-cmi
-              p.lead A scalable, centralized API for clinical data of any type
-            .card-divider.card-divider--flush
+    .columns.small-12.large-10
+      .row.align-center.small-up-1.medium-large-up-2
+        = partial "partials/snippets/product-list.slim", :locals => { :size => "large", :style => "light" }
 
 .strip.strip-cmi
 

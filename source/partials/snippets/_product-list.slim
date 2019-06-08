@@ -21,8 +21,8 @@ ruby:
   if defined?(desc) && desc == true
   else
   end
-  cat_compliance = '<h3 class="text-light"><span class="text-bold">Build</span><br>with patient data in the cloud</h3>'
-  cat_integration = '<h3 class="text-light"><span class="text-bold">Integrate</span><br>with patient data from anywhere</h3>'
+  cat_compliance = '<h3 class="text-light group--sm headline-4"><span class="text-bold headline-3">Build</span><br>with patient data in the cloud</h3>'
+  cat_integration = '<h3 class="text-light group--sm headline-4"><span class="text-bold headline-3">Integrate</span><br>with patient data from anywhere</h3>'
 
   # sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
   # sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
@@ -30,27 +30,27 @@ ruby:
 / = partial "assets/icons/inlined/datica-branding-logos-symbol.svg"
 
 - nav_collection = data.site.collections.to_a.select { |id, entry | (id == master_nav_id) }
-aside data-theme=theme
-  - nav_collection.each do | id, nav_section |
-    /p.lead.hide-for-medium = (nav_section.has_key?("subhead") ? nav_section.subhead : nil)
-    - nav_section["related_entries"].each do | nav_item |
-      - if nav_item.section == "Compliance" || nav_item.section == "Integration" ? is_product = true : is_product = false
-      - unless nav_item.has_key?("show_in_top_nav") && nav_item.show_in_top_nav == false
-        - if nav_item.has_key?("child_data") && is_product == true
-          .column.bg-dark class=(is_product == true ? nil : "shrink-for-large")
-            - if nav_item.section == 'Compliance' ? category = cat_compliance : category = cat_integration
-            h4.read-more.text-light.group--sm = category
+- nav_collection.each do | id, nav_section |
+  /p.lead.hide-for-medium = (nav_section.has_key?("subhead") ? nav_section.subhead : nil)
+  - nav_section["related_entries"].each do | nav_item |
+    - if nav_item.section == "Compliance" || nav_item.section == "Integration" ? is_product = true : is_product = false
+    - unless nav_item.has_key?("show_in_top_nav") && nav_item.show_in_top_nav == false
+      - if nav_item.has_key?("child_data") && is_product == true
+        aside.column.bg-dark.group data-theme=theme class=(is_product == true ? nil : "shrink-for-large")
+          - if nav_item.section == 'Compliance' ? category = cat_compliance : category = cat_integration
+          = category
+          ul.menu.button-card--container data-theme=theme
             - nav_item.child_data.each do | child |
-              div.group--sm
+              li.button-card--item class="product-#{child.title_short.parameterize}"
                 - if is_product == true && child.has_key?("icon")
-                  a.link--white href=child.url title="Explore #{child.title}" data-track="true" data-track-category="nav" data-track-id="page-#{child.title_short.parameterize}"
+                  a href=child.url title="Explore #{child.title}" data-track="true" data-track-category="nav" data-track-id="page-#{child.title_short.parameterize}"
                     .media-object.nav__product
                       .media-object-section
                         svg id="product-#{child.icon}" class="icon-size--#{icon_size}"
                           use.symbol-icon xlink:href="##{child.icon}" href="##{child.icon}"
                         /= inline_svg(child.icon, class: "icon-size--medium")
                       .media-object-section.media-object--info.main-section.align-self-middle
-                        h4.nav__product-title = child.title
-                        .nav__product-description.text-small.show-for-large = child.desc
+                        h4.headline-5.nomargin = child.title
+                        p.text-regular.text-small = child.desc
                 - else
                   a href=child.url title="Explore #{child.title}" data-track="true" data-track-category="nav" data-track-id="page-#{child.url.parameterize}" = child.title

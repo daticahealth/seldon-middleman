@@ -188,3 +188,35 @@
         // }
     }
 }
+.button-card--container {
+    flex-direction: column;
+    &[data-theme="light"] {
+        .button-card--item {
+            &:hover {
+                background-color: black;
+            }
+        }
+        a {
+            @include link-colors (white, white, false);
+        }
+    }
+    &[data-theme="dark"] {
+        .button-card--item {
+            &:hover {
+                background-color: white;
+            }
+        }
+        a {
+            @include link-colors (black, $color_blue, false);
+        }
+    }
+}
+.button-card--item {
+    a {
+        padding-top:    1rem;
+        padding-bottom: 1rem;
+    }
+    margin-left: -1rem; // pulls list left to line up/use space better
+    border-radius: 8px;
+    transition: background-color 100ms linear;
+}
