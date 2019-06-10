@@ -114,22 +114,22 @@ investors:
     title: "LRV Health"
     url: "https://www.lrvhealth.com/"
     logo: "https://images.ctfassets.net/189dvqdsjh46/6frWAjHWlL7x5jjZpi59cX/14684ccb26d2c587bebe6b5a826ddf9f/lrv-health-logo.svg"
-    size: "logo-size--medium"
+    logo_size: "logo-size--small"
   -
     title: "Bain Capital"
     url: "https://www.baincapitalventures.com/"
     logo: "https://images.ctfassets.net/189dvqdsjh46/1FORIBpnundEyWRvwt1FxG/05ef2a76d50063e095a271bf8243e024/Bain_Capital_logo.svg"
-    size: "logo-size--medium"
+    logo_size: "logo-size--small"
   -
     title: "Healthy Ventures"
     url: "http://www.healthy.vc/"
     logo: "https://images.ctfassets.net/189dvqdsjh46/7hxDYCiGMz6qE1ojWrvUPu/c82ca59aabe867720f24c898e3d94fcb/healthy-ventures-logo.png"
-    size: "logo-size--medium"
+    logo_size: "logo-size--small-mid"
   -
     title: "Treehouse Health"
     url: "https://treehouse-health.com/"
     logo: "https://images.ctfassets.net/189dvqdsjh46/1G51f3VwycO88n03BwlvSs/e2aad94cd78ee8a29888fcc1ac0ec48f/treehouse-logo.svg"
-    size: "logo-size--medium"
+    logo_size: "logo-size--small-mid"
 ---
 scss:
   .display-block {
@@ -250,13 +250,17 @@ scss:
 
 section.section-article.bg-white.drop--big
   .row.align-center
-    .columns.small-12.medium-8.text-center
-      h2.headline-5.spaced-out.group A Strong Backing
-      .row.small-up-2.medium-up-4.align-middle
+    .columns.small-12.text-center
+      h2.headline-5.spaced-out A Strong Backing
+      .logo-cloud
+        - current_page.data.investors.each do | investor | 
+          a.logo-cloud--item href=investor.url title=investor.title
+            img.img-crisp.lozad class="img-crisp lozad #{investor.logo_size}" alt=investor.title data-src="#{investor.logo}?fm=png&h=80" /
+      /.row.small-up-2.medium-up-4.align-middle
         - current_page.data.investors.each do | investor | 
           .column
             a href=investor.url title=investor.title
-            img.img-crisp.lozad class="img-crisp lozad #{investor.size}" alt=company.title data-src="#{investor.logo}?fm=png&h=120" /
+              img.img-crisp.lozad class="img-crisp lozad #{investor.logo_size}" alt=investor.title data-src="#{investor.logo}?fm=png&h=200" /
 
 
 section.bg-gray-3.container-image--center.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/5sg4ICUpO4m4eX5nAwerir/abc651f00fcedcfba995a551804067d9/Datica_cities_-_live_where_you_want.jpg?w=1600" style="border: 10px solid black;" id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
