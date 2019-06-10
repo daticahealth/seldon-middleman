@@ -462,6 +462,10 @@
 .bg-purple-bp-grad {// grad-blue-cks
     background: linear-gradient(116.38deg, rgba(26, 35, 255, 0.288) 5.51%, rgba(135, 61, 255, 0) 35.06%), linear-gradient(117.48deg, rgba(204, 23, 249, 0.525) -3.92%, rgba(136, 23, 249, 0) 29.59%, rgba(82, 23, 249, 0) 82.05%, rgba(167, 13, 221, 0.504) 110%), linear-gradient(186.59deg, #2C2A2A -2.38%, #62605D 95.07%);
 }
+.bg-greens-grad {// grad-blue-cks
+    /* grad-greens */
+    background: linear-gradient(105.63deg, rgba(0, 227, 153, 0.28) -7.07%, rgba(0, 227, 186, 0) 24.64%), linear-gradient(307deg, rgba(0, 206, 195, 0.5) -1.95%, rgba(0, 195, 255, 0) 43.01%), linear-gradient(180deg, #1F1E1E 0%, #595856 100%);
+}
 // these are the same as strip, just diff angle /shrug
 .blob-cks {
     @include gradient-cks(to left top);
@@ -477,6 +481,9 @@
 }
 .blob-services {
     @include gradient-services(to left top);
+}
+.blob-greens {
+    @include gradient-greens(to left top);
 }
 .strip {
     min-height: calc(3px + 0.5vw);
@@ -498,6 +505,12 @@
     }
     &-services {
         @include gradient-services(to right);
+    }
+    &-greens {
+        @include gradient-greens(to right);
+    }
+    &-greens-dark {
+        @include gradient-greens-dark(to right);
     }
 }
 .strip-bright { // bright strip, supersat

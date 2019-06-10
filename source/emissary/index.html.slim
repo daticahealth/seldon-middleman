@@ -17,23 +17,17 @@ subnav:
     title: "Overview"
     slug: "overview"
   -
-    title: "Charts"
-    slug: "chart-retrieval"
-  -
-    title: "Analytics"
-    slug: "analytics"
-  -
-    title: "Interactive"
-    slug: "interactive"
+    title: "API Solution"
+    slug: "proven-api"
   -
     title: "Benefits"
     slug: "benefits"
   -
-    title: "Services"
-    slug: "services"
+    title: "Comparison"
+    slug: "comparison"
   -
-    title: "Customer Proof"
-    slug: "proof"
+    title: "Demo"
+    slug: "demo"
   -
     title: "Get Started"
     slug: "start"
@@ -68,7 +62,7 @@ ruby:
   current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
   current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/nGfjpkdV4GIIk6ii6wQiE/7488832f05e372d1f13933a343a75826/share-cmi.jpg'
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
-  the_form = data.site.forms['328pNB4IvCaQWQMCWmgSCy']
+  the_form = data.site.forms['4nyR5f2AgXCJ27BPl6rtoK']
 scss:
   .bg-white-on-small {
     @media screen and (max-width: 640px) {
@@ -76,51 +70,51 @@ scss:
       padding: 1rem;
     }
   }
+  .masthead .art .art-pattern {
+    mix-blend-mode: overlay;
+    transform: scale3D(1.3,1.3,1.3);
+  }
+  .contact-button {
+    background-color: #009c63;
+    &:hover {
+      background-color: #00b673;
+    }
+  }
 
-section.masthead.bg-dark.bg-red-yellow-grad.product-cmi.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   .section-article--lg.relative.z-10
-    .row.align-middle.align-center.group
+    .row.align-middle.align-center
       .columns.small-12.medium-10.large-6.text-center
         = inline_svg("emissary-icon-large-white", class: "masthead-icon")
         h1.headline-3.text-bold.margin-bottom-sm Emissary® – Keep data in motion
         p.lead Emissary helps you implement effortlessly, innovate brilliantly, deliver value swiftly and scale confidently.
         p Why should health data exchange be so inefficient and costly, when information is easily – even instantaneously – accessible in almost all other aspects of our modern lives?
-    .row.align-center.text-center
+    .row.align-center.text-center.collapse
       .column.small-12.medium-4.shrink
-        = partial "partials/snippets/button", :locals => { :label => "Emissary Chart Retrieval", :url => "##{current_page.data.subnav[1].slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[1].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+        = partial "partials/snippets/button", :locals => { :label => "Chart Retrieval", :url => "##{current_page.data.subnav[1].slug}", :button_classes => "button hollow hollow-invisible hollow-inverted", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[1].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
       .column.small-12.medium-4.shrink
-        = partial "partials/snippets/button", :locals => { :label => "Emissary Analytics", :url => "##{current_page.data.subnav[2].slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[2].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+        = partial "partials/snippets/button", :locals => { :label => "Analytics", :url => "##{current_page.data.subnav[2].slug}", :button_classes => "button hollow hollow-invisible hollow-inverted", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[2].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
       .column.small-12.medium-4.shrink
-        = partial "partials/snippets/button", :locals => { :label => "Emissary Interactive", :url => "##{current_page.data.subnav[3].slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[3].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+        = partial "partials/snippets/button", :locals => { :label => "Interactive", :url => "##{current_page.data.subnav[3].slug}", :button_classes => "button hollow hollow-invisible hollow-inverted", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[3].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
 
   .art
     = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
     /= inline_svg("products-cards-color", class: "z-5 art-accent step-1")
     / .art-bg-fill.art-light-blob
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
-  .strip.strip-small.strip-cmi
+  .strip.strip-small.strip-greens
 
-section.section-article.container-gray-11
-  .row.align-middle.align-center
-    .columns.small-12.medium-6
-      .video.drop.group
-        <script src="https://fast.wistia.com/embed/medias/0rr2p8xca5.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_0rr2p8xca5 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
-    .columns.small-12.medium-4
-      h3.headline-4 What is EHR Integration?
-      p EHR integration is the partnership between providers, payers, vendors, and other players that brings the data or function from one application or program to that of another. Because of the sheer quantity and diversity of data, healthcare providers face major obstacles in integrating and effectively analyzing healthcare information.
-      = partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/ehr-integration/", :button_classes => "button hollow secondary", :item_id => "integration" }
-
-section.section-article.bg-white id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
-  .row.align-center
-    .columns.small-12.medium-4.large-4
-      img.lozad src=loader_rect data-src="https://sansorohealth.com/wp-content/uploads/2018/02/Emissary-diagram-new-V2.jpg" alt="emissary diagram"
-    .columns.small-12.medium-8.large-6
+section.section-article.bg-white id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
+  .row.align-center.align-middle
+    .columns.small-12.medium-8.large-4
       h3.headline-3 Emissary is a proven API solution
       p.lead Emissary is a proven application programming interface (API) solution that allows healthcare information to be exchanged across any EHR platform – while ensuring the utmost security for PHI.
       p Modern times call for modern measures. Emissary allows you to focus on your product – not on the integration. Within days, you are up and running with comprehensive APIs that work across EHRs.
-      = partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button", :item_id => "product-emissary" }
+      = partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button success", :item_id => "product-emissary" }
+    .columns.small-12.medium-4.large-6
+      img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/TvIRvb1AwzfXo7MsUHmJ6/df7185acdd6125ae327784c41f0de549/emissary-product-diagram-3.png" alt="emissary diagram"
 
-section.section-article.bg-gray-12 id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+section.section-article.bg-gray-12 id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
   .row.align-center
     .columns.small-12.medium-10.large-8
       h3.headline-3 Hello Emissary. Goodbye data silos.
@@ -135,85 +129,46 @@ section.section-article.bg-gray-12 id=current_page.data.subnav[4].slug data-mage
                 h4.headline-4.margin-bottom-small = item.title
                 p = item.desc
 
+section.section-article.bg-dark.strip-greens-dark id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
+  .row.align-center.align-middle
+    .columns.small-12.medium-8.large-5
+      h3.headline-3.text-bold Emissary Demo
+      p.lead We’re solving health IT’s most pressing challenge today. Our Emissary platform enables seamless data exchange between EHRs and with leading-edge administration and clinical applications.
+      p.lead See how Emissary enables complete, real-time access to patient records, preventing a life-threatening condition that otherwise would be missed.
+      /= partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button success", :item_id => "product-emissary" }
+    .columns.small-12.medium-4.large-6
+      = Kramdown::Document.new(data.site.videos["y0y8MVijxDirsUyvbYzUa"].custom_form).to_html  
 
-
-section.section-article.bg-gray-12 id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+section.section-article.bg-white id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
   .row.align-center
     .columns.small-12.medium-10.large-8
       h3.headline-3 How does Emissary compare with other integration models?
       p Our universal, powerful APIs work across EHRs, enabling health IT innovators to focus on building great products, not painful EHR integrations. And by leveraging our advanced APIs – built to streamline today’s complex workflows – Emissary users install faster, with 75% less effort.
-      img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/2mjxcfsRmGJU9IfXPtrDdS/01350d2e9d202b3aa34d449257db323b/emissary-comparison-chart-dark-on-light.svg"
+      img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/2mjxcfsRmGJU9IfXPtrDdS/50374e8d6845345940868350559e2abe/emissary-comparison-chart-dark-on-light.png" width="100%"
       /= partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button", :item_id => "product-emissary" }
 
-.strip.strip-cmi
-section.section-article.container-gray-12 id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
-  .row.align-center.group
-    .columns.small-12.large-6.text-center
-      = inline_svg("icon-consulting-compass", class: "icon-size--xlarge svg-color--gray-5")
-      h2.headline-2.group Integration Services
-      h3.headline-4 Take the stress out of EHR integrations.
-      p.lead We handle the stress, risk and complexity of EHR integrations, so you can help medical teams do what they do best.
+/= partial("/partials/section-promos/tco-integration-banner", :locals => { :style => "dark", :align => "right", :bgImage => "https://images.ctfassets.net/189dvqdsjh46/1iP2tqSCPKuIY6gIakoWcM/c954e6875e22448528da37b912f8aca4/triangle_theme__darker__Dallas_Ball__-_ash-edmonds-636863-unsplash.jpg" })
+
+section.section-article.bg-gray-12 id="guides"
+  .row.align-center.align-middle.group
+    .columns.small-12.medium-8.large-6.text-center
+      h3.headline-4.spaced-out Datica Integration Guides
+      p Healthcare integration is complex. Our guides can help you see the way through.
   .row.align-center.align-middle
-    .column.small-12.medium-6
-      h3.headline-5 Get back to solving problems for heathcare
-      p In the past, EHR integration projects have been frustrating obstacles for innovation teams, preventing them from creating breakthrough solutions for overwhelmed medical professionals.
-      p Imagine being free to focus on <em>solving</em> problems again, instead of the worry and cost of integrating your solution with your EHR.
-      p.group Integrating with EHRs is an ongoing challenge for digital health solutions. EHR integration is not just a technology problem, it’s also a people and process problem.
-      .callout.drop.group
-        blockquote.quote--serif
-          - quote_services = data.site.quotes['4r9Bmb0l8QiMgKqCagOa0E']
-          = Kramdown::Document.new(quote_services["quote_body"]).to_html
-        - if quote_services.has_key?("related_person")
-          = partial("partials/snippets/person", :locals => { :p => quote_services.related_person } )
-    .columns.small-12.medium-6.large-5
-      .card.bg-gray-4.pad
+    .columns.small-12.medium-8.large-5
+      .card.drop-hover
         .card-section
-          h3.headline-4 Project Management
-          p Our team of project managers provide an expert view into integrated with EHRs and health systems. They will help manage timelines, create project plans, and track deliverables.
-          h3.headline-4 Connection Setup and Maintenance
-          p Datica’s Integration Engineers will build, configure, test and maintain VPN connections to allow for transmission of HL7 messages.
-          h3.headline-4 Interface Build and Configuration
-          p We will transform HL7 messages into JSON or FHIR messages to help keep things standard for you across implementations. We have many predesigned channels ready to go.
-        .card-divider.text-center
-          = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light", :icon => "icon-chevron-down", :expand => "false" }
-
-
-= partial("/partials/section-promos/tco-integration-banner", :locals => { :style => "dark", :align => "right", :bgImage => "https://images.ctfassets.net/189dvqdsjh46/1iP2tqSCPKuIY6gIakoWcM/c954e6875e22448528da37b912f8aca4/triangle_theme__darker__Dallas_Ball__-_ash-edmonds-636863-unsplash.jpg" })
-
-section.section-article.container-color--white id=current_page.data.subnav[6].slug data-magellan-target=current_page.data.subnav[6].slug
-  .row.align-center.group
-    .columns.small-12.medium-10.large-6
-      = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'] })
-  .row.align-center.group
-    .columns.small-12.large-10.text-center
-      h3.headline-3 A trusted partner with established healthcare organizations
-      .logo-cloud
-        - data.views.managed_integration.customer_healthsystems_list.each do |logo|
-          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
-  .row.align-center
-    .columns.small-12.large-10.text-center
-      h3.headline-3.nomargin Successful, live integrations with all major EHRs
-      .logo-cloud
-        - data.views.ehrs.ehr_list.each do |logo|
-          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
-section.section-article.bg-gray-11
-  - case_studies = data.site.collections.to_a.select { | id, cust | (id == "6wxpCFBxTy6aKEYQoEU4Y4") }
-  - case_studies.each do | id, cardgroup |
-    .row.align-center
-      .columns.small-12.text-center.group
-        h2.headline-3 = cardgroup.title
-    .row.full-width.align-center.small-up-1.medium-up-2.large-up-2.xlarge-up-4
-      - cardgroup["related_entries"].each do | card |
-        - carditem = data.site.caseStudy[card.id]
-        - cust = data.site.customers[carditem.customer.id]
-        .column
-          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust }
-.strip.strip-cmi
-section.bg-dark.bg-red-yellow-grad.product-cmi id=current_page.data.subnav[7].slug data-magellan-target=current_page.data.subnav[7].slug
-  .section-article.container-image--center.lozad data-background-image=bg_image
+          = partial "partials/cards/card-guide-horiz", :locals => { :entry => data.site.guides["wSUz5LDXA4Uu42OqwQ8AM"] }
+    .columns.small-12.medium-8.large-5
+      .card.drop-hover
+        .card-section
+          = partial "partials/cards/card-guide-horiz", :locals => { :entry => data.site.guides["5KKD6XVLC8YuCq4eOoKEoO"] }
+.strip.strip-greens
+section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
+  .section-article--lg.relative.z-10
     .row.align-center.align-middle
       .columns.small-12.medium-6.large-5
-        h2.headline-3.group--2x Schedule a conversation to learn more about Datica's Managed Integration services
+        h2.headline-3.group--2x Schedule a conversation to learn more about Datica Emissary
         / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
         .callout.callout--dark-alpha
           blockquote.quote--serif
@@ -224,25 +179,10 @@ section.bg-dark.bg-red-yellow-grad.product-cmi id=current_page.data.subnav[7].sl
             .media-object-section.main-section.align-self-middle
               h4.person-name Jon Pearce
               p.person-title CEO, Zipnosis
-
       #form.columns.small-12.medium-large-6.large-4
         .callout.drop
           h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
           = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
 
-section#faq.section-article.container-gray-12
-  .row.align-center
-    .columns.small-12.medium-10.large-7
-      h3.headline-3.group Frequently asked questions about integrations
-      / .columns.small-12.medium-4.large-4
-        .callout.callout--gray-light
-          ol
-            - data.views.faqs.platform_integration.each_with_index do |item, index|
-              li
-                a href="#platform-tech-question-#{index}" = item["question"]
-      dl
-        - data.views.faqs.platform_integration.each_with_index do |item, index|
-          dt id="platform-tech-question-#{index}" = item["question"]
-          dd= Kramdown::Document.new(item["answer"]).to_html
-      = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button hollow", :icon => "icon-chevron-up" }
-
+  .art
+    .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image

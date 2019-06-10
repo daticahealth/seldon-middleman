@@ -55,21 +55,21 @@
             }
         }
     }
-    &--notification {
-        background: $color_white;
-        color: $color_talk-alt;
-        padding: 10px;
-        font-size: $global-font-size;
-        font-weight: $font-weight-regular;
-        text-align: left;
-        @include shadow-anarchy(0px 3px 6px $color_shadow);
-        @include border-radius(8px);
-        &:hover &:active, &:focus {
-            background-color: $color_white;
-            color: initial;
-            @include shadow-anarchy(0px 4px 10px darken($color_shadow, 10%));
-        }
-    }
+    // &--notification {
+    //     background: $color_white;
+    //     color: $color_talk-alt;
+    //     padding: 10px;
+    //     font-size: $global-font-size;
+    //     font-weight: $font-weight-regular;
+    //     text-align: left;
+    //     @include shadow-anarchy(0px 3px 6px $color_shadow);
+    //     @include border-radius(8px);
+    //     &:hover &:active, &:focus {
+    //         background-color: $color_white;
+    //         color: initial;
+    //         @include shadow-anarchy(0px 4px 10px darken($color_shadow, 10%));
+    //     }
+    // }
     &--inline {
         margin-bottom: 0;
     }

@@ -150,4 +150,15 @@
     background: linear-gradient($dir, #E6699E 13.96%, #7AB2E9 57.53%, #08E1D4 96.11%);
     color: white;
 }
+@mixin gradient-greens($dir: to right) {
+    /* Green Grad (Emissary) */
+    // background: linear-gradient(169.97deg, #00ff8b -5.71%, #00BBC7 82.93%);
+    background: linear-gradient(198.62deg, #00EE7B -4.44%, #00DAF8 95.67%);
+    color: black;
+}
+@mixin gradient-greens-dark($dir: to right) {
+    /* Green Grad (Emissary) */
+    background: linear-gradient(194.33deg, #3FBA72 3.31%, #00AFAF 100.72%);
+    color: white;
+}
 
