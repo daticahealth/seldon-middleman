@@ -23,10 +23,10 @@ ruby:
   end
   cat_compliance = '<h3 class="text-light group--sm headline-4"><span class="text-bold headline-3">Build</span><br>with patient data in the cloud</h3>'
   cat_integration = '<h3 class="text-light group--sm headline-4"><span class="text-bold headline-3">Integrate</span><br>with patient data from anywhere</h3>'
-  if defined?(category_link) && category_link == true
-    category_link = true
+  if defined?(category_links) && category_links == true
+    category_links = true
   else
-    category_link = false
+    category_links = false
   end
   # sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
   # sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
@@ -58,5 +58,5 @@ ruby:
                         p.text-regular.text-small = child.desc
                 - else
                   a href=child.url title="Explore #{child.title}" data-track="true" data-track-category="nav" data-track-id="page-#{child.url.parameterize}" = child.title
-          - if category_link == true
+          - if category_links == true
             = partial "partials/snippets/button", :locals => { :label => nav_item.section_link_label, :url => nav_item.section_link_uri, :button_classes => "button hollow hollow-inverted", :item_id => "get-#{nav_item.title_short.parameterize}", :data_track_group => nav_item.title_short.parameterize }
