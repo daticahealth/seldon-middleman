@@ -40,10 +40,12 @@ sorted_daticans  = data.site.person.to_a.sort_by{ |id, person| person['slug'] }
     </div>
 </section>
 
-<section class="section-article">
+<%= partial "partials/section-promos/careers", :locals => { :tagline => "We're building a team to transform healthcare. Join us!" } %>
+
+<!-- <section class="section-article">
     <div class="row align-middle align-center">
         <div class="columns small-12 medium-10 large-6">
-            <%= partial "partials/section-promos/careers", :locals => { :tagline => "We're building a team to transform healthcare. Join us!" } %>
+            
         </div>
     </div>
-</section>
+</section> -->

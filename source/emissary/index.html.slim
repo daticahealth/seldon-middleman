@@ -23,11 +23,11 @@ subnav:
     title: "Benefits"
     slug: "benefits"
   -
-    title: "Comparison"
-    slug: "comparison"
-  -
     title: "Demo"
     slug: "demo"
+  -
+    title: "Comparison"
+    slug: "comparison"
   -
     title: "Get Started"
     slug: "start"
@@ -89,7 +89,7 @@ section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.dat
         h1.headline-3.text-bold.margin-bottom-sm Emissary® – Keep data in motion
         p.lead Emissary helps you implement effortlessly, innovate brilliantly, deliver value swiftly and scale confidently.
         p Why should health data exchange be so inefficient and costly, when information is easily – even instantaneously – accessible in almost all other aspects of our modern lives?
-    .row.align-center.text-center.collapse
+    /.row.align-center.text-center.collapse
       .column.small-12.medium-4.shrink
         = partial "partials/snippets/button", :locals => { :label => "Chart Retrieval", :url => "##{current_page.data.subnav[1].slug}", :button_classes => "button hollow hollow-invisible hollow-inverted", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[1].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
       .column.small-12.medium-4.shrink
