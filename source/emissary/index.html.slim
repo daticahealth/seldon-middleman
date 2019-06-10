@@ -37,7 +37,31 @@ subnav:
   -
     title: "Get Started"
     slug: "start"
-
+product_benefits:
+  -
+    title: "Save time"
+    desc: "Customers implement 80% faster, dramatically reducing the burden on IT staff."
+    icon: 
+  -
+    title: "Slash costs"
+    desc: "Cut integration efforts by as much as 75%."
+    icon: 
+  -
+    title: "Streamline processes"
+    desc: "Automate workflows for maximum efficiency."
+    icon: 
+  -
+    title: "Support any platform"
+    desc: "Scale rapidly with turnkey integration across EHRs."
+    icon: 
+  -
+    title: "Secure data"
+    desc: "Protect real-time data exchange with advanced authentication and encryption."
+    icon: 
+  -
+    title: "Solve problems"
+    desc: "Deliver the right information to the right person in the best possible application."
+    icon: 
 ---
 ruby:
   bg_image = 'https://images.ctfassets.net/189dvqdsjh46/71ZkJFY8CgC3a0huhg9Wqh/19a52b2852b0f336e0c51d8acfcc8e85/bg-cards.svg'
@@ -53,13 +77,11 @@ scss:
     }
   }
 
-
-
 section.masthead.bg-dark.bg-red-yellow-grad.product-cmi.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   .section-article--lg.relative.z-10
     .row.align-middle.align-center.group
       .columns.small-12.medium-10.large-6.text-center
-        = inline_svg("cmi-logo-w", class: "masthead-icon")
+        = inline_svg("emissary-icon-large-white", class: "masthead-icon")
         h1.headline-3.text-bold.margin-bottom-sm Emissary® – Keep data in motion
         p.lead Emissary helps you implement effortlessly, innovate brilliantly, deliver value swiftly and scale confidently.
         p Why should health data exchange be so inefficient and costly, when information is easily – even instantaneously – accessible in almost all other aspects of our modern lives?
@@ -73,14 +95,14 @@ section.masthead.bg-dark.bg-red-yellow-grad.product-cmi.relative id=current_page
 
   .art
     = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
-    = inline_svg("products-cards-color", class: "z-5 art-accent step-1")
+    /= inline_svg("products-cards-color", class: "z-5 art-accent step-1")
     / .art-bg-fill.art-light-blob
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
   .strip.strip-small.strip-cmi
 
 section.section-article.container-gray-11
-  .row.align-middle
-    .columns.small-12.medium-8
+  .row.align-middle.align-center
+    .columns.small-12.medium-6
       .video.drop.group
         <script src="https://fast.wistia.com/embed/medias/0rr2p8xca5.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_0rr2p8xca5 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
     .columns.small-12.medium-4
@@ -97,6 +119,31 @@ section.section-article.bg-white id=current_page.data.subnav[4].slug data-magell
       p.lead Emissary is a proven application programming interface (API) solution that allows healthcare information to be exchanged across any EHR platform – while ensuring the utmost security for PHI.
       p Modern times call for modern measures. Emissary allows you to focus on your product – not on the integration. Within days, you are up and running with comprehensive APIs that work across EHRs.
       = partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button", :item_id => "product-emissary" }
+
+section.section-article.bg-gray-12 id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+  .row.align-center
+    .columns.small-12.medium-10.large-8
+      h3.headline-3 Hello Emissary. Goodbye data silos.
+      p Emissary makes health data liquid. It provides a robust set of REST APIs that read and write to EHRs through EHR vendor-supported software modules. It standardizes EHR integration through universal real-time APIs and a unified data model. To connect to an EHR, health IT partners code once to the Emissary APIs. Emissary also provides tools to assist with the monitoring and management of the environment, including advanced security and auditing features.
+      .row.small-up-2.medium-up-2.group.collapse
+        - current_page.data.product_benefits.each do | item |
+          .column.group--sm
+            .media-object
+              .media-object-section.media-object--avatar
+                  img.icon-size--large src=loader_disc
+              .media-object-section.media-object--info.main-section.align-self-middle
+                h4.headline-4.margin-bottom-small = item.title
+                p = item.desc
+
+
+
+section.section-article.bg-gray-12 id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+  .row.align-center
+    .columns.small-12.medium-10.large-8
+      h3.headline-3 How does Emissary compare with other integration models?
+      p Our universal, powerful APIs work across EHRs, enabling health IT innovators to focus on building great products, not painful EHR integrations. And by leveraging our advanced APIs – built to streamline today’s complex workflows – Emissary users install faster, with 75% less effort.
+      img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/2mjxcfsRmGJU9IfXPtrDdS/01350d2e9d202b3aa34d449257db323b/emissary-comparison-chart-dark-on-light.svg"
+      /= partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button", :item_id => "product-emissary" }
 
 .strip.strip-cmi
 section.section-article.container-gray-12 id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
