@@ -74,7 +74,7 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
   .row.align-center
     .columns.small-12.medium-10.large-6.text-center
       h2.headline-3.text-bold.group Datica solves the tough challenges of working with patient data.
-  .button-group.menu.align-center.group
+  /.button-group.menu.align-center.group
     = partial "partials/snippets/button", :locals => { :label => "Compliance is a risk we make go away", :url => "/cloud-compliance/", :button_classes => "button button--light button--hover-compliance no-nudge", :item_id => "get-compliance", :data_track_group => "compliance" }
     = partial "partials/snippets/button", :locals => { :label => "EHR integration is a pain we make easy", :url => "/ehr-integration/", :button_classes => "button button--light button--hover-integration no-nudge", :item_id => "get-integration", :data_track_group => "integration" }
   .row.align-center.group
@@ -83,7 +83,7 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
   .row.align-center
     .columns.small-12.large-10
       .row.align-center.small-up-1.medium-large-up-2
-        = partial "partials/snippets/product-list.slim", :locals => { :size => "large", :style => "light" }
+        = partial "partials/snippets/product-list.slim", :locals => { :size => "large", :style => "light", :category_link => true }
 
 .strip.strip-cmi
 
