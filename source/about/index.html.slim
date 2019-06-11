@@ -111,25 +111,46 @@ subnav:
     slug: "careers"
 investors:
   -
+    title: "Arthur Ventures"
+    url: ""
+    logo: "https://images.ctfassets.net/189dvqdsjh46/4cObssAG4goygs6kYoggm6/125b40ff261847103d0d9c9fc22d4393/av-logo.png"
+    logo_size: "logo-size--medium"
+  -
+    title: "Bain Capital"
+    url: "https://www.baincapitalventures.com/"
+    logo: "https://images.ctfassets.net/189dvqdsjh46/1FORIBpnundEyWRvwt1FxG/05ef2a76d50063e095a271bf8243e024/Bain_Capital_logo.svg"
+    logo_size: "logo-size--small-mid"
+  -
+    title: "Baird Ventures"
+    url: ""
+    logo: "https://images.ctfassets.net/189dvqdsjh46/54MNeLPfOM68gyIya8sySU/1ae051e26424b0888c0bb93d8d3ba0b3/bc-logo.png"
+    logo_size: "logo-size--medium"
+  -
+    title: "Chicago Ventures"
+    url: ""
+    logo: "https://images.ctfassets.net/189dvqdsjh46/4BIGV3EJ9SmayOc8YOyeui/f38bf67be633f330fa5470de6e55bd34/cv-logo.png"
+    logo_size: "logo-size--medium"
+  -
+    title: "Healthy Ventures"
+    url: "http://www.healthy.vc/"
+    logo: "https://images.ctfassets.net/189dvqdsjh46/7hxDYCiGMz6qE1ojWrvUPu/c82ca59aabe867720f24c898e3d94fcb/healthy-ventures-logo.png"
+    logo_size: "logo-size--medium"
+  -
+    title: "Lewis and Clark Ventures"
+    url: ""
+    logo: "https://images.ctfassets.net/189dvqdsjh46/6bhxfVnDKEUmWcC28Esk4I/9ff2c80e24438b3356e58470f9b61f9f/lavc-logo.png"
+    logo_size: "logo-size--medium"
+  -
     title: "LRV Health"
     url: "https://www.lrvhealth.com/"
     logo: "https://images.ctfassets.net/189dvqdsjh46/6frWAjHWlL7x5jjZpi59cX/14684ccb26d2c587bebe6b5a826ddf9f/lrv-health-logo.svg"
     logo_size: "logo-size--small"
   -
-    title: "Bain Capital"
-    url: "https://www.baincapitalventures.com/"
-    logo: "https://images.ctfassets.net/189dvqdsjh46/1FORIBpnundEyWRvwt1FxG/05ef2a76d50063e095a271bf8243e024/Bain_Capital_logo.svg"
-    logo_size: "logo-size--small"
-  -
-    title: "Healthy Ventures"
-    url: "http://www.healthy.vc/"
-    logo: "https://images.ctfassets.net/189dvqdsjh46/7hxDYCiGMz6qE1ojWrvUPu/c82ca59aabe867720f24c898e3d94fcb/healthy-ventures-logo.png"
-    logo_size: "logo-size--small-mid"
-  -
     title: "Treehouse Health"
     url: "https://treehouse-health.com/"
     logo: "https://images.ctfassets.net/189dvqdsjh46/1G51f3VwycO88n03BwlvSs/e2aad94cd78ee8a29888fcc1ac0ec48f/treehouse-logo.svg"
-    logo_size: "logo-size--small-mid"
+    logo_size: "logo-size--medium"
+
 ---
 scss:
   .display-block {
@@ -239,7 +260,7 @@ scss:
               span.dot
               .content
                 = Kramdown::Document.new(item.body).to_html
-      .columns.small-12.medium-4.large-3.text-center
+      .columns.small-12.medium-4.large-3.text-center.show-for-medium
         - current_page.data.stats_list.each do | stat |
           .group
             - if stat.url != ""
@@ -250,12 +271,12 @@ scss:
 
 section.section-article.bg-white.drop--big
   .row.align-center
-    .columns.small-12.text-center
+    .columns.small-12.medium-10.large-10.text-center
       h2.headline-5.spaced-out A Strong Backing
-      .logo-cloud
+      .logo-cloud.nomargin
         - current_page.data.investors.each do | investor | 
-          a.logo-cloud--item href=investor.url title=investor.title
-            img.img-crisp.lozad class="img-crisp lozad #{investor.logo_size}" alt=investor.title data-src="#{investor.logo}?fm=png&h=80" /
+          a href=investor.url title=investor.title
+            img.logo-cloud--item.img-crisp.lozad class="img-crisp lozad #{investor.logo_size}" alt=investor.title data-src="#{investor.logo}?fm=png&h=80" /
       /.row.small-up-2.medium-up-4.align-middle
         - current_page.data.investors.each do | investor | 
           .column
@@ -270,6 +291,6 @@ section.bg-gray-3.container-image--center.lozad data-background-image="https://i
         = inline_svg("map-with-pin", class: "icon-size--xlarge")
         h2.headline-4.spaced-out Work at Datica
         h4.headline-1 We hire the best. Live where you want.
-        p.lead Datica is a fully remote company, inside and out. Our team is all over the US, with clusters in Madison, Denver, San Francisco, Portland, and Seattle. We are looking for the best people in their fields — no matter where you are.
+        p.lead Datica is based in Minneapolis, MN and we embrace remote work. Our team is all over the US, with clusters in Minneapolis, Madison, Denver, San Francisco, Portland, and Seattle. We are looking for the best people in their fields who want to make a difference in tech and healthcare.
         = partial "partials/snippets/button", :locals => { :label => "See open positions", :url => "/careers/", :button_classes => "button button--light", :item_id => "careers", :icon => "icon-angle-right", :icon_align => "right" }
 

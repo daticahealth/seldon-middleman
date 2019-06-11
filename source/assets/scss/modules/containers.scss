@@ -550,12 +550,12 @@
 }
 // Q: Why is .row {.row {}} so buggy? Going to remove this negative margin for now and see what happens
 // A: because (in Foundation land) a .column must always follow a .row. There should never be nested .row.row. - AW
-.row {
-    .row {
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
+// .row {
+//     .row {
+//         margin-left: 0;
+//         margin-right: 0;
+//     }
+// }
 
 // for content collections
 .collection .row:nth-child(odd) {
