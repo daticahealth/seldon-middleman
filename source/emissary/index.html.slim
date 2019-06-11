@@ -25,9 +25,9 @@ subnav:
   -
     title: "Demo"
     slug: "demo"
-  -
-    title: "Comparison"
-    slug: "comparison"
+  # -
+  #   title: "Comparison"
+  #   slug: "comparison"
   -
     title: "Get Started"
     slug: "start"
@@ -87,7 +87,7 @@ section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.dat
       .columns.small-12.medium-10.large-6.text-center
         = inline_svg("emissary-icon-large-white", class: "masthead-icon")
         h1.headline-2 style="margin-bottom: 0.2rem;" Emissary®
-        h2.headline-5.spaced-out Keep data in motion
+        h2.headline-5.spaced-out.group--sm Keep data in motion
         = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
     /.row.align-center.text-center.collapse
       .column.small-12.medium-4.shrink
@@ -104,11 +104,12 @@ section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.dat
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
   .strip.strip-greens
 
-section.section-article.bg-gray-2
-  .row.collapse.align-center
-    .columns.small-12.medium-8.large-6
+section.section-article.bg-gray-2.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/5uwAfZHvYGfVxHipPcDW77/4252263ca758adf9b8a764aacd900816/lab__scans_still_image_from_video.jpg?fit=thumb&w=1200&h=500"
+  .row.align-center.align-middle
+    .columns.small-12.medium-8.large-5
       p.lead Why should health data exchange be so inefficient and costly, when information is easily – even instantaneously – accessible in almost all other aspects of our modern lives?
-      p.lead.headline-3.text-light Emissary helps you implement effortlessly, innovate brilliantly, deliver value swiftly and scale confidently.
+    .columns.small-12.medium-8.large-5
+      p.headline-3.text-bold Emissary helps you implement effortlessly, innovate brilliantly, deliver value swiftly and scale confidently.
 
 section.section-article.bg-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
   .row.align-center.align-middle
@@ -181,7 +182,7 @@ section.section-article.bg-gray-12 id="guides"
         .card-section
           = partial "partials/cards/card-guide-horiz", :locals => { :entry => data.site.guides["5KKD6XVLC8YuCq4eOoKEoO"] }
 .strip.strip-greens
-section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
+section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
   .section-article--lg.relative.z-10
     .row.align-center.align-middle
       .columns.small-12.medium-6.large-5
