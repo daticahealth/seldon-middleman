@@ -57,51 +57,62 @@ scss:
         / p.lead 
     .row.align-center.pricing-content
       .columns.small-12.medium-large-6
-        .row.group.collapse.product-block
+        .row.group--sm.collapse.product-block
           .columns.shrink
             svg id="product-ccms" class="icon-size--medium product-icon text--gray-5"
               use.symbol-icon xlink:href="#ccms-logo" href="#ccms-logo"
             /= inline_svg("ccms-logo-dark", class: "icon-size--large product-icon")
           .columns
-            h2.headline-4.text-regular
+            h2.headline-4.margin-bottom-small.text-regular
               a href="/cloud-compliance-management-system" title="Cloud Compliance Management System" Cloud Compliance Management System
-            h4.headline-5 Resource Subscription
+            h4.headline-6.text-regular.nomargin Resource Subscription
             p Starting early 2019, customers can use the CCMS by subscribing per cloud service being monitored.
           
-        .row.group.collapse.product-block
+        .row.group--sm.collapse.product-block
           .columns.shrink
             svg id="product-cks" class="icon-size--medium product-icon text--gray-5"
               use.symbol-icon xlink:href="#cks-logo" href="#cks-logo"
             /= inline_svg("cks-logo-dark", class: "icon-size--large product-icon")
           .columns
-            h2.headline-4.text-regular
+            h2.headline-4.margin-bottom-small.text-regular
               a href="/compliant-kubernetes-service" title="Compliant Kubernetes Service" Compliant Kubernetes Service
-            h4.headline-5 Product Subscription
+            h4.headline-6.text-regular.nomargin Product Subscription
             p CKS subscription is per production Kubernetes cluster. Currently available on AWS. You pay infrastructure costs, like EC2 and S3, directly to AWS because we install the cluster onto your existing AWS account.
 
-        .row.group.collapse.product-block
+        .row.group--sm.collapse.product-block
           .columns.shrink
             svg id="product-cpaas" class="icon-size--medium product-icon text--gray-5"
               use.symbol-icon xlink:href="#cpaas-logo" href="#cpaas-logo"
             /= inline_svg("cpaas-logo-dark", class: "icon-size--large product-icon")
           .columns
-            h2.headline-4.text-regular
+            h2.headline-4.margin-bottom-small.text-regular
               a href="/compliant-platform-as-a-service" title="Compliant Platform as a Service" Compliant Platform as a Service
-            h4.headline-5 Environment Subscription
+            h4.headline-6.text-regular.nomargin Environment Subscription
             p Customers purchase container-based environments which they can deploy their applications into. No additional customizations available outside of general availability. All infrastructure costs are pass-through in addition to the environment price, pegged to AWS costs for EC2, EBS, etc.
           
-        .row.group.collapse.product-block
+        .row.group--sm.collapse.product-block
           .columns.shrink
             svg id="product-cmi" class="icon-size--medium product-icon text--gray-5"
               use.symbol-icon xlink:href="#cmi-logo" href="#cmi-logo"
             /= inline_svg("cmi-logo-dark", class: "icon-size--large product-icon")
           .columns
-            h2.headline-4.text-regular
+            h2.headline-4.margin-bottom-small.text-regular
               a href="/compliant-managed-integration" title="Compliant Managed Integration" Compliant Managed Integration
-            h4.headline-5 Product Subscription (Required)
+            h4.headline-6.text-regular.nomargin Product Subscription (Required)
             p CMI product currently available on AWS or Azure. We deploy it into Datica's existing cloud account. All infrastructure costs, like RAM and storage, are absorbed by Datica. We then maintain all DevOps, security, compliance, and networking duties related to the integration stack itself and all live integrations it powers.
-            h4.headline-5 Service Subscription (Optional)
+            h4.headline-6.text-regular.nomargin Service Subscription (Optional)
             p Leverage Datica's expertise to help instantiate any new integration sites. Hundreds of live sites have been integrated over the last four years via this service.
+        
+        .row.group--sm.collapse.product-block
+          .columns.shrink
+            svg id="product-emissary" class="icon-size--medium product-icon text--gray-5"
+              use.symbol-icon xlink:href="#emissary-logo" href="#emissary-logo"
+            /= inline_svg("cmi-logo-dark", class: "icon-size--large product-icon")
+          .columns
+            h2.headline-4.margin-bottom-small.text-regular
+              a href="/emissary" title="Emissary" Emissary®
+            h4.headline-6.text-regular.nomargin Annual license per site
+            p Each unique installation of Emissary constitutes a site, and therefore a new license.
 
       #cta.columns.small-12.medium-large-6.large-5
         .callout.pad--lg.drop.form-embed.pricing-form.group
@@ -117,5 +128,5 @@ scss:
       .columns.small-12.medium-12.large-8.text-center
         h2.headline-3 Not sure what you need? Start here.
     .button-group.menu.align-center.group
-      = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST assessment", :url => "/cloud-compliance/", :icon_align => "left", :button_classes => "button hollow no-nudge", :icon => "icon-chevron-left", :item_id => "get-compliance", :data_track_group => "compliance" }
-      = partial "partials/snippets/button", :locals => { :label => "I need to integrate with an EHR", :url => "/ehr-integration/", :button_classes => "button hollow no-nudge", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get-integration", :data_track_group => "integration" }
+      = partial "partials/snippets/button", :locals => { :label => "I need to pass a HITRUST assessment", :url => "/cloud-compliance/", :button_classes => "button hollow no-nudge", :item_id => "get-compliance", :data_track_group => "compliance" }
+      = partial "partials/snippets/button", :locals => { :label => "I need to integrate with an EHR", :url => "/ehr-integration/", :button_classes => "button hollow no-nudge", :item_id => "get-integration", :data_track_group => "integration" }

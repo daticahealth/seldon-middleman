@@ -84,25 +84,19 @@ scss:
 section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
   .section-article--lg.relative.z-10
     .row.align-middle.align-center
-      .columns.small-12.medium-10.large-6.text-center
-        = inline_svg("emissary-icon-large-white", class: "masthead-icon")
-        h1.headline-2 style="margin-bottom: 0.2rem;" Emissary®
-        h2.headline-5.spaced-out.group--sm Keep data in motion
-        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
-    /.row.align-center.text-center.collapse
-      .column.small-12.medium-4.shrink
-        = partial "partials/snippets/button", :locals => { :label => "Chart Retrieval", :url => "##{current_page.data.subnav[1].slug}", :button_classes => "button hollow hollow-invisible hollow-inverted", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[1].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
-      .column.small-12.medium-4.shrink
-        = partial "partials/snippets/button", :locals => { :label => "Analytics", :url => "##{current_page.data.subnav[2].slug}", :button_classes => "button hollow hollow-invisible hollow-inverted", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[2].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
-      .column.small-12.medium-4.shrink
-        = partial "partials/snippets/button", :locals => { :label => "Interactive", :url => "##{current_page.data.subnav[3].slug}", :button_classes => "button hollow hollow-invisible hollow-inverted", :data_track_group => "integration", :item_id => "explore-#{current_page.data.subnav[3].slug}", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
-
+      .columns.small-12.medium-10.large-8
+        .media-object.relative.stack-for-small 
+          .media-object-section
+            = inline_svg("emissary-icon-large-white", class: "masthead-icon")
+          .media-object-section.media-object--info.main-section.align-self-middle
+            h1.headline-2 style="margin-bottom: 0.2rem;" Emissary®
+            p.lead A scalable, centralized API for clinical data of any type
+            = partial "partials/snippets/button", :locals => { :label => "Schedule A Demo", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
     = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
-    /= inline_svg("products-cards-color", class: "z-5 art-accent step-1")
     / .art-bg-fill.art-light-blob
     .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
-  .strip.strip-greens
+.strip.strip-greens.strip-small
 
 section.section-article.bg-gray-2.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/5uwAfZHvYGfVxHipPcDW77/4252263ca758adf9b8a764aacd900816/lab__scans_still_image_from_video.jpg?fit=thumb&w=1200&h=500"
   .row.align-center.align-middle
@@ -110,7 +104,7 @@ section.section-article.bg-gray-2.container-image-fill.lozad data-background-ima
       p.lead Why should health data exchange be so inefficient and costly, when information is easily – even instantaneously – accessible in almost all other aspects of our modern lives?
     .columns.small-12.medium-8.large-5
       p.headline-3.text-bold Emissary helps you implement effortlessly, innovate brilliantly, deliver value swiftly and scale confidently.
-
+.strip.strip-greens.strip-small
 section.section-article.bg-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
   .row.align-center.align-middle
     .columns.small-12.medium-8.large-4
