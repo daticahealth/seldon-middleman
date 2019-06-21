@@ -67,7 +67,8 @@ section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_produ
             a.text-bold.spaced-out title="Careers at Datica" href="/careers/" Careers
     .button-group.menu.align-center
       /= partial "partials/snippets/button", :locals => { :label => "Ask a Datica Expert", :url => "/contact/", :icon_align => "right", :button_classes => "button hollow", :icon => "icon-chat" }
-      = partial "partials/snippets/button", :locals => { :label => "Read the Announcment", :url => "/press/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "merge_press", :data_track_group => "company", :expand => false }
+      /= partial "partials/snippets/button", :locals => { :label => "Read the Announcement", :url => "/blog/sansoro-health-datica-combine-forces", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "merger_article", :data_track_group => "company", :expand => false }
+      = partial "partials/snippets/button", :locals => { :label => "Read the Announcement", :url => "/press-release/sansoro-health-datica-announce-merger/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "merge_press", :data_track_group => "company", :expand => false }
       /= partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/demo/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get_demo", :data_track_group => "compliance", :expand => false }
 .strip-bright
 section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
