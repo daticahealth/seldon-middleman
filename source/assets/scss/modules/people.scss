@@ -67,9 +67,9 @@ blockquote + .media-object, .blockquote-info { // line person/info up with quote
     &--xlarge {
         padding: 0;
         max-width: $thing-xl;
-        @include breakpoint(medium down) {
-            max-width: $thing-xl * 1.5;
-        }
+        // @include breakpoint(medium down) {
+        //     max-width: $thing-xl * 1.5;
+        // }
     }
 }
 .person {
