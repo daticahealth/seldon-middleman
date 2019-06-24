@@ -448,19 +448,19 @@ ul.list-check {
     }
 }
 
-.art-directed--quote-block{
-    blockquote{
-        font-weight: $font-weight-mid;
-        padding: 0;
-        margin: 0 0 0 rem-calc(70px);
-        line-height: 1.5;
-    }
-    .card-person{
-        margin: 1rem 0 0 0;
-        padding: 1rem 0 0 0;
-        border-top: rem-calc(1px) solid $color_border;
-    }
-}
+// .art-directed--quote-block{
+//     blockquote{
+//         font-weight: $font-weight-mid;
+//         padding: 0;
+//         margin: 0 0 0 rem-calc(70px);
+//         line-height: 1.5;
+//     }
+//     .card-person{
+//         margin: 1rem 0 0 0;
+//         padding: 1rem 0 0 0;
+//         border-top: rem-calc(1px) solid $color_border;
+//     }
+// }
 
 // Customer header styles
 .medium-small-header{
