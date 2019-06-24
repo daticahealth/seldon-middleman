@@ -29,18 +29,6 @@ section.section-article.bg-white.drop
       - collection["related_entries"].each do | person |
         .column
           = partial("partials/snippets/person-vertical-simple", :locals => { :p => person, :classes => "group", :use_headers => true })
-  - leaders_vps_directors.each do | id, collection |
-    .row.align-center
-      .columns.small-12.medium-8.large-6.text-center.group
-        h2.headline-5.spaced-out = (collection.has_key?("subhead") ? collection.subhead : "Datica Leadership") 
-        /p.lead = (collection.has_key?("desc") ? collection.desc : nil)
-    .row.align-center.small-up-2.medium-up-3.large-up-5
-      - collection["related_entries"].each do | person |
-        /- sorted_people = collection["related_entries"].to_a.sort_by{ |id, person| person['slug'] }
-        /- sorted_people.each do | person |
-        .column
-          = partial("partials/snippets/person-vertical-simple", :locals => { :p => person, :classes => "group", :use_headers => true })
-
 
 /section.section-article.container-color--dark.container-image--fixed data-interchange="[https://images.ctfassets.net/189dvqdsjh46/3eF64DVasUAAKacOwWqmce/f63c1ea700487b2d8bda2a8110fac69e/background-about-us.jpg, medium]" 
   .row.align-center
