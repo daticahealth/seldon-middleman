@@ -160,6 +160,7 @@ footer {
         }
         // inserted quotation marks
         quotes: "\201C""\201D";
+        //p {} // nesting the following in p {} will let the close-quote sit on the correct line; we'd need to move quoters out of that block in the markup at CF first. 
         &:before {
             opacity: 0.4;
             content: open-quote;
@@ -173,7 +174,7 @@ footer {
         // &:after {
         //     opacity: 0.6;
         //     content: close-quote;
-        //     font-size: 2em;
+        //     font-size: 1.8em;
         //     line-height: 0.3em;
         //     margin-right: 0.25em;
         //     margin-left: -0.2em;
