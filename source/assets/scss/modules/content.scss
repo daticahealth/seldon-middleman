@@ -53,9 +53,9 @@ article.content-dynamic {
             @extend .quote--serif; // new style going forward
             margin: 1.75rem 0 2rem 0rem;
             @include breakpoint (medium) {
-                margin: 1.75rem auto 2rem auto;
+                margin: 1.75rem auto 2rem 0.6rem;
                 max-width: 35em;
-                max-width: 65ch;
+                max-width: 70ch;
             }
             // & p { // p is often nested in bq
             //     color: $gray-3;

@@ -18,7 +18,7 @@ ruby:
 
 = partial "assets/icons/inlined/datica-branding-logos-symbol.svg"
 = partial "partials/snippets/alert-ribbon"
-- nav_collection = data.site.collections.to_a.select { |id, entry | (id == "HkskHrVGykqSqOKGiqkaW") }
+- nav_collection = data.site.collections.to_a.select { |id, entry | (id == master_nav_id) }
 nav.nav data-theme=theme
   .mobile-toggle.hide-for-large
     a.nav-logo--link href="/" title="Datica Home"
@@ -32,6 +32,10 @@ nav.nav data-theme=theme
       a.nav-logo--link href="/" title="Datica Home" style="padding: 0 1rem;" data-track="true" data-track-category="nav" data-track-id="home"
         svg id="datica-logo-desktop" class="nav-logo"
           use.symbol-icon xlink:href="#datica-logo-horiz" href="#datica-logo-horiz"
+    li.pad--lg.hide-for-large
+      h4.headline-6.spaced-out News
+      p.text-light <strong>Datica</strong> and <strong>Sansoro Health</strong> merge to help accelerate healthcare’s data-driven future in the cloud.
+      = partial "partials/snippets/button", :locals => { :label => "Read the Announcement", :url => "/press-release/sansoro-health-datica-announce-merger/", :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "merge_press_mobile", :data_track_group => "company", :expand => false }
     - nav_collection.each do | id, nav_section |
       /p.lead.hide-for-medium = (nav_section.has_key?("subhead") ? nav_section.subhead : nil)
       - nav_section["related_entries"].each do | nav_item |

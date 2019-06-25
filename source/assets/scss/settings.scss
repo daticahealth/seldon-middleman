@@ -520,7 +520,7 @@ $button-sizes: (
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
-$button-hollow-hover-lightness: -50%;
+$button-hollow-hover-lightness: -20%;
 $button-transition: transform $timing-default ease, box-shadow $timing-default, background-color $timing-default, color $timing-default, border $timing-default;
 // 12. Button Group
 // ----------------

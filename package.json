@@ -17,7 +17,7 @@
     "styles": "npm run styles:seldon & npm run styles:views & npm run styles:print",
     "styles:seldon": "node-sass --output-style compressed -o .tmp/public/css source/assets/scss/seldon.scss",
     "styles:views": "node-sass --output-style compressed -o .tmp/public/css/views source/assets/scss/views",
-    "styles:print": "node-sass --output-style expanded -o .tmp/public/css/print source/assets/scss/print",
+    "styles:print": "node-sass --output-style compressed -o .tmp/public/css/print source/assets/scss/print",
     "babel": "babel source/assets/js --out-dir .tmp/public/js --copy-files",
     "uglify": "npm run uglify:dir && node scripts/uglify.js 'source/assets/js' '.tmp/public/js'",
     "uglify:dir": "mkdir -p .tmp/public/js",

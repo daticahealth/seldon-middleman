@@ -1,0 +1,200 @@
+---
+title: "Compliant Managed Integration (CMI) | Datica Cloud Compliance"
+summary: "Compliant Managed Integration (CMI) handles HIPAA compliant, scalable, and secure data exchange with any EHR."
+navTitle: "Datica CMI"
+author: "Datica, Inc."
+tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+ogType: "product"
+customCSS: "products, products-mastheads"
+layout: products
+priority: "0.9"
+category: "integration"
+collectionName: "products"
+collectionOrder: 3
+ctaCustom: true
+subnav:
+  -
+    title: "Overview"
+    slug: "overview"
+  -
+    title: "API Solution"
+    slug: "proven-api"
+  -
+    title: "Benefits"
+    slug: "benefits"
+  -
+    title: "Demo"
+    slug: "demo"
+  # -
+  #   title: "Comparison"
+  #   slug: "comparison"
+  -
+    title: "Get Started"
+    slug: "start"
+product_benefits:
+  -
+    title: "Save time"
+    desc: "Customers implement 80% faster, dramatically reducing the burden on IT staff."
+    icon: https://images.ctfassets.net/189dvqdsjh46/2kUIf9U14ViIVZ18Cg183w/5f3278e5c22f1cba3fbbe4438605980c/emissary-save-time.svg
+  -
+    title: "Slash costs"
+    desc: "Cut integration efforts by as much as 75%."
+    icon: https://images.ctfassets.net/189dvqdsjh46/38dREQgKjAsDK2LSEoRFGZ/4febb59c8c74615918f008f797ddc848/emissary-cut-costs.svg
+  -
+    title: "Streamline processes"
+    desc: "Automate workflows for maximum efficiency."
+    icon: https://images.ctfassets.net/189dvqdsjh46/4DTnYLpyjmMJ7XbrqiCqUq/3173383c81408b869f59a85bb0eff356/emissary-streamline-process.svg
+  -
+    title: "Support any platform"
+    desc: "Scale rapidly with turnkey integration across EHRs."
+    icon: https://images.ctfassets.net/189dvqdsjh46/2s2Jp1i21g7UDL5EQmIb2D/acb22435722172bf52b3d307ec142645/emissary-puzzle-solve.svg
+  -
+    title: "Secure data"
+    desc: "Protect real-time data exchange with advanced authentication and encryption."
+    icon: https://images.ctfassets.net/189dvqdsjh46/1hp1CiNH5dlMVOLmc3Iy3Q/7d76359059c0883e4b20e786e2fa1bd0/emissary-secure-data.svg
+  -
+    title: "Solve problems"
+    desc: "Deliver the right information to the right person in the best possible application."
+    icon: https://images.ctfassets.net/189dvqdsjh46/qoGRlQEGS3z0N7X5uvS9k/99fc671aca519eab06b2b1d608131453/emissary-solve-problems.svg
+---
+ruby:
+  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/71ZkJFY8CgC3a0huhg9Wqh/19a52b2852b0f336e0c51d8acfcc8e85/bg-cards.svg'
+  current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
+  current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/nGfjpkdV4GIIk6ii6wQiE/7488832f05e372d1f13933a343a75826/share-cmi.jpg'
+  current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
+  the_form = data.site.forms['4nyR5f2AgXCJ27BPl6rtoK']
+scss:
+  .bg-white-on-small {
+    @media screen and (max-width: 640px) {
+      background-color: hsla(0, 0%, 100%, .8);
+      padding: 1rem;
+    }
+  }
+  .masthead .art .art-pattern {
+    mix-blend-mode: overlay;
+    transform: scale3D(1.3,1.3,1.3);
+  }
+  .contact-button {
+    background-color: #009c63;
+    &:hover {
+      background-color: #00b673;
+    }
+  }
+
+section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+  .section-article--lg.relative.z-10
+    .row.align-middle.align-center
+      .columns.small-12.medium-10.large-8
+        .media-object.relative.stack-for-small 
+          .media-object-section
+            = inline_svg("emissary-icon-large-white", class: "masthead-icon")
+          .media-object-section.media-object--info.main-section.align-self-middle
+            h1.headline-2 style="margin-bottom: 0.2rem;" Emissary<sup>®</sup>
+            p.lead A scalable, centralized API for clinical data of any type
+            = partial "partials/snippets/button", :locals => { :label => "Schedule A Demo", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+  .art
+    = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
+    / .art-bg-fill.art-light-blob
+    .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
+.strip.strip-greens.strip-small
+
+section.section-article.bg-gray-2.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/5uwAfZHvYGfVxHipPcDW77/4252263ca758adf9b8a764aacd900816/lab__scans_still_image_from_video.jpg?fit=thumb&w=1200&h=500"
+  .row.align-center.align-middle
+    .columns.small-12.medium-8.large-5
+      p.lead Why should health data exchange be so inefficient and costly, when information is easily – even instantaneously – accessible in almost all other aspects of our modern lives?
+    .columns.small-12.medium-8.large-5
+      p.headline-3.text-bold Emissary helps you implement effortlessly, innovate brilliantly, deliver value swiftly and scale confidently.
+.strip.strip-greens.strip-small
+section.section-article.bg-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
+  .row.align-center.align-middle
+    .columns.small-12.medium-8.large-4
+      h3.headline-3 Emissary is a proven API solution
+      p.lead Emissary is a proven application programming interface (API) solution that allows healthcare information to be exchanged across any EHR platform – while ensuring the utmost security for PHI.
+      p Modern times call for modern measures. Emissary allows you to focus on your product – not on the integration. Within days, you are up and running with comprehensive APIs that work across EHRs.
+      = partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button success", :item_id => "product-emissary" }
+    .columns.small-12.medium-4.large-6
+      img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/TvIRvb1AwzfXo7MsUHmJ6/df7185acdd6125ae327784c41f0de549/emissary-product-diagram-3.png" alt="emissary diagram"
+
+section.section-article.bg-gray-3
+  .row.align-center
+    .columns.small-12.medium-10.large-10.text-center
+      h3.headline-3 How is Datica Emissary different from Datica CMI?
+  .row.align-center
+    .columns.small-12.medium-6.large-5
+      p.lead <a class="link--white" href="/compliant-managed-integration" title="Datica Compliant Managed Integration">Datica CMI</a> is a compliant application package that alleviates the hardships of working with standards-based interoperability, such as HL7v2 or FHIR.
+    .columns.small-12.medium-6.large-5
+      p.lead <strong>Datica Emissary</strong> is a centralized API toolset that is installed within the data systems on-site at the hospital, such as EHRs, thus giving unprecedented access, control, and scalability of clinical data.
+
+.strip.strip-small.strip-greens
+section.section-article.bg-gray-12 id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+  .row.align-center
+    .columns.small-12.medium-10.large-8
+      h3.headline-3 Hello Emissary. Goodbye data silos.
+      p Emissary makes health data liquid. It provides a robust set of REST APIs that read and write to EHRs through EHR vendor-supported software modules. It standardizes EHR integration through universal real-time APIs and a unified data model. To connect to an EHR, health IT partners code once to the Emissary APIs. Emissary also provides tools to assist with the monitoring and management of the environment, including advanced security and auditing features.
+      .row.small-up-1.medium-up-2.group.collapse
+        - current_page.data.product_benefits.each do | item |
+          .column.group--sm
+            .media-object
+              .media-object-section.media-object--avatar
+                  img.icon-size--large.lozad src=loader_disc data-src=item.icon
+              .media-object-section.media-object--info.main-section.align-self-middle
+                h4.headline-4.margin-bottom-small = item.title
+                p = item.desc
+
+section.section-article.bg-dark.strip-greens-dark id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
+  .row.align-center.align-middle
+    .columns.small-12.medium-8.large-5
+      h3.headline-3.text-bold Emissary Demo
+      p.lead We’re solving health IT’s most pressing challenge today. Our Emissary platform enables seamless data exchange between EHRs and with leading-edge administration and clinical applications.
+      p.lead See how Emissary enables complete, real-time access to patient records, preventing a life-threatening condition that otherwise would be missed.
+      /= partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button success", :item_id => "product-emissary" }
+    .columns.small-12.medium-4.large-6
+      = Kramdown::Document.new(data.site.videos["y0y8MVijxDirsUyvbYzUa"].custom_form).to_html  
+
+/section.section-article.bg-white id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+  .row.align-center
+    .columns.small-12.medium-10.large-8
+      h3.headline-3 How does Emissary compare with other integration models?
+      p Our universal, powerful APIs work across EHRs, enabling health IT innovators to focus on building great products, not painful EHR integrations. And by leveraging our advanced APIs – built to streamline today’s complex workflows – Emissary users install faster, with 75% less effort.
+      img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/2mjxcfsRmGJU9IfXPtrDdS/50374e8d6845345940868350559e2abe/emissary-comparison-chart-dark-on-light.png" width="100%"
+      /= partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button", :item_id => "product-emissary" }
+
+/= partial("/partials/section-promos/tco-integration-banner", :locals => { :style => "dark", :align => "right", :bgImage => "https://images.ctfassets.net/189dvqdsjh46/1iP2tqSCPKuIY6gIakoWcM/c954e6875e22448528da37b912f8aca4/triangle_theme__darker__Dallas_Ball__-_ash-edmonds-636863-unsplash.jpg" })
+
+section.section-article.bg-gray-12 id="guides"
+  .row.align-center.align-middle.group
+    .columns.small-12.medium-8.large-8.text-center
+      h3.headline-4.spaced-out Datica Integration Guides
+      p Healthcare integration is complex. Our guides can help you see the way through.
+  .row.align-center.align-middle
+    .columns.small-12.medium-8.large-5
+      .card.drop-hover
+        .card-section
+          = partial "partials/cards/card-guide-horiz", :locals => { :entry => data.site.guides["wSUz5LDXA4Uu42OqwQ8AM"] }
+    .columns.small-12.medium-8.large-5
+      .card.drop-hover
+        .card-section
+          = partial "partials/cards/card-guide-horiz", :locals => { :entry => data.site.guides["5KKD6XVLC8YuCq4eOoKEoO"] }
+.strip.strip-greens
+section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+  .section-article--lg.relative.z-10
+    .row.align-center.align-middle
+      .columns.small-12.medium-6.large-5
+        h2.headline-3.group--2x Schedule a conversation to learn more about Datica Emissary
+        / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
+        .callout.callout--dark-alpha
+          blockquote.quote--serif
+            | The Datica team is helping us solve critical infrastructure and scaling problems faster and more competently than we can in-house.
+          .media-object.card-person
+            .media-object-section
+              img.avatar.avatar--large.circle alt=("Jon Pearce") src="https://images.ctfassets.net/189dvqdsjh46/6IUA5I8suWEWI28YcIkMgm/134af76338fd572e45a9d4a716a8ddb7/headshot-zipnosis.jpg" /
+            .media-object-section.main-section.align-self-middle
+              h4.person-name Jon Pearce
+              p.person-title CEO, Zipnosis
+      #form.columns.small-12.medium-large-6.large-4
+        .callout.drop
+          h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
+          = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+
+  .art
+    .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image

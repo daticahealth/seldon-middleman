@@ -141,7 +141,7 @@ footer {
 }
 
 .quote {
-    &--serif { // new style going forward
+    &--serif {
         color: inherit;
         opacity: 0.9;
         font: {
@@ -160,6 +160,7 @@ footer {
         }
         // inserted quotation marks
         quotes: "\201C""\201D";
+        //p {} // nesting the following in p {} will let the close-quote sit on the correct line; we'd need to move quoters out of that block in the markup at CF first. 
         &:before {
             opacity: 0.4;
             content: open-quote;
@@ -173,7 +174,7 @@ footer {
         // &:after {
         //     opacity: 0.6;
         //     content: close-quote;
-        //     font-size: 2em;
+        //     font-size: 1.8em;
         //     line-height: 0.3em;
         //     margin-right: 0.25em;
         //     margin-left: -0.2em;
@@ -447,19 +448,19 @@ ul.list-check {
     }
 }
 
-.art-directed--quote-block{
-    blockquote{
-        font-weight: $font-weight-mid;
-        padding: 0;
-        margin: 0 0 0 rem-calc(70px);
-        line-height: 1.5;
-    }
-    .card-person{
-        margin: 1rem 0 0 0;
-        padding: 1rem 0 0 0;
-        border-top: rem-calc(1px) solid $color_border;
-    }
-}
+// .art-directed--quote-block{
+//     blockquote{
+//         font-weight: $font-weight-mid;
+//         padding: 0;
+//         margin: 0 0 0 rem-calc(70px);
+//         line-height: 1.5;
+//     }
+//     .card-person{
+//         margin: 1rem 0 0 0;
+//         padding: 1rem 0 0 0;
+//         border-top: rem-calc(1px) solid $color_border;
+//     }
+// }
 
 // Customer header styles
 .medium-small-header{

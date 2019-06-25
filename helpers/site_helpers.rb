@@ -1,6 +1,9 @@
 
 # Helpers & global variables
 module SiteHelpers
+    def master_nav_id # this is the contentful collections entry that holds all the nav items
+        "4hxxjVGNtEXRK1jkCGKUQc"
+    end
     def site_url
         return ENV["DATICA_SITE_URL"] ? ENV["DATICA_SITE_URL"] : "https://datica.com"
     end
@@ -42,10 +45,11 @@ module SiteHelpers
     end
     # For sharing metadata - if no key image on the page, fall back to this.
     def image_share_default
-        "https://images.ctfassets.net/189dvqdsjh46/3IyRP3gK64W4MaqMwWmSgU/d2c4ee3f02cbceda200b8b444fd67f26/cta-generic.jpg" + image_size_small
+        "https://images.ctfassets.net/189dvqdsjh46/j9p91f0RKiUG6c7gLEzpJ/2d1127c6f7bf74c20c4fd72852af8957/cta-generic-data.jpg" + image_size_medium
     end
     def image_share_platform # get ID from CF
-        "https://images.ctfassets.net/189dvqdsjh46/2aPhdyH76MiQwqQq4KiGMg/186518b5a3896994d54ae3cef4fbac8d/cta-compliance-share.jpg" + image_size_small
+        image_share_default
+        #"https://images.ctfassets.net/189dvqdsjh46/2aPhdyH76MiQwqQq4KiGMg/186518b5a3896994d54ae3cef4fbac8d/cta-compliance-share.jpg" + image_size_medium
     end
     def cf_asset_protocol
         'https:'
@@ -166,15 +170,15 @@ module SiteHelpers
         "https://images.ctfassets.net/189dvqdsjh46/60M3sIMdt8dyJUuX1a5oJw/ce77d30769d913103fcf480dee9df865/loader-rect.png"
     end
     def loader_square
-        "https://images.ctfassets.net/189dvqdsjh46/60M3sIMdt8dyJUuX1a5oJw/ce77d30769d913103fcf480dee9df865/loader-rect.png"
+        "https://images.ctfassets.net/189dvqdsjh46/10BSgwANXD4R7OKMT1j20G/3ba1fd760173695d4e4fb9ec4199fab9/loader-square.png"
     end
     def loader_square_svg
         "https://images.ctfassets.net/189dvqdsjh46/14EaN5W0ItsJ3B8V8LfrWS/02dd779de703aa4925587ef089bd9953/loader-square.svg"
     end
     def loader_disc
-        "https://images.ctfassets.net/189dvqdsjh46/60M3sIMdt8dyJUuX1a5oJw/ce77d30769d913103fcf480dee9df865/loader-rect.png"
+        "https://images.ctfassets.net/189dvqdsjh46/vF47dwGxa0HXRIENBELUG/2061b735cacc34af74a85f337f471550/loader-disc.png"
     end
     def loader_disc_svg
-        "https://images.ctfassets.net/189dvqdsjh46/60M3sIMdt8dyJUuX1a5oJw/ce77d30769d913103fcf480dee9df865/loader-rect.png"
+        "https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg"
     end
 end

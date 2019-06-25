@@ -55,21 +55,21 @@
             }
         }
     }
-    &--notification {
-        background: $color_white;
-        color: $color_talk-alt;
-        padding: 10px;
-        font-size: $global-font-size;
-        font-weight: $font-weight-regular;
-        text-align: left;
-        @include shadow-anarchy(0px 3px 6px $color_shadow);
-        @include border-radius(8px);
-        &:hover &:active, &:focus {
-            background-color: $color_white;
-            color: initial;
-            @include shadow-anarchy(0px 4px 10px darken($color_shadow, 10%));
-        }
-    }
+    // &--notification {
+    //     background: $color_white;
+    //     color: $color_talk-alt;
+    //     padding: 10px;
+    //     font-size: $global-font-size;
+    //     font-weight: $font-weight-regular;
+    //     text-align: left;
+    //     @include shadow-anarchy(0px 3px 6px $color_shadow);
+    //     @include border-radius(8px);
+    //     &:hover &:active, &:focus {
+    //         background-color: $color_white;
+    //         color: initial;
+    //         @include shadow-anarchy(0px 4px 10px darken($color_shadow, 10%));
+    //     }
+    // }
     &--inline {
         margin-bottom: 0;
     }
@@ -187,4 +187,36 @@
         //     margin-bottom: 0;
         // }
     }
+}
+.button-card--container {
+    flex-direction: column;
+    &[data-theme="light"] {
+        .button-card--item {
+            &:hover {
+                background-color: black;
+            }
+        }
+        a {
+            @include link-colors (white, white, false);
+        }
+    }
+    &[data-theme="dark"] {
+        .button-card--item {
+            &:hover {
+                background-color: white;
+            }
+        }
+        a {
+            @include link-colors (black, $color_blue, false);
+        }
+    }
+}
+.button-card--item {
+    a {
+        padding-top:    1rem;
+        padding-bottom: 1rem;
+    }
+    margin-left: -1rem; // pulls list left to line up/use space better
+    border-radius: 8px;
+    transition: background-color 100ms linear;
 }
