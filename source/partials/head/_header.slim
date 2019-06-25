@@ -35,7 +35,7 @@ nav.nav data-theme=theme
     li.pad--lg.hide-for-large
       h4.headline-6.spaced-out News
       p.text-light <strong>Datica</strong> and <strong>Sansoro Health</strong> merge to help accelerate healthcare’s data-driven future in the cloud.
-      = partial "partials/snippets/button", :locals => { :label => "Read the Announcement", :url => "/press-release/sansoro-health-datica-announce-merger/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "merge_press_mobile", :data_track_group => "company", :expand => false }
+      = partial "partials/snippets/button", :locals => { :label => "Read the Announcement", :url => "/press-release/sansoro-health-datica-announce-merger/", :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "merge_press_mobile", :data_track_group => "company", :expand => false }
     - nav_collection.each do | id, nav_section |
       /p.lead.hide-for-medium = (nav_section.has_key?("subhead") ? nav_section.subhead : nil)
       - nav_section["related_entries"].each do | nav_item |
