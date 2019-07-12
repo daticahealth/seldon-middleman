@@ -89,7 +89,7 @@ $strip-width: 2vw;
         &--lead {
             font: {
                 family: $font_serif;
-                weight: $font-weight-light;
+                // weight: $font-weight-light;
             }
             // font-size: 110%; //rem-calc(32);
             @include breakpoint (medium) {
