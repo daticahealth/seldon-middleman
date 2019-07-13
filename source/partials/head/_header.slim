@@ -106,6 +106,6 @@ nav.nav data-theme=theme
                       p.text-small = nav_item.section_promo.summary
                       = partial "partials/snippets/button", :locals => { :label => "Learn More", :url => promo_url, :button_classes => "button small success", :data_track_group => "nav", :item_id => "section-promo-#{nav_item.section.parameterize}", :icon => "icon-angle-right", :icon_align => "right" }
     li.nav__item.nav__contact.button-group.stacked-for-small
-      = partial "partials/snippets/button", :locals => { :label => "Get Pricing", :url => "/pricing/", :button_classes => "contact-button button small", :item_id => "contact", :data_track_group => "nav", :expand => "false" }
+      = partial "partials/snippets/button", :locals => { :label => "Get Pricing", :url => "/pricing/", :button_classes => "contact-button button success small", :item_id => "contact", :data_track_group => "nav", :expand => "false" }
       /| &nbsp;
       = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "call-button hide-for-large button small", :icon => "icon-phone", :icon_align => "left", :item_id => "phone", :data_track_group => "nav", :expand => "false" }

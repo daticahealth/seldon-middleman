@@ -88,7 +88,7 @@ ruby:
             = partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" })
           = Kramdown::Document.new(p["post"]).to_html
           / hr.divider
-        .row.row--gutter-small.align-justify.align-middle
+        .row.collapse.align-justify.align-middle
           - if p.has_key?("tags")
             .columns.shrink.group
               = inline_svg("small/icon-tag", class: "icon-inline svg-color--gray-5")
