@@ -136,7 +136,7 @@
     &.success { // $color_green is a bit dark
         color: white;
         &:hover, &:active, &:focus {
-            background-color: scale-color($success_color, $lightness: -10%);
+            background-color: scale-color($success_color, $lightness: 8%);
             color: white;
         }
     }
@@ -144,7 +144,7 @@
         color: black;
         background-color: $color_green-glow;
         &:hover, &:active, &:focus {
-            background-color: white;//scale-color($color_green-glow, $lightness: 30%);
+            background-color: scale-color($color_green-glow, $lightness: -10%);
             // color: white;
         }
     }

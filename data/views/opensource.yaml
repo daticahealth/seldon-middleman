@@ -15,7 +15,7 @@ projects:
         cta: "View on GitHub"
     -
         title: 'Datica HIPAA Training'
-        url: '//github.com/catalyzeio/training'
+        url: 'https://github.com/daticahealth/training'
         icon: 'icon-ruby-lang'
         cssClass: 'svg-color--white'
         description: "This is an overview training of HIPAA, with coverage of key definitions and provisions for the handing of HIPAA-relevant data."

@@ -192,7 +192,7 @@ $underline: false !default;
 }
 $button-transition: transform $timing-default ease, box-shadow $timing-default, background-color $timing-default, color $timing-default, border $timing-default;
 @mixin fx-hover-nudge {
-    // transition: $button-transition;
+    transition: $button-transition;
     &:focus,
     &:hover { // tired of shift right, let's go up!
         // transform: translate3d(3px, 0, 0);
