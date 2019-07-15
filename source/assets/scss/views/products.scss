@@ -40,7 +40,7 @@
 //     }
 // }
 
-$color: $color_blue;
+$color: $color_prime;
 .solid {
   fill: $color;
   color: adjust-color($color, $lightness: 20%, $hue: -5%, $saturation: 50%);

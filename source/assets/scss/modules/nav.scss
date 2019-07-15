@@ -57,7 +57,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
             }
             &[aria-current="page"] {
                 color: $gray-1;
-                border-bottom: 3px solid $color_blue;
+                border-bottom: 3px solid $color_prime;
             }
         }
         ul.breadcrumbs { // breadcrumbs inside subnav, usually first li
@@ -386,7 +386,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
             li.nav__item {
                 &:hover {
                     & > a:not(.button) { // selected state of button/pane
-                        color: $color_blue;
+                        color: $color_prime;
                     }
                 }
             }

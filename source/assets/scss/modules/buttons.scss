@@ -207,7 +207,7 @@
             }
         }
         a {
-            @include link-colors (black, $color_blue, false);
+            @include link-colors (black, $color_prime, false);
         }
     }
 }
