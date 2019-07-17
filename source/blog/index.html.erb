@@ -27,7 +27,7 @@ current_cta = data.site.cta.to_a.sort_by{ |id, cta| cta['_meta']['updated_at'] }
                 <div class="row">
                     <div class="columns small-12 medium-10 large-9 featured-post">
                         <div class="subhead--spaced headline-6">Datica Blog</div>
-                        <h1 class="headline-2"><a class="link--yellow" href="/blog/<%= post["slug"] %>" title="Read this post"><%= post["title"] %></a></h1>
+                        <h1 class="headline-2"><a class="link--bright" href="/blog/<%= post["slug"] %>" title="Read this post"><%= post["title"] %></a></h1>
                         <% if post.has_key?("summary") %>
                             <p class="blog-date"><%= post['pub_date'].strftime('%B %-d, %Y') %></p>
                             <div class="lead"><%= Kramdown::Document.new(plain_text(post.summary)).to_html %></div>

@@ -55,6 +55,9 @@ $duration: $timing-default * 1.5; //settings.scss:281
                 size: 90%;
                 weight: $font-weight-mid;
             }
+            padding: 1rem;
+            transition-property: background-color, color, border-color;
+            transition-duration: $timing-default;
             &[aria-current="page"] {
                 color: $gray-1;
                 border-bottom: 3px solid $color_green-dark;
@@ -95,7 +98,8 @@ $duration: $timing-default * 1.5; //settings.scss:281
                 // font-weight: $font-weight-mid;
                 padding: 1rem 1rem calc(1rem - $active-border-height) 1rem;
                 border-bottom: $active-border-height solid transparent;
-                transition: border-color $timing-default linear;
+                transition-property: background-color, color, border-color;
+                transition-duration: $timing-default;
                 &:hover {
                     background-color: $gray-11;
                 }
@@ -157,18 +161,18 @@ $duration: $timing-default * 1.5; //settings.scss:281
         }
         .menu {
             &-secondary { // this is now preferred solution for secondary stacked navs
-                li a {
-                    color: white(0.6);
-                    padding: 1rem;
-                    transition-property: background-color, color;
-                    transition-duration: $timing-default;
-                    &:hover {
-                        color: white;
-                        background-color: transparentize($gray-5, 0.5);
-                    }
-                    &[aria-current="page"] {
-                        color: white;
-                        border-bottom: 3px solid $color_prime-bright;
+                li {
+                    color: white(0.8); // for some reason have to color the li and li > a
+                    a {
+                        color: white(0.8);
+                        &:hover {
+                            color: white;
+                            background-color: transparentize($gray-5, 0.5);
+                        }
+                        &[aria-current="page"] {
+                            color: white;
+                            border-bottom: 3px solid $color_prime-bright;
+                        }
                     }
                 }
             }
@@ -178,21 +182,21 @@ $duration: $timing-default * 1.5; //settings.scss:281
         //     border-color: white(0.3);
         // }
     }
-    &[data-theme="dark"] { // light (light text on dark) | dark (dark text on light backgrounds)
+    &[data-theme="dark"], &[data-theme="none"] { // light (light text on dark) | dark (dark text on light backgrounds)
         .menu {
             &-secondary { 
-                li a {
-                    color: black(0.8);
-                    padding: 1rem;
-                    transition-property: background-color, color;
-                    transition-duration: $timing-default;
-                    &:hover {
-                        color: $color_prime;
-                        background-color: transparentize($gray-5, 0.5);
-                    }
-                    &[aria-current="page"] {
-                        color: white;
-                        border-bottom: 3px solid $color_prime;
+                li {
+                    color: black(0.8); // for some reason have to color the li and li > a
+                    a {
+                        color: black(0.8);
+                        &:hover {
+                            color: $color_prime;
+                            background-color: transparentize($gray-8, 0.9);
+                        }
+                        &[aria-current="page"] {
+                            color: black;
+                            border-bottom: 3px solid $color_prime;
+                        }
                     }
                 }
             }

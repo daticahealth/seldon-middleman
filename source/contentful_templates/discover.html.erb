@@ -188,7 +188,7 @@ end
             <% p["related_podcast"].each do |post| %>
                 <aside class="discover--podcast-entry">
                     <h3 class="headline-5">
-                        <a class="link--yellow" href="/innovation/<%= post["slug"] %>" title="Listen to this episode now"><%= post["title"] %></a>
+                        <a class="link--bright" href="/innovation/<%= post["slug"] %>" title="Listen to this episode now"><%= post["title"] %></a>
                     </h3>
                     <% podcast_guest = data.site.podcast[post.id].guest %>
                     <%# if post.has_key?("guest") %>

@@ -26,7 +26,7 @@
 $link-color-default: #fff !default;
 $underline: false !default;
 // ex. @include link-colors (white, $color_prime-bright, true);
-@mixin link-colors($color: $link-color-default, $hover-color: $color_prime-bright, $has-underline: $underline ) {
+@mixin link-colors($color: $link-color-default, $hover-color: $color_prime, $has-underline: $underline ) {
     font-weight: $font-weight-mid;
     transition: border-bottom .15s linear,color .15s linear;
     color: $color !important;

@@ -150,7 +150,7 @@ $color_red:              hsl(349, 72%, 39%); // cool darker red
 $color_deep:             $gray-2;
 $color_deep-alt:         $gray-2;
 $color_prime:            $color_green; //hsl(235, 88%, 51%);
-$color_prime-alt:        $color_blue;
+$color_prime-alt:        adjust-color($color_green, $lightness: 4%);
 $color_product:          #426788;
 $color_product-alt:      #6C93B5;
 $color_service:          #D93939;

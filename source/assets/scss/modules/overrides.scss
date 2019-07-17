@@ -159,7 +159,7 @@
     &-regular, &-normal, &-reg {
         font-weight: $font-weight-regular !important;
     }
-    &-light {
+    &--light {
         font-weight: $font-weight-light !important;
     }
     &-strong, &-bold {
@@ -181,15 +181,15 @@
 
 // normally containers set child colors, when possible; when not, use these link color overrides.
 .link {
-    &--white, &-light, &-light-plain, &-light-underline, &--yellow {
+    &--white, &--light, &--light-plain, &--light-underline, &--bright {
         &:visited, &:active {
             color: inherit;
         }
     }
-    &--white, &-light {
+    &--white, &--light {
         @include link-colors (white, $color_prime-bright, true);
     }
-    &-light-plain {
+    &--light-plain {
         @include link-colors (white, white, false);
         color: white !important;
         border: none;
@@ -197,7 +197,7 @@
             border: none;
         }
     }
-    &-light-underline {
+    &--light-underline {
         color: inherit; // if another style is combined, text color follows. Line color still independent
         text-decoration: none;
         transition: border-bottom .15s linear,color .15s linear;

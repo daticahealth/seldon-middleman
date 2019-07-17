@@ -10,7 +10,7 @@
     color: $white;
 }
 @mixin color--blue {
-    background-color: $color_prime;
+    background-color: $color_blue;
     color: $color_white;
 }
 @mixin color--blue-bright {
@@ -18,7 +18,7 @@
     color: $white;
 }
 @mixin color--blue-alt{
-    background-color: $color_prime-alt;
+    background-color: adjust-color($color_blue, $lightness: -15%);
     color: $white;
 }
 @mixin color--blue-bright-noise {
@@ -26,7 +26,7 @@
     color: $color_white;
     // background: linear-gradient(to right, $color_prime-alt 0%, adjust-color($color_prime-alt, $hue: -20%, $lightness: 10%, $saturation: 80%) 100%);
     &:before {
-        background: linear-gradient(to right, $color_prime-alt 0%, adjust-color($color_prime-alt, $hue: -20%, $lightness: 10%, $saturation: 80%) 100%);
+        background: linear-gradient(to right, $color_blue 0%, adjust-color($color_blue, $hue: -20%, $lightness: 10%, $saturation: 80%) 100%);
     }
 }
 @mixin color--gray {
