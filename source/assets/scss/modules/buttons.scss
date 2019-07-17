@@ -133,6 +133,12 @@
             @include button-expand(false);
         }
     }
+    &.primary {
+        color: white;
+        &:hover, &:active, &:focus {
+            color: white;
+        }
+    }
     &.success { // $color_green is a bit dark
         color: white;
         &:hover, &:active, &:focus {

@@ -397,7 +397,7 @@ $code-font-weight: $global-weight-normal;
 $code-background: initial; //transparentize($gray-5, 0.5);//hsla(219, 100%, 52%, 0.2);
 $code-border: none; //1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: scale-color($color_prime, $lightness: -14%);;
+$anchor-color: scale-color($color_prime, $lightness: -20%);
 $anchor-color-hover: scale-color($anchor-color, $lightness: 10%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: underline;
@@ -1060,7 +1060,7 @@ $titlebar-icon-spacing: 0.25rem;
 // 54. Tooltip
 // -----------
 
-$has-tip-cursor: help;
+$has-tip-cursor: arrow;
 $has-tip-font-weight: $global-weight-bold;
 $has-tip-border-bottom: none; //dotted 1px $dark-gray;
 $tooltip-background-color: $black;

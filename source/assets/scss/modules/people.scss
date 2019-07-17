@@ -168,7 +168,7 @@ blockquote + .media-object, .blockquote-info { // line person/info up with quote
     }
     &-avatar { // just the person avatar, snippets/_person-avatar.erb
         a .avatar {
-            @include hover-border ($color_prime-alt, 4px);
+            @include hover-border ($color_prime, 4px);
         }
     }
 }
