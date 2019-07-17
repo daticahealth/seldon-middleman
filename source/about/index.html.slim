@@ -212,7 +212,6 @@ scss:
           - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
             img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
 
-/.strip.strip-bright
 /.bg-gray-12 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
   section.section-article.bg-white.drop
     - execs = data.site.collections.to_a.select { | id, collection | (id == "22eMtdZGs5yignjP47GxYH") }
@@ -245,12 +244,13 @@ scss:
                 img.lozad width=stat.width data-src=stat.image alt=stat.desc
             - else
                 img.lozad width=stat.width data-src=stat.image alt=stat.desc
+.strip.strip-bright.strip-small
 .bg-gray-12
   section.section-article id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
     .row.align-center
       .columns.small-12.medium-8.large-7
         h5.spaced-out.text-center Milestones
-        #timeline.timeline--vertical
+        #timeline.timeline--vertical.content-dynamic
           #line.line
           - current_page.data.timeline_company.each do | item |
             .block

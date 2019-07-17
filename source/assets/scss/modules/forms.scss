@@ -113,7 +113,7 @@ select{border: rem-calc(1px) solid $color_border;}
             color: black(0.7);
             &:focus{
                 border: 1px solid black(1);
-                background-color: lighten($color_yellow-glow, 10%);
+                background-color: lighten($color_prime-bright, 10%);
                 @include input-placeholder {
                     color: black(0.7);
                 }

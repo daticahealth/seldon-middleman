@@ -175,7 +175,7 @@
             margin-bottom: 4rem;
             &__summary {
                 a {
-                    @include link-colors ($color_yellow-glow, $color_prime-bright, true);
+                    @include link-colors ($color_prime-bright, $color_prime-bright, true);
                 }
             }
             .person-card--vertical { // massively clean up the layout on mobile.

@@ -8,6 +8,10 @@
     //     font-size: medium;
     //     // opacity: 0.8;
     // }
+    a {
+        // font-weight: $font-weight-bold;
+        @include link-colors (initial, $color_green, true);
+    }
 }
 
 
@@ -119,8 +123,8 @@ footer {
         }
         a:hover {
             opacity: 1;
-            color: $color_yellow-glow;
-            border-bottom: 1px solid transparentize($color_yellow-glow, 0.2);
+            color: $color_prime-bright;
+            border-bottom: 1px solid transparentize($color_prime-bright, 0.2);
         }
     }
     &[data-theme="dark"] {
@@ -302,12 +306,12 @@ h4.caret-header{
 }
 .inline-highlight{
     color: $color_deep;
-    background-color: $color_yellow-glow;
+    background-color: $color_prime-bright;
     display: inline-block;
 }
 .highlight{
     color: $color_deep;
-    background-color: $color_yellow-glow;
+    background-color: $color_prime-bright;
 }
 .highlight-pad{
   padding: 1rem;

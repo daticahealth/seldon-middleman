@@ -44,7 +44,7 @@
         &-content {
             color: white;
             // &:hover, &:active {
-            //     color: $color_yellow-glow;
+            //     color: $color_prime-bright;
             //     // transform: translate3d(3px, 0, 0);
             // };
             text-shadow: 1px 1px 3px black(0.9);
@@ -76,7 +76,7 @@
             box-shadow: 0 5px 10px 0 black(0.4);
             .callout--article-action {
                 transform: translate3d(5px, 0, 0);
-                color: $color_yellow-glow;
+                color: $color_prime-bright;
             }
             .callout--article-image {
                 // @include blur(4px); // too much?

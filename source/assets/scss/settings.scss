@@ -180,7 +180,7 @@ $color-slugs: (
 
 $color_magenta-glow: hsl(328, 100%, 69%);
 $color_orange-glow:  hsl(37, 100%, 67%);
-$color_yellow-glow:  hsl(57, 100%, 72%);
+$color_prime-bright:  hsl(57, 100%, 72%);
 $color_green-glow:   $color_green-bright; // #26DF91; //hsl(107, 100%, 70%);
 $color_aqua-glow:    hsl(175, 100%, 62%);
 $color_blue-glow:    hsl(192, 100%, 58%);
@@ -192,6 +192,7 @@ $color_ccms-dark:    hsl(267, 92%, 44%);
 //$color_blue-bright:  hsl(220, 100%, 53%);
 
 $color_prime-bright: $color_green-glow; // core app bright color
+$color_prime-dark: $color_green-dark;
 
 // needs 2019 update
 $product-colors: (
@@ -400,7 +401,7 @@ $code-padding: rem-calc(2 5 1);
 $anchor-color: scale-color($color_prime, $lightness: -20%);
 $anchor-color-hover: scale-color($anchor-color, $lightness: 10%);
 $anchor-text-decoration: none;
-$anchor-text-decoration-hover: underline;
+$anchor-text-decoration-hover: none;
 $hr-width: $global-width - $pad;
 $hr-border: 1px solid rgba(150,150,150,0.35);//$medium-gray;
 $hr-margin: rem-calc($pad) auto;

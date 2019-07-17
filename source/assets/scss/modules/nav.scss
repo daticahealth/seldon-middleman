@@ -6,7 +6,7 @@
 $duration: $timing-default * 1.5; //settings.scss:281
 @mixin link-light {
   border: none;
-  color: $color_yellow-glow;
+  color: $color_prime-bright;
   &:hover {
     color: white;
     border: none;
@@ -16,7 +16,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
   border: none;
   color: white;
   &:hover {
-    color: $color_yellow-glow;
+    color: $color_prime-bright;
     border: none;
   }
 }
@@ -152,7 +152,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
             transition-property: background-color, color;
             transition-duration: $timing-default;
             &:hover, &:active {
-                color: $color_yellow-glow;
+                color: $color_prime-bright;
             }
         }
         .menu {
@@ -168,7 +168,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
                     }
                     &[aria-current="page"] {
                         color: white;
-                        border-bottom: 3px solid $color_yellow-glow;
+                        border-bottom: 3px solid $color_prime-bright;
                     }
                 }
             }
@@ -177,6 +177,26 @@ $duration: $timing-default * 1.5; //settings.scss:281
         // .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
         //     border-color: white(0.3);
         // }
+    }
+    &[data-theme="dark"] { // light (light text on dark) | dark (dark text on light backgrounds)
+        .menu {
+            &-secondary { 
+                li a {
+                    color: black(0.8);
+                    padding: 1rem;
+                    transition-property: background-color, color;
+                    transition-duration: $timing-default;
+                    &:hover {
+                        color: $color_prime;
+                        background-color: transparentize($gray-5, 0.5);
+                    }
+                    &[aria-current="page"] {
+                        color: white;
+                        border-bottom: 3px solid $color_prime;
+                    }
+                }
+            }
+        }
     }
     &[data-bar-theme="none"] { // combine with data-theme above for no bg color
         .nav {
@@ -377,7 +397,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
             li.nav__item {
                 &:hover {
                     & > a:not(.button) { // selected state of button/pane
-                        color: $color_yellow-glow;
+                        color: $color_prime-bright;
                     }
                 }
             }

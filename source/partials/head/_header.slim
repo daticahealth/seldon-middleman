@@ -51,7 +51,7 @@ nav.nav data-theme=theme
                   h3.headline-4 = nav_item.title
                   p.text-small = nav_item.summary
                   - if nav_item.has_key?("section_link_label")
-                    a.link-arrow.link-arrow--yellow.fade-1.show-for-large href=nav_item.section_link_uri title=nav_item.section_link_label data-track="true" data-track-category="nav" data-track-id="section-link-#{nav_item.section.parameterize}" = nav_item.section_link_label
+                    a.link-arrow.link-arrow--bright.fade-1.show-for-large href=nav_item.section_link_uri title=nav_item.section_link_label data-track="true" data-track-category="nav" data-track-id="section-link-#{nav_item.section.parameterize}" = nav_item.section_link_label
                 - if nav_item.has_key?("child_data")
                   .columns.small-12.large-4.nav__submenu-pane class=(is_product == true ? nil : "shrink-for-large")
                     h4.read-more.text-light.show-for-large = (is_product == true ? "Product Family" : nil)

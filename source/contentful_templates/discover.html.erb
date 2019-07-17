@@ -218,7 +218,7 @@ end
                     </p>
                         <% if post.has_key?("summary") %>
                         <div class="discover--podcast-entry__summary">
-                            <%= Kramdown::Document.new(post["summary"]).to_html %> <a class="link-arrow link-arrow--yellow" href="/innovation/<%= post["slug"] %>" title="Listen now">Listen now</a>
+                            <%= Kramdown::Document.new(post["summary"]).to_html %> <a class="link-arrow link-arrow--bright" href="/innovation/<%= post["slug"] %>" title="Listen now">Listen now</a>
                         </div>
                         <% end %>
                 </aside>
