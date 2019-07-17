@@ -32,7 +32,7 @@ article.content-dynamic {
             margin-bottom: $media-pad * 1.5;
         }
         a { // like to see this become the standard everywhere. no links < 500 weight! -AW
-            font-weight: $font-weight-mid;
+            font-weight: $font-weight-bold;
         }
         ul, ol {
             margin-left: calc(0.8rem + 2vw);
