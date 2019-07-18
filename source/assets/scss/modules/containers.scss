@@ -509,6 +509,9 @@
     &-greens {
         @include gradient-greens(to right);
     }
+    &-greens-left {
+        @include gradient-greens(to left);
+    }
     &-greens-dark {
         @include gradient-greens-dark(to right);
     }
@@ -516,7 +519,8 @@
 .strip-bright { // bright strip, supersat
     // min-height: calc(3px + 0.5vw);
     @extend .strip;
-    @include grad-bright;
+    // @include grad-bright;
+    @include gradient-greens(to right);
 }
 // Vertical align helper
 .vertical-align {
