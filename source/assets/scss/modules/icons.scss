@@ -164,14 +164,14 @@
         @include status-dot($color_green-glow, $thing-tiny);
     }
     &--yellow-glow {
-        @include status-dot($color_yellow-glow, $thing-tiny);
+        @include status-dot($color_prime-bright, $thing-tiny);
     }
     &--yellow-glow-low-alpha {
-        @include status-dot($color_yellow-glow, $thing-tiny);
+        @include status-dot($color_prime-bright, $thing-tiny);
         @include opacity(0.5);
     }
     &--blue-glow {
-        @include status-dot($color_yellow-glow, $thing-tiny);
+        @include status-dot($color_prime-bright, $thing-tiny);
     }
 }
 

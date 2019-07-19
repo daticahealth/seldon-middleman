@@ -374,12 +374,12 @@ $duration: $timing-default * 1.5; //settings.scss:281
                     font-size: rem-calc(14px);
                     &:hover {
                         color: $color_white;
-                        border-bottom: rem-calc(2px) solid $color_yellow-glow;
+                        border-bottom: rem-calc(2px) solid $color_prime-bright;
                     }
                 }
                 .active, [aria-current]:not([aria-current="false"]) {
                     color: $color_white;
-                    border-bottom: rem-calc(2px) solid $color_yellow-glow;
+                    border-bottom: rem-calc(2px) solid $color_prime-bright;
                 }
             }
         }
@@ -392,14 +392,14 @@ $duration: $timing-default * 1.5; //settings.scss:281
                     a {
                         color: $color_talk-alt;
                         border-left: 0;
-                        border-bottom: rem-calc(1px) solid $color_yellow-glow;
+                        border-bottom: rem-calc(1px) solid $color_prime-bright;
                         &:hover {
-                            border-bottom: rem-calc(1px) solid $color_yellow-glow;
+                            border-bottom: rem-calc(1px) solid $color_prime-bright;
                             background-color: $color_deep;
                         }
                     }
                     .active, [aria-current]:not([aria-current="false"]) {
-                        border-bottom: rem-calc(1px) solid $color_yellow-glow;
+                        border-bottom: rem-calc(1px) solid $color_prime-bright;
                         background-color: $color_deep;
                     }
                 }
@@ -437,12 +437,12 @@ $duration: $timing-default * 1.5; //settings.scss:281
                     border-left: 0;
                     border-bottom: rem-calc(1px) solid $color_deep;
                     &:hover {
-                        border-bottom: rem-calc(1px) solid $color_yellow-glow;
+                        border-bottom: rem-calc(1px) solid $color_prime-bright;
                         background-color: $color_deep;
                     }
                 }
                 .active, [aria-current]:not([aria-current="false"]) {
-                    border-bottom: rem-calc(1px) solid $color_yellow-glow;
+                    border-bottom: rem-calc(1px) solid $color_prime-bright;
                     background-color: $color_deep;
                 }
             }
@@ -460,7 +460,7 @@ nav {
     a.dropdown-item--link {
         margin-bottom: 0 !important; // argh!!
         @include breakpoint (small) {
-            @include link-colors (white, $color_yellow-glow, false);
+            @include link-colors (white, $color_prime-bright, false);
             &:last-child { //grrrr
                 padding: 0.4rem 0 0.4rem 0; // larger tap-targets on mobile.
             }

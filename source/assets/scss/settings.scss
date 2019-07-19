@@ -140,15 +140,17 @@ $gray-list-short: (
 
 // Datica Colors
 $color_blue:             hsl(219, 94%, 48%);
-$color_green:            hsl(158, 100%, 34%); //hsl(150, 85%, 39%); // hsl(160, 100%, 34%);
+$color_green:            hsl(164, 100%, 34%);//#009b57; hsl(158, 100%, 34%); //hsl(150, 85%, 39%); // ;
+$color_green-bright:     hsl(157, 100%, 55%);
+$color_green-dark:       hsl(164, 100%, 25%);
 $color_shadow:           #DCE4E9;
 $color_highlight-yellow: #FEDB45;
 $color_yellow:           $color_highlight-yellow;
 $color_red:              hsl(349, 72%, 39%); // cool darker red
-$color_deep:             #010101;
-$color_deep-alt:         #1E2127;
-$color_prime:            hsl(235, 88%, 51%);
-$color_prime-alt:        $color_blue;
+$color_deep:             $gray-2;
+$color_deep-alt:         $gray-2;
+$color_prime:            $color_green; //hsl(235, 88%, 51%);
+$color_prime-alt:        adjust-color($color_green, $lightness: 4%);
 $color_product:          #426788;
 $color_product-alt:      #6C93B5;
 $color_service:          #D93939;
@@ -178,8 +180,8 @@ $color-slugs: (
 
 $color_magenta-glow: hsl(328, 100%, 69%);
 $color_orange-glow:  hsl(37, 100%, 67%);
-$color_yellow-glow:  hsl(57, 100%, 72%);
-$color_green-glow:   hsl(107, 100%, 70%);
+$color_prime-bright:  hsl(57, 100%, 72%);
+$color_green-glow:   $color_green-bright; // #26DF91; //hsl(107, 100%, 70%);
 $color_aqua-glow:    hsl(175, 100%, 62%);
 $color_blue-glow:    hsl(192, 100%, 58%);
 $color_neon-purple:  #C41BF1;
@@ -189,13 +191,17 @@ $color_ccms-bright:  hsl(272, 100%, 76%); // product colors
 $color_ccms-dark:    hsl(267, 92%, 44%);
 //$color_blue-bright:  hsl(220, 100%, 53%);
 
+$color_prime-bright: $color_green-glow; // core app bright color
+$color_prime-dark: $color_green-dark;
+
 // needs 2019 update
 $product-colors: (
     cks: #9A0BFF,
     cmi: #6E52FF,
     cpaas: #498CFF,
     ccms-bright: $color_ccms-bright,
-    ccms-dark: $color_ccms-dark
+    ccms-dark: $color_ccms-dark,
+    emissary: $color_green
 );
 
 // future dark, saturated gradients
@@ -210,8 +216,8 @@ $product-colors: (
 
 // Foundation Color Settings
 $foundation-palette:(
-  default:   $color_prime-alt,
-  primary:   $color_prime-alt,
+  default:   $color_green,
+  primary:   $color_green,
   secondary: $gray-5,
   tertiary:  white,
   dark:      $gray-2,
@@ -240,12 +246,12 @@ $fill-color-list: (
     "magenta-glow": hsl(328, 100%, 69%),
     "orange-glow":  hsl(37, 100%, 67%),
     "yellow-glow":  hsl(57, 100%, 72%),
-    "green-glow":   hsl(127, 100%, 70%),
+    "green-glow":   $color_green-glow,
     "aqua-glow":    hsl(175, 100%, 62%),
     "blue-glow":    hsl(192, 100%, 58%),
     "purple-deep":  hsl(236, 27%, 26%),
     "blue-bright":  hsl(220, 100%, 53%),
-    "brand":        $color_prime,
+    "brand":        $color_green,
     "blue":         $color_prime-alt,
     "red":          $color_service,
     "green":        adjust-color($color_green, $hue: -5, $saturation: 40%, $lightness: -5%),
@@ -392,10 +398,10 @@ $code-font-weight: $global-weight-normal;
 $code-background: initial; //transparentize($gray-5, 0.5);//hsla(219, 100%, 52%, 0.2);
 $code-border: none; //1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: $primary-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color: scale-color($color_prime, $lightness: -20%);
+$anchor-color-hover: scale-color($anchor-color, $lightness: 10%);
 $anchor-text-decoration: none;
-$anchor-text-decoration-hover: underline;
+$anchor-text-decoration-hover: none;
 $hr-width: $global-width - $pad;
 $hr-border: 1px solid rgba(150,150,150,0.35);//$medium-gray;
 $hr-margin: rem-calc($pad) auto;
@@ -1055,7 +1061,7 @@ $titlebar-icon-spacing: 0.25rem;
 // 54. Tooltip
 // -----------
 
-$has-tip-cursor: help;
+$has-tip-cursor: arrow;
 $has-tip-font-weight: $global-weight-bold;
 $has-tip-border-bottom: none; //dotted 1px $dark-gray;
 $tooltip-background-color: $black;

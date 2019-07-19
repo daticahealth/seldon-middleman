@@ -172,13 +172,13 @@ span.label + span.label { // when in a tag list
             //     opacity: 0.5;
             // }
             &:hover {
-                color: $color_blue;
+                color: $color_prime;
                 opacity: 1;
             }
             &[data-theme="dark"] { // ok from here on out DARK means, "it's a dark field with light content". It's backwards elsewhere. ugh
                 color: $gray-6;
                 &:hover {
-                    color: $color_aqua-glow;
+                    color: $color_prime-bright;
                 }
             }
         }
@@ -238,7 +238,7 @@ span.label + span.label { // when in a tag list
         color: black;
         opacity: 0.3;
         &:hover {
-            color: $color_blue;
+            color: $color_prime;
             opacity: 1;
         }
     }
@@ -271,9 +271,9 @@ span.label + span.label { // when in a tag list
         opacity: 0.6;
         font-weight: $font-weight-light;
     }
-    &-icon {
+    // &-icon {
 
-    }
+    // }
 }
 // expand/toggle component - moved from products.scss
 .icon-toggle {

@@ -66,7 +66,7 @@
         bottom: 2rem;
         right:  2rem;
         opacity: 0.3;
-        color: $color_blue-glow;
+        color: $color_prime-bright;
     }
     &-cta {
         opacity: 0;
@@ -96,7 +96,7 @@
     &:hover {
         color: $white;
         .preview-title {
-            color: $color_blue-glow;
+            color: $color_prime-bright;
             // transform: translate3d(3px, 0, 0);
         }
         .preview-icon {

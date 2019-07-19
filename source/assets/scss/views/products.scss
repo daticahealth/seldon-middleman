@@ -40,7 +40,7 @@
 //     }
 // }
 
-$color: $color_blue;
+$color: $color_prime;
 .solid {
   fill: $color;
   color: adjust-color($color, $lightness: 20%, $hue: -5%, $saturation: 50%);
@@ -53,7 +53,7 @@ $color: $color_blue;
         @include transition ($transition);
     }
     &:hover {
-        background-color: $color_prime-alt;
+        background-color: $color_prime;
         .icon {
             color: white;
             transform: scale3d(1.1, 1.1, 1.1);
@@ -249,13 +249,13 @@ ul.bullet-outside {
                 &:hover {
                     transition: all $timing-default linear;
                     background-color: white(0);
-                    border-bottom: $bar solid $color_prime-alt;
+                    border-bottom: $bar solid $color_prime;
                 }
                 // padding: 1rem 1rem rem-calc(16-$bar) 1rem;
                 border-bottom: $bar solid transparent;
                 &.is-current {
-                    color: $color_prime-alt;
-                    border-bottom: $bar solid $color_prime-alt;
+                    color: $color_prime;
+                    border-bottom: $bar solid $color_prime;
                 }
             }
             // &--cta { // for cta button in sticky nav bar
@@ -331,7 +331,7 @@ ul.bullet-outside {
 }
 .underline {
     &-yellow {
-        border-bottom: 3px solid $color_yellow-glow;
+        border-bottom: 3px solid $color_prime-bright;
         display: inline-block;
     }
     &-aqua {

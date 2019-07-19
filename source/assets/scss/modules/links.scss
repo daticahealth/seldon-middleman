@@ -3,15 +3,14 @@
 a {
     text-decoration: none;
     font-weight: $font-weight-mid;
-	transition-property: background-color, color;
-	transition-duration: $timing-default;
+	transition: transform $timing-default ease, box-shadow $timing-default, background-color $timing-default, color $timing-default, border $timing-default;
     &:hover, &:active, &:focus {text-decoration: none; }
     // @include easing($timing-default);
 }
 // for the link--[color] styles, these have moved to overrides.scss, because order-of-ops.
-section a {
-    font-weight: $font-weight-mid;
-}
+// section a {
+//     font-weight: $font-weight-mid;
+// }
 // note that containers.scss:211 currently loads after this file; 
 // there are basic link style overrides per container colors (at least for grays)
 

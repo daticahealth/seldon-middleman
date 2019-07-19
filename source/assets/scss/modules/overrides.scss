@@ -159,7 +159,7 @@
     &-regular, &-normal, &-reg {
         font-weight: $font-weight-regular !important;
     }
-    &-light {
+    &--light {
         font-weight: $font-weight-light !important;
     }
     &-strong, &-bold {
@@ -181,22 +181,23 @@
 
 // normally containers set child colors, when possible; when not, use these link color overrides.
 .link {
-    &--white, &-light, &-light-plain, &-light-underline, &--yellow {
+    &--white, &--light, &--light-plain, &--light-underline, &--bright {
         &:visited, &:active {
             color: inherit;
         }
     }
-    &--white, &-light {
-        @include link-colors (white, $color_yellow-glow, true);
+    &--white, &--light {
+        @include link-colors (white, $color_prime-bright, true);
     }
-    &-light-plain {
+    &--light-plain {
+        @include link-colors (white, white, false);
         color: white !important;
         border: none;
         &:hover {
             border: none;
         }
     }
-    &-light-underline {
+    &--light-underline {
         color: inherit; // if another style is combined, text color follows. Line color still independent
         text-decoration: none;
         transition: border-bottom .15s linear,color .15s linear;
@@ -207,8 +208,8 @@
             border-color: white(1);
         }
     }
-    &--yellow {
-        @include link-colors ($color_yellow-glow, white, true);
+    &--bright {
+        @include link-colors ($color_prime-bright, white, true);
         font-weight: $font-weight-bold;
     }
 
@@ -216,7 +217,7 @@
         @include link-colors ($color_aqua-glow, white, false);
     }
     &--mini-cta{
-        color: $color_yellow-glow !important;
+        color: $color_prime-bright !important;
         //font-weight: $font-weight-mid;
         &:hover {
             color: $white !important;
@@ -229,20 +230,28 @@
         }
     }
 }
-.link-arrow {
+@mixin icon-after {
+    opacity: 0.4;
+    display: inline-block;
+    width:  0.8em;
+    height: 0.8em;
+    margin-left: 0.2em;
+    transform: translate3d(0px, 0.1em, 0); // slight correction of position
+    transition: transform $timing-default * 0.5 ease, opacity $timing-default * 0.5 ease;
+    // transition: transform $timing-default * 2 ease, opacity $timing-default * 2 ease;
+}
+.link-arrow { // theming is a mess!
     // @apply .uppercase .font-bold .text-base .no-underline .font-bold .text-green-deep .tracking-relaxed;
     &::after {
-        transition: transform $timing-default * 2 ease, opacity $timing-default * 2 ease;
-        content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 14'%3E%3Cpolygon fill='%231055ff' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
+        content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 14'%3E%3Cpolygon fill='%23049873' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
         // content: url("/assets/icons/inlined/small/icon-chevron-right-blue.svg");
         // content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='15' viewBox='0 0 18 15'><path d='M7.5 4.5L6.44 5.56 9.88 9l-3.44 3.44L7.5 13.5 12 9z' fill='currentColor'/><path d='M0 0h18v18H0z' fill='none'/></svg>");
         // content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='9' height='28'><path fill='currentColor' d='M9.297 15c0 0.125-0.063 0.266-0.156 0.359l-7.281 7.281c-0.094 0.094-0.234 0.156-0.359 0.156s-0.266-0.063-0.359-0.156l-0.781-0.781c-0.094-0.094-0.156-0.219-0.156-0.359 0-0.125 0.063-0.266 0.156-0.359l6.141-6.141-6.141-6.141c-0.094-0.094-0.156-0.234-0.156-0.359s0.063-0.266 0.156-0.359l0.781-0.781c0.094-0.094 0.234-0.156 0.359-0.156s0.266 0.063 0.359 0.156l7.281 7.281c0.094 0.094 0.156 0.234 0.156 0.359z'></path></svg>");
-        opacity: 0.4;
-        display: inline-block;
-        width:  0.8em;
-        height: 0.8em;
-        margin-left: 0.2em;
-        transform: translate3d(0px, 0.1em, 0);
+        @include icon-after;
+    }
+    &:hover:after {
+        transform: translate3d(3px, 0.1em, 0);
+        opacity: 1;
     }
     &--white {
         &, &:hover { 
@@ -251,27 +260,32 @@
         &::after {
             content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 14'%3E%3Cpolygon fill='%23fff' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
             // content: url("/assets/icons/inlined/small/icon-chevron-right-white.svg");
+            @include icon-after;
+        }
+        &:hover:after {
+            transform: translate3d(3px, 0.1em, 0);
+            opacity: 1;
         }
     }
-    &--yellow {
-        color: $color_yellow-glow;
+    &--bright {
+        color: $color_prime-bright;
         &:hover {
-            color: lighten($color_yellow-glow, 30%);
+            color: lighten($color_prime-bright, 30%);
         }
         &::after {
-            content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 14'%3E%3Cpolygon fill='%23fff870' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
+            content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 14'%3E%3Cpolygon fill='%23ffffff' points='5.665 1 4 2.645 9.408 8 4 13.355 5.665 15 12.75 8'/%3E%3C/svg%3E");
             // content: url("/assets/icons/inlined/small/icon-chevron-right-yellow.svg");
+            @include icon-after;
         }
-    }
-    &:hover:after {
-        transition: transform $timing-default * 0.5 ease, opacity $timing-default * 0.5 ease;
-        transform: translate3d(3px, 0.1em, 0);
-        opacity: 1;
+        &:hover:after {
+            transform: translate3d(3px, 0.1em, 0);
+            opacity: 1;
+        }
     }
 }
 .link--white-parent { // when you need to style a link inside a component/partial
     a {
-        @include link-colors (white, $color_yellow-glow, false);
+        @include link-colors (white, $color_prime-bright, false);
     }
 }
 .card {

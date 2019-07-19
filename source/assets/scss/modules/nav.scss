@@ -6,7 +6,7 @@
 $duration: $timing-default * 1.5; //settings.scss:281
 @mixin link-light {
   border: none;
-  color: $color_yellow-glow;
+  color: $color_prime-bright;
   &:hover {
     color: white;
     border: none;
@@ -16,7 +16,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
   border: none;
   color: white;
   &:hover {
-    color: $color_yellow-glow;
+    color: $color_prime-bright;
     border: none;
   }
 }
@@ -53,11 +53,14 @@ $duration: $timing-default * 1.5; //settings.scss:281
         li a {
             font: {
                 size: 90%;
-                // weight: $font-weight-mid;
+                weight: $font-weight-mid;
             }
+            padding: 1rem;
+            transition-property: background-color, color, border-color;
+            transition-duration: $timing-default;
             &[aria-current="page"] {
                 color: $gray-1;
-                border-bottom: 3px solid $color_blue;
+                border-bottom: 3px solid $color_green-dark;
             }
         }
         ul.breadcrumbs { // breadcrumbs inside subnav, usually first li
@@ -95,7 +98,8 @@ $duration: $timing-default * 1.5; //settings.scss:281
                 // font-weight: $font-weight-mid;
                 padding: 1rem 1rem calc(1rem - $active-border-height) 1rem;
                 border-bottom: $active-border-height solid transparent;
-                transition: border-color $timing-default linear;
+                transition-property: background-color, color, border-color;
+                transition-duration: $timing-default;
                 &:hover {
                     background-color: $gray-11;
                 }
@@ -104,7 +108,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
                     color: white;
                 }
                 &.is-active, [aria-current="page"] { // js-applied state by ZF plugins
-                    border-color: $color_prime-alt;
+                    border-color: $color_green-dark;
                 }
             }
             &--cta { // for cta button in sticky nav bar
@@ -152,23 +156,23 @@ $duration: $timing-default * 1.5; //settings.scss:281
             transition-property: background-color, color;
             transition-duration: $timing-default;
             &:hover, &:active {
-                color: $color_yellow-glow;
+                color: $color_prime-bright;
             }
         }
         .menu {
             &-secondary { // this is now preferred solution for secondary stacked navs
-                li a {
-                    color: white(0.6);
-                    padding: 1rem;
-                    transition-property: background-color, color;
-                    transition-duration: $timing-default;
-                    &:hover {
-                        color: white;
-                        background-color: transparentize($gray-5, 0.5);
-                    }
-                    &[aria-current="page"] {
-                        color: white;
-                        border-bottom: 3px solid $color_yellow-glow;
+                li {
+                    color: white(0.8); // for some reason have to color the li and li > a
+                    a {
+                        color: white(0.8);
+                        &:hover {
+                            color: white;
+                            background-color: transparentize($gray-5, 0.5);
+                        }
+                        &[aria-current="page"] {
+                            color: white;
+                            border-bottom: 3px solid $color_prime-bright;
+                        }
                     }
                 }
             }
@@ -177,6 +181,26 @@ $duration: $timing-default * 1.5; //settings.scss:281
         // .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
         //     border-color: white(0.3);
         // }
+    }
+    &[data-theme="dark"], &[data-theme="none"] { // light (light text on dark) | dark (dark text on light backgrounds)
+        .menu {
+            &-secondary { 
+                li {
+                    color: black(0.8); // for some reason have to color the li and li > a
+                    a {
+                        color: black(0.8);
+                        &:hover {
+                            color: $color_prime;
+                            background-color: transparentize($gray-8, 0.9);
+                        }
+                        &[aria-current="page"] {
+                            color: black;
+                            border-bottom: 3px solid $color_prime;
+                        }
+                    }
+                }
+            }
+        }
     }
     &[data-bar-theme="none"] { // combine with data-theme above for no bg color
         .nav {
@@ -377,7 +401,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
             li.nav__item {
                 &:hover {
                     & > a:not(.button) { // selected state of button/pane
-                        color: $color_yellow-glow;
+                        color: $color_prime-bright;
                     }
                 }
             }
@@ -386,7 +410,7 @@ $duration: $timing-default * 1.5; //settings.scss:281
             li.nav__item {
                 &:hover {
                     & > a:not(.button) { // selected state of button/pane
-                        color: $color_blue;
+                        color: $color_green-dark;
                     }
                 }
             }

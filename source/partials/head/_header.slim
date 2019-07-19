@@ -35,7 +35,7 @@ nav.nav data-theme=theme
     li.pad--lg.hide-for-large
       h4.headline-6.spaced-out News
       p.text-light <strong>Datica</strong> and <strong>Sansoro Health</strong> merge to help accelerate healthcare’s data-driven future in the cloud.
-      = partial "partials/snippets/button", :locals => { :label => "Read the Announcement", :url => "/press-release/sansoro-health-datica-announce-merger/", :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "merge_press_mobile", :data_track_group => "company", :expand => false }
+      = partial "partials/snippets/button", :locals => { :label => "Read the Announcement", :url => "/blog/sansoro-health-datica-combine-forces/", :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "merger_blog_mobile", :data_track_group => "company", :expand => false }
     - nav_collection.each do | id, nav_section |
       /p.lead.hide-for-medium = (nav_section.has_key?("subhead") ? nav_section.subhead : nil)
       - nav_section["related_entries"].each do | nav_item |
@@ -51,7 +51,7 @@ nav.nav data-theme=theme
                   h3.headline-4 = nav_item.title
                   p.text-small = nav_item.summary
                   - if nav_item.has_key?("section_link_label")
-                    a.link-arrow.link-arrow--yellow.fade-1.show-for-large href=nav_item.section_link_uri title=nav_item.section_link_label data-track="true" data-track-category="nav" data-track-id="section-link-#{nav_item.section.parameterize}" = nav_item.section_link_label
+                    a.link-arrow.link-arrow--bright.fade-1.show-for-large href=nav_item.section_link_uri title=nav_item.section_link_label data-track="true" data-track-category="nav" data-track-id="section-link-#{nav_item.section.parameterize}" = nav_item.section_link_label
                 - if nav_item.has_key?("child_data")
                   .columns.small-12.large-4.nav__submenu-pane class=(is_product == true ? nil : "shrink-for-large")
                     h4.read-more.text-light.show-for-large = (is_product == true ? "Product Family" : nil)
@@ -106,6 +106,6 @@ nav.nav data-theme=theme
                       p.text-small = nav_item.section_promo.summary
                       = partial "partials/snippets/button", :locals => { :label => "Learn More", :url => promo_url, :button_classes => "button small success", :data_track_group => "nav", :item_id => "section-promo-#{nav_item.section.parameterize}", :icon => "icon-angle-right", :icon_align => "right" }
     li.nav__item.nav__contact.button-group.stacked-for-small
-      = partial "partials/snippets/button", :locals => { :label => "Get Pricing", :url => "/pricing/", :button_classes => "contact-button button small", :item_id => "contact", :data_track_group => "nav", :expand => "false" }
+      = partial "partials/snippets/button", :locals => { :label => "Get Pricing", :url => "/pricing/", :button_classes => "contact-button button success small", :item_id => "contact", :data_track_group => "nav", :expand => "false" }
       /| &nbsp;
-      = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "call-button hide-for-large button small", :icon => "icon-phone", :icon_align => "left", :item_id => "phone", :data_track_group => "nav", :expand => "false" }
+      = partial "partials/snippets/button", :locals => { :label => "(888) 377-3184", :url => "tel:8883773184", :button_classes => "call-button hide-for-large button small secondary", :icon => "icon-phone", :icon_align => "left", :item_id => "phone", :data_track_group => "nav", :expand => "false" }

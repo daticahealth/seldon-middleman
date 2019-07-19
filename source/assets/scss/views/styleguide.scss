@@ -93,16 +93,16 @@ ul.nav-demo {
     &--yellow {
         font-weight: $font-weight-bold;
         text-decoration: none !important;
-        color: $color_yellow-glow;
+        color: $color_prime-bright;
         // @include easing($timing-default);
         // @include fx-hover-nudge();
         &:visited {
-            color: $color_yellow-glow;
+            color: $color_prime-bright;
         }
         &:hover, &:active {
             // @include transform(translate(rem-calc(0px), rem-calc(2px)));
-            color: $color_yellow-glow;
-            border-bottom: 1px solid $color_yellow-glow;
+            color: $color_prime-bright;
+            border-bottom: 1px solid $color_prime-bright;
         }
     }
     &--white, &--yellow {
@@ -110,8 +110,8 @@ ul.nav-demo {
     }
 }
 .active {
-    color: $color_yellow-glow !important;
-    border-bottom: 1px solid $color_yellow-glow;
+    color: $color_prime-bright !important;
+    border-bottom: 1px solid $color_prime-bright;
 }
 
 // Reset all headers. this should be done upstream in type.scss

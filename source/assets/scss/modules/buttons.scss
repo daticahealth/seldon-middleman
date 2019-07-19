@@ -16,14 +16,6 @@
     //     @include transform(translate(rem-calc(0px), rem-calc(0px)));
     // }
     // button style variations must change as little as possible. Base padding, sizing, etc. is default .button
-    &--primary {
-        @include gradient(to bottom, $color_prime-alt 0%, lighten($color_prime-alt, 7%) 100%);
-        color: $color_white;
-        &:active, &:focus {
-            // color: $color_product;
-            @include gradient(to bottom, darken(#2C72FF, 5%) 0%, darken(#1260FF, 10%) 100%);
-        }
-    }
     &--dark {
         @include gradient(to bottom, $gray-3 0%, $gray-1 100%);
         color: $color_white;
@@ -77,19 +69,23 @@
         // used in close buttons or plain inverted buttons
         color: white;
         &:hover &:active, &:focus {
-            color: lighten($color_yellow-glow, 10%);
+            color: $color_prime-bright;//lighten($color_prime-bright, 10%);
         }
     }
     // &--cta {
     //     font-weight: $font-weight-bold;
     // }
+    &.hollow {
+        border: 1.5px solid $color_prime;
+        color: $color_prime-dark;
+    }
     &.hollow-inverted {
         border: 1px solid $white;
         color: white;
         background-color: transparent;
         &:hover, &:focus {
-            color: lighten($color_yellow-glow, 10%);
-            border: 1px solid lighten($color_yellow-glow, 10%);
+            color: lighten($color_prime-bright, 10%);
+            border: 1px solid lighten($color_prime-bright, 10%);
         }
     }
     &.hollow-invisible {
@@ -133,18 +129,28 @@
             @include button-expand(false);
         }
     }
-    &.success { // $color_green is a bit dark
+    &--primary, &.primary, &.success {
+        $c1: adjust-color($color_prime, $hue: -5%, $lightness: -5%);
+        $c2: adjust-color($color_prime, $hue: 5%, $lightness: 3%);
+        @include gradient(70deg, $c1 0%, $c2 100%);
         color: white;
         &:hover, &:active, &:focus {
-            background-color: scale-color($success_color, $lightness: -10%);
             color: white;
+            // @include gradient(55deg, darken($color_prime, 5%) 0%, darken($color_prime, 10%) 100%);
         }
     }
+    // &.success { // $color_green is a bit dark
+    //     color: white;
+    //     &:hover, &:active, &:focus {
+    //         background-color: scale-color($success_color, $lightness: 8%);
+    //         color: white;
+    //     }
+    // }
     &.success-light { // $color_green is a bit dark
         color: black;
         background-color: $color_green-glow;
         &:hover, &:active, &:focus {
-            background-color: white;//scale-color($color_green-glow, $lightness: 30%);
+            background-color: scale-color($color_green-glow, $lightness: -10%);
             // color: white;
         }
     }
@@ -207,7 +213,7 @@
             }
         }
         a {
-            @include link-colors (black, $color_blue, false);
+            @include link-colors (black, $color_prime, false);
         }
     }
 }

@@ -47,8 +47,8 @@ a.df-dot--link { // needed to pull it out because specificity
         outline: none !important;
     }
 }
-$color-hilight:  $color_prime-alt;
-$color-selected: $color_prime;
+$color-hilight:  $color_prime; // 
+$color-selected: adjust-color($color_prime, $saturation: 90%, $lightness: -4%);;
 $color-default:  $gray-5;
 $strip-width: 2vw;
 
