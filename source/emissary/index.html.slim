@@ -17,14 +17,14 @@ subnav:
     title: "Overview"
     slug: "overview"
   -
+    title: "Video"
+    slug: "video"
+  -
     title: "API Solution"
     slug: "proven-api"
   -
     title: "Benefits"
     slug: "benefits"
-  -
-    title: "Demo"
-    slug: "demo"
   # -
   #   title: "Comparison"
   #   slug: "comparison"
@@ -91,7 +91,7 @@ section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.dat
           .media-object-section.media-object--info.main-section.align-self-middle
             h1.headline-2 style="margin-bottom: 0.2rem;" Emissary<sup>®</sup>
             p.lead A scalable, centralized API for clinical data of any type
-            = partial "partials/snippets/button", :locals => { :label => "Schedule A Demo", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+            = partial "partials/snippets/button", :locals => { :label => "Start Your Integration Project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
     = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
     / .art-bg-fill.art-light-blob
@@ -104,8 +104,18 @@ section.section-article.bg-gray-2.container-image-fill.lozad data-background-ima
       p.lead Why should health data exchange be so inefficient and costly, when information is easily – even instantaneously – accessible in almost all other aspects of our modern lives?
     .columns.small-12.medium-8.large-5
       p.headline-3.text-bold Emissary helps you implement effortlessly, innovate brilliantly, deliver value swiftly and scale confidently.
-.strip.strip-greens.strip-small
-section.section-article.bg-gray-11 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
+/ .strip.strip-greens.strip-small
+section.section-article.bg-dark.strip-greens-dark id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
+  .row.align-center.align-middle
+    .columns.small-12.medium-8.large-5
+      h3.headline-3.text-bold Emissary in action
+      p.lead We’re solving health IT’s most pressing challenge today. Our Emissary platform enables seamless data exchange between EHRs and with leading-edge administration and clinical applications.
+      p.lead See how Emissary enables complete, real-time access to patient records, preventing a life-threatening condition that otherwise would be missed.
+      /= partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button success", :item_id => "product-emissary" }
+    .columns.small-12.medium-4.large-6
+      = Kramdown::Document.new(data.site.videos["y0y8MVijxDirsUyvbYzUa"].custom_form).to_html  
+
+section.section-article.bg-gray-11 id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
   .row.align-center.align-middle
     .columns.small-12.medium-8.large-4
       h3.headline-3 Emissary is a proven API solution
@@ -126,7 +136,7 @@ section.section-article.bg-gray-3
       p.lead <strong>Datica Emissary</strong> is a centralized API toolset that is installed within the data systems on-site at the hospital, such as EHRs, thus giving unprecedented access, control, and scalability of clinical data.
 
 .strip.strip-small.strip-greens
-section.section-article.bg-gray-12 id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+section.section-article.bg-gray-12 id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
   .row.align-center
     .columns.small-12.medium-10.large-8
       h3.headline-3 Hello Emissary. Goodbye data silos.
@@ -141,15 +151,6 @@ section.section-article.bg-gray-12 id=current_page.data.subnav[2].slug data-mage
                 h4.headline-4.margin-bottom-small = item.title
                 p = item.desc
 
-section.section-article.bg-dark.strip-greens-dark id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
-  .row.align-center.align-middle
-    .columns.small-12.medium-8.large-5
-      h3.headline-3.text-bold Emissary Demo
-      p.lead We’re solving health IT’s most pressing challenge today. Our Emissary platform enables seamless data exchange between EHRs and with leading-edge administration and clinical applications.
-      p.lead See how Emissary enables complete, real-time access to patient records, preventing a life-threatening condition that otherwise would be missed.
-      /= partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button success", :item_id => "product-emissary" }
-    .columns.small-12.medium-4.large-6
-      = Kramdown::Document.new(data.site.videos["y0y8MVijxDirsUyvbYzUa"].custom_form).to_html  
 
 /section.section-article.bg-white id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
   .row.align-center
