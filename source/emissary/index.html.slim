@@ -1,9 +1,9 @@
 ---
-title: "Compliant Managed Integration (CMI) | Datica Cloud Compliance"
-summary: "Compliant Managed Integration (CMI) handles HIPAA compliant, scalable, and secure data exchange with any EHR."
-navTitle: "Datica CMI"
+title: "Datica Emissary | A scalable, centralized API for clinical data of any type"
+summary: "Emissary is a proven application programming interface (API) solution that allows healthcare information to be exchanged across any EHR platform – while ensuring the utmost security for PHI."
+navTitle: "Emissary"
 author: "Datica, Inc."
-tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
+tags: "HL7, FHIR, interoperability, EHR, integration, API"
 ogType: "product"
 customCSS: "products, products-mastheads"
 layout: products
@@ -23,8 +23,8 @@ subnav:
     title: "Benefits"
     slug: "benefits"
   -
-    title: "Demo"
-    slug: "demo"
+    title: "Emissary in Action"
+    slug: "video"
   # -
   #   title: "Comparison"
   #   slug: "comparison"
@@ -60,7 +60,7 @@ product_benefits:
 ruby:
   bg_image = 'https://images.ctfassets.net/189dvqdsjh46/71ZkJFY8CgC3a0huhg9Wqh/19a52b2852b0f336e0c51d8acfcc8e85/bg-cards.svg'
   current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
-  current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/nGfjpkdV4GIIk6ii6wQiE/7488832f05e372d1f13933a343a75826/share-cmi.jpg'
+  current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/6LZggmYO7ufX2dGIMQ9Zjr/5dab72079313710cb63104a3845a61bd/emissary-share.jpg'
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   the_form = data.site.forms['4nyR5f2AgXCJ27BPl6rtoK']
 scss:
@@ -91,7 +91,7 @@ section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.dat
           .media-object-section.media-object--info.main-section.align-self-middle
             h1.headline-2 style="margin-bottom: 0.2rem;" Emissary<sup>®</sup>
             p.lead A scalable, centralized API for clinical data of any type
-            = partial "partials/snippets/button", :locals => { :label => "Schedule A Demo", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+            = partial "partials/snippets/button", :locals => { :label => "Start Your Integration Project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
     = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
     / .art-bg-fill.art-light-blob
@@ -111,7 +111,7 @@ section.section-article.bg-gray-11 id=current_page.data.subnav[1].slug data-mage
       h3.headline-3 Emissary is a proven API solution
       p.lead Emissary is a proven application programming interface (API) solution that allows healthcare information to be exchanged across any EHR platform – while ensuring the utmost security for PHI.
       p Modern times call for modern measures. Emissary allows you to focus on your product – not on the integration. Within days, you are up and running with comprehensive APIs that work across EHRs.
-      = partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button success", :item_id => "product-emissary" }
+      = partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "##{current_page.data.subnav[3].slug}", :button_classes => "button success", :item_id => "product-emissary" }
     .columns.small-12.medium-4.large-6
       img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/TvIRvb1AwzfXo7MsUHmJ6/df7185acdd6125ae327784c41f0de549/emissary-product-diagram-3.png" alt="emissary diagram"
 
@@ -131,7 +131,7 @@ section.section-article.bg-gray-12 id=current_page.data.subnav[2].slug data-mage
     .columns.small-12.medium-10.large-8
       h3.headline-3 Hello Emissary. Goodbye data silos.
       p Emissary makes health data liquid. It provides a robust set of REST APIs that read and write to EHRs through EHR vendor-supported software modules. It standardizes EHR integration through universal real-time APIs and a unified data model. To connect to an EHR, health IT partners code once to the Emissary APIs. Emissary also provides tools to assist with the monitoring and management of the environment, including advanced security and auditing features.
-      .row.small-up-1.medium-up-2.group.collapse
+      .row.small-up-1.medium-up-2.collapse
         - current_page.data.product_benefits.each do | item |
           .column.group--sm
             .media-object
@@ -140,11 +140,13 @@ section.section-article.bg-gray-12 id=current_page.data.subnav[2].slug data-mage
               .media-object-section.media-object--info.main-section.align-self-middle
                 h4.headline-4.margin-bottom-small = item.title
                 p = item.desc
+    .columns.small-12.align-center.text-center
+      = partial "partials/snippets/button", :locals => { :label => "Start Your Integration Project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button nomargin", :data_track_group => "compliance", :item_id => "features_start", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
 
 section.section-article.bg-dark.strip-greens-dark id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
   .row.align-center.align-middle
     .columns.small-12.medium-8.large-5
-      h3.headline-3.text-bold Emissary Demo
+      h3.headline-3.text-bold See Emissary in action
       p.lead We’re solving health IT’s most pressing challenge today. Our Emissary platform enables seamless data exchange between EHRs and with leading-edge administration and clinical applications.
       p.lead See how Emissary enables complete, real-time access to patient records, preventing a life-threatening condition that otherwise would be missed.
       /= partial "partials/snippets/button", :locals => { :label => "Learn how Emissary works", :url => "https://www.sansorohealth.com/what-is-emissary", :button_classes => "button success", :item_id => "product-emissary" }
@@ -180,7 +182,7 @@ section.masthead.bg-dark.bg-greens-grad.product-cmi.relative id=current_page.dat
   .section-article--lg.relative.z-10
     .row.align-center.align-middle
       .columns.small-12.medium-6.large-5
-        h2.headline-3.group--2x Schedule a conversation to learn more about Datica Emissary
+        h2.headline-3.group--2x Schedule a conversation to learn more about Datica Emissary.
         / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
         .callout.callout--dark-alpha
           blockquote.quote--serif

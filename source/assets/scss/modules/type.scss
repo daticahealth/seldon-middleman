@@ -8,9 +8,9 @@
     //     font-size: medium;
     //     // opacity: 0.8;
     // }
-    a {
+    a:not([class]) {
         // font-weight: $font-weight-bold;
-        @include link-colors (initial, $color_green, true);
+        @include link-colors (initial, $color_green-dark, true);
     }
 }
 

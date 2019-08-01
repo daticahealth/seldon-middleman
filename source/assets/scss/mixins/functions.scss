@@ -29,7 +29,7 @@ $underline: false !default;
 @mixin link-colors($color: $link-color-default, $hover-color: $color_prime, $has-underline: $underline ) {
     font-weight: $font-weight-mid;
     transition: border-bottom .15s linear,color .15s linear;
-    color: $color !important;
+    color: $color;
     @if $has-underline == true {
         border-bottom: 2px solid transparentize($hover-color, 0.7);
     }
