@@ -73,14 +73,14 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
                 <p><%= p["soundcloud_embed"] %></p>
             <% end %>
             <aside class="row collapse group">
-                <% if podcast.has_key?("guest") %>
-                    <div class="columns small-12 medium-6">
-                        <%= partial("partials/snippets/person", :locals => { :p => podcast["guest"] }) %>
+                <% if p.has_key?("guest") %>
+                    <div class="columns small-12 medium-6" style="padding-right: 1rem;">
+                        <%= partial("partials/snippets/person", :locals => { :p => p["guest"] }) %>
                     </div>
                 <% end %>
-                <% if podcast.has_key?("author") %>
+                <% if p.has_key?("author") %>
                     <div class="columns small-12 medium-6">
-                        <%= partial("partials/snippets/person", :locals => { :p => podcast["author"] }) %>
+                        <%= partial("partials/snippets/person", :locals => { :p => p["author"] }) %>
                     </div>
                 <% end %>
             </aside>
@@ -104,7 +104,7 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
             <article>
                 <div class="section--body group content-dynamic"><%= Kramdown::Document.new(p["post"]).to_html %></div>
                 <% if p.has_key?("transcript") %>
-                    <h3 class="headline-5 spaced-out">Episode Transcript</h3>
+                    <h3 class="headline-6 spaced-out group">Episode Transcript</h3>
                     <div class="section--body group content-dynamic"><%= Kramdown::Document.new(p["transcript"]).to_html %></div>
                 <% end %>
                 <div class="callout--gray-light">
