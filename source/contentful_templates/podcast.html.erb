@@ -72,6 +72,18 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
             <% if p.has_key?("soundcloud_embed") %>
                 <p><%= p["soundcloud_embed"] %></p>
             <% end %>
+            <aside class="row collapse group">
+                <% if p.has_key?("guest") %>
+                    <div class="columns small-12 medium-6" style="padding-right: 1rem;">
+                        <%= partial("partials/snippets/person", :locals => { :p => p["guest"] }) %>
+                    </div>
+                <% end %>
+                <% if p.has_key?("author") %>
+                    <div class="columns small-12 medium-6">
+                        <%= partial("partials/snippets/person", :locals => { :p => p["author"] }) %>
+                    </div>
+                <% end %>
+            </aside>
             <% if p.has_key?("summary") %>
                 <div class="lead group">
                     <%= Kramdown::Document.new(p["summary"]).to_html %>
@@ -89,10 +101,11 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
     </div>
     <div class="row">
         <div class="columns small-12 large-8">
-            <article class="content-dynamic">
-                <div class="section--body group"><%= Kramdown::Document.new(p["post"]).to_html %></div>
+            <article>
+                <div class="section--body group content-dynamic"><%= Kramdown::Document.new(p["post"]).to_html %></div>
                 <% if p.has_key?("transcript") %>
-                <div class="section--body group"><%= Kramdown::Document.new(p["transcript"]).to_html %></div>
+                    <h3 class="headline-6 spaced-out group">Episode Transcript</h3>
+                    <div class="section--body group content-dynamic"><%= Kramdown::Document.new(p["transcript"]).to_html %></div>
                 <% end %>
                 <div class="callout--gray-light">
                      <% if p.has_key?("guest") %>
@@ -138,8 +151,12 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
         </div>
         <aside class="columns small-12 large-4 section--sidebar">
             <div class="group">
-                <p><strong>Subscribe</strong> to the <em>Healthcare Innovator's Podcast</em> in your favorite app.</p>
-                <%= partial "innovation/partials/subscribe" %>
+                <% unless p.has_key?("category_brand") && p.category_brand == true %>
+                    <p><strong>Subscribe</strong> to the <em>Healthcare Innovator's Podcast</em> in your favorite app.</p>
+                    <%= partial "innovation/partials/subscribe" %>
+                <% else %>
+                    <p>Subscribe to the <a href="https://fourbyfourhealth.podbean.com/" title="Subscribe">4x4 Health Podcast on Podbean</a>.</p>
+                <% end %>
             </div>
             <div class="group">
                 <% filtered_webinars.take(1).each do | id, webinar_entry | %>
