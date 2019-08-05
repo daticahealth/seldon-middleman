@@ -91,6 +91,9 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
         <div class="columns small-12 large-8">
             <article class="content-dynamic">
                 <div class="section--body group"><%= Kramdown::Document.new(p["post"]).to_html %></div>
+                <% if p.has_key?("transcript") %>
+                <div class="section--body group"><%= Kramdown::Document.new(p["transcript"]).to_html %></div>
+                <% end %>
                 <div class="callout--gray-light">
                      <% if p.has_key?("guest") %>
                            <h3 class="headline-5 text-center">Today's Guest</h3>
