@@ -60,8 +60,15 @@ current_cta = data.site.cta.to_a.sort_by{ |id, cta| cta['_meta']['updated_at'] }
                 <div class="row group row--gutter-small">
                     <div class="columns medium-3 large-3 show-for-medium">
                         <% if post.has_key?("featured_image") %>
+                            <% 
+                                if post.categories_blog != "Sansoro Health" && post.has_key?("share_image")
+                                    feat_img = post["featured_image"]["url"]
+                                else
+                                    feat_img = post["share_image"]["url"]
+                                end
+                             %>
                             <a href="/blog/<%= post["slug"] %>" title="Read this post">
-                                <img class="lozad thumbnail" src="https://images.ctfassets.net/189dvqdsjh46/10BSgwANXD4R7OKMT1j20G/3ba1fd760173695d4e4fb9ec4199fab9/loader-square.png" data-src="<%= post["featured_image"]["url"] %>?fit=thumb&fm=jpg&fl=progressive&w=300&h=300" alt="<%= post["featured_image"]["title"] %>">
+                                <img class="lozad thumbnail" src="https://images.ctfassets.net/189dvqdsjh46/10BSgwANXD4R7OKMT1j20G/3ba1fd760173695d4e4fb9ec4199fab9/loader-square.png" data-src="<%= feat_img %>?fit=thumb&fm=jpg&fl=progressive&w=300&h=300" alt="<%= post["featured_image"]["title"] %>">
                             </a>
                         <% end %>
                     </div>
