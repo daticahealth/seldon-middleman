@@ -35,6 +35,11 @@
             height: $thing-l * 1.5;
             // vertical-align: middle;
         }
+        &--xxlarge {
+            width:  $thing-l * 2;
+            height: $thing-l * 2;
+            // vertical-align: middle;
+        }
     }
     // for inline icons, extra space before/after next to text. Default .menu behavior from ZF targets things inside menu elements.
     &-before {

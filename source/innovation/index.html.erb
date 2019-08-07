@@ -62,64 +62,8 @@ customCSS: "innovation"
 
     <%= partial "/partials/section-promos/leadership-gallery" %>
 
-    <% sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse! %>
-    <section data-magellan-target="discoverInnovation" id="discoverInnovation" class="lozad discover--podcast section-article container-color--dark-alt container-image--middle" data-background-image="https://images.ctfassets.net/189dvqdsjh46/19d5iulqaYg8ACWcYQ6Im6/3f883ec8f77add5b22a497e3b3d63e6d/art-sound-bars-purple.svg">
-        <div class="row align-center collapse">
-            <div class="columns small-12 large-10">
-                <h3 class="innovation--section-header">Healthcare Innovators <span class="innovation--category">Podcast</span></h3>
-                <% sorted_podcasts.take(1).each do | id, podcast | %>
-                    <div class="row innovation--podcast-entry">
-                        <div class="columns small-12 medium-3">
-                            <% if podcast.has_key?("guest") %>
-                                <% if podcast["guest"].has_key?("fullname") %>
-                                    <div class="person-vertical show-for-medium">
-                                        <a class="" href="/innovation/<%= podcast["slug"] %>" title="Listen to this episode now">
-                                            <img src="https://images.ctfassets.net/189dvqdsjh46/7dsvS1pbuo2etN908phqGD/4acf3ebbf566f0f31cf74882f6faa3e8/loader-disc.svg" data-src="<%= podcast["guest"]["profile_pic"]["url"] %>?fit=thumb&w=400&h=400&f=face&q=45" class="lozad avatar circle group--sm" alt="<%= podcast["guest"]["fullname"] %>">
-                                        </a>
-                                        <div class="text-center">
-                                            <div class="person-name"><%= podcast["guest"]["fullname"] %></div>
-                                            <div class="person-title"><%= podcast["guest"]["role"] %></div>
-                                        </div>
-                                    </div>
-                                <% end %>
-                            <% end %>
-                        </div>
-                        <div class="columns small-12 medium-9">
-                            <h3 class="headline-5">
-                                <a class="link--bright" href="/innovation/<%= podcast["slug"] %>" title="Listen to this episode now"><%= podcast["title"] %></a>
-                            </h3>
-                            <div class="person hide-for-medium">
-                                <%= partial("partials/snippets/person", :locals => { :p => podcast["guest"] }) %>
-                            </div>
-                            <p>
-                                <% if podcast.has_key?("pub_date") %>
-                                    <span class="pub-date"><%= podcast['pub_date'].strftime('%B %-d, %Y') %></span>
-                                <% end %>
-                                <% if podcast.has_key?("tags") %>
-                                    <% podcast["tags"].each do |tag| %>
-                                        <% if tag.has_key?("tag_full") %>
-                                            <span class="label info round faded"><%= tag["tag_full"] %></span>
-                                        <% end %>
-                                    <% end %>
-                                <% end %>
-                            </p>
-                            <% if podcast.has_key?("soundcloud_embed") %>
-                                <div class="media-object">
-                                    <%= podcast['soundcloud_embed'] %>
-                                </div>
-                            <% end %>
-                            <% if podcast.has_key?("summary") %>
-                                <div class="innovation--podcast-entry__summary">
-                                    <%= Kramdown::Document.new(podcast["summary"]).to_html %>
-                                    <a class="button hollow hollow-inverted" href="/innovation/<%= podcast["slug"] %>" title="Listen now">Listen now <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                </div>
-                            <% end %>
-                        </div>
-                    </div>
-                <% end %>
-                <p class="text-center"><a class="link--bright" href="/podcast/">See More Podcasts <i class="fa fa-angle-right" aria-hidden="true"></i></a></p>
-            </div>
-        </div>
-    </section>
+    <div data-magellan-target="discoverInnovation" id="discoverInnovation">
+        <%= partial "/partials/section-promos/podcast" %>
+    </div>
 </div>
 <%= partial "/partials/section-promos/dhsf-video", :locals => { :align => "left" } %>
