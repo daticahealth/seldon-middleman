@@ -7,18 +7,21 @@ article.content-dynamic {
 // these article-level overrides for unstyled content from CMS (contentful). Apply this class on <article> or other spots you need these styles.
 .content {
     &-dynamic {
-        // h2, h3, h4, h5 {
-        //     margin-top: 1.5em;
-        // }
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 2em; // add a bit of space above headers, overridden by the statement below when headers are siblings
+        }
+        & h2 + h3, & h3 + h4, & h4 + h5 {
+            margin-top: 0.3em;
+        }
         // & > :first-child h2 {
         //     margin-top: 0;
         // }
-        p + h2, p + h3, p + h4, 
-        ul + h2, ul + h3, ul + h4, 
-        ol + h2, ol + h3, ol + h4, 
-        table + h2, table + h3, table + h4 { // add a bit of space above headers preceded by <p>
-            margin-top: 1em; // type stuff in content-dynamic is em units - relative units valid here
-        }
+        // p + h2, p + h3, p + h4, 
+        // ul + h2, ul + h3, ul + h4, 
+        // ol + h2, ol + h3, ol + h4, 
+        // table + h2, table + h3, table + h4 { // add a bit of space above headers preceded by <p>
+        //     margin-top: 1em; // type stuff in content-dynamic is em units - relative units valid here
+        // }
         p img {
             &:not([class]) { // images in p without classes
                 min-width: 100%;

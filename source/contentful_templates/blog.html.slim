@@ -81,7 +81,7 @@ ruby:
         header
           .subhead--spaced.headline-6
             = partial "/partials/snippets/pubdate", :locals => p
-          h1.headline-3.headline-bold = p.title
+          h1.headline-3.text-bold = p.title
           - if p["author"].has_key?("profile_pic")
             = partial("partials/snippets/person", :locals => { :p => p["author"] })
         = partial "/partials/snippets/share", :locals => { :p => p, :classes => "show-for-xlarge vertical" }
