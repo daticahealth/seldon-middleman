@@ -1,5 +1,13 @@
+<% 
+art_4x4 = 'https://images.ctfassets.net/189dvqdsjh46/OCqNIzzZeoJWSTjECEZFp/8c84b526bba5c19e748db5d51568d876/podcast-4x4-small.jpg'
+art_hip = 'https://images.ctfassets.net/189dvqdsjh46/62u8jLbOQyiVfPMZFT8MvY/7a5cc175ff0f418c4ee94f0b26430a2a/podcast-hip-small.jpg'
+unless podcast.has_key?("category_brand") && podcast.category_brand == true
+    brand = ' <img class="float-right icon-size--medium lozad" src=' + loader_square_svg + ' data-src="' + art_hip + '?w=80" alt="Healthcare Innovators Podcast" width="64" />' #' <span class="label secondary">Healthcare Innovators</span> '
+else
+    brand = ' <img class="float-right icon-size--medium lozad" src=' + loader_square_svg + ' data-src="' + art_4x4 + '?w=80" alt="4x4 Health Podcast" width="64" />' #' <span class="label success">4x4 Health</span> '
+end
+%>
 <% if locals.key?(:hideSummary) && hideSummary == true %> <!-- compact view -->
-
     <span class="blog-date color-talk-alt">
         <% if locals.key?(:itemLabel) %>
             <%= itemLabel %>
@@ -20,6 +28,7 @@
                     <%= podcast['pub_date'].strftime('%B %-d, %Y') %>
                 <% end %>
             </span>
+            <%#= brand %>
             <h4 class="headline-5"><a class="text-bold" href="/innovation/<%= podcast["slug"] %>/"><%= podcast["title"] %></a></h4>
             <% if podcast.has_key?("guest") && podcast["guest"].has_key?("fullname") %>
                 <a class="" href="/innovation/<%= podcast["slug"] %>" title="Listen to this episode now">

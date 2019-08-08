@@ -1,28 +1,55 @@
 ---
-title: "Healthcare Innovators Podcast from Datica"
+title: "Datica Podcasts | Home of the 4x4 Health and Healthcare Innovators Podcasts"
 summary: "How does healthcare innovate? Datica explores this topic in a new series of interviews with several of the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
 author: "Datica, Inc."
 tags: "HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
-date: "January 1, 2017"
 share_image: "https://images.ctfassets.net/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/bc7605c8d6702518cedcedf7cf0de3bb/podcast-art-share-2018.png"
-header: "The Healthcare Innovators Podcast"
+header: "Datica Podcasts"
 subheader: "How does healthcare innovate? Datica explores this topic in a new series of interviews with several of the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
 layout: basic
-feed_url: "https://datica.com/podcast/feed.xml"
+feed_url: "https://fourbyfourhealth.podbean.com/feed.xml"
 ---
 <% 
+    today = DateTime.now
+    current_page.data.date = today.strftime('%B %-d, %Y')
     sorted_webinars = data.site.webinars.to_a.sort_by{ |id, webinars| webinars['event_date'] }.reverse!
     sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse!
     sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
     sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
+    art_4x4 = 'https://images.ctfassets.net/189dvqdsjh46/OCqNIzzZeoJWSTjECEZFp/8c84b526bba5c19e748db5d51568d876/podcast-4x4-small.jpg'
+    art_hip = 'https://images.ctfassets.net/189dvqdsjh46/62u8jLbOQyiVfPMZFT8MvY/7a5cc175ff0f418c4ee94f0b26430a2a/podcast-hip-small.jpg'
 %>
-<div class="container-color--dark-alt container-image--bottom" data-interchange="[https://images.ctfassets.net/189dvqdsjh46/5OUXo4nQ6kaqAsqE8McqIu/fcd84d36da7ad0c4b91ecb9cadb7ce87/art-sound-bars-bg.svg, small]">
+<div class="container-color--dark-alt container-image--middle lozad" data-background-image="/public/img/art/art-sound-bars-purple.svg">
     <%= partial "partials/head/header", :locals => { :style => "light" } %>
     <section class="section-article">
-        <div class="row">
-            <div class="columns small-12 medium-8 featured-post">
-                <h1 class="headline-3 headline--inverted"><%= current_page.data.header %></h1>
-                <p class="lead"><%= current_page.data.subheader %></p>
+        <div class="row align-middle align-center">
+            <div class="columns small-12 medium-6 large-4">
+                <h1 class="headline-2 text-white text-bold text-right">Datica Podcasts</h1>
+            </div>
+            <div class="columns small-12 medium-6 large-8">
+                <div class="media-object group">
+                    <div class="media-object-section">
+                        <a href="#podcast-4x4" title="view podcast">
+                         <img class="float-right icon-size--xxlarge lozad" src="<%= loader_square_svg %>" data-src="<%= art_4x4 %>?w=150" alt="4x4 Health Podcast" width="64" />
+                         </a>
+                    </div>
+                    <div class="media-object-section">
+                        <h4 class="headline-4">4×4 Health Podcast</h4>
+                        <p>The 4×4 Health defines the conversation around Health IT. Data is revolutionizing healthcare and we are tracking this revolution in real-time with the actual disrupters of health informatics.</p>
+                    </div>
+                </div>
+                <div class="media-object">
+                    <div class="media-object-section">
+                        <a href="#podcast-hip" title="view podcast">
+                         <img class="float-right icon-size--xxlarge lozad" src="<%= loader_square_svg %>" data-src="<%= art_hip %>?w=150" alt="Healthcare Innovators Podcast" width="64" /
+                         >
+                         </a>
+                    </div>
+                    <div class="media-object-section">
+                        <h4 class="headline-4">The Healthcare Innovators Podcast</h4>
+                        <p>Datica explores the secrets of innovators in healthcare in a new series of interviews with several of the industry's top thinkers and doers.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -62,10 +89,6 @@ feed_url: "https://datica.com/podcast/feed.xml"
             </div>
         </div>
         <aside class="columns small-12 large-4 section--sidebar">
-            <div class="group text-center">
-                <p><%= inline_svg("subscribe-badge", class: "icon-size--xlarge") %></p>
-                <p><%= partial "innovation/partials/subscribe" %></p>
-            </div>
             <%  sorted_webinars.take(1).each do | id, webinar_entry |%>
               <%= partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry, :card_style => "vertical" } %>
             <% end %>
@@ -74,14 +97,54 @@ feed_url: "https://datica.com/podcast/feed.xml"
     </div>
 </section>
 <section id="podcasts" class="section-article container-color--gray-light">
-    <div class="row">
-        <div class="columns small-12 large-8">
-            <% sorted_podcasts[1...-1].each do | id, podcast | %>
-                <%= partial("partials/snippets/podcast-summary", :locals => { :podcast => podcast, :hideSummary => false }) %>
+     <div class="row">
+        <div id="podcast-4x4" class="columns small-12 large-8">
+            <div class="card drop group--2x">
+                <div class="card-section">
+                    <div class="media-object">
+                        <div class="media-object-section">
+                             <img class="lozad" src="<%= loader_square_svg %>" data-src="<%= art_4x4 %>?w=320" alt="4x4 Health Podcast" width="160" />
+                        </div>
+                        <div class="media-object-section">
+                            <h4 class="headline-4">4×4 Health Podcast</h4>
+                            <p>The 4×4 Health defines the conversation around Health IT. Data is revolutionizing healthcare and we are tracking this revolution in real-time with the actual disrupters of health informatics.</p>
+                            <p>Subscribe to the <a href="https://fourbyfourhealth.podbean.com/" title="Subscribe">4x4 Health Podcast on Podbean</a>.</p>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% sorted_podcasts[1...-1].each do | id, podcast | %>
+                <% if podcast.has_key?("category_brand") && podcast.category_brand == true %>
+                    <%= partial("partials/snippets/podcast-summary", :locals => { :podcast => podcast, :hideSummary => false }) %>
+                <% end %>
             <% end %>
-            <hr>
-            <%= partial "partials/snippets/to-top" %>
+            <%= partial "partials/snippets/button", :locals => { :label => "Back to Top", :url => "#top", :button_classes => "button hollow hollow-invisible group--2x", :icon => "icon-chevron-up", :icon_align => "right", :expand => false } %>
+            
+            <div id="podcast-hip" class="card drop group--2x">
+                <div class="card-section">
+                    <div class="media-object">
+                        <div class="media-object-section">
+                             <img class="lozad" src="<%= loader_square_svg %>" data-src="<%= art_hip %>?w=320" alt="Healthcare Innovators Podcast" width="160" />
+                        </div>
+                        <div class="media-object-section">
+                            <h4 class="headline-4">The Healthcare Innovators Podcast</h4>
+                            <p>Datica explores the secrets of innovators in healthcare in a new series of interviews with several of the industry's top thinkers and doers.</p>
+                            <p><strong>Subscribe</strong> to the <em>Healthcare Innovator's Podcast</em> in your favorite app.</p>
+                            <%= partial "innovation/partials/subscribe" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% sorted_podcasts[1...-1].each do | id, podcast | %>
+                <% unless podcast.has_key?("category_brand") && podcast.category_brand == true %>
+                    <%= partial("partials/snippets/podcast-summary", :locals => { :podcast => podcast, :hideSummary => false }) %>
+                <% end %>
+            <% end %>
+
+            <%= partial "partials/snippets/button", :locals => { :label => "Back to Top", :url => "#top", :button_classes => "button hollow hollow-invisible group--2x", :icon => "icon-chevron-up", :icon_align => "right", :expand => false } %>
         </div>
         <aside class="columns small-12 large-4 section--sidebar" data-sticky-container>
             <div class="sticky" data-sticky data-options="anchor: podcasts; stickyOn: large;">

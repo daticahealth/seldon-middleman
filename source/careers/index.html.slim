@@ -36,6 +36,9 @@ scss:
         color: $minty;
       }
     }
+    .button.tertiary {
+      color: black;
+    }
   }
   .text-minty {
     color: $minty;
@@ -122,20 +125,24 @@ scss:
       a.pulse href="#jobs" title="Apply today"
         = inline_svg("icon-angle-down-large", class: "icon-size--large waypoint-icon")
 
-  .strip.strip-small.strip-bright
-  section.section-article--lg.bg-gray-2#jobs
-    .row.align-center.align-middle
-      .columns.small-12.medium-6
-        h3.headline-2.text-bold.text-minty Open Positions
-        p.lead Datica is always looking for talented new team members who are looking for tough challenges. If you are curious about career opportunities with Datica, please email <a href="mailto:nikki.kent@sansorohealth.com">Nikki Kent</a>.
-      .columns.small-12.medium-6
-        | <div id="BambooHR" class="group"><script src="//datica.bamboohr.com/js/jobs2.php" type="text/javascript"></script><div id="BambooHR-Footer">Powered by<a href="http://www.bamboohr.com" target="_blank" rel="external"><img src="//www.bamboohr.com/img/footer-logo.png" alt="BambooHR - HR software"/></a></div></div>
-        p.text-small.text-italic Note: the positions listed show locations because of the way our HR software works. All positions are indeed remote. =)
-  .strip.strip-small.strip-bright
-  section.bg-gray-3
-    .row.full-width.align-middle.grayscale
-      .columns.small-12.large-6.buddies.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4YbBiqOhl4msCGXhNWms2W/0c2e4a7b3c81d67983cbc263f9891c8c/datica_pets_1b.jpg?fm=jpg&fl=progressive&w=1500&q=60"
-        /.headline-5.spaced-out.nomargin Datica
-        h4.headline-1.huge-header.nomargin.text-minty.text-center office
-      .columns.small-12.large-6.buddies.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4LZaErm7Ptk5E0iwcPkn7C/31186719534e2e9713c89a2b1f600ff5/datica_pets_2b.jpg?fm=jpg&fl=progressive&w=1500&q=60"
-        h4.headline-1.huge-header.nomargin.text-minty.text-center friends
+.strip.strip-small.strip-bright
+section.section-article--lg.bg-gray-2#jobs
+  .row.align-center.align-middle
+    .columns.small-12.medium-6
+      h3.headline-2.text-bold.text-minty Open Positions
+      p.lead Datica is always looking for talented new team members who are looking for tough challenges. If you are curious about career opportunities with Datica, please email <a class="link--white" href="mailto:nikki.kent@sansorohealth.com">Nikki Kent</a>.
+
+      = partial "partials/snippets/button", :locals => { :label => "Check for Open Positions", :url => "https://workforcenow.adp.com/jobs/apply/posting.html?client=SANSORO&amp;ccId=19000101_000001&amp;type=MP&amp;lang=en_US", :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right", :expand => false }
+
+    .columns.small-12.medium-6
+
+      / | <div id="BambooHR" class="group"><script src="//datica.bamboohr.com/js/jobs2.php" type="text/javascript"></script><div id="BambooHR-Footer">Powered by<a href="http://www.bamboohr.com" target="_blank" rel="external"><img src="//www.bamboohr.com/img/footer-logo.png" alt="BambooHR - HR software"/></a></div></div>
+      / p.text-small.text-italic Note: the positions listed show locations because of the way our HR software works. All positions are indeed remote. =)
+.strip.strip-small.strip-bright
+section.bg-gray-3
+  .row.full-width.align-middle.grayscale
+    .columns.small-12.large-6.buddies.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4YbBiqOhl4msCGXhNWms2W/0c2e4a7b3c81d67983cbc263f9891c8c/datica_pets_1b.jpg?fm=jpg&fl=progressive&w=1500&q=60"
+      /.headline-5.spaced-out.nomargin Datica
+      h4.headline-1.huge-header.nomargin.text-minty.text-center office
+    .columns.small-12.large-6.buddies.lozad.container-image--center data-background-image="https://images.ctfassets.net/189dvqdsjh46/4LZaErm7Ptk5E0iwcPkn7C/31186719534e2e9713c89a2b1f600ff5/datica_pets_2b.jpg?fm=jpg&fl=progressive&w=1500&q=60"
+      h4.headline-1.huge-header.nomargin.text-minty.text-center friends

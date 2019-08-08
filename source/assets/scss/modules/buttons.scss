@@ -29,7 +29,7 @@
         @include gradient(to bottom, white 0%, $gray-12 100%);
         // @include shadow-anarchy(inset 0 -1px 2px 0 #B3C8D6);
         // background-color: $gray-12;
-        color: darken($color_product, 20%) !important; // not sure what .container rule is overriding this, it's lower in the OOO
+        color: black !important; // not sure what .container rule is overriding this, it's lower in the OOO
         &:hover, &:active, &:focus {
             color: black !important;
             background-color: white;

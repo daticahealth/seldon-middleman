@@ -151,14 +151,6 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
         </div>
         <aside class="columns small-12 large-4 section--sidebar">
             <div class="group">
-                <% unless p.has_key?("category_brand") && p.category_brand == true %>
-                    <p><strong>Subscribe</strong> to the <em>Healthcare Innovator's Podcast</em> in your favorite app.</p>
-                    <%= partial "innovation/partials/subscribe" %>
-                <% else %>
-                    <p>Subscribe to the <a href="https://fourbyfourhealth.podbean.com/" title="Subscribe">4x4 Health Podcast on Podbean</a>.</p>
-                <% end %>
-            </div>
-            <div class="group">
                 <% filtered_webinars.take(1).each do | id, webinar_entry | %>
                 <%= partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry, :card_style => "vertical" } %>
                 <% end %>

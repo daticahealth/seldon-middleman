@@ -122,6 +122,9 @@ section.section-article.bg-gray-12.drop-inset--v#education
         h4.headline-4.margin-bottom-small
           a href=item.url title=item.title data-track-category="education" data-track-id="resources_#{item.slug}" = item.title
         p = item.desc
+
+/= partial "/partials/section-promos/podcast"
+
 section.section-article.bg-white#recent
   = partial "partials/content/recent-items"
 
