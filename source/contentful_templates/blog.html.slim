@@ -3,7 +3,7 @@ layout: company
 ogType: article
 sharer: true
 customCSS: "blog-detail"
-customJS: "/public/js/article.js"
+customJS: "/public/js/academy-article.js, /public/js/contents.js, /public/js/article.js"
 change_frequency: daily
 ---
 ruby:
@@ -13,6 +13,9 @@ ruby:
 
   share_image_fallback = "https://images.ctfassets.net/189dvqdsjh46/3Ll0a3gLi8wKG8A84mUokm/fabae03bd9e4da4e60173d4c2fe89a30/blog-share-default.png"
 
+  if p.post.length > 15000
+     longass = true
+  end
   if p.has_key?("featured_image")
       post_featured_image = cf_asset_protocol + p["featured_image"]["url"]
       post_featured_image_title = p["featured_image"]["title"]
@@ -43,6 +46,7 @@ ruby:
   else
       current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   end
+
 / scss:
   $bg-height: calc(8rem + 16vw);
   @media screen and (min-width: 64em) {
@@ -83,6 +87,8 @@ ruby:
         = partial "/partials/snippets/share", :locals => { :p => p, :classes => "show-for-xlarge vertical" }
         - if p.has_key?("blog_lead")
           #postLead.lead.content-dynamic = Kramdown::Document.new(p["blog_lead"]).to_html
+        - if longass == true
+          #toc-top.group.article-toc.hide-for-medium-large
         .content-dynamic.group
           - if p.has_key?("featured_person")
             = partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" })
@@ -120,6 +126,8 @@ ruby:
     aside.post-sidebar.columns.small-12.large-4 style="margin-top: 1rem; opacity: 1;" data-sticky-container=""
       .sticky data-options=("topAnchor: 525; stickyOn: xlarge; marginTop: 3;") data-btm-anchor="cta" data-sticky=""
         .pad--lg
+          - if longass == true
+            #toc-sidebar.article-toc.show-for-medium-large.group
           .group
             = partial "blog/partials/blog-subscription-simple", :locals => { :color => "gray" }
           div
