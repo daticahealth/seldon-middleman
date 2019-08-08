@@ -89,7 +89,7 @@ ruby:
           #postLead.lead.content-dynamic = Kramdown::Document.new(p["blog_lead"]).to_html
         - if longass == true
           #toc-top.group.article-toc.hide-for-medium-large
-        .content-dynamic.group
+        #content.content-dynamic.group
           - if p.has_key?("featured_person")
             = partial("partials/snippets/person-vertical-simple", :locals => { :p => p["featured_person"], :classes => "float-right-on-medium" })
           = Kramdown::Document.new(p["post"]).to_html

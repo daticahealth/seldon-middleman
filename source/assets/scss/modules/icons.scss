@@ -14,13 +14,13 @@
         &--small { // inline with content
             width:  $thing-s;
             height: $thing-s;
-            @media all and (max-width: 40rem){
-                height: auto;
-            }
+            // @media all and (max-width: 40rem){
+            //     width: auto;
+            //     height: auto;
+            // }
             // vertical-align: middle;
         }
         &--medium {
-            width:  $thing-m;
             width:  $thing-m;
             height: $thing-m;
             // vertical-align: middle;

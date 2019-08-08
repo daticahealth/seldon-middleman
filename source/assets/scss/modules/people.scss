@@ -16,9 +16,10 @@
 
 // media object: http://foundation.zurb.com/sites/docs/media-object.html
 .media-object{
-    img{
+    img {
         @include breakpoint(medium down) {
             max-width: 4rem;
+            max-height: 4rem;
         }
     }
 }
