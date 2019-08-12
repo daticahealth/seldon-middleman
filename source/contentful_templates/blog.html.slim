@@ -149,4 +149,14 @@ ruby:
 
 = partial "partials/content/tweet-styling"
 
-/.lozad.container-image--fill data-background-image="#{post_featured_image}?w=1800&h=400"
+- if p.categories_blog == "Sansoro Health"
+  // webp polyfill for Safari and IE11 - https://github.com/chase-moskal/webp-hero
+  script src="https://unpkg.com/webp-hero@0.0.0-dev.21/dist-cjs/polyfills.js"
+  script src="https://unpkg.com/webp-hero@0.0.0-dev.21/dist-cjs/webp-hero.bundle.js"
+
+  javascript:
+    var webpMachine = new webpHero.WebpMachine()
+    webpMachine.polyfillDocument()
+
+
+//.lozad.container-image--fill data-background-image="#{post_featured_image}?w=1800&h=400"
