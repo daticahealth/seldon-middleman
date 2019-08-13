@@ -29,7 +29,7 @@ subnav:
     title: "Pricing"
     slug: "pricing"
   -
-    title: "Get Started"
+    title: "Schedule a Demo"
     slug: "start"
 stats_list:
   - 
@@ -83,7 +83,7 @@ section.masthead.bg-dark.bg-purple-bp-grad.product-ccms.relative id=current_page
           .media-object-section.media-object--info.main-section.align-self-middle
             h1.headline-3.text-bold.margin-bottom-sm Cloud Compliance Management System
             p.lead Know the precise compliance state of your cloud environments
-            = partial "partials/snippets/button", :locals => { :label => "Get Started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-top", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+            = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-top", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
     = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/cloud-compliance/" }
     = inline_svg("products-hexagons-color", class: "z-5 art-accent step-1")
@@ -190,7 +190,7 @@ section.bg-dark.bg-purple-bp-grad.product-ccms
       .columns.small-12.medium-8
         h2.headline-3.text-light Don't just guess—<strong>know</strong> the precise compliance state of your cloud environments with Datica CCMS.
     .waypoint
-      h4.headline-5.spaced-out Get Started Today
+      h4.headline-5.spaced-out Schedule a Demo
       a.pulse.link-white-plain href="##{current_page.data.subnav.last.slug}" title="Inquire Today"
         = inline_svg("icon-angle-down-large", class: "icon-size--large waypoint-icon svg-color--white")
 
@@ -268,8 +268,9 @@ section.section-article.bg-gray-12 id=current_page.data.subnav[4].slug data-mage
       p.lead The compliant configuration states of cloud services should not be proprietary. Transparency is fundamental to healthcare's transformation. Every service monitored by the CCMS will be publicly documented to help empower healthcare developers.
       p.group In a post-cloud world, configuring a service in a continual state is the goal. The hard part is simply knowing the proper configuration state mapped to a specific control. Modern compliance extends way beyond simple security group management, which is what existing tools do. Available today are configuration states of the three most popular managed database services across the three main cloud service providers. Each state has been mapped to appropriate HITRUST CSF controls and audited.
       h2.headline-3 Simple, straightforward pricing
-      p.lead Datica CCMS is $1,000/mo. per service type + $10/mo. per instance
-      p A 'service' is any supported cloud provider service, like AWS RDS, Azure Cosmos DB, or Google Cloud SQL
+      p.lead Datica CCMS is ($100/mo. per Service type + $1/mo. per instance)
+      p 
+        em A 'service' is any supported cloud provider service, like AWS RDS, Azure Cosmos DB, or Google Cloud SQL.
     .columns.small-12.medium-6.large-4
       ul.no-bullet
         li.group
@@ -299,8 +300,8 @@ section.bg-dark.bg-purple-bp-grad.product-ccms id=current_page.data.subnav[5].sl
   .section-article.container-image--center.lozad data-background-image=bg_image
     .row.align-center.align-middle.z-10.relative
       .columns.small-12.medium-6.large-5
-        h2.headline-3 Datica CCMS is coming in early 2019.
-        p.lead.group--2x Sign up to be notified of the release and to help prioritize service configurations. Registrants have the chance to be included in a private preview.
+        h2.headline-3 Cloud Compliance Management System is here.
+        p.lead.group--2x See the CCMS in action! Fill out this form and one of our product specialists will reach out to schedule your demo.
       #cta-form.columns.small-12.medium-large-6.large-4
         .callout.drop
           / h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
