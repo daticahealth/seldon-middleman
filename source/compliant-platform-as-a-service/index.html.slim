@@ -11,63 +11,6 @@ category: "compliance"
 collectionName: "products"
 collectionOrder: 1
 priority: "0.9"
-subnav:
-  -
-    title: "Overview"
-    slug: "overview"
-  -
-    title: "How it works"
-    slug: "how-it-works"
-  -
-    title: "Benefits"
-    slug: "benefits"
-  -
-    title: "Features"
-    slug: "features"
-  -
-    title: "Customer Proof"
-    slug: "proof"
-  -
-    title: "Get Started"
-    slug: "start"
-block_tech:
-  -
-    title: "The latest open source languages"
-    body: "Use the language which best fits your application. CPaaS doesn’t limit you to proprietary languages or a single option."
-    image: https://images.ctfassets.net/189dvqdsjh46/2Xobqxpydi888amgmq4cmM/16d678d421c6a4ca8ca5233bae9c8659/technology-langs.png
-  -
-    title: "The most popular databases in the world"
-    body: "Pick your preference. CPaaS handles the latest leading database technologies, and automatically configures them to be compliant."
-    image: https://images.ctfassets.net/189dvqdsjh46/2pR1WKIz4cwi0iIemKWwyo/339369b58e63c5dc4f19c429d0684237/technology-dbs.png
-  -
-    title: "Mature utilities"
-    body: "From workers to caching, CPaaS gives you the flexibility to configure your environments your way with useful add-ons."
-    image: https://images.ctfassets.net/189dvqdsjh46/6zN11I8ri8KSk8quuEa6K2/471fc533868669f2d09bf624fc79836f/technology-utilities.png
-  -
-    title: "Flexible Deployments"
-    body: "Use our buildpacks with a simple git push process, or configure your own process with mature tools. It's your choice."
-    image: https://images.ctfassets.net/189dvqdsjh46/67qGlOMbMQ842E4WSgOIOS/15ed7de57be473dcfa6a8563306c2720/technology-deployments.png
-block_benefits:
-  -
-    title: "A single, smart BAA"
-    feature: "Datica takes on all the risk via one smart Business Associate Agreement."
-    benefit: "You don't have to juggle multiple BAAs and align conflicting requirements—typically a huge headache!"
-  -
-    title: "Always up-to-date"
-    feature: "Datica is responsible for staying current with all regulation changes."
-    benefit: "You never have to spend time and money to stay current on government changes, which are hard to track."
-  -
-    title: "Save money on audits"
-    feature: "Datica absorbs the cost of third-party audits and HITRUST certification."
-    benefit: "It all comes down to audits, which can cost $100,000s across technologies, and are reoccurring annual costs."
-  -
-    title: "Prevent maintenance headaches"
-    feature: "Datica shoulders the responsibility of maintenance, updates, and patches."
-    benefit: "Every single update or patch you would do to your infrastructure needs to be done in a compliant way. The time-cost requirements add up quickly."
-  -
-    title: "Faster time-to-market"
-    feature: "Datica's tools immediately bring your organization to the starting line, enabling focus on business priorities."
-    benefit: "Do not waste precious months getting your infrastructure to a compliant state just to get started on your product or initiative."
 ---
 
 ruby:
@@ -80,8 +23,7 @@ ruby:
 
 / <style type="text/css">.product-bg {background-image: url(#{bg_image});}</style>
 
-
-section.masthead.bg-dark.bg-blue-green-grad.product-cpaas.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+section.masthead.bg-dark.bg-blue-green-grad.product-cpaas.relative
   / svg id="disc-1" class="shape-product"
   /   use xlink:href="#disc"
   .section-article--lg.relative.z-10
@@ -92,177 +34,34 @@ section.masthead.bg-dark.bg-blue-green-grad.product-cpaas.relative id=current_pa
             = inline_svg("cpaas-logo-w", class: "masthead-icon")
           .media-object-section.media-object--info.main-section.align-self-middle
             h1.headline-3.text-bold.margin-bottom-sm Compliant Platform as a Service
-            / .strip.strip-small.strip-cmi.margin-bottom-small
-            p.lead Build & deploy digital health apps on a compliant, hosted platform
-            = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
+    .row.align-center
+      .columns.small-12.medium-6.large-5
+        h3.headline-4 CPaaS is no longer available.
+        p Do you need compliant infrastructure, with the power of Kubernetes orchestration? 
+        = partial "partials/snippets/button", :locals => { :label => "Explore CKS", :url => "/compliant-kubernetes-service", :button_classes => "button button--light group step-2", :data_track_group => "compliance", :item_id => "get-cks", :icon => "icon-chevron-right", :icon_align => "right", :expand => "false" }
+        p Looking for complete cloud compliance, and real-time compliance monitoring?
+        = partial "partials/snippets/button", :locals => { :label => "Explore CCMS", :url => "/cloud-compliance-management-system", :button_classes => "button button--light step-2", :data_track_group => "compliance", :item_id => "get-ccms", :icon => "icon-chevron-right", :icon_align => "right", :expand => "false" }
   .art
-    = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/cloud-compliance/" }
+    / = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/cloud-compliance/" }
     = inline_svg("products-discs-color", class: "z-5 art-accent step-1")
     .art-bg-fill.art-light-blob
     .z-0.art-bg-fill.art-pattern.container-image-fill.lozad data-background-image=bg_image
-
 .strip.strip-small.strip-cpaas
 section.section-article.bg-gray-12
-  .row.align-center id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
-    .columns.small-12.large-8.text-center
-      h2.headline-4.nomargin Building On CPaaS
-      p.lead See how developers build compliant applications
-      - diagram = "https://images.ctfassets.net/189dvqdsjh46/1zXwr2EWQoMkIskG68y8Qk/89df4ee1ece27a1da8ff36205e2d4237/cpaas-overview-diagram-2019.png"
-      img.img-crisp.lozad.group--2x height="475" src="https://images.ctfassets.net/189dvqdsjh46/1GQpi4JS8UIYUMyykysou0/b83234d89d75e91da39de18885072dff/platform-overview-diagram-lqip.svg" alt="Datica Compliant Platform as a Service Diagram" data-src="#{diagram}?w=640" data-srcset="#{diagram}?w=640 800w, #{diagram}?w=1200 1000w, #{diagram} 1200w" /
   .row.align-center
-    .columns.small-12.medium-4.align-center.text-center
-      img.lozad.logo-size--xlarge.group--sm alt="Build" data-src="https://images.ctfassets.net/189dvqdsjh46/6p4qvRe42kM8mcAyGqiIwE/f713310dfcf586ba5251e15f958f92f8/build_flow_step_1.png?w=400" src="https://images.ctfassets.net/189dvqdsjh46/6p4qvRe42kM8mcAyGqiIwE/f713310dfcf586ba5251e15f958f92f8/build_flow_step_1.png?fm=jpg&w=200&q=10" /
-      h4.headline-4 Build
-      p.lead.nomargin Do what you do best. Build your product.
-      p.text-left You’re building a product for healthcare. Be it for bettering patient outcomes through analytics or creating the next great telemedicine application.
-    .columns.small-12.medium-4.align-center.text-center
-      img.lozad.logo-size--xlarge.group--sm alt="Push" data-src="https://images.ctfassets.net/189dvqdsjh46/3Ijl0wpXiEmAk6iGwYA6gW/f1b6a04e20e3d5d9477473dd0d7114e2/build_flow_step_2.png?w=400" src="https://images.ctfassets.net/189dvqdsjh46/3Ijl0wpXiEmAk6iGwYA6gW/f1b6a04e20e3d5d9477473dd0d7114e2/build_flow_step_2.png?fm=jpg&w=200&q=10" /
-      h4.headline-4 Push
-      p.lead.nomargin Git-based deployments via Datica CLI.
-      p.text-left You’re ready to get your application live. Whether you’re launching your first application or making a routine product release. Being HIPAA compliant is as easy as “git push”.
-    .columns.small-12.medium-4.align-center.text-center
-      img.lozad.logo-size--xlarge.group--sm alt="Compliance" data-src="https://images.ctfassets.net/189dvqdsjh46/3McfWoQ9Vmm4iciuu4oYe4/64ef01a47e5a89d1b31c45b8942bb076/build_flow_step_3.png?w=400" src="https://images.ctfassets.net/189dvqdsjh46/3McfWoQ9Vmm4iciuu4oYe4/64ef01a47e5a89d1b31c45b8942bb076/build_flow_step_3.png?fm=jpg&w=200&q=10" /
-      h4.headline-4 Manage Compliance
-      p.lead.nomargin Your app is now compliant on Datica.
-      p.text-left Once your application is live on Datica you’ll enjoy a suite of tools and products to manage your application’s environment. From intrusion detection to backups and much much more.
-
-section.section-article.container-image-fill.bg-gray-2.lozad data-background-image=bg_image id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+    .columns.small-12.medium-6
+      h3.headline-3.text-center.group Learn more about compliance
   .row.align-center
-    .columns.small-12.medium-10.large-8.text-center
-      h2.headline-5.spaced-out.faded Shared Responsibility
-      h3.headline-3.group Datica takes on compliance risks—so your team can focus on what it does best.
-      .group
-        = Kramdown::Document.new(data.site.videos['1PMH8PLuSa4rN56QdMOIvP'].custom_form).to_html
-  .row.align-center
-    .columns.small-12.large-8.text-center
-      h3.headline-3.group Compliance ownership is a liability, not an asset. Don't shoulder that risk by yourself.
-  .row.group--sm
-    .columns.small-6.medium-4.medium-offset-3
-      h5.headline-5.spaced-out.text--blue-glow What we do...
-    .columns.small-6.medium-5
-      h5.headline-5.spaced-out.text--green-glow ...to your benefit
-  - current_page.data.block_benefits.each do | item |
-    .row.group--sm
-      .columns.small-12.medium-3.text-right
-        h4.headline-5 = item.title
-      .columns.small-12.medium-4.text--blue-glow = item.feature
-      .columns.small-12.medium-5.text--green-glow = item.benefit
-  aside.section-article--sm.menu.button-group.align-center
-    = partial "partials/snippets/button", :locals => { :label => "Learn more about compliance in the cloud", :url => "/cloud-compliance#compliance-products", :button_classes => "button hollow-inverted", :data_track_group => "compliance", :item_id => "learn-compliance", :icon => "icon-chevron-left", :icon_align => "left" }
+    .columns.small-12.medium-8.large-5
+      .card.drop.group
+        .card-section
+          = partial "partials/cards/card-guide-horiz", :locals => { :entry => data.site.guides["6evss0t4I0IC2cQasg0K2O"] }
+    .columns.small-12.medium-8.large-5
+      .card.drop
+        .card-section
+          = partial "partials/cards/card-guide-horiz", :locals => { :entry => data.site.guides["2niXNAQR924CwM0YcOeo0C"] }
 
+      / = partial "partials/cards/card-guide-horiz", :locals => { :entry => data.site.guides['6evss0t4I0IC2cQasg0K2O' }
+      / p
+      / = partial "partials/cards/card-guide-horiz", :locals => { :entry => data.site.guides['2niXNAQR924CwM0YcOeo0C' }
 
-section#hitrust.bg-gray-12.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/2KLdtxvmcVlfytFTkDJcqF/5b67df6dc568cdc73ff36af5a70fb505/lab_tech_with_ipad.jpg?w=1400&h=800"
-  .section-article
-    .row.group
-      .columns.small-12
-        img.lozad.logo-size--large.group--sm data-src="https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/6438fbb76abda83deac6b9c810745891/hitrust-logo.svg" alt="HITRUST Certified"
-        h2.headline-4.nomargin HITRUST CSF Infrastructure
-    .row.align-center.small-up-1.large-up-3.row--card-grid
-      .column
-        .card.drop
-          .card-section
-            h4.headline-5 HITRUST is how healthcare does business
-            p The HITRUST Common Security Framework (CSF) has become the preferred way to prove compliance in healthcare. HITRUST certification helps establish and accelerate partnerships. If you plan to do business in healthcare at the speed of change, you need to be HITRUST CSF Certified.
-      .column
-        .card.drop
-          .card-section
-            h4.headline-5 Datica’s HITRUST CSF Certification gives you industry credibility overnight
-            p Datica leads the industry with the first, most complete HIPAA compliant cloud infrastructure. Datica CPaaS is HITRUST CSF Certified achieving the highest industry privacy and security standards across infrastructure providers.
-      .column
-        .card.drop
-          .card-section
-            h4.headline-5 You inherit Datica’s certification
-            p HITRUST allows for inheritance, which means if you are planning to obtain your own CSF certification, you can inherit Datica’s certificate to shortcut 40% of the time and costs of the process.
-/======= 
-section.section-article.container-color--white id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
-  .row.align-center.group
-    .columns.small-12.large-10
-      h3.headline-3.group.text-center Making critical technologies compliant
-      .row.align-center.small-up-1.medium-up-2
-        - current_page.data.block_tech.each do | block |
-          .column.group
-            h4.headline-5 = block.title
-            p = block.body
-            img.lozad.logo-size--medium alt="logos" data-src = block.image
-
-  #capabilities.row.align-center
-    .columns.small-12.large-8
-      h3.heading-3.text-center.group Powerful capabilities and features under the hood
-    .row.align-center
-      .columns.small-6.large-5
-        ul.list-check.text-larger
-          / li Quickly deploy IPSEC or TLS VPNs in minutes
-          li Nightly backups
-          li Proactive security patching. <em>Remember WannaCry? We were patched 1 month prior to it hitting.</em>
-          li Automation of network overlays across Docker containers
-      .columns.small-6.large-5
-        ul.list-check.text-larger
-          li Let’s Encrypt
-          li Self-service scaling of internal application and database services
-          li Proactive health checks
-          li Hot database swaps
-          li Enhanced service scheduling with zones
-
-section#ui.section-article.container-gray-11
-  .row.align-center
-    .columns.small-12.large-6
-      p.lead.text-center.group
-        | The Datica CPaaS web dashboard and CLI make building and managing your compliant apps easy—while maintaining security.
-  .row.align-center
-    .columns.small-12
-      - ui = 'https://images.ctfassets.net/189dvqdsjh46/3n9ldRiT84qkuwESeoo4Mq/14115cc48d5c89252553e2966ad5c16a/cpaas-mockup-2017-2x.png'
-      img.lozad.group height="792" src="https://images.ctfassets.net/189dvqdsjh46/5gKo0g0VXUiEQ8OcUIo4I4/fc98a3ed12ef581888974abed23fd97b/cpaas-mockup-2017-lqip.svg" data-src=ui+'?w=600' data-srcset="#{ui}?w=800 1000w, #{ui} 1400w"
-  .row.align-center
-    .columns.small-12.large-4
-      = inline_svg('icon-large-mobile-globe', class: "icon-size--large svg-color--blue")
-      h4.headline-5 The tools you need
-      p The web dashboard gives access to logs, performance statistics, cluster management, key variables and other info. 
-    .columns.small-12.large-4
-      = inline_svg('icon-datica-cli', class: "icon-size--large svg-color--blue")
-      h4.headline-5 Command Line Interface
-      p The Datica CLI gives engineers access to the control they need, with the tools they are used to.
-
-section.section-article.container-gray-12 id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
-  .text-center.group
-    h2.headline-3.text-light Build <strong>Breakthrough</strong> Healthcare Solutions
-  = partial "partials/content/video-quote", :locals => { :classes => "group--2x" }
-  - case_studies = data.site.collections.to_a.select { | id, cust | (id == "3HG3kERl1YaGiSoSiO6wEI") }
-  - case_studies.each do | id, cardgroup |
-    / .row.align-center
-    /   .columns.small-12.text-center.group
-    /     h2.headline-3 = cardgroup.title
-    .row.full-width.align-center.small-up-1.medium-up-2.large-up-3.xlarge-up-4
-      - cardgroup["related_entries"].each do | card |
-        - carditem = data.site.caseStudy[card.id]
-        - cust = data.site.customers[carditem.customer.id]
-        .column
-          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust } 
-/ .strip.strip-small.strip-cpaas
-/ section.bg-dark.bg-blue-green-grad.product-cpaas id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
-/   .section-article.container-image-fill.lozad data-background-image='https://images.ctfassets.net/189dvqdsjh46/6Xc3X2fJYIcwz2Sd5rwuRl/cd1c5622ec375bd87625e29c9dfdb07a/bg-circles.svg'
-/     .row.align-center
-/       .columns.small-12.medium-10.large-10.text-center
-/         h2.headline-3.group Talk to a Datica Compliance Expert Today.
-/         = partial "partials/snippets/button", :locals => { :label => "Ask about pricing", :url => "/pricing", :button_classes => "button hollow-inverted", :data_track_group => "compliance", :item_id => "get-ccms-footer" }
-
-
-.strip.strip-small.strip-cpaas
-section.bg-dark.bg-blue-green-grad.product-cpaas id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
-  .section-article.container-image--center.lozad data-background-image=bg_image
-    .row.align-center.align-middle
-      .columns.small-12.medium-6.large-5
-        h2.headline-3.group--2x Schedule a conversation to learn more about Datica Compliant Platform as a Service.
-        / = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'], :classes => "container-color--tint-50 " })
-        .callout.callout--dark-alpha
-          blockquote.quote--serif
-            | The Datica team is helping us solve critical infrastructure and scaling problems faster and more competently than we can in-house.
-          .media-object.card-person
-            .media-object-section
-              img.avatar.avatar--large.circle alt=("Jon Pearce") src="https://images.ctfassets.net/189dvqdsjh46/6IUA5I8suWEWI28YcIkMgm/134af76338fd572e45a9d4a716a8ddb7/headshot-zipnosis.jpg" /
-            .media-object-section.main-section.align-self-middle
-              h4.person-name Jon Pearce
-              p.person-title CEO, Zipnosis
-      #form.columns.small-12.medium-large-6.large-4
-        .callout.drop
-          / h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
-          = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
