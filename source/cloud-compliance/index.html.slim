@@ -39,42 +39,13 @@ section#top.show-for-large.section-article.pad-no-bottom.bg-gray-3.container-ima
 .strip-bright
 
 section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
-  .row
+  .row.align-center
     .columns.small-12.medium-10.large-8.group
       h2.headline-2 Compliance Solutions
-      p.lead Compliance on the cloud isn’t a one-size-fits-all kind of challenge. Maybe you don’t have the expertise, time, and resources to build your own compliant infrastructure and want a solution that picks up where your cloud provider leaves off.  Or, maybe you do and just need help with compliance monitoring and reporting for your complex environments.
-      p.lead Wherever you are on the road to healthcare compliance, we can help.
-  #product-lens.show-for-medium
-    .row.align-justify.text-center
-      .columns.small-12.medium-4 
-        h3.headline-3.text-italic.text-serif.nomargin.animate-me.step-1 Simplicity & Speed
-      .columns.small-12.medium-4 
-        h3.headline-3.text-italic.text-serif.nomargin.animate-me.step-5 Developer Control
-    .row
-      .column
-        .border-dash-line.animate-me.step-2
-    .row.align-justify.text-small
-      .columns.small-12.medium-4.animate-me.step-3
-        p Emerging digital health products need to demonstrate compliance and security credibility from day one and need a fast and simple way to start without taking on the burden of compliance.
-      .columns.small-12.medium-4.animate-me.step-4
-        p As your apps and services scale so does your need for orchestration and control. You now have the resources to take on more of the compliance responsibility yourself.
-      .columns.small-12.medium-4.animate-me.step-6
-        p You have building your compliant apps and infrastructure covered, but continuously maintaining and monitoring compliance of your complex environment may be beyond you.
-
-  .row.collapse.align-center.small-up-1.medium-up-3.large-up-3.row--card-grid
-    .column.relative.has-blob.animate-me.step-3
-      .card.container-color--trans.relative.z-5
-        .card-section
-          = inline_svg("cpaas-logo-w", class: "icon-size--xlarge")
-          .subhead--spaced CPaaS
-          h3.headline-4 Compliant Platform <br />as a Service
-          p.strip.strip-small.strip-cpaas
-          p.lead Build and deploy a digital health application on a compliant hosted platform
-          / p Datica Compliant Platform as a Service gives startups pre-packaged compliance and security. CPaaS makes hosting your compliant healthcare applications as simple as git push.
-        .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about CPaaS", :url => "/compliant-platform-as-a-service/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-cpaas", :icon => "icon-angle-right", :icon_align => "right" }
-      /.blob-color.blob-cpaas.z-auto data-glow="false"
-    .column.relative.has-blob.animate-me.step-4
+      p.lead.animate-me.step-3 Compliance on the cloud isn’t a one-size-fits-all kind of challenge. Maybe you don’t have the expertise, time, and resources to build your own compliant infrastructure and want a solution that picks up where your cloud provider leaves off.  Or, maybe you do and just need help with compliance monitoring and reporting for your complex environments.
+      p.lead.animate-me.step-4 Wherever you are on the road to healthcare compliance, we can help.
+  .row.collapse.align-center.row--card-grid
+    .column.small-12.medium-6.large-4.relative.has-blob.animate-me.step-4
       .card.container-color--trans.relative.z-5
         .card-section
           = inline_svg("cks-logo-w", class: "icon-size--xlarge")
@@ -86,7 +57,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
         .card-divider.card-divider--flush
           = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-cks", :icon => "icon-angle-right", :icon_align => "right" }
       /.blob-color.blob-cks.z-auto data-glow="false"
-    .column.relative.has-blob.animate-me.step-6
+    .column.small-12.medium-6.large-4.relative.has-blob.animate-me.step-6
       .card.container-color--trans.relative.z-5
         .card-section
           = inline_svg("ccms-logo-w", class: "icon-size--xlarge")
