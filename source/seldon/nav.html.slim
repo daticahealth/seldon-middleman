@@ -29,6 +29,11 @@ layout: basic
 .container-gray-12.show-for-large
   = partial "partials/head/header", :locals => { :style => "dark" }
 
+section.section-article.bg-gray-2
+  .row.align-center
+    .columns.small-12.large-10
+      .row.align-center.small-up-1.medium-large-up-2
+        = partial "partials/snippets/product-list.slim", :locals => { :size => "large", :style => "light", :category_links => true }
 / #companyTop.show-for-large data-sticky-container="" 
   nav.nav.nav-desktop.sticky.sticky-nav.container-gray-1.full-width data-options=("marginTop:0; topAnchor:companyTop") data-sticky="" data-theme="light" 
     ul.menu.horizontal.align-center.menu-secondary
