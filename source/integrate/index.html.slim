@@ -271,8 +271,8 @@ section.section-article--med.strip.strip-greens
 // ==== CTA ======
 
 .strip.strip-greens
-section.bg-dark.bg-greens-grad.product-integrate id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
-  .section-article.container-image--center.lozad data-background-image=bg_image
+section.masthead.bg-dark.bg-greens-grad.product-integrate.relative id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
+  .section-article--lg.relative.z-10
     .row.align-center.align-middle
       .columns.small-12.medium-6.large-5
         h2.headline-3.group--2x Schedule a conversation to learn more about Datica's Managed Integration services
@@ -287,10 +287,12 @@ section.bg-dark.bg-greens-grad.product-integrate id=current_page.data.subnav[5].
               h4.person-name Jon Pearce
               p.person-title CEO, Zipnosis
 
-      #form.columns.small-12.medium-large-6.large-4
+      #form.columns.small-12.medium-6.medium-large-6.large-4
         .callout.drop
           h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
           = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
+  .art
+    .z-0.art-bg-fill.art-pattern.container-image-fill
 
 /section#faq.section-article.container-gray-12
   .row.align-center
