@@ -123,7 +123,7 @@ platform_integration:
         answer: "We most definitely do! Customers can engage with our Managed Integration services."
     -
         question: "Does Datica help stress-test my integration?"
-        answer: "Part of Datica's Managed Integration service is to help scope out expected message volume and work with customers accordingly on setting up their environment to support that."
+        answer: "Part of Datica's Integrate services are to help scope out expected message volume and work with customers accordingly on setting up their environment to support that."
     -
         question: "How many messages per second can Datica's integration stack handle?"
         answer: "The base product can handle close to 50msg/s. Supporting higher frequency of messages is as easy as dedicating more resources to the integration environment."
