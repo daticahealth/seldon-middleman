@@ -82,9 +82,9 @@ section.bg-gray-11.masthead-cs.container-image-fill.lozad data-background-image=
           h4.headline-6.spaced-out Datica Solutions
           ul.no-bullet
             li 
-              a.link--white href="/compliant-managed-integration" title="Datica Compliant Managed Integration (CMI)" Datica Compliant Managed Integration (CMI)
+              a.link--white href="/integrate" title="Datica Compliant Managed Integration (CMI)" Datica Compliant Managed Integration (CMI)
             li 
-              a.link--white href="/compliant-managed-integration#services" title="Datica Integration Services" Datica Integration Services
+              a.link--white href="/integrate#services" title="Datica Integration Services" Datica Integration Services
             li 
               a.link--white href="/compliant-kubernetes-service" title="Datica Compliant Kubernetes Service (CKS)" Datica Compliant Kubernetes Service (CKS)
         .group
@@ -169,6 +169,6 @@ section.section-article.bg-gray-2
     .columns.small-12.large-4
       h3.headline-4 Datica Products & Solutions
       .faded
-        = partial "partials/snippets/product-list"
+        = partial "partials/snippets/product-list", :locals => { :style => "light" }
 .strip-bright
 = partial "partials/snippets/json-ld-contact"

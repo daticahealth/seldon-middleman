@@ -90,7 +90,7 @@
 
 [[redirects]]
   from = "/cmi/"
-  to = "/compliant-managed-integration/"
+  to = "/integrate/"
   status = 301
   force = true
 
@@ -102,12 +102,22 @@
 
 [[redirects]]
   from = "/platform/integration/"
-  to = "/compliant-managed-integration/"
+  to = "/integrate/"
   status = 301
 
 [[redirects]]
   from = "/managed-integration/"
-  to = "/compliant-managed-integration/"
+  to = "/integrate/"
+  status = 301
+
+[[redirects]]
+  from = "/compliant-managed-integration/"
+  to = "/integrate/"
+  status = 301
+
+[[redirects]]
+  from = "/emissary/"
+  to = "/integrate/"
   status = 301
 
 [[redirects]]

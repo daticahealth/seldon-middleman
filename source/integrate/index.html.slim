@@ -1,7 +1,7 @@
 ---
-title: "Compliant Managed Integration (CMI) | Datica Cloud Compliance"
-summary: "Compliant Managed Integration (CMI) handles HIPAA compliant, scalable, and secure data exchange with any EHR."
-navTitle: "Datica CMI"
+title: "Datica Integrate | Compliant Health Data Integration"
+summary: "Activate your digital health product with health data in any format, from any EHR."
+navTitle: "Datica Integrate"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, integration"
 ogType: "product"
@@ -17,23 +17,27 @@ subnav:
     title: "Overview"
     slug: "overview"
   -
+    title: "Use Cases"
+    slug: "use-cases"
+  -
     title: "Benefits"
     slug: "benefits"
-  -
-    title: "Services"
-    slug: "services"
   -
     title: "Customer Proof"
     slug: "proof"
   -
+    title: "Services"
+    slug: "services"
+  -
     title: "Get Started"
-    slug: "start"
+    slug: "cta"
 
 ---
 ruby:
-  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/71ZkJFY8CgC3a0huhg9Wqh/19a52b2852b0f336e0c51d8acfcc8e85/bg-cards.svg'
+  bg_image = 'https://images.ctfassets.net/189dvqdsjh46/5uwAfZHvYGfVxHipPcDW77/4252263ca758adf9b8a764aacd900816/lab__scans_still_image_from_video.jpg'
+  #'https://images.ctfassets.net/189dvqdsjh46/71ZkJFY8CgC3a0huhg9Wqh/19a52b2852b0f336e0c51d8acfcc8e85/bg-cards.svg'
   current_page.data.asset_preload = '<link href="' + bg_image + '" rel="preload" as="image" />'
-  current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/nGfjpkdV4GIIk6ii6wQiE/7488832f05e372d1f13933a343a75826/share-cmi.jpg'
+  current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/2uPX8Qgs8dKvNFEtlexfY2/d9347e3be4ce7360e57e1993f4dedfa1/share-integrate.jpg'
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   the_form = data.site.forms['328pNB4IvCaQWQMCWmgSCy']
 scss:
@@ -43,41 +47,52 @@ scss:
       padding: 1rem;
     }
   }
+  .masthead .art .art-pattern {
+    mix-blend-mode: overlay;
+    //transform: scale3D(1.3,1.3,1.3);
+  }
+  .contact-button {
+    background-color: #009c63;
+    &:hover {
+      background-color: #00b673;
+    }
+  }
 
-section.masthead.bg-dark.bg-red-yellow-grad.product-cmi.relative id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+section.masthead.bg-dark.bg-greens-grad.product-integrate.relative id="top"
   .section-article--lg.relative.z-10
     .row.align-middle.align-center
-      .columns.small-12.medium-10.large-8
+      .columns.small-12.medium-10.large-7
         .media-object.relative.stack-for-small 
           .media-object-section
-            = inline_svg("cmi-logo-w", class: "masthead-icon")
+            = inline_svg("emissary-icon-large-white", class: "masthead-icon")
           .media-object-section.media-object--info.main-section.align-self-middle
-            h1.headline-3.text-bold.margin-bottom-sm Compliant Managed Integration
-            p.lead Exchange data securely with any EHR in a scalable fashion
+            h1.headline-1.text-light.margin-bottom-small Datica <strong>Integrate</strong>
+            p.headline-3.group Activate your digital health product with health data in any format, from any EHR.
+            p.lead <strong>Datica Integrate</strong> helps you implement effortlessly, innovate brilliantly, deliver value swiftly and scale confidently.
             = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
     = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
     = inline_svg("products-cards-color", class: "z-5 art-accent step-1")
-    / .art-bg-fill.art-light-blob
-    .z-0.art-bg-fill.art-pattern.container-image--center.lozad data-background-image=bg_image
-  .strip.strip-small.strip-cmi
+    .z-0.art-bg-fill.art-pattern.container-image-fill
+.strip.strip-greens.strip-small
 
-section.section-article.container-gray-11
-  .row.align-middle
-    .columns.small-12.medium-8
-      .video.drop.group
-        <script src="https://fast.wistia.com/embed/medias/0rr2p8xca5.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_0rr2p8xca5 seo=false videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
-    .columns.small-12.medium-4
-      h3.headline-4 What is EHR Integration?
-      p EHR integration is the partnership between providers, payers, vendors, and other players that brings the data or function from one application or program to that of another. Because of the sheer quantity and diversity of data, healthcare providers face major obstacles in integrating and effectively analyzing healthcare information.
-      = partial "partials/snippets/button", :locals => { :label => "Learn more about EHR integration", :url => "/ehr-integration/", :button_classes => "button hollow secondary", :item_id => "integration" }
+section.section-article.bg-gray-11 id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
+  .row.align-center.align-middle
+    .columns.small-12.medium-8.large-4
+      / h3.headline-3 Datica Integrate is a proven API solution
+      p.lead <strong>Datica Integrate</strong> is a proven application programming interface (API) solution that allows health data to be exchanged across any EHR platform – while <a href="/cloud-compliance" title="Datica Compliance Solutions">ensuring compliance</a> and the utmost security for PHI.
+      p Modern times call for modern measures. Datica Integrate allows you to focus on your product – not on the integration. Within days, you are up and running with comprehensive APIs that work across EHRs.
+      p Datica Integrate is also a fully compliant application package that alleviates the hardships of working with standards-based interoperability, such as HL7v2 or FHIR.
+      = partial "partials/snippets/button", :locals => { :label => "Learn how Datica Integrate works", :url => "##{current_page.data.subnav[2].slug}", :button_classes => "button success", :item_id => "product-emissary" }
+    .columns.small-12.medium-4.large-6
+      img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/VmO8UswZC9XOEMGbOmOdg/76c9d2cd1340a16d0d13677f0239db70/emissary-product-diagram-3.png" alt="emissary diagram"
 
 section.section-article.bg-gray-3 id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
   .row.align-center
     .columns.small-12.medium-10.large-6.text-center
-      h3.headline-3 Datica Integration Solutions
+      h3.headline-3 Solving a wide variety of health data use cases
       p.lead Datica's approach to integration has helped a wide range of solutions across the entire spectrum of healthcare:
-  .row.align-center.align-middle.group
+  .row.align-center.align-middle.group--2x
     .columns.small-12.large-10.multicol-3
       ul
         li Asynchronous Telehealth
@@ -108,18 +123,19 @@ section.section-article.bg-gray-3 id=current_page.data.subnav[1].slug data-magel
     /= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow", :item_id => "cta_top_pricing" }
     = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
-section.section-article--med.strip.strip-cmi
+section.section-article--med.strip.strip-greens
   .row.align-center.text-center
-    .columns.small-12.large-10
-      h2.headline-3 Datica's Proven Integration Track Record
-  = partial "partials/content/stats-integration"
+    .columns.small-12.large-12
+      h2.headline-3.text-bold Datica's Proven Integration Track Record
+  .text-larger
+    = partial "partials/content/stats-integration"
 
-section.section-article.bg-gray-3
-  .row.align-middle.group
+section.section-article.bg-gray-3 id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+  .row.group
     .columns.small-12.medium-6.large-8
       .row
         .columns.small-12.large-8
-          h3.headline-3 More than just an API
+          h3.headline-3.text-bold More than just an API
           p.lead The full suite of integration tooling you need to successfully complete an integration project with a clinical site.
       .row.small-up-1.medium-up-2.large-up-3.align-left.group
         .column
@@ -146,16 +162,15 @@ section.section-article.bg-gray-3
         .column
           h4.headline-5 Open source transformations
           p You own your transformations because we use open source Mirth as the interface engine.
-      .row.group
+      .row
         .columns.small-12
-          h3.headline-4 One REST API for all your connections
-          img.img-crisp.lozad src=loader_rect alt=("One REST API for all your connections") data-src="https://images.ctfassets.net/189dvqdsjh46/7Lro5fg1N8hE8IT1KG7DrA/0b25b9eb6ee015318d9e0a1603b0ebb2/platform-one-api-diagram.png?w=1000" /
+          p.lead Don't get caught with infrastructure gotchas as you go from zero-to-one or if you are preparing to scale to hundreds of integrations.
+          = partial "partials/snippets/button", :locals => { :label => "Scale with Datica Integrate", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
     .columns.small-12.medium-6.large-4
       .card.bg-gray-10.card-section
         h3.headline-4.text-light <strong>Full-Stack</strong> Data Integration
         p The mature integration stack considers HIPAA compliance, data security, redundant backups, and no reliance on black box proprietary APIs as core ingredients to a successful integration strategy.
-        p Don't get caught with infrastructure gotchas as you go from zero-to-one or if you are preparing to scale to hundreds of integrations. Instead, get Datica CMI.
         p
           strong Included in our data integration application:
         ul
@@ -171,8 +186,41 @@ section.section-article.bg-gray-3
   .row.bg-white-on-small
     .columns.small-12.medium-6.large-4
 
-.strip.strip-cmi
-section.section-article.container-gray-12 id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
+// customer proof ======
+
+section.section-article.container-color--white id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
+  .row.align-center.group
+    .columns.small-12.medium-10.large-6
+      = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'] })
+  .row.align-center.group
+    .columns.small-12.large-10.text-center
+      h3.headline-3 A trusted partner with established healthcare organizations
+      .logo-cloud
+        - data.views.managed_integration.customer_healthsystems_list.each do |logo|
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+  .row.align-center
+    .columns.small-12.large-10.text-center
+      h3.headline-3.nomargin Successful, live integrations with all major EHRs
+      .logo-cloud
+        - data.views.ehrs.ehr_list.each do |logo|
+          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
+section.section-article.bg-gray-11
+  - case_studies = data.site.collections.to_a.select { | id, cust | (id == "6wxpCFBxTy6aKEYQoEU4Y4") }
+  - case_studies.each do | id, cardgroup |
+    .row.align-center
+      .columns.small-12.text-center.group
+        h2.headline-3 = cardgroup.title
+    .row.full-width.align-center.small-up-1.medium-up-2.large-up-2.xlarge-up-4
+      - cardgroup["related_entries"].each do | card |
+        - carditem = data.site.caseStudy[card.id]
+        - cust = data.site.customers[carditem.customer.id]
+        .column
+          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust }
+
+// ==== services ====
+
+.strip.strip-greens
+section.section-article.container-gray-12 id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
   .row.align-center.group
     .columns.small-12.large-6.text-center
       = inline_svg("icon-consulting-compass", class: "icon-size--xlarge svg-color--gray-5")
@@ -204,38 +252,26 @@ section.section-article.container-gray-12 id=current_page.data.subnav[2].slug da
           = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light", :icon => "icon-chevron-down", :expand => "false" }
 
 
-= partial("/partials/section-promos/tco-integration-banner", :locals => { :style => "dark", :align => "right", :bgImage => "https://images.ctfassets.net/189dvqdsjh46/1iP2tqSCPKuIY6gIakoWcM/c954e6875e22448528da37b912f8aca4/triangle_theme__darker__Dallas_Ball__-_ash-edmonds-636863-unsplash.jpg" })
+section.section-article--med.strip.strip-greens
+  .row.align-center.align-middle.group
+    .columns.small-12.medium-8.large-8.text-center
+      h3.headline-4.spaced-out Datica Integration Guides
+      p Healthcare integration is complex. Our guides can help you see the way through.
+  .row.align-center.align-middle
+    .columns.small-12.medium-8.large-5
+      .card.drop-hover
+        .card-section
+          = partial "partials/cards/card-guide-horiz", :locals => { :entry => data.site.guides["wSUz5LDXA4Uu42OqwQ8AM"] }
+    .columns.small-12.medium-8.large-5
+      .card.drop-hover
+        .card-section
+          = partial "partials/cards/card-guide-horiz", :locals => { :entry => data.site.guides["5KKD6XVLC8YuCq4eOoKEoO"] }
 
-section.section-article.container-color--white id=current_page.data.subnav[3].slug data-magellan-target=current_page.data.subnav[3].slug
-  .row.align-center.group
-    .columns.small-12.medium-10.large-6
-      = partial("partials/cards/quote-customer", :locals => { :customer => data.site.customers['66BznN8Y482iSswswQAice'] })
-  .row.align-center.group
-    .columns.small-12.large-10.text-center
-      h3.headline-3 A trusted partner with established healthcare organizations
-      .logo-cloud
-        - data.views.managed_integration.customer_healthsystems_list.each do |logo|
-          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
-  .row.align-center
-    .columns.small-12.large-10.text-center
-      h3.headline-3.nomargin Successful, live integrations with all major EHRs
-      .logo-cloud
-        - data.views.ehrs.ehr_list.each do |logo|
-          img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo["slug"]}-logo.png" /
-section.section-article.bg-gray-11
-  - case_studies = data.site.collections.to_a.select { | id, cust | (id == "6wxpCFBxTy6aKEYQoEU4Y4") }
-  - case_studies.each do | id, cardgroup |
-    .row.align-center
-      .columns.small-12.text-center.group
-        h2.headline-3 = cardgroup.title
-    .row.full-width.align-center.small-up-1.medium-up-2.large-up-2.xlarge-up-4
-      - cardgroup["related_entries"].each do | card |
-        - carditem = data.site.caseStudy[card.id]
-        - cust = data.site.customers[carditem.customer.id]
-        .column
-          = partial "/partials/content/card-case-study",  :locals => { :cf_customer => cust }
-.strip.strip-cmi
-section.bg-dark.bg-red-yellow-grad.product-cmi id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
+
+// ==== CTA ======
+
+.strip.strip-greens
+section.bg-dark.bg-greens-grad.product-integrate id=current_page.data.subnav[5].slug data-magellan-target=current_page.data.subnav[5].slug
   .section-article.container-image--center.lozad data-background-image=bg_image
     .row.align-center.align-middle
       .columns.small-12.medium-6.large-5
@@ -256,7 +292,7 @@ section.bg-dark.bg-red-yellow-grad.product-cmi id=current_page.data.subnav[4].sl
           h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
           = partial "partials/snippets/form", :locals => { :the_form => the_form["custom_form"] }
 
-section#faq.section-article.container-gray-12
+/section#faq.section-article.container-gray-12
   .row.align-center
     .columns.small-12.medium-10.large-7
       h3.headline-3.group Frequently asked questions about integrations

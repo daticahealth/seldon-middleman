@@ -119,10 +119,10 @@
         // mix-blend-mode: normal;
     }
 }
-.product-cmi { /* grad-red-yellow-cmi */
+.product-integrate { /* grad-red-yellow-cmi */
     $hue: 335;
     .art-accent { // svg art of brighter shapes. SVG needs preserveAspectRatio
-        width: calc(13rem + 11vw);
+        width: calc(5rem + 11vw);
         transform: translate3d(4vw, -2vw, 0);
         height: auto;
         // mix-blend-mode: color-dodge;
@@ -133,6 +133,30 @@
     // }
     .art-light-blob {
         background: radial-gradient(20vw at 44.68% 42.78%, hsla($hue, 53, 42, 0.88) 0%, hsla($hue, 53, 42, 0.09) 82.87%, hsla($hue, 53, 42, 0) 100%);
+    }
+    $bg_integrate: "https://images.ctfassets.net/189dvqdsjh46/5uwAfZHvYGfVxHipPcDW77/4252263ca758adf9b8a764aacd900816/lab__scans_still_image_from_video.jpg";
+    @include breakpoint (small down) {
+        .art-bg-fill {
+            background-image: url('#{$bg_integrate}?fit=thumb&w=800&h=400&q=50');
+        }
+    }
+
+    @include breakpoint (medium) {
+        .art-bg-fill {
+            background-image: url('#{$bg_integrate}?fit=thumb&w=1200&h=500&q=50');
+        }
+    }
+
+    @include breakpoint (large) {
+        .art-bg-fill {
+            background-image: url('#{$bg_integrate}?fit=thumb&w=1600&h=600&q=50');
+        }
+    }
+
+    @include breakpoint (xlarge) {
+        .art-bg-fill {
+            background-image: url('#{$bg_integrate}?fit=thumb&w=1800&h=800&q=50');
+        }
     }
 }
 .product-cks {
