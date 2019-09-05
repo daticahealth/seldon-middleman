@@ -12,7 +12,7 @@ pod_summary = Kramdown::Document.new(p.summary).to_html
 
 current_page.data.title = p["title"] + " | Healthcare Innovators Podcast"
 current_page.data.summary = safe_summary(p.summary)
-current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/bc7605c8d6702518cedcedf7cf0de3bb/podcast-art-share-2018.png"
+current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/1L0X4JCpQC1WyzRzAEBiyR/81fe98cefbc85a290b38a67a0bf3fdb7/podcast-4x4-share-card.jpg"
 if p.has_key?("tags")
     current_page.data.tags = get_tag_list(p["tags"])
 else
@@ -35,11 +35,16 @@ unless p.has_key?("discovery_topic")
 else
     current_page.data.topic = p.discovery_topic.slug
 end
+if p.has_key?("category_brand") && p.category_brand == true # it's a 4x4 brand
+    bg = 'https://images.ctfassets.net/189dvqdsjh46/5pOVaalct7t14PruR5jzr3/8dd971a68fcd1623edca2f4ae124a135/podcast-4x4-background.svg'
+else
+    bg = 'https://images.ctfassets.net/189dvqdsjh46/5OUXo4nQ6kaqAsqE8McqIu/fcd84d36da7ad0c4b91ecb9cadb7ce87/art-sound-bars-bg.svg'
+end
 # this returns a list of webinars that 1. have discovery topic, 2. topic matches the entry topic above, 3. sorted by date.
 filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_key?("discovery_topic") && webinars.discovery_topic.slug == current_page.data.topic}.sort_by{ |id, webinars| webinars['event_date'] }.reverse!
 %>
 
-<div class="container-color--dark-alt container-image--bottom" data-interchange="[/public/img/art/art-sound-bars-bg-small.svg, small], [/public/img/art/art-sound-bars-bg.svg, medium]">
+<div class="bg-gray-2 container-image-fill lozad" data-background-image="<%= bg %>">
     <%= partial "partials/head/header", :locals => { :style => "light" } %>
     <section class="section-article">
         <div class="row align-middle align-center">
@@ -134,7 +139,7 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
                    <%= partial("/partials/content/cta", :locals => { :p => p["cta_ref"] }) %>
                <% end %>
                 <% previous_item = get_previous_item(data.site.podcast, p, "pub_date") %>
-                <aside class="row">
+                <aside id="related" class="row">
                     <% if previous_item != nil %>
                         <div class="columns small-12 medium-6">
                             <%= partial("partials/snippets/podcast-summary", :locals => { :podcast => previous_item, :hideSummary => true, :itemLabel => "Previous Episode:" }) %>
@@ -149,22 +154,24 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
                 </aside>
             </article>
         </div>
-        <aside class="columns small-12 large-4 section--sidebar">
-            <div class="group">
-                <% filtered_webinars.take(1).each do | id, webinar_entry | %>
-                <%= partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry, :card_style => "vertical" } %>
+        <aside class="columns small-12 large-4 section--sidebar" data-sticky-container>
+            <div class="sticky" data-sticky data-options="topAnchor: 525; stickyOn: large; marginTop: 3;" data-btm-anchor="related">
+                <div class="group">
+                    <% filtered_webinars.take(1).each do | id, webinar_entry | %>
+                    <%= partial "partials/cards/webinar-poster", :locals => { :entry => webinar_entry, :card_style => "vertical" } %>
+                    <% end %>
+                </div>
+
+                <% if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta") %>
+                <% topic = data.site.discover[p.discovery_topic.id] %>
+                <%= partial "partials/cards/discover-lite", :locals => { :topic => topic, :classes => "group" } %>
+                <%#= partial "partials/cards/discover", :locals => { :post => p["discovery_topic"], :classes => "group" } %>
                 <% end %>
+
+                <p>
+                    <%= partial "partials/snippets/button", :locals => { :label => "All Podcast Episodes", :url => "/podcast/", :button_classes => "button hollow", :icon => "icon-chevron-left", :icon_align => "left", :expand => false } %>
+                </p>
             </div>
-
-            <% if p.has_key?("discovery_topic") && p["discovery_topic"].has_key?("_meta") %>
-            <% topic = data.site.discover[p.discovery_topic.id] %>
-            <%= partial "partials/cards/discover-lite", :locals => { :topic => topic, :classes => "group" } %>
-            <%#= partial "partials/cards/discover", :locals => { :post => p["discovery_topic"], :classes => "group" } %>
-            <% end %>
-
-            <p>
-                <%= partial "partials/snippets/button", :locals => { :label => "All Podcast Episodes", :url => "/podcast/", :button_classes => "button hollow", :icon => "icon-chevron-left", :icon_align => "left", :expand => false } %>
-            </p>
         </aside>
     </div>
 </section>
