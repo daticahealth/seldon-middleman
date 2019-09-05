@@ -55,7 +55,7 @@ scss:
     .columns.small-12.pad--lg
       .headline-5.spaced-out Datica Case Study
       h2.headline-2.text-bold Global Life Sciences Company Enables Innovation with Datica and AWS
-section.bg-gray-11.masthead-cs.container-image-fill.lozad data-background-image="#{featured_img}?w=1800"
+section.bg-gray-11.masthead-cs.container-image-fill.lozad data-background-image="#{featured_img}?fit=thumb&w=1800&h=900"
   .section-article--lg
     .row.align-right.align-middle
       .columns.small-12.medium-6.show-for-medium
@@ -63,7 +63,7 @@ section.bg-gray-11.masthead-cs.container-image-fill.lozad data-background-image=
         h2.headline-2.text-bold Global Life Sciences Company Enables Innovation with Datica and AWS
 
 / = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/ehr-integration/" }
-.strip-bright
+.strip.strip-cks
 .bg-gray-2
   = partial "partials/snippets/nav-sub-product", :locals => { }
   section.section-article--lg id=current_page.data.subnav[0].slug data-magellan-target=current_page.data.subnav[0].slug
