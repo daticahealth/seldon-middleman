@@ -113,14 +113,15 @@ section.section-article.bg-gray-3 id=current_page.data.subnav[1].slug data-magel
         li Clinical Documentation Improvement &amp; Physician Query
         li Orthopedic Implant Providers for Supply Chain Optimization &amp; Instrument Tray Reconfiguration
         li Claims Processing and Claim Audit Tracking Solutions
-  .row.align-center
-    .columns.small-12.large-10.text-center
-      h4.headline-6.spaced-out.text-light Use case: Hospital integration
-      / img.lozad alt=("Platform Integration") data-src="/public/img/platform-integration-2x.png" /
-      img.group.lozad alt="Integration - hospital use case" src="https://images.ctfassets.net/189dvqdsjh46/4UZr8wc5XYiFIA8jYSzxaF/ab9f343b28b8d180e103b558d49b6e9b/CMI_example_use_case__hospital_.png?w=1000&fm=png&fl=png8" data-src="https://images.ctfassets.net/189dvqdsjh46/4UZr8wc5XYiFIA8jYSzxaF/ab9f343b28b8d180e103b558d49b6e9b/CMI_example_use_case__hospital_.png"
 
-  aside.section-article--sm.menu.button-group.align-center.show-for-large
-    /= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow", :item_id => "cta_top_pricing" }
+  = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["cdRLk1E4TCvKRTrZ5fEdo"], :classes => "group--2x" })
+
+  .waypoint
+    h4.headline-4 Start your integration project
+    a.pulse href="##{current_page.data.subnav.last.slug}" title="Start your integration project"
+      = inline_svg("icon-angle-down-large", class: "icon-size--large waypoint-icon")
+
+  /aside.section-article--sm.menu.button-group.align-center.show-for-large
     = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
 section.section-article--med.strip.strip-greens
