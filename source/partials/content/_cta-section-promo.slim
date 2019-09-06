@@ -1,0 +1,9 @@
+- if defined?(classes) ? classes = classes : nil
+.row.align-center.align-middle class=classes
+  .columns.small-12.medium-4.large-4.text-right-on-large
+    h3.headline-3.text-bold = entry.cta_title
+    p.lead = entry.cta_desc
+  .columns.small-12.medium-8.large-8.xlarge-7
+    aside
+      a href=entry.cta_url title=entry.cta_label
+        img.lozad alt=entry.cta_label data-src="#{entry.cta_image.url}?w=1400&fl=progressive" src=loader_rect /

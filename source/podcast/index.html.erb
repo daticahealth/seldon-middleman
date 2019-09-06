@@ -3,7 +3,7 @@ title: "Datica Podcasts | Home of the 4x4 Health and Healthcare Innovators Podca
 summary: "How does healthcare innovate? Datica explores this topic in a new series of interviews with several of the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
 author: "Datica, Inc."
 tags: "HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
-share_image: "https://images.ctfassets.net/189dvqdsjh46/at0B5zJqmIk8EAoKqgQww/bc7605c8d6702518cedcedf7cf0de3bb/podcast-art-share-2018.png"
+share_image: "https://images.ctfassets.net/189dvqdsjh46/1L0X4JCpQC1WyzRzAEBiyR/81fe98cefbc85a290b38a67a0bf3fdb7/podcast-4x4-share-card.jpg"
 header: "Datica Podcasts"
 subheader: "How does healthcare innovate? Datica explores this topic in a new series of interviews with several of the industry's top thinkers and doers. Follow along with us as we uncover insights to catalyzing change in healthcare."
 layout: basic
@@ -16,7 +16,7 @@ feed_url: "https://fourbyfourhealth.podbean.com/feed.xml"
     sorted_reports = data.site.reports.to_a.sort_by{ |id, report| report['pub_date'] }.reverse!
     sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
     sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
-    art_4x4 = 'https://images.ctfassets.net/189dvqdsjh46/OCqNIzzZeoJWSTjECEZFp/8c84b526bba5c19e748db5d51568d876/podcast-4x4-small.jpg'
+    art_4x4 = 'https://images.ctfassets.net/189dvqdsjh46/OCqNIzzZeoJWSTjECEZFp/f9b975b09b9286ed8df81a56d7f01a37/podcast-4x4-cover-basic.jpg'
     art_hip = 'https://images.ctfassets.net/189dvqdsjh46/62u8jLbOQyiVfPMZFT8MvY/7a5cc175ff0f418c4ee94f0b26430a2a/podcast-hip-small.jpg'
 %>
 <div class="bg-gray-2 container-image-fill lozad" data-background-image="/public/img/art/art-sound-bars-purple.svg">
@@ -30,7 +30,7 @@ feed_url: "https://fourbyfourhealth.podbean.com/feed.xml"
                 <div class="media-object group">
                     <div class="media-object-section">
                         <a href="#podcast-4x4" title="view podcast">
-                         <img class="float-right icon-size--xxlarge lozad" src="<%= loader_square_svg %>" data-src="<%= art_4x4 %>?w=150" alt="4x4 Health Podcast" width="64" />
+                         <img class="float-right icon-size--xxlarge lozad" src="<%= loader_square_svg %>" data-src="<%= art_4x4 %>?w=300" alt="4x4 Health Podcast" width="64" />
                          </a>
                     </div>
                     <div class="media-object-section">
@@ -41,7 +41,7 @@ feed_url: "https://fourbyfourhealth.podbean.com/feed.xml"
                 <div class="media-object">
                     <div class="media-object-section">
                         <a href="#podcast-hip" title="view podcast">
-                         <img class="float-right icon-size--xxlarge lozad" src="<%= loader_square_svg %>" data-src="<%= art_hip %>?w=150" alt="Healthcare Innovators Podcast" width="64" /
+                         <img class="float-right icon-size--xxlarge lozad" src="<%= loader_square_svg %>" data-src="<%= art_hip %>?w=300" alt="Healthcare Innovators Podcast" width="64" /
                          >
                          </a>
                     </div>

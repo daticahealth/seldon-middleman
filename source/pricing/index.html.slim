@@ -21,14 +21,14 @@ scss:
       margin-bottom: 0.3em;
       font-weight: 500;
     }
-    p {
-      font-size: 0.9rem;
-    }
+    //p {
+    //  font-size: 0.9rem;
+    //}
     .product-block {
       a {
         color: black;
         &:hover {
-          color: #1055ff;
+          color: #00805e;
         }
       }
       //.item-check {
@@ -63,10 +63,12 @@ scss:
               use.symbol-icon xlink:href="#ccms-logo" href="#ccms-logo"
             /= inline_svg("ccms-logo-dark", class: "icon-size--large product-icon")
           .columns
-            h2.headline-4.margin-bottom-small.text-regular
+            h2.headline-4.margin-bottom-small
               a href="/cloud-compliance-management-system" title="Cloud Compliance Management System" Cloud Compliance Management System
-            h4.headline-6.text-regular.nomargin Resource Subscription
-            p Starting early 2019, customers can use the CCMS by subscribing per cloud service being monitored.
+            h4.headline-6.text--gray-4.nomargin Resource Subscription
+            p Datica CCMS is $100/mo. per Service type + $1/mo. per instance.
+            p
+              em A 'service' is any supported cloud provider service, such as AWS RDS, Azure Cosmos DB, or Google Cloud SQL.
           
         .row.group--sm.collapse.product-block
           .columns.shrink
@@ -74,35 +76,23 @@ scss:
               use.symbol-icon xlink:href="#cks-logo" href="#cks-logo"
             /= inline_svg("cks-logo-dark", class: "icon-size--large product-icon")
           .columns
-            h2.headline-4.margin-bottom-small.text-regular
+            h2.headline-4.margin-bottom-small
               a href="/compliant-kubernetes-service" title="Compliant Kubernetes Service" Compliant Kubernetes Service
-            h4.headline-6.text-regular.nomargin Product Subscription
+            h4.headline-6.text--gray-4.nomargin Product Subscription
             p CKS subscription is per production Kubernetes cluster. Currently available on AWS. You pay infrastructure costs, like EC2 and S3, directly to AWS because we install the cluster onto your existing AWS account.
 
 
         .row.group--sm.collapse.product-block
           .columns.shrink
-            svg id="product-cmi" class="icon-size--medium product-icon text--gray-5"
-              use.symbol-icon xlink:href="#cmi-logo" href="#cmi-logo"
-            /= inline_svg("cmi-logo-dark", class: "icon-size--large product-icon")
-          .columns
-            h2.headline-4.margin-bottom-small.text-regular
-              a href="/integrate" title="Compliant Managed Integration" Compliant Managed Integration
-            h4.headline-6.text-regular.nomargin Product Subscription (Required)
-            p CMI product currently available on AWS or Azure. We deploy it into Datica's existing cloud account. All infrastructure costs, like RAM and storage, are absorbed by Datica. We then maintain all DevOps, security, compliance, and networking duties related to the integration stack itself and all live integrations it powers.
-            h4.headline-6.text-regular.nomargin Service Subscription (Optional)
-            p Leverage Datica's expertise to help instantiate any new integration sites. Hundreds of live sites have been integrated over the last four years via this service.
-        
-        .row.group--sm.collapse.product-block
-          .columns.shrink
-            svg id="product-emissary" class="icon-size--medium product-icon text--gray-5"
+            svg id="product-integrate" class="icon-size--medium product-icon text--gray-5"
               use.symbol-icon xlink:href="#emissary-logo" href="#emissary-logo"
-            /= inline_svg("cmi-logo-dark", class: "icon-size--large product-icon")
           .columns
-            h2.headline-4.margin-bottom-small.text-regular
-              a href="/emissary" title="Emissary" Emissary<sup>®</sup>
-            h4.headline-6.text-regular.nomargin Annual license per site
-            p Each unique installation of Emissary constitutes a site, and therefore a new license.
+            h2.headline-4.margin-bottom-small
+              a href="/integrate" title="Datica Integrate" Datica Integrate
+            h4.headline-6.text--gray-4.nomargin Product Subscription (Required)
+            p Datica Integrate is currently available on AWS or Azure. We deploy it into Datica's existing cloud account. All infrastructure costs, like RAM and storage, are absorbed by Datica. We then maintain all DevOps, security, compliance, and networking duties related to the integration stack itself and all live integrations it powers.
+            h4.headline-6.text--gray-4.nomargin Service Subscription (Optional)
+            p Leverage Datica's expertise to help instantiate any new integration sites. Hundreds of live sites have been integrated over the last four years via this service.
 
       #cta.columns.small-12.medium-large-6.large-5
         .callout.pad--lg.drop.form-embed.pricing-form.group

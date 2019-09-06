@@ -113,14 +113,15 @@ section.section-article.bg-gray-3 id=current_page.data.subnav[1].slug data-magel
         li Clinical Documentation Improvement &amp; Physician Query
         li Orthopedic Implant Providers for Supply Chain Optimization &amp; Instrument Tray Reconfiguration
         li Claims Processing and Claim Audit Tracking Solutions
-  .row.align-center
-    .columns.small-12.large-10.text-center
-      h4.headline-6.spaced-out.text-light Use case: Hospital integration
-      / img.lozad alt=("Platform Integration") data-src="/public/img/platform-integration-2x.png" /
-      img.group.lozad alt="Integration - hospital use case" src="https://images.ctfassets.net/189dvqdsjh46/4UZr8wc5XYiFIA8jYSzxaF/ab9f343b28b8d180e103b558d49b6e9b/CMI_example_use_case__hospital_.png?w=1000&fm=png&fl=png8" data-src="https://images.ctfassets.net/189dvqdsjh46/4UZr8wc5XYiFIA8jYSzxaF/ab9f343b28b8d180e103b558d49b6e9b/CMI_example_use_case__hospital_.png"
 
-  aside.section-article--sm.menu.button-group.align-center.show-for-large
-    /= partial "partials/snippets/button", :locals => { :label => "View Pricing", :title => "View Platform pricing", :url => "/pricing", :button_classes => "button hollow", :item_id => "cta_top_pricing" }
+  = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["cdRLk1E4TCvKRTrZ5fEdo"], :classes => "group--2x" })
+
+  .waypoint
+    h4.headline-4 Start your integration project
+    a.pulse href="##{current_page.data.subnav.last.slug}" title="Start your integration project"
+      = inline_svg("icon-angle-down-large", class: "icon-size--large waypoint-icon")
+
+  /aside.section-article--sm.menu.button-group.align-center.show-for-large
     = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
 section.section-article--med.strip.strip-greens
@@ -131,8 +132,8 @@ section.section-article--med.strip.strip-greens
     = partial "partials/content/stats-integration"
 
 section.section-article.bg-gray-3 id=current_page.data.subnav[2].slug data-magellan-target=current_page.data.subnav[2].slug
-  .row.group
-    .columns.small-12.medium-6.large-8
+  .row.group.align-center
+    .columns.small-12.medium-12.large-10
       .row
         .columns.small-12.large-8
           h3.headline-3.text-bold More than just an API
@@ -161,13 +162,16 @@ section.section-article.bg-gray-3 id=current_page.data.subnav[2].slug data-magel
           p The hard work to ensuring cloud-based infrastructure is highly available 24/7 is done for you.
         .column
           h4.headline-5 Open source transformations
-          p You own your transformations because we use open source Mirth as the interface engine.
+          p Manage your own transformations with our optional open source Mirth interface engine.
+        .column
+          h4.headline-5 Push & Pull
+          p You need to both read and write when integrating with EHRs — Datica Integrate helps you do that.
       .row
         .columns.small-12
           p.lead Don't get caught with infrastructure gotchas as you go from zero-to-one or if you are preparing to scale to hundreds of integrations.
           = partial "partials/snippets/button", :locals => { :label => "Scale with Datica Integrate", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light", :icon => "icon-chevron-down" }
 
-    .columns.small-12.medium-6.large-4
+/    .columns.small-12.medium-6.large-4
       .card.bg-gray-10.card-section
         h3.headline-4.text-light <strong>Full-Stack</strong> Data Integration
         p The mature integration stack considers HIPAA compliance, data security, redundant backups, and no reliance on black box proprietary APIs as core ingredients to a successful integration strategy.
@@ -177,7 +181,7 @@ section.section-article.bg-gray-3 id=current_page.data.subnav[2].slug data-magel
           li Mirth interface engine
           li Postgres database
           li Highly Available and redundant configuration
-          li HITRUST CSF Certified cloud infrastructure
+          / li HITRUST CSF Certified cloud infrastructure
           li Compliant logging and auditing of activity
           li REST API endpoints mapped to all major data standards
           li VPN setup for secure connectivity

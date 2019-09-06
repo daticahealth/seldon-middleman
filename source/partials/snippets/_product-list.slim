@@ -58,5 +58,5 @@ ruby:
                         p.text-regular.text-small = child.desc
                 - else
                   a href=child.url title="Explore #{child.title}" data-track="true" data-track-category="nav" data-track-id="page-#{child.url.parameterize}" = child.title
-          - if category_links == true
+          - if category_links == true && nav_item.has_key?('section_link_label')
             = partial "partials/snippets/button", :locals => { :label => nav_item.section_link_label, :url => nav_item.section_link_uri, :button_classes => "button hollow hollow-inverted", :item_id => "get-#{nav_item.title_short.parameterize}", :data_track_group => nav_item.title_short.parameterize }
