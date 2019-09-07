@@ -102,23 +102,23 @@
     }
 }
 // page-specific styles for gradients, artwork
-.product-cpaas { /* grad-green-blue */
-    $hue: 212;
-    .art-accent { // svg art of brighter shapes. SVG needs preserveAspectRatio
-        width: calc(3rem + 9vw);
-        transform: translate3d(2vw, -2vw, 0); // using transform vs positioning or padding
-    }
-    // .art-light-grad {
-    //     background: radial-gradient(234.90px at 20.53% 41.54%, rgba(46, 108, 165, 0.88) 0%, rgba(28, 118, 139, 0) 100%), linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(292.05deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
-    //     mix-blend-mode: normal;
-    //     // background: linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(297.76deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
-    //     // mix-blend-mode: color-dodge;
-    // }
-    .art-light-blob {
-        background: radial-gradient(20vw at 44.68% 42.78%, hsla($hue, 53, 42, 0.88) 0%, hsla($hue, 53, 42, 0.09) 82.87%, hsla($hue, 53, 42, 0) 100%);
-        // mix-blend-mode: normal;
-    }
-}
+// .product-cpaas { /* grad-green-blue */
+//     $hue: 212;
+//     .art-accent { // svg art of brighter shapes. SVG needs preserveAspectRatio
+//         width: calc(3rem + 9vw);
+//         transform: translate3d(2vw, -2vw, 0); // using transform vs positioning or padding
+//     }
+//     // .art-light-grad {
+//     //     background: radial-gradient(234.90px at 20.53% 41.54%, rgba(46, 108, 165, 0.88) 0%, rgba(28, 118, 139, 0) 100%), linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(292.05deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
+//     //     mix-blend-mode: normal;
+//     //     // background: linear-gradient(270deg, rgba(0, 227, 186, 0.28) -6.31%, rgba(0, 227, 186, 0) 19.35%), linear-gradient(297.76deg, rgba(0, 107, 206, 0.5) -2.46%, rgba(0, 133, 255, 0) 32.01%);
+//     //     // mix-blend-mode: color-dodge;
+//     // }
+//     .art-light-blob {
+//         background: radial-gradient(20vw at 44.68% 42.78%, hsla($hue, 53, 42, 0.88) 0%, hsla($hue, 53, 42, 0.09) 82.87%, hsla($hue, 53, 42, 0) 100%);
+//         // mix-blend-mode: normal;
+//     }
+// }
 .product-integrate { /* grad-red-yellow-cmi */
     $hue: 335;
     .art-accent { // svg art of brighter shapes. SVG needs preserveAspectRatio

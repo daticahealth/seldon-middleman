@@ -3,7 +3,7 @@ title: "Datica brings the cloud to healthcare"
 summary: "Datica and Sansoro Health merge to help accelerate healthcare’s data-driven future in the cloud."
 author: "Datica, Inc."
 tags: "compliance, HITRUST, integration, EHR, healthcare, education, HIPAA, HL7, FHIR, interoperability"
-customCSS: "home"
+customCSS: "home, products-mastheads"
 customJS: "/public/js/products.js"
 layout: "basic"
 priority: "1.0"
@@ -47,10 +47,13 @@ ruby:
   current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" /><link href="' + bg_product_light + '" rel="preload" as="image" />'
   current_page.data.share_image = image_share_default
 
-/ section.bg-gray-1
-section#top.bg-gray-12.container-image-fill.lozad data-background-image=bg_product_light
-  = partial "partials/head/header", :locals => { :style => "dark" }
-  .section-article
+/ section.bg-gray-1.container-image-fill.lozad data-background-image=bg_product_light
+section#top.bg-gray-1
+  = partial "partials/head/header", :locals => { :style => "light" }
+  
+  = partial "partials/section-promos/product-integrate"
+
+  /.section-article
     .row.align-center.group
       .columns.small-12.medium-12.large-9.text-center
         h4.headline-5.spaced-out News

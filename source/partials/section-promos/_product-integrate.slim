@@ -1,0 +1,16 @@
+section.masthead.bg-dark.bg-greens-grad.product-integrate.relative id="get-integrate"
+  .section-article.relative.z-10
+    .row.align-middle.align-center
+      .columns.small-12.medium-10.large-7
+        .media-object.relative.stack-for-small 
+          .media-object-section
+            = inline_svg("emissary-icon-large-white", class: "masthead-icon")
+          .media-object-section.media-object--info.main-section.align-self-middle
+            h4.headline-5.spaced-out.faded News
+            h1.headline-1.text-light.margin-bottom-small Datica <strong>Integrate</strong>
+            p.headline-3.group Activate your digital health product with health data in any format, from any EHR.
+            = partial "partials/snippets/button", :locals => { :label => "Start your integration project", :url => "/integrate", :button_classes => "button button--light nomargin step-2", :data_track_group => "integration", :item_id => "get-integrate-banner", :icon => "icon-chevron-right", :icon_align => "right", :expand => "false" }
+  .art
+    = inline_svg("products-cards-color", class: "z-5 art-accent step-1")
+    .z-0.art-bg-fill.art-pattern.container-image-fill
+/ .strip.strip-greens.strip-small
