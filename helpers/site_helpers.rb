@@ -2,7 +2,7 @@
 # Helpers & global variables
 module SiteHelpers
     def master_nav_id # this is the contentful collections entry that holds all the nav items
-        "4hxxjVGNtEXRK1jkCGKUQc"
+        "UvIbeSygYQQobYFWqzvKR"
     end
     def site_url
         return ENV["DATICA_SITE_URL"] ? ENV["DATICA_SITE_URL"] : "https://datica.com"
