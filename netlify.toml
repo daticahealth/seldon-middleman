@@ -96,7 +96,13 @@
 
 [[redirects]]
   from = "/ccms/"
-  to = "/cloud-compliance-management-system/"
+  to = "/monitor/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cloud-compliance-management-system/"
+  to = "/monitor/"
   status = 301
   force = true
 
