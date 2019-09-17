@@ -1,0 +1,39 @@
+- sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
+scss:
+  #podcast { // a few tweaks
+    background-blend-mode: luminosity;
+    background-size: 140%;
+  }
+section#podcast.lozad.section-article.bg-gray-2.container-image--middle data-background-image="https://images.ctfassets.net/189dvqdsjh46/19d5iulqaYg8ACWcYQ6Im6/3f883ec8f77add5b22a497e3b3d63e6d/art-sound-bars-purple.svg"
+  .row.align-center.group
+    .columns
+      h3.headline-3.text-light.group.text-center
+        | Datica 
+        span.text-bold Podcasts
+  .row.align-center.align-middle.collapse
+    .columns.small-12.large-10
+      - sorted_podcasts.take(1).each do | id, podcast |
+        .row
+          .columns.small-12.large-6
+            a href="/innovation/#{podcast["slug"]}" title="Listen to this episode now"
+              img.lozad.group src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/1L0X4JCpQC1WyzRzAEBiyR/81fe98cefbc85a290b38a67a0bf3fdb7/podcast-4x4-share-card.jpg?w=1000" alt="4x4 Health Podcast" width="100%"
+          .columns.small-12.large-6
+            h4.headline-5
+              a.link--bright href="/innovation/#{podcast["slug"]}" title="Listen to this episode now" = podcast["title"]
+            - if podcast.has_key?("guest")
+              = partial("partials/snippets/person", :locals => { :p => podcast["guest"] })
+            p
+              - if podcast.has_key?("pub_date")
+                span.pub-date= podcast['pub_date'].strftime('%B %-d, %Y')
+              / - if podcast.has_key?("tags")
+                - podcast["tags"].each do |tag|
+                  - if tag.has_key?("tag_full")
+                    span.label.info.round.faded= tag["tag_full"]
+            / - if podcast.has_key?("soundcloud_embed")
+            /   .media-object.nomargin
+            /     = podcast['soundcloud_embed']
+            - if podcast.has_key?("summary")
+              .innovation--podcast-entry__summary
+                = Kramdown::Document.new(podcast["summary"]).to_html
+            = partial "partials/snippets/button", :locals => { :label => "Listen Now", :url => "/innovation/#{podcast["slug"]}", :button_classes => "button hollow-inverted", :icon => "icon-chevron-right", :icon_align => "right", :expand => false }
+      /! <p class="text-center"><a class="link--bright" href="/podcast/">See More Podcasts <i class="fa fa-angle-right" aria-hidden="true"></i></a></p
