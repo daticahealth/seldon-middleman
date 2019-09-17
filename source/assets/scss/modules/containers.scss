@@ -567,3 +567,7 @@
         flex-direction: row-reverse;
     }
 }
+.collection .row:last-child {
+    margin-bottom: 0;
+}
+
