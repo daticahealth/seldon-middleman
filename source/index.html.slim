@@ -44,14 +44,36 @@ ruby:
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   # current_page.data.share_image = image_share_platform
   # featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/470d9a7b58ffede77ae3d064cf86b655/office_-_istockphoto-626637134_edit.jpg"
-  current_page.data.asset_preload = '<link href="' + bg_product_dark + '" rel="preload" as="image" /><link href="' + bg_product_light + '" rel="preload" as="image" />'
+  current_page.data.asset_preload = '<link href="' + 'https://images.ctfassets.net/189dvqdsjh46/22u6YIHYILt7uTqCpYCBv4/76759911c110c5111e8d1b91c2d43882/bg-masthead-pattern.svg' + '" rel="preload" as="image" /><link href="' + 'https://images.ctfassets.net/189dvqdsjh46/2zLOFwJwyhM6db1IiTPvsz/65d0aa105a70fc11aec17ffdc844ca73/network-color-grad.svg' + '" rel="preload" as="image" />'
   current_page.data.share_image = image_share_default
 
 / section.bg-gray-1.container-image-fill.lozad data-background-image=bg_product_light
 section#top.bg-gray-1
   = partial "partials/head/header", :locals => { :style => "light" }
   
-  = partial "partials/section-promos/product-integrate"
+section.masthead.bg-dark.bg-gray-1.relative id="masthead"
+  .section-article.relative.z-10
+    .row.align-center
+      .columns.small-12.large-10.xlarge-9
+        svg id="datica-logo-desktop" width="230" height="96"
+          use.symbol-icon.logo-size--large xlink:href="#datica-logo-horiz" href="#datica-logo-horiz"
+        h1.headline-1.text-light.group--2x We bring the cloud to healthcare.
+        p.lead Developing healthcare applications in the cloud requires <strong>data integration and compliance</strong> with complicated rules and controls. Datica has a family of powerful, single-source solutions to those challenges.
+        .row.align-center.small-up-1.medium-large-up-2
+          = partial "partials/snippets/product-list.slim", :locals => { :size => "large", :style => "light", :category_links => true }
+  .art
+    /= inline_svg("network-color-grad", class: "z-5 art-accent step-2 img-mix-overlay")
+    .z-0.art-bg-fill.container-image-fill.lozad.step-1 data-background-image="https://images.ctfassets.net/189dvqdsjh46/22u6YIHYILt7uTqCpYCBv4/76759911c110c5111e8d1b91c2d43882/bg-masthead-pattern.svg"
+    img.z-5.art-accent.step-2.img-mix-overlay.lozad data-src="/public/icons/inlined/network-color-grad.svg"
+.strip.strip-greens
+
+section.section-article.bg-light.bg-gray-11
+  = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["cdRLk1E4TCvKRTrZ5fEdo"], :classes => "group--2x" })
+  = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["2Gz3re06aQy8d9BiPMpdUW"], :classes => "group--2x" })
+
+
+
+/ .strip.strip-greens.strip-small
 
   /.section-article
     .row.align-center.group
@@ -68,13 +90,8 @@ section#top.bg-gray-1
             a.text-bold.spaced-out title="About Datica Health" href="/about/" About Datica
           li
             a.text-bold.spaced-out title="Careers at Datica" href="/careers/" Careers
-    .button-group.menu.align-center
-      /= partial "partials/snippets/button", :locals => { :label => "Ask a Datica Expert", :url => "/contact/", :icon_align => "right", :button_classes => "button hollow", :icon => "icon-chat" }
-      /= partial "partials/snippets/button", :locals => { :label => "Read the Announcement", :url => "/blog/sansoro-health-datica-combine-forces", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "merger_article", :data_track_group => "company", :expand => false }
-      = partial "partials/snippets/button", :locals => { :label => "Read the blog post", :url => "/blog/sansoro-health-datica-combine-forces/", :button_classes => "button success", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "merge_press", :data_track_group => "company", :expand => false }
-      /= partial "partials/snippets/button", :locals => { :label => "Request a demo", :url => "/demo/", :button_classes => "button primary", :icon => "icon-chevron-right", :icon_align => "right", :item_id => "get_demo", :data_track_group => "compliance", :expand => false }
-.strip.strip-greens
-section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
+
+/section#products.section-article.bg-gray-3.container-image-fill.lozad data-background-image=bg_product_dark
   .row.align-center
     .columns.small-12.medium-10.large-6.text-center
       h2.headline-3.text-bold.group Datica solves the tough challenges of working with patient data.
@@ -89,7 +106,7 @@ section#products.section-article.bg-gray-3.container-image-fill.lozad data-backg
       .row.align-center.small-up-1.medium-large-up-2
         = partial "partials/snippets/product-list.slim", :locals => { :size => "large", :style => "light", :category_links => true }
 
-.strip.strip-greens-left
+/.strip.strip-greens-left
 
 section.section-article#compliance
   .row.align-center.text-center
@@ -102,7 +119,7 @@ section.section-article#compliance
             img alt="#{logo["name"]}" class="lozad #{logopad}" data-src="#{logo["fileUrl"]}" /
       = partial "partials/snippets/button", :locals => { :label => "Datica Compliance Story", :title => "Read more", :url => "/cloud-compliance/", :button_classes => "button hollow", :icon => "icon-chevron-right", :icon_color => "blue", :icon_align => "right", :item_id => "compliance-story", :data_track_group => "compliance" }
 
-section.section-article.bg-gray-12.drop-inset--v#proof
+/section.section-article.bg-gray-12.drop-inset--v#proof
   h3.headline-3.text-light.text-center.group Build <strong>Breakthrough</strong> Compliant Apps
   = partial "partials/content/video-quote"
 section.section-article.bg-white
@@ -113,7 +130,8 @@ section.section-article.bg-white
         - data.views.home.customers.each do |logo| # trying this as data-interchange for perf
           img alt="#{logo["name"]}" class=("lozad logo-cloud--item logo-size--#{logo['logoSize']}") data-src="/public/img/customer-logos/sm/#{logo['file']}.png" /
 
-= partial "partials/section-promos/latest-series"
+/= partial "partials/section-promos/latest-series"
+= partial "/partials/section-promos/podcast"
 section.section-article.bg-gray-12.drop-inset--v#education
   .row.align-center
     .columns.small-12.large-6
@@ -126,7 +144,6 @@ section.section-article.bg-gray-12.drop-inset--v#education
           a href=item.url title=item.title data-track-category="education" data-track-id="resources_#{item.slug}" = item.title
         p = item.desc
 
-/= partial "/partials/section-promos/podcast"
 
 section.section-article.bg-white#recent
   = partial "partials/content/recent-items"
