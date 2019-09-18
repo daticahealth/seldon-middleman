@@ -9,8 +9,9 @@
 / .text-right-on-large for some cases. -AW
 .row.align-center.align-middle class=classes
   .columns.small-12.medium-5.large-4 class=text_align
-    h3.headline-3.text-bold = entry.cta_title
-    p.lead = entry.cta_desc
+    h3.headline-4
+      a.text-bold href=entry.cta_url title=entry.cta_label = entry.cta_title
+    p = entry.cta_desc
   .columns.small-12.medium-7.large-8.xlarge-6 class=img_align
     a href=entry.cta_url title=entry.cta_label
       - if entry.has_key?("related_embed")

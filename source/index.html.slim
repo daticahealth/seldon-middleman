@@ -3,7 +3,7 @@ title: "Datica brings the cloud to healthcare"
 summary: "Datica and Sansoro Health merge to help accelerate healthcare’s data-driven future in the cloud."
 author: "Datica, Inc."
 tags: "compliance, HITRUST, integration, EHR, healthcare, education, HIPAA, HL7, FHIR, interoperability"
-customCSS: "home, products-mastheads"
+customCSS: "products-mastheads"
 customJS: "/public/js/products.js"
 layout: "basic"
 priority: "1.0"
@@ -44,7 +44,9 @@ ruby:
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   # current_page.data.share_image = image_share_platform
   # featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/470d9a7b58ffede77ae3d064cf86b655/office_-_istockphoto-626637134_edit.jpg"
-  current_page.data.asset_preload = '<link href="' + 'https://images.ctfassets.net/189dvqdsjh46/22u6YIHYILt7uTqCpYCBv4/76759911c110c5111e8d1b91c2d43882/bg-masthead-pattern.svg' + '" rel="preload" as="image" /><link href="' + 'https://images.ctfassets.net/189dvqdsjh46/2zLOFwJwyhM6db1IiTPvsz/65d0aa105a70fc11aec17ffdc844ca73/network-color-grad.svg' + '" rel="preload" as="image" />'
+  bg_masthead = 'https://images.ctfassets.net/189dvqdsjh46/6QEH9ycbuFUOfjjKqaYkan/6bbcdb723241965d5675df3bb67285f8/bg-masthead-blur.svg'
+  art_masthead = 
+  current_page.data.asset_preload = '<link href="' + bg_masthead + '" rel="preload" as="image" />'
   current_page.data.share_image = image_share_default
 
 scss:
@@ -52,7 +54,7 @@ scss:
     opacity: 0.5;
   }
   .lead {
-    letter-spacing: 0.03em;
+    letter-spacing: 0.01em;
     max-width: 40em;
     font-weight: 300;
   }
@@ -61,16 +63,16 @@ scss:
 section#top.bg-gray-1
   = partial "partials/head/header", :locals => { :style => "light" }
   
-section.masthead.bg-dark.bg-gray-1.relative id="masthead"
+section.masthead.bg-light.container-color--light-grad.relative id="masthead"
   .section-article.relative.z-10
     .row.align-center
       .columns.small-12.large-10.xlarge-9
         svg.group id="datica-logo-desktop" width="230" height="96"
           use.symbol-icon xlink:href="#datica-logo-horiz" href="#datica-logo-horiz"
         h1.headline-1.text-light.margin-bottom-small We bring the cloud to healthcare.
-        p.lead Developing healthcare applications in the cloud requires <strong>data integration and compliance</strong> with complicated rules and controls. Datica has a family of powerful, single-source solutions to those challenges.
+        p.lead.group Developing healthcare applications in the cloud requires <strong>data integration and compliance</strong> with complicated rules and controls. Datica has a family of powerful, single-source solutions to those challenges.
         .row.align-center.small-up-1.medium-up-2
-          = partial "partials/snippets/product-list.slim", :locals => { :size => "large", :style => "light", :category_links => true }
+          = partial "partials/snippets/product-list-alt.slim", :locals => { :size => "large", :style => "dark", :category_links => true }
         .waypoint
           h4.headline-5.spaced-out Learn More
           a.pulse href="#case-studies" title="Learn More"
@@ -78,8 +80,8 @@ section.masthead.bg-dark.bg-gray-1.relative id="masthead"
 
   .art
     /= inline_svg("network-color-grad", class: "z-5 art-accent step-2 img-mix-overlay")
-    .z-0.art-bg-fill.container-image-fill.lozad.step-1 data-background-image="https://images.ctfassets.net/189dvqdsjh46/22u6YIHYILt7uTqCpYCBv4/76759911c110c5111e8d1b91c2d43882/bg-masthead-pattern.svg"
-    img.z-5.art-accent.step-2.img-mix-overlay.lozad data-src="/public/icons/inlined/network-color-grad.svg"
+    / .z-0.art-bg-fill.container-image-fill.lozad.step-1 data-background-image=bg_masthead
+    img.z-5.art-accent.step-2.img-mix-overlay.lozad data-src="/public/icons/inlined/network-dots-white.svg"
 
 section.section-article.bg-light.bg-gray-11.collection#case-studies
   = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["cdRLk1E4TCvKRTrZ5fEdo"], :classes => "group--2x" })

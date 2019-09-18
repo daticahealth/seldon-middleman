@@ -34,7 +34,7 @@
     }
 }
 .masthead {
-    color: white;
+    // color: white;
     .sticky {
         &:not(.is-stuck) { // set initial states, before .is-stuck is set by scroll
             &[data-theme="light"] {

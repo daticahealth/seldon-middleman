@@ -268,7 +268,7 @@
         //     border-top: rem-calc(1px) solid $color_border;
         //     border-bottom: rem-calc(1px) solid $color_border;
         // }
-        &--white-to-gray-light {
+        &--light-grad {
             @include color--white-to-gray-light;
         }
         &--gray-dark {
@@ -519,8 +519,8 @@
 .strip-bright { // bright strip, supersat
     // min-height: calc(3px + 0.5vw);
     @extend .strip;
-    // @include grad-bright;
-    @include gradient-greens(to right);
+    @include grad-bright;
+    // @include gradient-greens(to right);
 }
 // Vertical align helper
 .vertical-align {
