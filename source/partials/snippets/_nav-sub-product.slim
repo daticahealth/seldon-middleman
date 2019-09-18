@@ -17,10 +17,7 @@ ruby:
             li
               span.show-for-sr Current: 
               = current_page.data.navTitle
-      / li.menu-item.text-small style="align-items: inherit;"
-        svg#subnav-product-cpaas-logo.icon-size--small.icon-inline.icon-left
-          use.symbol-icon href="#cpaas-logo" xlink:href="#cpaas-logo"
-        | Datica CPaaS
+
 
       - current_page.data.subnav.each do | item |
         li.menu-item

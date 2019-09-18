@@ -15,10 +15,10 @@
         <% end %>
     </head>
     <% if build? %><%= partial "partials/scripts/google-tm-body" %><% end %>
-    <body class="<%= page_classes %> container-gray-11">
+    <body class="<%= page_classes %> bg-gray-11">
         <%= partial "assets/icons/inlined/product-shapes-symbol.svg" %><%# product-related shapes %>
         <%#= partial "partials/snippets/alert-ribbon" %>
-        <div class="container-gray-1">
+        <div class="bg-gray-1">
             <%= partial "partials/head/header", :locals => { :style => "light" } %>
         </div>
         <div id="content" class="content">

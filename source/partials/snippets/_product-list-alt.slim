@@ -23,8 +23,8 @@ ruby:
   # if defined?(desc) && desc == true
   # else
   # end
-  cat_compliance = '<h3 class="text-light group--sm headline-4"><span class="text-bold headline-3">Cloud Compliance</span><br>with patient data in the cloud</h3>'
-  cat_integration = '<h3 class="text-light group--sm headline-4"><span class="text-bold headline-3">Integrate</span><br>with patient data from anywhere</h3>'
+  cat_compliance = '<h3 class="text-light group headline-4"><span class="text-bold headline-3">Cloud Compliance</span><br>with patient data in the cloud</h3>'
+  cat_integration = '<h3 class="text-light group headline-4"><span class="text-bold headline-3">Integrate</span><br>with patient data from anywhere</h3>'
   if defined?(category_links) && category_links == true
     category_links = true
   else
@@ -34,6 +34,19 @@ ruby:
   # sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
 
 / = partial "assets/icons/inlined/datica-branding-logos-symbol.svg"
+scss:
+  .product-icon {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .product-card {
+    &:hover {
+      color: white;
+      .product-icon {
+        transform: scale3D(1.06, 1.06, 1.06);
+      }
+    }
+  }
+// bg image: ?fm=jpg&w=600&h=200&fit=crop
 
 - nav_collection = data.site.collections.to_a.select { |id, entry | (id == master_nav_id) }
 - nav_collection.each do | id, nav_section |
@@ -45,19 +58,19 @@ ruby:
         aside.column.group data-theme=theme class=(is_product == true ? nil : "shrink-for-large bg-#{theme}")
           - if nav_item.section == 'Compliance' ? category = cat_compliance : category = cat_integration
           = category
-          ul.menu.button-card--container.group--sm data-theme=theme
+          .group--sm data-theme="light"
             - nav_item.child_data.each do | child |
-              li.button-card--item class="product-#{child.title_short.parameterize}"
+              - if child.has_key?("bg") ? bg = "#{child.bg}" : nil
+              a.product-card.bg-gray-2.group.pad--lg.card-hover.card.lozad.container-image-fill href=child.url title="Explore #{child.title}" data-track="true" data-track-category="nav" data-track-id="page-#{child.title_short.parameterize}" class="product-#{child.title_short.parameterize}" data-background-image=bg
                 - if is_product == true && child.has_key?("icon")
-                  a href=child.url title="Explore #{child.title}" data-track="true" data-track-category="nav" data-track-id="page-#{child.title_short.parameterize}"
-                    .media-object.nav__product
-                      .media-object-section
-                        svg id="product-#{child.icon}" class="icon-size--#{icon_size}"
-                          use.symbol-icon xlink:href="##{child.icon}" href="##{child.icon}"
-                        /= inline_svg(child.icon, class: "icon-size--medium")
-                      .media-object-section.media-object--info.main-section.align-self-middle
-                        h4.headline-5.nomargin = child.title
-                        p.text-regular.text-small = child.desc
+                  .media-object.nav__product
+                    .media-object-section
+                      svg id="product-#{child.icon}" class="product-icon icon-size--#{icon_size}"
+                        use.symbol-icon xlink:href="##{child.icon}" href="##{child.icon}"
+                      /= inline_svg(child.icon, class: "icon-size--medium")
+                    .media-object-section.media-object--info.main-section.align-self-middle
+                      h4.headline-5.nomargin = child.title
+                      p.text-regular.text-small = child.desc
                 - else
                   a href=child.url title="Explore #{child.title}" data-track="true" data-track-category="nav" data-track-id="page-#{child.url.parameterize}" = child.title
           - if category_links == true && nav_item.has_key?('section_link_label')

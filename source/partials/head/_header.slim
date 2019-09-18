@@ -74,33 +74,36 @@ nav.nav data-theme=theme
                         - if child.has_key?("has_divider") && child.has_divider == true
                           hr.menu-divider
                 - if nav_item.has_key?("section_promo")
-                  - path = case nav_item.section_promo._meta.content_type_id
-                  - when "academy" then "academy"
-                  - when "blog" then "blog"
-                  - when "cta" then "cta"
-                  - when "caseStudy" then "customer"
-                  - when "events" then "event"
-                  - when "guides" then "guide"
-                  - when "pressReleases" then "press-release"
-                  - when "reports" then "innovation"
-                  - when "webinars" then "webinar"
-                  - promo_url = "/#{path}/#{nav_item.section_promo.slug}"
-                  - case nav_item.section_promo._meta.content_type_id
-                  - when "webinars"
-                    aside.columns.nav__submenu-pane.small-12.large-4.bg-gray-2.show-for-large
-                      = partial "partials/cards/webinar-poster", :locals => { :entry => data.site.webinars[nav_item.section_promo.id] }
-                  - when "cta"
-                    - cta_entry = data.site.cta[nav_item.section_promo.id]
-                    aside.columns.nav__submenu-pane.small-12.large-4.show-for-large
-                      - if nav_item.section_promo.has_key?("cta_image")
-                        - if nav_item.section_promo.has_key?("cta_image_small") ? banner = cta_entry.cta_image_small.url : banner = cta_entry.cta_image.url
-                        a href=cta_entry.cta_url title=cta_entry.cta_title data-track="true" data-track-category="nav" data-track-id="section-promo-#{nav_item.section.parameterize}"
-                          img.lozad.thumbnail alt=cta_entry.cta_title data-src="#{banner}?w=560&fm=jpg&fl=progressive" src="#{banner}?w=560&q=5" width="280" /
-                      - else
-                        h4.headline-5.nav--promo = cta_entry.cta_title
-                        p.text-small = cta_entry.cta_desc
-                        = partial "partials/snippets/button", :locals => { :label => cta_entry.cta_label, :url => cta_entry.cta_url, :button_classes => "button small success", :data_track_group => "nav", :item_id => "section-promo-#{nav_item.section.parameterize}", :icon => "icon-angle-right", :icon_align => "right" }
-                  - else
+                  // the case statement started breaking - the following var isn't always present in the CFMM renderer. No idea why. -AW
+                  // The section promo is assumed to be a CTA entry from here on out. Keeping this snippet handy tho:
+
+                  / - path = case nav_item.section_promo._meta.content_type_id
+                  / - when "academy" then "academy"
+                  / - when "blog" then "blog"
+                  / - when "cta" then "cta"
+                  / - when "caseStudy" then "customer"
+                  / - when "events" then "event"
+                  / - when "guides" then "guide"
+                  / - when "pressReleases" then "press-release"
+                  / - when "reports" then "innovation"
+                  / - when "webinars" then "webinar"
+                  / - promo_url = "/#{path}/#{nav_item.section_promo.slug}"
+                  / - case nav_item.section_promo._meta.content_type_id
+                  / - when "webinars"
+                  /   aside.columns.nav__submenu-pane.small-12.large-4.bg-gray-2.show-for-large
+                  /     = partial "partials/cards/webinar-poster", :locals => { :entry => data.site.webinars[nav_item.section_promo.id] }
+                  / - when "cta"
+                  - cta_entry = data.site.cta[nav_item.section_promo.id]
+                  aside.columns.nav__submenu-pane.small-12.large-4.show-for-large
+                    - if cta_entry.has_key?("cta_image")
+                      - if cta_entry.has_key?("cta_image_small") ? banner = cta_entry.cta_image_small.url : banner = cta_entry.cta_image.url
+                      a href=cta_entry.cta_url title=cta_entry.cta_title data-track="true" data-track-category="nav" data-track-id="section-promo-#{nav_item.section.parameterize}"
+                        img.lozad.thumbnail alt=cta_entry.cta_title data-src="#{banner}?w=560&fm=jpg&fl=progressive" src="#{banner}?w=560&q=5" width="280" /
+                    - else
+                      h4.headline-5.nav--promo = cta_entry.cta_title
+                      p.text-small = cta_entry.cta_desc
+                      = partial "partials/snippets/button", :locals => { :label => cta_entry.cta_label, :url => cta_entry.cta_url, :button_classes => "button small success", :data_track_group => "nav", :item_id => "section-promo-#{nav_item.section.parameterize}", :icon => "icon-angle-right", :icon_align => "right" }
+                  / - else
                     aside.columns.small-12.large-4.bg-gray-2.nav__submenu-pane.show-for-large
                       h4.headline-5.nav--promo = nav_item.section_promo.title
                       p.text-small = nav_item.section_promo.summary

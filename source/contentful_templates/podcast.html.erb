@@ -50,7 +50,7 @@ filtered_webinars = data.site.webinars.to_a.select{ |id, webinars| webinars.has_
         <div class="row align-middle align-center">
             <% if p.has_key?("guest") %>
                 <div class="columns small-8 medium-3 large-2">
-                    <img src="<%= p["guest"]["profile_pic"]["url"] %>?fit=thumb&w=300&h=300&f=face" class="avatar circle" alt="<%= p["guest"]["fullname"] %>">
+                    <img src="<%= p["guest"]["profile_pic"]["url"] %>?fit=thumb&w=300&h=300&f=face&q=20" data-src="<%= p["guest"]["profile_pic"]["url"] %>?fit=thumb&w=300&h=300&f=face" class="avatar circle" alt="<%= p["guest"]["fullname"] %>">
                 </div>
             <% end %>
             <div class="columns small-12 medium-9 large-10 featured-post">
