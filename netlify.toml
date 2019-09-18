@@ -778,6 +778,941 @@
   status = 301
 
 [[redirects]]
+  from = "/academy/the-hipaa-security-rule"
+  to = "/academy/hipaa-101-a-primer/"
+  status = 301
+
+[[redirects]]
+  from = "/academy/how-do-you-do-hipaa-training"
+  to = "/academy/hipaa-101-a-primer/"
+  status = 301
+
+[[redirects]]
+  from = "/academy/customizable-hipaa"
+  to = "/academy/hipaa-101-a-primer/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/cloudy-outlook-2018-cio-cloud-perspective-survey"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/the-hipaa-compliant-solution-for-telehealth"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "https://content.datica.com/what-is-the-hitrust-framework"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/hhs-guidance-on-hipaa-compliance-in-the-cloud-what-you-need-to-know"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/hitrust-inheritance-the-most-important-compliance-announcement-of-the-year"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/how-digital-health-succeeds-and-fails-datica-at-sxsw"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/information-governance-survey-shows-benefits-in-compliance"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/integrating-with-epic-or-any-ehr"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/opportunities-for-digital-health-vendors-in-pharma"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/us-healthcare-is-like-a-casino-says-dan-munro"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/what-does-healthkit-mean-for-healthcare"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/hitrust-will-be-a-core-requirement-to-do-business-with-healthcare-enterprises"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/10-financial-questions-to-ask-before-an-ehr-project"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/what's-an-application-developers-responsibility-for-hipaa"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/4-phi-marketing-special-cases"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/fda-digital-health-precertification-program"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/fifty-states-of-hipaa"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/hipaa-enforcement-in-2017"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/new-chief-operating-officer-deepens-epic-experience-at-datica"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/the-trusted-exchange-framework"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/announcing-self-service-and-free-trials"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/casey-bryson-the-man-the-myth-the-legend"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/digital-health-innovating-behavioral-healthcare"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/frugal-innovation-in-healthcare"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/how-we-process-over-6-000-000-and-growing-hl7-messages-a-month"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/major-announcement-rolls-out-of-voaltes-user-experience-vue16"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/top-5-things-you-find-in-an-ideal-business-associate-agreement"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/baa-isn-t-a-checkbox-for-hipaa-compliance"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/connected-health-today-and-in-the-future"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/data-security-patient-engagement"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/digital-health-apps-could-save-7-billion"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/ehr-costs-hinder-interoperability"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/how-does-the-cloud-reduce-data-loss-risk"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/industry-shaking-news-at-the-hitrust-3rd-party-assurance-conference"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/metabahn-and-healthloop-chose-catalyze-but-why"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/multi-tenancy-is-a-key-security-design-requirement-our-latest-academy-entry"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/three-hipaa-omnibus-rule-essentials-for-it-security"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/top-ehr-vendors-epic-mckesson-etc-meet-to-determine-interoperability-metrics"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/voalte-guest-post-the-company-we-keep"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/whos-really-interpreting-and-enforcing-hipaa-for-startups"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/4-essentials-to-enabling-clinical-integration"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/4-integration-factors-docbookmd-considered"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/7-step-technology-checklist-for-phi-protection"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/apple-s-researchkit-and-clinical-research-opportunities-and-challenges"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/catalyzes-new-fhir-documentation-is-your-trusted-fhir-resource"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/cve-2014-6271-shellshock-and-the-catalyze-platform"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/data-enabled-does-not-equal-data-driven"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/dhsf-building-a-body-of-evidence-to-support-your-strategy-roadmap"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/hipaa-compliance-on-the-ionic-market"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/public-vs-private-cloud-computing-examined-our-latest-quarterly-industry"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/spear-phishing-hackers-aiming-for-healthcare"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/the-healthcare-innovator-s-dilemma"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/variation-in-state-privacy-laws"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/whats-your-patient-engagement-strategy"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/zenefits-scandal-further-proves-the-importance-of-compliance"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/6-insights-on-healthcare-innovation"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/an-explanation-of-adam-schefter-s-tweet-news-media-professional-athletes-and-hipaa"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/announcing-redpoint-your-integration-sherpa"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/avoid-inaccurately-matching-patients-health-records"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/best-practices-are-best-practices-how-datica-handles-global-compliance"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/can-mhealth-transform-provider-workflows-patient-care"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/catalyze-open-source"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/catalyze-policies-ready-for-deployment"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/changing-reimbursement-means-new-opportunities"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/compliance-by-design"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/datica-unveils-new-customer-access-healthnet"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/down-the-road-to-hitrust"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/facing-down-the-largest-breaches-of-2017-with-daticas-open-source-policies"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/heres-a-new-site-and-our-first-white-paper"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/himss-2019-survival-guide"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/insufficiencies-in-standards-for-ehr-interoperability"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/madison-startups-on-the-map-healthcare-it-included"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/may-conference-roundup-datica-on-the-main-stage-at-msbuild-and-hlth"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/microsoft-datica-digital-health-bootcamp-at-sxsw"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/open-apis-solve-lack-of-ehr-interoperability"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/reflecting-on-our-time-with-cdhi-at-ucsf"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/socialwellth-and-health123-advance-opportunities-in-value-based-care"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/the-new-catalyze-hq"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/the-purpose-of-hitrusts-business-associate-council"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/vue15-recap-voalte-uber"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/what-does-healthkit-mean-for-mobile-app-developers"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/why-there-is-up-front-pricing-now"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/10-most-read-articles-of-2017"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/21st-century-cures-act-passes-in-the-house-of-representatives"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/3-benefits-of-accessible-big-data-analytics"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/accountable-care-organizations-and-population"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/an-interview-with-chris-belmont-vp-and-cio-at-md-anderson"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/announcing-change-agent-daticas-medium-publication"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/announcing-our-first-customer-spotlights"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/announcing-stratum-your-compliance-foundation"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/apples-new-researchkit-studies"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/catalyze-baas-shellshock-update"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/catalyze-compliance-experts-mythbust-3-hipaa-misconceptions"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/catalyze-speaking-again-today-at-the-2015-digital-health-summer-summit"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/catalyze-speaks-integration-at-open-mhealth-on-wednesday"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/catalyzing-the-hitrust-ba-council-healthxl-global-gathering-hosting-partnership"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/check-out-our-new-hipaa-compliance-faq"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/configuration-management-2-commanding-your-minions-with-salt"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/customers-in-the-news-crossover-health"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/customers-in-the-news-welkin-raises-a-2m-seed-round"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/datica-ceo-to-present-at-stanford-medicine-x-conference"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/datica-continues-expanding-industry-support-and-recognition"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/datica-is-hitrust-certified"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/datica's-gone-native-cloud-native"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/daticas-success-as-a-hipaa-compliant-business-associate"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/difficulties-of-clinically-testing-health-apps"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/digital-health-funding-9-2014"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/digital-health-funding-already-billions-in-q1-2018"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/digital-health-summer-summit-hits-peak-of-healthcare-innovation"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/does-healthcare-it-put-the-cart-before-the-horse"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/engagement-mandates-a-positive-technology-focus"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/engaging-the-millennial-generation"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/fhir-is-on-fire-as-we-release-our-latest-academy-entries"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/five-tips-to-a-successful-patient-engagement-strategy"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/getting-ready-for-our-second-board-meeting"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/good-guide-surviving-himss"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/guiding-patient-engagement"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/health-2.0-recap-day-1"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/health-2.0-recap-day-2"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/health-2.0-recap-day-3"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/health-news-roundup-9-11-2014"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/health-news-roundup-9-2014"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/healthcare-innovation-what-is-it-solving"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/himss-2015-recap"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/hipaa-compliance-assessment"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/hipaa-legislation-is-in-the-house"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/hipaa-risk-assessment"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/hipaa-security-assessment"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/hitrust-2018-a-fantastic-event"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/how-hit-vendors-price-their-solutions"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/how-to-interpret-physician-billing"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/increased-interoperability-will-lead-to-increased-patient-engagement"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/innovation-partnerships-anticipated-at-upcoming-industry-gatherings"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/it-executives-and-clinicians-collaborate-at-sold-out-open-mhealth-summit-2015"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/joint-commission-allows-secure-texting"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/lay-of-the-land"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/lets-encourage-secure-sharing-of-health-data"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/looking-in-the-rearview-mirror-at-health-2-0-2012"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/marketing-value-based-care-will-generate-desired-patient-engagement-results"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/need-for-governance-and-trust-among-entities"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/new-app-built-by-veterans-addresses-ptsd"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/our-journey-to-series-a"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/overview-of-current-administrations-approach-to-hit"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/pact-in-the-news"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/patient-engagement-healthcare-organizations-vs-healthcare-consumers"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/payors-gain-from-advances-in-technology"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/planning-for-innovation-in-2016"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/planning-for-our-first-board-meeting"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/poodle-impact"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/recap-recent-complete-cloud-compliance-talks"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/record-breaking-hipaa-violation-settlements-will-change-the-compliance-calculus"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/reflections-on-himss-2017-same-same-but-different"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/securing-network-access-in-healthcare"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/selling-health-tech-means-minimizing-risk"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/startmeup-health-presentation"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/summer-quarterly-report-preview-privacy-big-technology"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/taming-the-torrent-of-patient-generated-healthcare-data"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/telemedicine-on-verge-of-market-adoption"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/testimonial-it-challenge-leads-to-catalyze-solution"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/the-2018-hot-list-what-healthcare-developers-were-reading"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/the-doctor-app-question-who-will-validate-vet-or-veto"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/the-health-internet-of-things-iot"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/the-three-rules-of-product-definition"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/three-considerations-for-how-vendors-can-drive-patient-engagement-forward"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/three-key-focuses-for-healthcare-cios"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/too-early-or-just-right"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/top-6-free-digital-stocking-stuffers"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/two-healthcare-systems-partner-with-vendors-to-further-innovation"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/urgent-hipaa-security-pros-needed-in-healthcare"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/visions-of-the-future-of-digital-health-at-himss-2017"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/visit-the-datica-vip-area-at-histalkapalooza-2017"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/vue15-catalyze-ceo-talks-mhealth-history-at-voaltes-first-user-conference"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/watch-live-preview-datica-ccms"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/webinar-what-is-the-digital-health-success-framework"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/what-is-cloud-computing-and-why-it-matters-for-compliance"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/where's-datica-our-fall-2018-conference-lineup"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/white-paper-making-enterprise-healthcare-sales-easier"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/whos-buying-engagement-2015-update"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/why-do-healthcare-it-systems-account-for-40-billion"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/why-interoperability"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/why-lets-encrypt-is-our-favorite-open-source-project-this-year"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/with-sxsw-in-the-rearview-we-look-ahead-to-himss-2015"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/zipnosis-diagnoses-catalyze-in-our-latest-case-study"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
+  from = "/blog/zipnosis-in-the-news"
+  to = "/blog/"
+  status = 410
+
+[[redirects]]
   from = "/learn/business-associates-agreements"
   to = "/academy/business-associate-agreements"
   status = 301
