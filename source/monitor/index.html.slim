@@ -1,7 +1,7 @@
 ---
-title: "Cloud Compliance Management System | Datica Compliance"
-summary: "Cloud Compliance Management System (CCMS) maps to HITRUST and manages the continual compliance state of cloud services."
-navTitle: "Datica CCMS"
+title: "Datica Monitor | Compliance"
+summary: "Datica Monitor is an easy-to-use SaaS tool that takes advantage of cloud provider APIs to monitor and assess the configuration state of your cloud services, ensuring you have real-time mappings to regimes like HIPAA, HITRUST, and more."
+navTitle: "Datica Monitor"
 author: "Datica, Inc."
 tags: "compliance, HIPAA, HL7, FHIR, interoperability, EHR, Kubernetes"
 date: "September 25, 2018"
@@ -81,8 +81,8 @@ section.masthead.bg-dark.bg-purple-bp-grad.product-ccms.relative id=current_page
           .media-object-section
             = inline_svg("ccms-logo-w", class: "masthead-icon")
           .media-object-section.media-object--info.main-section.align-self-middle
-            h1.headline-3.text-bold.margin-bottom-sm Cloud Compliance Management System
-            p.lead Know the precise compliance state of your cloud environments
+            h1.headline-1.text-light.margin-bottom-small Datica <strong>Monitor</strong>
+            p.lead Know the precise compliance state of your cloud services
             = partial "partials/snippets/button", :locals => { :label => "Schedule a Demo", :url => "##{current_page.data.subnav.last.slug}", :button_classes => "button button--light nomargin step-2", :data_track_group => "compliance", :item_id => "get-ccms-top", :icon => "icon-chevron-down", :icon_align => "right", :expand => "false" }
   .art
     = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/cloud-compliance/" }
@@ -107,7 +107,7 @@ section.section-article.bg-white
     .columns.small-12.medium-10.large-7
       = Kramdown::Document.new(data.site.videos['1fMsxIMgXvZS6x0mowu1Nk'].custom_form).to_html
 
-section.section-article.pad-no-bottom.bg-gray-11
+/section.section-article.pad-no-bottom.bg-gray-11
   .row.align-center.align-middle
     .columns.small-12.medium-10.large-5.large-order-2.group
       h2.headline-5.color-ccms-dark Uniquely designed to fit the specific requirements of healthcare compliance
@@ -116,31 +116,30 @@ section.section-article.pad-no-bottom.bg-gray-11
         li Only continuous monitoring tool to focus on checking specific compliance controls.
         li Only solution that helps developers with the most important part of compliance: proving it. Unique features make attestation easier.
         li Only compliance solution to focus on the post- cloud era, working hand-in-hand with the managed services on top of cloud providers that you want to use. It is not a VM or host-based
-        li CCMS leaves security implementation up to you, just the way you like it: pick the tools you want to use and solve security your way. We'll then check to ensure it is compliant.
+        li Monitor leaves security implementation up to you, just the way you like it: pick the tools you want to use and solve security your way. We'll then check to ensure it is compliant.
     .columns.small-12.medium-12.large-7.align-self-bottom.large-order-1
-      img.lozad.img-crisp src="https://images.ctfassets.net/189dvqdsjh46/57ACO3Sx2RSPR3rfn68nT5/6daa8c73dea24e9453c26ada6033dd83/ccms-diagram-loader.svg" data-src="#{img_2}" alt="CCMS keeps your services compliant; Feature list"
+      img.lozad.img-crisp src="https://images.ctfassets.net/189dvqdsjh46/57ACO3Sx2RSPR3rfn68nT5/6daa8c73dea24e9453c26ada6033dd83/ccms-diagram-loader.svg" data-src="#{img_2}" alt="Monitor keeps your services compliant; Feature list"
       / snippet for bg color: ?w=792&fm=jpg&q=10&bg=rgb:e5e9eb
 
-
-section.section-article.bg-white id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
+section.bg-gray-12.section-article.drop-inset--v id=current_page.data.subnav[1].slug data-magellan-target=current_page.data.subnav[1].slug
   .row.align-center
     .columns.small-12.large-8.text-center
       h2.headline-5.spaced-out.color-ccms-dark How it works
-      p.lead CCMS is a easy-to-use SaaS tool that uses modern APIs to assess the configuration state of your favorite cloud services.
-  .row.align-center.small-up-1.medium-up-2.large-up-2.group.width-two-thirds
+      p.lead Monitor is a easy-to-use SaaS tool that uses modern APIs to assess the configuration state of your favorite cloud services.
+  .row.align-center.small-up-1.medium-up-2.large-up-2.width-two-thirds
     .column.group
       h4.headline-4 Easy set-up
       p Customers select from a list of approved cloud services from one of the three major cloud service providers. Customers are walked through a workflow to configure the service to specific HITRUST CSF controls.
     .column.group
       h4.headline-4 Continuous compliance
-      p The chosen cloud services are connected to the CCMS via APIs. Datica then monitors the configuration states every day, checking to ensure the states have not changed in a non-compliant way.
+      p The chosen cloud services are connected to Datica Monitor via APIs. Datica then monitors the configuration states every day, checking to ensure the states have not changed in a non-compliant way.
     .column.group
       h4.headline-4 Compliance-specific features
-      p On-demand tools for remediation practices, attestation exercises, and historical reporting are available for all services monitored by the CCMS, making compliance tasks easy.
+      p On-demand tools for remediation practices, attestation exercises, and historical reporting are available for all services monitored by Datica Monitor, making compliance tasks easy.
     .column.group
-      h4.headline-4 The CCMS grows with you
-      p As a team's architecture grows, simply add more supported services to the CCMS. Even add services across multiple clouds! All centralized into a single elegant dashboard with powerful features.
-            
+      h4.headline-4 Datica Monitor grows with you
+      p As a team's architecture grows, simply add more supported services to Datica Monitor. Even add services across multiple clouds! All centralized into a single elegant dashboard with powerful features.
+section.section-article.bg-white            
   .row.align-center
     .columns
       h3.headline-3.group.text-center.color-ccms-dark API-Driven Compliance
@@ -148,7 +147,7 @@ section.section-article.bg-white id=current_page.data.subnav[1].slug data-magell
     .row.align-center.align-middle.group--2x
       .columns.small-12.medium-6.large-5
         h3.headline-5 Audited
-        p Each configuration supported by Datica CCMS has been audited against HITRUST CSF v9.1, meaning a configuration is meant to be compliant against the regimes of HIPAA, GDPR, and GxP. It tracks configuration changes with each CSF update.
+        p Each configuration supported by Datica Monitor has been audited against HITRUST CSF v9.1, meaning a configuration is meant to be compliant against the regimes of HIPAA, GDPR, and GxP. It tracks configuration changes with each CSF update.
       .columns.small-12.medium-6.large-5
         .logo-cloud.align-center.text-center
           - data.views.home.badges.each do |logo|
@@ -156,19 +155,19 @@ section.section-article.bg-white id=current_page.data.subnav[1].slug data-magell
     .row.align-center.align-middle.group--2x
       .columns.small-12.medium-8.large-6
         h3.headline-5 Real Time
-        p Datica CCMS checks configuration states every day and tracks the states in a historical data model. This is the missing piece for modern cloud compliance: Constant understanding of the precise state of your cloud environments.
+        p Datica Monitor checks configuration states every day and tracks the states in a historical data model. This is the missing piece for modern cloud compliance: Constant understanding of the precise state of your cloud environments.
       .columns.small-12.medium-4.large-4
         img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/3SYqUI2cG1VPfpGvep5BD5/1435c7636d927693b7792a7825a90f4c/ccms-detail-realtime.png?w=700&fm=jpg&q=90&bg=rgb:ffffff"
     .row.align-center.align-middle.group--2x
       .columns.small-12.medium-8.large-6
         h3.headline-5 Uniquely Dynamic
-        p The cloud is a dynamic world and compliance struggles to keep up. Datica CCMS is the only tool available to assess assurance of managed and microservices against critical compliance controls. It gives customers a strategy for the future.
+        p The cloud is a dynamic world and compliance struggles to keep up. Datica Monitor is the only tool available to assess assurance of managed and microservices against critical compliance controls. It gives customers a strategy for the future.
       .columns.small-12.medium-4.large-4
         img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/7cO8LZOhMz4VMc9kRU9lfO/5f76f76a1157005c10e887c42f081b6a/c3-diagram-managed-services-crop.png"
     .row.align-center.align-middle.group--2x
       .columns.small-12.medium-8.large-6
         h3.headline-5 Zero Lock-in
-        p As with all of Datica's products, there is zero lock-in. Every service supported by the CCMS will have its configurations published to be publicly reviewable. Full transparency on what we monitor and why is critical to earning trust.
+        p As with all of Datica's products, there is zero lock-in. Every service supported by Datica Monitor will have its configurations published to be publicly reviewable. Full transparency on what we monitor and why is critical to earning trust.
       .columns.small-12.medium-4.large-4
         img.lozad src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/dxlAzg0xvSNx6xwJ6GIke/d4dc2f8027447b1812d9b9ffb71c0ccd/zero-lock-in.png"
 
@@ -195,7 +194,7 @@ section.bg-dark.bg-purple-bp-grad.product-ccms
   .section-article--med.container-image--center.lozad.text-center data-background-image=bg_image
     .row.align-center.align-middle.z-10.relative
       .columns.small-12.medium-8
-        h2.headline-3.text-light Don't just guess—<strong>know</strong> the precise compliance state of your cloud environments with Datica CCMS.
+        h2.headline-3.text-light Don't just guess—<strong>know</strong> the precise compliance state of your cloud services with Datica Monitor.
     .waypoint
       h4.headline-5.spaced-out Schedule a Demo
       a.pulse.link-white-plain href="##{current_page.data.subnav.last.slug}" title="Inquire Today"
@@ -210,7 +209,7 @@ section.bg-white id=current_page.data.subnav[3].slug data-magellan-target=curren
         h2.headline-2.text-center = "#{current_year} is a Post-Cloud World"
         p The proliferation of abstracted cloud services has increased in an effort to improve developer experience (a good thing). As a result, most cloud environments are a constellation of managed services and microservices. The cloud is no longer simply an operating system on someone else's hard drive.
         p.group But increased abstraction has meant greater control has been taken away from the end user's ability to attest to compliance assurances (a bad thing). The entire layer of "Services" on top of traditional VMs has completely changed how compliance should be measured, monitored, and managed.
-        h3.headline-4.text-center How CCMS Helps You Pass Audits
+        h3.headline-4.text-center How Monitor Helps You Pass Audits
         p This is a typical <a href="/academy/steps-to-climbing-maturity-model/" title="Steps to the Maturity Model">maturity model</a> that your company will be audited against. It defines Privacy vs. Security vs. Compliance.
 
     .row.align-center
@@ -232,7 +231,7 @@ section.bg-white id=current_page.data.subnav[3].slug data-magellan-target=curren
                 .headline-4.spaced-out.underline-yellow Privacy
                 p.text-small Defines what must be done to protect privacy.
               td 
-                p Datica CCMS is the only product focused on making it easy to understand how to secure cloud environments specific to policies and procedures audited against the HITRUST CSF (the <span class="ribbon--yellow-glow">"Privacy"</span> part).
+                p Datica Monitor is the only product focused on making it easy to understand how to secure cloud environments specific to policies and procedures audited against the HITRUST CSF (the <span class="ribbon--yellow-glow">"Privacy"</span> part).
             tr
               td.model-stage
                 h4.headline-5 Implementations
@@ -249,7 +248,7 @@ section.bg-white id=current_page.data.subnav[3].slug data-magellan-target=curren
                 .headline-4.spaced-out.underline-aqua Compliance
                 p.text-small Proves it was done.
               td 
-                p CCMS then continuously monitors the configuration state on a daily basis to ensure continual validation (the <span class="ribbon--aqua-glow">"Compliance"</span> part).
+                p Monitor then continuously monitors the configuration state on a daily basis to ensure continual validation (the <span class="ribbon--aqua-glow">"Compliance"</span> part).
 
   .section-article
     .row.align-center
@@ -266,16 +265,16 @@ section.bg-white id=current_page.data.subnav[3].slug data-magellan-target=curren
   .section-article
     .row.align-center
       .columns.small-12.medium-8.large-6
-        p.lead <strong>Datica CCMS solves this problem.</strong> Simply plug <a href="#configs" title="Configurations">available services</a> into the CCMS and let us continuously monitor the compliance state of a service. Users can be assured the configurations map to the proper HITRUST CSF controls, thus generating a compliant posture against regimes such as HIPAA, GDPR, and GxP.
+        p.lead <strong>Datica Monitor solves this problem.</strong> Simply plug <a href="#configs" title="Configurations">available services</a> into Datica Monitor and let us continuously monitor the compliance state of a service. Users can be assured the configurations map to the proper HITRUST CSF controls, thus generating a compliant posture against regimes such as HIPAA, GDPR, and GxP.
 
 section.section-article.bg-gray-12 id=current_page.data.subnav[4].slug data-magellan-target=current_page.data.subnav[4].slug
   .row.align-center.align-middle
     .columns.small-12.medium-6.large-6
       h2.headline-3 Make any cloud service compliant
-      p.lead The compliant configuration states of cloud services should not be proprietary. Transparency is fundamental to healthcare's transformation. Every service monitored by the CCMS will be publicly documented to help empower healthcare developers.
+      p.lead The compliant configuration states of cloud services should not be proprietary. Transparency is fundamental to healthcare's transformation. Every service monitored by Datica Monitor will be publicly documented to help empower healthcare developers.
       p.group In a post-cloud world, configuring a service in a continual state is the goal. The hard part is simply knowing the proper configuration state mapped to a specific control. Modern compliance extends way beyond simple security group management, which is what existing tools do. Available today are configuration states of the three most popular managed database services across the three main cloud service providers. Each state has been mapped to appropriate HITRUST CSF controls and audited.
       h2.headline-3 Simple, straightforward pricing
-      p.lead Datica CCMS is ($100/mo. per Service type + $1/mo. per instance)
+      p.lead Datica Monitor is ($100/mo. per Service type + $1/mo. per instance)
       p 
         em A 'service' is any supported cloud provider service, like AWS RDS, Azure Cosmos DB, or Google Cloud SQL.
     .columns.small-12.medium-6.large-4
@@ -307,8 +306,8 @@ section.bg-dark.bg-purple-bp-grad.product-ccms id=current_page.data.subnav[5].sl
   .section-article.container-image--center.lozad data-background-image=bg_image
     .row.align-center.align-middle.z-10.relative
       .columns.small-12.medium-6.large-5
-        h2.headline-3 Cloud Compliance Management System is here.
-        p.lead.group--2x See the CCMS in action! Fill out this form and one of our product specialists will reach out to schedule your demo.
+        h2.headline-3 Datica Monitor is here.
+        p.lead.group--2x See Datica Monitor in action! Fill out this form and one of our product specialists will reach out to schedule your demo.
       #cta-form.columns.small-12.medium-large-6.large-4
         .callout.drop
           / h3.headline-4.text-center.group Talk to our experts today to discuss your integration challenges.
