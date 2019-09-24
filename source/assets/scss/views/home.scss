@@ -9,6 +9,14 @@
 // @import '../modules/masonry';
 // @import '../modules/fonts-optional';
 
+.bg-dark {
+    a:not([class]), a.text-bold {
+        @include link-colors ($color_prime-bright, white, true);
+        font-weight: $font-weight-bold;
+    }
+}
+
+
 // Yes, kids, I am inlining these styles with the component partial
 // .bg-video {
 //     &--container {
@@ -65,54 +73,54 @@
     //         // display: inline-block;
     //     }
     // }
-$speed: 200ms;
-$c0: #9A0BFF;
-$c1: #6E52FF;
-$c2: #498CFF;
-$c3: #25C6FF;
-a.content-trigger {
-    padding: 1.8rem;
-    border-radius: 5px;
-    background-color: white;
-    color: #090909;
-    margin-bottom: 2rem;
-    transition: background-color $speed linear, color $speed linear, box-shadow $speed linear;
-}
+// $speed: 200ms;
+// $c0: #9A0BFF;
+// $c1: #6E52FF;
+// $c2: #498CFF;
+// $c3: #25C6FF;
+// a.content-trigger {
+//     padding: 1.8rem;
+//     border-radius: 5px;
+//     background-color: white;
+//     color: #090909;
+//     margin-bottom: 2rem;
+//     transition: background-color $speed linear, color $speed linear, box-shadow $speed linear;
+// }
 
-// @each $name, $color in $product-colors { 🖕sass
-//     $i: index($product-colors, $name);
-//     $i: $i - 1;
-//     .t#{$i}.trigger-current {
-//         background-color: $color;
+// // @each $name, $color in $product-colors { 🖕sass
+// //     $i: index($product-colors, $name);
+// //     $i: $i - 1;
+// //     .t#{$i}.trigger-current {
+// //         background-color: $color;
+// //     }
+// // }
+// @mixin activeState($color: $c0){
+//     color: white;
+//     background-color: $color;
+//     @include shadow-anarchy(0 0.3rem 0.5rem 0 rgba(149,112,76,0.4), -2rem 0 $color inset);
+// }
+// @mixin edge($color: $c0){
+//     // color: $color;
+//     @include shadow-anarchy(0 0.2rem 0.3rem 0 rgba(149, 112, 76, 0.4), -1rem 0 $color inset);
+//     &.trigger-current {
+//         @include activeState($color);
 //     }
 // }
-@mixin activeState($color: $c0){
-    color: white;
-    background-color: $color;
-    @include shadow-anarchy(0 0.3rem 0.5rem 0 rgba(149,112,76,0.4), -2rem 0 $color inset);
-}
-@mixin edge($color: $c0){
-    // color: $color;
-    @include shadow-anarchy(0 0.2rem 0.3rem 0 rgba(149, 112, 76, 0.4), -1rem 0 $color inset);
-    &.trigger-current {
-        @include activeState($color);
-    }
-}
 
-.trigger-current {
-    color: white;
-}
-.t0 {
-    @include edge($c0);
-}
-.t1 {
-    @include edge($c1);
-}
-.t2 {
-    @include edge($c2);
-}
-.t3 {
-    @include edge($c3);
-}
+// .trigger-current {
+//     color: white;
+// }
+// .t0 {
+//     @include edge($c0);
+// }
+// .t1 {
+//     @include edge($c1);
+// }
+// .t2 {
+//     @include edge($c2);
+// }
+// .t3 {
+//     @include edge($c3);
+// }
 
 
