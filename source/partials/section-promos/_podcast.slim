@@ -4,7 +4,7 @@ scss:
     background-blend-mode: luminosity;
     background-size: 105%;
   }
-section#podcast.lozad.section-article.bg-gray-2.container-image--top data-background-image="https://images.ctfassets.net/189dvqdsjh46/19d5iulqaYg8ACWcYQ6Im6/3f883ec8f77add5b22a497e3b3d63e6d/art-sound-bars-purple.svg"
+section#podcast.lozad.section-article.bg-dark.bg-gray-2.container-image--top data-background-image="https://images.ctfassets.net/189dvqdsjh46/19d5iulqaYg8ACWcYQ6Im6/3f883ec8f77add5b22a497e3b3d63e6d/art-sound-bars-purple.svg"
   .row.align-center.group
     .columns
       h3.headline-3.text-light.group.text-center
@@ -19,7 +19,7 @@ section#podcast.lozad.section-article.bg-gray-2.container-image--top data-backgr
               img.lozad.group src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/1L0X4JCpQC1WyzRzAEBiyR/81fe98cefbc85a290b38a67a0bf3fdb7/podcast-4x4-share-card.jpg?w=1000" alt="4x4 Health Podcast" width="100%"
           .columns.small-12.large-6
             h4.headline-5
-              a.link--bright href="/innovation/#{podcast["slug"]}" title="Listen to this episode now" = podcast["title"]
+              a href="/innovation/#{podcast["slug"]}" title="Listen to this episode now" = podcast["title"]
             - if podcast.has_key?("guest")
               = partial("partials/snippets/person", :locals => { :p => podcast["guest"] })
             p

@@ -41,7 +41,7 @@
 @mixin color--white-to-gray-light {
     background-color: $gray-12;
     color: black;
-    background: linear-gradient(215deg, #ced9d9 6%, #FFFFFF 68%);
+    background: linear-gradient(215deg, $gray-10 6%, #FFFFFF 68%);
     // background: linear-gradient(-45deg, $white 0%, $gray-11 100%);
 }
 @mixin color--gray-dark {

@@ -3,7 +3,7 @@ title: "Datica brings the cloud to healthcare."
 summary: "Datica solves the tough challenges of working with health data, with compliance and integration solutions."
 author: "Datica, Inc."
 tags: "compliance, HITRUST, integration, EHR, healthcare, education, HIPAA, HL7, FHIR, interoperability"
-customCSS: "products-mastheads"
+customCSS: "products-mastheads, home"
 customJS: "/public/js/products.js"
 layout: "basic"
 priority: "1.0"
@@ -42,8 +42,6 @@ list_resources:
 ---
 ruby:
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
-  # current_page.data.share_image = image_share_platform
-  # featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/470d9a7b58ffede77ae3d064cf86b655/office_-_istockphoto-626637134_edit.jpg"
   bg_masthead = 'https://images.ctfassets.net/189dvqdsjh46/6QEH9ycbuFUOfjjKqaYkan/6bbcdb723241965d5675df3bb67285f8/bg-masthead-blur.svg'
   art_masthead = '/public/icons/inlined/network-dots-white.svg'
   current_page.data.asset_preload = '<link href="' + art_masthead + '" rel="preload" as="image" />'
@@ -83,7 +81,7 @@ section.masthead.bg-light.container-color--light-grad.relative id="masthead"
     / .z-0.art-bg-fill.container-image-fill.lozad.step-1 data-background-image=bg_masthead
     img.z-5.art-accent.step-2.img-mix-overlay.lozad data-src=art_masthead
 
-section.section-article.bg-light.bg-gray-11.collection#case-studies
+section.section-article.bg-dark.bg-gray-2.collection#case-studies
   = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["cdRLk1E4TCvKRTrZ5fEdo"], :classes => "group--2x" })
   = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["4eXHm6R7WzdKbyS8hRISbJ"], :classes => "" })
 
@@ -128,7 +126,7 @@ section.section-article#compliance
 = partial "/partials/section-promos/podcast"
 section.section-article.bg-white#recent
   = partial "partials/content/recent-items"
-section.section-article.bg-gray-12.drop-inset--v#education
+section.section-article.bg-gray-12.container-image--fixed.drop-inset--v.lozad#education data-background-image=art_masthead
   .row.align-center
     .columns.small-12.large-6
       h2.headline-3.text-center <strong>Grow</strong> with us
