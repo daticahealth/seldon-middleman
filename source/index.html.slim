@@ -44,7 +44,7 @@ ruby:
   current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
   # current_page.data.share_image = image_share_platform
   # featured_img = "https://images.ctfassets.net/189dvqdsjh46/62MYHqth60wmUosWQQ0es8/470d9a7b58ffede77ae3d064cf86b655/office_-_istockphoto-626637134_edit.jpg"
-  bg_masthead = 'https://images.ctfassets.net/189dvqdsjh46/6QEH9ycbuFUOfjjKqaYkan/6bbcdb723241965d5675df3bb67285f8/bg-masthead-blur.svg'
+  bg_masthead = '/public/icons/inlined/network-dots-white.svg'
   art_masthead = 
   current_page.data.asset_preload = '<link href="' + bg_masthead + '" rel="preload" as="image" />'
   current_page.data.share_image = image_share_default
@@ -81,7 +81,7 @@ section.masthead.bg-light.container-color--light-grad.relative id="masthead"
   .art
     /= inline_svg("network-color-grad", class: "z-5 art-accent step-2 img-mix-overlay")
     / .z-0.art-bg-fill.container-image-fill.lozad.step-1 data-background-image=bg_masthead
-    img.z-5.art-accent.step-2.img-mix-overlay.lozad data-src="/public/icons/inlined/network-dots-white.svg"
+    img.z-5.art-accent.step-2.img-mix-overlay.lozad data-src=bg_masthead
 
 section.section-article.bg-light.bg-gray-11.collection#case-studies
   = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["cdRLk1E4TCvKRTrZ5fEdo"], :classes => "group--2x" })
