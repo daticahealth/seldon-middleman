@@ -10,10 +10,10 @@
 .row.align-center.align-middle class=classes
   .columns.small-12.medium-5.large-4 class=text_align
     h3.headline-4
-      a.text-bold href=entry.cta_url title=entry.cta_label = entry.cta_title
+      a.link-title.text-bold href=entry.cta_url title=entry.cta_label = entry.cta_title
     p = entry.cta_desc
   .columns.small-12.medium-7.large-8.xlarge-6 class=img_align
-    a href=entry.cta_url title=entry.cta_label
+    a.link-media href=entry.cta_url title=entry.cta_label
       - if entry.has_key?("related_embed")
         = Kramdown::Document.new(data.site.videos[entry.related_embed.id].custom_form).to_html
       - elsif entry.has_key?("cta_image")

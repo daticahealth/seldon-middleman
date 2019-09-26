@@ -1,10 +1,6 @@
 - sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
-scss:
-  #podcast { // a few tweaks
-    background-blend-mode: luminosity;
-    background-size: 105%;
-  }
-section#podcast.lozad.section-article.bg-dark.bg-gray-3.container-image-fill data-background-image="https://images.ctfassets.net/189dvqdsjh46/g5zIZmzXzQISp3bQHhTNO/a8be2ab069577090ac280e42048d9f3f/network-dots-dark.svg"
+
+section#podcast.lozad.section-article.bg-dark.bg-gray-2.container-image--center.img-overlay data-background-image="https://images.ctfassets.net/189dvqdsjh46/1Td677f0sRROKtvgCXwXSv/5cc23499eef443967623919b0339da12/xes-gray-faded.svg"
   .row.align-center.group
     .columns
       h3.headline-3.text-light.group.text-center
@@ -15,7 +11,7 @@ section#podcast.lozad.section-article.bg-dark.bg-gray-3.container-image-fill dat
       - sorted_podcasts.take(1).each do | id, podcast |
         .row
           .columns.small-12.large-6
-            a href="/innovation/#{podcast["slug"]}" title="Listen to this episode now"
+            a.link-media href="/innovation/#{podcast["slug"]}" title="Listen to this episode now"
               img.lozad.group src=loader_rect data-src="https://images.ctfassets.net/189dvqdsjh46/1L0X4JCpQC1WyzRzAEBiyR/81fe98cefbc85a290b38a67a0bf3fdb7/podcast-4x4-share-card.jpg?w=1000" alt="4x4 Health Podcast" width="100%"
           .columns.small-12.large-6
             h4.headline-5

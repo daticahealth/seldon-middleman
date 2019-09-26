@@ -15,6 +15,10 @@
         font-weight: $font-weight-bold;
     }
 }
+a.link-media {
+    text-decoration: none;
+    border: none;
+}
 
 
 // Yes, kids, I am inlining these styles with the component partial

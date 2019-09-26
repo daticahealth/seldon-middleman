@@ -1,0 +1,78 @@
+---
+title: "Recent Podcasts"
+navTitle: "Podcasts"
+summary: "Recent Podcasts for other workflows"
+author: "Datica, Inc."
+hide_from_sitemap: true
+layout: basic
+---
+scss:
+  span.label {
+    margin-right: 1rem;
+  }
+/- separator = %(<span style="opacity: 0;">, </span>)
+- separator = ''
+
+section.section-article.bg-gray-12
+  .row.align-center
+    .columns.small-12
+      h2.headline-3 Recent Podcasts, simple format
+      table(width="100%")
+        thead
+          tr
+            th Title
+            th Date
+            th Guest
+            th Role
+            th guest_photo
+            th name_slug
+        tbody
+          - sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
+          - sorted_podcasts.each do | id, podcast |
+            - if podcast.has_key?("category_brand") && podcast.category_brand == true
+              tr
+                td 
+                  = podcast.title + separator
+                td
+                  = podcast['pub_date'].strftime('%B %-d, %Y') + separator
+                td 
+                  = podcast.guest.fullname + separator
+                td 
+                  = podcast.guest.role + separator
+                td 
+                  = 'https:' + podcast.guest.profile_pic.url + separator
+                td 
+                  = podcast.guest.fullname.parameterize + separator
+
+
+
+
+          /.group
+            p.headline-4 
+              span.label Title
+              | &#9;
+              = podcast.title
+            p
+              span.label Date
+              | &#9;
+              = podcast['pub_date'].strftime('%B %-d, %Y')
+            p.headline-5 
+              span.label Guest
+              | &#9;
+              = podcast.guest.fullname
+            p 
+              span.label Role
+              | &#9;
+              = podcast.guest.role
+            code 
+              span.label guest_photo
+              | &#9;
+              = podcast.guest.profile_pic.url
+
+section.section-article.bg-gray-12
+  .row.align-center
+    .columns.small-12.large-10
+      - sorted_podcasts = data.site.podcast.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
+      - sorted_podcasts[0...4].each do | id, podcast |
+        - if podcast.has_key?("category_brand") && podcast.category_brand == true
+          = partial("partials/snippets/podcast-summary", :locals => { :podcast => podcast, :hideSummary => false })

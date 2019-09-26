@@ -64,7 +64,7 @@ section#top.bg-gray-1
   
 section.masthead.bg-light.container-color--light-grad.relative id="masthead"
   .section-article.relative.z-10
-    .row.align-center
+    .row.align-center.group
       .columns.small-12.large-10.xlarge-9
         /svg.group id="datica-logo-desktop" width="230" height="96"
           use.symbol-icon xlink:href="#datica-logo-horiz" href="#datica-logo-horiz"
@@ -76,30 +76,12 @@ section.masthead.bg-light.container-color--light-grad.relative id="masthead"
           h4.headline-5.spaced-out Learn More
           a.pulse href="#case-studies" title="Learn More"
             = inline_svg("icon-angle-down-large", class: "icon-size--large waypoint-icon")
-
-  .art
-    /= inline_svg("network-color-grad", class: "z-5 art-accent step-2 img-mix-overlay")
-    / .z-0.art-bg-fill.container-image-fill.lozad.step-1 data-background-image=bg_masthead
-    img.z-5.art-accent.step-2.img-mix-overlay.lozad data-src=art_masthead
-
-section.masthead.relative.bg-dark.container-color--gray-dark-grad.collection#case-studies
-  .section-article.relative.z-10
-    = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["cdRLk1E4TCvKRTrZ5fEdo"], :classes => "group--2x" })
-    = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["4eXHm6R7WzdKbyS8hRISbJ"], :classes => "" })
-  .art
-    img.z-5.art-accent.img-mix-overlay.lozad data-src=art_dark
-
-
-
-/ .strip.strip-greens.strip-small
-
-  /.section-article
-    .row.align-center.group
+    /.row.align-center
       .columns.small-12.medium-12.large-9.text-center
-        h4.headline-5.spaced-out News
-        h1.headline-3.text-light.group <strong>Datica</strong> and <strong>Sansoro Health</strong> merge to help accelerate healthcare’s data-driven future in the cloud.
-        = Kramdown::Document.new(data.site.videos['1h4QAhdY3DwWUKCLj6h8i7'].custom_form).to_html
-        /ul.menu.align-center.show-for-medium.text-small
+        / h4.headline-5.spaced-out News
+        /h1.headline-3.text-light.group <strong>Datica</strong> and <strong>Sansoro Health</strong> merge to help accelerate healthcare’s data-driven future in the cloud.
+        /= Kramdown::Document.new(data.site.videos['1h4QAhdY3DwWUKCLj6h8i7'].custom_form).to_html
+        ul.menu.align-center.show-for-medium.text-small
           li
             a.text-bold.spaced-out title="Cloud Compliance" href="/cloud-compliance/" Compliance
           li
@@ -108,7 +90,19 @@ section.masthead.relative.bg-dark.container-color--gray-dark-grad.collection#cas
             a.text-bold.spaced-out title="About Datica Health" href="/about/" About Datica
           li
             a.text-bold.spaced-out title="Careers at Datica" href="/careers/" Careers
+    /.strip.strip-greens.strip-small
 
+
+  .art
+    /= inline_svg("network-color-grad", class: "z-5 art-accent step-2 img-mix-overlay")
+    / .z-0.art-bg-fill.container-image-fill.lozad.step-1 data-background-image=bg_masthead
+    img.z-5.art-accent.step-2.img-mix-overlay.lozad data-src=art_masthead
+
+section.section-article.bg-dark.container-color--gray-dark-grad.collection#case-studies
+  = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["cdRLk1E4TCvKRTrZ5fEdo"], :classes => "group--2x" })
+  = partial("/partials/content/cta-section-promo", :locals => { :entry => data.site.cta["4eXHm6R7WzdKbyS8hRISbJ"], :classes => "" })
+  /.art
+    img.z-5.art-accent.img-mix-overlay.lozad data-src=art_dark
 
 section.section-article#compliance
   .row.align-center.text-center.group
@@ -128,9 +122,10 @@ section.section-article#compliance
 
 /= partial "partials/section-promos/latest-series"
 = partial "/partials/section-promos/podcast"
-section.section-article.bg-white#recent
-  = partial "partials/content/recent-items"
-section.section-article.bg-gray-12.container-image--fixed.drop-inset--v.lozad#education data-background-image=art_masthead
+
+section.section-article.bg-gray-12.container-image-fill.drop-inset--v.lozad#education data-background-image=art_masthead
+  #recent.group--2x
+    = partial "partials/content/recent-items"
   .row.align-center
     .columns.small-12.large-6
       h2.headline-3.text-center <strong>Grow</strong> with us
@@ -145,6 +140,6 @@ section.section-article.bg-gray-12.container-image--fixed.drop-inset--v.lozad#ed
 / .strip.strip-greens
 
 /= partial "partials/section-promos/careers", :locals => { :tagline => "Solve hard problems.<br> Live where you want. Help us transform healthcare for the better." }
-
+= partial "partials/section-promos/careers", :locals => { :tagline => "We're building a team to transform healthcare. Join us!" }
 .strip.strip-ccms
 = partial "partials/section-promos/product-ccms"
