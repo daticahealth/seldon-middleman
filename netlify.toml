@@ -824,16 +824,6 @@
   status = 410
 
 [[redirects]]
-  from = "/blog/how-digital-health-succeeds-and-fails-datica-at-sxsw"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
-  from = "/blog/information-governance-survey-shows-benefits-in-compliance"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
   from = "/blog/integrating-with-epic-or-any-ehr"
   to = "/blog/"
   status = 410
@@ -860,16 +850,6 @@
 
 [[redirects]]
   from = "/blog/10-financial-questions-to-ask-before-an-ehr-project"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
-  from = "/blog/what's-an-application-developers-responsibility-for-hipaa"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
-  from = "/blog/4-phi-marketing-special-cases"
   to = "/blog/"
   status = 410
 
@@ -924,11 +904,6 @@
   status = 410
 
 [[redirects]]
-  from = "/blog/major-announcement-rolls-out-of-voaltes-user-experience-vue16"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
   from = "/blog/top-5-things-you-find-in-an-ideal-business-associate-agreement"
   to = "/blog/"
   status = 410
@@ -940,16 +915,6 @@
 
 [[redirects]]
   from = "/blog/connected-health-today-and-in-the-future"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
-  from = "/blog/data-security-patient-engagement"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
-  from = "/blog/digital-health-apps-could-save-7-billion"
   to = "/blog/"
   status = 410
 
@@ -975,11 +940,6 @@
 
 [[redirects]]
   from = "/blog/multi-tenancy-is-a-key-security-design-requirement-our-latest-academy-entry"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
-  from = "/blog/three-hipaa-omnibus-rule-essentials-for-it-security"
   to = "/blog/"
   status = 410
 
@@ -1169,11 +1129,6 @@
   status = 410
 
 [[redirects]]
-  from = "/blog/open-apis-solve-lack-of-ehr-interoperability"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
   from = "/blog/reflecting-on-our-time-with-cdhi-at-ucsf"
   to = "/blog/"
   status = 410
@@ -1190,11 +1145,6 @@
 
 [[redirects]]
   from = "/blog/the-purpose-of-hitrusts-business-associate-council"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
-  from = "/blog/vue15-recap-voalte-uber"
   to = "/blog/"
   status = 410
 
@@ -1389,16 +1339,6 @@
   status = 410
 
 [[redirects]]
-  from = "/blog/health-2.0-recap-day-2"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
-  from = "/blog/health-2.0-recap-day-3"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
   from = "/blog/health-news-roundup-9-11-2014"
   to = "/blog/"
   status = 410
@@ -1439,11 +1379,6 @@
   status = 410
 
 [[redirects]]
-  from = "/blog/hitrust-2018-a-fantastic-event"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
   from = "/blog/how-hit-vendors-price-their-solutions"
   to = "/blog/"
   status = 410
@@ -1460,11 +1395,6 @@
 
 [[redirects]]
   from = "/blog/innovation-partnerships-anticipated-at-upcoming-industry-gatherings"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
-  from = "/blog/it-executives-and-clinicians-collaborate-at-sold-out-open-mhealth-summit-2015"
   to = "/blog/"
   status = 410
 
@@ -1509,11 +1439,6 @@
   status = 410
 
 [[redirects]]
-  from = "/blog/overview-of-current-administrations-approach-to-hit"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
   from = "/blog/pact-in-the-news"
   to = "/blog/"
   status = 410
@@ -1550,11 +1475,6 @@
 
 [[redirects]]
   from = "/blog/record-breaking-hipaa-violation-settlements-will-change-the-compliance-calculus"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
-  from = "/blog/reflections-on-himss-2017-same-same-but-different"
   to = "/blog/"
   status = 410
 
@@ -1717,6 +1637,91 @@
   from = "/blog/zipnosis-in-the-news"
   to = "/blog/"
   status = 410
+
+[[redirects]]
+  from = "/blog/reflections-on-himss-2017-same-same-but-different"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/what's-an-application-developers-responsibility-for-hipaa"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/vue15-recap-voalte-uber"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/three-hipaa-omnibus-rule-essentials-for-it-security"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/health-2.0-recap-day-2"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/open-apis-solve-lack-of-ehr-interoperability"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/4-phi-marketing-special-cases"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/major-announcement-rolls-out-of-voaltes-user-experience-vue16"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/it-executives-and-clinicians-collaborate-at-sold-out-open-mhealth-summit-2015"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/health-2.0-recap-day-3"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/data-security-patient-engagement"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hitrust-2018-a-fantastic-event"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/digital-health-apps-could-save-7-billion"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/overview-of-current-administrations-approach-to-hit"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/information-governance-survey-shows-benefits-in-compliance"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/how-digital-health-succeeds-and-fails-datica-at-sxsw"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/what-does-healthkit-mean-for-healthcare"
+  to = "/"
+  status = 301
 
 [[redirects]]
   from = "/learn/business-associates-agreements"
