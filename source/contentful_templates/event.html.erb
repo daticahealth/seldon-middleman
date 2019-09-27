@@ -10,9 +10,9 @@ current_page.data.summary = safe_summary(p.summary)
 share_image_fallback = "https://images.ctfassets.net/189dvqdsjh46/2HzxmY3I4ESUU6ICM0ge0Y/f5ed3801dfe3328ec1ee09ea83434ba6/events-share-default.jpg"
 
 if p.has_key?("share_image")
-    current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_size_small
+    current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_share
 elsif p.has_key?("featured_image")
-    current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
+    current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_share
 else
     current_page.data.share_image = share_image_fallback
 end
