@@ -12,7 +12,12 @@ pod_summary = Kramdown::Document.new(p.summary).to_html
 
 current_page.data.title = p["title"] + " | Healthcare Innovators Podcast"
 current_page.data.summary = safe_summary(p.summary)
-current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/1L0X4JCpQC1WyzRzAEBiyR/81fe98cefbc85a290b38a67a0bf3fdb7/podcast-4x4-share-card.jpg"
+share_image_fallback = "https://images.ctfassets.net/189dvqdsjh46/1L0X4JCpQC1WyzRzAEBiyR/81fe98cefbc85a290b38a67a0bf3fdb7/podcast-4x4-share-card.jpg"
+if p.has_key?("share_image")
+    current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_size_small
+else
+    current_page.data.share_image = share_image_fallback
+end
 if p.has_key?("tags")
     current_page.data.tags = get_tag_list(p["tags"])
 else
@@ -26,7 +31,7 @@ end
 if p.has_key?("pub_date")
     current_page.data.date = p['pub_date'].strftime('%B %-d, %Y')
 else
-    current_page.data.date = "January 1, 2017"
+    current_page.data.date = DateTime.now.strftime('%B %-d, %Y')
 end
 sorted_guides = data.site.guides.to_a.sort_by{ |id, guides| guides['_meta']['created_at'] }.reverse!
 sorted_webinars = data.site.webinars.to_a.sort_by{ |id, webinars| webinars['event_date'] }.reverse!
