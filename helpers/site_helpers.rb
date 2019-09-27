@@ -41,7 +41,7 @@ module SiteHelpers
         '?w=640'
     end
     def image_share
-        '?fit=thumb&w=800&400&fm=jpg&q=70'
+        '?fit=thumb&w=800&h=400&fm=jpg&q=70'
     end
     def image_size_medium
         '?w=1200'
