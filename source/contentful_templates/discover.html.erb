@@ -10,7 +10,7 @@ current_page.data.title = p["title"] + " | Discovery Topics"
 current_page.data.navTitle = p["title"]
 current_page.data.summary = safe_summary(p.summary)
 if p.has_key?("featured_image")
-    current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
+    current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_share
 end
 if p.has_key?("topic_tag")
     current_page.data.tags = get_tag_list(p["topic_tag"])

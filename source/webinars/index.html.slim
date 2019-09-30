@@ -10,7 +10,7 @@ ruby:
     today = DateTime.now
     current_page.data.date = today.strftime('%B %-d, %Y')
     sorted_entries = data.site.webinars.to_a.sort_by{ |id, webinar_entry| webinar_entry['event_date'] }.reverse!
-    current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/51Kf8PEelGioY6qsQmAkA4/53f2e5ccb00ec3f9a3e6458faded319b/webinar-share.jpg" + image_size_small
+    current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/51Kf8PEelGioY6qsQmAkA4/53f2e5ccb00ec3f9a3e6458faded319b/webinar-share.jpg" + image_share
     bg_default = "https://images.ctfassets.net/189dvqdsjh46/42ucBFmGx2ek0C8IWU6CiC/2177ddcfa81da18bd83f49c4e1232f84/webinar-bg-default.svg"
 
 .container-gray-10

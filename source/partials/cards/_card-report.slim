@@ -33,17 +33,17 @@ ruby:
     if defined?(style)
         case style
             when "dark"
-                style_classes = "container-gray-4"
+                style_classes = "bg-gray-4"
                 link_style = "link--white"
             when "white"
-                style_classes = "container-color--white drop"
+                style_classes = "bg-white drop"
                 link_style = nil
             when "none"
                 style_classes = nil
                 link_style = nil
         end
     else
-        style_classes = "container-gray-12 drop"
+        style_classes = "bg-gray-12 drop"
         link_style = nil
     end
     # if post.has_key?("summary") && post.summary != ""

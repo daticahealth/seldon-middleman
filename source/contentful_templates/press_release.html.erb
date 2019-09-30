@@ -6,7 +6,9 @@ ogType: article
 current_page.data.title = p["title"] + " | Datica Press Release"
 current_page.data.summary = safe_summary(p.summary)
 if p.has_key?("featured_image")
-    current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_size_small
+    current_page.data.share_image = cf_asset_protocol + p["featured_image"]["url"] + image_share
+else
+    current_page.data.share_image = 'https://images.ctfassets.net/189dvqdsjh46/1MVnqehr451jj65tCOGI6L/d03c5883d2379a2c07cc2939400c3b57/section-press.jpg' + image_share
 end
 if p.has_key?("tags")
     current_page.data.tags = get_tag_list(p["tags"])

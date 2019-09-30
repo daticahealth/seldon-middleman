@@ -9,7 +9,7 @@ ruby:
     today = DateTime.now
     current_page.data.date = today.strftime('%B %-d, %Y')
     sorted_entries = data.site.guides.to_a.sort_by{ |id, guide_entry| guide_entry['title'] }
-    current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/NL2SgI83KesMS86cWO44y/e908972bb9193eec594b639881e25e6f/academy-share-default.jpg" + image_size_small
+    current_page.data.share_image = "https://images.ctfassets.net/189dvqdsjh46/NL2SgI83KesMS86cWO44y/e908972bb9193eec594b639881e25e6f/academy-share-default.jpg" + image_share
 
 .container-gray-11
     section#top

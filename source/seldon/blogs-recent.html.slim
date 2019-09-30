@@ -1,0 +1,83 @@
+---
+title: "Recent Blog Posts"
+navTitle: "Blogs"
+summary: "Recent Blog Posts for other workflows"
+author: "Datica, Inc."
+hide_from_sitemap: true
+layout: basic
+---
+scss:
+  span.label {
+    margin-right: 1rem;
+  }
+/- separator = %(<span style="opacity: 0;">, </span>)
+- separator = ''
+
+section.section-article.bg-gray-12
+
+
+  h2.headline-3 Recent Blog Posts (SH category), simple format
+  table(width="100%")
+    thead
+      tr
+        th title
+        th date
+        th topic
+        th author
+        th role
+        th author_image
+        th image
+        th slug
+    tbody
+      - sorted_posts = data.site.blog.to_a.sort_by{ |id, post| post['pub_date'] }.reverse!
+      - sorted_posts.each do | id, post |
+        - if post.has_key?("categories_blog") && post.categories_blog == "Sansoro Health"
+          tr
+            td 
+              = post.title + separator
+            td
+              = post['pub_date'].strftime('%B %-d, %Y') + separator
+            td
+              = (post.has_key?("discovery_topic") ? post.discovery_topic.title : '')
+            td 
+              = post.author.fullname + separator
+            td 
+              = post.author.role + separator
+            td
+              textarea
+                = 'https:' + post.author.profile_pic.url + separator
+            td
+              textarea
+                = (post.has_key?("featured_image") ? 'https:' + post.featured_image.url + '?fit=thumb&w=1600&h=1000&fm=jpg&q=90' : '')
+            td 
+              = post.slug + separator
+
+          /.group
+            p.headline-4 
+              span.label Title
+              | &#9;
+              = post.title
+            p
+              span.label Date
+              | &#9;
+              = podcast['pub_date'].strftime('%B %-d, %Y')
+            p.headline-5 
+              span.label Guest
+              | &#9;
+              = post.guest.fullname
+            p 
+              span.label Role
+              | &#9;
+              = post.guest.role
+            code 
+              span.label guest_photo
+              | &#9;
+              = post.guest.profile_pic.url
+
+section.section-article.bg-gray-12
+  .row.align-center
+    .columns.small-12.large-10
+      - sorted_podcasts = data.site.post.to_a.sort_by{ |id, podcast| podcast['pub_date'] }.reverse!
+      - sorted_podcasts[0...4].each do | id, podcast |
+        - if post.has_key?("category_brand") && post.category_brand == true
+          = partial("partials/snippets/podcast-summary", :locals => { :podcast => podcast, :hideSummary => false })

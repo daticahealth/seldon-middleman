@@ -24,7 +24,7 @@ ruby:
         current_page.data.date = today.strftime('%B %-d, %Y')
     end
     if p.has_key?("share_image")
-        current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_size_small
+        current_page.data.share_image = cf_asset_protocol + p["share_image"]["url"] + image_share
     elsif p.has_key?("image_thumb")
         current_page.data.share_image = cf_asset_protocol + p["image_thumb"]["url"] + image_size_small
     else

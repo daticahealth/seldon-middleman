@@ -90,8 +90,11 @@ figcaption{
 .img-mix-multiply {
     @include mix-multiply;
 }
-.img-mix-overlay {
+.img-mix-overlay { // svg mix-blend
     @include mix-overlay;
+}
+.img-overlay { // bg blend mode
+    @include blend-overlay;
 }
 .blur {
     &-0 {

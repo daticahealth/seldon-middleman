@@ -1,0 +1,67 @@
+ruby:
+    case entry._meta.content_type_id
+        when "guides"
+            url_segment = "guide"
+            card_subhead = "Datica Guides"
+            link_title = "Get the guide, '#{entry.title}'"
+            link_title_short = "Get your free Guide"
+        when "reports"
+            url_segment = "innovation"
+            card_subhead = entry.subhead
+            link_title = "Get the latest report, '#{entry.title}'"
+            link_title_short = "Get your free Report"
+    end
+    related_post_path = "/" + url_segment + "/" + entry.slug + "/"
+
+    if entry.has_key?("image_thumb")
+        thumb = entry.image_thumb.url
+    elsif entry.has_key?("bg_image")
+        thumb = entry.bg_image.url
+    else
+        thumb = nil
+    end
+    if defined?(style)
+        case style
+            when "dark"
+                style_classes = "bg-gray-3"
+                link_style = nil
+            when "light"
+                style_classes = "bg-white drop"
+                link_style = nil
+            when "none"
+                style_classes = nil
+                link_style = nil
+        end
+    else
+        style_classes = "bg-gray-12 drop"
+        link_style = nil
+        style = nil
+    end
+/- if defined?("show_button") && show_button == true
+scss:
+    a.card-guide-vert {
+        &[data-theme="light"] {
+            color: black;
+            &:hover {
+                color: black;
+            }
+        }
+        &[data-theme="dark"] {
+            color: white;
+            &:hover {
+                color: white;
+            }
+        }
+    }
+/ shows an entry with a thumbnail
+a.card-guide-vert.card.drop-hover href=related_post_path title="Get your free guide" data-theme=style class=style_classes
+    .card-section
+        .subheader-small
+            = card_subhead
+        .h4.headline-6.text-bold class=link_style = entry["title"]
+        - unless thumb == nil
+            img.float-right.lozad(src=loader_square data-src="#{thumb}?fit=thumb&w=200&h=200" alt="Guide Preview" width="100")
+        .text-small.text-light
+            = Kramdown::Document.new(entry["summary"]).to_html
+        - if entry.has_key?("discovery_topic")
+            span.label.info.round = data.site.discover[entry.discovery_topic.id].title
