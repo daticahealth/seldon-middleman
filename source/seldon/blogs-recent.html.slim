@@ -38,7 +38,7 @@ section.section-article.bg-gray-12
             td
               = post['pub_date'].strftime('%B %-d, %Y') + separator
             td
-              = (post.has_key?("discovery_topic") ? post.discovery_topic.title : '')
+              = (post.has_key?("discovery_topic") ? post.discovery_topic.title : '	')
             td 
               = post.author.fullname + separator
             td 
@@ -51,7 +51,11 @@ section.section-article.bg-gray-12
                 = (post.has_key?("featured_image") ? 'https:' + post.featured_image.url + '?fit=thumb&w=1600&h=1000&fm=jpg&q=90' : '')
             td 
               = post.slug + separator
-
+hr
+- sorted_posts.each do | id, post |
+  - if post.has_key?("categories_blog") && post.categories_blog == "Sansoro Health"
+    p = 'https:' + post.author.profile_pic.url + separator
+    /p = (post.has_key?("featured_image") ? 'https:' + post.featured_image.url + '?fit=thumb&w=1600&h=1000&fm=jpg&q=90' : '')
           /.group
             p.headline-4 
               span.label Title

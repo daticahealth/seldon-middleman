@@ -61,6 +61,11 @@
   status = 301
 
 [[redirects]]
+  from = "/customer/badges/"
+  to = "/press/mediakit/"
+  status = 301
+
+[[redirects]]
   from = "/team/*"
   to = "/about/:splat"
   status = 301
