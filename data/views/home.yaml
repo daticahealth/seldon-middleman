@@ -1,8 +1,8 @@
 badges:
-    -
-        name: "HITRUST Alliance"
-        fileUrl: "https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/016f2d364265c04e12c7db4eae95f94c/hitrust-logo.svg"
-        logoSize: "large"
+    # -
+    #     name: "HITRUST Alliance"
+    #     fileUrl: "https://images.ctfassets.net/189dvqdsjh46/7ioiPF1zVKiqYkyCe4QKGi/016f2d364265c04e12c7db4eae95f94c/hitrust-logo.svg"
+    #     logoSize: "large"
     -
         name: "HIPAA logo"
         fileUrl: "https://images.ctfassets.net/189dvqdsjh46/7twnCUuD72YGS4cusiS6mQ/fa43b0f1faaecb4e8865415add79e538/logo-hipaa-federal.png"
