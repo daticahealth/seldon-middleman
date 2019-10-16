@@ -88,6 +88,12 @@
 # ==== All splats and * tokens above this line (EXCEPT main 404 at end). Exceptions below.
 
 [[redirects]]
+  from = "/podcasts/"
+  to = "/podcast/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/cks/"
   to = "/compliant-kubernetes-service/"
   status = 301
