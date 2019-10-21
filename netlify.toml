@@ -970,11 +970,6 @@
   status = 410
 
 [[redirects]]
-  from = "/blog/4-essentials-to-enabling-clinical-integration"
-  to = "/blog/"
-  status = 410
-
-[[redirects]]
   from = "/blog/4-integration-factors-docbookmd-considered"
   to = "/blog/"
   status = 410
