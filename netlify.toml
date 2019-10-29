@@ -1756,7 +1756,12 @@
 
 [[redirects]]
   from = "/azure"
-  to = "/contact/azure"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/contact/azure"
+  to = "/contact/"
   status = 301
 
 [[redirects]]
