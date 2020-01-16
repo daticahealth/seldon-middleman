@@ -40,8 +40,8 @@ section.masthead.bg-dark.bg-blue-green-grad.product-cpaas.relative
         p <strong>CPaaS is not currently on-boarding new customers</strong> as we evaluate infrastructure changes. Current customers can find support documentation and information <a class="link--light" href="https://help.datica.com/hc/en-us#cpaasDocs">here</a>.
         p Do you need compliant infrastructure, with the power of Kubernetes orchestration? 
         = partial "partials/snippets/button", :locals => { :label => "Explore CKS", :url => "/compliant-kubernetes-service", :button_classes => "button button--light group step-2", :data_track_group => "compliance", :item_id => "get-cks", :icon => "icon-chevron-right", :icon_align => "right", :expand => "false" }
-        p Looking for complete cloud compliance, and real-time compliance monitoring?
-        = partial "partials/snippets/button", :locals => { :label => "Explore CCMS", :url => "/monitor", :button_classes => "button button--light step-2", :data_track_group => "compliance", :item_id => "get-ccms", :icon => "icon-chevron-right", :icon_align => "right", :expand => "false" }
+        p Looking for complete cloud compliance?
+        = partial "partials/snippets/button", :locals => { :label => "Talk to a compliance expert", :url => "/contact", :button_classes => "button button--light step-2", :data_track_group => "contact", :item_id => "contact", :icon => "icon-chevron-right", :icon_align => "right", :expand => "false" }
   .art
     / = partial "partials/snippets/nav-sub-product", :locals => { :parent_url => "/cloud-compliance/" }
     = inline_svg("products-discs-color", class: "z-5 art-accent step-1")

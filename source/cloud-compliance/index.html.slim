@@ -23,18 +23,18 @@ section.hide-for-large
       img.lozad.blur-in src="#{featured_img}?fit=thumb&w=800&h=400&q=10" data-src="#{featured_img}?fit=thumb&w=800&h=600&q=30" data-srcset="#{featured_img}?fit=thumb&w=800&h=600&q=50 800w, #{featured_img}?fit=thumb&w=1600&h=600 1200w" alt="Tech workers working on an audit"
       .bg-white.pad--lg
         h2.headline-1 Can your business pass a HITRUST assessment?
-        h2.headline-3.text-bold.group With Datica Monitor, the answer is yes.
+        h2.headline-3.text-bold.group With Datica, the answer is yes.
         p.lead <strong>Get back to solving problems for healthcare.</strong> Let Datica take on the burden of compliance. We're the experts at understanding the exact policies and procedures required to turn HIPAA-eligible services on the public cloud into architectures that can pass a HITRUST CSF assessment. That expertise is passed on to you through our products and rock-solid BAA.
-        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/monitor#cta", :button_classes => "button nomargin", :data_track_group => "compliance", :item_id => "get-ccms-mobile", :icon => "icon-chevron-right", :icon_align => "right" }
+        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/pricing", :button_classes => "button nomargin", :data_track_group => "compliance", :item_id => "get-pricing", :icon => "icon-chevron-right", :icon_align => "right" }
 section#top.show-for-large.section-article.pad-no-bottom.bg-gray-3.container-image--center.lozad data-background-image="#{featured_img}?fit=thumb&w=1800&h=900&q=65"
   .row.align-right.align-middle
     .columns.small-12.medium-6
       h1.headline-1.text-bold.text-shadow.group--2x Can your business pass a HITRUST assessment?
       .strip.strip-ccms
       .bg-white.pad--lg.drop.pull-down
-        h2.headline-3.text-bold With Datica Monitor, the answer is yes.
+        h2.headline-3.text-bold With Datica, the answer is yes.
         p.lead <strong>Get back to solving problems for healthcare.</strong> Let Datica take on the burden of compliance. We're the experts at understanding the exact policies and procedures required to turn HIPAA-eligible services on the public cloud into architectures that can pass a HITRUST CSF assessment. That expertise is passed on to you through our products and rock-solid BAA.
-        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/monitor#cta", :button_classes => "button nomargin strip-ccms", :data_track_group => "compliance", :item_id => "get-ccms-desktop", :icon => "icon-chevron-right", :icon_align => "right" }
+        = partial "partials/snippets/button", :locals => { :label => "Get started", :url => "/pricing", :button_classes => "button nomargin strip-ccms", :data_track_group => "compliance", :item_id => "get-pricing", :icon => "icon-chevron-right", :icon_align => "right" }
 
 .strip.strip-ccms
 
@@ -57,17 +57,7 @@ section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad
         .card-divider.card-divider--flush
           = partial "partials/snippets/button", :locals => { :label => "Learn more about CKS", :url => "/compliant-kubernetes-service/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-cks", :icon => "icon-angle-right", :icon_align => "right" }
       /.blob-color.blob-cks.z-auto data-glow="false"
-    .column.small-12.medium-6.large-4.relative.has-blob.animate-me.step-6
-      .card.container-color--trans.relative.z-5
-        .card-section
-          = inline_svg("ccms-logo-w", class: "icon-size--xlarge")
-          / .subhead--spaced 
-          h3.headline-4 Datica Monitor
-          p.strip.strip-small.strip-ccms
-          p.lead Know the precise compliance state of your cloud services
-          / p Datica Cloud Compliance Management System is the first-ever tool to guarantee compliance assurance of managed cloud-native services. Our dashboard and reports enable you to continuously monitor compliance, react quickly to risks and incidents, and attest to compliance for audits.
-        .card-divider.card-divider--flush
-          = partial "partials/snippets/button", :locals => { :label => "Learn more about Datica Monitor", :url => "/monitor/", :button_classes => "button button--light button-inline", :data_track_group => "compliance", :item_id => "get-ccms", :icon => "icon-angle-right", :icon_align => "right" }
+      
       /.blob-color.blob-ccms.z-auto data-glow="false"
 
 
