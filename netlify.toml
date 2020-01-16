@@ -107,13 +107,13 @@
 
 [[redirects]]
   from = "/ccms/"
-  to = "/"
+  to = "/cloud-compliance/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/monitor/"
-  to = "/"
+  to = "/cloud-compliance/"
   status = 301
   force = true
 
@@ -142,12 +142,6 @@
   from = "/emissary/"
   to = "/integrate/"
   status = 301
-
-[[redirects]]
-  from = "/ccms/"
-  to = "/compliant-kubernetes-service/"
-  status = 301
-  force = true
 
 [[redirects]]
   from = "/cpaas/"
