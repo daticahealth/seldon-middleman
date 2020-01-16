@@ -107,13 +107,19 @@
 
 [[redirects]]
   from = "/ccms/"
-  to = "/monitor/"
+  to = "/cloud-compliance/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/monitor/"
+  to = "/cloud-compliance/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/cloud-compliance-management-system/"
-  to = "/monitor/"
+  to = "/"
   status = 301
   force = true
 
@@ -136,12 +142,6 @@
   from = "/emissary/"
   to = "/integrate/"
   status = 301
-
-[[redirects]]
-  from = "/ccms/"
-  to = "/compliant-kubernetes-service/"
-  status = 301
-  force = true
 
 [[redirects]]
   from = "/cpaas/"
@@ -1728,6 +1728,11 @@
   from = "/blog/what-does-healthkit-mean-for-healthcare"
   to = "/"
   status = 301
+
+[[redirects]]
+  from = "/webinars/see-datica-ccms-live"
+  to = "/webinars"
+  status = 410
 
 [[redirects]]
   from = "/learn/business-associates-agreements"

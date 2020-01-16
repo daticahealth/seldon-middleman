@@ -32,13 +32,3 @@ products:
       - Self-service scaling of internal application and database services
       - Proactive health checks
     cta: "Explore CPaaS"
-  -
-    title: "Cloud Compliance Management System"
-    abbr: "CCMS"
-    url: "/cloud-compliance-management-system/"
-    lead: "__Datica CCMS__ monitors approved configurations of popular cloud managed services, like AWS RDS, Azure Cosmos DB, or Google Cloud SQL—with dozens more supported. Customers can trust that CCMS-based configurations have been audited to the specific requirements of the HITRUST CSF."
-    features:
-      - Easy-to-deploy SaaS subscription gets out of the way and lets you pick your cloud environment
-      - Compatible with the most popular HIPAA eligible services across AWS, Azure, and GCP
-      - Provides tools to help with assessments and remediations
-    cta: "Learn about CCMS"

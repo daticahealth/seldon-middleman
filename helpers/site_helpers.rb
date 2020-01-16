@@ -1,7 +1,7 @@
 
 # Helpers & global variables
 module SiteHelpers
-    def master_nav_id # this is the contentful collections entry that holds all the nav items
+    def master_nav_id # this is the contentful collections entry that holds all the nav items. CF "Collections" > "nav items" > "Cloud Compliance"
         "UvIbeSygYQQobYFWqzvKR"
     end
     def site_url
