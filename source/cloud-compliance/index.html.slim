@@ -40,12 +40,13 @@ section#top.show-for-large.section-article.pad-no-bottom.bg-gray-3.container-ima
 
 section#compliance-products.section-article.bg-gray-3.container-image-fill.lozad data-background-image="https://images.ctfassets.net/189dvqdsjh46/6OKt8JnNqo86wQIgOqiGcs/232794aa517af9870472dd34726ef595/hex-pattern-dark-bg.svg"
   .row.align-center
-    .columns.small-12.medium-10.large-8.group
+    .columns.small-12.medium-6.large-5.group
       h2.headline-2 Compliance Solutions
       p.lead.animate-me.step-3 Compliance on the cloud isn’t a one-size-fits-all kind of challenge. Maybe you don’t have the expertise, time, and resources to build your own compliant infrastructure and want a solution that picks up where your cloud provider leaves off.  Or, maybe you do and just need help with compliance monitoring and reporting for your complex environments.
       p.lead.animate-me.step-4 Wherever you are on the road to healthcare compliance, we can help.
-  .row.collapse.align-center.row--card-grid
-    .column.small-12.medium-6.large-4.relative.has-blob.animate-me.step-4
+    // uncomment this if we have more than one product again in this category.
+    / .row.collapse.align-left.row--card-grid
+    .column.small-12.medium-6.large-5.relative.has-blob.animate-me.step-4
       .card.container-color--trans.relative.z-5
         .card-section
           = inline_svg("cks-logo-w", class: "icon-size--xlarge")
