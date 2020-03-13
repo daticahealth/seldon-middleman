@@ -54,36 +54,43 @@
   from = "/platform/"
   to = "/compliant-kubernetes-service/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/customer/"
   to = "/customers/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/customer/badges/"
   to = "/press/mediakit/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/team/*"
   to = "/about/:splat"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/leadership/*"
   to = "/about/:splat"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/learn/*"
   to = "/academy/:splat"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/whitepapers/*"
   to = "/academy"
   status = 301
+  force = true
 
 # ==== All splats and * tokens above this line (EXCEPT main 404 at end). Exceptions below.
 
@@ -127,21 +134,25 @@
   from = "/platform/integration/"
   to = "/integrate/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/managed-integration/"
   to = "/integrate/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/compliant-managed-integration/"
   to = "/integrate/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/emissary/"
   to = "/integrate/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/cpaas/"
@@ -159,11 +170,13 @@
   from = "support.catalyze.io"
   to = "https://help.datica.com/hc/en-us"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/support"
   to = "https://help.datica.com/hc/en-us"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/platform/success"
@@ -175,11 +188,13 @@
   from = "/success"
   to = "/compliant-kubernetes-service/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/invalid.html"
   to = "/activate/invalid"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/platform/technology/"
@@ -203,1574 +218,1889 @@
   from = "/customer/va"
   to = "/customer/veterans-affairs"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/solutions/"
   to = "/ehr-integration/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/services/"
   to = "/ehr-integration/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/integration/"
   to = "/ehr-integration/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/integrations/"
   to = "/ehr-integration/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/signup"
   to = "/contact"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/why"
   to = "/compliant-kubernetes-service/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/newsletter"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/contact-us"
   to = "/contact"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/stratum"
   to = "/compliant-kubernetes-service/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/compliant-cloud"
   to = "/compliant-kubernetes-service/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/proof"
   to = "/compliant-kubernetes-service/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/strategic-services"
   to = "/services"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/redpoint"
   to = "/blog/if-its-possible-we-can-integrate-it/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/about-us"
   to = "/about"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/our-story"
   to = "/about"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/travis"
   to = "/about/travis"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/about/travis-good"
   to = "/about/travis"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/team/mohan"
   to = "/about/mohan"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/mohan"
   to = "/about/mohan"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/innovators"
   to = "/innovation"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/innovation/innovation-doesn-t-follow-rules"
   to = "/innovation/2015"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/*/mark-braunstein"
   to = "/:splat/dr-mark-braunstein"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/glossary"
   to = "/academy"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/guide/"
   to = "/guides/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/hipaa-compliance"
   to = "/guide/hipaa"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/hitrust"
   to = "/guide/hitrust"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/compliance/"
   to = "/cloud-compliance/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/compliance/hitrust/"
   to = "/cloud-compliance/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/compliance/global/"
   to = "/cloud-compliance/global/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/cloud-compliance/global/"
   to = "/cloud-compliance/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/how-to-integrate-with-hospitals"
   to = "/guide/how-to-integrate-with-hospitals"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/guide/fhir-for-health-systems"
   to = "/guide/fhir"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/total-cost-of-ownership-integration"
   to = "/guide/total-cost-of-ownership-integration"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/fhir"
   to = "/guide/fhir"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/hipaa"
   to = "https://hipaa.datica.com/?__hstc=7523757.4c5e7fa1d36095eeb0af397de0caa2a5.1517038092906.1521842973639.1521853230625.33&__hssc=7523757.21.1521853230625&__hsfp=1616476943"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/policy"
   to = "https://policy.datica.com/?__hstc=7523757.4c5e7fa1d36095eeb0af397de0caa2a5.1517038092906.1521842973639.1521853230625.33&__hssc=7523757.22.1521853230625&__hsfp=1616476943"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/employees"
   to = "/careers"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/jobs"
   to = "/careers"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/legal"
   to = "https://legal.datica.com"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/baa"
   to = "https://training.datica.com/?__hstc=7523757.4c5e7fa1d36095eeb0af397de0caa2a5.1517038092906.1521842973639.1521853230625.33&__hssc=7523757.22.1521853230625&__hsfp=1616476943"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/acceptable-use-policy"
   to = "https://legal.datica.com/#catalyze-acceptable-use-policy"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/getting-to-know-daticas-cto-and-cso-chris-gerg"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/ebook-release-innovation-doesnt-follow-rules"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/catalyze-partners-with-salesforce-microsoft-azure"
   to = "/blog/datica-partners-with-salesforce-microsoft-azure"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/the-acme-of-insight-raj-sundaramurthy-catalyze-chief-product-officer"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/announcing-change-agent-catalyzes-medium-publication"
   to = "/blog/announcing-change-agent-daticas-medium-publication"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/catalyze-continues-expanding-industry-support-and-recognition"
   to = "/blog/datica-continues-expanding-industry-support-and-recognition"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/new-chief-operating-officer-deepens-epic-experience-at-catalyze"
   to = "/blog/new-chief-operating-officer-deepens-epic-experience-at-datica"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/getting-started-with-apple-healthkit-part-1"
   to = "/blog/what-does-healthkit-mean-for-healthcare/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/getting-started-with-apple-healthkit-part-2"
   to = "/blog/what-does-healthkit-mean-for-healthcare/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/happy-holidays-from-catalyze"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/catalyze-ceo-to-present-at-stanford-medicine-x-conference"
   to = "/blog/datica-ceo-to-present-at-stanford-medicine-x-conference"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/celebrate-patient-engagement-month-with-catalyze"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/catalyze-is-hitrust-certified"
   to = "/blog/datica-is-hitrust-certified"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/new-press-release-formal-release-of-open-source-policies"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/invite-only-applications"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/8-28-14-release-notes"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/health-pitch-2014-fargo-nd"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/ios-sdk-version-300-released"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/javascript-sdk-released"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hipaagram-hipaa-compliant-app"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/a-simple-hipaa-compliant-web-application-using-the-catalyze-v2-api"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/building-a-hipaa-compliant-ios-app"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/how-not-to-get-your-healthcare-app-on-this-list"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/introducing-acls-and-groups"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/create-a-hipaa-compliant-mobile-application-with-ionic-and-the-catalyze-api"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/migrating-from-parse-to-catalyze"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/android-sdk-released"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/the-need-for-a-backend-as-a-service-in-healthcare"
   to = "https://engineering.datica.com/the-need-for-a-backend-as-a-service-in-healthcare.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/intro-to-secure-APIs"
   to = "https://engineering.datica.com/intro-to-secure-APIs.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/addressing-the-heartbleed-vulnerability-the-catalyze-way"
   to = "https://engineering.datica.com/addressing-the-heartbleed-vulnerability-the-catalyze-way.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/the-journey-to-a-docker-based-platform-as-a-service-part-1"
   to = "https://engineering.datica.com/the-journey-to-a-docker-based-platform-as-a-service-part-1.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/mobile-backend-as-a-service-stack"
   to = "https://engineering.datica.com/mobile-backend-as-a-service-stack.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/how-to-design-a-HIPAA-compliant-healthcare-api-part-1"
   to = "https://engineering.datica.com/how-to-design-a-HIPAA-compliant-healthcare-api-part-1.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/how-to-design-a-HIPAA-compliant-healthcare-API-part-2"
   to = "https://engineering.datica.com/how-to-design-a-HIPAA-compliant-healthcare-API-part-2.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/how-to-design-a-HIPAA-compliant-healthcare-API-part-3"
   to = "https://engineering.datica.com/how-to-design-a-HIPAA-compliant-healthcare-API-part-3.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/advanced-querying-for-custom-classes"
   to = "https://engineering.datica.com/advanced-querying-for-custom-classes.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/configuration-management-part-2-commanding-your-minions-with-salt"
   to = "https://engineering.datica.com/configuration-management-part-2-commanding-your-minions-with-salt.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/VPNs-security-and-healthcare-integration"
   to = "https://engineering.datica.com/VPNs-security-and-healthcare-integration.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/mirth-connect-apache-HTTPClient-rhino-and-multi-part-forms"
   to = "https://engineering.datica.com/mirth-connect-apache-HTTPClient-rhino-and-multi-part-forms.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/configuration-management-on-the-catalyze-docker-paas"
   to = "https://engineering.datica.com/configuration-management-on-the-catalyze-docker-paas.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/what-were-building-daticas-public-product-roadmap/"
   to = "/blog/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/learn/whitepapers"
   to = "/academy"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/learn/hipaa"
   to = "/discover/hipaa-compliance"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/learn/hl7/hl7-202-the-hl7-ack"
   to = "/academy/hl7-202-the-hl7-ack-acknowledgement-message/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/learn/hl7"
   to = "/discover/ehr-integrations"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/tags"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/archive"
   to = "/blog/archives"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/how-to-design-a-hipaa-compliant-healthcare-api-part-2-1"
   to = "/blog/how-to-design-a-hipaa-compliant-healthcare-api-part-$"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hl7-203-the-hl7-orm-order-entry-message"
   to = "/academy/hl7-203-the-hl7-orm-order-entry-message/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/the-who-and-how-of-hipaa-enforcement"
   to = "/academy/the-who-and-how-of-hipaa-enforcement/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-contingency-planning-disaster-recovery"
   to = "/academy/hipaa-contingency-planning-disaster-recovery/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-auditing-and-logging"
   to = "/academy/hipaa-auditing-and-logging/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-and-encryption"
   to = "/academy/hipaa-and-encryption/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hl7-202-the-hl7-ack-acknowledgement-message"
   to = "/academy/hl7-202-the-hl7-ack-acknowledgement-message/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/risk-assessments-and-management"
   to = "/academy/risk-assessments-and-management/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/the-hipaa-privacy-rule"
   to = "/academy/the-hipaa-privacy-rule"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/business-associates-agreements"
   to = "/academy/business-associates-agreements/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hl7-201-the-admission-discharge-transfer"
   to = "/academy/hl7-201-the-admission-discharge-transfer-adt-message/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hl7-102-anatomy-of-an-hl7-message"
   to = "/academy/hl7-102-anatomy-of-an-hl7-message/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hl7-101-a-primer"
   to = "/academy/hl7-101-a-primer/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/how-do-you-do-hipaa-training"
   to = "/academy/how-do-you-do-hipaa-training/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-and-data-breaches"
   to = "/academy/hipaa-and-data-breaches/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/the-hipaa-security-rule"
   to = "/academy/the-hipaa-security-rule/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-101-a-primer"
   to = "/academy/hipaa-101-a-primer/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/what-is-protected-health-information-or-phi"
   to = "/academy/what-is-protected-health-information-or-phi/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/why-hipaa-is-not-pci"
   to = "/academy/why-hipaa-is-not-pci/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/customizable-hipaa"
   to = "/academy/customizable-hipaa/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-subcontractors-and-baas"
   to = "/academy/hipaa-subcontractors-and-baas/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/engineering"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/founders"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/design"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/what-does-it-take-to-be-100-hipaa-compliant"
   to = "/blog/what-does-it-take-to-be-a-100-hipaa-compliant-cloud-company"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/how-long-do-you-need-to-retain-medical-records-under-hipaa"
   to = "/blog/how-long-to-keep-medical-records-under-hipaa"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/top-5-things-you-find-in-an-ideal-business-associates-agreement"
   to = "/blog/top-5-things-you-find-in-an-ideal-business-agreement"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/the-importance-of-business-associates-agreements"
   to = "/blog/the-importance-of-business-associate-agreements-baas"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/why-there-is-no-up-front-pricing"
   to = "/demo"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/introducing-container-services-deploy-custom-docker-images"
   to = "/blog"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/academy/the-hipaa-security-rule"
   to = "/academy/hipaa-101-a-primer/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/academy/how-do-you-do-hipaa-training"
   to = "/academy/hipaa-101-a-primer/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/academy/customizable-hipaa"
   to = "/academy/hipaa-101-a-primer/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/cloudy-outlook-2018-cio-cloud-perspective-survey"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/the-hipaa-compliant-solution-for-telehealth"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "https://content.datica.com/what-is-the-hitrust-framework"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/hhs-guidance-on-hipaa-compliance-in-the-cloud-what-you-need-to-know"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/hitrust-inheritance-the-most-important-compliance-announcement-of-the-year"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/integrating-with-epic-or-any-ehr"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/opportunities-for-digital-health-vendors-in-pharma"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/us-healthcare-is-like-a-casino-says-dan-munro"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/what-does-healthkit-mean-for-healthcare"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/hitrust-will-be-a-core-requirement-to-do-business-with-healthcare-enterprises"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/10-financial-questions-to-ask-before-an-ehr-project"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/fda-digital-health-precertification-program"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/fifty-states-of-hipaa"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-enforcement-in-2017"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/new-chief-operating-officer-deepens-epic-experience-at-datica"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/the-trusted-exchange-framework"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/announcing-self-service-and-free-trials"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/casey-bryson-the-man-the-myth-the-legend"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/digital-health-innovating-behavioral-healthcare"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/frugal-innovation-in-healthcare"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/how-we-process-over-6-000-000-and-growing-hl7-messages-a-month"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/top-5-things-you-find-in-an-ideal-business-associate-agreement"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/baa-isn-t-a-checkbox-for-hipaa-compliance"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/connected-health-today-and-in-the-future"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/ehr-costs-hinder-interoperability"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/how-does-the-cloud-reduce-data-loss-risk"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/industry-shaking-news-at-the-hitrust-3rd-party-assurance-conference"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/metabahn-and-healthloop-chose-catalyze-but-why"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/multi-tenancy-is-a-key-security-design-requirement-our-latest-academy-entry"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/top-ehr-vendors-epic-mckesson-etc-meet-to-determine-interoperability-metrics"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/voalte-guest-post-the-company-we-keep"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/whos-really-interpreting-and-enforcing-hipaa-for-startups"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/4-integration-factors-docbookmd-considered"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/7-step-technology-checklist-for-phi-protection"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/apple-s-researchkit-and-clinical-research-opportunities-and-challenges"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/catalyzes-new-fhir-documentation-is-your-trusted-fhir-resource"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/cve-2014-6271-shellshock-and-the-catalyze-platform"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/data-enabled-does-not-equal-data-driven"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/dhsf-building-a-body-of-evidence-to-support-your-strategy-roadmap"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-compliance-on-the-ionic-market"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/public-vs-private-cloud-computing-examined-our-latest-quarterly-industry"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/spear-phishing-hackers-aiming-for-healthcare"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/the-healthcare-innovator-s-dilemma"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/variation-in-state-privacy-laws"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/whats-your-patient-engagement-strategy"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/zenefits-scandal-further-proves-the-importance-of-compliance"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/6-insights-on-healthcare-innovation"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/an-explanation-of-adam-schefter-s-tweet-news-media-professional-athletes-and-hipaa"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/announcing-redpoint-your-integration-sherpa"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/avoid-inaccurately-matching-patients-health-records"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/best-practices-are-best-practices-how-datica-handles-global-compliance"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/can-mhealth-transform-provider-workflows-patient-care"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/catalyze-open-source"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/catalyze-policies-ready-for-deployment"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/changing-reimbursement-means-new-opportunities"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/compliance-by-design"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/datica-unveils-new-customer-access-healthnet"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/down-the-road-to-hitrust"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/facing-down-the-largest-breaches-of-2017-with-daticas-open-source-policies"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/heres-a-new-site-and-our-first-white-paper"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/himss-2019-survival-guide"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/insufficiencies-in-standards-for-ehr-interoperability"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/madison-startups-on-the-map-healthcare-it-included"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/may-conference-roundup-datica-on-the-main-stage-at-msbuild-and-hlth"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/microsoft-datica-digital-health-bootcamp-at-sxsw"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/reflecting-on-our-time-with-cdhi-at-ucsf"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/socialwellth-and-health123-advance-opportunities-in-value-based-care"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/the-new-catalyze-hq"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/the-purpose-of-hitrusts-business-associate-council"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/what-does-healthkit-mean-for-mobile-app-developers"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/why-there-is-up-front-pricing-now"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/10-most-read-articles-of-2017"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/21st-century-cures-act-passes-in-the-house-of-representatives"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/3-benefits-of-accessible-big-data-analytics"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/accountable-care-organizations-and-population"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/an-interview-with-chris-belmont-vp-and-cio-at-md-anderson"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/announcing-change-agent-daticas-medium-publication"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/announcing-our-first-customer-spotlights"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/announcing-stratum-your-compliance-foundation"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/apples-new-researchkit-studies"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/catalyze-baas-shellshock-update"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/catalyze-compliance-experts-mythbust-3-hipaa-misconceptions"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/catalyze-speaking-again-today-at-the-2015-digital-health-summer-summit"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/catalyze-speaks-integration-at-open-mhealth-on-wednesday"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/catalyzing-the-hitrust-ba-council-healthxl-global-gathering-hosting-partnership"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/check-out-our-new-hipaa-compliance-faq"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/configuration-management-2-commanding-your-minions-with-salt"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/customers-in-the-news-crossover-health"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/customers-in-the-news-welkin-raises-a-2m-seed-round"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/datica-ceo-to-present-at-stanford-medicine-x-conference"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/datica-continues-expanding-industry-support-and-recognition"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/datica-is-hitrust-certified"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/datica's-gone-native-cloud-native"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/daticas-success-as-a-hipaa-compliant-business-associate"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/difficulties-of-clinically-testing-health-apps"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/digital-health-funding-9-2014"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/digital-health-funding-already-billions-in-q1-2018"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/digital-health-summer-summit-hits-peak-of-healthcare-innovation"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/does-healthcare-it-put-the-cart-before-the-horse"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/engagement-mandates-a-positive-technology-focus"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/engaging-the-millennial-generation"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/fhir-is-on-fire-as-we-release-our-latest-academy-entries"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/five-tips-to-a-successful-patient-engagement-strategy"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/getting-ready-for-our-second-board-meeting"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/good-guide-surviving-himss"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/guiding-patient-engagement"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/health-2.0-recap-day-1"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/health-news-roundup-9-11-2014"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/health-news-roundup-9-2014"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/healthcare-innovation-what-is-it-solving"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/himss-2015-recap"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-compliance-assessment"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-legislation-is-in-the-house"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-risk-assessment"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/hipaa-security-assessment"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/how-hit-vendors-price-their-solutions"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/how-to-interpret-physician-billing"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/increased-interoperability-will-lead-to-increased-patient-engagement"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/innovation-partnerships-anticipated-at-upcoming-industry-gatherings"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/joint-commission-allows-secure-texting"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/lay-of-the-land"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/lets-encourage-secure-sharing-of-health-data"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/looking-in-the-rearview-mirror-at-health-2-0-2012"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/marketing-value-based-care-will-generate-desired-patient-engagement-results"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/need-for-governance-and-trust-among-entities"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/new-app-built-by-veterans-addresses-ptsd"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/our-journey-to-series-a"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/pact-in-the-news"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/patient-engagement-healthcare-organizations-vs-healthcare-consumers"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/payors-gain-from-advances-in-technology"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/planning-for-innovation-in-2016"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/planning-for-our-first-board-meeting"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/poodle-impact"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/recap-recent-complete-cloud-compliance-talks"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/record-breaking-hipaa-violation-settlements-will-change-the-compliance-calculus"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/securing-network-access-in-healthcare"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/selling-health-tech-means-minimizing-risk"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/startmeup-health-presentation"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/summer-quarterly-report-preview-privacy-big-technology"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/taming-the-torrent-of-patient-generated-healthcare-data"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/telemedicine-on-verge-of-market-adoption"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/testimonial-it-challenge-leads-to-catalyze-solution"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/the-2018-hot-list-what-healthcare-developers-were-reading"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/the-doctor-app-question-who-will-validate-vet-or-veto"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/the-health-internet-of-things-iot"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/the-three-rules-of-product-definition"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/three-considerations-for-how-vendors-can-drive-patient-engagement-forward"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/three-key-focuses-for-healthcare-cios"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/too-early-or-just-right"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/top-6-free-digital-stocking-stuffers"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/two-healthcare-systems-partner-with-vendors-to-further-innovation"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/urgent-hipaa-security-pros-needed-in-healthcare"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/visions-of-the-future-of-digital-health-at-himss-2017"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/visit-the-datica-vip-area-at-histalkapalooza-2017"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/vue15-catalyze-ceo-talks-mhealth-history-at-voaltes-first-user-conference"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/watch-live-preview-datica-ccms"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/webinar-what-is-the-digital-health-success-framework"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/what-is-cloud-computing-and-why-it-matters-for-compliance"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/where's-datica-our-fall-2018-conference-lineup"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/white-paper-making-enterprise-healthcare-sales-easier"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/whos-buying-engagement-2015-update"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/why-do-healthcare-it-systems-account-for-40-billion"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/why-interoperability"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/why-lets-encrypt-is-our-favorite-open-source-project-this-year"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/with-sxsw-in-the-rearview-we-look-ahead-to-himss-2015"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/zipnosis-diagnoses-catalyze-in-our-latest-case-study"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/zipnosis-in-the-news"
   to = "/blog/"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/blog/reflections-on-himss-2017-same-same-but-different"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/what's-an-application-developers-responsibility-for-hipaa"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/vue15-recap-voalte-uber"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/three-hipaa-omnibus-rule-essentials-for-it-security"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/health-2.0-recap-day-2"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/open-apis-solve-lack-of-ehr-interoperability"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/4-phi-marketing-special-cases"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/major-announcement-rolls-out-of-voaltes-user-experience-vue16"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/it-executives-and-clinicians-collaborate-at-sold-out-open-mhealth-summit-2015"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/health-2.0-recap-day-3"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/data-security-patient-engagement"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/hitrust-2018-a-fantastic-event"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/digital-health-apps-could-save-7-billion"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/overview-of-current-administrations-approach-to-hit"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/information-governance-survey-shows-benefits-in-compliance"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/how-digital-health-succeeds-and-fails-datica-at-sxsw"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/what-does-healthkit-mean-for-healthcare"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/webinars/see-datica-ccms-live"
   to = "/webinars"
   status = 410
+  force = true
 
 [[redirects]]
   from = "/learn/business-associates-agreements"
   to = "/academy/business-associate-agreements"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/learn/risk-assessments-and-management"
   to = "/academy/hipaa-risk-assessment-and-management"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/press/datica-launches-kubernetes-enabled-platform"
   to = "/press-release/datica-launches-kubernetes-enabled-platform"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/hipaa-compliant-hosting/"
   to = "/compliant-kubernetes-service/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/hipaa-compliant-web-hosting/"
   to = "/compliant-kubernetes-service/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/azure"
   to = "/contact/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/contact/azure"
   to = "/contact/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/*"
   to = "/404/index.html"
   status = 404
+  force = true
   force = false
