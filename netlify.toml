@@ -71,19 +71,19 @@
 [[redirects]]
   from = "/team/*"
   to = "/about/:splat"
-  status = 301
+  status = 200
   force = true
 
 [[redirects]]
   from = "/leadership/*"
   to = "/about/:splat"
-  status = 301
+  status = 200
   force = true
 
 [[redirects]]
   from = "/learn/*"
   to = "/academy/:splat"
-  status = 301
+  status = 200
   force = true
 
 [[redirects]]
