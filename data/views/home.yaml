@@ -27,10 +27,10 @@ customers:
         url: 'https://www.jnj.com/'
         logoSize: 'medium'
     -
-        name: 'Zipnosis'
-        file: 'zipnosis-logo'
-        url: 'https://zipnosis.com'
-        logoSize: 'medium'
+        name: 'Spok'
+        file: 'spok-logo'
+        url: 'https://spok.com'
+        logoSize: 'small'
     -
         name: 'Healthloop'
         file: 'healthloop-logo'
