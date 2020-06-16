@@ -28,7 +28,7 @@ GEM
       middleman-core (~> 4.0)
       rich_text_renderer (~> 0.1)
     contracts (0.13.0)
-    crass (1.0.4)
+    crass (1.0.6)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.1)
@@ -110,10 +110,10 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-    nokogiri (1.10.1)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
-    nokogumbo (1.5.0)
-      nokogiri
+    nokogumbo (2.0.2)
+      nokogiri (~> 1.8, >= 1.8.4)
     oga (2.15)
       ast
       ruby-ll (~> 2.1)
@@ -134,10 +134,10 @@ GEM
     ruby-ll (2.1.2)
       ansi
       ast
-    sanitize (4.6.6)
+    sanitize (5.2.1)
       crass (~> 1.0.2)
-      nokogiri (>= 1.4.4)
-      nokogumbo (~> 1.4)
+      nokogiri (>= 1.8.0)
+      nokogumbo (~> 2.0)
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
